@@ -6,7 +6,7 @@
       "status": 200
     },
     {
-      "path": "/assets/index-BmLaWeXW.js",
+      "path": "/assets/index-C2mtGtIK.js",
       "status": 200
     },
     {
@@ -18,7 +18,7 @@
       "status": 200
     },
     {
-      "path": "/assets/index-StEP-Qgi.css",
+      "path": "/assets/index-C9PXFckW.css",
       "status": 200
     },
     {
@@ -76,8 +76,24 @@
     {
       "path": "/api/operations/presets",
       "status": 200
+    },
+    {
+      "path": "/api/planning/projects",
+      "status": 200
+    },
+    {
+      "path": "/api/data/catalog",
+      "status": 200
+    },
+    {
+      "path": "/api/data/fsis_poultry?limit=2",
+      "status": 200
+    },
+    {
+      "path": "/api/project-status",
+      "status": 200
     }
   ],
-  "passed": 19,
+  "passed": 23,
   "browser_visual_qa": false
 }

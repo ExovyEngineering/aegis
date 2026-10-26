@@ -11,7 +11,7 @@ import uuid
 from typing import Literal
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, model_validator
 
 from backend.adapters import now
 
@@ -87,6 +87,26 @@ class InstructionDecision(HumanDecision):
 class InstructionAcknowledgment(BaseModel):
     model_config = ConfigDict(extra='forbid')
     instruction_revision: int = Field(ge=1)
+
+
+class VerificationChecks(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    temperature_history_reviewed: StrictBool
+    packaging_condition_reviewed: StrictBool
+    simulated_lot_identity_reviewed: StrictBool
+
+
+class VerificationDecision(HumanDecision):
+    expected_network_revision: int = Field(ge=0)
+    expected_verification_version: int = Field(ge=0)
+    outcome: Literal['complete', 'review_required']
+    checks: VerificationChecks
+
+    @model_validator(mode='after')
+    def completed_checks(self):
+        if self.outcome == 'complete' and not all(self.checks.model_dump().values()):
+            raise ValueError('Complete all review checks before recording completion')
+        return self
 
 
 def _assignments(connection):
@@ -265,5 +285,33 @@ def create_dispatch_router(db, load, record):
                 'shipment_id': shipment_id, 'instruction_revision': request.instruction_revision,
             })
             return {'status': 'acknowledged', 'instruction_revision': request.instruction_revision}
+
+    @router.post('/api/dispatch/assignments/{shipment_id}/verification')
+    def verification(shipment_id: str, request: VerificationDecision):
+        with db() as connection:
+            _begin(connection)
+            network, revision = load(connection)
+            if revision != request.expected_network_revision:
+                raise HTTPException(409, 'Network changed; review the current assignment')
+            row = connection.execute('SELECT payload FROM assignments WHERE id=?', (shipment_id,)).fetchone()
+            if not row: raise HTTPException(404, 'No approved assignment')
+            assignment = json.loads(row[0])
+            if not assignment.get('verification_required'):
+                raise HTTPException(409, 'This assignment does not request targeted verification')
+            if assignment.get('verification_version', 0) != request.expected_verification_version:
+                raise HTTPException(409, 'Verification changed; reload before recording a review')
+            lot = next((x for x in network['lots'] if x['id'] == assignment['lot_id']), None)
+            if not lot or lot['held'] or lot['recalled'] or not lot['eligible']:
+                raise HTTPException(409, 'Assigned lot is not eligible for onward review')
+            version = assignment.get('verification_version', 0) + 1
+            result = {'status': request.outcome, 'version': version, 'actor': request.actor,
+                      'reason': request.reason, 'checks': request.checks.model_dump(), 'reviewed_at': now(),
+                      'network_revision': revision,
+                      'context': {key: assignment[key] for key in ('id','lot_id','truck_id','origin','destination')},
+                      'provenance': 'human-recorded simulated operational review; not a laboratory result, official recall match or product-safety certification'}
+            assignment.update(verification_version=version, verification_status=request.outcome, verification_review=result)
+            connection.execute('UPDATE assignments SET payload=? WHERE id=?', (json.dumps(assignment), shipment_id))
+            record(connection, request.actor, 'targeted_verification_review', {'shipment_id':shipment_id, **result})
+            return result
 
     return router

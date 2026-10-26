@@ -1,0 +1,33 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/api.test.ts (2 tests) 7ms
+ ✓ src/routingProvenance.test.ts (2 tests) 3ms
+ ✓ src/MapViewport.test.tsx (2 tests) 39ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 105ms
+ ✓ src/DataExplorer.test.tsx (1 test) 152ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 208ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 135ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 198ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 174ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 190ms
+ ✓ src/CustomOperationEditor.test.tsx (4 tests) 418ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  398ms
+ ✓ src/RouteLab.test.tsx (2 tests) 630ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  462ms
+ ✓ src/DispatcherDesk.test.tsx (4 tests) 691ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  406ms
+ ✓ src/App.test.tsx (2 tests) 624ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  499ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 342ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  341ms
+
+ Test Files  15 passed (15)
+      Tests  30 passed (30)
+   Start at  17:28:34
+   Duration  5.35s (transform 1.85s, setup 9.96s, collect 7.19s, tests 3.92s, environment 31.42s, prepare 5.51s)
+

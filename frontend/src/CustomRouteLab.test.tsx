@@ -8,7 +8,7 @@ vi.mock('./api', async original => ({ ...await original<object>(), api: vi.fn() 
 it('posts editable custom locations and fleet without overriding individual truck capacities', async () => {
   const operation = newPlanningOperation();
   const template = { ...operation, id: 'farm', name: 'Test farm layout', description: 'Simulated template', simulation: true };
-  vi.mocked(api).mockImplementation(async path => path === '/operations/presets' ? [template] as any : { preset: { ...operation, id: 'custom', nodes: [] }, routes: [], solver_status: 'FEASIBLE', feasible: true, summary: { total_distance_m: 0, total_duration_seconds: 0, total_cost: 0, unserved_stops: ['STOP1'], unmet_demand_kg: 450, constraint_violations: 0 }, provenance: 'Planning exercise', limitations: [] } as any);
+  vi.mocked(api).mockImplementation(async path => path === '/planning/projects' ? [] as any : path === '/operations/presets' ? [template] as any : { preset: { ...operation, id: 'custom', nodes: [] }, routes: [], solver_status: 'FEASIBLE', feasible: true, summary: { total_distance_m: 0, total_duration_seconds: 0, total_cost: 0, unserved_stops: ['STOP1'], unmet_demand_kg: 450, constraint_violations: 0 }, provenance: 'Planning exercise', limitations: [] } as any);
   render(<RouteLab />);
   await screen.findByRole('button', { name: /Test farm layout/ });
   fireEvent.click(screen.getByRole('button', { name: /Your operation/ }));

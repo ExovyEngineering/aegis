@@ -36,7 +36,7 @@ describe('Route laboratory', () => {
     expect(screen.getByText(/Inputs changed/)).toBeInTheDocument();
   });
   it('normalizes full API preset inventories and enables multi-location fleet testing', async () => {
-    vi.mocked(api).mockImplementation(async path => path === '/operations/presets' ? [{ id: 'regional', name: 'Multi-location fleet', description: 'Two simulated origins', origins: [{}, {}], trucks: Array.from({ length: 8 }, () => ({})), stops: Array.from({ length: 15 }, () => ({})), simulation: true }] as any : result as any);
+    vi.mocked(api).mockImplementation(async path => path === '/planning/projects' ? [] as any : path === '/operations/presets' ? [{ id: 'regional', name: 'Multi-location fleet', description: 'Two simulated origins', origins: [{}, {}], trucks: Array.from({ length: 8 }, () => ({})), stops: Array.from({ length: 15 }, () => ({})), simulation: true }] as any : result as any);
     render(<RouteLab />);
     const regional = await screen.findByRole('button', { name: /Multi-location fleet Two simulated origins/ });
     fireEvent.click(regional);

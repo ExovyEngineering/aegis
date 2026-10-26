@@ -2,6 +2,42 @@
 
 Session date: October 26, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
+## Latest: decision depth and team planning brief
+
+October 26 feature-depth release:
+
+- Persistent route projects: immutable server-side runs and checksums, saved
+  versions, historical reopening, two-project comparison and JSON/CSV exports.
+  Unsaved edits remain temporary; saved plans cannot dispatch or change stock.
+- Independent scenario checks expose actual resource sums, selected shipments and
+  exclusion reasons. Approval rejects altered candidate quantities and invalid
+  eligibility even if a faulty solver returns the same result twice.
+- Source explorer: recognized FSIS, NORS, BEAM and establishment tables remain
+  separate, with bounded pagination, literal filters, schema, derived-file hashes,
+  page null counts and explicit errors for missing/corrupt sources.
+- Scenario-B verification checklist: identified review, rationale, context and
+  version guards. Driver acknowledgment is separate; completion neither certifies
+  safety nor changes stock disposition automatically.
+- Measured state-level holdout error analysis is now inspectable in Model evaluation.
+- Project brief: maintained feature register, change history, dated verification
+  logs and a regenerated 10-page PDF/Markdown with presentation narrative and limits.
+  The CI workflow regenerates a downloadable brief and verification artifact.
+- Latest local checks: **189 pytest tests, 31 Vitest tests and production build
+  passed**. **36 isolated Chrome checks** and **23 loopback HTTP checks** passed.
+  Four upstream Python deprecation warnings remain. Browser screenshots and results
+  are in `reports/browser_qa/depth/`; no uncaught JavaScript or app HTTP failures.
+- All 42 original raw hashes remain unchanged. Scripted demos use isolated state.
+  Public providers were not re-probed in this feature session; dated source
+  coverage must not be interpreted as new live connectivity evidence.
+- Development verification encountered a Windows shared pytest-temp permission
+  failure; the runner now uses workspace-local temporary storage. Failed and
+  successful local verification records/logs are retained separately. Chrome QA
+  also prompted explicit dropdown names and proper waits for asynchronously loaded
+  status. The final recorded browser run passed.
+- Remaining P0 gates: real Kiro sign-in/task execution, final rubric/report author
+  review and timed presentation. Publication timing, NOAA gaps, commercial truck
+  restrictions, authentication and physical sensing remain explicit limitations.
+
 ## Implemented and measured
 
 October 26 operational feature extension:
@@ -18,7 +54,7 @@ October 26 operational feature extension:
 - Four deterministic OR-Tools allocation scenarios; persistent proposals, approval, assignments, events, acknowledgments, incidents, and audit trail.
 - Initial seed solver results were OPTIMAL for all four scenarios: A cost 3,018 / unmet 2,300 kg; B cost 3,093 / unmet 2,300 kg; C cost 2,838 / unmet 2,700 kg; D cost 2,904 / unmet 1,900 kg. Costs are simulated dollars.
 - Geometry intersection/proximity review compares OSRM alternatives against queried MoDOT point/line features using a 250-meter buffer. It produces dispatcher-review signals without truck-safe claims.
-- Current full backend suite: 114 passing tests, with four upstream deprecation warnings. Frontend TypeScript/Vite build passes and twelve Vitest checks include map teardown regressions. `reports/validation.json` records the latest final counts.
+- Earlier foundation-stage verification: 114 passing tests, with four upstream deprecation warnings. Frontend TypeScript/Vite build passes and twelve Vitest checks include map teardown regressions. `reports/validation.json` records the latest final counts.
 - Uvicorn served the built UI, four assets and twelve JSON endpoints (17 real HTTP checks). Actual Chrome desktop/mobile QA passed 26 checks: map tiles, farm/fleet routes, capacity shortages, refrigeration fault projection, approval and driver acknowledgment/reporting. Nine inspected screenshots and results are in `reports/browser_qa/final/`. No uncaught JavaScript errors or application resource failures remain; a cosmetic default favicon 404 was observed.
 - Accelerated isolated demo completed event injection, changed scenario results, approval of 13 simulated assignments, acknowledgment, incident reporting and audit history (`reports/demo_results.json`). The operator database was not modified by this script.
 - Measured retrospective model holdout: 23,472 samples, August 29, 2025–June 30, 2026. Baseline Brier 0.0885558; logistic Brier 0.0885944; logistic ROC-AUC 0.4980. The logistic model shows no useful improvement over prevalence in this evaluation. Operational choice remains the transparent historical estimator.

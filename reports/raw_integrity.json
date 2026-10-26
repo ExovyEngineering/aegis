@@ -1,5 +1,6 @@
 {
   "audit_timestamp": "2026-10-26T06:26:49.812037+00:00",
+  "checked_at": "2026-10-26T22:35:08.919820+00:00",
   "checked": 42,
   "unchanged": 42,
   "passed": true,

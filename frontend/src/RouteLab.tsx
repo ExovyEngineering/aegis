@@ -1,3 +1,4 @@
+import PlanningLibrary from './PlanningLibrary';
 import { useEffect, useState } from 'react';
 import { ArrowRight, FlaskConical, MapPin, Route, ShieldCheck, Snowflake, TriangleAlert, Truck } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
@@ -10,7 +11,7 @@ export interface LabNode { id: string; name: string; kind: string; coordinates: 
 export interface ColdChainResult { status?: string; max_temperature_c?: number; threshold_c?: number; time_above_threshold_minutes?: number; provenance?: string; assumptions?: string[]; projection?: { elapsed_minutes: number; temperature_c: number; lower_c: number; upper_c: number }[] }
 export interface LabRoute extends RoutingSources { truck_id: string; origin_id: string; stop_ids: string[]; distance_m: number; duration_seconds: number; load_kg: number; capacity_kg?: number; geometry?: { type: string; coordinates: number[][] }; fallback?: boolean; provenance?: string; cold_chain?: ColdChainResult; road_review?: any; stops?: any[] }
 interface Preset { id: string; name: string; description: string; origins: number; trucks: number; stops: number; simulation: boolean }
-interface LabResult { preset: { id: string; name: string; nodes: LabNode[]; stops?: { id: string; held?: boolean; recalled?: boolean; eligible?: boolean }[]; trucks: { id: string; capacity_kg: number }[] }; routes: LabRoute[]; solver_status: string; feasible: boolean; summary: { total_distance_m: number; total_duration_seconds: number; total_cost: number; unserved_stops: string[]; constraint_violations: number; served_demand_kg?: number; unmet_demand_kg?: number }; provenance: string; limitations: string[] | string; warnings?: string[] }
+interface LabResult { run_id?: string; preset: { id: string; name: string; nodes: LabNode[]; stops?: { id: string; held?: boolean; recalled?: boolean; eligible?: boolean }[]; trucks: { id: string; capacity_kg: number }[] }; routes: LabRoute[]; solver_status: string; feasible: boolean; summary: { total_distance_m: number; total_duration_seconds: number; total_cost: number; unserved_stops: string[]; constraint_violations: number; served_demand_kg?: number; unmet_demand_kg?: number }; provenance: string; limitations: string[] | string; warnings?: string[] }
 const defaultPresets: Preset[] = [
   { id: 'farm', name: 'Single farm dispatch', description: 'One simulated farm sending refrigerated trucks to nearby delivery stops.', origins: 1, trucks: 3, stops: 8, simulation: true },
   { id: 'regional', name: 'Multi-location fleet', description: 'A simulated regional fleet serving destinations from more than one dispatch location.', origins: 2, trucks: 8, stops: 15, simulation: true },
@@ -52,6 +53,12 @@ export default function RouteLab() {
   const limitations = result ? (Array.isArray(result.limitations) ? result.limitations : [result.limitations]) : [];
   return <section className="route-lab" aria-label="Route laboratory">
     <div className="lab-intro"><span className="lab-intro-icon"><FlaskConical size={23} /></span><div><strong>From one farm to a regional fleet.</strong><p>Test simulated dispatch plans, inspect truck routes, and explore how delays and refrigeration faults affect an illustrative cargo-temperature projection.</p></div><span className="pill amber">PLANNING SANDBOX</span></div>
+    <PlanningLibrary runId={result?.run_id} changed={changed} onLoad={(request, output) => {
+      setPreset(request.preset); if (request.custom_operation) setCustomOperation(request.custom_operation);
+      setRouting(request.routing); setTruckCount(request.truck_count ?? 3); setCapacity(request.truck_capacity_kg ?? 1500);
+      setMaxHours(request.max_route_hours); setAmbient(request.ambient_temperature_c); setDelay(request.delay_minutes); setFault(request.refrigeration_fault);
+      setResult(output); setSelectedTruck(output.routes[0]?.truck_id ?? ''); setChanged(false);
+    }} />
     <div className="lab-configuration">
       <section className="panel lab-controls"><div className="eyebrow">01 · DEFINE THE EXERCISE</div><h2>Operational scale</h2>
         <div className="preset-options">{presets.map(p => <button key={p.id} aria-pressed={preset === p.id} className={`preset-option ${preset === p.id ? 'selected' : ''}`} onClick={() => change(() => { setPreset(p.id); setTruckCount(p.trucks); })}><span className="preset-icon">{p.id === 'farm' ? <MapPin size={20} /> : <Truck size={20} />}</span><span><strong>{p.name}</strong><small>{p.description}</small></span></button>)}</div>

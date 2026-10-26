@@ -6,13 +6,16 @@
     "modot dated fixture works without cache",
     "openmeteo dated fixture works without cache",
     "offline farm routing feasible",
+    "saved planning project reopens in extracted package",
+    "actual source rows browse in extracted package",
+    "presentation PDF included and downloadable",
     "approval and driver assignment work in fresh isolated DB",
     "route review uses packaged MoDOT fixture"
   ],
-  "manifest_files_verified": 194,
+  "manifest_files_verified": 250,
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
   "network_requested": false,
   "operator_database_modified": false,
-  "archive_sha256": "1f8b886b066e0cb5806a620d67c2d730d0eee46890ee6a543029ce167961b83f"
+  "archive_sha256": "838f7eb2dbc1e97f40213b1a0983cdbd717bb29a0cc7ba6a85fc7a03882a5e0f"
 }

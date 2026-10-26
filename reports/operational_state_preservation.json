@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "operational_tables_preserved": [
+    "assignments",
+    "audit",
+    "dispatch_instruction_versions",
+    "incidents",
+    "proposals",
+    "state"
+  ],
+  "note": "Compared logical state before/after server update; new planning schema tables are expected. No operator reset or simulated actions were performed against the operator database."
+}

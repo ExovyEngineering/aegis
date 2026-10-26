@@ -8,6 +8,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from backend.custom_operations import CustomOperation
 from backend.dispatch import ensure_dispatch_schema,create_driver_incident,create_dispatch_router
+from backend.planning import ensure_planning_schema, store_run, create_planning_router
+from backend.data_explorer import create_data_router
+from backend.project_status import create_project_router
 from backend.paths import ROOT
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -26,6 +29,7 @@ def db():
         conn.execute('CREATE TABLE IF NOT EXISTS audit (id INTEGER PRIMARY KEY, timestamp TEXT, actor TEXT, action TEXT, payload TEXT)')
         conn.execute('CREATE TABLE IF NOT EXISTS assignments (id TEXT PRIMARY KEY, payload TEXT, acknowledged INTEGER DEFAULT 0)')
         ensure_dispatch_schema(conn)
+        ensure_planning_schema(conn)
         conn.execute('INSERT OR IGNORE INTO state VALUES (1,?,0)',(json.dumps(seed_network()),)); conn.commit()
         yield conn; conn.commit()
     except Exception: conn.rollback(); raise
@@ -111,6 +115,9 @@ def approve(pid:str,request:Approval):
         if row[1]!=rev: raise HTTPException(409,'Network changed; generate a fresh proposal')
         result=json.loads(row[0]); fresh=optimize(n,result['scenario'])
         if not fresh['feasible'] or fresh['shipments']!=result['shipments']: raise HTTPException(409,'Plan failed safety revalidation')
+        from backend.plan_review import review_plan
+        checked=review_plan(n,result['shipments'],result['proposed_hold_lots'],result['scenario'])
+        if not checked['passed']:raise HTTPException(409,'Independent constraint review failed')
         for lot in n['lots']:
             if lot['id'] in result['proposed_hold_lots']: lot['held']=True
         c.execute('DELETE FROM assignments')
@@ -183,7 +190,8 @@ def route_lab(request:RouteLabRequest):
     try:
         params=request.model_dump(exclude={'custom_operation'})
         if request.custom_operation is not None:params['operation']=request.custom_operation.build_operation()
-        return plan_routes(**params)
+        result=plan_routes(**params)
+        with db() as c:return store_run(c,request.model_dump(),result)
     except ValueError as e:raise HTTPException(400,str(e))
 @app.get('/api/shipments/{sid}/exposure')
 def shipment_exposure(sid:str):
@@ -205,6 +213,9 @@ def refresh(source:str):
     except Exception as e: return {'status':'failed','error':f'{type(e).__name__}: {e}','source':source}
 
 app.include_router(create_dispatch_router(db,load,record))
+app.include_router(create_planning_router(db,record))
+app.include_router(create_data_router(ROOT))
+app.include_router(create_project_router(ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

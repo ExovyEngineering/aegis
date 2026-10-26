@@ -54,6 +54,32 @@ node .tools/package/bin/npm-cli.js --prefix frontend run build
 
 Do not commit the local runtime. A fresh checkout requires standard Node/npm installation unless `.tools/` is separately provisioned.
 
+## Team status and presentation planning
+
+Open **Project brief** in the application to download the maintained PDF and see
+recorded checks and priority gates. The same files are available directly:
+[PDF](reports/aegis_project_brief.pdf), [editable brief](reports/project_brief.md),
+[change history](docs/changelog.md), and [feature register](config/feature_register.yaml).
+
+After code changes, refresh the measured checks and presentation artifact:
+
+```powershell
+.venv/Scripts/python scripts/verify_project.py
+.venv/Scripts/python scripts/build_project_brief.py
+```
+
+The verifier executes pytest, Vitest and the production build, preserving dated
+logs and JSON history. It does not refresh public sources or imply browser/CI
+success. Update the feature register and changelog as capabilities change.
+
+Route laboratory now saves completed experiments as versioned local projects,
+compares two saved projects, reopens historical versions, and exports inputs and
+results. Saving never dispatches. Unsaved editor changes still remain temporary.
+Command's decision details expose independent constraint checks and exclusions.
+Dispatcher desk records scenario-B verification reviews; completing a simulated
+checklist does not certify product safety or automatically impose a hold.
+Sources includes a bounded read-only browser of separately ingested tables.
+
 ## Refresh evidence and run checks
 
 ```powershell

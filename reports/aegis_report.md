@@ -132,7 +132,7 @@ The accelerated isolated workflow recorded 13 approved simulated assignments. Ac
 
 Required inputs, retrieval records, seeds, commands, and test artifacts remain inspectable. This report compiler performs no new HTTP requests. Its input-file hashes are recorded in `reports/figures/input_manifest.json`; regenerating after evidence changes updates the draft transparently.
 
-The saved validation artifact records 164 passing pytest tests, 23 passing Vitest tests, frontend build status `passed`, and 19 real HTTP checks. Browser visual QA: `passed: prior26core checks and current50operations checks; installedChrome desktop/mobile`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
+The saved validation artifact records 189 passing pytest tests, 31 passing Vitest tests, frontend build status `passed`, and 23 real HTTP checks. Browser visual QA: `passed: 36 latest feature-depth Chrome checks; earlier 50 operations and 26 core checks separately retained`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
 
 ```powershell
 .venv/Scripts/python scripts/audit_data.py

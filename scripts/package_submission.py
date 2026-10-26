@@ -8,10 +8,10 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from backend.paths import ROOT,write_json
 
-ROOT_FILES=('AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore')
-SOURCE_DIRS=('backend','scripts','tests','config','docs','.kiro','frontend')
+ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore')
+SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','frontend')
 SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env'}
-REPORTS=('aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
+REPORTS=('operational_state_preservation.json','aegis_project_brief.pdf','project_brief.md','project_brief_manifest.json','session_verification.json','aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -79,7 +79,7 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     for name in REPORTS:add(root/'reports'/name)
-    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations'):
+    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/checks','reports/verification_history'):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)

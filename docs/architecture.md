@@ -70,3 +70,33 @@ MoDOT refresh discovers and queries incident layers as GeoJSON, retaining per-la
 ## Deployment scope
 
 Documented startup binds to `127.0.0.1`. External HTTP services and map tiles require network access; dated cache and route estimates support a limited offline demo. Production identity, multi-user permissions, secrets management, commercial-truck routing, monitoring, and hosted infrastructure are outside the current verified implementation.
+
+
+## Decision-depth and team-brief extension
+
+`backend/plan_review.py` recomputes resource sums and eligibility independently of
+OR-Tools. Approval rejects canonical-field tampering even if a faulty solver
+returned the same corrupted result twice. UI explanations distinguish direct
+exclusions from joint allocation nonselection; neither is a causal solver proof.
+
+`backend/planning.py` stores immutable request/result runs with SHA-256 checksums.
+Versioned projects point to runs; transactional expected-version updates preserve
+history, and archiving preserves all versions. The laboratory writes no network,
+stock or assignment changes. Saved source timestamps remain historical snapshots.
+CSV exports neutralize formula-leading text and are explicitly planning-only.
+
+`backend/data_explorer.py` allowlists source-specific Parquet tables. Arrow scans
+bounded pages (1?100 rows, maximum offset 10,000) and literal case-insensitive
+column filters. Schemas and derived-file hashes are exposed; errors do not merge
+or invent observations. Null counts are per-page, not global missingness.
+
+Targeted scenario-B verification records identity, reason, checklist, assignment
+context, network revision and review version. Stale edits are rejected; completing
+review does not change lot disposition or certify safety. Assignment acknowledgment
+is separate from verification review and versioned instruction acknowledgment.
+
+`config/feature_register.yaml` is the maintained capability register.
+`scripts/verify_project.py` captures actual check exits, timestamps and immutable
+log history. `scripts/build_project_brief.py` generates a PDF and Markdown from
+that register and measured source/model/test artifacts. The status API serves
+recorded evidence without promoting pending Kiro, browser or live-source checks.
