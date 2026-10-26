@@ -1,0 +1,113 @@
+{
+  "mode": "Accelerated scripted validation of five-minute demo narrative; no real shipments or five-minute wall-clock claim",
+  "seed": 20261026,
+  "baseline": [
+    {
+      "scenario": "A",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 3018,
+      "unmet_demand_kg": 2300,
+      "affected_shipments": 11,
+      "review_priority_count": 1,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "B",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 3093,
+      "unmet_demand_kg": 2300,
+      "affected_shipments": 11,
+      "review_priority_count": 1,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "C",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2838,
+      "unmet_demand_kg": 2700,
+      "affected_shipments": 12,
+      "review_priority_count": 0,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "D",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2904,
+      "unmet_demand_kg": 1900,
+      "affected_shipments": 10,
+      "review_priority_count": 1,
+      "constraint_violations": 0
+    }
+  ],
+  "after_events": [
+    {
+      "scenario": "A",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2564,
+      "unmet_demand_kg": 2700,
+      "affected_shipments": 12,
+      "review_priority_count": 2,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "B",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2714,
+      "unmet_demand_kg": 2700,
+      "affected_shipments": 12,
+      "review_priority_count": 2,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "C",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2172,
+      "unmet_demand_kg": 3900,
+      "affected_shipments": 15,
+      "review_priority_count": 0,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "D",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2450,
+      "unmet_demand_kg": 2300,
+      "affected_shipments": 11,
+      "review_priority_count": 2,
+      "constraint_violations": 0
+    }
+  ],
+  "approved_assignments": 13,
+  "acknowledgment_recorded": true,
+  "incident_recorded": true,
+  "audit_actions": [
+    "incident",
+    "acknowledge",
+    "approve",
+    "event",
+    "event"
+  ],
+  "production_database_modified": false,
+  "timeline": [
+    {
+      "minute": 0,
+      "action": "Source coverage, real map and simulated network"
+    },
+    {
+      "minute": 1,
+      "action": "Forecast/alerts, dated recall and historical observations"
+    },
+    {
+      "minute": 2,
+      "action": "Road delay and cargo excursion events"
+    },
+    {
+      "minute": 3,
+      "action": "Compare A\u2013D response scenarios; inspect constraints"
+    },
+    {
+      "minute": 4,
+      "action": "Dispatcher approval, driver acknowledgment and audit trail"
+    }
+  ]
+}

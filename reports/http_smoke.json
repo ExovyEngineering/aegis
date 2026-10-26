@@ -1,0 +1,83 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/assets/index-BmLaWeXW.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/charts-CiMnwsrd.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/maps-BqhAM0pe.js",
+      "status": 200
+    },
+    {
+      "path": "/assets/index-StEP-Qgi.css",
+      "status": 200
+    },
+    {
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "path": "/api/network",
+      "status": 200
+    },
+    {
+      "path": "/api/coverage",
+      "status": 200
+    },
+    {
+      "path": "/api/scenarios",
+      "status": 200
+    },
+    {
+      "path": "/api/model",
+      "status": 200
+    },
+    {
+      "path": "/api/inventory",
+      "status": 200
+    },
+    {
+      "path": "/api/evidence/fsis_recalls",
+      "status": 200
+    },
+    {
+      "path": "/api/evidence/openmeteo",
+      "status": 200
+    },
+    {
+      "path": "/api/evidence/modot",
+      "status": 200
+    },
+    {
+      "path": "/api/facilities",
+      "status": 200
+    },
+    {
+      "path": "/api/driver",
+      "status": 200
+    },
+    {
+      "path": "/api/audit",
+      "status": 200
+    },
+    {
+      "path": "/api/dispatch",
+      "status": 200
+    },
+    {
+      "path": "/api/operations/presets",
+      "status": 200
+    }
+  ],
+  "passed": 19,
+  "browser_visual_qa": false
+}

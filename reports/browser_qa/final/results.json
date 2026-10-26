@@ -1,0 +1,157 @@
+{
+  "base_url": "http://127.0.0.1:8001",
+  "checked_at": "2026-10-26T06:59:04.821Z",
+  "workflow_isolated": true,
+  "browser": "installed Chrome",
+  "checks": [
+    {
+      "name": "isolated_demo_reset",
+      "passed": true,
+      "details": "Only the explicitly isolated QA database is reset"
+    },
+    {
+      "name": "desktop_command_loaded",
+      "passed": true,
+      "details": "React data view and Leaflet container visible"
+    },
+    {
+      "name": "map_tiles_loaded",
+      "passed": true,
+      "details": "8 loaded tiles; tile access requires external connectivity"
+    },
+    {
+      "name": "map_network_geometry_rendered",
+      "passed": true,
+      "details": "52 SVG operational/evidence geometries"
+    },
+    {
+      "name": "desktop-evidence_loaded",
+      "passed": true,
+      "details": "Evidence with a clear origin"
+    },
+    {
+      "name": "desktop-model_loaded",
+      "passed": true,
+      "details": "Measured model performance"
+    },
+    {
+      "name": "route_lab_http_success",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "single_farm_routes_inspectable",
+      "passed": true,
+      "details": "2 routes from one farm; 0 violations"
+    },
+    {
+      "name": "route_test_does_not_dispatch",
+      "passed": true,
+      "details": "No driver assignments changed by route laboratory"
+    },
+    {
+      "name": "unmet_demand_and_held_exclusion_visible",
+      "passed": true,
+      "details": "300 kg unmet demand and FD08 (held) are explicit above the map"
+    },
+    {
+      "name": "route_lab_http_success",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "reduced_capacity_exposes_unmet_demand",
+      "passed": true,
+      "details": "2400 kg unmet; 0 violations"
+    },
+    {
+      "name": "route_lab_http_success",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "cold_chain_fault_prompts_review",
+      "passed": true,
+      "details": "Fault changes an explicitly uncalibrated temperature projection"
+    },
+    {
+      "name": "route_lab_http_success",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "fleet_uses_multiple_origins",
+      "passed": true,
+      "details": "3 active routes across 2 origins"
+    },
+    {
+      "name": "fleet_constraints_hold",
+      "passed": true,
+      "details": "0 violations"
+    },
+    {
+      "name": "mobile_route_lab_no_document_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "approval_requires_actor_reason",
+      "passed": true,
+      "details": "Approval blocked until fields are completed"
+    },
+    {
+      "name": "approval_publishes_assignments",
+      "passed": true,
+      "details": "12 simulated assignments"
+    },
+    {
+      "name": "driver_acknowledgment_persisted",
+      "passed": true,
+      "details": "Audit contains acknowledgment"
+    },
+    {
+      "name": "driver_incident_persisted",
+      "passed": true,
+      "details": "Audit contains incident report"
+    },
+    {
+      "name": "driver_parked_instruction_visible",
+      "passed": true,
+      "details": "Parked-use instruction visible"
+    },
+    {
+      "name": "mobile_no_document_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "no_uncaught_browser_errors",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "name": "no_application_resource_failures",
+      "passed": true,
+      "details": "[]"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "request_failures": [],
+  "http_failures": [],
+  "screenshots": [
+    "desktop-command.png",
+    "desktop-evidence.png",
+    "desktop-model.png",
+    "desktop-farm-routes.png",
+    "desktop-farm-fault.png",
+    "desktop-regional-routes.png",
+    "mobile-route-laboratory.png",
+    "desktop-approval.png",
+    "mobile-drive.png"
+  ],
+  "browser_version": "156.0.8078.47",
+  "passed": true
+}

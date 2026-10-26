@@ -1,0 +1,351 @@
+{
+  "status": "partial",
+  "generated_at": "2026-10-26T06:39:34.423710+00:00",
+  "provenance": "observed historical weather",
+  "start_date": "2025-01-01",
+  "end_date": "2026-06-30",
+  "station_count": 5,
+  "requested_station_count": 5,
+  "expected_station_days": 2730,
+  "observed_station_days": 2730,
+  "coverage_fraction": 1.0,
+  "metric_coverage_fraction": 0.9989010989010989,
+  "missing_metric_values": 9,
+  "stations": [
+    {
+      "city": "Columbia",
+      "station_id": "USW00003945",
+      "station_name": "COLUMBIA REGIONAL AIRPORT, MO US",
+      "latitude": 38.81704,
+      "longitude": -92.21475,
+      "distance_to_city_km": 18.191,
+      "expected_days": 546,
+      "observed_days": 546,
+      "missing_days": 0,
+      "missing_date_sample": [],
+      "date_start": "2025-01-01",
+      "date_end": "2026-06-30",
+      "metric_coverage": {
+        "TMAX": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "TMIN": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "PRCP": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 504,
+            "T": 42
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "mm"
+        }
+      },
+      "retrieved_at": "2026-10-26T06:38:45.301598+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "status": "complete bounded extract",
+      "original_date_semantics": "DATE is the provider daily reporting-period label. Not converted to local midnight; observation times remain in *_ATTRIBUTES.",
+      "raw_response_path": "data\\external\\noaa\\USW00003945_2025-01-01_2026-06-30.response.json",
+      "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac"
+    },
+    {
+      "city": "Kansas City",
+      "station_id": "USW00003947",
+      "station_name": "KANSAS CITY INTERNATIONAL AIRPORT, MO US",
+      "latitude": 39.29747,
+      "longitude": -94.73087,
+      "distance_to_city_km": 25.608,
+      "expected_days": 546,
+      "observed_days": 546,
+      "missing_days": 0,
+      "missing_date_sample": [],
+      "date_start": "2025-01-01",
+      "date_end": "2026-06-30",
+      "metric_coverage": {
+        "TMAX": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "TMIN": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "PRCP": {
+          "numeric_days": 545,
+          "quality_pass_days": 545,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 1,
+          "measurement_flags": {
+            "(blank)": 473,
+            "T": 72
+          },
+          "quality_flags": {
+            "(blank)": 545
+          },
+          "units": "mm"
+        }
+      },
+      "retrieved_at": "2026-10-26T06:38:46.306466+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003947&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "status": "partial",
+      "original_date_semantics": "DATE is the provider daily reporting-period label. Not converted to local midnight; observation times remain in *_ATTRIBUTES.",
+      "raw_response_path": "data\\external\\noaa\\USW00003947_2025-01-01_2026-06-30.response.json",
+      "sha256": "9ecfb639b8d4b43acc7a90d76861ba137de0451c06e59b58affae42e8862c14f"
+    },
+    {
+      "city": "Jefferson City",
+      "station_id": "USW00003963",
+      "station_name": "JEFFERSON CITY MEMORIAL AIRPORT, MO US",
+      "latitude": 38.59454,
+      "longitude": -92.15672,
+      "distance_to_city_km": 2.462,
+      "expected_days": 546,
+      "observed_days": 546,
+      "missing_days": 0,
+      "missing_date_sample": [],
+      "date_start": "2025-01-01",
+      "date_end": "2026-06-30",
+      "metric_coverage": {
+        "TMAX": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "TMIN": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "PRCP": {
+          "numeric_days": 539,
+          "quality_pass_days": 539,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 7,
+          "measurement_flags": {
+            "(blank)": 494,
+            "T": 45
+          },
+          "quality_flags": {
+            "(blank)": 539
+          },
+          "units": "mm"
+        }
+      },
+      "retrieved_at": "2026-10-26T06:38:47.273257+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003963&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "status": "partial",
+      "original_date_semantics": "DATE is the provider daily reporting-period label. Not converted to local midnight; observation times remain in *_ATTRIBUTES.",
+      "raw_response_path": "data\\external\\noaa\\USW00003963_2025-01-01_2026-06-30.response.json",
+      "sha256": "cd0cec6d4c636d9e5ea3454bdcd75d2645bd3fe6b086939dd02102fe7843b378"
+    },
+    {
+      "city": "Springfield",
+      "station_id": "USW00013995",
+      "station_name": "SPRINGFIELD WEATHER SERVICE OFFICE AIRPORT, MO US",
+      "latitude": 37.23983,
+      "longitude": -93.38995,
+      "distance_to_city_km": 9.301,
+      "expected_days": 546,
+      "observed_days": 546,
+      "missing_days": 0,
+      "missing_date_sample": [],
+      "date_start": "2025-01-01",
+      "date_end": "2026-06-30",
+      "metric_coverage": {
+        "TMAX": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "TMIN": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "PRCP": {
+          "numeric_days": 545,
+          "quality_pass_days": 545,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 1,
+          "measurement_flags": {
+            "(blank)": 477,
+            "T": 68
+          },
+          "quality_flags": {
+            "(blank)": 545
+          },
+          "units": "mm"
+        }
+      },
+      "retrieved_at": "2026-10-26T06:38:48.334177+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013995&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "status": "partial",
+      "original_date_semantics": "DATE is the provider daily reporting-period label. Not converted to local midnight; observation times remain in *_ATTRIBUTES.",
+      "raw_response_path": "data\\external\\noaa\\USW00013995_2025-01-01_2026-06-30.response.json",
+      "sha256": "26ca1fac107c2ccb1c9651fe103e1412f94f6670de8103d59c1f54a055f556fe"
+    },
+    {
+      "city": "St. Louis",
+      "station_id": "USW00013994",
+      "station_name": "ST LOUIS LAMBERT INTERNATIONAL AIRPORT, MO US",
+      "latitude": 38.75246,
+      "longitude": -90.37342,
+      "distance_to_city_km": 20.561,
+      "expected_days": 546,
+      "observed_days": 546,
+      "missing_days": 0,
+      "missing_date_sample": [],
+      "date_start": "2025-01-01",
+      "date_end": "2026-06-30",
+      "metric_coverage": {
+        "TMAX": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "TMIN": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 546
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "degrees C"
+        },
+        "PRCP": {
+          "numeric_days": 546,
+          "quality_pass_days": 546,
+          "flagged_days": 0,
+          "quality_unknown_days": 0,
+          "missing_days": 0,
+          "measurement_flags": {
+            "(blank)": 457,
+            "T": 89
+          },
+          "quality_flags": {
+            "(blank)": 546
+          },
+          "units": "mm"
+        }
+      },
+      "retrieved_at": "2026-10-26T06:39:10.817202+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013994&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "status": "complete bounded extract",
+      "original_date_semantics": "DATE is the provider daily reporting-period label. Not converted to local midnight; observation times remain in *_ATTRIBUTES.",
+      "raw_response_path": "data\\external\\noaa\\USW00013994_2025-01-01_2026-06-30.response.json",
+      "sha256": "3477c320482a7d92d096b45b0d87e234503d8809fc03184e73def860c1a97cdc"
+    }
+  ],
+  "model_join_status": "not joined; publication timing and scientific linkage unvalidated",
+  "limitations": [
+    "Coverage applies only to the requested station/date window, not all Missouri establishments or historical training years.",
+    "Station-day coverage counts returned date rows; per-variable numeric and quality coverage are separate and may be incomplete.",
+    "Station airport observations are ambient weather, not shipment exposure or cargo telemetry.",
+    "Daily reporting periods may use local observation times; UTC/local midnight equivalence is not assumed.",
+    "Blank quality flags mean no failed documented quality check; they do not prove zero measurement error.",
+    "Actual observation publication/availability timestamps are not present; retrieval timestamps are preserved separately.",
+    "Metric units are requested explicitly through the documented NCEI Access Data Service; no tenths-to-units reinterpretation is applied."
+  ]
+}

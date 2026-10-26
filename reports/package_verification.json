@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": [
+    "prebuilt frontend loads",
+    "fsis_recalls dated fixture works without cache",
+    "modot dated fixture works without cache",
+    "openmeteo dated fixture works without cache",
+    "offline farm routing feasible",
+    "approval and driver assignment work in fresh isolated DB",
+    "route review uses packaged MoDOT fixture"
+  ],
+  "manifest_files_verified": 194,
+  "fresh_python_environment": false,
+  "isolated_extracted_directory": true,
+  "network_requested": false,
+  "operator_database_modified": false,
+  "archive_sha256": "1f8b886b066e0cb5806a620d67c2d730d0eee46890ee6a543029ce167961b83f"
+}

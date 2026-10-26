@@ -1,0 +1,302 @@
+{
+  "audit_timestamp": "2026-10-26T06:26:49.812037+00:00",
+  "checked": 42,
+  "unchanged": 42,
+  "passed": true,
+  "files": [
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\2025-food-environment-atlas-data.xlsx",
+      "filename": "2025-food-environment-atlas-data.xlsx",
+      "expected_sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0",
+      "actual_sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\2025-sram-fara-data.xlsx",
+      "filename": "2025-sram-fara-data.xlsx",
+      "expected_sha256": "fd0eff35de6664e27bb5ecbffbe1e8e5ea044979d4237b09b18010e8a4449858",
+      "actual_sha256": "fd0eff35de6664e27bb5ecbffbe1e8e5ea044979d4237b09b18010e8a4449858",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\AEGIS API & Dataset Registry.xlsx",
+      "filename": "AEGIS API & Dataset Registry.xlsx",
+      "expected_sha256": "93a700c02f0a47d7b7ce4659b75ab28fe00e1398ee1e9ee54aec6c1cbf1bde82",
+      "actual_sha256": "93a700c02f0a47d7b7ce4659b75ab28fe00e1398ee1e9ee54aec6c1cbf1bde82",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+      "filename": "BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+      "expected_sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6",
+      "actual_sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\BEAM_Dashboard_-_Report_Data_20261026.csv",
+      "filename": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+      "expected_sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274",
+      "actual_sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+      "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+      "expected_sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321",
+      "actual_sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+      "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+      "expected_sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060",
+      "actual_sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\BEAM_Dashboard_\u2013_Top_30_Most_Common_Serotypes_20261026.csv",
+      "filename": "BEAM_Dashboard_\u2013_Top_30_Most_Common_Serotypes_20261026.csv",
+      "expected_sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63",
+      "actual_sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\Dataset_Establishment_Demographic_Data.csv",
+      "filename": "Dataset_Establishment_Demographic_Data.csv",
+      "expected_sha256": "151e6efc89061ad9c13207b3198e193757967ecdfb711163e1bd0de73b0f782e",
+      "actual_sha256": "151e6efc89061ad9c13207b3198e193757967ecdfb711163e1bd0de73b0f782e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\Dataset_EstablishmentCategoriesAggregate_202609_0.xlsx",
+      "filename": "Dataset_EstablishmentCategoriesAggregate_202609_0.xlsx",
+      "expected_sha256": "1c74e0f45888e7f8dca31db351860d21972b8d875487c9fee4f77b465c52386e",
+      "actual_sha256": "1c74e0f45888e7f8dca31db351860d21972b8d875487c9fee4f77b465c52386e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\FoodAccessResearchAtlasData2019.xlsx",
+      "filename": "FoodAccessResearchAtlasData2019.xlsx",
+      "expected_sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8",
+      "actual_sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+      "filename": "fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+      "expected_sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe",
+      "actual_sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+      "filename": "fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+      "expected_sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c",
+      "actual_sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+      "filename": "fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+      "expected_sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d",
+      "actual_sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\FY2025-FSIS-Outbreak-Investigations-Annual-Report.pdf",
+      "filename": "FY2025-FSIS-Outbreak-Investigations-Annual-Report.pdf",
+      "expected_sha256": "7e6a43fe5d107c8dfffed9fe82b2d27f4628b61321d1d169f9c8dfd5b38f4b42",
+      "actual_sha256": "7e6a43fe5d107c8dfffed9fe82b2d27f4628b61321d1d169f9c8dfd5b38f4b42",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fy23-fsis-outbreak-investigations-annual-report.pdf",
+      "filename": "fy23-fsis-outbreak-investigations-annual-report.pdf",
+      "expected_sha256": "645ccb7958f381795aa108f168b2a3ecdae2e6e041bb13de6a60e0036f97843e",
+      "actual_sha256": "645ccb7958f381795aa108f168b2a3ecdae2e6e041bb13de6a60e0036f97843e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fy24-fsis-outbreak-investigations-annual-report.pdf",
+      "filename": "fy24-fsis-outbreak-investigations-annual-report.pdf",
+      "expected_sha256": "b66eb8c88b5e94339f4c27dae80ec2b445639df710e7bdcc39adf78a1f3c3ec7",
+      "actual_sha256": "b66eb8c88b5e94339f4c27dae80ec2b445639df710e7bdcc39adf78a1f3c3ec7",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\missouri-cis.xlsx",
+      "filename": "missouri-cis.xlsx",
+      "expected_sha256": "9e86274c5d123fd4cf39226042f21c30edbcf6b5d034c14aafaec8a0214db4ea",
+      "actual_sha256": "9e86274c5d123fd4cf39226042f21c30edbcf6b5d034c14aafaec8a0214db4ea",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\MPI_Directory_by_Establishment_Name.csv",
+      "filename": "MPI_Directory_by_Establishment_Name.csv",
+      "expected_sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e",
+      "actual_sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\NORS Data Documentation_2023.09.08.pdf",
+      "filename": "NORS Data Documentation_2023.09.08.pdf",
+      "expected_sha256": "05db69a7892f0452b460052835aaa4e9b0ea2f2aeec8419a08e2331a916abff1",
+      "actual_sha256": "05db69a7892f0452b460052835aaa4e9b0ea2f2aeec8419a08e2331a916abff1",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\NORS-Flat-DataDictionary-508_JAN2025_CLEAN.xlsx",
+      "filename": "NORS-Flat-DataDictionary-508_JAN2025_CLEAN.xlsx",
+      "expected_sha256": "7e2b0842113e25b18b287af90a654104eaf340076d4072ae4a0b889c07fc96d3",
+      "actual_sha256": "7e2b0842113e25b18b287af90a654104eaf340076d4072ae4a0b889c07fc96d3",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\NORS.xlsx",
+      "filename": "NORS.xlsx",
+      "expected_sha256": "3fd6fe5efaa2317a6e2f876ae211ee614a14294788becbf422f38953771638c8",
+      "actual_sha256": "3fd6fe5efaa2317a6e2f876ae211ee614a14294788becbf422f38953771638c8",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\NORS_20261026.csv",
+      "filename": "NORS_20261026.csv",
+      "expected_sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987",
+      "actual_sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\primary_table_data_0.csv",
+      "filename": "primary_table_data_0.csv",
+      "expected_sha256": "e26332822923d627ca33eedcec84fc9cc3765f15cd9d692ab905a30b96d9681b",
+      "actual_sha256": "e26332822923d627ca33eedcec84fc9cc3765f15cd9d692ab905a30b96d9681b",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\siluriformes-i-houses.pdf",
+      "filename": "siluriformes-i-houses.pdf",
+      "expected_sha256": "78b6d65c9692ac8c80de4fc4851db5c588802945f91e0c96873116429479927c",
+      "actual_sha256": "78b6d65c9692ac8c80de4fc4851db5c588802945f91e0c96873116429479927c",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+      "expected_sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07",
+      "actual_sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+      "expected_sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e",
+      "actual_sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+      "expected_sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8",
+      "actual_sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+      "expected_sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad",
+      "actual_sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+      "expected_sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038",
+      "actual_sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+      "expected_sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e",
+      "actual_sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+      "expected_sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3",
+      "actual_sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+      "expected_sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38",
+      "actual_sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+      "expected_sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf",
+      "actual_sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "expected_sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+      "actual_sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+      "expected_sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+      "actual_sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+      "expected_sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+      "actual_sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+      "expected_sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab",
+      "actual_sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+      "expected_sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f",
+      "actual_sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+      "expected_sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95",
+      "actual_sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+      "expected_sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e",
+      "actual_sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+      "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+      "expected_sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e",
+      "actual_sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Keep source diffs consistent between Windows and other development systems.
+* text=auto eol=lf
+*.png binary
+*.parquet binary
+*.xlsx binary
+*.pdf binary
+
+# Provider responses and audit evidence retain their exact stored bytes.
+data/external/** -text
+data/fixtures/** -text
+data/manifests/** -text

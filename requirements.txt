@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+openpyxl
+scikit-learn
+ortools
+httpx
+pytest
+pypdf
+pyyaml
+ijson
+pyarrow
+matplotlib

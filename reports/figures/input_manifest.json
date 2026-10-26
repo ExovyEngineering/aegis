@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-10-26T16:33:53.044198+00:00",
+  "inputs": [
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\manifests\\inventory.json",
+      "sha256": "636794dcc9c01942a02b28044690bc366080c40fff65cbcf3ab90dd92d5b0408"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\api_status.json",
+      "sha256": "e00516f6a5a1b2637b8924bfdc4295cc81b3e614a5f63031c6ea0d92f2966a17"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_evaluation.json",
+      "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\demo_results.json",
+      "sha256": "b8ea1c8d7e482c1c9df8263707251ef88152a836aec43f715cd32cda7bf6a6a9"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_timing.json",
+      "sha256": "32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\noaa_coverage.json",
+      "sha256": "b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\route_lab_osrm.json",
+      "sha256": "38f8521fbf04151f06ff6c81dfe169dc2c802d718c57f357ddda4f7eac9fca78"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\validation.json",
+      "sha256": "34ce7fb5cacc3492b262a69085b28a36989b71d8d4ecf56d66b570c32ac0e210"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\evidence_ingestion.json",
+      "sha256": "c0c049774d39dd662faba32f665f3c75c8f0b148433c5a0079f64a2ee8e9ed8e"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\operations_demo.json",
+      "sha256": "b210596add9c72a9cb0e4d0e4209e25668e95d5b7ba1e7449f749801d4c273ab"
+    }
+  ],
+  "draft": true
+}

@@ -1,0 +1,343 @@
+{
+  "status": "retrospective feasibility only \u2014 not a validated prospective forecast",
+  "target": "Salmonella positivity in a future selected FSIS raw-poultry primary sample; national",
+  "excluded_rows": 54,
+  "training_rows": 48361,
+  "validation_rows": 23472,
+  "training_end": "2025-05-30 00:00:00",
+  "validation_start": "2025-08-29 00:00:00",
+  "validation_end": "2026-06-30 00:00:00",
+  "embargo_days": 90,
+  "feature_availability": "Assumed collection date + 90 days. Actual per-result publication timestamps unavailable; historical snapshots were downloaded later. No operational forecast claim.",
+  "features": [
+    "lag90_prevalence",
+    "month_sin",
+    "month_cos"
+  ],
+  "baseline": {
+    "n": 23472,
+    "positives": 2303,
+    "prevalence": 0.09811690524880709,
+    "brier": 0.08855575158082965,
+    "brier_week_block_bootstrap_95_ci": [
+      0.08543538346185915,
+      0.09224386983599726
+    ],
+    "pr_auc_average_precision": 0.09811690524880709,
+    "roc_auc": 0.5,
+    "precision_at_0_5": 0.0,
+    "recall_at_0_5": 0.0,
+    "calibration": {
+      "observed": [
+        0.09811690524880709
+      ],
+      "predicted": [
+        0.09000682339802252
+      ]
+    }
+  },
+  "logistic_regression": {
+    "n": 23472,
+    "positives": 2303,
+    "prevalence": 0.09811690524880709,
+    "brier": 0.08859439527274823,
+    "brier_week_block_bootstrap_95_ci": [
+      0.08547636260666365,
+      0.09229202261017187
+    ],
+    "pr_auc_average_precision": 0.09814105322464378,
+    "roc_auc": 0.498029361009236,
+    "precision_at_0_5": 0.0,
+    "recall_at_0_5": 0.0,
+    "calibration": {
+      "observed": [
+        0.10546500479386385,
+        0.0961337513061651,
+        0.09505300353356891,
+        0.08131192347113085,
+        0.11661016949152542,
+        0.09005059021922428,
+        0.09833024118738404,
+        0.10171473109898675
+      ],
+      "predicted": [
+        0.08136847605794427,
+        0.08311155276839301,
+        0.08668305245647273,
+        0.08802516327347953,
+        0.09127829071785647,
+        0.09256285317901494,
+        0.09396869293554384,
+        0.09490244107630252
+      ]
+    }
+  },
+  "coefficients": {
+    "lag90_prevalence": 0.2519396813036298,
+    "month_sin": 0.0858640554140584,
+    "month_cos": 0.0010215481794292147
+  },
+  "operational_selection": "smoothed historical prevalence; prospective skill not established",
+  "historical_prevalence": 0.09000682339805223,
+  "limitations": [
+    "Selected surveillance samples are not representative of all poultry",
+    "No probability of consumer illness",
+    "Single chronological holdout; no external validation",
+    "No CDC or weather linkage",
+    "Intervals quantify within-holdout weekly variation, not publication-lag uncertainty"
+  ],
+  "error_analysis": [
+    {
+      "state": "AL",
+      "n": 1807,
+      "prevalence": 0.04703929164360819,
+      "brier": 0.04661030254902573
+    },
+    {
+      "state": "AR",
+      "n": 1969,
+      "prevalence": 0.05942102590147283,
+      "brier": 0.05682634392319528
+    },
+    {
+      "state": "AZ",
+      "n": 89,
+      "prevalence": 0.07865168539325842,
+      "brier": 0.07223530684693168
+    },
+    {
+      "state": "CA",
+      "n": 1965,
+      "prevalence": 0.12417302798982188,
+      "brier": 0.1098787836070429
+    },
+    {
+      "state": "CO",
+      "n": 154,
+      "prevalence": 0.13636363636363635,
+      "brier": 0.11969830021744532
+    },
+    {
+      "state": "CT",
+      "n": 54,
+      "prevalence": 0.12962962962962962,
+      "brier": 0.11507649782818649
+    },
+    {
+      "state": "DE",
+      "n": 538,
+      "prevalence": 0.0724907063197026,
+      "brier": 0.06749815097918432
+    },
+    {
+      "state": "FL",
+      "n": 417,
+      "prevalence": 0.15827338129496402,
+      "brier": 0.1382096485838445
+    },
+    {
+      "state": "GA",
+      "n": 2410,
+      "prevalence": 0.08713692946058091,
+      "brier": 0.07958033395052685
+    },
+    {
+      "state": "IA",
+      "n": 102,
+      "prevalence": 0.06862745098039216,
+      "brier": 0.06413967022785334
+    },
+    {
+      "state": "IL",
+      "n": 498,
+      "prevalence": 0.15461847389558234,
+      "brier": 0.13502557562472675
+    },
+    {
+      "state": "IN",
+      "n": 252,
+      "prevalence": 0.1626984126984127,
+      "brier": 0.14174326709461774
+    },
+    {
+      "state": "KS",
+      "n": 93,
+      "prevalence": 0.2903225806451613,
+      "brier": 0.24692108193190376
+    },
+    {
+      "state": "KY",
+      "n": 390,
+      "prevalence": 0.0641025641025641,
+      "brier": 0.060827701462926334
+    },
+    {
+      "state": "LA",
+      "n": 356,
+      "prevalence": 0.06741573033707865,
+      "brier": 0.06320337588545259
+    },
+    {
+      "state": "MA",
+      "n": 251,
+      "prevalence": 0.15139442231075698,
+      "brier": 0.1325282678634224
+    },
+    {
+      "state": "MD",
+      "n": 430,
+      "prevalence": 0.16511627906976745,
+      "brier": 0.14378355133137566
+    },
+    {
+      "state": "ME",
+      "n": 73,
+      "prevalence": 0.3013698630136986,
+      "brier": 0.2544083487936515
+    },
+    {
+      "state": "MI",
+      "n": 243,
+      "prevalence": 0.20987654320987653,
+      "brier": 0.18043433321465424
+    },
+    {
+      "state": "MN",
+      "n": 389,
+      "prevalence": 0.05912596401028278,
+      "brier": 0.05662881910014709
+    },
+    {
+      "state": "MO",
+      "n": 437,
+      "prevalence": 0.10526315789473684,
+      "brier": 0.09430628296763725
+    },
+    {
+      "state": "MS",
+      "n": 1215,
+      "prevalence": 0.04691358024691358,
+      "brier": 0.046509198567420355
+    },
+    {
+      "state": "NC",
+      "n": 1603,
+      "prevalence": 0.07298814722395508,
+      "brier": 0.06785266727326285
+    },
+    {
+      "state": "NE",
+      "n": 217,
+      "prevalence": 0.1336405529953917,
+      "brier": 0.11747014907885431
+    },
+    {
+      "state": "NJ",
+      "n": 440,
+      "prevalence": 0.14545454545454545,
+      "brier": 0.12736962937834548
+    },
+    {
+      "state": "NV",
+      "n": 36,
+      "prevalence": 0.1388888888888889,
+      "brier": 0.1218191390917039
+    },
+    {
+      "state": "NY",
+      "n": 850,
+      "prevalence": 0.12705882352941175,
+      "brier": 0.11248930468362246
+    },
+    {
+      "state": "OH",
+      "n": 439,
+      "prevalence": 0.1275626423690205,
+      "brier": 0.11298020338136974
+    },
+    {
+      "state": "OK",
+      "n": 263,
+      "prevalence": 0.053231939163498096,
+      "brier": 0.05168511632744898
+    },
+    {
+      "state": "PA",
+      "n": 710,
+      "prevalence": 0.08169014084507042,
+      "brier": 0.07524031607834823
+    },
+    {
+      "state": "PR",
+      "n": 107,
+      "prevalence": 0.12149532710280374,
+      "brier": 0.10761468457658617
+    },
+    {
+      "state": "RI",
+      "n": 76,
+      "prevalence": 0.18421052631578946,
+      "brier": 0.15882332992979117
+    },
+    {
+      "state": "SC",
+      "n": 648,
+      "prevalence": 0.12191358024691358,
+      "brier": 0.10825266457660672
+    },
+    {
+      "state": "SD",
+      "n": 61,
+      "prevalence": 0.11475409836065574,
+      "brier": 0.10178406091242358
+    },
+    {
+      "state": "TN",
+      "n": 528,
+      "prevalence": 0.07196969696969698,
+      "brier": 0.06714426659797576
+    },
+    {
+      "state": "TX",
+      "n": 1882,
+      "prevalence": 0.0951115834218916,
+      "brier": 0.08615812515575179
+    },
+    {
+      "state": "UT",
+      "n": 94,
+      "prevalence": 0.19148936170212766,
+      "brier": 0.16574563697151187
+    },
+    {
+      "state": "VA",
+      "n": 702,
+      "prevalence": 0.1282051282051282,
+      "brier": 0.1133573450263805
+    },
+    {
+      "state": "VT",
+      "n": 87,
+      "prevalence": 0.14942528735632185,
+      "brier": 0.1312993323690114
+    },
+    {
+      "state": "WA",
+      "n": 314,
+      "prevalence": 0.17834394904458598,
+      "brier": 0.154139991451594
+    },
+    {
+      "state": "WI",
+      "n": 186,
+      "prevalence": 0.1774193548387097,
+      "brier": 0.15468609956230958
+    },
+    {
+      "state": "WV",
+      "n": 89,
+      "prevalence": 0.07865168539325842,
+      "brier": 0.072225515059995
+    }
+  ]
+}

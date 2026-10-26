@@ -1,0 +1,5469 @@
+[
+  {
+    "preset": {
+      "id": "farm",
+      "name": "Single-farm dispatch",
+      "description": "One simulated farm dispatching refrigerated trucks to eight delivery stops.",
+      "origins": [
+        {
+          "id": "FARM1",
+          "name": "Columbia-area farm (simulated)",
+          "kind": "farm",
+          "coordinates": [
+            -92.4,
+            39.0
+          ],
+          "inventory_kg": 3000
+        }
+      ],
+      "stops": [
+        {
+          "id": "FD01",
+          "name": "Farm delivery 1 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.57007053411034,
+            38.901943863647034
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL01",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD02",
+          "name": "Farm delivery 2 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.56148282586234,
+            38.99497809578186
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL02",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD03",
+          "name": "Farm delivery 3 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.3815404906912,
+            38.82312427416128
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL03",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD04",
+          "name": "Farm delivery 4 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.4437580274378,
+            38.94767976700436
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL04",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD05",
+          "name": "Farm delivery 5 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.46971107241095,
+            39.05289806380294
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL05",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD06",
+          "name": "Farm delivery 6 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.50073975116949,
+            38.999320615208674
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL06",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD07",
+          "name": "Farm delivery 7 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.46968919825308,
+            39.138731992579906
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL07",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD08",
+          "name": "Farm delivery 8 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.20168296721674,
+            38.839044408077264
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL08",
+          "held": true,
+          "recalled": false,
+          "eligible": true
+        }
+      ],
+      "nodes": [
+        {
+          "id": "FARM1",
+          "name": "Columbia-area farm (simulated)",
+          "kind": "farm",
+          "coordinates": [
+            -92.4,
+            39.0
+          ],
+          "inventory_kg": 3000
+        },
+        {
+          "id": "FD01",
+          "name": "Farm delivery 1 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.57007053411034,
+            38.901943863647034
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL01",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD02",
+          "name": "Farm delivery 2 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.56148282586234,
+            38.99497809578186
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL02",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD03",
+          "name": "Farm delivery 3 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.3815404906912,
+            38.82312427416128
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL03",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD04",
+          "name": "Farm delivery 4 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.4437580274378,
+            38.94767976700436
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL04",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD05",
+          "name": "Farm delivery 5 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.46971107241095,
+            39.05289806380294
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL05",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD06",
+          "name": "Farm delivery 6 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.50073975116949,
+            38.999320615208674
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL06",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD07",
+          "name": "Farm delivery 7 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.46968919825308,
+            39.138731992579906
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL07",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "FD08",
+          "name": "Farm delivery 8 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.20168296721674,
+            38.839044408077264
+          ],
+          "demand_kg": 300,
+          "deadline_hours": 6,
+          "lot_id": "FL08",
+          "held": true,
+          "recalled": false,
+          "eligible": true
+        }
+      ],
+      "trucks": [
+        {
+          "id": "FT01",
+          "origin_id": "FARM1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "FT02",
+          "origin_id": "FARM1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "FT03",
+          "origin_id": "FARM1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        }
+      ],
+      "seed": 20261026,
+      "simulation": true
+    },
+    "routes": [
+      {
+        "truck_id": "FT02",
+        "origin_id": "FARM1",
+        "stop_ids": [
+          "FD06",
+          "FD02",
+          "FD01",
+          "FD03",
+          "FD04"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "FD06",
+            "arrival_minutes": 10.05,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "FD02",
+            "arrival_minutes": 26.13,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "FD01",
+            "arrival_minutes": 48.12,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "FD03",
+            "arrival_minutes": 79.5,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "FD04",
+            "arrival_minutes": 106.65,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 80843,
+        "duration_seconds": 7480,
+        "driving_seconds": 4480,
+        "load_kg": 1500,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.4,
+              39.0
+            ],
+            [
+              -92.50073975116949,
+              38.999320615208674
+            ],
+            [
+              -92.56148282586234,
+              38.99497809578186
+            ],
+            [
+              -92.57007053411034,
+              38.901943863647034
+            ],
+            [
+              -92.3815404906912,
+              38.82312427416128
+            ],
+            [
+              -92.4437580274378,
+              38.94767976700436
+            ],
+            [
+              -92.4,
+              39.0
+            ]
+          ]
+        },
+        "geometry_distance_m": 80843,
+        "geometry_duration_seconds": 4480,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 60,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 70,
+              "temperature_c": 2.015,
+              "lower_c": 1.509,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 80,
+              "temperature_c": 2.009,
+              "lower_c": 1.505,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 90,
+              "temperature_c": 2.006,
+              "lower_c": 1.502,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 100,
+              "temperature_c": 2.003,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 110,
+              "temperature_c": 2.002,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 120,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 124.67,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 80843,
+              "duration_seconds": 4480,
+              "nearby_events": [
+                {
+                  "layer_id": 26,
+                  "layer_name": "Work Zone High Point",
+                  "proximity_m": 132.1,
+                  "properties": {
+                    "OBJECTID": 269555389,
+                    "TI_OSOW_ID": null,
+                    "TI_WZ_ID": 549971,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 122.128998,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 134.936005,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "PROJECT_INSPECTOR": "Timothy Ackert",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 31414,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".052 mile(s) after RR COLT S",
+                    "END_REF_PT": ".205 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "EXTERNAL_COMMENT": " ",
+                    "OPPOSING_TI_WZ_ID": 549972,
+                    "ESRI_OID": 61
+                  }
+                },
+                {
+                  "layer_id": 26,
+                  "layer_name": "Work Zone High Point",
+                  "proximity_m": 116.7,
+                  "properties": {
+                    "OBJECTID": 269555393,
+                    "TI_OSOW_ID": null,
+                    "TI_WZ_ID": 549972,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 115.069,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 127.862999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "PROJECT_INSPECTOR": "Timothy Ackert",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 18187,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".203 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".049 mile(s) before RR COLT S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "EXTERNAL_COMMENT": " ",
+                    "OPPOSING_TI_WZ_ID": 549971,
+                    "ESRI_OID": 62
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555389,
+                    "TI_OSOW_ID": null,
+                    "ID": 549971,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 122.128998,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 134.936005,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 31414,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".052 mile(s) after RR COLT S",
+                    "END_REF_PT": ".205 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549972,
+                    "ESRI_OID": 61
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555393,
+                    "TI_OSOW_ID": null,
+                    "ID": 549972,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 115.069,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 127.862999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 18187,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".203 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".049 mile(s) before RR COLT S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549971,
+                    "ESRI_OID": 62
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555305,
+                    "TI_OSOW_ID": 346143,
+                    "ID": 546780,
+                    "LAST_CHANGED_USER": "TAYLOC6",
+                    "COUNTY_NAME": "COOPER",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 136.145996,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 149.345001,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-MAR-2026",
+                    "END_DATE": "31-DEC-2027",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "11:00 PM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "WOODS6 (STEPHEN WOOD)",
+                    "MODOT_PHONE": "5738084294",
+                    "COMPANY_CONTACT": "Drew Leary",
+                    "COMPANY_WORKING": "Capital Paving",
+                    "COMPANY_PHONE": "5736169355",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7DCA",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "BOTH",
+                    "AADT": 17957,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".787 mile(s) before RR RIVER SUB E",
+                    "END_REF_PT": ".233 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "JST0017B",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "23-FEB-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "03/04/2026",
+                    "OPPOSING_TI_WZ_ID": 546781,
+                    "ESRI_OID": 63
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555309,
+                    "TI_OSOW_ID": 346141,
+                    "ID": 546781,
+                    "LAST_CHANGED_USER": "TAYLOC6",
+                    "COUNTY_NAME": "COOPER",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 100.652,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 113.859001,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-MAR-2026",
+                    "END_DATE": "31-DEC-2027",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "11:00 PM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "WOODS6 (STEPHEN WOOD)",
+                    "MODOT_PHONE": "5738084294",
+                    "COMPANY_CONTACT": "Drew Leary",
+                    "COMPANY_WORKING": "Capital Paving",
+                    "COMPANY_PHONE": "5736169355",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7DCA",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "BOTH",
+                    "AADT": 15626,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".25 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".786 mile(s) after RR RIVER SUB E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "JST0017B",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "23-FEB-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "03/04/2026",
+                    "OPPOSING_TI_WZ_ID": 546780,
+                    "ESRI_OID": 67
+                  }
+                }
+              ],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      },
+      {
+        "truck_id": "FT03",
+        "origin_id": "FARM1",
+        "stop_ids": [
+          "FD07",
+          "FD05"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "FD07",
+            "arrival_minutes": 19.12,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "FD05",
+            "arrival_minutes": 40.13,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 43149,
+        "duration_seconds": 3591,
+        "driving_seconds": 2391,
+        "load_kg": 600,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.4,
+              39.0
+            ],
+            [
+              -92.46968919825308,
+              39.138731992579906
+            ],
+            [
+              -92.46971107241095,
+              39.05289806380294
+            ],
+            [
+              -92.4,
+              39.0
+            ]
+          ]
+        },
+        "geometry_distance_m": 43149,
+        "geometry_duration_seconds": 2391,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 59.85,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 43149,
+              "duration_seconds": 2391,
+              "nearby_events": [],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      }
+    ],
+    "solver_status": "FEASIBLE",
+    "feasible": true,
+    "matrix_fallback": true,
+    "matrix_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+    "summary": {
+      "total_distance_m": 123992,
+      "total_duration_seconds": 11071,
+      "total_cost": 273.59,
+      "unserved_stops": [
+        "FD08"
+      ],
+      "unmet_demand_kg": 300,
+      "constraint_violations": 0,
+      "review_routes": 2
+    },
+    "simulation": true,
+    "mutates_assignments": false,
+    "provenance": "Deterministic simulated operational preset; OR-Tools capacitated multi-depot routes with service times, return to origin, inventory and deadline constraints",
+    "assumptions": {
+      "max_route_hours": 8,
+      "delay_minutes": 0,
+      "ambient_temperature_c": 30,
+      "service_minutes": 10
+    },
+    "limitations": [
+      "Route laboratory does not dispatch or modify approved assignments",
+      "Heuristic feasible route plan; no claim of global optimality unless solver status is OPTIMAL",
+      "Cargo-temperature projections are uncalibrated scenario calculations, not predicted failure probabilities",
+      "MoDOT geometry proximity is an independent review layer, not closure-aware routing",
+      "OSRM ordinary driving profile does not validate commercial-truck restrictions",
+      "Forecast ambient inputs are user-specified scenario assumptions here, not measured cargo temperature",
+      "All inventory is interchangeable within each simulated origin; no real supply contracts are implied"
+    ]
+  },
+  {
+    "preset": {
+      "id": "regional",
+      "name": "Multi-location fleet",
+      "description": "Two simulated distribution locations coordinating a regional refrigerated fleet.",
+      "origins": [
+        {
+          "id": "DC1",
+          "name": "Columbia DC (simulated)",
+          "kind": "dc",
+          "coordinates": [
+            -92.3341,
+            38.9517
+          ],
+          "capacity_kg": 12000,
+          "inventory_kg": 4000
+        },
+        {
+          "id": "DC2",
+          "name": "Springfield DC (simulated)",
+          "kind": "dc",
+          "coordinates": [
+            -93.2923,
+            37.209
+          ],
+          "capacity_kg": 10000,
+          "inventory_kg": 4000
+        }
+      ],
+      "stops": [
+        {
+          "id": "D01",
+          "name": "Columbia destination 1 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.42686574587837,
+            38.90267193182352
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL01",
+          "held": true,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D02",
+          "name": "Kansas City destination 2 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -94.66668154137945,
+            39.09718904789093
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL02",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D03",
+          "name": "Jefferson City destination 3 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.16343117674066,
+            38.488262137080646
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL03",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D04",
+          "name": "Springfield destination 4 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -93.31616801496607,
+            37.18283988350218
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL04",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D05",
+          "name": "St. Louis destination 5 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -90.23742422131505,
+            38.653449031901474
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL05",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D06",
+          "name": "Columbia destination 6 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.38904895518336,
+            38.95136030760434
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL06",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D07",
+          "name": "Kansas City destination 7 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -94.61661228995621,
+            39.16906599628995
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL07",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D08",
+          "name": "Jefferson City destination 8 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.0653270730273,
+            38.49622220403864
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL08",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D09",
+          "name": "Springfield destination 9 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -93.35980347726326,
+            37.208341126062955
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL09",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D10",
+          "name": "St. Louis destination 10 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -90.17073364580835,
+            38.70875453878441
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL10",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D11",
+          "name": "Columbia destination 11 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.42311998024472,
+            38.93146933444767
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL11",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D12",
+          "name": "Kansas City destination 12 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -94.48193223265045,
+            39.065121983593606
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL12",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D13",
+          "name": "Jefferson City destination 13 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.1123725861464,
+            38.557236985380534
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL13",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D14",
+          "name": "Springfield destination 14 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -93.33488174845307,
+            37.13160149852107
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL14",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D15",
+          "name": "St. Louis destination 15 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -90.12823591139964,
+            38.67234711187459
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL15",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        }
+      ],
+      "nodes": [
+        {
+          "id": "DC1",
+          "name": "Columbia DC (simulated)",
+          "kind": "dc",
+          "coordinates": [
+            -92.3341,
+            38.9517
+          ],
+          "capacity_kg": 12000,
+          "inventory_kg": 4000
+        },
+        {
+          "id": "DC2",
+          "name": "Springfield DC (simulated)",
+          "kind": "dc",
+          "coordinates": [
+            -93.2923,
+            37.209
+          ],
+          "capacity_kg": 10000,
+          "inventory_kg": 4000
+        },
+        {
+          "id": "D01",
+          "name": "Columbia destination 1 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.42686574587837,
+            38.90267193182352
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL01",
+          "held": true,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D02",
+          "name": "Kansas City destination 2 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -94.66668154137945,
+            39.09718904789093
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL02",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D03",
+          "name": "Jefferson City destination 3 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.16343117674066,
+            38.488262137080646
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL03",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D04",
+          "name": "Springfield destination 4 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -93.31616801496607,
+            37.18283988350218
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL04",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D05",
+          "name": "St. Louis destination 5 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -90.23742422131505,
+            38.653449031901474
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL05",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D06",
+          "name": "Columbia destination 6 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.38904895518336,
+            38.95136030760434
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL06",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D07",
+          "name": "Kansas City destination 7 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -94.61661228995621,
+            39.16906599628995
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL07",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D08",
+          "name": "Jefferson City destination 8 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.0653270730273,
+            38.49622220403864
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL08",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D09",
+          "name": "Springfield destination 9 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -93.35980347726326,
+            37.208341126062955
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL09",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D10",
+          "name": "St. Louis destination 10 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -90.17073364580835,
+            38.70875453878441
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL10",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D11",
+          "name": "Columbia destination 11 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.42311998024472,
+            38.93146933444767
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL11",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D12",
+          "name": "Kansas City destination 12 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -94.48193223265045,
+            39.065121983593606
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL12",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D13",
+          "name": "Jefferson City destination 13 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -92.1123725861464,
+            38.557236985380534
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL13",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D14",
+          "name": "Springfield destination 14 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -93.33488174845307,
+            37.13160149852107
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL14",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        },
+        {
+          "id": "D15",
+          "name": "St. Louis destination 15 (simulated)",
+          "kind": "destination",
+          "coordinates": [
+            -90.12823591139964,
+            38.67234711187459
+          ],
+          "demand_kg": 500,
+          "deadline_hours": 6,
+          "lot_id": "RL15",
+          "held": false,
+          "recalled": false,
+          "eligible": true
+        }
+      ],
+      "trucks": [
+        {
+          "id": "RT01",
+          "origin_id": "DC1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT02",
+          "origin_id": "DC2",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT03",
+          "origin_id": "DC1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT04",
+          "origin_id": "DC2",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT05",
+          "origin_id": "DC1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT06",
+          "origin_id": "DC2",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT07",
+          "origin_id": "DC1",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        },
+        {
+          "id": "RT08",
+          "origin_id": "DC2",
+          "capacity_kg": 1500,
+          "refrigerated": true,
+          "eligible": true
+        }
+      ],
+      "seed": 20261026,
+      "simulation": true
+    },
+    "routes": [
+      {
+        "truck_id": "RT01",
+        "origin_id": "DC1",
+        "stop_ids": [
+          "D02"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "D02",
+            "arrival_minutes": 233.25,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 505356,
+        "duration_seconds": 28590,
+        "driving_seconds": 27990,
+        "load_kg": 500,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -94.66668154137945,
+              39.09718904789093
+            ],
+            [
+              -92.3341,
+              38.9517
+            ]
+          ]
+        },
+        "geometry_distance_m": 505356,
+        "geometry_duration_seconds": 27990,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 60,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 70,
+              "temperature_c": 2.015,
+              "lower_c": 1.509,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 80,
+              "temperature_c": 2.009,
+              "lower_c": 1.505,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 90,
+              "temperature_c": 2.006,
+              "lower_c": 1.502,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 100,
+              "temperature_c": 2.003,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 110,
+              "temperature_c": 2.002,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 120,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 130,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 140,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 150,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 160,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 170,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 180,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 190,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 200,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 210,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 220,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 230,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 240,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 250,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 260,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 270,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 280,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 290,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 300,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 310,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 320,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 330,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 340,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 350,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 360,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 370,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 380,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 390,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 400,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 410,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 420,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 430,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 440,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 450,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 460,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 470,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 476.5,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 505356,
+              "duration_seconds": 27990,
+              "nearby_events": [
+                {
+                  "layer_id": 27,
+                  "layer_name": "Work Zone Medium Point",
+                  "proximity_m": 86.1,
+                  "properties": {
+                    "OBJECTID": 269959229,
+                    "TI_OSOW_ID": null,
+                    "TI_WZ_ID": 559607,
+                    "LAST_CHANGED_USER": "LAJINB1",
+                    "COUNTY_NAME": "LAFAYETTE",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 4620,
+                    "DESIGNATION": "RT",
+                    "TRAVELWAY_NAME": "T",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 0.344999999,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 7.08099985,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-OCT-2026",
+                    "END_DATE": "01-DEC-2026",
+                    "START_TIME": "07:00 AM",
+                    "END_TIME": "03:00 PM",
+                    "WORK_TYPE": "PERMIT OR UTILITY WORK",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "PROJECT_INSPECTOR": "Brian LaJiness",
+                    "MODOT_USERID": "LAJINB1 (BRIAN LAJINESS)",
+                    "MODOT_PHONE": "8166072190",
+                    "COMPANY_CONTACT": "David Edwards",
+                    "COMPANY_WORKING": "North Missouri Construction",
+                    "COMPANY_PHONE": "6606465933",
+                    "OP_TYPE": "PERMIT",
+                    "ORG_CODE": "7CTR",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 496,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".005 mile(s) before CST LIPPER ST S",
+                    "END_REF_PT": ".012 mile(s) before OR 70 E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": "KC-26-124436",
+                    "SPEED_LIMIT": "35",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "14-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/14/2026",
+                    "EXTERNAL_COMMENT": " ",
+                    "OPPOSING_TI_WZ_ID": 559608,
+                    "ESRI_OID": 91
+                  }
+                },
+                {
+                  "layer_id": 29,
+                  "layer_name": "Work Zone Closed Line",
+                  "proximity_m": 128.8,
+                  "properties": {
+                    "OBJECTID": 264913318,
+                    "TI_OSOW_ID": null,
+                    "ID": 545983,
+                    "LAST_CHANGED_USER": "SCHWAJ2",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 75705,
+                    "DESIGNATION": "CST",
+                    "TRAVELWAY_NAME": "INDIANA AVE",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 0.458999991,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 0.713999987,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-FEB-2026",
+                    "END_DATE": "31-DEC-2027",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "BRIDGE RECONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "SCHWAJ2 (JAMES SCHWALLER)",
+                    "MODOT_PHONE": "8162078965",
+                    "COMPANY_CONTACT": "BEN cummings",
+                    "COMPANY_WORKING": "CLARKSON RADMACHER JV",
+                    "COMPANY_PHONE": "8165356111",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CDB",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "BOTH",
+                    "AADT": 1352,
+                    "NHS": "NOS",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".006 mile(s) after CST TRUMAN RD E",
+                    "END_REF_PT": ".007 mile(s) before CST E 18TH ST E",
+                    "LEVEL_OF_IMPACT": "ALL LANES CLOSED",
+                    "JOB_NUMBER": "4I1486D",
+                    "SPEED_LIMIT": "NONE",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "30-JAN-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "01/30/2026",
+                    "OPPOSING_TI_WZ_ID": 545982,
+                    "ESRI_OID": 66
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 146.4,
+                  "properties": {
+                    "OBJECTID": 269953808,
+                    "TI_OSOW_ID": null,
+                    "ID": 559568,
+                    "LAST_CHANGED_USER": "FARMEK1",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 5898,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "78",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 5.65299988,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 11.8360004,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "13-OCT-2026",
+                    "END_DATE": "30-OCT-2026",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "07:00 PM",
+                    "WORK_TYPE": "PAVEMENT MARKING",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "FARMEK1 (KYLER FARMER)",
+                    "MODOT_PHONE": "7854778866",
+                    "COMPANY_CONTACT": "RUSS LOVE",
+                    "COMPANY_WORKING": "IDEKER",
+                    "COMPANY_PHONE": "8166329436",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CCL",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 3028,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "EXPRESSWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".049 mile(s) after CST JAMES DOWNEY RD S",
+                    "END_REF_PT": "CST E 23RD ST E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "KU0042",
+                    "SPEED_LIMIT": "45",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "13-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/22/2026",
+                    "OPPOSING_TI_WZ_ID": 559567,
+                    "ESRI_OID": 50
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555389,
+                    "TI_OSOW_ID": null,
+                    "ID": 549971,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 122.128998,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 134.936005,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 31414,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".052 mile(s) after RR COLT S",
+                    "END_REF_PT": ".205 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549972,
+                    "ESRI_OID": 61
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555393,
+                    "TI_OSOW_ID": null,
+                    "ID": 549972,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 115.069,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 127.862999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 18187,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".203 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".049 mile(s) before RR COLT S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549971,
+                    "ESRI_OID": 62
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 159.4,
+                  "properties": {
+                    "OBJECTID": 269953805,
+                    "TI_OSOW_ID": null,
+                    "ID": 559567,
+                    "LAST_CHANGED_USER": "FARMEK1",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 5897,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "78",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 0,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 6.18300009,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "13-OCT-2026",
+                    "END_DATE": "30-OCT-2026",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "07:00 PM",
+                    "WORK_TYPE": "PAVEMENT MARKING",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "FARMEK1 (KYLER FARMER)",
+                    "MODOT_PHONE": "7854778866",
+                    "COMPANY_CONTACT": "RUSS LOVE",
+                    "COMPANY_WORKING": "IDEKER",
+                    "COMPANY_PHONE": "8166329436",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CCL",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 16396,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "EXPRESSWAY",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": "CST E 23RD ST E",
+                    "END_REF_PT": ".049 mile(s) before CST JAMES DOWNEY RD S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "KU0042",
+                    "SPEED_LIMIT": "45",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "13-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/22/2026",
+                    "OPPOSING_TI_WZ_ID": 559568,
+                    "ESRI_OID": 68
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269953719,
+                    "TI_OSOW_ID": null,
+                    "ID": 559565,
+                    "LAST_CHANGED_USER": "FARMEK1",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 6039,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "435",
+                    "DIRECTION": "N",
+                    "TW_CONTINUOUS_BEG_LOG": 14.4189997,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 16.3740005,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "08-SEP-2026",
+                    "END_DATE": "30-OCT-2026",
+                    "START_TIME": "07:30 PM",
+                    "END_TIME": "06:00 AM",
+                    "WORK_TYPE": "RESURFACING PAVEMENT",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "FARMEK1 (KYLER FARMER)",
+                    "MODOT_PHONE": "7854778866",
+                    "COMPANY_CONTACT": "RUSS LOVE",
+                    "COMPANY_WORKING": "IDEKER",
+                    "COMPANY_PHONE": "8166329436",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CCL",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 47643,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".012 mile(s) after RP IS435N TO MO78W W",
+                    "END_REF_PT": ".051 mile(s) after US 24 W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "KU0062",
+                    "SPEED_LIMIT": "65",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "13-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/22/2026",
+                    "OPPOSING_TI_WZ_ID": 559566,
+                    "ESRI_OID": 99
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269953722,
+                    "TI_OSOW_ID": null,
+                    "ID": 559566,
+                    "LAST_CHANGED_USER": "FARMEK1",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 6042,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "435",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 38.8390007,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 40.7939987,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "08-SEP-2026",
+                    "END_DATE": "30-OCT-2026",
+                    "START_TIME": "07:30 PM",
+                    "END_TIME": "06:00 AM",
+                    "WORK_TYPE": "RESURFACING PAVEMENT",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "FARMEK1 (KYLER FARMER)",
+                    "MODOT_PHONE": "7854778866",
+                    "COMPANY_CONTACT": "RUSS LOVE",
+                    "COMPANY_WORKING": "IDEKER",
+                    "COMPANY_PHONE": "8166329436",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CCL",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 44402,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".053 mile(s) before US 24 W",
+                    "END_REF_PT": ".004 mile(s) before RP MO78 TO IS435S S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "KU0062",
+                    "SPEED_LIMIT": "65",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "13-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/22/2026",
+                    "OPPOSING_TI_WZ_ID": 559565,
+                    "ESRI_OID": 100
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555201,
+                    "TI_OSOW_ID": null,
+                    "ID": 536929,
+                    "LAST_CHANGED_USER": "SCHWAJ2",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 242.875,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 247.181,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "03-MAR-2025",
+                    "END_DATE": "31-DEC-2028",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "BRIDGE RECONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "SCHWAJ2 (JAMES SCHWALLER)",
+                    "MODOT_PHONE": "8162078965",
+                    "COMPANY_CONTACT": "BEN cummings",
+                    "COMPANY_WORKING": "CLARKSON RADMACHER JV",
+                    "COMPANY_PHONE": "8165356111",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CDB",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 48784,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".058 mile(s) before US 40 E",
+                    "END_REF_PT": ".021 mile(s) before IS 670 W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "j4i1486D",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "17-JUL-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "12/03/2025",
+                    "OPPOSING_TI_WZ_ID": 536930,
+                    "ESRI_OID": 131
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555205,
+                    "TI_OSOW_ID": null,
+                    "ID": 536930,
+                    "LAST_CHANGED_USER": "SCHWAJ2",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 2.81999993,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 7.11600018,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "03-MAR-2025",
+                    "END_DATE": "31-DEC-2028",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "BRIDGE RECONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "SCHWAJ2 (JAMES SCHWALLER)",
+                    "MODOT_PHONE": "8162078965",
+                    "COMPANY_CONTACT": "BEN cummings",
+                    "COMPANY_WORKING": "CLARKSON RADMACHER JV",
+                    "COMPANY_PHONE": "8165356111",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CDB",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 21508,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".109 mile(s) before IS 670 E",
+                    "END_REF_PT": ".045 mile(s) after US 40 E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "j4i1486D",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "17-JUL-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "12/03/2025",
+                    "OPPOSING_TI_WZ_ID": 536929,
+                    "ESRI_OID": 132
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269959229,
+                    "TI_OSOW_ID": null,
+                    "ID": 559607,
+                    "LAST_CHANGED_USER": "LAJINB1",
+                    "COUNTY_NAME": "LAFAYETTE",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 4620,
+                    "DESIGNATION": "RT",
+                    "TRAVELWAY_NAME": "T",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 0.344999999,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 7.08099985,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-OCT-2026",
+                    "END_DATE": "01-DEC-2026",
+                    "START_TIME": "07:00 AM",
+                    "END_TIME": "03:00 PM",
+                    "WORK_TYPE": "PERMIT OR UTILITY WORK",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "LAJINB1 (BRIAN LAJINESS)",
+                    "MODOT_PHONE": "8166072190",
+                    "COMPANY_CONTACT": "David Edwards",
+                    "COMPANY_WORKING": "North Missouri Construction",
+                    "COMPANY_PHONE": "6606465933",
+                    "OP_TYPE": "PERMIT",
+                    "ORG_CODE": "7CTR",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 496,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".005 mile(s) before CST LIPPER ST S",
+                    "END_REF_PT": ".012 mile(s) before OR 70 E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": "KC-26-124436",
+                    "SPEED_LIMIT": "35",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "14-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/14/2026",
+                    "OPPOSING_TI_WZ_ID": 559608,
+                    "ESRI_OID": 91
+                  }
+                }
+              ],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      },
+      {
+        "truck_id": "RT03",
+        "origin_id": "DC1",
+        "stop_ids": [
+          "D11",
+          "D12"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "D11",
+            "arrival_minutes": 9.27,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D12",
+            "arrival_minutes": 225.27,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 465698,
+        "duration_seconds": 26994,
+        "driving_seconds": 25794,
+        "load_kg": 1000,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -92.42311998024472,
+              38.93146933444767
+            ],
+            [
+              -94.48193223265045,
+              39.065121983593606
+            ],
+            [
+              -92.3341,
+              38.9517
+            ]
+          ]
+        },
+        "geometry_distance_m": 465698,
+        "geometry_duration_seconds": 25794,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 60,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 70,
+              "temperature_c": 2.015,
+              "lower_c": 1.509,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 80,
+              "temperature_c": 2.009,
+              "lower_c": 1.505,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 90,
+              "temperature_c": 2.006,
+              "lower_c": 1.502,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 100,
+              "temperature_c": 2.003,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 110,
+              "temperature_c": 2.002,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 120,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 130,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 140,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 150,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 160,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 170,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 180,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 190,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 200,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 210,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 220,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 230,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 240,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 250,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 260,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 270,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 280,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 290,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 300,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 310,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 320,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 330,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 340,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 350,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 360,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 370,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 380,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 390,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 400,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 410,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 420,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 430,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 440,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 449.9,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 465698,
+              "duration_seconds": 25794,
+              "nearby_events": [
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 40.0,
+                  "properties": {
+                    "OBJECTID": 269555389,
+                    "TI_OSOW_ID": null,
+                    "ID": 549971,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 122.128998,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 134.936005,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 31414,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".052 mile(s) after RR COLT S",
+                    "END_REF_PT": ".205 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549972,
+                    "ESRI_OID": 61
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 27.3,
+                  "properties": {
+                    "OBJECTID": 269555393,
+                    "TI_OSOW_ID": null,
+                    "ID": 549972,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 115.069,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 127.862999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 18187,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".203 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".049 mile(s) before RR COLT S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549971,
+                    "ESRI_OID": 62
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555305,
+                    "TI_OSOW_ID": 346143,
+                    "ID": 546780,
+                    "LAST_CHANGED_USER": "TAYLOC6",
+                    "COUNTY_NAME": "COOPER",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 136.145996,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 149.345001,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-MAR-2026",
+                    "END_DATE": "31-DEC-2027",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "11:00 PM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "WOODS6 (STEPHEN WOOD)",
+                    "MODOT_PHONE": "5738084294",
+                    "COMPANY_CONTACT": "Drew Leary",
+                    "COMPANY_WORKING": "Capital Paving",
+                    "COMPANY_PHONE": "5736169355",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7DCA",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "BOTH",
+                    "AADT": 17957,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".787 mile(s) before RR RIVER SUB E",
+                    "END_REF_PT": ".233 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "JST0017B",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "23-FEB-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "03/04/2026",
+                    "OPPOSING_TI_WZ_ID": 546781,
+                    "ESRI_OID": 63
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555309,
+                    "TI_OSOW_ID": 346141,
+                    "ID": 546781,
+                    "LAST_CHANGED_USER": "TAYLOC6",
+                    "COUNTY_NAME": "COOPER",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 100.652,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 113.859001,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-MAR-2026",
+                    "END_DATE": "31-DEC-2027",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "11:00 PM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "WOODS6 (STEPHEN WOOD)",
+                    "MODOT_PHONE": "5738084294",
+                    "COMPANY_CONTACT": "Drew Leary",
+                    "COMPANY_WORKING": "Capital Paving",
+                    "COMPANY_PHONE": "5736169355",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7DCA",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "BOTH",
+                    "AADT": 15626,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".25 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".786 mile(s) after RR RIVER SUB E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "JST0017B",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "23-FEB-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "03/04/2026",
+                    "OPPOSING_TI_WZ_ID": 546780,
+                    "ESRI_OID": 67
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269959229,
+                    "TI_OSOW_ID": null,
+                    "ID": 559607,
+                    "LAST_CHANGED_USER": "LAJINB1",
+                    "COUNTY_NAME": "LAFAYETTE",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 4620,
+                    "DESIGNATION": "RT",
+                    "TRAVELWAY_NAME": "T",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 0.344999999,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 7.08099985,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-OCT-2026",
+                    "END_DATE": "01-DEC-2026",
+                    "START_TIME": "07:00 AM",
+                    "END_TIME": "03:00 PM",
+                    "WORK_TYPE": "PERMIT OR UTILITY WORK",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "LAJINB1 (BRIAN LAJINESS)",
+                    "MODOT_PHONE": "8166072190",
+                    "COMPANY_CONTACT": "David Edwards",
+                    "COMPANY_WORKING": "North Missouri Construction",
+                    "COMPANY_PHONE": "6606465933",
+                    "OP_TYPE": "PERMIT",
+                    "ORG_CODE": "7CTR",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 496,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".005 mile(s) before CST LIPPER ST S",
+                    "END_REF_PT": ".012 mile(s) before OR 70 E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": "KC-26-124436",
+                    "SPEED_LIMIT": "35",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "14-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/14/2026",
+                    "OPPOSING_TI_WZ_ID": 559608,
+                    "ESRI_OID": 91
+                  }
+                }
+              ],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      },
+      {
+        "truck_id": "RT05",
+        "origin_id": "DC1",
+        "stop_ids": [
+          "D05",
+          "D15",
+          "D10"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "D05",
+            "arrival_minutes": 213.1,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D15",
+            "arrival_minutes": 234.32,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D10",
+            "arrival_minutes": 250.65,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 486499,
+        "duration_seconds": 28747,
+        "driving_seconds": 26947,
+        "load_kg": 1500,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -90.23742422131505,
+              38.653449031901474
+            ],
+            [
+              -90.12823591139964,
+              38.67234711187459
+            ],
+            [
+              -90.17073364580835,
+              38.70875453878441
+            ],
+            [
+              -92.3341,
+              38.9517
+            ]
+          ]
+        },
+        "geometry_distance_m": 486499,
+        "geometry_duration_seconds": 26947,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 60,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 70,
+              "temperature_c": 2.015,
+              "lower_c": 1.509,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 80,
+              "temperature_c": 2.009,
+              "lower_c": 1.505,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 90,
+              "temperature_c": 2.006,
+              "lower_c": 1.502,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 100,
+              "temperature_c": 2.003,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 110,
+              "temperature_c": 2.002,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 120,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 130,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 140,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 150,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 160,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 170,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 180,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 190,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 200,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 210,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 220,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 230,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 240,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 250,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 260,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 270,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 280,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 290,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 300,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 310,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 320,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 330,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 340,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 350,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 360,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 370,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 380,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 390,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 400,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 410,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 420,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 430,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 440,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 450,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 460,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 470,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 479.12,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 486499,
+              "duration_seconds": 26947,
+              "nearby_events": [
+                {
+                  "layer_id": 26,
+                  "layer_name": "Work Zone High Point",
+                  "proximity_m": 233.8,
+                  "properties": {
+                    "OBJECTID": 269555300,
+                    "TI_OSOW_ID": null,
+                    "TI_WZ_ID": 546516,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "WARREN",
+                    "DISTRICT_NUMBER": 2,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 56.2019997,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 58.3359985,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "24-OCT-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "07:00 PM",
+                    "END_TIME": "06:00 AM",
+                    "WORK_TYPE": "CONCRETE BARRIER WALL",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "PROJECT_INSPECTOR": "Aidan Holtz",
+                    "MODOT_USERID": "HOLTZA1 (AIDAN HOLTZ)",
+                    "MODOT_PHONE": "3144819207",
+                    "COMPANY_CONTACT": "24 HOur Line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 24679,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".187 mile(s) before RP IS70W TO MO47 W",
+                    "END_REF_PT": ".017 mile(s) after RP IS70W TO W WARRENTON BLVD W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "jst0020",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "13-FEB-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "EXTERNAL_COMMENT": " ",
+                    "OPPOSING_TI_WZ_ID": 542485,
+                    "ESRI_OID": 66
+                  }
+                },
+                {
+                  "layer_id": 26,
+                  "layer_name": "Work Zone High Point",
+                  "proximity_m": 210.6,
+                  "properties": {
+                    "OBJECTID": 269555297,
+                    "TI_OSOW_ID": null,
+                    "TI_WZ_ID": 542485,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "WARREN",
+                    "DISTRICT_NUMBER": 2,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 191.681,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 193.813004,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "24-OCT-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "07:00 PM",
+                    "END_TIME": "06:00 AM",
+                    "WORK_TYPE": "CONCRETE BARRIER WALL",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "PROJECT_INSPECTOR": "Aidan Holtz",
+                    "MODOT_USERID": "HOLTZA1 (AIDAN HOLTZ)",
+                    "MODOT_PHONE": "3144819207",
+                    "COMPANY_CONTACT": "24 HOur Line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 21125,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".038 mile(s) before RP W WARRENTON BLVD TO IS70E E",
+                    "END_REF_PT": ".144 mile(s) after RP MO47 TO IS70E E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "jst0020",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "22-OCT-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "EXTERNAL_COMMENT": " ",
+                    "OPPOSING_TI_WZ_ID": 546516,
+                    "ESRI_OID": 157
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 217.5,
+                  "properties": {
+                    "OBJECTID": 269555323,
+                    "TI_OSOW_ID": null,
+                    "ID": 544633,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "WARREN",
+                    "DISTRICT_NUMBER": 2,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 193.669006,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 198.807999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "05-DEC-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "07:00 PM",
+                    "END_TIME": "07:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "HOLTZA1 (AIDAN HOLTZ)",
+                    "MODOT_PHONE": "3144819207",
+                    "COMPANY_CONTACT": "24 Hour Line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 24534,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": "RP MO47 TO IS70E E",
+                    "END_REF_PT": ".025 mile(s) after RP IS70E TO WILDCAT DR S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "jst0020",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "17-DEC-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "OPPOSING_TI_WZ_ID": 544231,
+                    "ESRI_OID": 30
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555300,
+                    "TI_OSOW_ID": null,
+                    "ID": 546516,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "WARREN",
+                    "DISTRICT_NUMBER": 2,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 56.2019997,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 58.3359985,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "24-OCT-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "07:00 PM",
+                    "END_TIME": "06:00 AM",
+                    "WORK_TYPE": "CONCRETE BARRIER WALL",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "HOLTZA1 (AIDAN HOLTZ)",
+                    "MODOT_PHONE": "3144819207",
+                    "COMPANY_CONTACT": "24 HOur Line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 24679,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".187 mile(s) before RP IS70W TO MO47 W",
+                    "END_REF_PT": ".017 mile(s) after RP IS70W TO W WARRENTON BLVD W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "jst0020",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "13-FEB-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "OPPOSING_TI_WZ_ID": 542485,
+                    "ESRI_OID": 66
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555685,
+                    "TI_OSOW_ID": null,
+                    "ID": 540208,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "ST. CHARLES",
+                    "DISTRICT_NUMBER": 5,
+                    "TRAVELWAY_ID": 6372,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "64",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 0,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 9.94699955,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "10-SEP-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "08:00 PM",
+                    "END_TIME": "05:30 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "KELLYC1 (CHRISTOPHER KELLY)",
+                    "MODOT_PHONE": "3144535034",
+                    "COMPANY_CONTACT": "24 Hour line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 20652,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": "IS 70 E",
+                    "END_REF_PT": ".032 mile(s) before RP RTKS TO IS64E E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "J6i3033",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "10-SEP-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "OPPOSING_TI_WZ_ID": 540209,
+                    "ESRI_OID": 94
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555680,
+                    "TI_OSOW_ID": null,
+                    "ID": 540209,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "ST. CHARLES",
+                    "DISTRICT_NUMBER": 5,
+                    "TRAVELWAY_ID": 6373,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "64",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 30.8710003,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 40.9889984,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "10-SEP-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "08:00 PM",
+                    "END_TIME": "05:30 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "KELLYC1 (CHRISTOPHER KELLY)",
+                    "MODOT_PHONE": "3144535034",
+                    "COMPANY_CONTACT": "24 Hour line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 30126,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".045 mile(s) after RT K S",
+                    "END_REF_PT": ".006 mile(s) before RP US61S TO US40W W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "J6i3033",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "10-SEP-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "OPPOSING_TI_WZ_ID": 540208,
+                    "ESRI_OID": 96
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 238.2,
+                  "properties": {
+                    "OBJECTID": 269555326,
+                    "TI_OSOW_ID": null,
+                    "ID": 544231,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "WARREN",
+                    "DISTRICT_NUMBER": 2,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 51.2120018,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 56.3460007,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "05-DEC-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "07:00 PM",
+                    "END_TIME": "07:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "HOLTZA1 (AIDAN HOLTZ)",
+                    "MODOT_PHONE": "3144819207",
+                    "COMPANY_CONTACT": "24 Hour Line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 24679,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".051 mile(s) before RP WILDCAT DR TO IS70W W",
+                    "END_REF_PT": ".043 mile(s) before RP IS70W TO MO47 W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "jst0020",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "05-DEC-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "OPPOSING_TI_WZ_ID": 544633,
+                    "ESRI_OID": 107
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555297,
+                    "TI_OSOW_ID": null,
+                    "ID": 542485,
+                    "LAST_CHANGED_USER": "HOLTZA1",
+                    "COUNTY_NAME": "WARREN",
+                    "DISTRICT_NUMBER": 2,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 191.681,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 193.813004,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "24-OCT-2025",
+                    "END_DATE": "30-NOV-2026",
+                    "START_TIME": "07:00 PM",
+                    "END_TIME": "06:00 AM",
+                    "WORK_TYPE": "CONCRETE BARRIER WALL",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "HOLTZA1 (AIDAN HOLTZ)",
+                    "MODOT_PHONE": "3144819207",
+                    "COMPANY_CONTACT": "24 HOur Line",
+                    "COMPANY_WORKING": "Improve 70 Alliance JV",
+                    "COMPANY_PHONE": "5734478221",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 21125,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".038 mile(s) before RP W WARRENTON BLVD TO IS70E E",
+                    "END_REF_PT": ".144 mile(s) after RP MO47 TO IS70E E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "jst0020",
+                    "SPEED_LIMIT": "55",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "22-OCT-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/16/2026",
+                    "OPPOSING_TI_WZ_ID": 546516,
+                    "ESRI_OID": 157
+                  }
+                }
+              ],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      },
+      {
+        "truck_id": "RT06",
+        "origin_id": "DC2",
+        "stop_ids": [
+          "D03",
+          "D13",
+          "D08"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "D03",
+            "arrival_minutes": 200.05,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D13",
+            "arrival_minutes": 220.28,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D08",
+            "arrival_minutes": 239.43,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 461619,
+        "duration_seconds": 27368,
+        "driving_seconds": 25568,
+        "load_kg": 1500,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -93.2923,
+              37.209
+            ],
+            [
+              -92.16343117674066,
+              38.488262137080646
+            ],
+            [
+              -92.1123725861464,
+              38.557236985380534
+            ],
+            [
+              -92.0653270730273,
+              38.49622220403864
+            ],
+            [
+              -93.2923,
+              37.209
+            ]
+          ]
+        },
+        "geometry_distance_m": 461619,
+        "geometry_duration_seconds": 25568,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 60,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 70,
+              "temperature_c": 2.015,
+              "lower_c": 1.509,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 80,
+              "temperature_c": 2.009,
+              "lower_c": 1.505,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 90,
+              "temperature_c": 2.006,
+              "lower_c": 1.502,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 100,
+              "temperature_c": 2.003,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 110,
+              "temperature_c": 2.002,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 120,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 130,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 140,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 150,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 160,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 170,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 180,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 190,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 200,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 210,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 220,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 230,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 240,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 250,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 260,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 270,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 280,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 290,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 300,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 310,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 320,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 330,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 340,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 350,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 360,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 370,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 380,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 390,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 400,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 410,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 420,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 430,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 440,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 450,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 456.13,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 461619,
+              "duration_seconds": 25568,
+              "nearby_events": [
+                {
+                  "layer_id": 22,
+                  "layer_name": "Work Zone Closed Point",
+                  "proximity_m": 27.3,
+                  "properties": {
+                    "OBJECTID": 270023737,
+                    "TI_OSOW_ID": 348705,
+                    "TI_WZ_ID": 559666,
+                    "LAST_CHANGED_USER": "NULLJ1",
+                    "COUNTY_NAME": "LACLEDE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 2063,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "64",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 42.2169991,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 43.368,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "21-OCT-2026",
+                    "END_DATE": "26-OCT-2026",
+                    "START_TIME": "08:00 AM",
+                    "END_TIME": "02:00 PM",
+                    "WORK_TYPE": "CULVERT REPLACEMENT",
+                    "NUMBER_LANES_CLOSED": "2",
+                    "PROJECT_INSPECTOR": null,
+                    "MODOT_USERID": "NULLJ1 (JESSICA NULL)",
+                    "MODOT_PHONE": "5735262481",
+                    "COMPANY_CONTACT": "cody jones",
+                    "COMPANY_WORKING": "modot - lebanon",
+                    "COMPANY_PHONE": "4177663769",
+                    "OP_TYPE": "MAINTENANCE",
+                    "ORG_CODE": "7D33",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 1458,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".004 mile(s) before CRD MAJESTIC LN S",
+                    "END_REF_PT": ".004 mile(s) after PVT MISTY VIEW DR S",
+                    "LEVEL_OF_IMPACT": "ALL LANES CLOSED",
+                    "JOB_NUMBER": null,
+                    "SPEED_LIMIT": "NONE",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "16-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/21/2026",
+                    "EXTERNAL_COMMENT": " ",
+                    "OPPOSING_TI_WZ_ID": 559667,
+                    "ESRI_OID": 26
+                  }
+                },
+                {
+                  "layer_id": 29,
+                  "layer_name": "Work Zone Closed Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 270023737,
+                    "TI_OSOW_ID": 348705,
+                    "ID": 559666,
+                    "LAST_CHANGED_USER": "NULLJ1",
+                    "COUNTY_NAME": "LACLEDE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 2063,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "64",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 42.2169991,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 43.368,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "21-OCT-2026",
+                    "END_DATE": "26-OCT-2026",
+                    "START_TIME": "08:00 AM",
+                    "END_TIME": "02:00 PM",
+                    "WORK_TYPE": "CULVERT REPLACEMENT",
+                    "NUMBER_LANES_CLOSED": "2",
+                    "MODOT_USERID": "NULLJ1 (JESSICA NULL)",
+                    "MODOT_PHONE": "5735262481",
+                    "COMPANY_CONTACT": "cody jones",
+                    "COMPANY_WORKING": "modot - lebanon",
+                    "COMPANY_PHONE": "4177663769",
+                    "OP_TYPE": "MAINTENANCE",
+                    "ORG_CODE": "7D33",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 1458,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".004 mile(s) before CRD MAJESTIC LN S",
+                    "END_REF_PT": ".004 mile(s) after PVT MISTY VIEW DR S",
+                    "LEVEL_OF_IMPACT": "ALL LANES CLOSED",
+                    "JOB_NUMBER": null,
+                    "SPEED_LIMIT": "NONE",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "16-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/21/2026",
+                    "OPPOSING_TI_WZ_ID": 559667,
+                    "ESRI_OID": 3
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555199,
+                    "TI_OSOW_ID": 336772,
+                    "ID": 528723,
+                    "LAST_CHANGED_USER": "CHANDK1",
+                    "COUNTY_NAME": "GREENE",
+                    "DISTRICT_NUMBER": 6,
+                    "TRAVELWAY_ID": 9,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "44",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 77.5670013,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 82.4560013,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "10-MAR-2025",
+                    "END_DATE": "21-MAY-2027",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "HUCKAR1 (CRAIG HUCKABY)",
+                    "MODOT_PHONE": "4176641033",
+                    "COMPANY_CONTACT": "jack brown",
+                    "COMPANY_WORKING": "capital paving",
+                    "COMPANY_PHONE": "5735366741",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7GCE",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 30118,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".054 mile(s) after RP IS44E TO MO13S S",
+                    "END_REF_PT": ".002 mile(s) before US 65 S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "241213-G02 8I3044C",
+                    "SPEED_LIMIT": "50",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "25-FEB-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "01/06/2026",
+                    "OPPOSING_TI_WZ_ID": 528724,
+                    "ESRI_OID": 24
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 267886413,
+                    "TI_OSOW_ID": 336796,
+                    "ID": 528724,
+                    "LAST_CHANGED_USER": "CHANDK1",
+                    "COUNTY_NAME": "GREENE",
+                    "DISTRICT_NUMBER": 6,
+                    "TRAVELWAY_ID": 10,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "44",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 210.703995,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 215.591003,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "10-MAR-2025",
+                    "END_DATE": "21-MAY-2027",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "HUCKAR1 (CRAIG HUCKABY)",
+                    "MODOT_PHONE": "4176641033",
+                    "COMPANY_CONTACT": "jack brown",
+                    "COMPANY_WORKING": "capital paving",
+                    "COMPANY_PHONE": "5735366741",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7GCE",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "SATURDAY",
+                    "AADT": 29041,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".002 mile(s) after US 65 S",
+                    "END_REF_PT": ".044 mile(s) before RP MO13N TO IS44W W",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "241213-G02 8I3044C",
+                    "SPEED_LIMIT": "50",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "25-FEB-25",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "01/06/2026",
+                    "OPPOSING_TI_WZ_ID": 528723,
+                    "ESRI_OID": 25
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269959259,
+                    "TI_OSOW_ID": null,
+                    "ID": 559609,
+                    "LAST_CHANGED_USER": "NULLJ1",
+                    "COUNTY_NAME": "CAMDEN",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 1967,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "7",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 130.175995,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 176.940994,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "21-OCT-2026",
+                    "END_DATE": "29-OCT-2026",
+                    "START_TIME": "06:00 AM",
+                    "END_TIME": "04:30 PM",
+                    "WORK_TYPE": "ROADSIDE WORK",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "NULLJ1 (JESSICA NULL)",
+                    "MODOT_PHONE": "5735262481",
+                    "COMPANY_CONTACT": "chris mcGlone",
+                    "COMPANY_WORKING": "modot - camdenton",
+                    "COMPANY_PHONE": "5735258851",
+                    "OP_TYPE": "MAINTENANCE",
+                    "ORG_CODE": "7D12",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 2226,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".37 mile(s) before CRD CREE ST E",
+                    "END_REF_PT": ".062 mile(s) after PVT YORKTOWN CIR E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": null,
+                    "SPEED_LIMIT": "NONE",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "14-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/21/2026",
+                    "OPPOSING_TI_WZ_ID": 559610,
+                    "ESRI_OID": 92
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269973191,
+                    "TI_OSOW_ID": null,
+                    "ID": 559625,
+                    "LAST_CHANGED_USER": "NULLJ1",
+                    "COUNTY_NAME": "MILLER",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 1617,
+                    "DESIGNATION": "RT",
+                    "TRAVELWAY_NAME": "A",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 0,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 15.1719999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "19-OCT-2026",
+                    "END_DATE": "29-OCT-2026",
+                    "START_TIME": "08:30 AM",
+                    "END_TIME": "04:00 PM",
+                    "WORK_TYPE": "ROADSIDE WORK",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "NULLJ1 (JESSICA NULL)",
+                    "MODOT_PHONE": "5735262481",
+                    "COMPANY_CONTACT": "frank baker",
+                    "COMPANY_WORKING": "modot - iberia",
+                    "COMPANY_PHONE": "5736452854",
+                    "OP_TYPE": "MAINTENANCE",
+                    "ORG_CODE": "7D28",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 284,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": "MO 17 S",
+                    "END_REF_PT": "MO 42 E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": null,
+                    "SPEED_LIMIT": "NONE",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "15-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/21/2026",
+                    "OPPOSING_TI_WZ_ID": 559626,
+                    "ESRI_OID": 93
+                  }
+                }
+              ],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      },
+      {
+        "truck_id": "RT07",
+        "origin_id": "DC1",
+        "stop_ids": [
+          "D06",
+          "D07"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "D06",
+            "arrival_minutes": 5.48,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D07",
+            "arrival_minutes": 239.15,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 496425,
+        "duration_seconds": 28695,
+        "driving_seconds": 27495,
+        "load_kg": 1000,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -92.38904895518336,
+              38.95136030760434
+            ],
+            [
+              -94.61661228995621,
+              39.16906599628995
+            ],
+            [
+              -92.3341,
+              38.9517
+            ]
+          ]
+        },
+        "geometry_distance_m": 496425,
+        "geometry_duration_seconds": 27495,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 60,
+              "temperature_c": 2.025,
+              "lower_c": 1.518,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 70,
+              "temperature_c": 2.015,
+              "lower_c": 1.509,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 80,
+              "temperature_c": 2.009,
+              "lower_c": 1.505,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 90,
+              "temperature_c": 2.006,
+              "lower_c": 1.502,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 100,
+              "temperature_c": 2.003,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 110,
+              "temperature_c": 2.002,
+              "lower_c": 1.501,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 120,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 130,
+              "temperature_c": 2.001,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 140,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 150,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 160,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 170,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 180,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 190,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 200,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 210,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 220,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 230,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 240,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 250,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 260,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 270,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 280,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 290,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 300,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 310,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 320,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 330,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 340,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 350,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 360,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 370,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 380,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 390,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 400,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 410,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 420,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 430,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 440,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 450,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 460,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 470,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 478.25,
+              "temperature_c": 2.0,
+              "lower_c": 1.5,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 496425,
+              "duration_seconds": 27495,
+              "nearby_events": [
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555389,
+                    "TI_OSOW_ID": null,
+                    "ID": 549971,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 3506,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "W",
+                    "TW_CONTINUOUS_BEG_LOG": 122.128998,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 134.936005,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 31414,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".052 mile(s) after RR COLT S",
+                    "END_REF_PT": ".205 mile(s) before BK KATY TRAIL E",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549972,
+                    "ESRI_OID": 61
+                  }
+                },
+                {
+                  "layer_id": 33,
+                  "layer_name": "Work Zone High Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555393,
+                    "TI_OSOW_ID": null,
+                    "ID": 549972,
+                    "LAST_CHANGED_USER": "ACKERT2",
+                    "COUNTY_NAME": "BOONE",
+                    "DISTRICT_NUMBER": 4,
+                    "TRAVELWAY_ID": 19,
+                    "DESIGNATION": "IS",
+                    "TRAVELWAY_NAME": "70",
+                    "DIRECTION": "E",
+                    "TW_CONTINUOUS_BEG_LOG": 115.069,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 127.862999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "20-APR-2026",
+                    "END_DATE": "31-DEC-2029",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "NEW PAVEMENT CONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "ACKERT2 (TIMOTHY ACKERT)",
+                    "MODOT_PHONE": "5738647424",
+                    "COMPANY_CONTACT": "Nate Cunningham",
+                    "COMPANY_WORKING": "Emery Sapp & Sons",
+                    "COMPANY_PHONE": "5734899058",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "6I70",
+                    "STATUS": "ACTIVE",
+                    "WEEKEND": "NONE",
+                    "AADT": 18187,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".203 mile(s) after BK KATY TRAIL E",
+                    "END_REF_PT": ".049 mile(s) before RR COLT S",
+                    "LEVEL_OF_IMPACT": "EXPECT DELAYS",
+                    "JOB_NUMBER": "Jst0017",
+                    "SPEED_LIMIT": "70",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "20-APR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "04/24/2026",
+                    "OPPOSING_TI_WZ_ID": 549971,
+                    "ESRI_OID": 62
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555179,
+                    "TI_OSOW_ID": null,
+                    "ID": 547371,
+                    "LAST_CHANGED_USER": "WILSOR2",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 5863,
+                    "DESIGNATION": "US",
+                    "TRAVELWAY_NAME": "169",
+                    "DIRECTION": "N",
+                    "TW_CONTINUOUS_BEG_LOG": 1.20799994,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 6.44500017,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-MAR-2026",
+                    "END_DATE": "31-JUL-2028",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "BRIDGE RECONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "SCHNOD2 (DEREK SCHNOEBELEN)",
+                    "MODOT_PHONE": "8168684399",
+                    "COMPANY_CONTACT": "Josh eisenmann",
+                    "COMPANY_WORKING": "Hawkins",
+                    "COMPANY_PHONE": "4028417843",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CCE",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "BOTH",
+                    "AADT": 21389,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".024 mile(s) before CST W 3RD ST E",
+                    "END_REF_PT": ".026 mile(s) before RP IS29S TO US169N N",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": "JKU0099",
+                    "SPEED_LIMIT": "45",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "05-MAR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "05/27/2026",
+                    "OPPOSING_TI_WZ_ID": 547372,
+                    "ESRI_OID": 39
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 0,
+                  "properties": {
+                    "OBJECTID": 269555185,
+                    "TI_OSOW_ID": 345787,
+                    "ID": 547372,
+                    "LAST_CHANGED_USER": "WILSOR2",
+                    "COUNTY_NAME": "CLAY",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 5862,
+                    "DESIGNATION": "US",
+                    "TRAVELWAY_NAME": "169",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 120.440002,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 125.695999,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "09-MAR-2026",
+                    "END_DATE": "31-JUL-2028",
+                    "START_TIME": "12:00 AM",
+                    "END_TIME": "12:00 AM",
+                    "WORK_TYPE": "BRIDGE RECONSTRUCTION",
+                    "NUMBER_LANES_CLOSED": "1",
+                    "MODOT_USERID": "SCHNOD2 (DEREK SCHNOEBELEN)",
+                    "MODOT_PHONE": "8168684399",
+                    "COMPANY_CONTACT": "Josh eisenmann",
+                    "COMPANY_WORKING": "Hawkins",
+                    "COMPANY_PHONE": "4028417843",
+                    "OP_TYPE": "CONSTRUCTION CONTRACT",
+                    "ORG_CODE": "7CCE",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "BOTH",
+                    "AADT": 19480,
+                    "NHS": "NHS",
+                    "ROADWAY_TYPE": "FREEWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": ".029 mile(s) before US 69 S",
+                    "END_REF_PT": ".03 mile(s) after CST W 3RD ST E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": "JKU0099",
+                    "SPEED_LIMIT": "45",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "05-MAR-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "05/27/2026",
+                    "OPPOSING_TI_WZ_ID": 547371,
+                    "ESRI_OID": 42
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 92.0,
+                  "properties": {
+                    "OBJECTID": 269926731,
+                    "TI_OSOW_ID": null,
+                    "ID": 559445,
+                    "LAST_CHANGED_USER": "DALBEB1",
+                    "COUNTY_NAME": "PLATTE",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 6051,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "9",
+                    "DIRECTION": "S",
+                    "TW_CONTINUOUS_BEG_LOG": 0.0399999991,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 14.2080002,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "13-OCT-2026",
+                    "END_DATE": "30-OCT-2026",
+                    "START_TIME": "08:00 AM",
+                    "END_TIME": "03:00 PM",
+                    "WORK_TYPE": "MOWING",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "DALBEB1 (BRYAN DALBEY)",
+                    "MODOT_PHONE": "8167410447",
+                    "COMPANY_CONTACT": "MODOT",
+                    "COMPANY_WORKING": "MODOT",
+                    "COMPANY_PHONE": "8169449620",
+                    "OP_TYPE": "MAINTENANCE",
+                    "ORG_CODE": "7C25",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 12194,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "TWO-LANE",
+                    "DIVIDED_UNDIVIDED": "UNDIVIDED",
+                    "BEG_REF_PT": ".029 mile(s) after CST NW BARRY RD E",
+                    "END_REF_PT": "CST ADMIRAL BLVD E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": null,
+                    "SPEED_LIMIT": "45",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "08-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/08/2026",
+                    "OPPOSING_TI_WZ_ID": 559444,
+                    "ESRI_OID": 86
+                  }
+                },
+                {
+                  "layer_id": 34,
+                  "layer_name": "Work Zone Medium Line",
+                  "proximity_m": 71.5,
+                  "properties": {
+                    "OBJECTID": 269926714,
+                    "TI_OSOW_ID": null,
+                    "ID": 559444,
+                    "LAST_CHANGED_USER": "DALBEB1",
+                    "COUNTY_NAME": "JACKSON",
+                    "DISTRICT_NUMBER": 3,
+                    "TRAVELWAY_ID": 6052,
+                    "DESIGNATION": "MO",
+                    "TRAVELWAY_NAME": "9",
+                    "DIRECTION": "N",
+                    "TW_CONTINUOUS_BEG_LOG": 0,
+                    "TW_COUNTY_BEG_LOG": 0,
+                    "TW_CONTINUOUS_END_LOG": 14.2340002,
+                    "TW_COUNTY_END_LOG": 0,
+                    "STATUS_DATE": null,
+                    "START_DATE": "13-OCT-2026",
+                    "END_DATE": "30-OCT-2026",
+                    "START_TIME": "08:00 AM",
+                    "END_TIME": "03:00 PM",
+                    "WORK_TYPE": "MOWING",
+                    "NUMBER_LANES_CLOSED": "0",
+                    "MODOT_USERID": "DALBEB1 (BRYAN DALBEY)",
+                    "MODOT_PHONE": "8167410447",
+                    "COMPANY_CONTACT": "MODOT",
+                    "COMPANY_WORKING": "MODOT",
+                    "COMPANY_PHONE": "8169449620",
+                    "OP_TYPE": "MAINTENANCE",
+                    "ORG_CODE": "7C25",
+                    "STATUS": "PENDING DIST APPRVL",
+                    "WEEKEND": "NONE",
+                    "AADT": 10147,
+                    "NHS": "COL",
+                    "ROADWAY_TYPE": "EXPRESSWAY",
+                    "DIVIDED_UNDIVIDED": "DIVIDED",
+                    "BEG_REF_PT": "CST ADMIRAL BLVD E",
+                    "END_REF_PT": ".029 mile(s) before CST NW BARRY RD E",
+                    "LEVEL_OF_IMPACT": "POSSIBLE DELAYS",
+                    "JOB_NUMBER": null,
+                    "SPEED_LIMIT": "45",
+                    "PRIMARY_INDICATOR": "Y",
+                    "ACTIVATION_DATE": "08-OCT-26",
+                    "DEACTIVATION_DATE": null,
+                    "LAST_CHANGED_DATE": "10/08/2026",
+                    "OPPOSING_TI_WZ_ID": 559445,
+                    "ESRI_OID": 87
+                  }
+                }
+              ],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      },
+      {
+        "truck_id": "RT08",
+        "origin_id": "DC2",
+        "stop_ids": [
+          "D04",
+          "D14",
+          "D09"
+        ],
+        "arrivals": [
+          {
+            "stop_id": "D04",
+            "arrival_minutes": 4.15,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D14",
+            "arrival_minutes": 21.0,
+            "service_minutes": 10
+          },
+          {
+            "stop_id": "D09",
+            "arrival_minutes": 41.18,
+            "service_minutes": 10
+          }
+        ],
+        "distance_m": 30403,
+        "duration_seconds": 3485,
+        "driving_seconds": 1685,
+        "load_kg": 1500,
+        "capacity_kg": 1500,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -93.2923,
+              37.209
+            ],
+            [
+              -93.31616801496607,
+              37.18283988350218
+            ],
+            [
+              -93.33488174845307,
+              37.13160149852107
+            ],
+            [
+              -93.35980347726326,
+              37.208341126062955
+            ],
+            [
+              -93.2923,
+              37.209
+            ]
+          ]
+        },
+        "geometry_distance_m": 30403,
+        "geometry_duration_seconds": 1685,
+        "fallback": true,
+        "routing_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+        "cold_chain": {
+          "status": "within_assumed_target",
+          "max_temperature_c": 2.5,
+          "time_above_threshold_minutes": 0,
+          "threshold_c": 4,
+          "projection": [
+            {
+              "elapsed_minutes": 0,
+              "temperature_c": 2.5,
+              "lower_c": 2.5,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 10,
+              "temperature_c": 2.303,
+              "lower_c": 2.013,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 20,
+              "temperature_c": 2.184,
+              "lower_c": 1.764,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 30,
+              "temperature_c": 2.112,
+              "lower_c": 1.635,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 40,
+              "temperature_c": 2.068,
+              "lower_c": 1.569,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 50,
+              "temperature_c": 2.041,
+              "lower_c": 1.536,
+              "upper_c": 2.5
+            },
+            {
+              "elapsed_minutes": 58.08,
+              "temperature_c": 2.027,
+              "lower_c": 1.521,
+              "upper_c": 2.5
+            }
+          ],
+          "refrigeration_fault": false,
+          "ambient_temperature_c": 30,
+          "provenance": "simulated cargo-temperature scenario projection; not observed sensor data or a validated failure-risk model",
+          "assumptions": [
+            "First-order thermal response; fault time constant 120 minutes, normal control 20 minutes",
+            "Normal assumed control equilibrium 2\u00b0C, with a small uncalibrated ambient penalty above 30\u00b0C",
+            "4\u00b0C is a conservative demonstration review threshold, not a lot disposition rule",
+            "Bands are parameter-sensitivity ranges, not statistical confidence intervals",
+            "No pathogen growth, consumer illness probability or automatic hold decision"
+          ]
+        },
+        "road_review": {
+          "alternatives": [
+            {
+              "alternative_index": 0,
+              "distance_m": 30403,
+              "duration_seconds": 1685,
+              "nearby_events": [],
+              "review_required": true
+            }
+          ],
+          "proximity_buffer_m": 250,
+          "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+          "coverage_complete": true,
+          "stale": true,
+          "warning": "Proximity can include nearby parallel roads. Events may duplicate across point/line layers. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+        }
+      }
+    ],
+    "solver_status": "FEASIBLE",
+    "feasible": true,
+    "matrix_fallback": true,
+    "matrix_provenance": "estimated haversine x 1.25 at 65 km/h; no road geometry",
+    "summary": {
+      "total_distance_m": 2446000,
+      "total_duration_seconds": 143879,
+      "total_cost": 3724.4,
+      "unserved_stops": [
+        "D01"
+      ],
+      "unmet_demand_kg": 500,
+      "constraint_violations": 0,
+      "review_routes": 6
+    },
+    "simulation": true,
+    "mutates_assignments": false,
+    "provenance": "Deterministic simulated operational preset; OR-Tools capacitated multi-depot routes with service times, return to origin, inventory and deadline constraints",
+    "assumptions": {
+      "max_route_hours": 8,
+      "delay_minutes": 0,
+      "ambient_temperature_c": 30,
+      "service_minutes": 10
+    },
+    "limitations": [
+      "Route laboratory does not dispatch or modify approved assignments",
+      "Heuristic feasible route plan; no claim of global optimality unless solver status is OPTIMAL",
+      "Cargo-temperature projections are uncalibrated scenario calculations, not predicted failure probabilities",
+      "MoDOT geometry proximity is an independent review layer, not closure-aware routing",
+      "OSRM ordinary driving profile does not validate commercial-truck restrictions",
+      "Forecast ambient inputs are user-specified scenario assumptions here, not measured cargo temperature",
+      "All inventory is interchangeable within each simulated origin; no real supply contracts are implied"
+    ]
+  }
+]

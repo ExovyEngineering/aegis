@@ -1,0 +1,23 @@
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { expect, it, vi } from 'vitest';
+import RouteLab from './RouteLab';
+import { api } from './api';
+import { newPlanningOperation } from './CustomOperationEditor';
+vi.mock('./RouteLabMap', () => ({ default: () => <div>Custom route map</div> }));
+vi.mock('./api', async original => ({ ...await original<object>(), api: vi.fn() }));
+it('posts editable custom locations and fleet without overriding individual truck capacities', async () => {
+  const operation = newPlanningOperation();
+  const template = { ...operation, id: 'farm', name: 'Test farm layout', description: 'Simulated template', simulation: true };
+  vi.mocked(api).mockImplementation(async path => path === '/operations/presets' ? [template] as any : { preset: { ...operation, id: 'custom', nodes: [] }, routes: [], solver_status: 'FEASIBLE', feasible: true, summary: { total_distance_m: 0, total_duration_seconds: 0, total_cost: 0, unserved_stops: ['STOP1'], unmet_demand_kg: 450, constraint_violations: 0 }, provenance: 'Planning exercise', limitations: [] } as any);
+  render(<RouteLab />);
+  await screen.findByRole('button', { name: /Test farm layout/ });
+  fireEvent.click(screen.getByRole('button', { name: /Your operation/ }));
+  fireEvent.change(screen.getByLabelText('Stop 1 demand kg'), { target: { value: '450' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Test dispatch plan' }));
+  await waitFor(() => expect(api).toHaveBeenCalledWith('/route-lab', expect.objectContaining({ preset: 'custom', custom_operation: expect.objectContaining({ stops: [expect.objectContaining({ demand_kg: 450 })] }) })));
+  const body = vi.mocked(api).mock.calls.find(([path]) => path === '/route-lab')![1] as Record<string, unknown>;
+  expect(body).not.toHaveProperty('truck_count');
+  expect(body).not.toHaveProperty('truck_capacity_kg');
+  expect(screen.queryByLabelText('Available trucks')).not.toBeInTheDocument();
+  expect(await screen.findByText('450 kg unmet demand')).toBeInTheDocument();
+});

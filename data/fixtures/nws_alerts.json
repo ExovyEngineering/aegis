@@ -1,0 +1,17 @@
+{
+  "source_url": "https://api.weather.gov/alerts/active?area=MO",
+  "retrieved_at": "2026-10-26T06:13:14.236838+00:00",
+  "payload": {
+    "@context": {
+      "@version": "1.1"
+    },
+    "type": "FeatureCollection",
+    "features": [],
+    "title": "Current watches, warnings, and advisories for Missouri",
+    "updated": "2026-10-26T06:10:49+00:00"
+  },
+  "cache": false,
+  "stale": false,
+  "provenance": "official weather alerts",
+  "fixture_note": "Actual dated API response frozen for offline demo; not live. Never use as current operational evidence."
+}

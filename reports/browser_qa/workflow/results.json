@@ -1,0 +1,69 @@
+{
+  "base_url": "http://127.0.0.1:8001",
+  "checked_at": "2026-10-26T06:42:29.985Z",
+  "workflow_isolated": true,
+  "browser": "installed Chrome",
+  "checks": [
+    {
+      "name": "desktop_command_loaded",
+      "passed": true,
+      "details": "React data view and Leaflet container visible"
+    },
+    {
+      "name": "map_tiles_loaded",
+      "passed": true,
+      "details": "8 loaded tiles; tile access requires external connectivity"
+    },
+    {
+      "name": "map_network_geometry_rendered",
+      "passed": true,
+      "details": "52 SVG operational/evidence geometries"
+    },
+    {
+      "name": "desktop-evidence_loaded",
+      "passed": true,
+      "details": "Evidence with a clear origin"
+    },
+    {
+      "name": "desktop-model_loaded",
+      "passed": true,
+      "details": "Measured model performance"
+    },
+    {
+      "name": "approval_requires_actor_reason",
+      "passed": true,
+      "details": "Approval blocked until fields are completed"
+    },
+    {
+      "name": "approval_publishes_assignments",
+      "passed": true,
+      "details": "12 simulated assignments"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "request_failures": [],
+  "http_failures": [
+    {
+      "url": "http://127.0.0.1:8001/marker-shadow.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8001/marker-icon.png",
+      "status": 404
+    }
+  ],
+  "screenshots": [
+    "desktop-command.png",
+    "desktop-evidence.png",
+    "desktop-model.png",
+    "desktop-approval.png"
+  ],
+  "browser_version": "156.0.8078.47",
+  "passed": false,
+  "error": "TimeoutError: locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Simulated driver truck', { exact: true })\u001b[22m\n"
+}

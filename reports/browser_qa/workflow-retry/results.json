@@ -1,0 +1,99 @@
+{
+  "base_url": "http://127.0.0.1:8001",
+  "checked_at": "2026-10-26T06:43:50.821Z",
+  "workflow_isolated": true,
+  "browser": "installed Chrome",
+  "checks": [
+    {
+      "name": "isolated_demo_reset",
+      "passed": true,
+      "details": "Only the explicitly isolated QA database is reset"
+    },
+    {
+      "name": "desktop_command_loaded",
+      "passed": true,
+      "details": "React data view and Leaflet container visible"
+    },
+    {
+      "name": "map_tiles_loaded",
+      "passed": true,
+      "details": "8 loaded tiles; tile access requires external connectivity"
+    },
+    {
+      "name": "map_network_geometry_rendered",
+      "passed": true,
+      "details": "52 SVG operational/evidence geometries"
+    },
+    {
+      "name": "desktop-evidence_loaded",
+      "passed": true,
+      "details": "Evidence with a clear origin"
+    },
+    {
+      "name": "desktop-model_loaded",
+      "passed": true,
+      "details": "Measured model performance"
+    },
+    {
+      "name": "approval_requires_actor_reason",
+      "passed": true,
+      "details": "Approval blocked until fields are completed"
+    },
+    {
+      "name": "approval_publishes_assignments",
+      "passed": true,
+      "details": "12 simulated assignments"
+    },
+    {
+      "name": "driver_acknowledgment_persisted",
+      "passed": true,
+      "details": "Audit contains acknowledgment"
+    },
+    {
+      "name": "driver_incident_persisted",
+      "passed": true,
+      "details": "Audit contains incident report"
+    },
+    {
+      "name": "driver_parked_instruction_visible",
+      "passed": true,
+      "details": "Parked-use instruction visible"
+    },
+    {
+      "name": "mobile_no_document_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "no_uncaught_browser_errors",
+      "passed": true,
+      "details": "[]"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "request_failures": [],
+  "http_failures": [
+    {
+      "url": "http://127.0.0.1:8001/marker-icon.png",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8001/marker-shadow.png",
+      "status": 404
+    }
+  ],
+  "screenshots": [
+    "desktop-command.png",
+    "desktop-evidence.png",
+    "desktop-model.png",
+    "desktop-approval.png",
+    "mobile-drive.png"
+  ],
+  "browser_version": "156.0.8078.47",
+  "passed": true
+}

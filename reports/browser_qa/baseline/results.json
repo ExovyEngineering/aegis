@@ -1,0 +1,104 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "checked_at": "2026-10-26T06:41:24.891Z",
+  "workflow_isolated": false,
+  "browser": "installed Chrome",
+  "checks": [
+    {
+      "name": "desktop_command_loaded",
+      "passed": true,
+      "details": "React data view and Leaflet container visible"
+    },
+    {
+      "name": "map_tiles_loaded",
+      "passed": false,
+      "details": "0 loaded tiles; tile access requires external connectivity"
+    },
+    {
+      "name": "map_network_geometry_rendered",
+      "passed": true,
+      "details": "447 SVG operational/evidence geometries"
+    },
+    {
+      "name": "desktop-evidence_loaded",
+      "passed": true,
+      "details": "Evidence with a clear origin"
+    },
+    {
+      "name": "desktop-model_loaded",
+      "passed": true,
+      "details": "Measured model performance"
+    },
+    {
+      "name": "driver_parked_instruction_visible",
+      "passed": true,
+      "details": "Parked-use instruction visible"
+    },
+    {
+      "name": "mobile_no_document_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "no_uncaught_browser_errors",
+      "passed": true,
+      "details": "[]"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED"
+  ],
+  "request_failures": [
+    {
+      "url": "https://a.tile.openstreetmap.org/7/30/48.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/7/29/49.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/7/32/49.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://b.tile.openstreetmap.org/7/30/49.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/31/49.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://b.tile.openstreetmap.org/7/31/48.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/29/48.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/32/48.png",
+      "failure": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "screenshots": [
+    "desktop-command.png",
+    "desktop-evidence.png",
+    "desktop-model.png",
+    "mobile-drive.png"
+  ],
+  "browser_version": "156.0.8078.47",
+  "passed": false
+}

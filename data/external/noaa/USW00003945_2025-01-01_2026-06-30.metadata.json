@@ -1,0 +1,21 @@
+{
+  "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+  "retrieved_at": "2026-10-26T06:38:45.301598+00:00",
+  "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac",
+  "bytes": 148977,
+  "http_status": 200,
+  "content_type": "application/json;charset=utf-8",
+  "request_parameters": {
+    "dataset": "daily-summaries",
+    "stations": "USW00003945",
+    "startDate": "2025-01-01",
+    "endDate": "2026-06-30",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "units": "metric",
+    "format": "json",
+    "includeStationLocation": "true",
+    "includeStationName": "true",
+    "includeAttributes": "true"
+  },
+  "provenance": "observed historical weather"
+}

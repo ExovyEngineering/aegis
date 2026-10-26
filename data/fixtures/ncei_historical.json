@@ -1,0 +1,81 @@
+{
+  "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2024-07-01&endDate=2024-07-07&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true",
+  "retrieved_at": "2026-10-26T06:13:13.183443+00:00",
+  "payload": [
+    {
+      "DATE": "2024-07-01",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "22.8",
+      "ELEVATION": "272.2",
+      "TMIN": "16.7",
+      "PRCP": "0.0",
+      "LATITUDE": "38.81704"
+    },
+    {
+      "DATE": "2024-07-02",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "33.3",
+      "ELEVATION": "272.2",
+      "TMIN": "19.4",
+      "PRCP": "0.0",
+      "LATITUDE": "38.81704"
+    },
+    {
+      "DATE": "2024-07-03",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "29.4",
+      "ELEVATION": "272.2",
+      "TMIN": "21.7",
+      "PRCP": "75.7",
+      "LATITUDE": "38.81704"
+    },
+    {
+      "DATE": "2024-07-04",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "30.0",
+      "ELEVATION": "272.2",
+      "TMIN": "19.4",
+      "PRCP": "100.1",
+      "LATITUDE": "38.81704"
+    },
+    {
+      "DATE": "2024-07-05",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "27.8",
+      "ELEVATION": "272.2",
+      "TMIN": "20.0",
+      "PRCP": "0.0",
+      "LATITUDE": "38.81704"
+    },
+    {
+      "DATE": "2024-07-06",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "30.0",
+      "ELEVATION": "272.2",
+      "TMIN": "18.3",
+      "PRCP": "0.0",
+      "LATITUDE": "38.81704"
+    },
+    {
+      "DATE": "2024-07-07",
+      "STATION": "USW00003945",
+      "LONGITUDE": "-92.21475",
+      "TMAX": "30.0",
+      "ELEVATION": "272.2",
+      "TMIN": "18.3",
+      "PRCP": "41.9",
+      "LATITUDE": "38.81704"
+    }
+  ],
+  "cache": false,
+  "stale": false,
+  "provenance": "observed historical weather",
+  "coverage_warning": "One station/week only; no validated FSIS weather join",
+  "fixture_note": "Actual dated API response frozen for offline demo; not live. Never use as current operational evidence."
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "file": "NORS_20261026.csv",
+    "source": "nors",
+    "rows": 66713,
+    "columns": [
+      "Year",
+      "Month",
+      "State",
+      "Primary Mode",
+      "Etiology",
+      "Serotype or Genotype",
+      "Etiology Status",
+      "Setting",
+      "Illnesses",
+      "Hospitalizations",
+      "Info On Hospitalizations",
+      "Deaths",
+      "Info On Deaths",
+      "Food Vehicle",
+      "Food Contaminated Ingredient",
+      "IFSAC Category",
+      "Water Exposure",
+      "Water Type",
+      "Animal Type"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\nors_0.parquet"
+  },
+  {
+    "file": "BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+    "source": "beam",
+    "rows": 1650,
+    "columns": [
+      "Year",
+      "Quarter",
+      "Month",
+      "HHS_Region",
+      "Pathogen",
+      "Number_of_isolates",
+      "Past_two_years_average"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\beam_0.parquet"
+  },
+  {
+    "file": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+    "source": "beam",
+    "rows": 262616,
+    "columns": [
+      "Year",
+      "Month",
+      "State",
+      "Source Type",
+      "Source Site",
+      "Pathogen",
+      "Serotype/Species",
+      "Number of isolates",
+      "Outbreak associated isolates",
+      "New multistate outbreaks",
+      "New multistate outbreaks - US",
+      "% Isolates with clinically important antimicrobial resistance",
+      "Number of sequenced isolates analyzed by NARMS"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\beam_1.parquet"
+  },
+  {
+    "file": "BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+    "source": "beam",
+    "rows": 484,
+    "columns": [
+      "Pathogen",
+      "table_id",
+      "Food_category",
+      "Year",
+      "Serotype",
+      "Burden",
+      "Trajectory",
+      "Year_range",
+      "No_of_illnesses",
+      "Hospitalization(s)",
+      "Burden_sort_order",
+      "Trajectory_sort_order",
+      "Master_sort_order"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\beam_2.parquet"
+  },
+  {
+    "file": "BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+    "source": "beam",
+    "rows": 2412,
+    "columns": [
+      "table_id",
+      "Food_category",
+      "Year_first_ill",
+      "Serotype",
+      "No_of_illnesses",
+      "No_of_outbreaks",
+      "Pathogen",
+      "Year",
+      "Year_range",
+      "Running_total_by_year_range"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\beam_3.parquet"
+  },
+  {
+    "file": "BEAM_Dashboard_\u2013_Top_30_Most_Common_Serotypes_20261026.csv",
+    "source": "beam",
+    "rows": 4818,
+    "columns": [
+      "Year",
+      "Quarter",
+      "Month",
+      "Pathogen",
+      "Serotype/Species/Subgroup",
+      "Number of isolates",
+      "Past two years average",
+      "% Change"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\beam_4.parquet"
+  },
+  {
+    "file": "MPI_Directory_by_Establishment_Name.csv",
+    "source": "establishments",
+    "rows": 175,
+    "columns": [
+      "establishment_id",
+      "establishment_number",
+      "establishment_name",
+      "duns_number",
+      "street",
+      "city",
+      "state",
+      "zip",
+      "phone",
+      "grant_date",
+      "activities",
+      "dbas",
+      "district",
+      "circuit",
+      "size",
+      "latitude",
+      "longitude",
+      "county",
+      "fips_code"
+    ],
+    "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\establishments_0.parquet"
+  }
+]

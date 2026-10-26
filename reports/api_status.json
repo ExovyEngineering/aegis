@@ -1,0 +1,245 @@
+[
+  {
+    "id": "fsis_recalls",
+    "tested_at": "2026-10-26T06:10:05.020344+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json",
+    "failure": null,
+    "response_schema": "array[2032]",
+    "latency_ms": 923
+  },
+  {
+    "id": "fsis_sampling",
+    "tested_at": "2026-10-26T06:10:06.244216+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "failure": null,
+    "latency_ms": 442
+  },
+  {
+    "id": "fsis_directory",
+    "tested_at": "2026-10-26T06:10:06.986717+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "failure": null,
+    "latency_ms": 417
+  },
+  {
+    "id": "cdc_beam",
+    "tested_at": "2026-10-26T06:10:07.704292+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html",
+    "failure": null,
+    "latency_ms": 407
+  },
+  {
+    "id": "cdc_nors",
+    "tested_at": "2026-10-26T06:10:08.411544+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html",
+    "failure": null,
+    "latency_ms": 383
+  },
+  {
+    "id": "ncei_docs",
+    "tested_at": "2026-10-26T06:10:09.094640+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "failure": null,
+    "latency_ms": 508
+  },
+  {
+    "id": "ncei_historical",
+    "tested_at": "2026-10-26T06:10:09.903122+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "failure": null,
+    "response_schema": "array[7]",
+    "latency_ms": 602
+  },
+  {
+    "id": "nws_alerts",
+    "tested_at": "2026-10-26T06:10:10.805916+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/geo+json",
+    "failure": null,
+    "response_schema": [
+      "@context",
+      "type",
+      "features",
+      "title",
+      "updated"
+    ],
+    "latency_ms": 717
+  },
+  {
+    "id": "nws_points",
+    "tested_at": "2026-10-26T06:10:11.823245+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/geo+json",
+    "failure": null,
+    "response_schema": [
+      "@context",
+      "id",
+      "type",
+      "geometry",
+      "properties"
+    ],
+    "latency_ms": 530
+  },
+  {
+    "id": "openmeteo",
+    "tested_at": "2026-10-26T06:10:12.653243+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "failure": null,
+    "response_schema": [
+      "latitude",
+      "longitude",
+      "generationtime_ms",
+      "utc_offset_seconds",
+      "timezone",
+      "timezone_abbreviation",
+      "elevation",
+      "hourly_units",
+      "hourly"
+    ],
+    "latency_ms": 508
+  },
+  {
+    "id": "openmeteo_archive",
+    "tested_at": "2026-10-26T06:10:13.461459+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "failure": null,
+    "response_schema": [
+      "latitude",
+      "longitude",
+      "generationtime_ms",
+      "utc_offset_seconds",
+      "timezone",
+      "timezone_abbreviation",
+      "elevation",
+      "daily_units",
+      "daily"
+    ],
+    "latency_ms": 803
+  },
+  {
+    "id": "modot",
+    "tested_at": "2026-10-26T06:10:14.565252+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "failure": null,
+    "response_schema": [
+      "documentInfo",
+      "maxImageWidth",
+      "maxRecordCount",
+      "description",
+      "datesInUnknownTimezone",
+      "supportsQueryDomains",
+      "units",
+      "maxSelectionCount",
+      "supportedImageFormatTypes",
+      "supportsClipping",
+      "exportTilesAllowed",
+      "maxImageHeight",
+      "tables",
+      "hasVersionedData",
+      "supportsDatumTransformation",
+      "cimVersion",
+      "supportsQueryDataElements",
+      "layers",
+      "mapName",
+      "minScale",
+      "archivingInfo",
+      "spatialReference",
+      "fullExtent",
+      "supportedExtensions",
+      "capabilities",
+      "supportsDynamicLayers",
+      "maxScale",
+      "singleFusedMapCache",
+      "currentVersion",
+      "hasBranchVersionedData"
+    ],
+    "latency_ms": 411
+  },
+  {
+    "id": "osrm_route",
+    "tested_at": "2026-10-26T06:10:15.277041+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "failure": null,
+    "response_schema": [
+      "code",
+      "routes",
+      "waypoints"
+    ],
+    "latency_ms": 828
+  },
+  {
+    "id": "osrm_table",
+    "tested_at": "2026-10-26T06:10:16.405206+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "failure": null,
+    "response_schema": [
+      "code",
+      "destinations",
+      "durations",
+      "sources"
+    ],
+    "latency_ms": 670
+  },
+  {
+    "id": "osrm_docs",
+    "tested_at": "2026-10-26T06:10:17.375309+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "failure": null,
+    "latency_ms": 384
+  },
+  {
+    "id": "osm_missouri",
+    "tested_at": "2026-10-26T06:10:18.060374+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html",
+    "failure": null,
+    "latency_ms": 860
+  },
+  {
+    "id": "food_access",
+    "tested_at": "2026-10-26T06:10:19.220895+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "failure": null,
+    "latency_ms": 659
+  },
+  {
+    "id": "food_environment",
+    "tested_at": "2026-10-26T06:10:20.180502+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "failure": null,
+    "latency_ms": 544
+  }
+]

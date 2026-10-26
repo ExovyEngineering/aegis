@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "metadata_creation_date": "March 19, 2026",
+      "declared_records": {
+        "primary": 28941,
+        "secondary": 5206
+      }
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+      "metadata_creation_date": "March 19, 2026",
+      "declared_records": {
+        "primary": 28564,
+        "secondary": 5839
+      }
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+      "metadata_creation_date": "October 09, 2026",
+      "declared_records": {
+        "primary": 21102,
+        "secondary": 4219
+      }
+    }
+  ],
+  "rows": 78607,
+  "duplicates_removed": 0,
+  "invalid_dates": 0,
+  "availability_warning": "Row-level result/publication dates absent; metadata creation date is snapshot availability. Retrospective features use a conservative assumed 90-day reporting lag; prospective validity unproven.",
+  "target": "Primary Salmonella Positive/Negative; no secondary typing tests; national selected sampling, not consumer illness."
+}

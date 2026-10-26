@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "simulation": true,
+  "operator_database_modified": false,
+  "driver_report_created": true,
+  "incident_reviewed_and_resolved": true,
+  "instruction_acknowledged": true,
+  "stale_instruction_ack_rejected": true,
+  "held_lot_assignments_removed": true,
+  "release_did_not_redispatch": true,
+  "audit_actions": [
+    "incident_review",
+    "lot_release",
+    "lot_hold",
+    "instruction_acknowledge",
+    "dispatcher_instruction",
+    "incident_review",
+    "incident",
+    "approve"
+  ]
+}

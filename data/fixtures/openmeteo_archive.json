@@ -1,0 +1,48 @@
+{
+  "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.9517&longitude=-92.3341&start_date=2024-07-01&end_date=2024-07-07&daily=temperature_2m_max,precipitation_sum&timezone=America%2FChicago",
+  "retrieved_at": "2026-10-26T06:10:13.461459+00:00",
+  "payload": {
+    "latitude": 38.980667,
+    "longitude": -92.34247,
+    "generationtime_ms": 0.8260011672973633,
+    "utc_offset_seconds": -18000,
+    "timezone": "America/Chicago",
+    "timezone_abbreviation": "GMT-5",
+    "elevation": 216.0,
+    "daily_units": {
+      "time": "iso8601",
+      "temperature_2m_max": "\u00b0C",
+      "precipitation_sum": "mm"
+    },
+    "daily": {
+      "time": [
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07"
+      ],
+      "temperature_2m_max": [
+        22.1,
+        35.0,
+        31.3,
+        30.0,
+        27.6,
+        29.0,
+        30.5
+      ],
+      "precipitation_sum": [
+        0.6,
+        14.4,
+        31.5,
+        21.3,
+        0.2,
+        0.0,
+        12.1
+      ]
+    }
+  },
+  "fixture_note": "Actual dated API response frozen for offline demo; not live. Never use as current operational evidence."
+}

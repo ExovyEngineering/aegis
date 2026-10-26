@@ -1,0 +1,97 @@
+{
+  "status": "snapshot-consistent retrospective sensitivity study; creation is not verified public release",
+  "generated_at": "2026-10-26T06:42:45.344447+00:00",
+  "snapshot_release_verified": false,
+  "prospective_validation_feasible": false,
+  "target": "Salmonella positivity in selected FSIS raw-poultry primary samples; not consumer illness",
+  "strict_split": {
+    "training_snapshot_cutoff": "2026-03-19",
+    "training_rows": 57459,
+    "validation_rows": 7754,
+    "training_start": "2023-10-01",
+    "training_end": "2025-09-30",
+    "validation_start": "2026-03-20",
+    "validation_end": "2026-06-30",
+    "training_files": [
+      "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json"
+    ],
+    "validation_files": [
+      "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json"
+    ],
+    "snapshot_creation_dates": {
+      "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json": "2026-03-19",
+      "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json": "2026-03-19",
+      "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json": "2026-10-09"
+    }
+  },
+  "snapshot_baseline": {
+    "n": 7754,
+    "positives": 803,
+    "prevalence": 0.10355945318545266,
+    "brier": 0.09297314475652543,
+    "brier_week_block_bootstrap_95_ci": [
+      0.08690249305938648,
+      0.09855643138392993
+    ],
+    "pr_auc_average_precision": 0.10355945318545266,
+    "roc_auc": 0.5,
+    "precision_at_0_5": 0.0,
+    "recall_at_0_5": 0.0,
+    "calibration": {
+      "observed": [
+        0.10355945318545266
+      ],
+      "predicted": [
+        0.0918013957292794
+      ]
+    }
+  },
+  "calendar_logistic": {
+    "n": 7754,
+    "positives": 803,
+    "prevalence": 0.10355945318545266,
+    "brier": 0.09293426566559351,
+    "brier_week_block_bootstrap_95_ci": [
+      0.08689034410003728,
+      0.09849214403743548
+    ],
+    "pr_auc_average_precision": 0.10188889107494493,
+    "roc_auc": 0.49919692248873226,
+    "precision_at_0_5": 0.0,
+    "recall_at_0_5": 0.0,
+    "calibration": {
+      "observed": [
+        0.09486510008703221,
+        0.1171011931064958,
+        0.11648079306071871,
+        0.09471919530595138
+      ],
+      "predicted": [
+        0.09282209742584581,
+        0.09361605458919814,
+        0.09363648237075527,
+        0.09391567987899725
+      ]
+    }
+  },
+  "frozen_historical_prevalence": 0.09180139572927724,
+  "feature_availability": "Training labels are frozen to earlier source snapshots and are not updated using held-out outcomes. Calendar month is known at the selected sample date. Metadata creation dates precede validation collection dates; first public release and row-level result availability are unverified. No availability dates were invented.",
+  "operational_selection": "Frozen smoothed historical prevalence remains the transparent estimator; this sensitivity study does not validate prospective deployment.",
+  "limitations": [
+    "The FY2024/FY2025 files were created March 19, 2026, but that is not proof they were publicly released or accessible on that day.",
+    "FY2026 outcomes come from an October 9, 2026 snapshot and may contain retrospective revisions; no historical as-of archive was supplied.",
+    "Sampling schedules and publication latency are unknown, so this evaluates selected future-dated samples conditional on being sampled.",
+    "Single later-date holdout; no evidence of transportability to farms, shipments or consumers.",
+    "No held-out labels enter frozen model parameters or historical prevalence.",
+    "No CDC surveillance or weather feature is joined to this target.",
+    "Intervals resample validation weeks and exclude publication-lag and selection uncertainty."
+  ],
+  "availability_audit": {
+    "row_level_result_dates_present": false,
+    "actual_download_dates_known": false,
+    "metadata_creation_dates_present": true,
+    "prior_90_day_assumption_validated": false,
+    "original_evaluation_status": "Existing 90-day-lag evaluation remains retrospective feasibility; 90 days is an assumption, not measured latency."
+  }
+}
