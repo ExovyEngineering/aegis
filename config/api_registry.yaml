@@ -12,7 +12,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:17.284615+00:00",
+      "last_successful_request": "2026-10-27T21:03:19.060413+00:00",
       "response_schema": {
         "type": "array",
         "rows": 2032,
@@ -63,7 +63,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "quarterly",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:18.432909+00:00",
+      "last_successful_request": "2026-10-27T21:03:20.288067+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied validated JSON files"
@@ -80,7 +80,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "monthly",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:19.113683+00:00",
+      "last_successful_request": "2026-10-27T21:03:21.036800+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied directory CSV"
@@ -97,7 +97,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "provider dependent",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:19.860543+00:00",
+      "last_successful_request": "2026-10-27T21:03:21.730071+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied BEAM exports; separate evidence"
@@ -114,7 +114,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "annual",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:21.103947+00:00",
+      "last_successful_request": "2026-10-27T21:03:23.237149+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied NORS; separate evidence"
@@ -131,7 +131,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:22.463101+00:00",
+      "last_successful_request": "2026-10-27T21:03:24.923729+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Coverage warning; no substitution with forecasts"
@@ -148,7 +148,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:23.270612+00:00",
+      "last_successful_request": "2026-10-27T21:03:26.014291+00:00",
       "response_schema": {
         "type": "array",
         "rows": 7,
@@ -175,7 +175,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "5 minutes",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:25.134226+00:00",
+      "last_successful_request": "2026-10-27T21:03:26.877839+00:00",
       "response_schema": [
         "@context",
         "type",
@@ -198,7 +198,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:26.015658+00:00",
+      "last_successful_request": "2026-10-27T21:03:27.699950+00:00",
       "response_schema": [
         "@context",
         "id",
@@ -221,7 +221,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "hourly",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:26.978324+00:00",
+      "last_successful_request": "2026-10-27T21:03:28.655807+00:00",
       "response_schema": [
         "latitude",
         "longitude",
@@ -248,7 +248,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:28.245429+00:00",
+      "last_successful_request": "2026-10-27T21:03:29.851141+00:00",
       "response_schema": [
         "latitude",
         "longitude",
@@ -275,7 +275,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "5 minutes",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:29.668385+00:00",
+      "last_successful_request": "2026-10-27T21:03:30.956774+00:00",
       "response_schema": [
         "documentInfo",
         "maxImageWidth",
@@ -323,7 +323,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:30.385658+00:00",
+      "last_successful_request": "2026-10-27T21:03:31.682443+00:00",
       "response_schema": [
         "code",
         "routes",
@@ -344,7 +344,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:31.549377+00:00",
+      "last_successful_request": "2026-10-27T21:03:32.833333+00:00",
       "response_schema": [
         "code",
         "destinations",
@@ -366,7 +366,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:32.511058+00:00",
+      "last_successful_request": "2026-10-27T21:03:33.797017+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Bundled request contract"
@@ -383,7 +383,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:33.320019+00:00",
+      "last_successful_request": "2026-10-27T21:03:34.589080+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "OSM online tiles require internet"
@@ -400,7 +400,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "release dependent",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:36.671168+00:00",
+      "last_successful_request": "2026-10-27T21:03:35.744896+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied workbook"
@@ -417,7 +417,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "release dependent",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-27T07:00:37.740911+00:00",
+      "last_successful_request": "2026-10-27T21:03:36.589419+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied workbook"

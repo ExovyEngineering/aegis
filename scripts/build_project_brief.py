@@ -24,6 +24,8 @@ def sections(root):
     model=load(root,'reports/model_evaluation.json',{})
     weather=load(root,'reports/noaa_coverage.json',{})
     audit=load(root,'data/manifests/inventory.json',{})
+    usda=load(root,'reports/usda_food_environment.json',{})
+    ingestion=load(root,'reports/ingestion_verification.json',{})
     generated=datetime.now(ZoneInfo('America/Chicago')).strftime('%B %d, %Y at %I:%M %p CT')
     output=[('AEGIS | Team and presentation brief',[
         'Adaptive Early-warning & Guidance for Integrated Supply Chains',
@@ -42,7 +44,7 @@ def sections(root):
     testlines=[f"Latest local verification finished: {checked.get('finished_at','not recorded')}. All requested local checks passed: {checked.get('all_passed','not recorded')}."]
     for c in checked.get('checks',[]):
         testlines.append(f"{c['name']}: {'PASS' if c['passed'] else 'FAIL'}; exit {c['exit_code']}; tests passed {c['tests_passed'] if c['tests_passed'] is not None else 'build check'}; {c['duration_seconds']} seconds. Log: {c['log']}. Checked: {c['checked_at']}.")
-    for path,label in [('reports/browser_qa/controls/results.json','Map, scenario, simulator and source-control browser QA'),('reports/browser_qa/drive/results.json','Visual Drive and parked-use actual-Chrome QA'),('reports/browser_qa/depth/results.json','Latest feature-depth actual-Chrome QA'),('reports/browser_qa/operations/results.json','Earlier dispatcher/custom-planning browser QA')]:
+    for path,label in [('reports/browser_qa/readiness/results.json','USDA county context, source provenance and readiness browser QA'),('reports/browser_qa/controls/results.json','Map, scenario, simulator and source-control browser QA'),('reports/browser_qa/drive/results.json','Visual Drive and parked-use actual-Chrome QA'),('reports/browser_qa/depth/results.json','Earlier feature-depth actual-Chrome QA'),('reports/browser_qa/operations/results.json','Earlier dispatcher/custom-planning browser QA')]:
         value=load(root,path,{})
         if value:
             checks=value.get('checks',[])
@@ -66,6 +68,17 @@ def sections(root):
         'Recall notices are official evidence, but fictional lots have no genuine traceability supporting a verified product/lot match. No live recall match or regulatory disposition is claimed.',
         'Public OSRM routes are for the driving profile, lack commercial-truck restriction validation and do not automatically include current MoDOT closures. Independent geometry proximity prompts review and can produce false positives.',
         'Cargo projections use uncalibrated physical assumptions and parameter sensitivity, not learned failure probabilities, food-safety thresholds or confidence intervals.'
+    ]))
+    output.append(('Source integrity | County context and readiness',[
+        'Supported CSV/TSV evidence is discovered recursively and recognized by explicit source schemas. Stable semantic identities replace file-order labels. Schema recognition is evidence of structure, not cryptographic provider authenticity or proof of public release timing.',
+        'Exact-byte duplicate exports are recorded without pooling observations. Two different exports matching the same semantic table become a conflict; prior output bytes are retained but cannot be presented as the latest successful import. Per-file errors remain explicit, and malformed unrelated JSON no longer aborts all FSIS ingestion.',
+        f"Recorded re-import comparison: {len(ingestion.get('comparison',[]))} prior tables checked; all values/dtypes unchanged: {all(item.get('frame_values_and_dtypes_equal') for item in ingestion.get('comparison',[])) if ingestion.get('comparison') else 'not recorded'}. Model artifact hashes unchanged: {ingestion.get('model_artifact_hashes_unchanged','not recorded')}. Evidence: reports/ingestion_verification.json.",
+        'The source browser verifies and parses the same bounded immutable byte snapshot. Row requests carry their own checksum and import provenance so concurrent replacement cannot silently change the values beneath a verified hash.',
+        f"USDA Food Environment Atlas status: {usda.get('status','not ingested')}; {usda.get('geography',{}).get('county_count','not recorded')} Missouri counties/county-equivalents, {len(usda.get('variables',[]))} inspected variables. Source release note: {usda.get('release_note','not recorded')}. Evidence: reports/usda_food_environment.json.",
+        'ACCESS measures use 2019 store access and source-defined historical population/housing-unit denominators. Grocery measures are dated 2020; SNAP-authorized store measures are dated 2023. These are historical county context, not current household conditions, demand estimates, food-safety risk or allocation weights.',
+        f"USDA missing observations by field: {usda.get('coverage',{}).get('null_counts','not recorded')}. Original sentinel codes and sheet/row identities are retained. Missing/suppressed values are never replaced with zero. Repeated county names remain distinct by FIPS; no simulated-destination or route-location join is inferred.",
+        'Dispatch readiness checks current approved assignments in one consistent read-only database snapshot. Thirteen constraint diagnostics and three workflow checks expose resource limits, assignment acknowledgment, exact-version instruction acknowledgment and scenario-B verification. A passing checklist does not dispatch, consume stock, create a hold, certify food safety or clear a commercial-truck route.',
+        'Use Sources to compare counties, inspect definitions and download the checked county CSV. Use Dispatcher desk to select a trip, filter readiness status and inspect the evidence for each check. Genuine Kiro work and final author review remain separate gates.'
     ]))
     output.append(('Walkthrough | What to show behind the buttons',[
         'Command: compare A/B/C/D metrics. Open decision details to inspect selected shipments, exclusion reasons and resource limits. Review a proposal with an identity and rationale; stale or unsafe plans are rejected.',

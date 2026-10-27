@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 27, 2026 at 03:00 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 27, 2026 at 04:08 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -18,9 +18,15 @@ Update this brief: run scripts/verify_project.py after code changes, then script
 
 Source inventory and provenance | implemented; bounded coverage
 
-42 original downloads audited; official evidence and simulated logistics remain distinct.
+42 original downloads audited; official evidence and simulated logistics remain distinct. Recursive content-based imports preserve semantic identities, record exact failures, skip duplicate bytes and block conflicting snapshots.
 
 Evidence: reports/data_audit.md
+
+USDA historical county context | implemented as a separate historical evidence layer
+
+115 Missouri counties/county-equivalents and ten 2019/2020/2023 measures, with denominators, source hashes and missing codes. No safety score, current demand estimate or allocation weight is inferred.
+
+Evidence: reports/usda_food_environment.json
 
 Independent public weather integrations | implemented; historical gaps remain
 
@@ -90,6 +96,12 @@ Dedicated visual trip view, simulated fuel/origin position/cargo, ten-minute par
 
 Evidence: tests/test_drive_integration.py
 
+Inspectable dispatch readiness | implemented as read-only diagnostics
+
+Sixteen checks distinguish hard eligibility/resource constraints from outstanding assignment acknowledgment, instruction acknowledgment and targeted verification. Passing the listed checks does not dispatch or certify safety.
+
+Evidence: tests/test_readiness.py
+
 # P2 | Deferred extensions
 
 LLM operations assistant | deferred behind P0 gates
@@ -136,23 +148,25 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-27T07:56:13.545043+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-27T21:07:26.431211+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 244; 19.51 seconds. Log: reports/checks/20261027T075532749763Z/pytest.txt. Checked: 2026-10-27T07:55:32.750031+00:00.
+pytest: PASS; exit 0; tests passed 370; 29.772 seconds. Log: reports/checks/20261027T210636524640Z/pytest.txt. Checked: 2026-10-27T21:06:36.524887+00:00.
 
-vitest: PASS; exit 0; tests passed 51; 9.701 seconds. Log: reports/checks/20261027T075532749763Z/vitest.txt. Checked: 2026-10-27T07:55:52.284731+00:00.
+vitest: PASS; exit 0; tests passed 60; 8.872 seconds. Log: reports/checks/20261027T210636524640Z/vitest.txt. Checked: 2026-10-27T21:07:06.322094+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 11.525 seconds. Log: reports/checks/20261027T075532749763Z/frontend_build.txt. Checked: 2026-10-27T07:56:02.005654+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 11.2 seconds. Log: reports/checks/20261027T210636524640Z/frontend_build.txt. Checked: 2026-10-27T21:07:15.213257+00:00.
+
+USDA county context, source provenance and readiness browser QA: 58 / 58 recorded checks passed. Timestamp: 2026-10-27T21:07:50.127Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
 Map, scenario, simulator and source-control browser QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-27T07:58:39.813Z. Evidence: reports/browser_qa/controls/results.json. This is a separate run from local unit/build checks.
 
 Visual Drive and parked-use actual-Chrome QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-27T07:58:36.241Z. Evidence: reports/browser_qa/drive/results.json. This is a separate run from local unit/build checks.
 
-Latest feature-depth actual-Chrome QA: 36 / 36 recorded checks passed. Timestamp: 2026-10-27T07:11:33.928Z. Evidence: reports/browser_qa/depth/results.json. This is a separate run from local unit/build checks.
+Earlier feature-depth actual-Chrome QA: 36 / 36 recorded checks passed. Timestamp: 2026-10-27T07:11:33.928Z. Evidence: reports/browser_qa/depth/results.json. This is a separate run from local unit/build checks.
 
 Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. Timestamp: 2026-10-27T07:11:39.245Z. Evidence: reports/browser_qa/operations/results.json. This is a separate run from local unit/build checks.
 
-Loopback HTTP smoke artifact records 24 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
+Loopback HTTP smoke artifact records 26 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
 
 Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.
 
@@ -183,6 +197,26 @@ Recall notices are official evidence, but fictional lots have no genuine traceab
 Public OSRM routes are for the driving profile, lack commercial-truck restriction validation and do not automatically include current MoDOT closures. Independent geometry proximity prompts review and can produce false positives.
 
 Cargo projections use uncalibrated physical assumptions and parameter sensitivity, not learned failure probabilities, food-safety thresholds or confidence intervals.
+
+# Source integrity | County context and readiness
+
+Supported CSV/TSV evidence is discovered recursively and recognized by explicit source schemas. Stable semantic identities replace file-order labels. Schema recognition is evidence of structure, not cryptographic provider authenticity or proof of public release timing.
+
+Exact-byte duplicate exports are recorded without pooling observations. Two different exports matching the same semantic table become a conflict; prior output bytes are retained but cannot be presented as the latest successful import. Per-file errors remain explicit, and malformed unrelated JSON no longer aborts all FSIS ingestion.
+
+Recorded re-import comparison: 8 prior tables checked; all values/dtypes unchanged: True. Model artifact hashes unchanged: True. Evidence: reports/ingestion_verification.json.
+
+The source browser verifies and parses the same bounded immutable byte snapshot. Row requests carry their own checksum and import provenance so concurrent replacement cannot silently change the values beneath a verified hash.
+
+USDA Food Environment Atlas status: available; 115 Missouri counties/county-equivalents, 10 inspected variables. Source release note: The original release date of this file is July 2025.. Evidence: reports/usda_food_environment.json.
+
+ACCESS measures use 2019 store access and source-defined historical population/housing-unit denominators. Grocery measures are dated 2020; SNAP-authorized store measures are dated 2023. These are historical county context, not current household conditions, demand estimates, food-safety risk or allocation weights.
+
+USDA missing observations by field: {'LACCESS_POP19': 0, 'PCT_LACCESS_POP19': 0, 'LACCESS_LOWI19': 0, 'PCT_LACCESS_LOWI19': 0, 'LACCESS_HHNV19': 0, 'PCT_LACCESS_HHNV19': 0, 'GROC20': 39, 'GROCPTH20': 39, 'SNAPS23': 0, 'SNAPSPTH23': 0}. Original sentinel codes and sheet/row identities are retained. Missing/suppressed values are never replaced with zero. Repeated county names remain distinct by FIPS; no simulated-destination or route-location join is inferred.
+
+Dispatch readiness checks current approved assignments in one consistent read-only database snapshot. Thirteen constraint diagnostics and three workflow checks expose resource limits, assignment acknowledgment, exact-version instruction acknowledgment and scenario-B verification. A passing checklist does not dispatch, consume stock, create a hold, certify food safety or clear a commercial-truck route.
+
+Use Sources to compare counties, inspect definitions and download the checked county CSV. Use Dispatcher desk to select a trip, filter readiness status and inspect the evidence for each check. Genuine Kiro work and final author review remain separate gates.
 
 # Walkthrough | What to show behind the buttons
 

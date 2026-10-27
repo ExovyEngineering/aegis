@@ -22,6 +22,39 @@ Every decision is transactional and audited. Stale network, incident or instruct
 
 The desk and Drive check local state every fifteen seconds. This polling does not refresh external APIs or establish live weather/road coverage. Source timestamps and stale warnings still control interpretation. The parked-use instruction remains visible.
 
+## Dispatch readiness review
+
+The Dispatcher desk includes a read-only checklist for approved simulated trips.
+Choose a status filter and trip to inspect the actual constraints and outstanding
+workflow records. **Refresh readiness** repeats the local read; it does not
+refresh weather, road incidents or official recall data. `GET /api/readiness`
+returns the same diagnostic for API clients.
+
+Each trip has sixteen checks:
+
+- Thirteen hard checks: known canonical shipment, unchanged shipment assumptions,
+  lot eligibility/disposition, truck eligibility, refrigeration configuration,
+  positive quantity, deadline, shelf life, and aggregate lot inventory, truck
+  capacity, origin capacity, supplier capacity and destination demand.
+- Three workflow checks: driver assignment acknowledgment, acknowledgment of
+  the current versioned instruction, and complete matching targeted verification
+  when the approved scenario requests it.
+
+The backend recomputes aggregate use across all approved trips from one SQLite
+snapshot. A hard failure reports **Blocked by a constraint**. Otherwise missing
+workflow evidence reports **Review outstanding**. **Listed checks passed** means
+the listed records permit final human review; it is not departure authorization,
+food-safety certification or commercial-truck route clearance. The checklist
+does not dispatch a truck, decrement stock or impose a hold. Predictive scores
+do not create hard blocks.
+
+Results include the checked time and network revision. A revision mismatch
+between the desk and checklist suppresses the displayed results until refreshed.
+Review and acknowledgment mutations continue through their existing audited,
+version-checked endpoints. See [the backend](../backend/readiness.py),
+[read-only and concurrent-snapshot tests](../tests/test_readiness.py) and
+[the interface](../frontend/src/DispatchReadiness.tsx).
+
 ## Reproduce safely
 
 Run `.venv/Scripts/python scripts/operations_demo.py` for an isolated temporary-database exercise covering report, review, instruction, stale acknowledgment rejection, hold, release and resolution. It writes `reports/operations_demo.json` and leaves the operator database unchanged.

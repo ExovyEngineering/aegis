@@ -36,6 +36,10 @@ flowchart LR
 | `backend/ingestion/nors.py` | Validate NORS columns and preserve historical outbreak evidence |
 | `backend/ingestion/beam.py` | Preserve BEAM export schemas as separate evidence |
 | `backend/ingestion/establishments.py` | Read official directory, select Missouri, parse coordinates |
+| `backend/ingestion/common.py` | Recursive supplied-input discovery, header inspection, hashes and complete derived-table publication |
+| `backend/ingestion/usda.py` | Validate bounded USDA Food Environment Atlas county context, vintages, denominators and missing codes |
+| `backend/food_context.py` | Serve checked USDA Parquet snapshots and CSV without operational or safety inference |
+| `backend/readiness.py` | Read-only hard-constraint and human-workflow checks for approved simulated assignments |
 | `backend/simulation.py` | Fixed-seed fictional network, telemetry, operational events |
 | `backend/optimization.py` | Four constrained single-wave allocation scenarios |
 | `backend/main.py` | HTTP endpoints, transactional proposals, approval and driver workflow |
@@ -127,3 +131,49 @@ Driver trip acknowledgments and reports include the displayed network revision.
 A transactional guard rejects stale context even when a shipment ID is reused
 for another lot. Legacy callers can omit this optional field for compatibility;
 this is not production authorization or authenticated driver identity.
+
+## Source identity and county context (October 27)
+
+Source-specific ingestion now discovers supplied files recursively while
+excluding generated/runtime trees. CSV/TSV headers select stable NORS, five BEAM
+and establishment identities; raw-poultry JSON requires embedded product
+metadata and primary-row validation. Exact duplicate downloads are represented
+once. Conflicting export snapshots require explicit input selection instead of
+silent concatenation or filename-based recency. Per-file errors remain recorded
+while other sources continue. Complete Parquet publication preserves prior bytes
+when a writer fails. See [the ingestion guide](ingestion_provenance.md),
+[identity regressions](../tests/test_ingestion_identity.py) and
+[the recorded re-ingestion comparison](../reports/ingestion_verification.json).
+
+The data explorer reads a derived table into one bounded snapshot, verifies its
+manifest checksum and schema, and parses those same bytes. Its 64 MiB snapshot
+bound is separate from the 1-100 returned rows and maximum offset of 10,000.
+Latest failed/conflicting/omitted inputs do not silently promote an older output
+to current evidence. Legacy tables without input manifests retain an explicit
+provenance warning. FSIS, NORS and BEAM remain separate scientific evidence.
+
+The USDA adapter extracts 115 Missouri counties/county-equivalents and ten
+ACCESS/STORES variables into a separate Parquet table/report. The food-context
+router verifies the derived checksum before serving values from those same
+bytes. Its UI compares selected FIPS identities and exports county context; it
+does not spatially assign destinations, create a risk score, alter demand or
+change optimization. Access measures use 2019 store data with older Census/ACS
+inputs; store measures use 2020 and 2023. Grocery count/rate each retain 39 nulls.
+See [the county-context guide](food_access_context.md) and
+[API integrity tests](../tests/test_food_context.py).
+
+## Read-only assignment readiness
+
+`GET /api/readiness` reads network state and approved assignments within one
+SQLite snapshot. It reports sixteen checks per assignment: thirteen hard
+eligibility/resource checks and three outstanding workflow checks. Aggregate
+lot, truck, origin, supplier and destination use is recomputed across the
+current allocation. The UI separates constraint blocks, review outstanding and
+listed checks passed, and hides results from a mismatched network revision.
+
+This diagnostic does not approve, dispatch, consume stock, create holds or
+certify safety. Versioned instruction acknowledgments and matching scenario-B
+verification records remain distinct from trip acknowledgment. Actual departure,
+delivery execution, commercial-truck clearance and authenticated identities are
+outside this report. [The workflow guide](operations_workflow.md) and
+[read-only/concurrency tests](../tests/test_readiness.py) describe the boundary.

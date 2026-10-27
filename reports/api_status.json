@@ -1,7 +1,7 @@
 [
   {
     "id": "fsis_recalls",
-    "tested_at": "2026-10-27T07:00:17.284615+00:00",
+    "tested_at": "2026-10-27T21:03:19.060413+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json",
@@ -41,56 +41,56 @@
         "field_has_spanish"
       ]
     },
-    "latency_ms": 848
+    "latency_ms": 925
   },
   {
     "id": "fsis_sampling",
-    "tested_at": "2026-10-27T07:00:18.432909+00:00",
+    "tested_at": "2026-10-27T21:03:20.288067+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=UTF-8",
     "failure": null,
-    "latency_ms": 380
+    "latency_ms": 449
   },
   {
     "id": "fsis_directory",
-    "tested_at": "2026-10-27T07:00:19.113683+00:00",
+    "tested_at": "2026-10-27T21:03:21.036800+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=UTF-8",
     "failure": null,
-    "latency_ms": 446
+    "latency_ms": 393
   },
   {
     "id": "cdc_beam",
-    "tested_at": "2026-10-27T07:00:19.860543+00:00",
+    "tested_at": "2026-10-27T21:03:21.730071+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html",
     "failure": null,
-    "latency_ms": 943
+    "latency_ms": 1207
   },
   {
     "id": "cdc_nors",
-    "tested_at": "2026-10-27T07:00:21.103947+00:00",
+    "tested_at": "2026-10-27T21:03:23.237149+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html",
     "failure": null,
-    "latency_ms": 1059
+    "latency_ms": 1386
   },
   {
     "id": "ncei_docs",
-    "tested_at": "2026-10-27T07:00:22.463101+00:00",
+    "tested_at": "2026-10-27T21:03:24.923729+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=UTF-8",
     "failure": null,
-    "latency_ms": 507
+    "latency_ms": 790
   },
   {
     "id": "ncei_historical",
-    "tested_at": "2026-10-27T07:00:23.270612+00:00",
+    "tested_at": "2026-10-27T21:03:26.014291+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json;charset=utf-8",
@@ -106,11 +106,11 @@
         "PRCP"
       ]
     },
-    "latency_ms": 1563
+    "latency_ms": 563
   },
   {
     "id": "nws_alerts",
-    "tested_at": "2026-10-27T07:00:25.134226+00:00",
+    "tested_at": "2026-10-27T21:03:26.877839+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/geo+json",
@@ -122,11 +122,11 @@
       "title",
       "updated"
     ],
-    "latency_ms": 581
+    "latency_ms": 522
   },
   {
     "id": "nws_points",
-    "tested_at": "2026-10-27T07:00:26.015658+00:00",
+    "tested_at": "2026-10-27T21:03:27.699950+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/geo+json",
@@ -138,11 +138,11 @@
       "geometry",
       "properties"
     ],
-    "latency_ms": 662
+    "latency_ms": 655
   },
   {
     "id": "openmeteo",
-    "tested_at": "2026-10-27T07:00:26.978324+00:00",
+    "tested_at": "2026-10-27T21:03:28.655807+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=utf-8",
@@ -158,11 +158,11 @@
       "hourly_units",
       "hourly"
     ],
-    "latency_ms": 967
+    "latency_ms": 895
   },
   {
     "id": "openmeteo_archive",
-    "tested_at": "2026-10-27T07:00:28.245429+00:00",
+    "tested_at": "2026-10-27T21:03:29.851141+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=utf-8",
@@ -178,11 +178,11 @@
       "daily_units",
       "daily"
     ],
-    "latency_ms": 1123
+    "latency_ms": 805
   },
   {
     "id": "modot",
-    "tested_at": "2026-10-27T07:00:29.668385+00:00",
+    "tested_at": "2026-10-27T21:03:30.956774+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/plain; charset=UTF-8",
@@ -219,11 +219,11 @@
       "currentVersion",
       "hasBranchVersionedData"
     ],
-    "latency_ms": 417
+    "latency_ms": 425
   },
   {
     "id": "osrm_route",
-    "tested_at": "2026-10-27T07:00:30.385658+00:00",
+    "tested_at": "2026-10-27T21:03:31.682443+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=UTF-8",
@@ -233,11 +233,11 @@
       "routes",
       "waypoints"
     ],
-    "latency_ms": 863
+    "latency_ms": 851
   },
   {
     "id": "osrm_table",
-    "tested_at": "2026-10-27T07:00:31.549377+00:00",
+    "tested_at": "2026-10-27T21:03:32.833333+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=UTF-8",
@@ -248,42 +248,42 @@
       "durations",
       "sources"
     ],
-    "latency_ms": 661
+    "latency_ms": 663
   },
   {
     "id": "osrm_docs",
-    "tested_at": "2026-10-27T07:00:32.511058+00:00",
+    "tested_at": "2026-10-27T21:03:33.797017+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=utf-8",
     "failure": null,
-    "latency_ms": 509
+    "latency_ms": 491
   },
   {
     "id": "osm_missouri",
-    "tested_at": "2026-10-27T07:00:33.320019+00:00",
+    "tested_at": "2026-10-27T21:03:34.589080+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html",
     "failure": null,
-    "latency_ms": 3051
+    "latency_ms": 855
   },
   {
     "id": "food_access",
-    "tested_at": "2026-10-27T07:00:36.671168+00:00",
+    "tested_at": "2026-10-27T21:03:35.744896+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=utf-8",
     "failure": null,
-    "latency_ms": 769
+    "latency_ms": 544
   },
   {
     "id": "food_environment",
-    "tested_at": "2026-10-27T07:00:37.740911+00:00",
+    "tested_at": "2026-10-27T21:03:36.589419+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=utf-8",
     "failure": null,
-    "latency_ms": 530
+    "latency_ms": 562
   }
 ]

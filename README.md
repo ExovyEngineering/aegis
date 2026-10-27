@@ -19,6 +19,7 @@ python -m venv .venv
 .venv/Scripts/python scripts/audit_data.py
 .venv/Scripts/python scripts/ingest_fsis.py
 .venv/Scripts/python scripts/ingest_evidence.py
+.venv/Scripts/python scripts/ingest_usda.py
 .venv/Scripts/python scripts/train_model.py
 .venv/Scripts/python scripts/acquire_noaa.py
 .venv/Scripts/python scripts/validate_model_timing.py
@@ -87,6 +88,19 @@ The verifier executes pytest, Vitest and the production build, preserving dated
 logs and JSON history. It does not refresh public sources or imply browser/CI
 success. Update the feature register and changelog as capabilities change.
 
+To rebuild and independently check the local reviewer archive:
+
+```powershell
+.venv/Scripts/python scripts/package_submission.py
+.venv/Scripts/python scripts/verify_package.py
+```
+
+The package verifier checks file membership, sizes and hashes before extraction,
+then runs an isolated copy with a fresh demo database and blocked external network
+access. It checks USDA, source browsing, readiness, planning, approval and Drive.
+It reuses the installed Python dependencies; it does not claim a fresh dependency
+installation, cloud deployment or competition submission.
+
 Route laboratory now saves completed experiments as versioned local projects,
 compares two saved projects, reopens historical versions, and exports inputs and
 results. Saving never dispatches. Unsaved editor changes still remain temporary.
@@ -94,6 +108,22 @@ Command's decision details expose independent constraint checks and exclusions.
 Dispatcher desk records scenario-B verification reviews; completing a simulated
 checklist does not certify product safety or automatically impose a hold.
 Sources includes a bounded read-only browser of separately ingested tables.
+
+Sources also compares historical USDA Food Environment Atlas measures for all
+115 Missouri counties/county-equivalents. Each measure retains its year, unit and
+denominator; missing/suppressed values stay null. This context does not change
+shipment eligibility or allocation. See [the county-context guide](docs/food_access_context.md).
+
+Evidence imports now discover supported schemas recursively and assign stable
+source identities. Exact duplicate downloads do not inflate observations;
+different exports for the same semantic table require explicit snapshot selection.
+The browser checks the same bytes it displays against the import manifest. See
+[ingestion provenance](docs/ingestion_provenance.md).
+
+Dispatcher desk includes a read-only readiness checklist for approved trips.
+It separates hard constraints from outstanding acknowledgments and scenario-B
+verification. Passing these checks is not a departure authorization or safety
+certification. Review the source evidence and explicit human decisions.
 
 ## Refresh evidence and run checks
 
@@ -131,7 +161,7 @@ Copy `.env.example` to `.env` for local configuration. The loader reads literal 
 - Custom farm/fleet planning: editable origins, delivery stops and trucks with explicit stock, deadline, shelf-life and safety assumptions.
 - Dispatcher desk: incident inbox, audited human holds/releases, versioned approved-trip instructions and separate driver acknowledgment. See `docs/operations_workflow.md`.
 
-The Command/Drive interface is implemented in `frontend/`. Latest verification is recorded in `reports/validation.json`: backend tests, frontend tests, production build, loopback HTTP checks, isolated demo and 26 real Chrome desktop/mobile checks. Screenshots are in `reports/browser_qa/final/`. A timed presentation rehearsal remains pending. See [the five-minute demo](reports/demo_script.md), [priorities](docs/priority_matrix.md), and [acceptance matrix](docs/progress.md).
+The Command/Drive interface is implemented in `frontend/`. Latest verification is recorded in `reports/validation.json` and `reports/session_verification.json`. Separate dated Chrome rehearsals and screenshots live under `reports/browser_qa/`; they do not imply present provider freshness. A timed team presentation remains pending. See [the five-minute demo](reports/demo_script.md), [priorities](docs/priority_matrix.md), and [acceptance matrix](docs/progress.md).
 
 ## Scientific and operational limits
 

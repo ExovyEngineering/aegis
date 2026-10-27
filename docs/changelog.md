@@ -4,6 +4,41 @@ Update this file when behavior or evidence changes. The generated presentation
 brief is `reports/aegis_project_brief.pdf`; its editable companion is
 `reports/project_brief.md`. Recorded tests are separate from implementation claims.
 
+## October 27, 2026 - source identity, county context and readiness
+
+- Replaced filename/order-based evidence imports with recursive, schema-specific
+  identities and per-input checksums. Duplicate bytes do not inflate tables;
+  conflicting snapshots remain explicit and cannot be browsed as a fresh import.
+  FSIS records file failures and rejects incomplete primary counts or missing
+  cancellation fields without accepting a partial file buffer.
+- Re-imported actual supplied inputs and compared all eight existing tables.
+  Values/dtypes, model artifacts and frozen validation cohorts were unchanged.
+  The source browser hashes and parses one immutable bounded snapshot, exposes
+  its provenance, and ignores obsolete UI responses.
+- Added a source-specific USDA Food Environment Atlas extract: 115 Missouri
+  counties/county-equivalents, ten 2019/2020/2023 measures, original metadata,
+  denominators and per-cell missing reasons. Grocery count/rate each preserve
+  39 missing observations. Sources supports county comparison and checked CSV
+  export; it does not infer route membership, safety scores or allocation weights.
+- Added a read-only dispatch-readiness view with thirteen constraint diagnostics
+  and three workflow checks. Aggregate resources, assignment acknowledgment,
+  current instruction acknowledgment and targeted verification stay inspectable.
+  The checklist does not dispatch or certify product safety.
+- Corrected stale dispatcher panels after failed refresh and retained action
+  rejection messages after recovery. Raw audit now excludes local editor/account
+  directories when the supplied-data default is the repository root.
+- Executed browser evidence: 58 new actual-Chrome checks, eight inspected desktop/
+  mobile screenshots, zero JavaScript or app HTTP failures. Earlier selector-only
+  rehearsal failures remain dated in the evidence directory. Latest full-suite
+  counts are recorded separately in `reports/session_verification.json`.
+- Rechecked the 18 public registry endpoints successfully. MoDOT discovery success
+  does not establish fresh incident layers; historical NOAA and publication-time
+  limitations remain open. Raw files and operator state remain preserved.
+- Added a reproducible archive verifier with pre-extraction path/hash/size checks,
+  an isolated extracted-code process, blocked external networking and fresh demo
+  state. Full release checks passed: 370 pytest, 60 Vitest, production build and
+  26 loopback HTTP checks. The updated planning brief contains thirteen pages.
+
 ## October 27, 2026 - visual Drive and action reliability
 
 - Added dedicated `/?mode=drive` with visual approved destination, planned travel,

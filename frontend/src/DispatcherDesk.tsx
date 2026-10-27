@@ -1,5 +1,6 @@
 import VerificationReview from './VerificationReview';
-import { useCallback, useEffect, useState } from 'react';
+import DispatchReadiness from './DispatchReadiness';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ClipboardCheck, MessageSquare, RefreshCw, ShieldCheck, TriangleAlert } from 'lucide-react';
 import { api } from './api';
 import type { Shipment } from './types';
@@ -17,18 +18,29 @@ export default function DispatcherDesk({ onChange }: { onChange?: () => Promise<
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
+  const loadEpoch = useRef(0);
   const load = useCallback(async () => {
-    const data = await api<DispatchSnapshot>('/dispatch');
-    setSnapshot(data);
-    setAssignmentId(previous => data.assignments.some(a => a.id === previous) ? previous : data.assignments[0]?.id ?? '');
+    const epoch = ++loadEpoch.current;
+    try {
+      const data = await api<DispatchSnapshot>('/dispatch');
+      if (epoch !== loadEpoch.current) return;
+      if (!Array.isArray(data.assignments) || !Array.isArray(data.lots) || !Array.isArray(data.incidents)) throw new Error('Dispatcher snapshot is incomplete. Refresh before acting.');
+      setSnapshot(data); setError('');
+      setAssignmentId(previous => data.assignments.some(a => a.id === previous) ? previous : data.assignments[0]?.id ?? '');
+    } catch(e) {
+      if (epoch !== loadEpoch.current) return;
+      setSnapshot(undefined); setAssignmentId('');
+      setError(e instanceof Error ? e.message : String(e));
+      throw e;
+    }
   }, []);
-  useEffect(() => { load().catch(e => setError(String(e))); const timer = window.setInterval(() => { load().catch(() => {}); }, 15000); return () => window.clearInterval(timer); }, [load]);
-  const identified = actor.trim().length >= 2 && reason.trim().length >= 5;
+  useEffect(() => { load().catch(() => {}); const timer = window.setInterval(() => { load().catch(() => {}); }, 15000); return () => { loadEpoch.current++; window.clearInterval(timer); }; }, [load]);
+  const identified = !!snapshot && actor.trim().length >= 2 && reason.trim().length >= 5;
   const selectedAssignment = snapshot?.assignments.find(a => a.id === assignmentId);
   async function act(path: string, body: unknown, success: string) {
     setBusy(true); setError(''); setNotice('');
     try { await api(path, body); await load(); await onChange?.(); setNotice(success); }
-    catch (e) { setError(e instanceof Error ? e.message : String(e)); await load().catch(() => {}); }
+    catch (e) { await load().catch(() => {}); setError(e instanceof Error ? e.message : String(e)); }
     finally { setBusy(false); }
   }
   return <section className="dispatcher-desk" aria-label="Dispatcher desk">
@@ -38,6 +50,7 @@ export default function DispatcherDesk({ onChange }: { onChange?: () => Promise<
     <div className="dispatch-layout">
       <aside className="panel dispatch-identity"><div className="eyebrow">HUMAN REVIEW</div><h2>Decision record</h2><p className="source-note">Complete these fields before changing a hold, reviewing a report or sending an instruction. Identity is self-declared in this local demonstrator.</p><label className="field">Reviewing dispatcher<input autoComplete="name" value={actor} maxLength={100} onChange={e => setActor(e.target.value)} placeholder="Dispatcher name" /></label><label className="field">Decision reason<textarea value={reason} maxLength={1000} rows={4} onChange={e => setReason(e.target.value)} placeholder="Record the evidence and decision rationale" /></label><div className="coverage-warning"><ShieldCheck size={16} /><span>Predictive scores do not create mandatory holds. Recalled or held lots remain excluded from dispatch.</span></div><p className="source-note">Network revision: {snapshot?.network_revision ?? '—'}. The desk checks for new driver reports every 15 seconds. Stale decisions are rejected and the current state is reloaded.</p><button className="secondary" disabled={busy} onClick={() => load().catch(e => setError(String(e)))}><RefreshCw size={14} /> Refresh desk</button></aside>
       <div className="dispatch-panels">
+        {snapshot && <DispatchReadiness networkRevision={snapshot.network_revision} refreshKey={snapshot.assignments.map(a => `${a.id}:${a.acknowledged}:${a.instruction_revision}:${a.instruction_acknowledged}:${a.verification_version}`).join('|')} />}
         <VerificationReview assignments={snapshot?.assignments ?? []} revision={snapshot?.network_revision ?? 0} actor={actor} reason={reason} onSaved={async () => { await load(); await onChange?.(); }} />
         <section className="panel"><div className="panel-heading"><div><h2>Driver incident inbox</h2><span>Reports are operational evidence, not verified food-safety findings</span></div><span className="count-badge">{snapshot?.incidents.filter(i => i.status !== 'resolved').length ?? 0}</span></div>
           {!snapshot?.incidents.length ? <div className="empty-inline"><MessageSquare size={24} /><h3>No reports in the current inbox</h3><p>Approved trips can submit an incident from AEGIS Drive. Earlier audit-only reports remain in the audit trail.</p></div> : <div className="dispatch-incidents">{snapshot.incidents.map(incident => <article className="dispatch-incident" key={incident.id}><div className="dispatch-incident-title"><strong>{incident.shipment_id}</strong><span className={`pill ${incident.status === 'resolved' ? 'green' : 'amber'}`}>{incident.status.replaceAll('_', ' ')}</span></div><p>{incident.description}</p><small>Reported {new Date(incident.reported_at).toLocaleString('en-US', { timeZone: 'America/Chicago' })} CT · review version {incident.version}</small>{incident.review?.reason && <p className="source-note">Latest review: {incident.review.actor} · {incident.review.reason}</p>}<div className="dispatch-actions"><button className="secondary small" disabled={busy || !identified || incident.status !== 'open'} onClick={() => act(`/dispatch/incidents/${incident.id}/review`, { actor, reason, status: 'in_review', expected_version: incident.version }, `${incident.shipment_id} incident is under review.`)}>Start review</button><button className="small" disabled={busy || !identified || incident.status === 'resolved'} onClick={() => act(`/dispatch/incidents/${incident.id}/review`, { actor, reason, status: 'resolved', expected_version: incident.version }, `${incident.shipment_id} incident resolved with an audit record.`)}>Resolve report</button></div></article>)}</div>}

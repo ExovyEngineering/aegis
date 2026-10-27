@@ -1,22 +1,119 @@
 {
+  "status": "passed",
   "passed": true,
-  "checks": [
-    "prebuilt frontend loads",
-    "fsis_recalls dated fixture works without cache",
-    "modot dated fixture works without cache",
-    "openmeteo dated fixture works without cache",
-    "offline farm routing feasible",
-    "saved planning project reopens in extracted package",
-    "actual source rows browse in extracted package",
-    "presentation PDF included and downloadable",
-    "approval and driver assignment work in fresh isolated DB",
-    "Drive defaults locked and parked confirmation gates acknowledgments",
-    "route review uses packaged MoDOT fixture"
-  ],
-  "manifest_files_verified": 310,
+  "checked_at": "2026-10-27T21:08:55.209081+00:00",
+  "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\aegis-review-draft.zip",
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
   "network_requested": false,
   "operator_database_modified": false,
-  "archive_sha256": "ecbdfc32b62fa7d0c61c5187a86c335364a9feae406beba6ece160b01d7e93ab"
+  "checks": [
+    "archive paths, exact manifest membership, hashes, sizes and exclusions verified",
+    "extracted backend imports and fresh database are isolated from checkout",
+    "prebuilt frontend and bundled assets load",
+    "fsis_recalls dated fixture works without network/cache",
+    "modot dated fixture works without network/cache",
+    "openmeteo dated fixture works without network/cache",
+    "network, measured model and source coverage reports are available",
+    "all eight semantic source tables browse with matching snapshot checksums",
+    "historical USDA context retains 115 Missouri county units, FIPS and export provenance",
+    "offline farm route plan is feasible with explicitly estimated routing",
+    "saved route project reopens its immutable planning run",
+    "presentation PDF is included and downloadable",
+    "human approval publishes simulated assignments in the fresh extracted database",
+    "Drive default lock and parked confirmation gate contextual trip acknowledgment",
+    "read-only readiness distinguishes approved acknowledged work without dispatching",
+    "route review uses a supplied OSRM fixture and dated MoDOT evidence offline",
+    "socket and DNS guard observed zero application network attempts",
+    "original operator database and SQLite sidecar fingerprints unchanged"
+  ],
+  "check_results": [
+    {
+      "name": "archive paths, exact manifest membership, hashes, sizes and exclusions verified",
+      "status": "passed"
+    },
+    {
+      "name": "extracted backend imports and fresh database are isolated from checkout",
+      "status": "passed"
+    },
+    {
+      "name": "prebuilt frontend and bundled assets load",
+      "status": "passed"
+    },
+    {
+      "name": "fsis_recalls dated fixture works without network/cache",
+      "status": "passed"
+    },
+    {
+      "name": "modot dated fixture works without network/cache",
+      "status": "passed"
+    },
+    {
+      "name": "openmeteo dated fixture works without network/cache",
+      "status": "passed"
+    },
+    {
+      "name": "network, measured model and source coverage reports are available",
+      "status": "passed"
+    },
+    {
+      "name": "all eight semantic source tables browse with matching snapshot checksums",
+      "status": "passed"
+    },
+    {
+      "name": "historical USDA context retains 115 Missouri county units, FIPS and export provenance",
+      "status": "passed"
+    },
+    {
+      "name": "offline farm route plan is feasible with explicitly estimated routing",
+      "status": "passed"
+    },
+    {
+      "name": "saved route project reopens its immutable planning run",
+      "status": "passed"
+    },
+    {
+      "name": "presentation PDF is included and downloadable",
+      "status": "passed"
+    },
+    {
+      "name": "human approval publishes simulated assignments in the fresh extracted database",
+      "status": "passed"
+    },
+    {
+      "name": "Drive default lock and parked confirmation gate contextual trip acknowledgment",
+      "status": "passed"
+    },
+    {
+      "name": "read-only readiness distinguishes approved acknowledged work without dispatching",
+      "status": "passed"
+    },
+    {
+      "name": "route review uses a supplied OSRM fixture and dated MoDOT evidence offline",
+      "status": "passed"
+    },
+    {
+      "name": "socket and DNS guard observed zero application network attempts",
+      "status": "passed"
+    },
+    {
+      "name": "original operator database and SQLite sidecar fingerprints unchanged",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "The existing installed dependency environment is reused; no fresh dependency installation is claimed.",
+    "Only trusted project archives may be executed. Internal hashes are not a signature or an untrusted-code security sandbox.",
+    "Offline ASGI workflows do not prove a real browser rendering, live provider connectivity or a completed timed presentation."
+  ],
+  "archive_sha256": "094f779da96b137d69b44950216f108bd83396e2d3efddb379baa96c11747ee1",
+  "manifest_files_verified": 358,
+  "archive_files": 359,
+  "uncompressed_bytes": 20344560,
+  "network_guard_enabled": true,
+  "network_attempts": [],
+  "worker_exit_code": 0,
+  "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
+  "finished_at": "2026-10-27T21:09:02.273659+00:00",
+  "duration_seconds": 7.066
 }

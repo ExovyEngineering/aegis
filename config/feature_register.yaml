@@ -7,7 +7,16 @@ features:
   status: implemented; bounded coverage
   evidence: reports/data_audit.md
   detail: 42 original downloads audited; official evidence and simulated logistics
-    remain distinct.
+    remain distinct. Recursive content-based imports preserve semantic identities,
+    record exact failures, skip duplicate bytes and block conflicting snapshots.
+- id: food-access
+  priority: P0
+  name: USDA historical county context
+  status: implemented as a separate historical evidence layer
+  evidence: reports/usda_food_environment.json
+  detail: 115 Missouri counties/county-equivalents and ten 2019/2020/2023 measures,
+    with denominators, source hashes and missing codes. No safety score, current
+    demand estimate or allocation weight is inferred.
 - id: weather
   priority: P0
   name: Independent public weather integrations
@@ -87,6 +96,14 @@ features:
   detail: Dedicated visual trip view, simulated fuel/origin position/cargo, ten-minute
     parked attestation, quick reports, instructions and acknowledgment. No actual
     motion detection or physical sensing.
+- id: readiness
+  priority: P1
+  name: Inspectable dispatch readiness
+  status: implemented as read-only diagnostics
+  evidence: tests/test_readiness.py
+  detail: Sixteen checks distinguish hard eligibility/resource constraints from
+    outstanding assignment acknowledgment, instruction acknowledgment and targeted
+    verification. Passing the listed checks does not dispatch or certify safety.
 - id: assistant
   priority: P2
   name: LLM operations assistant

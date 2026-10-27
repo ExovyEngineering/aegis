@@ -11,6 +11,12 @@ No overnight account action is required. The local draft package has not been up
 
 Remaining P0 decisions: authentic Kiro task evidence, final organizer-rubric/author review, timed presentation, and scientifically honest treatment of unavailable publication timing. Account modes, LLM assistance and live sensing remain P2.
 
-Latest extension: inspect scenario resources/exclusions, reopen or compare saved route projects, browse actual ingested source rows, and record scenario-B targeted verification. See `docs/changelog.md` and `reports/project_brief.md`.
+Latest extension: Sources & evidence now includes historical USDA county comparison and CSV export. The checked extract has 115 Missouri county/county-equivalent FIPS identities and ten measures with separate 2019/2020/2023 vintages. Grocery count and rate each have 39 missing values; none are replaced with zero. These measures do not rate food safety or alter demand/dispatch. See [the county-context guide](food_access_context.md).
+
+In Dispatcher desk, inspect **Dispatch readiness review** after approving a scenario. The sixteen checks distinguish hard constraint failures from outstanding assignment/instruction acknowledgments or targeted verification. **Listed checks passed** requests final human review; it does not depart a truck or certify food safety. See [the workflow guide](operations_workflow.md).
+
+Source discovery now works recursively with semantic content signatures, explicit duplicate/conflict/failure records and checksum-verified request snapshots. [The ingestion guide](ingestion_provenance.md) explains how to choose one export snapshot when two different files describe the same evidence layer. The existing source/model values were compared separately in [the re-ingestion verification](../reports/ingestion_verification.json). See `docs/changelog.md` and `reports/project_brief.md` for the maintained session evidence.
 
 Drive design and stretch entry criteria: `docs/drive_design.md` and `docs/stretch_feature_gates.md`. Current automated/browser outcomes are in the project brief and `docs/progress.md`; pending Kiro and scientific gates remain separate.
+
+Next three team actions remain: complete the authentic Kiro task/sign-in workflow, review the report and claims against the final submission requirements, and rehearse the five-minute presentation with a timer. These software additions do not close those gates.

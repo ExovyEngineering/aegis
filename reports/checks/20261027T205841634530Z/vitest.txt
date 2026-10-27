@@ -1,0 +1,43 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/api.test.ts (3 tests) 13ms
+ ✓ src/routingProvenance.test.ts (2 tests) 6ms
+ ✓ src/MapViewport.test.tsx (2 tests) 71ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 191ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 236ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 234ms
+ ✓ src/DataExplorer.test.tsx (1 test) 302ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 299ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 361ms
+   ✓ requires human identity and every checkbox for completion, with version guards  346ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 276ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 299ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 491ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  405ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 593ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 577ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 659ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  553ms
+ ✓ src/RouteLab.test.tsx (2 tests) 890ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  642ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1176ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  621ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1229ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  494ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  399ms
+ ✓ src/App.test.tsx (6 tests) 1460ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  675ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 326ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  325ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 531ms
+
+ Test Files  21 passed (21)
+      Tests  59 passed (59)
+   Start at  15:59:07
+   Duration  23.10s (transform 5.84s, setup 21.60s, collect 49.64s, tests 10.22s, environment 52.44s, prepare 9.52s)
+

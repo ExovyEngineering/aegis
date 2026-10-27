@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from backend.paths import ROOT, data_dir, write_json
 
 EXT = {'.csv','.tsv','.json','.jsonl','.xlsx','.zip','.parquet','.geojson','.pdf'}
-SKIP = {'.venv','.tools','artifacts','node_modules','.git','reports','manifests','cache','fixtures','external','dist','config','frontend','backend','processed'}
+SKIP = {'.venv','.tools','.aws','.codex','.agents','.vscode','artifacts','node_modules','.git','reports','manifests','cache','fixtures','external','dist','config','frontend','backend','processed'}
 def classify(columns, metadata=''):
     c = {str(x).lower() for x in columns}; m = metadata.lower()
     if 'lab sampling' in m or {'form_id','sample_number'} <= c: return 'FSIS laboratory sampling'
@@ -18,6 +18,46 @@ def classify(columns, metadata=''):
     if {'station','date'} <= c: return 'Possible NOAA observations; requires metadata confirmation'
     if any('lowaccess' in x or 'lapop' in x for x in c): return 'USDA food access atlas'
     return 'Unrecognized / documentation; do not merge'
+
+def recognize_food_environment_workbook(sheets):
+    """Recognize the inspected atlas from bounded content, never its filename.
+
+    This is family identification, not full ingestion or validation of all rows.
+    Only the first six sampled rows already retained by the audit are inspected.
+    """
+    by_name={sheet['name'].strip():sheet for sheet in sheets}
+    if len(by_name)!=len(sheets) or not {'Read_Me','Variable List','ACCESS','STORES'}<=set(by_name):
+        return None
+    read_me=by_name['Read_Me'].get('first_rows',[])[:6]
+    if not read_me or not read_me[0] or read_me[0][0]!='Food Environment Atlas data download':
+        return None
+    provider=next((str(row[0]) for row in read_me if row and row[0] and
+                   'source: usda, economic research service' in str(row[0]).lower()),None)
+    if not provider:
+        return None
+    variables=by_name['Variable List'].get('first_rows',[])[:6]
+    expected=['Category Name','Category Code','Subcategory Name','Variable Name','Variable Code','Units']
+    if len(variables)<3 or variables[1]!=expected:
+        return None
+    variable=next((row for row in variables[2:] if len(row)==6 and row[1]=='ACCESS' and
+                   row[4]=='LACCESS_POP19' and row[5]=='Count' and isinstance(row[3],str) and
+                   '2019' in row[3] and '*' not in row[3]),None)
+    if variable is None:
+        return None
+    required={
+        'ACCESS':{'FIPS','State','County','LACCESS_POP19','PCT_LACCESS_POP19','LACCESS_LOWI19'},
+        'STORES':{'FIPS','State','County','GROC20','GROCPTH20','SNAPS23','SNAPSPTH23'},
+    }
+    for name,columns in required.items():
+        first=by_name[name].get('first_rows',[])[:2]
+        if len(first)<2 or not first[0] or first[0][0]!=name or not columns<=set(first[1]):
+            return None
+    return {'source':'USDA Food Environment Atlas',
+            'method':'Bounded workbook content: embedded title/provider, Variable List code/units/vintage, ACCESS and STORES headers.',
+            'sheets':[by_name[name]['name'] for name in ('Read_Me','Variable List','ACCESS','STORES')],
+            'title':read_me[0][0],'provider_excerpt':provider,
+            'variable_evidence':{'code':variable[4],'unit':variable[5],'label':variable[3]},
+            'limitation':'Source-family recognition only; full row coverage, units, missing codes and geographic identity require the separate source-specific ingestion adapter.'}
 
 def profile(rows):
     rows = list(itertools.islice(rows, 200)); keys = sorted({str(k) for r in rows for k in r})
@@ -69,9 +109,12 @@ def inspect_file(p):
         elif ext=='.xlsx':
             import openpyxl
             wb=openpyxl.load_workbook(p,read_only=True,data_only=True); sheets=[]
-            for ws in wb:
-                rows=ws.iter_rows(values_only=True); first=list(itertools.islice(rows,201)); sheets.append({'name':ws.title,'declared_rows':ws.max_row,'declared_columns':ws.max_column,'first_rows':[[str(v)[:200] if v is not None else None for v in r] for r in first[:6]]})
-            wb.close(); out['sheets']=sheets; out['schema']=[str(v) for s in sheets for row in s['first_rows'][:2] for v in row if v]
+            try:
+                for ws in wb:
+                    rows=ws.iter_rows(values_only=True); first=list(itertools.islice(rows,201)); sheets.append({'name':ws.title,'declared_rows':ws.max_row,'declared_columns':ws.max_column,'first_rows':[[str(v)[:200] if v is not None else None for v in r] for r in first[:6]]})
+            finally:
+                wb.close()
+            out['sheets']=sheets; out['schema']=[str(v) for s in sheets for row in s['first_rows'][:2] for v in row if v]
             out['coverage_note']='Workbook dimensions are declared, not verified exact counts. First 201 rows sampled per sheet.'
         elif ext=='.zip':
             with zipfile.ZipFile(p) as z: out['members']=[{'name':i.filename,'compressed':i.compress_size,'uncompressed':i.file_size} for i in z.infolist()]
@@ -83,6 +126,9 @@ def inspect_file(p):
             from pypdf import PdfReader
             q=PdfReader(p); out['pages']=len(q.pages); out['text_sample']='\n'.join(x.extract_text() or '' for x in q.pages[:3])[:12000]
         out['likely_source']=classify(out.get('schema',[]),str(out.get('metadata_excerpt',''))+' '+out.get('text_sample',''))
+        recognized=recognize_food_environment_workbook(out.get('sheets',[]))
+        if recognized:
+            out['likely_source']=recognized['source']; out['source_recognition']=recognized
     except Exception as e: out['errors'].append(f'{type(e).__name__}: {e}')
     return out
 

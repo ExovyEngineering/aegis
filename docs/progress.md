@@ -1,8 +1,48 @@
 # Progress and acceptance evidence
 
-Session date: October 26, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Session date: October 27, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: visual Drive and click-path reliability (October 27)
+## Latest: source integrity, county context and readiness (October 27)
+
+- Recursive content-based ingestion now preserves source identities regardless
+  of filename, folder or download order. Exact duplicates are recorded without
+  pooling; different exports for the same semantic table produce an explicit
+  conflict. Failed/unavailable latest imports do not silently expose old output
+  as newly verified evidence. Per-file FSIS errors remain separate and complete
+  primary counts/cancellation fields are required.
+- Actual re-import preserved all eight prior tables' values/dtypes, both model
+  artifacts and frozen training/validation cohorts. FSIS remains 78,607 rows.
+  `reports/ingestion_verification.json` records the comparison. Displayed source
+  rows and hashes now use the same immutable request snapshot.
+- USDA county context covers 115 Missouri counties/county-equivalents and ten
+  historical access/store measures. Grocery count/rate each retain 39 missing
+  values with exact original codes and source-cell identities. County comparison
+  and CSV export retain years/units/denominators; no route join, safety score,
+  current demand estimate or allocation weighting is inferred.
+- Dispatcher readiness inspects sixteen checks in one consistent read-only
+  database snapshot. It distinguishes hard constraints from outstanding driver
+  acknowledgments, versioned instructions and scenario-B review. It neither
+  dispatches nor certifies safety. Failed dispatcher refreshes clear stale data.
+- New actual-Chrome evidence: 58 passing checks, eight inspected screenshots,
+  no uncaught JavaScript or application HTTP failures. It exercises county/source
+  provenance, scenario B, parked acknowledgment, verification, instruction
+  revision rejection, explicit hold/removal and release without republishing.
+  Evidence: `reports/browser_qa/readiness/results.json`.
+- The full verification report and dated logs remain authoritative for current
+  test/build counts: **370 pytest, 60 Vitest and the production build passed**;
+  **26 read-only HTTP checks passed**. Five Python warnings include four upstream
+  deprecations and a local pytest cache-directory permission warning; test results
+  were unaffected. All 18 registered endpoints returned HTTP success in this
+  session's new probe; this is distinct from fresh MoDOT incident-layer queries
+  and complete historical NOAA coverage. Genuine Kiro execution, author/rubric
+  review and timed team rehearsal remain pending.
+- Reviewer verification is now a committed command, `scripts/verify_package.py`,
+  rather than a workstation-only helper. It validates archive contents before
+  extraction and runs extracted app workflows with external networking blocked,
+  a separate demo database and original-operator-state checks. The final archive
+  outcome is recorded in `reports/package_verification.json`.
+
+## Previous: visual Drive and click-path reliability (October 27)
 
 - Dedicated `/?mode=drive`: approved destination, planned journey, simulated fuel,
   range, cargo and dispatch-origin position. At390x844 the main trip and both

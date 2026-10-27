@@ -11,7 +11,7 @@ from datetime import datetime,timezone
 from backend.paths import ROOT,write_json
 
 REQUIRED=('api_status.json','model_evaluation.json','demo_results.json')
-OPTIONAL=('model_timing.json','noaa_coverage.json','route_lab_osrm.json','validation.json','evidence_ingestion.json','operations_demo.json')
+OPTIONAL=('model_timing.json','noaa_coverage.json','route_lab_osrm.json','validation.json','evidence_ingestion.json','operations_demo.json','usda_food_environment.json','ingestion_verification.json')
 NAMES={'A':'Baseline distribution','B':'Targeted verification','C':'Precautionary hold pending review','D':'Alternative eligible supply'}
 
 def load_evidence(reports_dir,inventory_path):
@@ -54,6 +54,17 @@ def operations_appendix(data):
           '',f"The recorded isolated workflow reports passed={operations.get('passed')}, stale-instruction acknowledgment rejected={operations.get('stale_instruction_ack_rejected')}, held-lot assignments removed={operations.get('held_lot_assignments_removed')}, and release-without-redispatch verified={operations.get('release_did_not_redispatch')}. Operator database modified={operations.get('operator_database_modified')}. Evidence: `reports/operations_demo.json`; methods: `docs/operations_workflow.md`.",
           '', 'The dedicated mobile-responsive Drive view presents approved destination, planned travel, simulated fuel/range and dispatch-origin position, cargo temperature and workflow status. Driver reports and acknowledgments require an expiring parked declaration checked transactionally by the server; this is not actual motion detection. Quick reports retain trip context in the dispatcher inbox. Bulk recall evidence is explicitly bounded in the UI while complete source caches remain unchanged.',
           '', 'These workflow improvements do not resolve missing publication timestamps, validate cargo thermal coefficients, establish production authorization, or supply genuine Kiro execution evidence.']
+    usda=data.get('usda_food_environment')
+    if usda:
+        lines+=['','## Appendix: historical county context and source integrity','',
+          f"The USDA Food Environment Atlas extract records status={usda.get('status','not recorded')}. It contains {usda.get('geography',{}).get('county_count','not recorded')} Missouri counties/county-equivalents and {len(usda.get('variables',[]))} supported variables. Release note: {usda.get('release_note','not recorded')}. Exact source bytes, metadata, missing-cell codes and derived-file checksum are described in `reports/usda_food_environment.json`.",
+          '', 'The inspected measures use 2019 access, 2020 grocery-store and 2023 SNAP-authorized-store vintages. Their population/housing-unit denominators remain distinct. Missing and suppressed values stay null. Counties are identified by FIPS; repeated names do not imply the same geography. No route-coordinate linkage, current demand estimate, food-safety score or allocation weight is inferred.',
+          '',f"Saved null counts: {usda.get('coverage',{}).get('null_counts','not recorded')}. This county context is displayed separately from FSIS outcomes and CDC evidence."]
+    ingestion=data.get('ingestion_verification')
+    if ingestion:
+        comparisons=ingestion.get('comparison',[])
+        lines+=['',f"The content-based re-import checked {len(comparisons)} previous derived tables. All checked frame values/dtypes were unchanged: {all(row.get('frame_values_and_dtypes_equal') for row in comparisons) if comparisons else 'not recorded'}. Model artifact hashes unchanged: {ingestion.get('model_artifact_hashes_unchanged','not recorded')}. Exact-byte duplicate downloads are not pooled; differing exports for one supported semantic table are explicit conflicts. Source-browser checksums and displayed values use the same immutable request snapshot. Schema recognition establishes supported structure, not provider authenticity or publication availability. See `reports/ingestion_verification.json`.",
+          '', 'Dispatch readiness is read-only: thirteen constraint diagnostics and three workflow checks expose current resource use, eligibility, acknowledgments and targeted verification. Passing listed checks does not dispatch, consume inventory, certify food safety or validate commercial-truck restrictions. No model score creates a mandatory hold.']
     return '\n'.join(lines)
 
 def build_text(data,figures=True):

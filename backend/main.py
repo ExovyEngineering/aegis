@@ -12,6 +12,8 @@ from backend.planning import ensure_planning_schema, store_run, create_planning_
 from backend.data_explorer import create_data_router
 from backend.project_status import create_project_router
 from backend.drive import ensure_drive_schema, require_parked, create_drive_router
+from backend.readiness import create_readiness_router
+from backend.food_context import create_food_context_router
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -255,6 +257,8 @@ app.include_router(create_planning_router(db,record))
 app.include_router(create_data_router(ROOT))
 app.include_router(create_project_router(ROOT))
 app.include_router(create_drive_router(db,load,record))
+app.include_router(create_readiness_router(db,load))
+app.include_router(create_food_context_router(ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

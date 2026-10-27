@@ -124,3 +124,26 @@
   .is-locked .drive-destination > p.drive-quiet { font-size: 9px; margin-top: 12px; }
   .is-locked .drive-gauge { min-height: 185px; }
 }
+
+.readiness-counts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border: 1px solid #e0e8e1; border-radius: 10px; margin-bottom: 18px; }
+.readiness-counts > div { display: flex; flex-direction: column; gap: 5px; padding: 15px 10px; border-right: 1px solid #e0e8e1; }
+.readiness-counts > div:last-child { border: 0; }
+.readiness-counts strong { font-size: 24px; color: #214c3f; }
+.readiness-counts span { font-size: 11px; color: #64746b; }
+.readiness-detail > p { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.readiness-panel details, .food-context > .padded > details { margin-top: 16px; font-size: 12px; line-height: 1.7; }
+.food-context-toolbar { display: flex; gap: 14px; align-items: end; flex-wrap: wrap; margin: 20px 0; }
+.food-context-toolbar .field { flex: 1; min-width: 210px; }
+.food-context-toolbar a { white-space: nowrap; margin-bottom: 1px; }
+.food-metric-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin: 20px 0; }
+.food-metric { background: #f5f8f3; border: 1px solid #e1e9de; border-radius: 10px; padding: 18px; min-width: 0; }
+.food-metric h3 { font-size: 13px; line-height: 1.5; margin: 8px 0 16px; }
+.food-metric > strong { font-size: 24px; display: block; color: #254c3e; overflow-wrap: anywhere; }
+.food-metric > span:not(.eyebrow) { color: #6b776c; font-size: 11px; }
+.food-metric details { font-size: 11px; line-height: 1.7; margin-top: 18px; }
+.food-comparison { border-top: 1px solid #dce5d7; margin-top: 14px; padding-top: 10px; font-size: 12px; }
+@media (max-width: 1100px) { .food-metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 650px) { .food-metric-grid { grid-template-columns: 1fr; } .readiness-counts { grid-template-columns: repeat(2,minmax(0,1fr)); } .readiness-counts > div { border-bottom: 1px solid #e0e8e1; } }
+.readiness-detail td:first-child > strong, .readiness-detail td:first-child > small { display: block; }
+.readiness-detail td:first-child > small { margin-top: 5px; }
+.food-context-toolbar .button-link { display: inline-flex; align-items: center; gap: 7px; }

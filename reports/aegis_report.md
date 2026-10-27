@@ -132,7 +132,7 @@ The accelerated isolated workflow recorded 13 approved simulated assignments. Ac
 
 Required inputs, retrieval records, seeds, commands, and test artifacts remain inspectable. This report compiler performs no new HTTP requests. Its input-file hashes are recorded in `reports/figures/input_manifest.json`; regenerating after evidence changes updates the draft transparently.
 
-The saved validation artifact records 244 passing pytest tests, 51 passing Vitest tests, frontend build status `passed`, and 24 real HTTP checks. Browser visual QA: `passed: 65 visual Drive + 65 broad controls; separate 36 depth and 50 operations rehearsals retained with timestamps`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
+The saved validation artifact records 370 passing pytest tests, 60 passing Vitest tests, frontend build status `passed`, and 26 real HTTP checks. Browser visual QA: `58 new USDA/provenance/readiness checks passed; earlier 65 Drive, 65 controls, 36 depth and 50 operations runs retain separate timestamps`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
 
 ```powershell
 .venv/Scripts/python scripts/audit_data.py
@@ -181,3 +181,15 @@ The recorded isolated workflow reports passed=True, stale-instruction acknowledg
 The dedicated mobile-responsive Drive view presents approved destination, planned travel, simulated fuel/range and dispatch-origin position, cargo temperature and workflow status. Driver reports and acknowledgments require an expiring parked declaration checked transactionally by the server; this is not actual motion detection. Quick reports retain trip context in the dispatcher inbox. Bulk recall evidence is explicitly bounded in the UI while complete source caches remain unchanged.
 
 These workflow improvements do not resolve missing publication timestamps, validate cargo thermal coefficients, establish production authorization, or supply genuine Kiro execution evidence.
+
+## Appendix: historical county context and source integrity
+
+The USDA Food Environment Atlas extract records status=available. It contains 115 Missouri counties/county-equivalents and 10 supported variables. Release note: The original release date of this file is July 2025.. Exact source bytes, metadata, missing-cell codes and derived-file checksum are described in `reports/usda_food_environment.json`.
+
+The inspected measures use 2019 access, 2020 grocery-store and 2023 SNAP-authorized-store vintages. Their population/housing-unit denominators remain distinct. Missing and suppressed values stay null. Counties are identified by FIPS; repeated names do not imply the same geography. No route-coordinate linkage, current demand estimate, food-safety score or allocation weight is inferred.
+
+Saved null counts: {'LACCESS_POP19': 0, 'PCT_LACCESS_POP19': 0, 'LACCESS_LOWI19': 0, 'PCT_LACCESS_LOWI19': 0, 'LACCESS_HHNV19': 0, 'PCT_LACCESS_HHNV19': 0, 'GROC20': 39, 'GROCPTH20': 39, 'SNAPS23': 0, 'SNAPSPTH23': 0}. This county context is displayed separately from FSIS outcomes and CDC evidence.
+
+The content-based re-import checked 8 previous derived tables. All checked frame values/dtypes were unchanged: True. Model artifact hashes unchanged: True. Exact-byte duplicate downloads are not pooled; differing exports for one supported semantic table are explicit conflicts. Source-browser checksums and displayed values use the same immutable request snapshot. Schema recognition establishes supported structure, not provider authenticity or publication availability. See `reports/ingestion_verification.json`.
+
+Dispatch readiness is read-only: thirteen constraint diagnostics and three workflow checks expose current resource use, eligibility, acknowledgments and targeted verification. Passing listed checks does not dispatch, consume inventory, certify food safety or validate commercial-truck restrictions. No model score creates a mandatory hold.

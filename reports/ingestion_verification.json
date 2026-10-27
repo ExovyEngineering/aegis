@@ -1,0 +1,227 @@
+{
+  "comparison": [
+    {
+      "dataset": "beam_0",
+      "rows_before": 1650,
+      "rows_after": 1650,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "beam_1",
+      "rows_before": 262616,
+      "rows_after": 262616,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "beam_2",
+      "rows_before": 484,
+      "rows_after": 484,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "beam_3",
+      "rows_before": 2412,
+      "rows_after": 2412,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "beam_4",
+      "rows_before": 4818,
+      "rows_after": 4818,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "nors_0",
+      "rows_before": 66713,
+      "rows_after": 66713,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "establishments_0",
+      "rows_before": 175,
+      "rows_after": 175,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    },
+    {
+      "dataset": "fsis_poultry",
+      "rows_before": 78607,
+      "rows_after": 78607,
+      "frame_values_and_dtypes_equal": true,
+      "comparison_error": null
+    }
+  ],
+  "evidence_statuses": [
+    {
+      "file": "BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+      "dataset_id": "beam_0",
+      "status": "ingested",
+      "rows": 1650,
+      "error": null
+    },
+    {
+      "file": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+      "dataset_id": "beam_1",
+      "status": "ingested",
+      "rows": 262616,
+      "error": null
+    },
+    {
+      "file": "BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+      "dataset_id": "beam_2",
+      "status": "ingested",
+      "rows": 484,
+      "error": null
+    },
+    {
+      "file": "BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+      "dataset_id": "beam_3",
+      "status": "ingested",
+      "rows": 2412,
+      "error": null
+    },
+    {
+      "file": "BEAM_Dashboard_\u2013_Top_30_Most_Common_Serotypes_20261026.csv",
+      "dataset_id": "beam_4",
+      "status": "ingested",
+      "rows": 4818,
+      "error": null
+    },
+    {
+      "file": "Dataset_Establishment_Demographic_Data.csv",
+      "dataset_id": null,
+      "status": "unrecognized",
+      "rows": null,
+      "error": null
+    },
+    {
+      "file": "MPI_Directory_by_Establishment_Name.csv",
+      "dataset_id": "establishments_0",
+      "status": "ingested",
+      "rows": 175,
+      "error": null
+    },
+    {
+      "file": "NORS_20261026.csv",
+      "dataset_id": "nors_0",
+      "status": "ingested",
+      "rows": 66713,
+      "error": null
+    },
+    {
+      "file": "primary_table_data_0.csv",
+      "dataset_id": null,
+      "status": "unrecognized",
+      "rows": null,
+      "error": null
+    }
+  ],
+  "fsis_rows": 78607,
+  "model_artifact_hashes_unchanged": true,
+  "fsis_report": "complete",
+  "operator_database_modified": false,
+  "snapshot_cohort": {
+    "training_rows": 57459,
+    "validation_rows": 7754,
+    "cutoff": "2026-03-19",
+    "training_and_validation_frames_unchanged": true
+  },
+  "catalog_status": [
+    {
+      "id": "fsis_poultry",
+      "status": "available",
+      "ingestion_status": "complete",
+      "rows": 78607,
+      "error": null
+    },
+    {
+      "id": "nors_0",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 66713,
+      "error": null
+    },
+    {
+      "id": "beam_0",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 1650,
+      "error": null
+    },
+    {
+      "id": "beam_1",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 262616,
+      "error": null
+    },
+    {
+      "id": "beam_2",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 484,
+      "error": null
+    },
+    {
+      "id": "beam_3",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 2412,
+      "error": null
+    },
+    {
+      "id": "beam_4",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 4818,
+      "error": null
+    },
+    {
+      "id": "establishments_0",
+      "status": "available",
+      "ingestion_status": "available",
+      "rows": 175,
+      "error": null
+    }
+  ],
+  "bounded_row_requests": [
+    {
+      "source": "fsis_poultry",
+      "http_status": 200
+    },
+    {
+      "source": "nors_0",
+      "http_status": 200
+    },
+    {
+      "source": "beam_0",
+      "http_status": 200
+    },
+    {
+      "source": "beam_1",
+      "http_status": 200
+    },
+    {
+      "source": "beam_2",
+      "http_status": 200
+    },
+    {
+      "source": "beam_3",
+      "http_status": 200
+    },
+    {
+      "source": "beam_4",
+      "http_status": 200
+    },
+    {
+      "source": "establishments_0",
+      "http_status": 200
+    }
+  ]
+}
