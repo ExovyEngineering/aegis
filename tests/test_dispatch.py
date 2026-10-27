@@ -1,5 +1,6 @@
 """Dispatcher decisions are atomic, versioned and independent of driver reports."""
 import json
+from datetime import datetime, timedelta, timezone
 
 import pytest
 from fastapi import FastAPI, HTTPException
@@ -20,6 +21,12 @@ def dispatch_client(tmp_path, monkeypatch):
     with api.db() as connection:
         ensure_dispatch_schema(connection)
         network, _ = api.load(connection)
+        instant = datetime.now(timezone.utc)
+        connection.executemany(
+            'INSERT INTO driver_focus VALUES (?,?,?,?,?)',
+            [(truck['id'], 'parked', 1, (instant + timedelta(minutes=10)).isoformat(),
+              instant.isoformat()) for truck in network['trucks']],
+        )
         for shipment_id in ['SH03', 'SH04']:
             shipment = next(s for s in network['shipments'] if s['id'] == shipment_id)
             connection.execute('INSERT INTO assignments VALUES (?,?,0)',

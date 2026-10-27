@@ -16,6 +16,8 @@
     "dispatcher_instruction",
     "incident_review",
     "incident",
+    "driver_focus",
     "approve"
-  ]
+  ],
+  "parked_confirmation_recorded": true
 }

@@ -3,6 +3,7 @@ import json
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
 import yaml
+from backend.paths import read_json
 
 
 def create_project_router(root):
@@ -14,7 +15,7 @@ def create_project_router(root):
         features=yaml.safe_load(register.read_text(encoding='utf-8')) if register.exists() else {'features':[]}
         def read(name):
             path=root/'reports'/name
-            return json.loads(path.read_text(encoding='utf-8')) if path.exists() else None
+            return read_json(path) if path.exists() else None
         return {'register':features,'verification':read('session_verification.json'),'brief':read('project_brief_manifest.json'),'simulation':True,'notice':'Recorded evidence is dated. Local tests, browser checks, public API freshness, GitHub CI and author signoff are separate.'}
 
     @router.get('/api/project-brief.pdf')

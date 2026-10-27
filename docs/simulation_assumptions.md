@@ -44,3 +44,18 @@ Temperature projection uses `T(t) = T_equilibrium + (T_initial - T_equilibrium) 
 Road closure, severe weather, and delivery delay add a simulated two-hour delay. Refrigeration fault marks the assigned truck ineligible and sets cargo temperature to 9°C. Temperature excursion sets the shipment to 9°C and high review priority. Inventory shortage removes the candidate lot's available stock. These events are labeled simulated and invalidate existing assignments. They do not establish that a real MoDOT event or weather alert caused a real shipment delay.
 
 No verified recall event is synthesized as an official match. Real recall data may be displayed, while recall-to-lot matching remains unavailable without genuine traceability fields.
+
+
+## Driver vehicle snapshot
+
+Drive derives a stable simulated fuel fraction for each truck from the scenario
+seed and truck ID. Tank size is assumed 180 L and consumption 28 L/100 km; range
+is arithmetic under those assumptions. Values do not advance as a trip proceeds.
+Position is the first approved trip's dispatch-origin reference (or DC1 when no
+trip exists), stamped October 26 at 08:00 America/Chicago. It is not live GPS,
+measured speed, distance remaining, actual fuel use or a sensor timestamp.
+
+Parked status is a human declaration valid for at most ten minutes by server time.
+The interaction gate blocks local reporting/acknowledgment when locked or expired;
+it cannot prove a vehicle is parked or prevent other device use. Simulation
+planning dates remain distinct from current source-retrieval and interaction times.

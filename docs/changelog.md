@@ -4,6 +4,30 @@ Update this file when behavior or evidence changes. The generated presentation
 brief is `reports/aegis_project_brief.pdf`; its editable companion is
 `reports/project_brief.md`. Recorded tests are separate from implementation claims.
 
+## October 27, 2026 - visual Drive and action reliability
+
+- Added dedicated `/?mode=drive` with visual approved destination, planned travel,
+  workflow status, fuel/range and cargo tiles. Fuel and dispatch-origin position
+  are deterministic scenario snapshots; there is no live GPS or physical sensor.
+- Added versioned ten-minute parked confirmations and read-only focus. Driver
+  report, assignment acknowledgment and instruction acknowledgment endpoints enforce
+  the active confirmation in serialized transactions. Quick reports use the
+  existing dispatcher incident inbox and preserve assignment context.
+- Fixed partial reloads retaining stale assignment/scenario results, requested
+  routes being replaced by reference routes, source refresh claiming success on
+  stale fallback, late trip/advisory responses and late route-experiment results.
+  Planning lot IDs now match backend validation.
+- Executed evidence: 244 pytest, 51 Vitest, production build, 65 Drive and 65 broad
+  control checks passed. Separate36-depth/50-operations rehearsals also passed.
+  Logs, screenshots and source/transport measurements retain their timestamps.
+- Re-probed all 18 registry endpoints successfully on October 27. Catalog/discovery
+  HTTP success is distinct from fresh incident layers or complete weather coverage.
+- Bounded the recall preview and refresh summaries after measuring an 11.3 MB
+  full response. The 20-record preview is 108 KB with explicit truncation metadata;
+  dedicated Drive requests only network/trip context. Full caches remain intact.
+- Recorded explicit stretch entry criteria for state DOT feeds, molecular work,
+  LLM explanations, cloud and streaming. Those capabilities are not claimed.
+
 ## October 26, 2026 — decision depth and team visibility
 
 - Added independent scenario resource/eligibility validation and inspectable

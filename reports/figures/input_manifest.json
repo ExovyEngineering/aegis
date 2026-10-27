@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T22:36:44.700037+00:00",
+  "generated_at": "2026-10-27T08:00:29.349617+00:00",
   "inputs": [
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\manifests\\inventory.json",
@@ -7,7 +7,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\api_status.json",
-      "sha256": "e00516f6a5a1b2637b8924bfdc4295cc81b3e614a5f63031c6ea0d92f2966a17"
+      "sha256": "99b394f43c818996f12f8225f1bd1865b01a6dea13d94fc17f9c60e712c95071"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_evaluation.json",
@@ -15,7 +15,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\demo_results.json",
-      "sha256": "b8ea1c8d7e482c1c9df8263707251ef88152a836aec43f715cd32cda7bf6a6a9"
+      "sha256": "b780ee6e18178265f3cb5f35f9ed8428d3bae07ecb38a7a5332c9a1c5ea58b98"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_timing.json",
@@ -31,7 +31,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\validation.json",
-      "sha256": "602c24119e4b80a87e8d9a2e2382c13f5479461a060fa2ad48efae9f4d9e0f77"
+      "sha256": "920d2a8e17756ed351d09677afc5e453a997c505b8e377bc654b3dce82213de6"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\evidence_ingestion.json",
@@ -39,7 +39,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\operations_demo.json",
-      "sha256": "b210596add9c72a9cb0e4d0e4209e25668e95d5b7ba1e7449f749801d4c273ab"
+      "sha256": "4d2c5cff3f7f4c10ac5059f48d502e1507b9992d7ba052ededbaed87b2695938"
     }
   ],
   "draft": true

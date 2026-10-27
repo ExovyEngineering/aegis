@@ -2,7 +2,41 @@
 
 Session date: October 26, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: decision depth and team planning brief
+## Latest: visual Drive and click-path reliability (October 27)
+
+- Dedicated `/?mode=drive`: approved destination, planned journey, simulated fuel,
+  range, cargo and dispatch-origin position. At390x844 the main trip and both
+  gauges fit in the first view. No GPS progress, physical sensor or live ETA is
+  invented. Driving focus hides typing and acknowledgment controls.
+- Server-side parked declarations expire after 600 seconds. Legacy report,
+  trip-acknowledgment and instruction-ack paths reject missing/expired confirmation
+  transactionally; quick reports use the same dispatcher inbox and original trip
+  context. The declaration does not prove actual vehicle motion or parking.
+- Fixed stale partial reloads, route overwrite, stale-source success wording,
+  out-of-order advisory/run results, frontend/backend lot-ID drift and nested
+  MoDOT freshness. Core evidence-cache JSON is published as complete files with coordinated
+  reads and Windows sharing-lock retries.
+- Bulk transport is bounded explicitly. A 20-record recall preview measured 108,031
+  HTTP-body bytes vs 11,336,974 for the full response (99.05% reduction); provider
+  ordering/counts and complete cache remain preserved. Dedicated Drive no longer
+  polls recall, inventory, model or road-layer payloads. See `reports/transport_check.json`.
+- Latest executed verification: **244 pytest, 51 Vitest and production build pass**.
+  **65 Drive checks and 65 broader control checks pass** in actual Chrome, plus
+  separate 36-depth/50-operations rehearsals. All five Refresh controls, six events,
+  map toggles/zoom, scenario dialogs, source pagination and parked-use actions were
+  exercised. Evidence map: `docs/button_audit.md`; logs retain timestamps.
+- Registry probes: 18/18 HTTP successes. Actual refresh actions: 5/5 new nonstale
+  provider responses, including 18 MoDOT layers with 0 failures. NCEI refresh remains
+  a single station/week probe; it does not fill the broader historical gaps.
+- All 42 original raw hashes and pre-existing operator tables were preserved.
+  No production reset, assignment change or driver-focus mutation was performed
+  by the browser rehearsals. Source refreshes update only public evidence caches.
+- Updated ongoing PDF/Markdown brief, source/transport evidence and reviewer bundle.
+  Authentic Kiro execution, final rubric/author review and timed rehearsal remain
+  outstanding. Additional DOT feeds, genomic analysis, LLM explanations, cloud
+  release and streaming remain subject to `docs/stretch_feature_gates.md`.
+
+## Previous: decision depth and team planning brief
 
 October 26 feature-depth release:
 

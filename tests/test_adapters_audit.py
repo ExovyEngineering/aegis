@@ -16,6 +16,18 @@ def offline(*args, **kwargs):
     raise httpx.ConnectError('Test network disconnected')
 
 
+def test_modot_nested_stale_layer_prevents_top_level_freshness_claim(monkeypatch):
+    def response(self,url,ttl=3600):
+        if '/query?' not in url:
+            return {'payload':{'layers':[{'id':1,'name':'Current incidents'}]},'stale':False,'cache':False,'retrieved_at':'2026-10-27T07:00:00Z'}
+        return {'payload':{'type':'FeatureCollection','features':[]},'stale':True,'cache':True,'refresh_error':'provider timeout','retrieved_at':'2026-10-26T07:00:00Z'}
+    monkeypatch.setattr(adapters.MoDOTAdapter,'get',response)
+    result=adapters.MoDOTAdapter().fetch()
+    assert result['stale'] is True
+    assert 'provider timeout' in result['refresh_error']
+    assert result['coverage_complete'] is True  # Layer content coverage is distinct from freshness.
+
+
 def test_osrm_offline_geometry_and_matrix_are_explicit_estimates(monkeypatch):
     monkeypatch.setattr(OSRMRoutingAdapter, 'get', offline)
     coordinates = [(-92.3341, 38.9517), (-90.1994, 38.627)]

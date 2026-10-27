@@ -1,3 +1,4 @@
+import { parkDriver } from './qa_drive_helpers.mjs';
 /** End-to-end feature-depth checks; use ONLY the isolated server on port 8001. */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -20,6 +21,7 @@ try {
   const action=async (endpoint,fn)=>{const pending=page.waitForResponse(r=>r.url().endsWith(endpoint)&&r.request().method()==='POST');await fn();const response=await pending;check(endpoint,response.ok(),`HTTP ${response.status()}`);return response.json();};
   const capture=async name=>{await page.screenshot({path:path.join(folder,name+'.png'),fullPage:false});result.screenshots.push(name+'.png');};
   const noOverflow=async label=>{const size=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));check(label,size.scroll<=size.width,JSON.stringify(size));};
+  const reset=await context.request.post(base+'/api/demo/reset');if(!reset.ok())throw new Error('Isolated reset failed');
   const original=await get('/api/network');
   check('fresh_isolated_assignments',(await get('/api/driver')).length===0);
   await page.goto(base,{waitUntil:'domcontentloaded'});
@@ -99,10 +101,13 @@ try {
   const stale=await context.request.post(base+`/api/dispatch/assignments/${target.id}/verification`,{data:{actor:'Depth QA dispatcher',reason:'Attempted stale review',expected_network_revision:snapshot.network_revision,expected_verification_version:0,outcome:'complete',checks:{temperature_history_reviewed:true,packaging_condition_reviewed:true,simulated_lot_identity_reviewed:true}}});
   check('stale_verification_rejected',stale.status()===409);
   await page.getByRole('button',{name:'AEGIS Drive',exact:true}).click();
-  await page.getByLabel('Simulated driver truck',{exact:true}).selectOption(target.truck_id);
+  await parkDriver(page,target.truck_id);
+  const tripSelector=page.getByLabel('Trip for advisories and incident reporting',{exact:true});
+  if(await tripSelector.count())await tripSelector.selectOption(target.id);
+  await page.getByRole('button',{name:/Dispatch instructions/}).click();
   await page.getByText('Targeted verification: review complete',{exact:true}).waitFor();
-  check('driver_receives_verification_status',(await page.locator('.driver-card').innerText()).includes('not product-safety certification'));
-  await page.setViewportSize({width:390,height:844});await noOverflow('mobile_driver_verification_no_overflow');await page.locator('.driver-card').scrollIntoViewIfNeeded();await capture('mobile-verification-status');
+  check('driver_receives_verification_status',(await page.locator('.drive-workspace').innerText()).includes('not product-safety certification'));
+  await page.setViewportSize({width:390,height:844});await noOverflow('mobile_driver_verification_no_overflow');await page.locator('.drive-workspace').scrollIntoViewIfNeeded();await capture('mobile-verification-status');
   await page.setViewportSize({width:1440,height:1000});
   await page.getByRole('button',{name:'Project brief',exact:true}).click();
   await page.getByRole('heading',{name:'Your team and presentation brief',exact:true}).waitFor();

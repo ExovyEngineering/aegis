@@ -1,72 +1,116 @@
 [
   {
     "id": "fsis_recalls",
-    "tested_at": "2026-10-26T06:10:05.020344+00:00",
+    "tested_at": "2026-10-27T07:00:17.284615+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json",
     "failure": null,
-    "response_schema": "array[2032]",
-    "latency_ms": 923
+    "response_schema": {
+      "type": "array",
+      "rows": 2032,
+      "item_fields": [
+        "field_title",
+        "field_recall_number_export",
+        "field_recall_url",
+        "field_active_notice",
+        "field_states",
+        "field_archive_recall",
+        "field_closed_year",
+        "field_company_media_contact",
+        "field_distro_list",
+        "field_en_press_release",
+        "field_establishment",
+        "field_labels",
+        "field_media_contact",
+        "field_risk_level",
+        "field_last_modified_date",
+        "field_press_release",
+        "field_processing",
+        "field_product_items",
+        "field_qty_recovered",
+        "field_recall_classification",
+        "field_recall_date",
+        "field_recall_number",
+        "field_recall_reason",
+        "field_recall_type",
+        "field_related_to_outbreak",
+        "field_summary",
+        "field_year",
+        "langcode",
+        "field_has_spanish"
+      ]
+    },
+    "latency_ms": 848
   },
   {
     "id": "fsis_sampling",
-    "tested_at": "2026-10-26T06:10:06.244216+00:00",
+    "tested_at": "2026-10-27T07:00:18.432909+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=UTF-8",
     "failure": null,
-    "latency_ms": 442
+    "latency_ms": 380
   },
   {
     "id": "fsis_directory",
-    "tested_at": "2026-10-26T06:10:06.986717+00:00",
+    "tested_at": "2026-10-27T07:00:19.113683+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=UTF-8",
     "failure": null,
-    "latency_ms": 417
+    "latency_ms": 446
   },
   {
     "id": "cdc_beam",
-    "tested_at": "2026-10-26T06:10:07.704292+00:00",
+    "tested_at": "2026-10-27T07:00:19.860543+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html",
     "failure": null,
-    "latency_ms": 407
+    "latency_ms": 943
   },
   {
     "id": "cdc_nors",
-    "tested_at": "2026-10-26T06:10:08.411544+00:00",
+    "tested_at": "2026-10-27T07:00:21.103947+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html",
     "failure": null,
-    "latency_ms": 383
+    "latency_ms": 1059
   },
   {
     "id": "ncei_docs",
-    "tested_at": "2026-10-26T06:10:09.094640+00:00",
+    "tested_at": "2026-10-27T07:00:22.463101+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=UTF-8",
     "failure": null,
-    "latency_ms": 508
+    "latency_ms": 507
   },
   {
     "id": "ncei_historical",
-    "tested_at": "2026-10-26T06:10:09.903122+00:00",
+    "tested_at": "2026-10-27T07:00:23.270612+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json;charset=utf-8",
     "failure": null,
-    "response_schema": "array[7]",
-    "latency_ms": 602
+    "response_schema": {
+      "type": "array",
+      "rows": 7,
+      "item_fields": [
+        "DATE",
+        "STATION",
+        "TMAX",
+        "TMIN",
+        "PRCP"
+      ]
+    },
+    "latency_ms": 1563
   },
   {
     "id": "nws_alerts",
-    "tested_at": "2026-10-26T06:10:10.805916+00:00",
+    "tested_at": "2026-10-27T07:00:25.134226+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/geo+json",
@@ -78,11 +122,11 @@
       "title",
       "updated"
     ],
-    "latency_ms": 717
+    "latency_ms": 581
   },
   {
     "id": "nws_points",
-    "tested_at": "2026-10-26T06:10:11.823245+00:00",
+    "tested_at": "2026-10-27T07:00:26.015658+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/geo+json",
@@ -94,11 +138,11 @@
       "geometry",
       "properties"
     ],
-    "latency_ms": 530
+    "latency_ms": 662
   },
   {
     "id": "openmeteo",
-    "tested_at": "2026-10-26T06:10:12.653243+00:00",
+    "tested_at": "2026-10-27T07:00:26.978324+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=utf-8",
@@ -114,11 +158,11 @@
       "hourly_units",
       "hourly"
     ],
-    "latency_ms": 508
+    "latency_ms": 967
   },
   {
     "id": "openmeteo_archive",
-    "tested_at": "2026-10-26T06:10:13.461459+00:00",
+    "tested_at": "2026-10-27T07:00:28.245429+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=utf-8",
@@ -134,11 +178,11 @@
       "daily_units",
       "daily"
     ],
-    "latency_ms": 803
+    "latency_ms": 1123
   },
   {
     "id": "modot",
-    "tested_at": "2026-10-26T06:10:14.565252+00:00",
+    "tested_at": "2026-10-27T07:00:29.668385+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/plain; charset=UTF-8",
@@ -175,11 +219,11 @@
       "currentVersion",
       "hasBranchVersionedData"
     ],
-    "latency_ms": 411
+    "latency_ms": 417
   },
   {
     "id": "osrm_route",
-    "tested_at": "2026-10-26T06:10:15.277041+00:00",
+    "tested_at": "2026-10-27T07:00:30.385658+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=UTF-8",
@@ -189,11 +233,11 @@
       "routes",
       "waypoints"
     ],
-    "latency_ms": 828
+    "latency_ms": 863
   },
   {
     "id": "osrm_table",
-    "tested_at": "2026-10-26T06:10:16.405206+00:00",
+    "tested_at": "2026-10-27T07:00:31.549377+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=UTF-8",
@@ -204,42 +248,42 @@
       "durations",
       "sources"
     ],
-    "latency_ms": 670
+    "latency_ms": 661
   },
   {
     "id": "osrm_docs",
-    "tested_at": "2026-10-26T06:10:17.375309+00:00",
+    "tested_at": "2026-10-27T07:00:32.511058+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=utf-8",
     "failure": null,
-    "latency_ms": 384
+    "latency_ms": 509
   },
   {
     "id": "osm_missouri",
-    "tested_at": "2026-10-26T06:10:18.060374+00:00",
+    "tested_at": "2026-10-27T07:00:33.320019+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html",
     "failure": null,
-    "latency_ms": 860
+    "latency_ms": 3051
   },
   {
     "id": "food_access",
-    "tested_at": "2026-10-26T06:10:19.220895+00:00",
+    "tested_at": "2026-10-27T07:00:36.671168+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=utf-8",
     "failure": null,
-    "latency_ms": 659
+    "latency_ms": 769
   },
   {
     "id": "food_environment",
-    "tested_at": "2026-10-26T06:10:20.180502+00:00",
+    "tested_at": "2026-10-27T07:00:37.740911+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/html; charset=utf-8",
     "failure": null,
-    "latency_ms": 544
+    "latency_ms": 530
   }
 ]

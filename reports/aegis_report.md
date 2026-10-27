@@ -2,7 +2,7 @@
 
 **Draft scientific competition report — genuine Kiro application usage, author signoff, and official-rubric review pending.**
 
-Report compiled from saved artifacts on 2026-10-26. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
+Report compiled from saved artifacts on 2026-10-27. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
 
 ## Abstract
 
@@ -132,7 +132,7 @@ The accelerated isolated workflow recorded 13 approved simulated assignments. Ac
 
 Required inputs, retrieval records, seeds, commands, and test artifacts remain inspectable. This report compiler performs no new HTTP requests. Its input-file hashes are recorded in `reports/figures/input_manifest.json`; regenerating after evidence changes updates the draft transparently.
 
-The saved validation artifact records 189 passing pytest tests, 31 passing Vitest tests, frontend build status `passed`, and 23 real HTTP checks. Browser visual QA: `passed: 36 latest feature-depth Chrome checks; earlier 50 operations and 26 core checks separately retained`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
+The saved validation artifact records 244 passing pytest tests, 51 passing Vitest tests, frontend build status `passed`, and 24 real HTTP checks. Browser visual QA: `passed: 65 visual Drive + 65 broad controls; separate 36 depth and 50 operations rehearsals retained with timestamps`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
 
 ```powershell
 .venv/Scripts/python scripts/audit_data.py
@@ -177,5 +177,7 @@ Custom planning now accepts explicitly user-entered origins, delivery stops, inv
 The dispatcher desk links newly submitted driver incidents to identified review, manual lot holds/releases and versioned instructions. Original reporting context is retained. Holds remove affected assignments; release does not restore them automatically. Driver acknowledgment checks the current instruction version separately from the original assignment acknowledgment. Dispatcher identities remain self-declared in the local prototype.
 
 The recorded isolated workflow reports passed=True, stale-instruction acknowledgment rejected=True, held-lot assignments removed=True, and release-without-redispatch verified=True. Operator database modified=False. Evidence: `reports/operations_demo.json`; methods: `docs/operations_workflow.md`.
+
+The dedicated mobile-responsive Drive view presents approved destination, planned travel, simulated fuel/range and dispatch-origin position, cargo temperature and workflow status. Driver reports and acknowledgments require an expiring parked declaration checked transactionally by the server; this is not actual motion detection. Quick reports retain trip context in the dispatcher inbox. Bulk recall evidence is explicitly bounded in the UI while complete source caches remain unchanged.
 
 These workflow improvements do not resolve missing publication timestamps, validate cargo thermal coefficients, establish production authorization, or supply genuine Kiro execution evidence.

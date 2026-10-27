@@ -54,6 +54,21 @@ node .tools/package/bin/npm-cli.js --prefix frontend run build
 
 Do not commit the local runtime. A fresh checkout requires standard Node/npm installation unless `.tools/` is separately provisioned.
 
+## AEGIS Drive
+
+Open <http://127.0.0.1:8000/?mode=drive> for the dedicated mobile-responsive driver
+surface. It shows approved trip/destination, planned travel, simulated fuel/range,
+cargo and assignment status. Typing, reports and acknowledgments require an
+explicit parked confirmation, which expires after ten minutes. Lock controls
+before moving. The server also rejects these actions when confirmation expires.
+This is a self-declared interaction safeguard, not actual motion detection.
+
+Fuel and dispatch-origin position are deterministic scenario values, not live GPS
+or sensor readings. Quick reports reach the local dispatcher inbox. No route
+change or lot hold happens automatically. See [Drive design](docs/drive_design.md)
+and [stretch entry criteria](docs/stretch_feature_gates.md). This is the shared
+web application; no native mobile package or cloud deployment is claimed.
+
 ## Team status and presentation planning
 
 Open **Project brief** in the application to download the maintained PDF and see

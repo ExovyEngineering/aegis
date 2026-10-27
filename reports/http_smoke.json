@@ -6,19 +6,19 @@
       "status": 200
     },
     {
-      "path": "/assets/index-C2mtGtIK.js",
+      "path": "/assets/index-BVkhobl0.js",
       "status": 200
     },
     {
-      "path": "/assets/charts-CiMnwsrd.js",
+      "path": "/assets/maps-DNySFZuc.js",
       "status": 200
     },
     {
-      "path": "/assets/maps-BqhAM0pe.js",
+      "path": "/assets/charts-CM80Q5FX.js",
       "status": 200
     },
     {
-      "path": "/assets/index-C9PXFckW.css",
+      "path": "/assets/index-C2jnC9dD.css",
       "status": 200
     },
     {
@@ -92,8 +92,12 @@
     {
       "path": "/api/project-status",
       "status": 200
+    },
+    {
+      "path": "/api/drive/T01",
+      "status": 200
     }
   ],
-  "passed": 23,
+  "passed": 24,
   "browser_visual_qa": false
 }

@@ -1,93 +1,136 @@
 project: AEGIS
-updated: '2026-10-26'
+updated: '2026-10-27'
 features:
-  - id: provenance
-    priority: P0
-    name: Source inventory and provenance
-    status: implemented; bounded coverage
-    evidence: reports/data_audit.md
-    detail: 42 original downloads audited; official evidence and simulated logistics remain distinct.
-  - id: weather
-    priority: P0
-    name: Independent public weather integrations
-    status: implemented; historical gaps remain
-    evidence: reports/noaa_coverage.json
-    detail: Open-Meteo forecasts, NWS alerts and bounded NOAA observations have separate provenance. No validated FSIS-weather join.
-  - id: estimator
-    priority: P0
-    name: Measured historical estimator and validation
-    status: retrospective baseline implemented; prospective validity unproven
-    evidence: reports/model_evaluation.json
-    detail: Chronological evaluation, baseline, calibration and uncertainty. Logistic model did not establish useful improvement.
-  - id: interventions
-    priority: P0
-    name: Four constrained intervention scenarios
-    status: implemented
-    evidence: backend/optimization.py
-    detail: Baseline, targeted verification, proposed hold and eligible supply substitution, with independent resource checks.
-  - id: approval
-    priority: P0
-    name: Dispatcher approval and audit
-    status: implemented for local simulation
-    evidence: tests/test_dispatch.py
-    detail: Revision guards, explicit holds/releases, targeted verification checklists, incident review and exact-version driver instruction acknowledgment. Identities are self-declared.
-  - id: data-browser
-    priority: P0
-    name: Inspectable ingested evidence
-    status: implemented
-    evidence: tests/test_data_explorer.py
-    detail: Bounded read-only rows, schema, literal filters, page null counts and file checksums; CDC layers never merged with FSIS outcomes.
-  - id: kiro
-    priority: P0
-    name: Authentic Kiro spec execution
-    status: pending user sign-in and genuine task execution
-    evidence: docs/kiro_handoff.md
-    detail: Kiro is installed. Existing Codex artifacts and installation evidence do not prove Kiro workflow completion.
-  - id: submission
-    priority: P0
-    name: Report, reproducible package and presentation
-    status: draft artifacts implemented; author review and timed rehearsal pending
-    evidence: reports/aegis_report.md
-    detail: Local reviewer bundle, measured results, demonstration scripts and this regenerated planning brief. Not submitted.
-  - id: digital-twin
-    priority: P1
-    name: Interactive Missouri digital twin
-    status: implemented for deterministic simulation
-    evidence: backend/simulation.py
-    detail: Map, official evidence layers, simulated cargo and operational events. Real contracts and physical sensors are absent.
-  - id: route-planning
-    priority: P1
-    name: Single-farm and multi-origin route planning
-    status: implemented as planning sandbox
-    evidence: tests/test_route_lab.py
-    detail: Custom coordinates, inventory, trucks, demand, deadlines and shelf life. Public OSRM lacks commercial-truck validation.
-  - id: experiments
-    priority: P1
-    name: Saved route experiments and comparisons
-    status: implemented locally
-    evidence: tests/test_planning_library.py
-    detail: Immutable runs, checksums, versioned projects, history and exports. No dispatch from the route laboratory.
-  - id: drive
-    priority: P1
-    name: Mobile AEGIS Drive
-    status: implemented for use while parked
-    evidence: reports/operations_demo.json
-    detail: Approved trip, simulated cargo, advisories, reporting, instruction and assignment acknowledgments.
-  - id: assistant
-    priority: P2
-    name: LLM operations assistant
-    status: deferred behind P0 gates
-    evidence: docs/priority_matrix.md
-    detail: No assistant or generated safety decisions are claimed.
-  - id: accounts
-    priority: P2
-    name: Farm and enterprise accounts
-    status: deferred
-    evidence: docs/priority_matrix.md
-    detail: Planning scales exist; production authentication, tenant isolation and billing do not.
-  - id: sensors
-    priority: P2
-    name: Live sensor integrations
-    status: deferred
-    evidence: docs/simulation_assumptions.md
-    detail: All cargo-temperature telemetry is simulated.
+- id: provenance
+  priority: P0
+  name: Source inventory and provenance
+  status: implemented; bounded coverage
+  evidence: reports/data_audit.md
+  detail: 42 original downloads audited; official evidence and simulated logistics
+    remain distinct.
+- id: weather
+  priority: P0
+  name: Independent public weather integrations
+  status: implemented; historical gaps remain
+  evidence: reports/noaa_coverage.json
+  detail: Open-Meteo forecasts, NWS alerts and bounded NOAA observations have separate
+    provenance. No validated FSIS-weather join.
+- id: estimator
+  priority: P0
+  name: Measured historical estimator and validation
+  status: retrospective baseline implemented; prospective validity unproven
+  evidence: reports/model_evaluation.json
+  detail: Chronological evaluation, baseline, calibration and uncertainty. Logistic
+    model did not establish useful improvement.
+- id: interventions
+  priority: P0
+  name: Four constrained intervention scenarios
+  status: implemented
+  evidence: backend/optimization.py
+  detail: Baseline, targeted verification, proposed hold and eligible supply substitution,
+    with independent resource checks.
+- id: approval
+  priority: P0
+  name: Dispatcher approval and audit
+  status: implemented for local simulation
+  evidence: tests/test_dispatch.py
+  detail: Revision guards, explicit holds/releases, targeted verification checklists,
+    incident review and exact-version driver instruction acknowledgment. Identities
+    are self-declared.
+- id: data-browser
+  priority: P0
+  name: Inspectable ingested evidence
+  status: implemented
+  evidence: tests/test_data_explorer.py
+  detail: Bounded read-only rows, schema, literal filters, page null counts and file
+    checksums; CDC layers never merged with FSIS outcomes.
+- id: kiro
+  priority: P0
+  name: Authentic Kiro spec execution
+  status: pending user sign-in and genuine task execution
+  evidence: docs/kiro_handoff.md
+  detail: Kiro is installed. Existing Codex artifacts and installation evidence do
+    not prove Kiro workflow completion.
+- id: submission
+  priority: P0
+  name: Report, reproducible package and presentation
+  status: draft artifacts implemented; author review and timed rehearsal pending
+  evidence: reports/aegis_report.md
+  detail: Local reviewer bundle, measured results, demonstration scripts and this
+    regenerated planning brief. Not submitted.
+- id: digital-twin
+  priority: P1
+  name: Interactive Missouri digital twin
+  status: implemented for deterministic simulation
+  evidence: backend/simulation.py
+  detail: Map, official evidence layers, simulated cargo and operational events. Real
+    contracts and physical sensors are absent.
+- id: route-planning
+  priority: P1
+  name: Single-farm and multi-origin route planning
+  status: implemented as planning sandbox
+  evidence: tests/test_route_lab.py
+  detail: Custom coordinates, inventory, trucks, demand, deadlines and shelf life.
+    Public OSRM lacks commercial-truck validation.
+- id: experiments
+  priority: P1
+  name: Saved route experiments and comparisons
+  status: implemented locally
+  evidence: tests/test_planning_library.py
+  detail: Immutable runs, checksums, versioned projects, history and exports. No dispatch
+    from the route laboratory.
+- id: drive
+  priority: P1
+  name: Mobile AEGIS Drive
+  status: implemented locally with server-enforced parked-use interactions
+  evidence: tests/test_drive_integration.py
+  detail: Dedicated visual trip view, simulated fuel/origin position/cargo, ten-minute
+    parked attestation, quick reports, instructions and acknowledgment. No actual
+    motion detection or physical sensing.
+- id: assistant
+  priority: P2
+  name: LLM operations assistant
+  status: deferred behind P0 gates
+  evidence: docs/priority_matrix.md
+  detail: No assistant or generated safety decisions are claimed.
+- id: accounts
+  priority: P2
+  name: Farm and enterprise accounts
+  status: deferred
+  evidence: docs/priority_matrix.md
+  detail: Planning scales exist; production authentication, tenant isolation and billing
+    do not.
+- id: sensors
+  priority: P2
+  name: Live sensor integrations
+  status: deferred
+  evidence: docs/simulation_assumptions.md
+  detail: All cargo-temperature telemetry is simulated.
+- id: state-dot
+  priority: P2
+  name: Additional state DOT feeds
+  status: deferred pending cross-state use case
+  evidence: docs/stretch_feature_gates.md
+  detail: Missouri is the operating scope. Each future feed needs tested schema, timestamp/geometry
+    coverage and explicit fallbacks.
+- id: genomics
+  priority: P2
+  name: Molecular epidemiology
+  status: blocked by missing isolate-level genomic linkage
+  evidence: docs/stretch_feature_gates.md
+  detail: Current aggregate serotype tables do not contain linked genome sequences/accessions.
+    No relatedness or common-source inference is claimed.
+- id: cloud
+  priority: P2
+  name: Real cloud deployment
+  status: deferred pending production access controls
+  evidence: docs/stretch_feature_gates.md
+  detail: Local self-declared identities are not production authentication or tenant
+    isolation. No cloud release is claimed.
+- id: streaming
+  priority: P2
+  name: Real-time streaming infrastructure
+  status: deferred pending an actual live stream
+  evidence: docs/stretch_feature_gates.md
+  detail: Dated public feeds and deterministic simulation are not live sensor streams.
+    Polling retains source timestamps.

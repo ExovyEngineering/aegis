@@ -1,7 +1,7 @@
 {
   "base_url": "http://127.0.0.1:8001",
   "isolated_database": true,
-  "checked_at": "2026-10-26T16:31:53.317Z",
+  "checked_at": "2026-10-27T07:11:39.245Z",
   "checks": [
     {
       "name": "isolated_reset_succeeded",
@@ -124,7 +124,7 @@
       "details": "No unidentified review action"
     },
     {
-      "name": "action_/api/dispatch/incidents/7c17d526-4fbc-4508-9053-865243449e4e/review",
+      "name": "action_/api/dispatch/incidents/b44c6538-aa70-451c-8ecd-5ab53159d635/review",
       "passed": true,
       "details": "HTTP 200"
     },
@@ -214,7 +214,7 @@
       "details": "Release requires a newly reviewed scenario before dispatch"
     },
     {
-      "name": "action_/api/dispatch/incidents/7c17d526-4fbc-4508-9053-865243449e4e/review",
+      "name": "action_/api/dispatch/incidents/b44c6538-aa70-451c-8ecd-5ab53159d635/review",
       "passed": true,
       "details": "HTTP 200"
     },
@@ -270,6 +270,6 @@
     "dispatcher-resolved.png",
     "mobile-dispatcher.png"
   ],
-  "browser_version": "156.0.8078.47",
+  "browser_version": "156.0.8078.48",
   "passed": true
 }

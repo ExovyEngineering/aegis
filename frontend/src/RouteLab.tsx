@@ -1,5 +1,5 @@
 import PlanningLibrary from './PlanningLibrary';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, FlaskConical, MapPin, Route, ShieldCheck, Snowflake, TriangleAlert, Truck } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { api, fixed, formatNumber } from './api';
@@ -34,16 +34,22 @@ export default function RouteLab() {
   const [busy, setBusy] = useState(false);
   const [selectedTruck, setSelectedTruck] = useState('');
   const [changed, setChanged] = useState(false);
+  const inputRevision = useRef(0);
+  const runEpoch = useRef(0);
   useEffect(() => { api<any[]>('/operations/presets').then(data => { if (Array.isArray(data) && data.length) { setTemplates(data.filter(p => Array.isArray(p.origins) && Array.isArray(p.stops) && Array.isArray(p.trucks))); setPresets(data.map(p => ({ ...p, origins: Array.isArray(p.origins) ? p.origins.length : p.origins, trucks: Array.isArray(p.trucks) ? p.trucks.length : p.trucks, stops: Array.isArray(p.stops) ? p.stops.length : p.stops }))); } }).catch(() => {}); }, []);
-  function change(fn: () => void) { fn(); setChanged(!!result); }
+  useEffect(() => () => { runEpoch.current++; }, []);
+  function change(fn: () => void) { inputRevision.current++; fn(); setChanged(!!result || busy); }
   async function run() {
+    const epoch = ++runEpoch.current;
+    const revision = inputRevision.current;
     setBusy(true); setError('');
     try {
       const fleet = preset === 'custom' ? { custom_operation: customOperation } : { truck_count: truckCount, truck_capacity_kg: capacity };
       const output = await api<LabResult>('/route-lab', { preset, routing, ...fleet, max_route_hours: maxHours, refrigeration_fault: fault, ambient_temperature_c: ambient, delay_minutes: delay });
-      setResult(output); setSelectedTruck(output.routes[0]?.truck_id ?? ''); setChanged(false);
-    } catch (e) { setError(e instanceof Error ? e.message : String(e)); }
-    finally { setBusy(false); }
+      if (epoch !== runEpoch.current) return;
+      setResult(output); setSelectedTruck(output.routes[0]?.truck_id ?? ''); setChanged(revision !== inputRevision.current);
+    } catch (e) { if (epoch === runEpoch.current) setError(e instanceof Error ? e.message : String(e)); }
+    finally { if (epoch === runEpoch.current) setBusy(false); }
   }
   const selected = result?.routes.find(route => route.truck_id === selectedTruck);
   const cold = selected?.cold_chain;
@@ -54,6 +60,7 @@ export default function RouteLab() {
   return <section className="route-lab" aria-label="Route laboratory">
     <div className="lab-intro"><span className="lab-intro-icon"><FlaskConical size={23} /></span><div><strong>From one farm to a regional fleet.</strong><p>Test simulated dispatch plans, inspect truck routes, and explore how delays and refrigeration faults affect an illustrative cargo-temperature projection.</p></div><span className="pill amber">PLANNING SANDBOX</span></div>
     <PlanningLibrary runId={result?.run_id} changed={changed} onLoad={(request, output) => {
+      runEpoch.current++; inputRevision.current++; setBusy(false); setError('');
       setPreset(request.preset); if (request.custom_operation) setCustomOperation(request.custom_operation);
       setRouting(request.routing); setTruckCount(request.truck_count ?? 3); setCapacity(request.truck_capacity_kg ?? 1500);
       setMaxHours(request.max_route_hours); setAmbient(request.ambient_temperature_c); setDelay(request.delay_minutes); setFault(request.refrigeration_fault);
@@ -76,7 +83,7 @@ export default function RouteLab() {
       <div className="lab-results">
         {preset === 'custom' && <CustomOperationEditor value={customOperation} templates={templates} onChange={operation => change(() => setCustomOperation(operation))} />}
         {error && <div role="alert" className="feedback error"><TriangleAlert size={18} />{error}</div>}
-        {changed && <div className="coverage-warning lab-change-warning"><TriangleAlert size={16} />Inputs changed. The results below describe the previous run; test the plan again to update them.</div>}
+        {changed && <div className="coverage-warning lab-change-warning"><TriangleAlert size={16} />{result ? 'Inputs changed. The results below describe the previous run; test the plan again to update them.' : 'Inputs changed during the current run. Test the edited plan after this request finishes.'}</div>}
         {!result ? <section className="panel lab-empty"><Route size={36} /><h2>A route plan you can inspect.</h2><p>Select the scale of the operation, choose travel data, and run the test. Each truck’s stops, load, journey and temperature projection will appear here.</p><div><span>Capacity & timing constraints</span><span>Source provenance</span><span>No automatic dispatch</span></div></section> : <>
           <div className="lab-summary"><div><span>SOLVER STATUS</span><strong className={result.feasible ? 'text-green' : 'text-amber'}>{result.solver_status}</strong></div><div><span>TRAVEL DISTANCE</span><strong>{fixed(result.summary.total_distance_m / 1000, 1)}<small> km</small></strong></div><div><span>SIMULATED COST</span><strong>${formatNumber(result.summary.total_cost)}</strong></div><div><span>UNSERVED STOPS</span><strong>{result.summary.unserved_stops.length}</strong></div></div>
           <div className="coverage-warning lab-unserved"><TriangleAlert size={16} /><div><strong>{formatNumber(result.summary.unmet_demand_kg)} kg unmet demand</strong><p>Unserved stop IDs: {result.summary.unserved_stops.join(', ') || 'none'}.{excludedStops.length > 0 && <> Held/recalled/ineligible exclusions: {excludedStops.map(stop => `${stop.id} (${stop.recalled ? 'recalled' : stop.held ? 'held' : 'ineligible'})`).join(', ')}.</>}</p><p>Excluded or unserved deliveries remain unmet demand; they are not dispatched or assumed to be food waste.</p></div></div>

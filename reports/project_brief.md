@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 26, 2026 at 05:39 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 27, 2026 at 03:00 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -84,11 +84,11 @@ Immutable runs, checksums, versioned projects, history and exports. No dispatch 
 
 Evidence: tests/test_planning_library.py
 
-Mobile AEGIS Drive | implemented for use while parked
+Mobile AEGIS Drive | implemented locally with server-enforced parked-use interactions
 
-Approved trip, simulated cargo, advisories, reporting, instruction and assignment acknowledgments.
+Dedicated visual trip view, simulated fuel/origin position/cargo, ten-minute parked attestation, quick reports, instructions and acknowledgment. No actual motion detection or physical sensing.
 
-Evidence: reports/operations_demo.json
+Evidence: tests/test_drive_integration.py
 
 # P2 | Deferred extensions
 
@@ -110,27 +110,57 @@ All cargo-temperature telemetry is simulated.
 
 Evidence: docs/simulation_assumptions.md
 
+Additional state DOT feeds | deferred pending cross-state use case
+
+Missouri is the operating scope. Each future feed needs tested schema, timestamp/geometry coverage and explicit fallbacks.
+
+Evidence: docs/stretch_feature_gates.md
+
+Molecular epidemiology | blocked by missing isolate-level genomic linkage
+
+Current aggregate serotype tables do not contain linked genome sequences/accessions. No relatedness or common-source inference is claimed.
+
+Evidence: docs/stretch_feature_gates.md
+
+Real cloud deployment | deferred pending production access controls
+
+Local self-declared identities are not production authentication or tenant isolation. No cloud release is claimed.
+
+Evidence: docs/stretch_feature_gates.md
+
+Real-time streaming infrastructure | deferred pending an actual live stream
+
+Dated public feeds and deterministic simulation are not live sensor streams. Polling retains source timestamps.
+
+Evidence: docs/stretch_feature_gates.md
+
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-26T22:33:15.523542+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-27T07:56:13.545043+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 189; 10.878 seconds. Log: reports/checks/20261026T223246497338Z/pytest.txt. Checked: 2026-10-26T22:32:46.497545+00:00.
+pytest: PASS; exit 0; tests passed 244; 19.51 seconds. Log: reports/checks/20261027T075532749763Z/pytest.txt. Checked: 2026-10-27T07:55:32.750031+00:00.
 
-vitest: PASS; exit 0; tests passed 31; 6.652 seconds. Log: reports/checks/20261026T223246497338Z/vitest.txt. Checked: 2026-10-26T22:32:57.399450+00:00.
+vitest: PASS; exit 0; tests passed 51; 9.701 seconds. Log: reports/checks/20261027T075532749763Z/vitest.txt. Checked: 2026-10-27T07:55:52.284731+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 11.425 seconds. Log: reports/checks/20261026T223246497338Z/frontend_build.txt. Checked: 2026-10-26T22:33:04.073353+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 11.525 seconds. Log: reports/checks/20261027T075532749763Z/frontend_build.txt. Checked: 2026-10-27T07:56:02.005654+00:00.
 
-Latest feature-depth actual-Chrome QA: 36 / 36 recorded checks passed. Timestamp: 2026-10-26T22:34:14.624Z. Evidence: reports/browser_qa/depth/results.json. This is a separate run from local unit/build checks.
+Map, scenario, simulator and source-control browser QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-27T07:58:39.813Z. Evidence: reports/browser_qa/controls/results.json. This is a separate run from local unit/build checks.
 
-Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. Timestamp: 2026-10-26T16:31:53.317Z. Evidence: reports/browser_qa/operations/results.json. This is a separate run from local unit/build checks.
+Visual Drive and parked-use actual-Chrome QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-27T07:58:36.241Z. Evidence: reports/browser_qa/drive/results.json. This is a separate run from local unit/build checks.
 
-Loopback HTTP smoke artifact records 23 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
+Latest feature-depth actual-Chrome QA: 36 / 36 recorded checks passed. Timestamp: 2026-10-27T07:11:33.928Z. Evidence: reports/browser_qa/depth/results.json. This is a separate run from local unit/build checks.
+
+Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. Timestamp: 2026-10-27T07:11:39.245Z. Evidence: reports/browser_qa/operations/results.json. This is a separate run from local unit/build checks.
+
+Loopback HTTP smoke artifact records 24 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
 
 Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.
 
 Four upstream Python deprecation warnings have appeared in previous runs; consult the current captured pytest log. Browser, CI and live API tests are distinct evidence and are never inferred from one another.
 
 The first GitHub Actions run succeeded after repository creation. New commits need their own CI result; a local pass alone does not prove a remote run passed.
+
+Executed source refresh actions: 5 new provider responses, 5 usable payloads, 0 failed/stale actions; finished 2026-10-27T07:20:38.737126+00:00. This is distinct from registry catalog/discovery probes. Evidence: reports/source_actions.json.
 
 # Evidence | Coverage and scientific limits
 
@@ -164,7 +194,11 @@ Saved experiments: save a completed run, change assumptions and save another ver
 
 Dispatcher desk: complete or escalate the scenario-B verification checklist, review an incident, record a human lot hold/release and issue versioned instructions. A hold removes affected assignments. Release does not recreate dispatch; a new reviewed plan is necessary.
 
-Drive: select the approved truck/trip, inspect cargo/advisories and acknowledge the exact instruction version. Submit an incident while parked. The dispatcher inbox retains its original reporting context.
+Drive: open /?mode=drive for the dedicated visual surface. Inspect the approved destination, planned travel, simulated fuel/range, dispatch-origin reference and cargo temperature. No actual GPS progress or real remaining ETA is inferred.
+
+Parked-use controls: self-confirm safe parking to enable reports and acknowledgments for ten minutes. Driving focus and expiry lock these interactions at both the UI and legacy server endpoints. This does not detect actual motion, prove safe parking or prevent other device use.
+
+Driver reports: use a canned refrigeration/road/vehicle/cargo concern or type a report while parked. The standard dispatcher inbox retains original assignment context; no automatic hold, rerouting or external emergency call occurs.
 
 Sources: inspect current source age/fallback labels, historical NOAA coverage and actual paginated source rows. Filter one dataset column at a time; inspect schema and missing cells. Do not cross-link unrelated evidence.
 

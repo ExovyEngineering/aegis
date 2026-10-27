@@ -1,12 +1,16 @@
 {
   "passed": true,
+  "checked_at": "2026-10-27T07:24:35.377010+00:00",
   "operational_tables_preserved": [
     "assignments",
     "audit",
     "dispatch_instruction_versions",
     "incidents",
+    "planning_projects",
+    "planning_runs",
+    "planning_versions",
     "proposals",
     "state"
   ],
-  "note": "Compared logical state before/after server update; new planning schema tables are expected. No operator reset or simulated actions were performed against the operator database."
+  "note": "Compared logical operational state before/after Drive upgrade. New empty driver_focus schema is expected; no operator reset, focus change or simulated action was performed against the operator database."
 }

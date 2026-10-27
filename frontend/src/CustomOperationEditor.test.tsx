@@ -39,3 +39,27 @@ it('preserves a typed minus sign and reports incomplete coordinates as invalid i
   expect(screen.getByLabelText('Planning longitude')).toHaveValue('-92.5');
   expect(screen.getByText('-92.5')).toBeInTheDocument();
 });
+it('enforces the backend lot-id pattern and length while allowing optional generated planning keys', () => {
+  const draft = newPlanningOperation();
+  for (const invalid of ['LOT A', '1LOT', 'LOT/1', 'A'.repeat(49), '']) {
+    draft.stops[0].lot_id = invalid;
+    expect(customOperationErrors(draft).join(' ')).toContain('48 characters maximum');
+  }
+  draft.stops[0].lot_id = '  LOT_1-with-hyphens  ';
+  expect(customOperationErrors(draft)).toEqual([]);
+  draft.stops[0].lot_id = 'A'.repeat(48);
+  expect(customOperationErrors(draft)).toEqual([]);
+  draft.stops[0].lot_id = null;
+  draft.stops.push({ ...draft.stops[0], id: 'STOP2', lot_id: null });
+  expect(customOperationErrors(draft)).toEqual([]);
+  draft.stops[1].lot_id = 'PLAN-STOP1';
+  expect(customOperationErrors(draft).join(' ')).toContain('distinct planning lot');
+});
+it('sends a cleared optional lot as null and labels the generated key as fictional', () => {
+  function Editor() { const [draft, setDraft] = useState(newPlanningOperation); return <><CustomOperationEditor value={draft} onChange={setDraft} templates={[]} /><output aria-label="Lot input model">{JSON.stringify(draft.stops[0].lot_id)}</output></>; }
+  render(<Editor />);
+  fireEvent.change(screen.getByLabelText('Stop 1 lot ID'), { target: { value: '' } });
+  expect(screen.getByLabelText('Stop 1 lot ID')).toHaveValue('');
+  expect(screen.getByLabelText('Lot input model')).toHaveTextContent('null');
+  expect(screen.getByText(/A blank planning lot uses a fictional PLAN-prefixed key/)).toBeInTheDocument();
+});

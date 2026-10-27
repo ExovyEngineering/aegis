@@ -10,12 +10,13 @@
     "actual source rows browse in extracted package",
     "presentation PDF included and downloadable",
     "approval and driver assignment work in fresh isolated DB",
+    "Drive defaults locked and parked confirmation gates acknowledgments",
     "route review uses packaged MoDOT fixture"
   ],
-  "manifest_files_verified": 250,
+  "manifest_files_verified": 310,
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
   "network_requested": false,
   "operator_database_modified": false,
-  "archive_sha256": "838f7eb2dbc1e97f40213b1a0983cdbd717bb29a0cc7ba6a85fc7a03882a5e0f"
+  "archive_sha256": "ecbdfc32b62fa7d0c61c5187a86c335364a9feae406beba6ece160b01d7e93ab"
 }

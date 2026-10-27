@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-26T22:34:14.624Z",
+  "checked_at": "2026-10-27T07:11:33.928Z",
   "base_url": "http://127.0.0.1:8001",
   "isolated_database": true,
   "checks": [
@@ -64,7 +64,7 @@
       "detail": "HTTP 200"
     },
     {
-      "name": "/api/planning/projects/f350a8c9-d3e4-4398-80c4-5ffa13578a47/update",
+      "name": "/api/planning/projects/3f98f07c-0835-47a4-a072-8d01de8d6e70/update",
       "passed": true,
       "detail": "HTTP 200"
     },
@@ -197,7 +197,7 @@
     "mobile-project-brief.png",
     "model-error-analysis.png"
   ],
-  "browser_version": "156.0.8078.47",
+  "browser_version": "156.0.8078.48",
   "passed": true,
-  "finished_at": "2026-10-26T22:34:18.939Z"
+  "finished_at": "2026-10-27T07:11:38.737Z"
 }

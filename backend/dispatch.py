@@ -14,6 +14,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, model_validator
 
 from backend.adapters import now
+from backend.drive import require_parked
 
 
 def ensure_dispatch_schema(connection):
@@ -36,7 +37,7 @@ def _begin(connection):
         connection.execute('BEGIN IMMEDIATE')
 
 
-def create_driver_incident(connection, shipment_id, description, record):
+def create_driver_incident(connection, shipment_id, description, record, expected_network_revision=None):
     """Called inside main's db context; commit/rollback belongs to that context."""
     _begin(connection)
     assignment_row = connection.execute('SELECT payload FROM assignments WHERE id=?', (shipment_id,)).fetchone()
@@ -44,6 +45,9 @@ def create_driver_incident(connection, shipment_id, description, record):
         raise HTTPException(404, 'No approved assignment')
     assignment = json.loads(assignment_row[0])
     state_revision = connection.execute('SELECT revision FROM state WHERE id=1').fetchone()[0]
+    if expected_network_revision is not None and expected_network_revision != state_revision:
+        raise HTTPException(409, 'Network changed; refresh the displayed trip before reporting')
+    require_parked(connection, assignment['truck_id'])
     incident_id = str(uuid.uuid4())
     payload = {
         'description': description,
@@ -273,6 +277,7 @@ def create_dispatch_router(db, load, record):
             if not row:
                 raise HTTPException(404, 'No approved assignment')
             assignment = json.loads(row[0])
+            require_parked(connection, assignment['truck_id'])
             if assignment.get('instruction_revision', 0) != request.instruction_revision:
                 raise HTTPException(409, 'Instruction changed; read the current instruction before acknowledging')
             if assignment.get('instruction_acknowledged'):

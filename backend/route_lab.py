@@ -2,7 +2,7 @@
 import copy,json,math,random
 from ortools.constraint_solver import pywrapcp,routing_enums_pb2
 from backend.adapters import distance,OSRMRoutingAdapter
-from backend.paths import ROOT
+from backend.paths import ROOT,read_json
 from backend.cold_chain import project_temperature
 from backend.simulation import seed_network,SEED
 from backend.route_review import review_routes

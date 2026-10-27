@@ -42,7 +42,7 @@ def sections(root):
     testlines=[f"Latest local verification finished: {checked.get('finished_at','not recorded')}. All requested local checks passed: {checked.get('all_passed','not recorded')}."]
     for c in checked.get('checks',[]):
         testlines.append(f"{c['name']}: {'PASS' if c['passed'] else 'FAIL'}; exit {c['exit_code']}; tests passed {c['tests_passed'] if c['tests_passed'] is not None else 'build check'}; {c['duration_seconds']} seconds. Log: {c['log']}. Checked: {c['checked_at']}.")
-    for path,label in [('reports/browser_qa/depth/results.json','Latest feature-depth actual-Chrome QA'),('reports/browser_qa/operations/results.json','Earlier dispatcher/custom-planning browser QA')]:
+    for path,label in [('reports/browser_qa/controls/results.json','Map, scenario, simulator and source-control browser QA'),('reports/browser_qa/drive/results.json','Visual Drive and parked-use actual-Chrome QA'),('reports/browser_qa/depth/results.json','Latest feature-depth actual-Chrome QA'),('reports/browser_qa/operations/results.json','Earlier dispatcher/custom-planning browser QA')]:
         value=load(root,path,{})
         if value:
             checks=value.get('checks',[])
@@ -52,6 +52,8 @@ def sections(root):
     testlines+=['Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.',
         'Four upstream Python deprecation warnings have appeared in previous runs; consult the current captured pytest log. Browser, CI and live API tests are distinct evidence and are never inferred from one another.',
         'The first GitHub Actions run succeeded after repository creation. New commits need their own CI result; a local pass alone does not prove a remote run passed.']
+    actions=load(root,'reports/source_actions.json',{})
+    if actions:testlines.append(f"Executed source refresh actions: {actions.get('fresh_success_count','not recorded')} new provider responses, {actions.get('usable_response_count','not recorded')} usable payloads, {actions.get('failed_or_stale_count','not recorded')} failed/stale actions; finished {actions.get('finished_at','not recorded')}. This is distinct from registry catalog/discovery probes. Evidence: reports/source_actions.json.")
     output.append(('Verification | What was actually tested',testlines))
     output.append(('Evidence | Coverage and scientific limits',[
         f"Raw inventory: {len(audit.get('files',[]))} file records. Originals are preserved locally; inventory checksums remain in data/manifests/inventory.json.",
@@ -70,7 +72,9 @@ def sections(root):
         'Route laboratory: choose one farm, regional fleet or editable custom operation. Run a plan with explicit capacity, shift, ambient and delay assumptions. Inspect each route, travel fallback and thermal sensitivity. This does not dispatch.',
         'Saved experiments: save a completed run, change assumptions and save another version/project. Reopen historical versions, compare two projects and export immutable JSON or stop-sequence CSV. Saved source timestamps are not silently refreshed.',
         'Dispatcher desk: complete or escalate the scenario-B verification checklist, review an incident, record a human lot hold/release and issue versioned instructions. A hold removes affected assignments. Release does not recreate dispatch; a new reviewed plan is necessary.',
-        'Drive: select the approved truck/trip, inspect cargo/advisories and acknowledge the exact instruction version. Submit an incident while parked. The dispatcher inbox retains its original reporting context.',
+        'Drive: open /?mode=drive for the dedicated visual surface. Inspect the approved destination, planned travel, simulated fuel/range, dispatch-origin reference and cargo temperature. No actual GPS progress or real remaining ETA is inferred.',
+        'Parked-use controls: self-confirm safe parking to enable reports and acknowledgments for ten minutes. Driving focus and expiry lock these interactions at both the UI and legacy server endpoints. This does not detect actual motion, prove safe parking or prevent other device use.',
+        'Driver reports: use a canned refrigeration/road/vehicle/cargo concern or type a report while parked. The standard dispatcher inbox retains original assignment context; no automatic hold, rerouting or external emergency call occurs.',
         'Sources: inspect current source age/fallback labels, historical NOAA coverage and actual paginated source rows. Filter one dataset column at a time; inspect schema and missing cells. Do not cross-link unrelated evidence.',
         'Model evaluation: show the measured baseline and model comparison, calibration and limitations. Explain why an honest weak predictive result is preferable to invented accuracy.',
         'Project brief: download this PDF from the app. Use the feature register, test evidence and remaining decisions to coordinate teammates.'

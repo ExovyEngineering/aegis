@@ -83,6 +83,7 @@
   "audit_actions": [
     "incident",
     "acknowledge",
+    "driver_focus",
     "approve",
     "event",
     "event"
@@ -109,5 +110,6 @@
       "minute": 4,
       "action": "Dispatcher approval, driver acknowledgment and audit trail"
     }
-  ]
+  ],
+  "parked_confirmation_recorded": true
 }

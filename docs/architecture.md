@@ -100,3 +100,30 @@ is separate from verification review and versioned instruction acknowledgment.
 log history. `scripts/build_project_brief.py` generates a PDF and Markdown from
 that register and measured source/model/test artifacts. The status API serves
 recorded evidence without promoting pending Kiro, browser or live-source checks.
+
+
+## Visual Drive and bounded source transport (October 27)
+
+`backend/drive.py` provides consistent approved-trip snapshots and deterministic
+vehicle assumptions without GPS or physical sensors. Versioned focus records
+expire after 600 seconds. Legacy report/assignment-ack/instruction-ack paths check
+active parked confirmation inside serialized SQLite mutation transactions.
+The gate records a declaration; it cannot prove actual motion or physical parking.
+
+The `?mode=drive` entry hides Command navigation and loads only network context
+plus the lightweight per-truck snapshot. It does not poll bulk recall, inventory,
+model or road-layer payloads. Route requests are explicit parked-use actions.
+
+Recall evidence supports an explicit bounded preview while preserving original
+provider order, schema, complete cache bytes and total/returned/truncation counts.
+Refresh buttons request metadata summaries; full responses remain available for
+source audits. Cached fallbacks, including nested stale MoDOT layers, retain
+failure/freshness flags rather than being promoted to provider success.
+Core evidence-cache JSON is published as complete files with coordinated in-process reads
+and replacement retries for Windows sharing locks. Original raw files are never
+written by these helpers.
+
+Driver trip acknowledgments and reports include the displayed network revision.
+A transactional guard rejects stale context even when a shipment ID is reused
+for another lot. Legacy callers can omit this optional field for compatibility;
+this is not production authorization or authenticated driver identity.
