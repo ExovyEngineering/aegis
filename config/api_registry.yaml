@@ -312,6 +312,28 @@
       "operational_fallback": "Report failure; no assertion roads are clear"
     },
     {
+      "id": "iowa_dot",
+      "provider": "Iowa DOT",
+      "endpoint": "https://services.arcgis.com/8lRhdTsQyJpO52F1/arcgis/rest/services/CARS511_Iowa_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultRecordCount=1",
+      "documentation": "https://iowadot.gov/travel-tools/iowa-511/511-data-feeds",
+      "authentication": "Official public ArcGIS feed; no credentials required",
+      "request_parameters": "outSR=4326; bounded objectIds groups of 100; outFields=*; f=geojson; maximum 2000 records",
+      "data_type": "official 511 point-event GeoJSON",
+      "geographic_scope": "Iowa; Columbia MO to Des Moines IA planning comparison",
+      "rate_limits": "Provider limit not verified; cache data 600s, metadata 86400s; 0.2s between bounded pages; honor 429",
+      "expected_refresh": "10 minutes",
+      "test_status": "HTTP success",
+      "last_successful_request": "2026-10-28T19:04:18.887645+00:00",
+      "response_schema": [
+        "type",
+        "crs",
+        "properties",
+        "features"
+      ],
+      "known_limitations": "Point events only, not winter road conditions or complete local-road coverage. Raw event-clock timezone unverified; record EditDate UTC. Repeated CARS IDs preserved. Non-atomic queries; no truck restrictions/closure avoidance. Iowa DOT attribution and CC BY 4.0 retained.",
+      "operational_fallback": "Dated official fixture with stale label; unavailable coverage is not a clear road"
+    },
+    {
       "id": "osrm_route",
       "provider": "OSRM",
       "endpoint": "https://router.project-osrm.org/route/v1/driving/-92.3341,38.9517;-90.1994,38.6270?overview=full&geometries=geojson",

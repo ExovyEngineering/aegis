@@ -26,6 +26,8 @@ Canonical registry: `config/api_registry.yaml` (YAML-compatible JSON). Google Sh
   Type: historical reanalysis JSON. Fallback: Unavailable; not NOAA observations.
 - **modot** — MoDOT: https://mapping.modot.mo.gov/arcgis/rest/services/TravelerInformation/TravelerInformationData/MapServer?f=pjson
   Type: ArcGIS layer discovery JSON. Fallback: Report failure; no assertion roads are clear.
+- **iowa_dot** — Iowa DOT: https://services.arcgis.com/8lRhdTsQyJpO52F1/arcgis/rest/services/CARS511_Iowa_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultRecordCount=1
+  Type: official 511 point-event GeoJSON. Fallback: Dated official fixture with stale label; unavailable coverage is not a clear road.
 - **osrm_route** — OSRM: https://router.project-osrm.org/route/v1/driving/-92.3341,38.9517;-90.1994,38.6270?overview=full&geometries=geojson
   Type: route GeoJSON. Fallback: Straight-line estimated geometry; road factor 1.25 at 65 km/h.
 - **osrm_table** — OSRM: https://router.project-osrm.org/table/v1/driving/-92.3341,38.9517;-90.1994,38.6270

@@ -25,3 +25,22 @@ Source discovery now works recursively with semantic content signatures, explici
 Drive design and stretch entry criteria: `docs/drive_design.md` and `docs/stretch_feature_gates.md`. Current automated/browser outcomes are in the project brief and `docs/progress.md`; pending Kiro and scientific gates remain separate.
 
 Next three team actions remain: complete the authentic Kiro task/sign-in workflow, review the report and claims against the final submission requirements, and rehearse the five-minute presentation with a timer. These software additions do not close those gates.
+
+## October 28 optional stretch review
+
+Open Road intelligence in Command for separate Missouri/Iowa evidence,
+Columbia-to-Des Moines or custom planning routes, event inspection and export.
+The official Iowa fixture has 599 captured point records. Inspect the visible
+source and routing ages before presenting; zero matches is not road clearance.
+See docs/road_intelligence.md and docs/state_dot.md.
+
+Local backup/restore is implemented and exercised against a read-only operator
+source, restoring to a new private file. All ten original tables and hold/recall
+flags were preserved. Follow docs/backup_restore.md; do not rebind the app to a
+recovered database without reviewing its state. This does not deploy to cloud.
+
+The system Git installation works; a fresh terminal will usually pick up its
+PATH. Current test/build counts live in reports/session_verification.json.
+The maintained PDF now includes road-workspace and recovery evidence.
+Genuine Kiro execution, author/rubric review and a timed team rehearsal remain
+open; LLM/genomic/cloud/sensor claims have not been invented.

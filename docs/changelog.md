@@ -4,6 +4,23 @@ Update this file when behavior or evidence changes. The generated presentation
 brief is `reports/aegis_project_brief.pdf`; its editable companion is
 `reports/project_brief.md`. Recorded tests are separate from implementation claims.
 
+## October 28, 2026 - road intelligence and local recovery
+
+- Added an official, tested Iowa DOT 511 point-event adapter and a 599-record
+  dated fixture, bounded acquisition, original raw fields, coordinate/time
+  checks, duplicate preservation and attribution. A real page-size failure and
+  its working fix remain documented.
+- Added Command's road workspace with feed inspection, corridor/custom inputs,
+  actual OSRM alternatives or labeled estimates, independent proximity reviews,
+  raw event details and comparison export. It does not change dispatch state.
+- Added read-only online SQLite backup, checksum/schema/integrity verification
+  and restore to a fresh private copy. An actual CLI exercise preserved all ten
+  operator tables and hold/recall flags; private backup metadata is excluded.
+- Hardened existing route geometry/timestamp handling. Full test evidence and
+  58 new desktop/mobile Chrome checks are separately dated; no cloud deployment,
+  genomic linkage, LLM generation or genuine Kiro execution is inferred.
+- Verified the user's system Git installation (2.56.0.windows.4).
+
 ## October 28, 2026 - core handoff and isolated rehearsal
 
 - Added verified separate rehearsal processes, six guided stages, server timing,

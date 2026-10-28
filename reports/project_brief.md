@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 28, 2026 at 01:29 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 28, 2026 at 02:17 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -108,7 +108,7 @@ Sixteen checks distinguish hard eligibility/resource constraints from outstandin
 
 Evidence: tests/test_readiness.py
 
-# P2 | Deferred extensions
+# P2 | Stretch work and deferred extensions
 
 LLM operations assistant | deferred behind P0 gates
 
@@ -128,11 +128,17 @@ All cargo-temperature telemetry is simulated.
 
 Evidence: docs/simulation_assumptions.md
 
-Additional state DOT feeds | deferred pending cross-state use case
+Additional state DOT feeds | Iowa DOT adapter and read-only road workspace implemented; bounded coverage
 
-Missouri is the operating scope. Each future feed needs tested schema, timestamp/geometry coverage and explicit fallbacks.
+Official Iowa 511 point records remain separate from MoDOT. A verified dated fixture contains 599 records; Columbia to Des Moines is a planning example. Route alternatives, buffer screening and exports do not dispatch, avoid closures automatically or validate truck restrictions.
 
-Evidence: docs/stretch_feature_gates.md
+Evidence: docs/state_dot.md
+
+Verified local operational-state recovery | implemented; cloud deployment remains deferred
+
+Read-only SQLite online backup includes committed WAL records; checksums, integrity, schema and row counts are verified before restoration to a fresh private file. Operator bytes and ten tables were preserved in an actual CLI exercise. No automatic server rebind or deployment.
+
+Evidence: reports/backup_recovery.json
 
 Molecular epidemiology | blocked by missing isolate-level genomic linkage
 
@@ -154,13 +160,13 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-28T06:25:49.963769+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-28T19:14:53.984551+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 443; 29.723 seconds. Log: reports/checks/20261028T062502209577Z/pytest.txt. Checked: 2026-10-28T06:25:02.209817+00:00.
+pytest: PASS; exit 0; tests passed 563; 42.781 seconds. Log: reports/checks/20261028T191348722273Z/pytest.txt. Checked: 2026-10-28T19:13:48.722507+00:00.
 
-vitest: PASS; exit 0; tests passed 77; 7.771 seconds. Log: reports/checks/20261028T062502209577Z/vitest.txt. Checked: 2026-10-28T06:25:31.952942+00:00.
+vitest: PASS; exit 0; tests passed 95; 10.684 seconds. Log: reports/checks/20261028T191348722273Z/vitest.txt. Checked: 2026-10-28T19:14:31.528900+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 10.213 seconds. Log: reports/checks/20261028T062502209577Z/frontend_build.txt. Checked: 2026-10-28T06:25:39.736800+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 11.741 seconds. Log: reports/checks/20261028T191348722273Z/frontend_build.txt. Checked: 2026-10-28T19:14:42.230646+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -174,9 +180,11 @@ Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. T
 
 Guided rehearsal actual-Chrome QA: 76 / 76 checks passed, checked 2026-10-28T06:07:06.190Z. Record kind: automated_check; measured duration 5.37 seconds. This automated workflow does not establish a genuine five-minute team presentation. Evidence: reports/browser_qa/rehearsal/results.json.
 
-Separate Python dependency installation: passed=True; pinned packages verified=51; real HTTP checks=31; operator DB modified=False. Fresh Node installation tested=False. Evidence: reports/clean_install.json.
+Road intelligence actual-Chrome QA: 58 / 58 checks passed, checked 2026-10-28T19:15:52.092Z. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.
 
-Loopback HTTP smoke artifact records 28 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
+Earlier separate Python dependency installation: passed=True; pinned packages verified=51; real HTTP checks=31; operator DB modified=False. This predates the road/recovery increment; consult its tested source checksum and timestamp. Fresh Node installation tested=False. Evidence: reports/clean_install.json.
+
+Loopback HTTP smoke artifact records 29 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
 
 Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.
 
@@ -245,6 +253,22 @@ Offline rehearsal uses dated source fixtures, disables provider refresh and retu
 The accelerated demo script now measures original/configured operator SQLite and sidecar hashes before and after. A modified or unreadable protected file cannot become an invented preservation success. This utility is separate from the guided browser timer.
 
 Automated checks and self-reported practice do not complete genuine Kiro execution, author/rubric review or a live timed team presentation. The reserved Kiro task remains untouched.
+
+# Stretch | Official road evidence and local recovery
+
+Road intelligence now compares captured Missouri and Iowa evidence independently. The Iowa DOT public ArcGIS feed was verified through its official source and queried in bounded pages; its dated fixture retains 599 point records and repeated event IDs without merging them.
+
+Choose a Columbia-to-Des Moines planning corridor or custom coordinates. Inspect provider fields, unverified event clocks, attribution and geometry gaps. Source previews are bounded at 200 records; route screening uses all bounded supported geometries and lists up to 100 nearby records per source/alternative.
+
+Compare estimated connections or available public OSRM ordinary-driving alternatives, inspect separate proximity matches, change assumptions and export the captured JSON. Changed inputs/evidence flag a prior result. No record match establishes a clear road, automatic closure avoidance or commercial-truck suitability.
+
+Actual live road-workspace requests checked at 2026-10-28T19:08:49.250823+00:00. Endpoints recorded: 2. Detailed provider/cache/failure and route-fallback fields: reports/road_intelligence_live.json. Offline browser checks are a different artifact.
+
+Local SQLite recovery now creates a read-only online backup including committed WAL records, verifies checksum/integrity/schema/row counts, and restores only to a fresh private data/recovered file. Existing operator state is never overwritten or automatically rebound. Backups/receipts are excluded from Git and reviewer packages.
+
+Actual CLI recovery exercise status: passed; checked 2026-10-28T19:05:29.819398+00:00. Measured preservation fields: {'operator_database_bytes_unchanged': True, 'operator_database_sha256_unchanged': True, 'operator_all_tables_unchanged': True, 'recovered_all_tables_equal_original': True, 'recovered_hold_recall_flags_equal_original': True, 'restored_bytes_equal_backup': True, 'restore_receipt_present': True, 'server_started': False, 'cloud_deployed': False}. Evidence: reports/backup_recovery.json. A restored copy still requires human review of assignments and state.
+
+These are bounded stretches. Cloud deployment, production authentication, tenant isolation, physical sensors, genomic attribution and LLM assistance remain unimplemented. Genuine Kiro, final author review and a timed team rehearsal remain open submission gates.
 
 # Walkthrough | What to show behind the buttons
 

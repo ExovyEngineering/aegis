@@ -53,6 +53,15 @@ route estimates. See [the rehearsal guide](rehearsal_guide.md).
 
 ## Verify or rebuild the handoff
 
+The optional October 28 road/recovery increment is now included. **Road
+intelligence** adds separately attributed MoDOT/Iowa events, bounded previews,
+Columbia–Des Moines or custom route comparisons and JSON exports without
+dispatch. See [its guide](road_intelligence.md). The local recovery CLI creates
+a verified SQLite snapshot and restores only to a fresh private file; see
+[recovery](backup_restore.md). Neither feature supplies production accounts,
+commercial-truck validation or cloud deployment. Current local checks and the
+separate road-browser/live-provider records supersede earlier build counts.
+
 ```powershell
 .venv/Scripts/python scripts/verify_project.py
 .venv/Scripts/python scripts/build_project_brief.py
@@ -72,6 +81,11 @@ check`, verified the extracted package offline, and completed 31 real loopback
 HTTP checks including the full automated rehearsal. It used the prebuilt
 frontend; no fresh local Node installation is claimed. The tested application
 source checksum is retained in `reports/clean_install.json`.
+
+That clean dependency installation predates the optional road/recovery changes.
+Dependencies have not changed. Subsequent package verification records which
+updated archive was actually extracted and executed; it does not claim another
+fresh installation of Python dependencies or Node.
 
 To repeat the dependency/package portion in another isolated environment:
 

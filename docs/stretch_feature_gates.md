@@ -3,8 +3,9 @@
 October 27, 2026. These gates keep optional scope from displacing a complete,
 reproducible submission. See [the priority matrix](priority_matrix.md),
 [the Kiro handoff](kiro_handoff.md) and [the Drive design](drive_design.md).
-This document records decisions and prerequisites; it does not claim that any
-stretch integration has been implemented, validated or deployed.
+This document records decisions and prerequisites. The October 28 increment
+implements one bounded road-feed extension and local recovery; deployment and
+the other stretches remain deferred.
 
 ## Work that comes first
 
@@ -33,8 +34,11 @@ evidence. Do not retroactively claim Kiro authorship or completed validation.
 
 ## Additional state DOT feeds
 
-**Current boundary:** the simulated operating network and verified road-event
-adapter are Missouri-centered. Adding another state does not make existing
+**Current boundary:** the operating network stays Missouri-centered. A separate
+Iowa DOT 511 point-event adapter now supports a Columbia-to-Des Moines planning
+comparison. Its public endpoint and full bounded acquisition were actually
+tested; the dated fixture contains 599 records. See [Iowa evidence](state_dot.md)
+and [the road workspace](road_intelligence.md). Adding a feed does not make
 MoDOT or OSRM geometry more current or truck-safe.
 
 **Entry criteria:**
@@ -51,8 +55,10 @@ MoDOT or OSRM geometry more current or truck-safe.
 6. Demonstrate useful decision impact without claiming current closure avoidance
    or commercial-truck suitability from proximity alone.
 
-Start with one justified neighboring-state feed after these checks. Do not add
-unverified connector names to the UI merely to increase the integration count.
+The first increment meets these checks for Iowa's queried point-event layer.
+It does not establish complete road coverage, winter conditions, event-clock
+time zones, commercial routing or automatic closure avoidance. Additional states
+still need their own justified use case and verification.
 
 ## Sophisticated molecular epidemiology
 
@@ -113,6 +119,11 @@ with self-declared identities. The repository and review artifacts can be shared
 through GitHub; that does not turn the application into a production hosted
 service. No cloud deployment is claimed here.
 
+Local backup/recovery is now implemented as one prerequisite. The actual CLI
+exercise preserved the operator database and recovered its ten tables to a new
+private file; see [recovery commands and boundaries](backup_restore.md).
+This does not supply hosted durability, authentication or network access.
+
 **Entry criteria:**
 
 1. Choose a concrete hosting target, owner, budget and reviewable deployment
@@ -162,10 +173,9 @@ dispatch merely because an event is delivered over a persistent connection.
 
 ## Current next increment
 
-Improve the shared-backend mobile Drive view and test every affected action,
-including server-enforced parked-use preconditions. Preserve the existing core
-submission, source coverage, measured estimator and human approval workflow.
-Evaluate each stretch again when its prerequisites and the remaining core gates
-have actual evidence. No stretch should introduce fabricated observations,
-unverified API success, unsupported molecular claims or consequential automatic
-decisions.
+The shared-backend mobile Drive workflow is implemented and retains its parked
+attestation requirements. October 28 adds the road workspace and local recovery
+without changing approvals, held/recalled exclusions, model results or original
+observations. Continue through genuine Kiro execution, author review and the
+timed team rehearsal. LLMs, genomic inference, physical sensors, production
+accounts and cloud publication need their own missing inputs and validation.

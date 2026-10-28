@@ -2,6 +2,13 @@
 
 Canonical file-level evidence is `data/manifests/inventory.json`; the readable audit is `reports/data_audit.md`. Original files remain in their supplied location. File size, SHA-256, format, schema samples, nested JSON table counts, timestamp ranges, duplicate hashes, workbook dimensions, archive members, and exact read errors are stored where supported.
 
+The optional [Iowa DOT 511 layer](state_dot.md) is separate public road evidence,
+not another food-safety training table. Its October 28 dated fixture preserves
+599 point records, original response envelopes and repeated CARS event IDs.
+The [road workspace](road_intelligence.md) keeps its attribution, geography,
+coordinate system and time limitations distinct from MoDOT and the simulated
+network. Neither feed is joined to FSIS outcomes or used to infer illness risk.
+
 ## Supplied evidence
 
 | Source | Current use | Boundary |

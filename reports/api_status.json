@@ -250,5 +250,20 @@
     "content_type": null,
     "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
     "latency_ms": 321
+  },
+  {
+    "id": "iowa_dot",
+    "tested_at": "2026-10-28T19:04:18.887645+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "failure": null,
+    "response_schema": [
+      "type",
+      "crs",
+      "properties",
+      "features"
+    ],
+    "latency_ms": 902
   }
 ]

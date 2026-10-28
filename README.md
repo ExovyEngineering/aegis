@@ -95,6 +95,24 @@ disabled. Map tiles may need internet. Nothing resets the operator database.
 The measured timer and self-reported coverage do not prove a human presentation,
 Kiro execution or final approval. See [the rehearsal guide](docs/rehearsal_guide.md).
 
+## Road intelligence and local recovery
+
+Open **Road intelligence** for separately attributed MoDOT and Iowa DOT 511
+events, a Columbia–Des Moines planning example, custom coordinates, route
+alternatives, event-proximity review and JSON export. Source ages, failures,
+preview limits and estimated travel stay visible. The official Iowa fixture has
+599 captured point records; it is dated evidence, not live road clearance.
+No comparison dispatches a truck or validates commercial restrictions.
+See [the workspace guide](docs/road_intelligence.md) and
+[Iowa source verification](docs/state_dot.md).
+
+Create a local state backup with
+`.venv/Scripts/python scripts/backup_state.py create`. Verify it before restoring
+to a new file under `data/recovered/`; the tool refuses operator replacement.
+Private backups and receipts are excluded from Git and packages. Follow
+[the recovery guide](docs/backup_restore.md). This is local recovery; cloud
+deployment and production access controls remain deferred.
+
 ## Team status and presentation planning
 
 Open **Project brief** in the application to download the maintained PDF and see

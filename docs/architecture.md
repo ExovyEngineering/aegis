@@ -2,6 +2,14 @@
 
 AEGIS runs as a local FastAPI service with a built React/TypeScript frontend. It can also use Vite's development server. SQLite stores the simulated operational state, proposals, approved assignments, and audit history. Downloaded raw files are read-only inputs.
 
+The read-only road workspace (`backend/road_intelligence.py`) keeps MoDOT and
+Iowa DOT adapters separate, validates bounded point/line geometry, and screens
+captured route alternatives without opening SQLite. Its offline profile reads
+dated fixtures only. Local state recovery (`scripts/backup_state.py`) uses
+SQLite's online backup and verifies restored copies without rebinding the app;
+private backups and recovery receipts stay out of Git and reviewer packages.
+See [road intelligence](road_intelligence.md) and [recovery](backup_restore.md).
+
 ```mermaid
 flowchart LR
   Raw[Supplied raw files] --> Audit[Streaming audit and manifest]

@@ -38,3 +38,17 @@ report forms. Stale same-ID reassignment actions are rejected before audit,
 incident or acknowledgment writes; current-context requests succeed. Older
 revisionless clients remain compatible in the local prototype. Evidence:
 `tests/test_driver_action_context.py`.
+
+## October 28 road-workspace extension
+
+The new Road intelligence navigation, source inspection, keyboard event
+selection, raw field/time details, license links, filter, corridor/custom
+coordinates, input validation, comparison, route selection, changed-input
+warning, source recheck and JSON export have dedicated component tests and
+actual Chrome evidence in reports/browser_qa/roads/results.json. Offline
+refresh is disabled and rejected by the backend. Actual operator-server refresh
+and public OSRM alternatives are separately measured in
+reports/road_intelligence_live.json; browser-injected failures are not provider
+outages. Captured-hit details and geometry retain the comparison snapshot even
+if an earlier preview differs or is unavailable. No road button dispatches,
+creates a hold, certifies a truck route or changes operational state.

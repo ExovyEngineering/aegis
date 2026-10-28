@@ -1,18 +1,18 @@
 {
   "session_date": "2026-10-28",
-  "pytest_passed": 443,
+  "pytest_passed": 563,
   "pytest_warnings": 5,
-  "vitest_passed": 77,
+  "vitest_passed": 95,
   "frontend_production_build": "passed",
   "compileall": "passed",
-  "real_http_checks_passed": 28,
+  "real_http_checks_passed": 29,
   "isolated_demo_workflow": "passed",
   "raw_files_audited": 42,
   "raw_read_errors": 0,
   "exact_duplicate_hashes": 0,
   "fsis_declared_count_comparisons": 17,
-  "public_registry_probes_successful": 13,
-  "browser_visual_qa": "Dated actual-Chrome core and guided rehearsal checks; see each artifact for counts, failures and source freshness",
+  "public_registry_probes_successful": 14,
+  "browser_visual_qa": "New road workspace Chrome checks; earlier core suites retain their own timestamps and were not all repeated",
   "genuine_kiro_workflow": "Installed IDE; authentic signed-in spec task remains pending",
   "browser_checks_passed": 26,
   "noaa_station_days": 2730,
@@ -41,14 +41,14 @@
   "driver_action_context_verified": true,
   "browser_readiness_checks_passed": 61,
   "browser_readiness_artifact": "reports/browser_qa/readiness/results.json",
-  "source_refresh_actions_repeated_this_session": true,
+  "source_refresh_actions_repeated_this_session": false,
   "source_refresh_evidence_artifact": "reports/source_actions.json",
   "ingestion_frames_preserved": 8,
   "usda_counties": 115,
   "usda_variables": 10,
   "dispatch_readiness_verified": true,
   "operator_state_preservation_artifact": "reports/operational_state_preservation.json",
-  "pytest_skipped": 2,
+  "pytest_skipped": 3,
   "public_registry_probe_failures": [
     {
       "id": "fsis_recalls",
@@ -76,5 +76,14 @@
   "human_presentation_verified": false,
   "browser_rehearsal_checks_passed": 76,
   "clean_python_install_verified": true,
-  "clean_install_artifact": "reports/clean_install.json"
+  "clean_install_artifact": "reports/clean_install.json",
+  "registry_sources_probed_this_increment": [
+    "iowa_dot"
+  ],
+  "browser_roads_checks_passed": 58,
+  "browser_roads_artifact": "reports/browser_qa/roads/results.json",
+  "road_live_provider_artifact": "reports/road_intelligence_live.json",
+  "backup_recovery_artifact": "reports/backup_recovery.json",
+  "stretch_verification_artifact": "reports/stretch_verification.json",
+  "clean_install_scope": "Earlier core install is separately dated; updated package verification reuses its environment."
 }

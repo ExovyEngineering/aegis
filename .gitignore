@@ -7,6 +7,8 @@ __pycache__/
 .pytest_cache/
 .env
 data/cache/
+data/backups/
+data/recovered/
 data/aegis.sqlite
 
 # Local credentials, sessions, and operator state

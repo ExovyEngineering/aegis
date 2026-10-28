@@ -44,3 +44,20 @@ Detailed boundaries: [ingestion provenance](ingestion_provenance.md),
 The next three human tasks remain genuine Kiro execution, report/claim author
 review and the timed team demonstration. Broader NOAA/scientific availability
 gaps remain explicit; optional stretch features do not displace these tasks.
+
+## October 28: bounded stretch increment
+
+1. Verify one official neighboring-state road source and its actual schema,
+   coordinates, timestamps and failures before adding it to the app.
+2. Implement a read-only road workspace with separate feed previews, corridor
+   inputs, independently screened alternatives and captured comparison exports.
+3. Add local consistent SQLite backup and recovery to a fresh private copy;
+   preserve operator state and exclude backup metadata from sharing.
+4. Run full local tests/build, actual desktop/mobile Chrome and deliberate live
+   road-provider actions. Update the maintained brief and reviewer package from
+   recorded evidence. Keep genuine Kiro and scientific gaps explicit.
+
+The Iowa adapter, road workspace and local recovery are implemented. Executed
+results are dated in reports/session_verification.json and the road/recovery
+artifacts. Additional feeds, genomic inference, LLMs and cloud publication need
+separate justified inputs and validation.

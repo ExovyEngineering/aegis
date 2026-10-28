@@ -28,6 +28,8 @@ Updated October 28, 2026. This checklist records required evidence, not a claim 
 - Show NOAA observations with coverage limits, weather forecasts separately, and simulated cargo temperatures separately.
 - Show MoDOT source time, route proximity limitations, OSRM restrictions and any estimated fallback.
 - Demonstrate farm and multi-location planning presets with consistent simulation labels; avoid account/tenancy claims.
+- If showing the optional road workspace, distinguish Iowa and Missouri feed scope, preview truncation, raw event-clock values and ordinary-driving/estimated routes. Do not imply closure avoidance or truck certification.
+- Review local recovery evidence separately from cloud deployment. Restored state belongs in a fresh private file and needs human review; no operator overwrite or automatic server rebind.
 - Keep Drive use parked, with short advisories and explicit dispatcher authority.
 - Start human rehearsals with `scripts/start_rehearsal.py`, then verify `/api/runtime-context` identifies the expected isolated UUID and offline profile. Never reset the operator app on port 8000 for a demo.
 - Keep accelerated `scripts/demo_run.py` results distinct from a timed human rehearsal. Confirm its measured original SQLite/sidecar preservation fields rather than relying on a hardcoded success flag.

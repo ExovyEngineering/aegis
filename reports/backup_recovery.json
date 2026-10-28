@@ -1,0 +1,184 @@
+{
+  "checked_at": "2026-10-28T19:05:29.819398+00:00",
+  "status": "passed",
+  "kind": "actual local CLI recovery exercise using read-only operator source and fresh destination",
+  "operator_database": "data/aegis.sqlite",
+  "operator_bytes": 143360,
+  "operator_sha256_before": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+  "operator_sha256_after": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+  "checks": {
+    "operator_database_bytes_unchanged": true,
+    "operator_database_sha256_unchanged": true,
+    "operator_all_tables_unchanged": true,
+    "recovered_all_tables_equal_original": true,
+    "recovered_hold_recall_flags_equal_original": true,
+    "restored_bytes_equal_backup": true,
+    "restore_receipt_present": true,
+    "server_started": false,
+    "cloud_deployed": false
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "scripts/backup_state.py",
+        "create",
+        "--database",
+        "data/aegis.sqlite",
+        "--output",
+        "data/backups/cli-smoke-ac5a67c00f0644a183006786c9adb277"
+      ],
+      "exit_code": 0,
+      "response": {
+        "status": "created",
+        "backup_directory": "data/backups/cli-smoke-ac5a67c00f0644a183006786c9adb277",
+        "database_sha256": "3053eb11abceda571428c5bd910172bd2e185de8e5cb8bf997edc40d55d4e80c",
+        "tables": [
+          {
+            "name": "assignments",
+            "row_count": 0
+          },
+          {
+            "name": "audit",
+            "row_count": 5
+          },
+          {
+            "name": "dispatch_instruction_versions",
+            "row_count": 0
+          },
+          {
+            "name": "driver_focus",
+            "row_count": 0
+          },
+          {
+            "name": "incidents",
+            "row_count": 0
+          },
+          {
+            "name": "planning_projects",
+            "row_count": 0
+          },
+          {
+            "name": "planning_runs",
+            "row_count": 0
+          },
+          {
+            "name": "planning_versions",
+            "row_count": 0
+          },
+          {
+            "name": "proposals",
+            "row_count": 0
+          },
+          {
+            "name": "state",
+            "row_count": 1
+          }
+        ],
+        "source_opened_read_only": true,
+        "source_snapshot_consistency": "SQLite online backup transaction",
+        "cloud_deployed": false
+      }
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "scripts/backup_state.py",
+        "verify",
+        "--backup",
+        "data/backups/cli-smoke-ac5a67c00f0644a183006786c9adb277"
+      ],
+      "exit_code": 0,
+      "response": {
+        "status": "verified",
+        "backup_directory": "data/backups/cli-smoke-ac5a67c00f0644a183006786c9adb277",
+        "database_sha256": "3053eb11abceda571428c5bd910172bd2e185de8e5cb8bf997edc40d55d4e80c",
+        "table_count": 10,
+        "sqlite_integrity": "ok",
+        "author_authenticated": false,
+        "application_state_changed": false
+      }
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "scripts/backup_state.py",
+        "restore",
+        "--backup",
+        "data/backups/cli-smoke-ac5a67c00f0644a183006786c9adb277",
+        "--target",
+        "data/recovered/cli-smoke-ac5a67c00f0644a183006786c9adb277.sqlite"
+      ],
+      "exit_code": 0,
+      "response": {
+        "status": "restored_to_new_copy",
+        "restored_at": "2026-10-28T19:05:29.803997+00:00",
+        "target_database": "data/recovered/cli-smoke-ac5a67c00f0644a183006786c9adb277.sqlite",
+        "backup_directory": "data/backups/cli-smoke-ac5a67c00f0644a183006786c9adb277",
+        "database_sha256": "3053eb11abceda571428c5bd910172bd2e185de8e5cb8bf997edc40d55d4e80c",
+        "operator_database_overwritten": false,
+        "server_started": false,
+        "human_review_required": true,
+        "warning": "Recovery preserves recorded state. Review assignments, holds, parked confirmations and identity assumptions before any resumed use; no dispatch or safety certification is performed."
+      }
+    }
+  ],
+  "table_fingerprints": [
+    {
+      "name": "assignments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "audit",
+      "rows": 5,
+      "sha256": "0d4a5480dc49465ed31c2a8f2972f7315012ade2143076645c1dd70090414020"
+    },
+    {
+      "name": "dispatch_instruction_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "driver_focus",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "incidents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "planning_projects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "planning_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "planning_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "proposals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "state",
+      "rows": 1,
+      "sha256": "94a2ac970cb208caa8cc72feb880dbd40fb414bcf2f72d4ca04c88aaf0ead5d7"
+    }
+  ],
+  "lot_flag_counts": {
+    "lots": 12,
+    "held": 1,
+    "recalled": 0
+  },
+  "limitation": "Local consistent recovery and integrity check, not a signed backup, cloud deployment, new dispatch approval or product-safety certification. Operational record values are excluded from this report."
+}

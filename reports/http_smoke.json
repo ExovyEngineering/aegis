@@ -6,7 +6,7 @@
       "status": 200
     },
     {
-      "path": "/assets/index-CrQME9Lm.js",
+      "path": "/assets/index-BLzJ_GDW.js",
       "status": 200
     },
     {
@@ -18,7 +18,7 @@
       "status": 200
     },
     {
-      "path": "/assets/index-BPXtTJDm.css",
+      "path": "/assets/index-kYxKCVrw.css",
       "status": 200
     },
     {
@@ -112,8 +112,12 @@
     {
       "path": "/api/rehearsal",
       "status": 200
+    },
+    {
+      "path": "/api/road-intelligence",
+      "status": 200
     }
   ],
-  "passed": 28,
+  "passed": 29,
   "browser_visual_qa": false
 }

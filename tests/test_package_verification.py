@@ -37,7 +37,7 @@ def test_nonportable_or_escaping_paths_are_rejected_before_writing(tmp_path,name
     assert marker.read_text()=='unchanged' and list(target.iterdir())==[]
 
 
-@pytest.mark.parametrize('name',['.env','backend/.env.production','.aws/credentials','.tools/account.json','backend/private.pem','data/operator.sqlite','data/operator.sqlite-wal','data/operator.db-journal','frontend/node_modules/pkg.js'])
+@pytest.mark.parametrize('name',['.env','backend/.env.production','.aws/credentials','.tools/account.json','backend/private.pem','data/operator.sqlite','data/operator.sqlite-wal','data/operator.db-journal','frontend/node_modules/pkg.js','data/backups/private/manifest.json','data/recovered/private.sqlite.restore.json'])
 def test_private_credentials_runtime_and_operator_state_are_forbidden(tmp_path,name):
     zipped=archive(tmp_path/'bad.zip',{name:b'private'})
     target=empty_target(tmp_path)
@@ -118,6 +118,8 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     # page replaces the build output so pytest also works before npm build in CI.
     source=tmp_path/'trusted-source';source.mkdir()
     shutil.copytree(ROOT/'backend',source/'backend',ignore=shutil.ignore_patterns('__pycache__'))
+    (source/'scripts').mkdir()
+    shutil.copy2(ROOT/'scripts/backup_state.py',source/'scripts/backup_state.py')
     for name in ('data/processed','data/fixtures','data/manifests'):
         shutil.copytree(ROOT/name,source/name)
     required_reports=('api_status.json','model_evaluation.json','model_timing.json','noaa_coverage.json','evidence_ingestion.json','usda_food_environment.json','fsis_ingestion.json','project_brief_manifest.json','project_brief.md','aegis_project_brief.pdf','aegis_report.md')
@@ -142,5 +144,6 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     assert result['network_attempts']==[] and result['operator_database_modified'] is False
     assert all(check['status']=='passed' for check in result['check_results'])
     assert any('USDA' in check for check in result['checks']) and any('readiness' in check for check in result['checks'])
+    assert any('Iowa' in check for check in result['checks']) and any('backup' in check for check in result['checks'])
     assert database.read_bytes()==b'original operator state'
     assert list((workspace/'.tools/package-verification').iterdir())==[]

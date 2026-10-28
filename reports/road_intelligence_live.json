@@ -1,0 +1,151 @@
+{
+  "checked_at": "2026-10-28T19:08:49.250823+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "live_provider_requests_requested": true,
+  "checks": [
+    {
+      "endpoint": "/api/road-intelligence/refresh",
+      "http_status": 200,
+      "latency_seconds": 11.647,
+      "response_sha256": "a2e15d3d4032db8a6c0936d466269783a4ab30b1bafe10182c9fae031327f6d1",
+      "sources": [
+        {
+          "id": "modot",
+          "available": true,
+          "fixture": false,
+          "stale": false,
+          "event_count": 848,
+          "coverage_complete": true,
+          "unusable_geometry_count": 0,
+          "retrieved_at": "2026-10-28T19:08:50.173922+00:00",
+          "error": null,
+          "cache": false,
+          "last_refresh_attempt": {
+            "attempted_at": "2026-10-28T19:08:59.729669+00:00",
+            "error": null,
+            "new_provider_response": true,
+            "cache": false,
+            "stale": false
+          }
+        },
+        {
+          "id": "iowa_dot",
+          "available": true,
+          "fixture": false,
+          "stale": false,
+          "event_count": 599,
+          "coverage_complete": true,
+          "unusable_geometry_count": 0,
+          "retrieved_at": "2026-10-28T19:00:34.881670+00:00",
+          "error": null,
+          "cache": true,
+          "last_refresh_attempt": {
+            "attempted_at": "2026-10-28T19:09:01.084721+00:00",
+            "error": null,
+            "new_provider_response": false,
+            "cache": true,
+            "stale": false
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/road-intelligence/compare",
+      "http_status": 200,
+      "latency_seconds": 1.464,
+      "response_sha256": "7558d24766b7b8920dd9c8b531d7f2c84a9061870e4f9e93ef73f8ca608e97ad",
+      "sources": [
+        {
+          "id": "modot",
+          "available": true,
+          "fixture": false,
+          "stale": false,
+          "event_count": 848,
+          "coverage_complete": true,
+          "unusable_geometry_count": 0,
+          "retrieved_at": "2026-10-28T19:08:50.173922+00:00",
+          "error": null,
+          "cache": false,
+          "last_refresh_attempt": {
+            "attempted_at": "2026-10-28T19:08:59.729669+00:00",
+            "error": null,
+            "new_provider_response": true,
+            "cache": false,
+            "stale": false
+          }
+        },
+        {
+          "id": "iowa_dot",
+          "available": true,
+          "fixture": false,
+          "stale": false,
+          "event_count": 599,
+          "coverage_complete": true,
+          "unusable_geometry_count": 0,
+          "retrieved_at": "2026-10-28T19:00:34.881670+00:00",
+          "error": null,
+          "cache": true,
+          "last_refresh_attempt": {
+            "attempted_at": "2026-10-28T19:09:01.084721+00:00",
+            "error": null,
+            "new_provider_response": false,
+            "cache": true,
+            "stale": false
+          }
+        }
+      ],
+      "routing_error": null,
+      "routing_provenance": "OSRM driving route; truck restrictions and MoDOT closures not incorporated",
+      "alternatives": [
+        {
+          "index": 0,
+          "fallback": false,
+          "distance_m": 394269.2,
+          "duration_seconds": 17730,
+          "review_required": true,
+          "reviews": [
+            {
+              "source_id": "modot",
+              "nearby_event_count": 2,
+              "hits_truncated": false,
+              "stale": false,
+              "coverage_complete": true
+            },
+            {
+              "source_id": "iowa_dot",
+              "nearby_event_count": 18,
+              "hits_truncated": false,
+              "stale": false,
+              "coverage_complete": true
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "fallback": false,
+          "distance_m": 464702.6,
+          "duration_seconds": 20116.4,
+          "review_required": true,
+          "reviews": [
+            {
+              "source_id": "modot",
+              "nearby_event_count": 40,
+              "hits_truncated": false,
+              "stale": false,
+              "coverage_complete": true
+            },
+            {
+              "source_id": "iowa_dot",
+              "nearby_event_count": 8,
+              "hits_truncated": false,
+              "stale": false,
+              "coverage_complete": true
+            }
+          ]
+        }
+      ],
+      "operational_state_modified": false
+    }
+  ],
+  "finished_at": "2026-10-28T19:09:02.738137+00:00"
+}

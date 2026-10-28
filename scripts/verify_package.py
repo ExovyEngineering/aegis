@@ -49,6 +49,8 @@ def safe_member(name):
     if any(part.casefold() in FORBIDDEN_PARTS or part.casefold().startswith('.env') and part!='.env.example' for part in parts):
         raise ValueError(f'Forbidden credential/runtime archive path: {name}')
     lower=name.casefold()
+    if lower.startswith(('data/backups/','data/recovered/')):
+        raise ValueError(f'Forbidden private backup/recovery archive path: {name}')
     if lower.endswith(('.pem','.key','.sqlite','.sqlite3','.db','.exe','.dll')) or re.search(r'\.(?:sqlite3?|db)-[^/]+$',lower):
         raise ValueError(f'Forbidden credential/database/runtime archive path: {name}')
     return name
@@ -168,6 +170,15 @@ def run_extracted_workflows(target):
                 for source in ('network','model','model-timing','noaa-coverage','facilities','inventory'):
                     _assert(client.get('/api/'+source).status_code==200,f'Required read endpoint failed: {source}')
                 checks.append('network, measured model and source coverage reports are available')
+                roads=client.get('/api/road-intelligence')
+                _assert(roads.status_code==200,'Packaged road workspace unavailable')
+                captured=roads.json();road_sources={source['id']:source for source in captured.get('sources',[])}
+                _assert(set(road_sources)=={'modot','iowa_dot'} and all(source.get('available') and source.get('fixture') and source.get('stale') for source in road_sources.values()),'Separate dated road fixtures or stale labels missing')
+                road_comparison=client.post('/api/road-intelligence/compare',json={'origin':[-92.3341,38.9517],'destination':[-93.625,41.5868],'routing':'estimated','buffer_m':250})
+                _assert(road_comparison.status_code==200,'Packaged offline road comparison failed')
+                comparison=road_comparison.json()
+                _assert(comparison.get('operational_state_modified') is False and comparison.get('alternatives') and all(row.get('fallback') and row.get('review_required') and len(row.get('reviews',[]))==2 for row in comparison['alternatives']),'Road comparison changed state or lost estimate/review/source boundaries')
+                checks.append('separate dated Iowa/Missouri road fixtures and estimated comparison work without network')
                 catalog_response=client.get('/api/data/catalog')
                 _assert(catalog_response.status_code==200,'Source catalog unavailable')
                 catalog={entry['id']:entry for entry in catalog_response.json()}
@@ -232,6 +243,12 @@ def run_extracted_workflows(target):
                     routed=client.post('/api/route',json={'coordinates':[[-92.3341,38.9517],[-90.1994,38.6270]]})
                 _assert(routed.status_code==200 and routed.json().get('road_review',{}).get('modot_retrieved_at'),'Route review did not use the dated packaged MoDOT fixture')
                 checks.append('route review uses a supplied OSRM fixture and dated MoDOT evidence offline')
+                from scripts.backup_state import create_backup, verify_backup, restore_backup
+                backed=create_backup(api.DB,'data/backups/reviewer-check',root=target)
+                verified=verify_backup(backed['backup_directory'],root=target)
+                restored=restore_backup(backed['backup_directory'],'data/recovered/reviewer-check.sqlite',root=target)
+                _assert(verified['status']=='verified' and restored['status']=='restored_to_new_copy' and not restored['operator_database_overwritten'] and not restored['server_started'],'Packaged local recovery verification failed')
+                checks.append('local SQLite backup verifies and restores to a new private copy without rebinding the app')
             _assert(not attempts,'Application attempted network access during offline verification')
             checks.append('socket and DNS guard observed zero application network attempts')
         result.update(status='passed',passed=True)

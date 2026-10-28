@@ -2,7 +2,44 @@
 
 Session date: October 28, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: core software handoff and isolated rehearsal (October 28)
+## Latest: road intelligence and local recovery (October 28)
+
+- Added a separate official Iowa DOT 511 adapter and dated fixture: 599 point
+  records acquired in six bounded pages. Repeated CARS event IDs and raw event
+  clocks are preserved. A first oversized request returned HTTP 404; the working
+  100-record page size and exact initial failure are documented.
+- Added a read-only road workspace with source cards, bounded event previews,
+  raw fields/time semantics, Iowa attribution, corridor/custom coordinates,
+  route alternatives, source-specific proximity review and JSON export. Changed
+  inputs/evidence mark prior results. Neither feed implies complete route
+  coverage or commercial-truck eligibility; estimates remain labeled.
+- Real operator-server refresh captured 848 MoDOT records and reused a valid
+  Iowa TTL cache, explicitly distinct from a new provider response. Real OSRM
+  returned two Columbia–Des Moines alternatives (394.2692 / 464.7026 km), with
+  independently counted road events. No dispatch state changed. This is dated
+  evidence in `reports/road_intelligence_live.json`, not guaranteed uptime.
+- Added local WAL-consistent SQLite backup, verification and restore to a fresh
+  private file. The actual CLI recovery exercise preserved operator bytes and
+  all ten tables, including hold/recall flags. Backups and receipts are ignored
+  by Git and excluded from reviewer packages. This is not cloud deployment.
+- Hardened existing route review against malformed/nonfinite point/line
+  geometry and missing, naive or implausibly future retrieval timestamps.
+- Current full local results: **563 pytest passed, 95 Vitest passed, production
+  build passed**. Further focused checks and any later full run are recorded in
+  `reports/session_verification.json`. The new actual-Chrome suite passed
+  **58 checks**, desktop and mobile, with no uncaught JS or unexpected HTTP
+  failures; fixtures and initialized isolated state stayed unchanged. Prior
+  core browser suites retain their own timestamps and were not all repeated.
+- The registry now has 19 sources: the new Iowa probe succeeded; five previously
+  recorded FSIS/ERS DNS failures remain. All 42 original hashes are unchanged.
+  No scientific model retraining, NOAA trace-task changes, genuine Kiro usage,
+  production access controls, cloud publication or final submission is claimed.
+
+Next three actions: complete genuine Kiro spec execution; perform team
+report/rubric review and the timed presentation; then choose one further stretch
+with concrete inputs, such as hosted access controls before any cloud publish.
+
+## Previous: core software handoff and isolated rehearsal (October 28)
 
 - Added a fresh-session launcher and verified runtime profile. The operator app
   rejects rehearsal recording; partial/mismatched configuration is rejected

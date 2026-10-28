@@ -135,10 +135,21 @@ features:
 - id: state-dot
   priority: P2
   name: Additional state DOT feeds
-  status: deferred pending cross-state use case
-  evidence: docs/stretch_feature_gates.md
-  detail: Missouri is the operating scope. Each future feed needs tested schema, timestamp/geometry
-    coverage and explicit fallbacks.
+  status: Iowa DOT adapter and read-only road workspace implemented; bounded coverage
+  evidence: docs/state_dot.md
+  detail: Official Iowa 511 point records remain separate from MoDOT. A verified
+    dated fixture contains 599 records; Columbia to Des Moines is a planning
+    example. Route alternatives, buffer screening and exports do not dispatch,
+    avoid closures automatically or validate truck restrictions.
+- id: local-recovery
+  priority: P2
+  name: Verified local operational-state recovery
+  status: implemented; cloud deployment remains deferred
+  evidence: reports/backup_recovery.json
+  detail: Read-only SQLite online backup includes committed WAL records; checksums,
+    integrity, schema and row counts are verified before restoration to a fresh
+    private file. Operator bytes and ten tables were preserved in an actual CLI
+    exercise. No automatic server rebind or deployment.
 - id: genomics
   priority: P2
   name: Molecular epidemiology

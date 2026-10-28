@@ -36,7 +36,7 @@ def sections(root):
         'Team repository: https://github.com/ExovyEngineering/aegis (private). Start with CONTRIBUTING.md. Use feature branches and reviewed pull requests.',
         'Update this brief: run scripts/verify_project.py after code changes, then scripts/build_project_brief.py. Update config/feature_register.yaml and docs/changelog.md when capabilities or limitations change. No live API requests are performed by the brief compiler.'
     ])]
-    for priority,title in [('P0','Required submission core'),('P1','Operational differentiators'),('P2','Deferred extensions')]:
+    for priority,title in [('P0','Required submission core'),('P1','Operational differentiators'),('P2','Stretch work and deferred extensions')]:
         body=[]
         for f in register['features']:
             if f['priority']==priority:body.extend([f"{f['name']} | {f['status']}",f['detail'],f"Evidence: {f['evidence']}"])
@@ -53,9 +53,13 @@ def sections(root):
     if rehearsal:
         tested=rehearsal.get('checks',[])
         testlines.append(f"Guided rehearsal actual-Chrome QA: {sum(bool(c.get('passed')) for c in tested)} / {len(tested)} checks passed, checked {rehearsal.get('checked_at','not recorded')}. Record kind: {rehearsal.get('run_kind','not recorded')}; measured duration {rehearsal.get('recorded_elapsed_seconds','not recorded')} seconds. This automated workflow does not establish a genuine five-minute team presentation. Evidence: reports/browser_qa/rehearsal/results.json.")
+    roads=load(root,'reports/browser_qa/roads/results.json',{})
+    if roads:
+        tested=roads.get('checks',[])
+        testlines.append(f"Road intelligence actual-Chrome QA: {sum(bool(c.get('passed')) for c in tested)} / {len(tested)} checks passed, checked {roads.get('checked_at','not recorded')}. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.")
     clean=load(root,'reports/clean_install.json',{})
     if clean:
-        testlines.append(f"Separate Python dependency installation: passed={clean.get('passed','not recorded')}; pinned packages verified={clean.get('pinned_dependencies_verified','not recorded')}; real HTTP checks={clean.get('http_checks_passed','not recorded')}; operator DB modified={clean.get('operator_database_modified','not recorded')}. Fresh Node installation tested={clean.get('fresh_node_install_tested','not recorded')}. Evidence: reports/clean_install.json.")
+        testlines.append(f"Earlier separate Python dependency installation: passed={clean.get('passed','not recorded')}; pinned packages verified={clean.get('pinned_dependencies_verified','not recorded')}; real HTTP checks={clean.get('http_checks_passed','not recorded')}; operator DB modified={clean.get('operator_database_modified','not recorded')}. This predates the road/recovery increment; consult its tested source checksum and timestamp. Fresh Node installation tested={clean.get('fresh_node_install_tested','not recorded')}. Evidence: reports/clean_install.json.")
     smoke=load(root,'reports/http_smoke.json',{})
     if smoke:testlines.append(f"Loopback HTTP smoke artifact records {smoke.get('passed','unknown')} checks against {smoke.get('base_url','unknown')}. It does not certify current public-source freshness.")
     testlines+=['Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.',
@@ -96,6 +100,17 @@ def sections(root):
         'Offline rehearsal uses dated source fixtures, disables provider refresh and returns labeled OSRM estimates without mutable HTTP cache access. Map tiles and deliberately opened external source links can still need internet.',
         'The accelerated demo script now measures original/configured operator SQLite and sidecar hashes before and after. A modified or unreadable protected file cannot become an invented preservation success. This utility is separate from the guided browser timer.',
         'Automated checks and self-reported practice do not complete genuine Kiro execution, author/rubric review or a live timed team presentation. The reserved Kiro task remains untouched.'
+    ]))
+    recovery=load(root,'reports/backup_recovery.json',{})
+    live_roads=load(root,'reports/road_intelligence_live.json',{})
+    output.append(('Stretch | Official road evidence and local recovery',[
+        'Road intelligence now compares captured Missouri and Iowa evidence independently. The Iowa DOT public ArcGIS feed was verified through its official source and queried in bounded pages; its dated fixture retains 599 point records and repeated event IDs without merging them.',
+        'Choose a Columbia-to-Des Moines planning corridor or custom coordinates. Inspect provider fields, unverified event clocks, attribution and geometry gaps. Source previews are bounded at 200 records; route screening uses all bounded supported geometries and lists up to 100 nearby records per source/alternative.',
+        'Compare estimated connections or available public OSRM ordinary-driving alternatives, inspect separate proximity matches, change assumptions and export the captured JSON. Changed inputs/evidence flag a prior result. No record match establishes a clear road, automatic closure avoidance or commercial-truck suitability.',
+        f"Actual live road-workspace requests checked at {live_roads.get('checked_at','not recorded')}. Endpoints recorded: {len(live_roads.get('checks',[]))}. Detailed provider/cache/failure and route-fallback fields: reports/road_intelligence_live.json. Offline browser checks are a different artifact.",
+        'Local SQLite recovery now creates a read-only online backup including committed WAL records, verifies checksum/integrity/schema/row counts, and restores only to a fresh private data/recovered file. Existing operator state is never overwritten or automatically rebound. Backups/receipts are excluded from Git and reviewer packages.',
+        f"Actual CLI recovery exercise status: {recovery.get('status','not recorded')}; checked {recovery.get('checked_at','not recorded')}. Measured preservation fields: {recovery.get('checks','not recorded')}. Evidence: reports/backup_recovery.json. A restored copy still requires human review of assignments and state.",
+        'These are bounded stretches. Cloud deployment, production authentication, tenant isolation, physical sensors, genomic attribution and LLM assistance remain unimplemented. Genuine Kiro, final author review and a timed team rehearsal remain open submission gates.'
     ]))
     output.append(('Walkthrough | What to show behind the buttons',[
         'Command: compare A/B/C/D metrics. Open decision details to inspect selected shipments, exclusion reasons and resource limits. Review a proposal with an identity and rationale; stale or unsafe plans are rejected.',
