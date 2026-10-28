@@ -37,12 +37,19 @@ beforeEach(()=>{
   Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:vi.fn().mockResolvedValue(undefined)}});
 });
 afterEach(()=>vi.useRealTimers());
+async function renderLoaded(element:Parameters<typeof render>[0]) {
+  let view!:ReturnType<typeof render>;
+  // A matching DOM node can appear before the initial load's draft-reset effect.
+  // Flush that React work before simulating a presenter typing or clicking.
+  await act(async()=>{view=render(element);});
+  return view;
+}
 function enterStageNotes(value='Explained the current stage evidence') {fireEvent.change(screen.getByLabelText('Current stage notes'),{target:{value}});}
 function completedRun(overrides:any={}) {return run({status:'completed',version:7,next_stage_id:null,milestones:stages.map((stage,index)=>({stage_id:stage.id,outcome:'covered',notes:`Recorded ${stage.id} evidence`,recorded_at:'2026-10-28T12:04:00Z',elapsed_seconds:index*30})),...overrides});}
 
 it('keeps operator mode read-only and copies a real isolated-launch command',async()=>{
   state.runtime={mode:'operator',isolated:false,offline:false,warning:'Operator workspace.'};
-  render(<RehearsalWorkspace/>);
+  await renderLoaded(<RehearsalWorkspace/>);
   expect(await screen.findByText('Open a separate practice workspace')).toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'Start rehearsal timer'})).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('button',{name:'Copy rehearsal launch command'}));
@@ -52,14 +59,14 @@ it('keeps operator mode read-only and copies a real isolated-launch command',asy
 
 it('does not offer recording controls for a misconfigured runtime',async()=>{
   state.runtime={mode:'misconfigured',isolated:false,offline:true,warning:'Rehearsal path does not match its session.'};
-  render(<RehearsalWorkspace/>);
+  await renderLoaded(<RehearsalWorkspace/>);
   expect(await screen.findByText('Rehearsal configuration needs correction')).toBeInTheDocument();
   expect(screen.queryByLabelText('Rehearsal presenter')).not.toBeInTheDocument();
 });
 
 it('rejects an incomplete context and can retry without inventing isolation',async()=>{
   vi.mocked(api).mockResolvedValueOnce({runtime:{mode:'isolated_rehearsal'},stages,runs:[],active:null});
-  render(<RehearsalWorkspace/>);
+  await renderLoaded(<RehearsalWorkspace/>);
   expect(await screen.findByRole('alert')).toHaveTextContent('Rehearsal context is unavailable');
   expect(screen.queryByText('Verified isolated rehearsal')).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('button',{name:'Retry rehearsal context'}));
@@ -67,7 +74,7 @@ it('rejects an incomplete context and can retry without inventing isolation',asy
 });
 
 it('requires identity and purpose and submits the explicitly chosen record type',async()=>{
-  render(<RehearsalWorkspace/>);
+  await renderLoaded(<RehearsalWorkspace/>);
   const start=await screen.findByRole('button',{name:'Start rehearsal timer'});
   expect(start).toBeDisabled();
   fireEvent.change(screen.getByLabelText('Rehearsal presenter'),{target:{value:'Team Taylor'}});
@@ -83,7 +90,7 @@ it('requires identity and purpose and submits the explicitly chosen record type'
 
 it('uses the server elapsed value rather than inferring duration from a browser date',async()=>{
   state.active=run({started_at:'2020-01-01T00:00:00Z',elapsed_seconds:83});
-  render(<RehearsalWorkspace/>);
+  await renderLoaded(<RehearsalWorkspace/>);
   await screen.findByText('Now: Actor, map and simulation');
   expect(screen.getByLabelText('Rehearsal elapsed time')).toHaveTextContent('01:23');
   expect(screen.getByText(/not proof of presentation quality/)).toBeInTheDocument();
@@ -91,7 +98,7 @@ it('uses the server elapsed value rather than inferring duration from a browser 
 
 it('requires a skip reason, keeps completion disabled before all stages, and navigates only on request',async()=>{
   state.active=run();const navigate=vi.fn();
-  render(<RehearsalWorkspace onNavigate={navigate}/>);
+  await renderLoaded(<RehearsalWorkspace onNavigate={navigate}/>);
   await screen.findByText('Now: Actor, map and simulation');
   expect(screen.getByRole('button',{name:'Record stage skipped'})).toBeDisabled();
   fireEvent.change(screen.getByLabelText('Rehearsal closing notes'),{target:{value:'Notes for later presentation review'}});
@@ -110,15 +117,23 @@ it('reloads a rejected stale checkpoint without optimistic success or retaining 
     if(path.endsWith('/checkpoint')&&reject){reject=false;state.active={...run(),version:2,next_stage_id:'evidence_science',milestones:[{stage_id:'overview',outcome:'covered',notes:'Covered by another reviewer',recorded_at:'2026-10-28T12:01:30Z',elapsed_seconds:80}]};throw new Error('Rehearsal changed; reload before recording another step');}
     return reply(path,body);
   });
-  render(<RehearsalWorkspace/>);await screen.findByText('Now: Actor, map and simulation');enterStageNotes();
+  await renderLoaded(<RehearsalWorkspace/>);
+  expect(screen.getByText('Now: Actor, map and simulation')).toBeInTheDocument();
+  enterStageNotes();
   fireEvent.change(screen.getByLabelText('Rehearsal closing notes'),{target:{value:'Closing note for the previous run version'}});
-  fireEvent.click(screen.getByRole('button',{name:'Record stage covered'}));
-  expect(await screen.findByRole('alert')).toHaveTextContent('Rehearsal changed');
+  const record=screen.getByRole('button',{name:'Record stage covered'});
+  expect(screen.getByLabelText('Current stage notes')).toHaveValue('Explained the current stage evidence');
+  expect(record).toBeEnabled();
+  await act(async()=>{fireEvent.click(record);});
+  expect(api).toHaveBeenCalledWith('/rehearsal/run-one/checkpoint',{expected_version:1,stage_id:'overview',outcome:'covered',notes:'Explained the current stage evidence'});
+  expect(screen.getByRole('alert')).toHaveTextContent('Rehearsal changed');
   expect(screen.queryByText('Stage recorded with its evidence.')).not.toBeInTheDocument();
   expect(screen.getByLabelText('Current stage notes')).toHaveValue('');
   expect(screen.getByLabelText('Rehearsal closing notes')).toHaveValue('');
   expect(screen.getByRole('button',{name:'Record stage covered'})).toBeDisabled();
-  enterStageNotes('Reviewed the current evidence and measured model');fireEvent.click(screen.getByRole('button',{name:'Record stage covered'}));
+  enterStageNotes('Reviewed the current evidence and measured model');
+  expect(screen.getByRole('button',{name:'Record stage covered'})).toBeEnabled();
+  await act(async()=>{fireEvent.click(screen.getByRole('button',{name:'Record stage covered'}));});
   await screen.findByText('Now: Simulated disruption');
   expect(api).toHaveBeenLastCalledWith('/rehearsal');
   expect(vi.mocked(api).mock.calls.filter(([path])=>path.endsWith('/checkpoint'))[1][1]).toMatchObject({expected_version:2,stage_id:'evidence_science'});
@@ -136,7 +151,7 @@ it('clears a typed stage draft when polling discovers another client advanced th
 it('prevents duplicate writes and locks the submitted note while a checkpoint is pending',async()=>{
   state.active=run();let resolve!:(value:any)=>void;const pending=new Promise(res=>{resolve=res;});
   vi.mocked(api).mockImplementation(async(path,body:any)=>path.endsWith('/checkpoint')?pending:reply(path,body));
-  render(<RehearsalWorkspace/>);await screen.findByText('Now: Actor, map and simulation');enterStageNotes();
+  await renderLoaded(<RehearsalWorkspace/>);await screen.findByText('Now: Actor, map and simulation');enterStageNotes();
   const record=screen.getByRole('button',{name:'Record stage covered'});
   act(()=>{fireEvent.click(record);fireEvent.click(record);});
   expect(vi.mocked(api).mock.calls.filter(([path])=>path.endsWith('/checkpoint'))).toHaveLength(1);
@@ -148,30 +163,33 @@ it('prevents duplicate writes and locks the submitted note while a checkpoint is
 
 it('shows the completed export immediately, and reloads the saved immutable record from history',async()=>{
   state.active=completedRun({status:'active',next_stage_id:null});
-  const view=render(<RehearsalWorkspace/>);await screen.findByLabelText('Rehearsal closing notes');
+  const view=await renderLoaded(<RehearsalWorkspace/>);await screen.findByLabelText('Rehearsal closing notes');
   fireEvent.change(screen.getByLabelText('Rehearsal closing notes'),{target:{value:'Improve transitions before the team presentation'}});
-  fireEvent.click(screen.getByRole('button',{name:'Finish and save rehearsal'}));
+  expect(screen.getByRole('button',{name:'Finish and save rehearsal'})).toBeEnabled();
+  await act(async()=>{fireEvent.click(screen.getByRole('button',{name:'Finish and save rehearsal'}));});
+  expect(api).toHaveBeenCalledWith('/rehearsal/run-one/finish',{expected_version:7,outcome:'completed',notes:'Improve transitions before the team presentation'});
   const download=await screen.findByRole('link',{name:'Download rehearsal evidence JSON'});
   expect(download).toHaveAttribute('href','/api/rehearsal/run-one/export');
   expect(screen.queryByLabelText('Rehearsal presenter')).not.toBeInTheDocument();
-  view.unmount();render(<RehearsalWorkspace/>);await screen.findByLabelText('Saved rehearsal');
+  view.unmount();await renderLoaded(<RehearsalWorkspace/>);await screen.findByLabelText('Saved rehearsal');
   fireEvent.change(screen.getByLabelText('Saved rehearsal'),{target:{value:'run-one'}});
   fireEvent.click(screen.getByRole('button',{name:'Open saved rehearsal'}));
   expect(await screen.findByRole('link',{name:'Download rehearsal evidence JSON'})).toHaveAttribute('href','/api/rehearsal/run-one/export');
 });
 
 it('can abort an incomplete run only with a reason and preserves its export',async()=>{
-  state.active=run();render(<RehearsalWorkspace/>);await screen.findByLabelText('Rehearsal closing notes');
+  state.active=run();await renderLoaded(<RehearsalWorkspace/>);await screen.findByLabelText('Rehearsal closing notes');
   expect(screen.getByRole('button',{name:'Abort and save record'})).toBeDisabled();
   fireEvent.change(screen.getByLabelText('Rehearsal closing notes'),{target:{value:'Pause practice to resolve the presentation outline'}});
-  fireEvent.click(screen.getByRole('button',{name:'Abort and save record'}));
+  expect(screen.getByRole('button',{name:'Abort and save record'})).toBeEnabled();
+  await act(async()=>{fireEvent.click(screen.getByRole('button',{name:'Abort and save record'}));});
   expect(await screen.findByRole('link',{name:'Download rehearsal evidence JSON'})).toBeInTheDocument();
   expect(api).toHaveBeenCalledWith('/rehearsal/run-one/finish',{expected_version:1,outcome:'aborted',notes:'Pause practice to resolve the presentation outline'});
 });
 
 it('rejects a wrong-record history response instead of presenting its download link',async()=>{
   state.runs=[completedRun()];vi.mocked(api).mockImplementation(async(path,body:any)=>path==='/rehearsal/run-one'?completedRun({id:'wrong-record'}):reply(path,body));
-  render(<RehearsalWorkspace/>);await screen.findByLabelText('Saved rehearsal');
+  await renderLoaded(<RehearsalWorkspace/>);await screen.findByLabelText('Saved rehearsal');
   fireEvent.change(screen.getByLabelText('Saved rehearsal'),{target:{value:'run-one'}});fireEvent.click(screen.getByRole('button',{name:'Open saved rehearsal'}));
   expect(await screen.findByRole('alert')).toHaveTextContent('does not match the selected record');
   expect(screen.queryByRole('link',{name:'Download rehearsal evidence JSON'})).not.toBeInTheDocument();

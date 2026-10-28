@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 28, 2026 at 02:17 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 28, 2026 at 02:27 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -160,13 +160,13 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-28T19:14:53.984551+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-28T19:27:34.084133+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 563; 42.781 seconds. Log: reports/checks/20261028T191348722273Z/pytest.txt. Checked: 2026-10-28T19:13:48.722507+00:00.
+pytest: PASS; exit 0; tests passed 563; 39.287 seconds. Log: reports/checks/20261028T192632896379Z/pytest.txt. Checked: 2026-10-28T19:26:32.896790+00:00.
 
-vitest: PASS; exit 0; tests passed 95; 10.684 seconds. Log: reports/checks/20261028T191348722273Z/vitest.txt. Checked: 2026-10-28T19:14:31.528900+00:00.
+vitest: PASS; exit 0; tests passed 95; 10.326 seconds. Log: reports/checks/20261028T192632896379Z/vitest.txt. Checked: 2026-10-28T19:27:12.201092+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 11.741 seconds. Log: reports/checks/20261028T191348722273Z/frontend_build.txt. Checked: 2026-10-28T19:14:42.230646+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 11.523 seconds. Log: reports/checks/20261028T192632896379Z/frontend_build.txt. Checked: 2026-10-28T19:27:22.544720+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -181,6 +181,8 @@ Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. T
 Guided rehearsal actual-Chrome QA: 76 / 76 checks passed, checked 2026-10-28T06:07:06.190Z. Record kind: automated_check; measured duration 5.37 seconds. This automated workflow does not establish a genuine five-minute team presentation. Evidence: reports/browser_qa/rehearsal/results.json.
 
 Road intelligence actual-Chrome QA: 58 / 58 checks passed, checked 2026-10-28T19:15:52.092Z. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.
+
+A duplicate push CI run failed a rehearsal frontend test while its PR run passed. The test acted before initial React effects settled; synchronization was corrected without relaxing the original assertions or changing product behavior. The failed log and focused follow-up outcomes are retained in reports/ci_followup.json and reports/checks/. Later full checks and remote runs have their own timestamps; a historical pass never substitutes for them.
 
 Earlier separate Python dependency installation: passed=True; pinned packages verified=51; real HTTP checks=31; operator DB modified=False. This predates the road/recovery increment; consult its tested source checksum and timestamp. Fresh Node installation tested=False. Evidence: reports/clean_install.json.
 

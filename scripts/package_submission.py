@@ -13,7 +13,7 @@ SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','fron
 SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env'}
 REPORTS=('usda_food_environment.json','fsis_ingestion.json','ingestion_verification.json','transport_check.json','source_actions.json','operational_state_preservation.json','aegis_project_brief.pdf','project_brief.md','project_brief_manifest.json','session_verification.json','aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
 REPORTS=REPORTS+('clean_install.json',)
-REPORTS=REPORTS+('backup_recovery.json','road_intelligence_live.json','stretch_verification.json')
+REPORTS=REPORTS+('backup_recovery.json','road_intelligence_live.json','stretch_verification.json','ci_followup.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.

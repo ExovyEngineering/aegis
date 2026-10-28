@@ -1,0 +1,1454 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /home/runner/work/aegis/aegis/frontend
+
+ ✓ src/RoadIntelligence.test.tsx (18 tests) 2714ms
+ ❯ src/RehearsalWorkspace.test.tsx (13 tests | 1 failed) 1743ms
+   ✓ keeps operator mode read-only and copies a real isolated-launch command 121ms
+   ✓ does not offer recording controls for a misconfigured runtime 13ms
+   ✓ rejects an incomplete context and can retry without inventing isolation 41ms
+   ✓ requires identity and purpose and submits the explicitly chosen record type 71ms
+   ✓ uses the server elapsed value rather than inferring duration from a browser date 25ms
+   ✓ requires a skip reason, keeps completion disabled before all stages, and navigates only on request 93ms
+   × reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note 1052ms
+     → Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <section
+      aria-label="Guided presentation rehearsal"
+      class="panel rehearsal-workspace"
+    >
+      <div
+        class="panel-heading"
+      >
+        <div>
+          <h2>
+            Practice the five-minute story
+          </h2>
+          <span>
+            Six guided stages, a measured timer and a retained evidence record
+          </span>
+        </div>
+        <svg
+          class="lucide lucide-clock3"
+          fill="none"
+          height="23"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="23"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+          <polyline
+            points="12 6 12 12 16.5 12"
+          />
+        </svg>
+      </div>
+      <div
+        class="padded"
+      >
+        <div
+          class="coverage-warning"
+        >
+          <svg
+            class="lucide lucide-shield-check"
+            fill="none"
+            height="17"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+            />
+          </svg>
+          <span>
+            <strong>
+              Verified isolated rehearsal
+            </strong>
+             · 
+            89fae623
+             · 
+            Dated fixtures; provider requests disabled
+            . Operational changes stay in this rehearsal database.
+          </span>
+        </div>
+        <div
+          class="rehearsal-timer"
+        >
+          <div>
+            <span>
+              SERVER-BASED ELAPSED TIME
+            </span>
+            <strong
+              aria-label="Rehearsal elapsed time"
+            >
+              01:23
+            </strong>
+          </div>
+          <div>
+            <strong>
+              03:36 to target
+            </strong>
+            <p>
+              Planned budget 05:00 · 
+              Automated check
+            </p>
+            <small>
+              Team Taylor
+               · 
+              Practice the traceable response
+            </small>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          The server stores elapsed wall-clock time and operation evidence. This is not proof of presentation quality, human attendance, Kiro execution or author approval. Navigating between views keeps the timer running.
+        </p>
+        <ol
+          class="rehearsal-stages"
+        >
+          <li
+            class="current"
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              1
+            </span>
+            <div>
+              <strong>
+                Actor, map and simulation
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Explain the simulated actor.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              2
+            </span>
+            <div>
+              <strong>
+                Sources and measured science
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:20
+                 planned
+              </span>
+              <p>
+                Keep the sources distinct.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              3
+            </span>
+            <div>
+              <strong>
+                Simulated disruption
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a simulated event.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              4
+            </span>
+            <div>
+              <strong>
+                Dispatcher decision
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a human approval.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              5
+            </span>
+            <div>
+              <strong>
+                Parked driver workflow
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Acknowledge and report while parked.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              6
+            </span>
+            <div>
+              <strong>
+                Honest limitations
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:20
+                 planned
+              </span>
+              <p>
+                Explain what remains unverified.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <div
+          class="rehearsal-checkpoint"
+        >
+          <h3>
+            Now: 
+            Actor, map and simulation
+          </h3>
+          <p>
+            Perform the stage in this workspace, then return here to record it. Operational stages require matching actions in this run's audit history; a note cannot substitute for those actions.
+          </p>
+          <label
+            class="field"
+          >
+            Current stage notes
+            <textarea
+              maxlength="2000"
+              placeholder="What was covered, or why this stage was skipped"
+              rows="2"
+            />
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              <svg
+                class="lucide lucide-check"
+                fill="none"
+                height="15"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 6 9 17l-5-5"
+                />
+              </svg>
+              Record stage covered
+            </button>
+            <button
+              class="secondary"
+              disabled=""
+            >
+              Record stage skipped
+            </button>
+          </div>
+        </div>
+        <div
+          class="rehearsal-finish"
+        >
+          <label
+            class="field"
+          >
+            Rehearsal closing notes
+            <textarea
+              maxlength="2000"
+              placeholder="What to improve before the team presents"
+              rows="2"
+            >
+              Closing note for the previous run version
+            </textarea>
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              Finish and save rehearsal
+            </button>
+            <button
+              class="secondary"
+            >
+              Abort and save record
+            </button>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          State path: 
+          data/rehearsals/89fae623-1399-4b59-936f-7736b115f024.sqlite
+          . A completed record is retained as a snapshot; later scenario resets or refreshed reports do not rewrite its exported evidence.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <section
+      aria-label="Guided presentation rehearsal"
+      class="panel rehearsal-workspace"
+    >
+      <div
+        class="panel-heading"
+      >
+        <div>
+          <h2>
+            Practice the five-minute story
+          </h2>
+          <span>
+            Six guided stages, a measured timer and a retained evidence record
+          </span>
+        </div>
+        <svg
+          class="lucide lucide-clock3"
+          fill="none"
+          height="23"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="23"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+          <polyline
+            points="12 6 12 12 16.5 12"
+          />
+        </svg>
+      </div>
+      <div
+        class="padded"
+      >
+        <div
+          class="coverage-warning"
+        >
+          <svg
+            class="lucide lucide-shield-check"
+            fill="none"
+            height="17"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+            />
+          </svg>
+          <span>
+            <strong>
+              Verified isolated rehearsal
+            </strong>
+             · 
+            89fae623
+             · 
+            Dated fixtures; provider requests disabled
+            . Operational changes stay in this rehearsal database.
+          </span>
+        </div>
+        <div
+          class="rehearsal-timer"
+        >
+          <div>
+            <span>
+              SERVER-BASED ELAPSED TIME
+            </span>
+            <strong
+              aria-label="Rehearsal elapsed time"
+            >
+              01:23
+            </strong>
+          </div>
+          <div>
+            <strong>
+              03:36 to target
+            </strong>
+            <p>
+              Planned budget 05:00 · 
+              Automated check
+            </p>
+            <small>
+              Team Taylor
+               · 
+              Practice the traceable response
+            </small>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          The server stores elapsed wall-clock time and operation evidence. This is not proof of presentation quality, human attendance, Kiro execution or author approval. Navigating between views keeps the timer running.
+        </p>
+        <ol
+          class="rehearsal-stages"
+        >
+          <li
+            class="current"
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              1
+            </span>
+            <div>
+              <strong>
+                Actor, map and simulation
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Explain the simulated actor.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              2
+            </span>
+            <div>
+              <strong>
+                Sources and measured science
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:20
+                 planned
+              </span>
+              <p>
+                Keep the sources distinct.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              3
+            </span>
+            <div>
+              <strong>
+                Simulated disruption
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a simulated event.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              4
+            </span>
+            <div>
+              <strong>
+                Dispatcher decision
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a human approval.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              5
+            </span>
+            <div>
+              <strong>
+                Parked driver workflow
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Acknowledge and report while parked.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              6
+            </span>
+            <div>
+              <strong>
+                Honest limitations
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:20
+                 planned
+              </span>
+              <p>
+                Explain what remains unverified.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <div
+          class="rehearsal-checkpoint"
+        >
+          <h3>
+            Now: 
+            Actor, map and simulation
+          </h3>
+          <p>
+            Perform the stage in this workspace, then return here to record it. Operational stages require matching actions in this run's audit history; a note cannot substitute for those actions.
+          </p>
+          <label
+            class="field"
+          >
+            Current stage notes
+            <textarea
+              maxlength="2000"
+              placeholder="What was covered, or why this stage was skipped"
+              rows="2"
+            />
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              <svg
+                class="lucide lucide-check"
+                fill="none"
+                height="15"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 6 9 17l-5-5"
+                />
+              </svg>
+              Record stage covered
+            </button>
+            <button
+              class="secondary"
+              disabled=""
+            >
+              Record stage skipped
+            </button>
+          </div>
+        </div>
+        <div
+          class="rehearsal-finish"
+        >
+          <label
+            class="field"
+          >
+            Rehearsal closing notes
+            <textarea
+              maxlength="2000"
+              placeholder="What to improve before the team presents"
+              rows="2"
+            >
+              Closing note for the previous run version
+            </textarea>
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              Finish and save rehearsal
+            </button>
+            <button
+              class="secondary"
+            >
+              Abort and save record
+            </button>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          State path: 
+          data/rehearsals/89fae623-1399-4b59-936f-7736b115f024.sqlite
+          . A completed record is retained as a snapshot; later scenario resets or refreshed reports do not rewrite its exported evidence.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+   ✓ clears a typed stage draft when polling discovers another client advanced the run 39ms
+   ✓ prevents duplicate writes and locks the submitted note while a checkpoint is pending 55ms
+   ✓ shows the completed export immediately, and reloads the saved immutable record from history 119ms
+   ✓ can abort an incomplete run only with a reason and preserves its export 53ms
+   ✓ rejects a wrong-record history response instead of presenting its download link 30ms
+   ✓ clears actionable state after a polling failure rather than keeping an old active run 29ms
+ ✓ src/App.test.tsx (7 tests) 1477ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  477ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 252ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 733ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 659ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  359ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 657ms
+ ✓ src/RouteLab.test.tsx (2 tests) 452ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  302ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 303ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 217ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 200ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 106ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 121ms
+ ✓ src/MapViewport.test.tsx (2 tests) 23ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 414ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  412ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 135ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 89ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 123ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 106ms
+ ✓ src/api.test.ts (3 tests) 6ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 78ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 68ms
+ ✓ src/routingProvenance.test.ts (2 tests) 3ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 56ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/RehearsalWorkspace.test.tsx > reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note
+TestingLibraryElementError: Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <section
+      aria-label="Guided presentation rehearsal"
+      class="panel rehearsal-workspace"
+    >
+      <div
+        class="panel-heading"
+      >
+        <div>
+          <h2>
+            Practice the five-minute story
+          </h2>
+          <span>
+            Six guided stages, a measured timer and a retained evidence record
+          </span>
+        </div>
+        <svg
+          class="lucide lucide-clock3"
+          fill="none"
+          height="23"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="23"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+          <polyline
+            points="12 6 12 12 16.5 12"
+          />
+        </svg>
+      </div>
+      <div
+        class="padded"
+      >
+        <div
+          class="coverage-warning"
+        >
+          <svg
+            class="lucide lucide-shield-check"
+            fill="none"
+            height="17"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+            />
+          </svg>
+          <span>
+            <strong>
+              Verified isolated rehearsal
+            </strong>
+             · 
+            89fae623
+             · 
+            Dated fixtures; provider requests disabled
+            . Operational changes stay in this rehearsal database.
+          </span>
+        </div>
+        <div
+          class="rehearsal-timer"
+        >
+          <div>
+            <span>
+              SERVER-BASED ELAPSED TIME
+            </span>
+            <strong
+              aria-label="Rehearsal elapsed time"
+            >
+              01:23
+            </strong>
+          </div>
+          <div>
+            <strong>
+              03:36 to target
+            </strong>
+            <p>
+              Planned budget 05:00 · 
+              Automated check
+            </p>
+            <small>
+              Team Taylor
+               · 
+              Practice the traceable response
+            </small>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          The server stores elapsed wall-clock time and operation evidence. This is not proof of presentation quality, human attendance, Kiro execution or author approval. Navigating between views keeps the timer running.
+        </p>
+        <ol
+          class="rehearsal-stages"
+        >
+          <li
+            class="current"
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              1
+            </span>
+            <div>
+              <strong>
+                Actor, map and simulation
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Explain the simulated actor.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              2
+            </span>
+            <div>
+              <strong>
+                Sources and measured science
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:20
+                 planned
+              </span>
+              <p>
+                Keep the sources distinct.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              3
+            </span>
+            <div>
+              <strong>
+                Simulated disruption
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a simulated event.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              4
+            </span>
+            <div>
+              <strong>
+                Dispatcher decision
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a human approval.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              5
+            </span>
+            <div>
+              <strong>
+                Parked driver workflow
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Acknowledge and report while parked.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              6
+            </span>
+            <div>
+              <strong>
+                Honest limitations
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:20
+                 planned
+              </span>
+              <p>
+                Explain what remains unverified.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <div
+          class="rehearsal-checkpoint"
+        >
+          <h3>
+            Now: 
+            Actor, map and simulation
+          </h3>
+          <p>
+            Perform the stage in this workspace, then return here to record it. Operational stages require matching actions in this run's audit history; a note cannot substitute for those actions.
+          </p>
+          <label
+            class="field"
+          >
+            Current stage notes
+            <textarea
+              maxlength="2000"
+              placeholder="What was covered, or why this stage was skipped"
+              rows="2"
+            />
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              <svg
+                class="lucide lucide-check"
+                fill="none"
+                height="15"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 6 9 17l-5-5"
+                />
+              </svg>
+              Record stage covered
+            </button>
+            <button
+              class="secondary"
+              disabled=""
+            >
+              Record stage skipped
+            </button>
+          </div>
+        </div>
+        <div
+          class="rehearsal-finish"
+        >
+          <label
+            class="field"
+          >
+            Rehearsal closing notes
+            <textarea
+              maxlength="2000"
+              placeholder="What to improve before the team presents"
+              rows="2"
+            >
+              Closing note for the previous run version
+            </textarea>
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              Finish and save rehearsal
+            </button>
+            <button
+              class="secondary"
+            >
+              Abort and save record
+            </button>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          State path: 
+          data/rehearsals/89fae623-1399-4b59-936f-7736b115f024.sqlite
+          . A completed record is retained as a snapshot; later scenario resets or refreshed reports do not rewrite its exported evidence.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <section
+      aria-label="Guided presentation rehearsal"
+      class="panel rehearsal-workspace"
+    >
+      <div
+        class="panel-heading"
+      >
+        <div>
+          <h2>
+            Practice the five-minute story
+          </h2>
+          <span>
+            Six guided stages, a measured timer and a retained evidence record
+          </span>
+        </div>
+        <svg
+          class="lucide lucide-clock3"
+          fill="none"
+          height="23"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="23"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+          <polyline
+            points="12 6 12 12 16.5 12"
+          />
+        </svg>
+      </div>
+      <div
+        class="padded"
+      >
+        <div
+          class="coverage-warning"
+        >
+          <svg
+            class="lucide lucide-shield-check"
+            fill="none"
+            height="17"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+            />
+          </svg>
+          <span>
+            <strong>
+              Verified isolated rehearsal
+            </strong>
+             · 
+            89fae623
+             · 
+            Dated fixtures; provider requests disabled
+            . Operational changes stay in this rehearsal database.
+          </span>
+        </div>
+        <div
+          class="rehearsal-timer"
+        >
+          <div>
+            <span>
+              SERVER-BASED ELAPSED TIME
+            </span>
+            <strong
+              aria-label="Rehearsal elapsed time"
+            >
+              01:23
+            </strong>
+          </div>
+          <div>
+            <strong>
+              03:36 to target
+            </strong>
+            <p>
+              Planned budget 05:00 · 
+              Automated check
+            </p>
+            <small>
+              Team Taylor
+               · 
+              Practice the traceable response
+            </small>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          The server stores elapsed wall-clock time and operation evidence. This is not proof of presentation quality, human attendance, Kiro execution or author approval. Navigating between views keeps the timer running.
+        </p>
+        <ol
+          class="rehearsal-stages"
+        >
+          <li
+            class="current"
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              1
+            </span>
+            <div>
+              <strong>
+                Actor, map and simulation
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Explain the simulated actor.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              2
+            </span>
+            <div>
+              <strong>
+                Sources and measured science
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:20
+                 planned
+              </span>
+              <p>
+                Keep the sources distinct.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              3
+            </span>
+            <div>
+              <strong>
+                Simulated disruption
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a simulated event.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              4
+            </span>
+            <div>
+              <strong>
+                Dispatcher decision
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                01:00
+                 planned
+              </span>
+              <p>
+                Record a human approval.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              5
+            </span>
+            <div>
+              <strong>
+                Parked driver workflow
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:40
+                 planned
+              </span>
+              <p>
+                Acknowledge and report while parked.
+              </p>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <span
+              class="rehearsal-stage-number"
+            >
+              6
+            </span>
+            <div>
+              <strong>
+                Honest limitations
+              </strong>
+              <span
+                class="source-stamp"
+              >
+                00:20
+                 planned
+              </span>
+              <p>
+                Explain what remains unverified.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <div
+          class="rehearsal-checkpoint"
+        >
+          <h3>
+            Now: 
+            Actor, map and simulation
+          </h3>
+          <p>
+            Perform the stage in this workspace, then return here to record it. Operational stages require matching actions in this run's audit history; a note cannot substitute for those actions.
+          </p>
+          <label
+            class="field"
+          >
+            Current stage notes
+            <textarea
+              maxlength="2000"
+              placeholder="What was covered, or why this stage was skipped"
+              rows="2"
+            />
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              <svg
+                class="lucide lucide-check"
+                fill="none"
+                height="15"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 6 9 17l-5-5"
+                />
+              </svg>
+              Record stage covered
+            </button>
+            <button
+              class="secondary"
+              disabled=""
+            >
+              Record stage skipped
+            </button>
+          </div>
+        </div>
+        <div
+          class="rehearsal-finish"
+        >
+          <label
+            class="field"
+          >
+            Rehearsal closing notes
+            <textarea
+              maxlength="2000"
+              placeholder="What to improve before the team presents"
+              rows="2"
+            >
+              Closing note for the previous run version
+            </textarea>
+          </label>
+          <div
+            class="planning-actions"
+          >
+            <button
+              disabled=""
+            >
+              Finish and save rehearsal
+            </button>
+            <button
+              class="secondary"
+            >
+              Abort and save record
+            </button>
+          </div>
+        </div>
+        <p
+          class="source-note"
+        >
+          State path: 
+          data/rehearsals/89fae623-1399-4b59-936f-7736b115f024.sqlite
+          . A completed record is retained as a snapshot; later scenario resets or refreshed reports do not rewrite its exported evidence.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/RehearsalWorkspace.test.tsx:116:23
+    114|   fireEvent.change(screen.getByLabelText('Rehearsal closing notes'),{t…
+    115|   fireEvent.click(screen.getByRole('button',{name:'Record stage covere…
+    116|   expect(await screen.findByRole('alert')).toHaveTextContent('Rehearsa…
+       |                       ^
+    117|   expect(screen.queryByText('Stage recorded with its evidence.')).not.…
+    118|   expect(screen.getByLabelText('Current stage notes')).toHaveValue('');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 23 passed (24)
+      Tests  1 failed | 94 passed (95)
+   Start at  19:21:17
+   Duration  33.82s (transform 960ms, setup 3.57s, collect 2.72s, tests 10.73s, environment 9.98s, prepare 2.84s)
+
+
+::error file=/home/runner/work/aegis/aegis/frontend/src/RehearsalWorkspace.test.tsx,title=src/RehearsalWorkspace.test.tsx > reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note,line=116,column=23::TestingLibraryElementError: Unable to find role="alert"%0A%0AIgnored nodes: comments, script, style%0A<body>%0A  <div>%0A    <section%0A      aria-label="Guided presentation rehearsal"%0A      class="panel rehearsal-workspace"%0A    >%0A      <div%0A        class="panel-heading"%0A      >%0A        <div>%0A          <h2>%0A            Practice the five-minute story%0A          </h2>%0A          <span>%0A            Six guided stages, a measured timer and a retained evidence record%0A          </span>%0A        </div>%0A        <svg%0A          class="lucide lucide-clock3"%0A          fill="none"%0A          height="23"%0A          stroke="currentColor"%0A          stroke-linecap="round"%0A          stroke-linejoin="round"%0A          stroke-width="2"%0A          viewBox="0 0 24 24"%0A          width="23"%0A          xmlns="http://www.w3.org/2000/svg"%0A        >%0A          <circle%0A            cx="12"%0A            cy="12"%0A            r="10"%0A          />%0A          <polyline%0A            points="12 6 12 12 16.5 12"%0A          />%0A        </svg>%0A      </div>%0A      <div%0A        class="padded"%0A      >%0A        <div%0A          class="coverage-warning"%0A        >%0A          <svg%0A            class="lucide lucide-shield-check"%0A            fill="none"%0A            height="17"%0A            stroke="currentColor"%0A            stroke-linecap="round"%0A            stroke-linejoin="round"%0A            stroke-width="2"%0A            viewBox="0 0 24 24"%0A            width="17"%0A            xmlns="http://www.w3.org/2000/svg"%0A          >%0A            <path%0A              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"%0A            />%0A            <path%0A              d="m9 12 2 2 4-4"%0A            />%0A          </svg>%0A          <span>%0A            <strong>%0A              Verified isolated rehearsal%0A            </strong>%0A             · %0A            89fae623%0A             · %0A            Dated fixtures; provider requests disabled%0A            . Operational changes stay in this rehearsal database.%0A          </span>%0A        </div>%0A        <div%0A          class="rehearsal-timer"%0A        >%0A          <div>%0A            <span>%0A              SERVER-BASED ELAPSED TIME%0A            </span>%0A            <strong%0A              aria-label="Rehearsal elapsed time"%0A            >%0A              01:23%0A            </strong>%0A          </div>%0A          <div>%0A            <strong>%0A              03:36 to target%0A            </strong>%0A            <p>%0A              Planned budget 05:00 · %0A              Automated check%0A            </p>%0A            <small>%0A              Team Taylor%0A               · %0A              Practice the traceable response%0A            </small>%0A          </div>%0A        </div>%0A        <p%0A          class="source-note"%0A        >%0A          The server stores elapsed wall-clock time and operation evidence. This is not proof of presentation quality, human attendance, Kiro execution or author approval. Navigating between views keeps the timer running.%0A        </p>%0A        <ol%0A          class="rehearsal-stages"%0A        >%0A          <li%0A            class="current"%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              1%0A            </span>%0A            <div>%0A              <strong>%0A                Actor, map and simulation%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                00:40%0A                 planned%0A              </span>%0A              <p>%0A                Explain the simulated actor.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              2%0A            </span>%0A            <div>%0A              <strong>%0A                Sources and measured science%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                01:20%0A                 planned%0A              </span>%0A              <p>%0A                Keep the sources distinct.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              3%0A            </span>%0A            <div>%0A              <strong>%0A                Simulated disruption%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                01:00%0A                 planned%0A              </span>%0A              <p>%0A                Record a simulated event.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              4%0A            </span>%0A            <div>%0A              <strong>%0A                Dispatcher decision%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                01:00%0A                 planned%0A              </span>%0A              <p>%0A                Record a human approval.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              5%0A            </span>%0A            <div>%0A              <strong>%0A                Parked driver workflow%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                00:40%0A                 planned%0A              </span>%0A              <p>%0A                Acknowledge and report while parked.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              6%0A            </span>%0A            <div>%0A              <strong>%0A                Honest limitations%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                00:20%0A                 planned%0A              </span>%0A              <p>%0A                Explain what remains unverified.%0A              </p>%0A            </div>%0A          </li>%0A        </ol>%0A        <div%0A          class="rehearsal-checkpoint"%0A        >%0A          <h3>%0A            Now: %0A            Actor, map and simulation%0A          </h3>%0A          <p>%0A            Perform the stage in this workspace, then return here to record it. Operational stages require matching actions in this run's audit history; a note cannot substitute for those actions.%0A          </p>%0A          <label%0A            class="field"%0A          >%0A            Current stage notes%0A            <textarea%0A              maxlength="2000"%0A              placeholder="What was covered, or why this stage was skipped"%0A              rows="2"%0A            />%0A          </label>%0A          <div%0A            class="planning-actions"%0A          >%0A            <button%0A              disabled=""%0A            >%0A              <svg%0A                class="lucide lucide-check"%0A                fill="none"%0A                height="15"%0A                stroke="currentColor"%0A                stroke-linecap="round"%0A                stroke-linejoin="round"%0A                stroke-width="2"%0A                viewBox="0 0 24 24"%0A                width="15"%0A                xmlns="http://www.w3.org/2000/svg"%0A              >%0A                <path%0A                  d="M20 6 9 17l-5-5"%0A                />%0A              </svg>%0A              Record stage covered%0A            </button>%0A            <button%0A              class="secondary"%0A              disabled=""%0A            >%0A              Record stage skipped%0A            </button>%0A          </div>%0A        </div>%0A        <div%0A          class="rehearsal-finish"%0A        >%0A          <label%0A            class="field"%0A          >%0A            Rehearsal closing notes%0A            <textarea%0A              maxlength="2000"%0A              placeholder="What to improve before the team presents"%0A              rows="2"%0A            >%0A              Closing note for the previous run version%0A            </textarea>%0A          </label>%0A          <div%0A            class="planning-actions"%0A          >%0A            <button%0A              disabled=""%0A            >%0A              Finish and save rehearsal%0A            </button>%0A            <button%0A              class="secondary"%0A            >%0A              Abort and save record%0A            </button>%0A          </div>%0A        </div>%0A        <p%0A          class="source-note"%0A        >%0A          State path: %0A          data/rehearsals/89fae623-1399-4b59-936f-7736b115f024.sqlite%0A          . A completed record is retained as a snapshot; later scenario resets or refreshed reports do not rewrite its exported evidence.%0A        </p>%0A      </div>%0A    </section>%0A  </div>%0A</body>%0A%0AIgnored nodes: comments, script, style%0A<body>%0A  <div>%0A    <section%0A      aria-label="Guided presentation rehearsal"%0A      class="panel rehearsal-workspace"%0A    >%0A      <div%0A        class="panel-heading"%0A      >%0A        <div>%0A          <h2>%0A            Practice the five-minute story%0A          </h2>%0A          <span>%0A            Six guided stages, a measured timer and a retained evidence record%0A          </span>%0A        </div>%0A        <svg%0A          class="lucide lucide-clock3"%0A          fill="none"%0A          height="23"%0A          stroke="currentColor"%0A          stroke-linecap="round"%0A          stroke-linejoin="round"%0A          stroke-width="2"%0A          viewBox="0 0 24 24"%0A          width="23"%0A          xmlns="http://www.w3.org/2000/svg"%0A        >%0A          <circle%0A            cx="12"%0A            cy="12"%0A            r="10"%0A          />%0A          <polyline%0A            points="12 6 12 12 16.5 12"%0A          />%0A        </svg>%0A      </div>%0A      <div%0A        class="padded"%0A      >%0A        <div%0A          class="coverage-warning"%0A        >%0A          <svg%0A            class="lucide lucide-shield-check"%0A            fill="none"%0A            height="17"%0A            stroke="currentColor"%0A            stroke-linecap="round"%0A            stroke-linejoin="round"%0A            stroke-width="2"%0A            viewBox="0 0 24 24"%0A            width="17"%0A            xmlns="http://www.w3.org/2000/svg"%0A          >%0A            <path%0A              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"%0A            />%0A            <path%0A              d="m9 12 2 2 4-4"%0A            />%0A          </svg>%0A          <span>%0A            <strong>%0A              Verified isolated rehearsal%0A            </strong>%0A             · %0A            89fae623%0A             · %0A            Dated fixtures; provider requests disabled%0A            . Operational changes stay in this rehearsal database.%0A          </span>%0A        </div>%0A        <div%0A          class="rehearsal-timer"%0A        >%0A          <div>%0A            <span>%0A              SERVER-BASED ELAPSED TIME%0A            </span>%0A            <strong%0A              aria-label="Rehearsal elapsed time"%0A            >%0A              01:23%0A            </strong>%0A          </div>%0A          <div>%0A            <strong>%0A              03:36 to target%0A            </strong>%0A            <p>%0A              Planned budget 05:00 · %0A              Automated check%0A            </p>%0A            <small>%0A              Team Taylor%0A               · %0A              Practice the traceable response%0A            </small>%0A          </div>%0A        </div>%0A        <p%0A          class="source-note"%0A        >%0A          The server stores elapsed wall-clock time and operation evidence. This is not proof of presentation quality, human attendance, Kiro execution or author approval. Navigating between views keeps the timer running.%0A        </p>%0A        <ol%0A          class="rehearsal-stages"%0A        >%0A          <li%0A            class="current"%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              1%0A            </span>%0A            <div>%0A              <strong>%0A                Actor, map and simulation%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                00:40%0A                 planned%0A              </span>%0A              <p>%0A                Explain the simulated actor.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              2%0A            </span>%0A            <div>%0A              <strong>%0A                Sources and measured science%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                01:20%0A                 planned%0A              </span>%0A              <p>%0A                Keep the sources distinct.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              3%0A            </span>%0A            <div>%0A              <strong>%0A                Simulated disruption%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                01:00%0A                 planned%0A              </span>%0A              <p>%0A                Record a simulated event.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              4%0A            </span>%0A            <div>%0A              <strong>%0A                Dispatcher decision%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                01:00%0A                 planned%0A              </span>%0A              <p>%0A                Record a human approval.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              5%0A            </span>%0A            <div>%0A              <strong>%0A                Parked driver workflow%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                00:40%0A                 planned%0A              </span>%0A              <p>%0A                Acknowledge and report while parked.%0A              </p>%0A            </div>%0A          </li>%0A          <li%0A            class=""%0A          >%0A            <span%0A              class="rehearsal-stage-number"%0A            >%0A              6%0A            </span>%0A            <div>%0A              <strong>%0A                Honest limitations%0A              </strong>%0A              <span%0A                class="source-stamp"%0A              >%0A                00:20%0A                 planned%0A              </span>%0A              <p>%0A                Explain what remains unverified.%0A              </p>%0A            </div>%0A          </li>%0A        </ol>%0A        <div%0A          class="rehearsal-checkpoint"%0A        >%0A          <h3>%0A            Now: %0A            Actor, map and simulation%0A          </h3>%0A          <p>%0A            Perform the stage in this workspace, then return here to record it. Operational stages require matching actions in this run's audit history; a note cannot substitute for those actions.%0A          </p>%0A          <label%0A            class="field"%0A          >%0A            Current stage notes%0A            <textarea%0A              maxlength="2000"%0A              placeholder="What was covered, or why this stage was skipped"%0A              rows="2"%0A            />%0A          </label>%0A          <div%0A            class="planning-actions"%0A          >%0A            <button%0A              disabled=""%0A            >%0A              <svg%0A                class="lucide lucide-check"%0A                fill="none"%0A                height="15"%0A                stroke="currentColor"%0A                stroke-linecap="round"%0A                stroke-linejoin="round"%0A                stroke-width="2"%0A                viewBox="0 0 24 24"%0A                width="15"%0A                xmlns="http://www.w3.org/2000/svg"%0A              >%0A                <path%0A                  d="M20 6 9 17l-5-5"%0A                />%0A              </svg>%0A              Record stage covered%0A            </button>%0A            <button%0A              class="secondary"%0A              disabled=""%0A            >%0A              Record stage skipped%0A            </button>%0A          </div>%0A        </div>%0A        <div%0A          class="rehearsal-finish"%0A        >%0A          <label%0A            class="field"%0A          >%0A            Rehearsal closing notes%0A            <textarea%0A              maxlength="2000"%0A              placeholder="What to improve before the team presents"%0A              rows="2"%0A            >%0A              Closing note for the previous run version%0A            </textarea>%0A          </label>%0A          <div%0A            class="planning-actions"%0A          >%0A            <button%0A              disabled=""%0A            >%0A              Finish and save rehearsal%0A            </button>%0A            <button%0A              class="secondary"%0A            >%0A              Abort and save record%0A            </button>%0A          </div>%0A        </div>%0A        <p%0A          class="source-note"%0A        >%0A          State path: %0A          data/rehearsals/89fae623-1399-4b59-936f-7736b115f024.sqlite%0A          . A completed record is retained as a snapshot; later scenario resets or refreshed reports do not rewrite its exported evidence.%0A        </p>%0A      </div>%0A    </section>%0A  </div>%0A</body>%0A ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27%0A ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33%0A ❯ src/RehearsalWorkspace.test.tsx:116:23%0A%0A

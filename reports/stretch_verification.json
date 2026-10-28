@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-28T19:17:23.502322+00:00",
+  "checked_at": "2026-10-28T19:27:52.079846+00:00",
   "scope": "October 28 road-intelligence and local recovery increment",
   "local_verification_artifact": "reports/session_verification.json",
   "pytest_passed": 563,
@@ -282,7 +282,7 @@
     },
     {
       "path": "frontend/src/RehearsalWorkspace.test.tsx",
-      "sha256": "82501a54929d5be4cc14fb55682e911f4ca78e087ffcbff055a875349c16cf04"
+      "sha256": "17c7814ba09e6996f3a690d7fd902d800c4b727fc6ef2a8ee24a6edd0688aa63"
     },
     {
       "path": "frontend/src/RehearsalWorkspace.tsx",
@@ -409,7 +409,7 @@
       "sha256": "d009d6da2681e9c6932a1c690eb821441895a0df167186f75ec9a7b85c030886"
     }
   ],
-  "application_code_sha256": "69bd8fc8f2081a57055e10b6e021f99afa46cf43f0ca6a7c71424eef0fb05ebe",
+  "application_code_sha256": "6310f58e37bd7b554fd4ba2b706e5907f26bb62e82a586c33d6b0e1970b8cf15",
   "fresh_dependency_install_repeated": false,
   "dependencies_changed": false,
   "clean_install_scope": "Earlier core install is separately dated; updated package verification reuses its environment.",

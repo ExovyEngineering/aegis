@@ -1,0 +1,14 @@
+
+> aegis-command@0.1.0 test
+> vitest run RehearsalWorkspace.test.tsx
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 851ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  14:25:55
+   Duration  3.29s (transform 150ms, setup 275ms, collect 300ms, tests 851ms, environment 962ms, prepare 248ms)
+

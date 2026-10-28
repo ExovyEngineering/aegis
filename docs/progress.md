@@ -24,6 +24,11 @@ Session date: October 28, 2026, America/Chicago. This document distinguishes imp
   by Git and excluded from reviewer packages. This is not cloud deployment.
 - Hardened existing route review against malformed/nonfinite point/line
   geometry and missing, naive or implausibly future retrieval timestamps.
+- Retained an actual failed duplicate push CI run and fixed rehearsal test
+  initialization timing. Tests now wait for React effects before entering notes
+  and assert the intended request, preserving the original failure/approval
+  checks. Product behavior and test timeouts were not relaxed. See
+  `reports/ci_followup.json` and its focused/full follow-up evidence.
 - Current full local results: **563 pytest passed, 95 Vitest passed, production
   build passed**. Further focused checks and any later full run are recorded in
   `reports/session_verification.json`. The new actual-Chrome suite passed

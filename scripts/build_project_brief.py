@@ -57,6 +57,9 @@ def sections(root):
     if roads:
         tested=roads.get('checks',[])
         testlines.append(f"Road intelligence actual-Chrome QA: {sum(bool(c.get('passed')) for c in tested)} / {len(tested)} checks passed, checked {roads.get('checked_at','not recorded')}. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.")
+    followup=load(root,'reports/ci_followup.json',{})
+    if followup:
+        testlines.append('A duplicate push CI run failed a rehearsal frontend test while its PR run passed. The test acted before initial React effects settled; synchronization was corrected without relaxing the original assertions or changing product behavior. The failed log and focused follow-up outcomes are retained in reports/ci_followup.json and reports/checks/. Later full checks and remote runs have their own timestamps; a historical pass never substitutes for them.')
     clean=load(root,'reports/clean_install.json',{})
     if clean:
         testlines.append(f"Earlier separate Python dependency installation: passed={clean.get('passed','not recorded')}; pinned packages verified={clean.get('pinned_dependencies_verified','not recorded')}; real HTTP checks={clean.get('http_checks_passed','not recorded')}; operator DB modified={clean.get('operator_database_modified','not recorded')}. This predates the road/recovery increment; consult its tested source checksum and timestamp. Fresh Node installation tested={clean.get('fresh_node_install_tested','not recorded')}. Evidence: reports/clean_install.json.")
