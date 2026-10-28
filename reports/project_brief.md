@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 27, 2026 at 04:08 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 28, 2026 at 01:29 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -69,6 +69,12 @@ Report, reproducible package and presentation | draft artifacts implemented; aut
 Local reviewer bundle, measured results, demonstration scripts and this regenerated planning brief. Not submitted.
 
 Evidence: reports/aegis_report.md
+
+Isolated guided rehearsal and saved evidence | implemented; genuine team presentation remains pending
+
+Fresh verified database, six planned stages, server-clock timer, version guards and immutable evidence exports. Offline mode uses dated fixtures and labeled route estimates. Automated checks do not establish a human rehearsal, Kiro execution or author approval.
+
+Evidence: docs/rehearsal_guide.md
 
 # P1 | Operational differentiators
 
@@ -148,25 +154,29 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-27T21:07:26.431211+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-28T06:25:49.963769+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 370; 29.772 seconds. Log: reports/checks/20261027T210636524640Z/pytest.txt. Checked: 2026-10-27T21:06:36.524887+00:00.
+pytest: PASS; exit 0; tests passed 443; 29.723 seconds. Log: reports/checks/20261028T062502209577Z/pytest.txt. Checked: 2026-10-28T06:25:02.209817+00:00.
 
-vitest: PASS; exit 0; tests passed 60; 8.872 seconds. Log: reports/checks/20261027T210636524640Z/vitest.txt. Checked: 2026-10-27T21:07:06.322094+00:00.
+vitest: PASS; exit 0; tests passed 77; 7.771 seconds. Log: reports/checks/20261028T062502209577Z/vitest.txt. Checked: 2026-10-28T06:25:31.952942+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 11.2 seconds. Log: reports/checks/20261027T210636524640Z/frontend_build.txt. Checked: 2026-10-27T21:07:15.213257+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 10.213 seconds. Log: reports/checks/20261028T062502209577Z/frontend_build.txt. Checked: 2026-10-28T06:25:39.736800+00:00.
 
-USDA county context, source provenance and readiness browser QA: 58 / 58 recorded checks passed. Timestamp: 2026-10-27T21:07:50.127Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
+USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
-Map, scenario, simulator and source-control browser QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-27T07:58:39.813Z. Evidence: reports/browser_qa/controls/results.json. This is a separate run from local unit/build checks.
+Map, scenario, simulator and source-control browser QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-28T06:19:25.790Z. Evidence: reports/browser_qa/controls/results.json. This is a separate run from local unit/build checks.
 
-Visual Drive and parked-use actual-Chrome QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-27T07:58:36.241Z. Evidence: reports/browser_qa/drive/results.json. This is a separate run from local unit/build checks.
+Visual Drive and parked-use actual-Chrome QA: 65 / 65 recorded checks passed. Timestamp: 2026-10-28T06:28:06.730Z. Evidence: reports/browser_qa/drive/results.json. This is a separate run from local unit/build checks.
 
-Earlier feature-depth actual-Chrome QA: 36 / 36 recorded checks passed. Timestamp: 2026-10-27T07:11:33.928Z. Evidence: reports/browser_qa/depth/results.json. This is a separate run from local unit/build checks.
+Earlier feature-depth actual-Chrome QA: 36 / 36 recorded checks passed. Timestamp: 2026-10-28T06:19:01.253Z. Evidence: reports/browser_qa/depth/results.json. This is a separate run from local unit/build checks.
 
-Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. Timestamp: 2026-10-27T07:11:39.245Z. Evidence: reports/browser_qa/operations/results.json. This is a separate run from local unit/build checks.
+Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. Timestamp: 2026-10-28T06:27:54.619Z. Evidence: reports/browser_qa/operations/results.json. This is a separate run from local unit/build checks.
 
-Loopback HTTP smoke artifact records 26 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
+Guided rehearsal actual-Chrome QA: 76 / 76 checks passed, checked 2026-10-28T06:07:06.190Z. Record kind: automated_check; measured duration 5.37 seconds. This automated workflow does not establish a genuine five-minute team presentation. Evidence: reports/browser_qa/rehearsal/results.json.
+
+Separate Python dependency installation: passed=True; pinned packages verified=51; real HTTP checks=31; operator DB modified=False. Fresh Node installation tested=False. Evidence: reports/clean_install.json.
+
+Loopback HTTP smoke artifact records 28 checks against http://127.0.0.1:8000. It does not certify current public-source freshness.
 
 Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.
 
@@ -174,7 +184,7 @@ Four upstream Python deprecation warnings have appeared in previous runs; consul
 
 The first GitHub Actions run succeeded after repository creation. New commits need their own CI result; a local pass alone does not prove a remote run passed.
 
-Executed source refresh actions: 5 new provider responses, 5 usable payloads, 0 failed/stale actions; finished 2026-10-27T07:20:38.737126+00:00. This is distinct from registry catalog/discovery probes. Evidence: reports/source_actions.json.
+Executed source refresh actions: 3 new provider responses, 4 usable payloads, 1 failed/stale actions; finished 2026-10-28T06:10:15.479306+00:00. This is distinct from registry catalog/discovery probes. Evidence: reports/source_actions.json.
 
 # Evidence | Coverage and scientific limits
 
@@ -217,6 +227,24 @@ USDA missing observations by field: {'LACCESS_POP19': 0, 'PCT_LACCESS_POP19': 0,
 Dispatch readiness checks current approved assignments in one consistent read-only database snapshot. Thirteen constraint diagnostics and three workflow checks expose resource limits, assignment acknowledgment, exact-version instruction acknowledgment and scenario-B verification. A passing checklist does not dispatch, consume stock, create a hold, certify food safety or clear a commercial-truck route.
 
 Use Sources to compare counties, inspect definitions and download the checked county CSV. Use Dispatcher desk to select a trip, filter readiness status and inspect the evidence for each check. Genuine Kiro work and final author review remain separate gates.
+
+# Rehearsal | Practice without altering operator state
+
+Start scripts/start_rehearsal.py --port 8001 in a separate terminal. It reserves a new UUID database and launches a separate loopback server. The operator app remains on port 8000. Partial/mismatched runtime settings are rejected before database initialization.
+
+The rehearsal URL opens the Project brief panel with six stages totaling 300 planned seconds. Every view displays the verified isolated-runtime banner. A URL parameter alone never creates isolation.
+
+Start with a self-declared presenter, purpose and record type. Elapsed time comes from the backend clock. Navigation and reload do not stop the timer; the UI does not infer attendance or presentation quality.
+
+Record stage coverage or an explicit skip reason. Operational stages require recorded events, human approval and a coherent parked acknowledgment/report sequence during that run. Stale versions and unrelated or invalidated trip evidence are rejected.
+
+Completion or abort retains an immutable snapshot of timing, milestones, network/audit state and evidence-file hashes. Download the JSON or reopen history; subsequent resets and regenerated reports cannot rewrite that export.
+
+Offline rehearsal uses dated source fixtures, disables provider refresh and returns labeled OSRM estimates without mutable HTTP cache access. Map tiles and deliberately opened external source links can still need internet.
+
+The accelerated demo script now measures original/configured operator SQLite and sidecar hashes before and after. A modified or unreadable protected file cannot become an invented preservation success. This utility is separate from the guided browser timer.
+
+Automated checks and self-reported practice do not complete genuine Kiro execution, author/rubric review or a live timed team presentation. The reserved Kiro task remains untouched.
 
 # Walkthrough | What to show behind the buttons
 

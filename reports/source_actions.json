@@ -1,10 +1,10 @@
 {
-  "started_at": "2026-10-27T07:20:23.149256+00:00",
-  "base_url": "http://127.0.0.1:8001",
+  "started_at": "2026-10-28T06:09:54.418985+00:00",
+  "base_url": "http://127.0.0.1:8000",
   "actions": [
     {
       "source": "openmeteo",
-      "checked_at": "2026-10-27T07:20:23.461858+00:00",
+      "checked_at": "2026-10-28T06:09:54.805016+00:00",
       "http_status": 200,
       "upstream_http_status": null,
       "fresh_success": true,
@@ -27,7 +27,7 @@
           "hourly"
         ]
       },
-      "retrieved_at": "2026-10-27T07:20:24.054695+00:00",
+      "retrieved_at": "2026-10-28T06:09:56.032473+00:00",
       "source_url": "https://api.open-meteo.com/v1/forecast?latitude=38.9517&longitude=-92.3341&hourly=temperature_2m,precipitation,wind_speed_10m&forecast_days=3&timezone=America%2FChicago",
       "cache": false,
       "stale": false,
@@ -40,16 +40,16 @@
       "forecast_coverage": {
         "timezone": "America/Chicago",
         "hourly_steps": 72,
-        "first_timestep": "2026-10-27T00:00",
-        "last_timestep": "2026-10-29T23:00"
+        "first_timestep": "2026-10-28T00:00",
+        "last_timestep": "2026-10-30T23:00"
       },
       "result": "new provider response verified",
-      "duration_seconds": 0.608,
-      "finished_at": "2026-10-27T07:20:24.069671+00:00"
+      "duration_seconds": 1.238,
+      "finished_at": "2026-10-28T06:09:56.042914+00:00"
     },
     {
       "source": "nws_alerts",
-      "checked_at": "2026-10-27T07:20:24.424136+00:00",
+      "checked_at": "2026-10-28T06:09:56.394468+00:00",
       "http_status": 200,
       "upstream_http_status": null,
       "fresh_success": true,
@@ -68,7 +68,7 @@
           "updated"
         ]
       },
-      "retrieved_at": "2026-10-27T07:20:24.993019+00:00",
+      "retrieved_at": "2026-10-28T06:09:57.043824+00:00",
       "source_url": "https://api.weather.gov/alerts/active?area=MO",
       "cache": false,
       "stale": false,
@@ -80,16 +80,16 @@
       "freshness_reasons": [],
       "alert_features": 0,
       "result": "new provider response verified",
-      "duration_seconds": 0.577,
-      "finished_at": "2026-10-27T07:20:25.000737+00:00"
+      "duration_seconds": 0.654,
+      "finished_at": "2026-10-28T06:09:57.048186+00:00"
     },
     {
       "source": "ncei_historical",
-      "checked_at": "2026-10-27T07:20:25.351743+00:00",
+      "checked_at": "2026-10-28T06:09:57.398991+00:00",
       "http_status": 200,
       "upstream_http_status": null,
-      "fresh_success": true,
-      "new_public_request_success": true,
+      "fresh_success": false,
+      "new_public_request_success": false,
       "fresh_payload_usable": true,
       "content_type": "application/json",
       "response_status": null,
@@ -111,7 +111,7 @@
       },
       "retrieved_at": "2026-10-27T07:20:25.891853+00:00",
       "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2024-07-01&endDate=2024-07-07&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true",
-      "cache": false,
+      "cache": true,
       "stale": false,
       "refresh_error": null,
       "error": null,
@@ -128,18 +128,18 @@
         "last_reporting_date": "2024-07-07",
         "scope": "The existing refresh adapter requests one station for July 1\u20137, 2024. This does not complete the broader NOAA stream or establish a weather-to-FSIS join."
       },
-      "result": "new provider response verified",
-      "duration_seconds": 0.552,
-      "finished_at": "2026-10-27T07:20:25.903251+00:00"
+      "result": "usable TTL cache; no new provider success claimed",
+      "duration_seconds": 0.015,
+      "finished_at": "2026-10-28T06:09:57.414115+00:00"
     },
     {
       "source": "fsis_recalls",
-      "checked_at": "2026-10-27T07:20:26.254891+00:00",
+      "checked_at": "2026-10-28T06:09:57.765280+00:00",
       "http_status": 200,
       "upstream_http_status": null,
-      "fresh_success": true,
-      "new_public_request_success": true,
-      "fresh_payload_usable": true,
+      "fresh_success": false,
+      "new_public_request_success": false,
+      "fresh_payload_usable": false,
       "content_type": "application/json",
       "response_status": null,
       "payload_present": true,
@@ -181,21 +181,24 @@
       },
       "retrieved_at": "2026-10-27T07:20:27.326810+00:00",
       "source_url": "https://www.fsis.usda.gov/fsis/api/recall/v/1",
-      "cache": false,
-      "stale": false,
-      "refresh_error": null,
+      "cache": true,
+      "stale": true,
+      "refresh_error": "ConnectError: [Errno 11002] getaddrinfo failed",
       "error": null,
       "provenance": "official recalls; traceability matching not established",
       "coverage_warning": null,
       "schema_valid": true,
-      "freshness_reasons": [],
-      "result": "new provider response verified",
-      "duration_seconds": 1.425,
-      "finished_at": "2026-10-27T07:20:27.679852+00:00"
+      "freshness_reasons": [
+        "Top-level stale cached fallback",
+        "ConnectError: [Errno 11002] getaddrinfo failed"
+      ],
+      "result": "failed or stale fallback; inspect exact reasons",
+      "duration_seconds": 1.413,
+      "finished_at": "2026-10-28T06:09:59.178337+00:00"
     },
     {
       "source": "modot",
-      "checked_at": "2026-10-27T07:20:28.031373+00:00",
+      "checked_at": "2026-10-28T06:09:59.530060+00:00",
       "http_status": 200,
       "upstream_http_status": null,
       "fresh_success": true,
@@ -248,7 +251,7 @@
           "supportsTimeRelation"
         ]
       },
-      "retrieved_at": "2026-10-27T07:20:28.501132+00:00",
+      "retrieved_at": "2026-10-28T06:10:00.003724+00:00",
       "source_url": "https://mapping.modot.mo.gov/arcgis/rest/services/TravelerInformation/TravelerInformationData/MapServer?f=pjson",
       "cache": false,
       "stale": false,
@@ -267,18 +270,18 @@
           {
             "layer_id": 0,
             "layer_name": "Flood",
-            "retrieved_at": "2026-10-27T07:20:28.866051+00:00",
+            "retrieved_at": "2026-10-28T06:10:01.770872+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 2,
+            "feature_count": 0,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 1,
             "layer_name": "Incident Planned Point",
-            "retrieved_at": "2026-10-27T07:20:29.243859+00:00",
+            "retrieved_at": "2026-10-28T06:10:03.442172+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
@@ -289,29 +292,29 @@
           {
             "layer_id": 21,
             "layer_name": "Incident Closed Point",
-            "retrieved_at": "2026-10-27T07:20:29.640418+00:00",
+            "retrieved_at": "2026-10-28T06:10:05.227755+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 12,
+            "feature_count": 11,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 22,
             "layer_name": "Work Zone Closed Point",
-            "retrieved_at": "2026-10-27T07:20:30.319836+00:00",
+            "retrieved_at": "2026-10-28T06:10:06.115759+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 75,
+            "feature_count": 73,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 23,
             "layer_name": "Winter Closed Point",
-            "retrieved_at": "2026-10-27T07:20:30.727303+00:00",
+            "retrieved_at": "2026-10-28T06:10:07.152763+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
@@ -322,18 +325,18 @@
           {
             "layer_id": 24,
             "layer_name": "Incident High Point",
-            "retrieved_at": "2026-10-27T07:20:31.087816+00:00",
+            "retrieved_at": "2026-10-28T06:10:07.805514+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 6,
+            "feature_count": 7,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 25,
             "layer_name": "Incident Medium Point",
-            "retrieved_at": "2026-10-27T07:20:31.475990+00:00",
+            "retrieved_at": "2026-10-28T06:10:08.247979+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
@@ -344,40 +347,40 @@
           {
             "layer_id": 26,
             "layer_name": "Work Zone High Point",
-            "retrieved_at": "2026-10-27T07:20:32.440164+00:00",
+            "retrieved_at": "2026-10-28T06:10:09.234475+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 183,
+            "feature_count": 191,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 27,
             "layer_name": "Work Zone Medium Point",
-            "retrieved_at": "2026-10-27T07:20:33.281340+00:00",
+            "retrieved_at": "2026-10-28T06:10:09.959039+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 127,
+            "feature_count": 126,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 10,
             "layer_name": "Flood Line",
-            "retrieved_at": "2026-10-27T07:20:33.692742+00:00",
+            "retrieved_at": "2026-10-28T06:10:10.374590+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 2,
+            "feature_count": 0,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 11,
             "layer_name": "Incident Planned Line",
-            "retrieved_at": "2026-10-27T07:20:34.063100+00:00",
+            "retrieved_at": "2026-10-28T06:10:10.781343+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
@@ -388,29 +391,29 @@
           {
             "layer_id": 12,
             "layer_name": "Incident Closed Line",
-            "retrieved_at": "2026-10-27T07:20:34.467423+00:00",
+            "retrieved_at": "2026-10-28T06:10:11.187835+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 12,
+            "feature_count": 11,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 29,
             "layer_name": "Work Zone Closed Line",
-            "retrieved_at": "2026-10-27T07:20:35.158658+00:00",
+            "retrieved_at": "2026-10-28T06:10:11.877663+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 75,
+            "feature_count": 73,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 30,
             "layer_name": "Winter Closed Line",
-            "retrieved_at": "2026-10-27T07:20:35.507149+00:00",
+            "retrieved_at": "2026-10-28T06:10:12.237194+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
@@ -421,18 +424,18 @@
           {
             "layer_id": 31,
             "layer_name": "Incident High Line",
-            "retrieved_at": "2026-10-27T07:20:35.868532+00:00",
+            "retrieved_at": "2026-10-28T06:10:12.629035+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 6,
+            "feature_count": 7,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 32,
             "layer_name": "Incident Medium Line",
-            "retrieved_at": "2026-10-27T07:20:36.245052+00:00",
+            "retrieved_at": "2026-10-28T06:10:12.998779+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
@@ -443,34 +446,34 @@
           {
             "layer_id": 33,
             "layer_name": "Work Zone High Line",
-            "retrieved_at": "2026-10-27T07:20:37.319769+00:00",
+            "retrieved_at": "2026-10-28T06:10:14.116135+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 183,
+            "feature_count": 191,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           },
           {
             "layer_id": 34,
             "layer_name": "Work Zone Medium Line",
-            "retrieved_at": "2026-10-27T07:20:38.186484+00:00",
+            "retrieved_at": "2026-10-28T06:10:14.920367+00:00",
             "cache": false,
             "stale": false,
             "refresh_error": null,
-            "feature_count": 127,
+            "feature_count": 126,
             "exceeded_transfer_limit": false,
             "schema_valid": true
           }
         ],
         "stale_layer_count": 0,
         "cache_layer_count": 0,
-        "feature_geometry_count": 824,
+        "feature_geometry_count": 830,
         "note": "Point/line layers can duplicate a single event. Geometry count is not a count of unique disruptions."
       },
       "result": "new provider response verified",
-      "duration_seconds": 10.355,
-      "finished_at": "2026-10-27T07:20:38.385611+00:00"
+      "duration_seconds": 15.598,
+      "finished_at": "2026-10-28T06:10:15.127595+00:00"
     }
   ],
   "method": "Sequential POSTs to existing local refresh actions. HTTP status is the local endpoint status; upstream HTTP status is not supplied by adapter payloads.",
@@ -478,9 +481,9 @@
   "usable_response_definition": "Expected payload/schema and retrieval time with no failed/stale/error state. A fresh TTL cache may be usable but is not counted as a new provider request success.",
   "registry_or_inventory_modified": false,
   "logistics_state_mutations_performed": false,
-  "finished_at": "2026-10-27T07:20:38.737126+00:00",
-  "fresh_success_count": 5,
-  "usable_response_count": 5,
-  "failed_or_stale_count": 0,
+  "finished_at": "2026-10-28T06:10:15.479306+00:00",
+  "fresh_success_count": 3,
+  "usable_response_count": 4,
+  "failed_or_stale_count": 1,
   "all_actions_returned_http_success": true
 }

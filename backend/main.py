@@ -14,6 +14,8 @@ from backend.project_status import create_project_router
 from backend.drive import ensure_drive_schema, require_parked, create_drive_router
 from backend.readiness import create_readiness_router
 from backend.food_context import create_food_context_router
+from backend.runtime import runtime_context, require_valid_runtime
+from backend.rehearsal import create_rehearsal_router
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -24,6 +26,7 @@ app.add_middleware(CORSMiddleware,allow_origins=['http://localhost:5173','http:/
 DB=Path(os.getenv('AEGIS_DB_PATH') or ROOT/'data/aegis.sqlite')
 @contextmanager
 def db():
+    require_valid_runtime(DB,root=ROOT)
     DB.parent.mkdir(exist_ok=True,parents=True)
     conn=sqlite3.connect(DB,timeout=20)
     try:
@@ -49,7 +52,7 @@ def health(): return {'status':'ok','mode':'local simulated research demo'}
 @app.get('/api/network')
 def network():
     with db() as c:
-        n,rev=load(c); return dict(n,revision=rev)
+        n,rev=load(c); return dict(n,revision=rev,runtime=runtime_context(DB,root=ROOT))
 @app.get('/api/coverage')
 def coverage(): return read_report('api_status.json',[])
 @app.get('/api/model')
@@ -60,7 +63,8 @@ def inventory(): return read_report('../data/manifests/inventory.json',{'status'
 def evidence(source:str,limit:Annotated[int|None,Query(ge=1,le=100)]=None):
     if source not in {'fsis_recalls','nws_alerts','openmeteo','modot','ncei_historical','openmeteo_archive','osrm_route'}: raise HTTPException(404,'Unknown source')
     if limit is not None and source!='fsis_recalls':raise HTTPException(422,'Record limits are supported only for FSIS recall evidence')
-    p=ROOT/f'data/cache/probe_{source}.json'
+    runtime=require_valid_runtime(DB,root=ROOT)
+    p=ROOT/f'data/fixtures/{source}.json' if runtime['isolated'] and runtime['offline'] else ROOT/f'data/cache/probe_{source}.json'
     if not p.exists():p=ROOT/f'data/fixtures/{source}.json'
     if not p.exists(): return {'status':'unavailable','source':source,'coverage_warning':'No successful dated response captured'}
     result=read_json(p)
@@ -177,10 +181,11 @@ class Route(BaseModel):
     alternatives:bool=False
 @app.post('/api/route')
 def route(request:Route):
+    runtime=require_valid_runtime(DB,root=ROOT)
     try:
         result=OSRMRoutingAdapter().route(request.coordinates,request.alternatives)
         from backend.route_review import review_routes
-        p=ROOT/'data/cache/probe_modot.json'
+        p=ROOT/('data/fixtures/modot.json' if runtime['isolated'] and runtime['offline'] else 'data/cache/probe_modot.json')
         if not p.exists():p=ROOT/'data/fixtures/modot.json'
         modot=read_json(p) if p.exists() else None
         result['road_review']=review_routes(result,modot); return result
@@ -215,6 +220,7 @@ class RouteLabRequest(BaseModel):
         return self
 @app.post('/api/route-lab')
 def route_lab(request:RouteLabRequest):
+    require_valid_runtime(DB,root=ROOT)
     from backend.route_lab import plan_routes
     try:
         params=request.model_dump(exclude={'custom_operation'})
@@ -233,6 +239,9 @@ def shipment_exposure(sid:str):
     return dict(result,shipment_id=sid,network_revision=revision,ambient_provenance='30°C simulated planning assumption; not a current weather observation',advisories=[e for e in n['events'] if e['shipment_id']==sid])
 @app.post('/api/refresh/{source}')
 def refresh(source:str,summary:bool=False):
+    runtime=require_valid_runtime(DB,root=ROOT)
+    if runtime['isolated'] and runtime['offline']:
+        raise HTTPException(403,'Public-source refresh is disabled in this offline rehearsal. Dated fixtures remain unchanged; use the operator app for deliberate live source checks.')
     adapters={'openmeteo':OpenMeteoForecastAdapter,'nws_alerts':NWSAlertsAdapter,'ncei_historical':NCEIHistoricalAdapter,'fsis_recalls':FSISRecallAdapter,'modot':MoDOTAdapter}
     if source not in adapters:raise HTTPException(404,'Unsupported source')
     try:
@@ -259,6 +268,7 @@ app.include_router(create_project_router(ROOT))
 app.include_router(create_drive_router(db,load,record))
 app.include_router(create_readiness_router(db,load))
 app.include_router(create_food_context_router(ROOT))
+app.include_router(create_rehearsal_router(db,load,record,lambda:DB,root=lambda:ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

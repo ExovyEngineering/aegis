@@ -4,6 +4,24 @@ Update this file when behavior or evidence changes. The generated presentation
 brief is `reports/aegis_project_brief.pdf`; its editable companion is
 `reports/project_brief.md`. Recorded tests are separate from implementation claims.
 
+## October 28, 2026 - core handoff and isolated rehearsal
+
+- Added verified separate rehearsal processes, six guided stages, server timing,
+  versioned milestone records and immutable evidence exports. Offline rehearsal
+  preserves fixtures/cache boundaries and normal approval/parked-use safeguards.
+- Repaired the manual demo sequence and measured operator-state preservation in
+  the accelerated utility, including inherited-profile recovery and failures.
+- Fixed stale rehearsal drafts, route-context race handling, unsupported-import
+  wording and mobile readiness layout. Full checks retain failed and successful
+  runs separately; dated browser evidence covers the shared operational workflow.
+- Added the core handoff guide and a clean Python dependency installation check.
+  Five live FSIS/ERS website probes failed DNS; imported/datetime-labeled evidence
+  remains available. Model metrics and original observations remain unchanged.
+- Final local release checks: 443 pytest passed/two Windows symlink skips,
+  77 Vitest passed, production build passed, 353 current browser assertions,
+  28 operator HTTP checks and 31 fresh-environment HTTP checks. The latter also
+  completed the guided automated rehearsal with immutable export.
+
 ## October 27, 2026 - source identity, county context and readiness
 
 - Replaced filename/order-based evidence imports with recursive, schema-specific

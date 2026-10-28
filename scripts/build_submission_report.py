@@ -11,7 +11,7 @@ from datetime import datetime,timezone
 from backend.paths import ROOT,write_json
 
 REQUIRED=('api_status.json','model_evaluation.json','demo_results.json')
-OPTIONAL=('model_timing.json','noaa_coverage.json','route_lab_osrm.json','validation.json','evidence_ingestion.json','operations_demo.json','usda_food_environment.json','ingestion_verification.json')
+OPTIONAL=('model_timing.json','noaa_coverage.json','route_lab_osrm.json','validation.json','evidence_ingestion.json','operations_demo.json','usda_food_environment.json','ingestion_verification.json','clean_install.json')
 NAMES={'A':'Baseline distribution','B':'Targeted verification','C':'Precautionary hold pending review','D':'Alternative eligible supply'}
 
 def load_evidence(reports_dir,inventory_path):

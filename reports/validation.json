@@ -1,19 +1,19 @@
 {
-  "session_date": "2026-10-27",
-  "pytest_passed": 370,
+  "session_date": "2026-10-28",
+  "pytest_passed": 443,
   "pytest_warnings": 5,
-  "vitest_passed": 60,
+  "vitest_passed": 77,
   "frontend_production_build": "passed",
   "compileall": "passed",
-  "real_http_checks_passed": 26,
+  "real_http_checks_passed": 28,
   "isolated_demo_workflow": "passed",
   "raw_files_audited": 42,
   "raw_read_errors": 0,
   "exact_duplicate_hashes": 0,
   "fsis_declared_count_comparisons": 17,
-  "public_registry_probes_successful": 18,
-  "browser_visual_qa": "58 new USDA/provenance/readiness checks passed; earlier 65 Drive, 65 controls, 36 depth and 50 operations runs retain separate timestamps",
-  "genuine_kiro_workflow": "IDE1.4.26installed/signature/versionverified; user signin/authenticspecpending",
+  "public_registry_probes_successful": 13,
+  "browser_visual_qa": "Dated actual-Chrome core and guided rehearsal checks; see each artifact for counts, failures and source freshness",
+  "genuine_kiro_workflow": "Installed IDE; authentic signed-in spec task remains pending",
   "browser_checks_passed": 26,
   "noaa_station_days": 2730,
   "noaa_missing_precipitation_values": 9,
@@ -34,18 +34,47 @@
   "public_sources_retested_this_feature_session": true,
   "browser_drive_checks_passed": 65,
   "browser_controls_checks_passed": 65,
-  "source_refresh_new_provider_successes": 5,
-  "source_refresh_failed_or_stale": 0,
+  "source_refresh_new_provider_successes": 3,
+  "source_refresh_failed_or_stale": 1,
   "driver_parked_gate_verified": true,
   "bounded_evidence_transport_verified": true,
   "driver_action_context_verified": true,
-  "browser_readiness_checks_passed": 58,
+  "browser_readiness_checks_passed": 61,
   "browser_readiness_artifact": "reports/browser_qa/readiness/results.json",
-  "source_refresh_actions_repeated_this_session": false,
+  "source_refresh_actions_repeated_this_session": true,
   "source_refresh_evidence_artifact": "reports/source_actions.json",
   "ingestion_frames_preserved": 8,
   "usda_counties": 115,
   "usda_variables": 10,
   "dispatch_readiness_verified": true,
-  "operator_state_preservation_artifact": "reports/operational_state_preservation.json"
+  "operator_state_preservation_artifact": "reports/operational_state_preservation.json",
+  "pytest_skipped": 2,
+  "public_registry_probe_failures": [
+    {
+      "id": "fsis_recalls",
+      "failure": "ConnectError: [Errno 11002] getaddrinfo failed"
+    },
+    {
+      "id": "fsis_sampling",
+      "failure": "ConnectError: [Errno 11002] getaddrinfo failed"
+    },
+    {
+      "id": "fsis_directory",
+      "failure": "ConnectError: [Errno 11002] getaddrinfo failed"
+    },
+    {
+      "id": "food_access",
+      "failure": "ConnectError: [Errno 11002] getaddrinfo failed"
+    },
+    {
+      "id": "food_environment",
+      "failure": "ConnectError: [Errno 11002] getaddrinfo failed"
+    }
+  ],
+  "source_refresh_usable_payloads": 4,
+  "guided_rehearsal_verified": true,
+  "human_presentation_verified": false,
+  "browser_rehearsal_checks_passed": 76,
+  "clean_python_install_verified": true,
+  "clean_install_artifact": "reports/clean_install.json"
 }

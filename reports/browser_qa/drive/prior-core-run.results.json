@@ -1,0 +1,519 @@
+{
+  "checked_at": "2026-10-28T06:18:47.484Z",
+  "base_url": "http://127.0.0.1:8001",
+  "isolated_database": true,
+  "checks": [
+    {
+      "name": "api_/api/demo/reset_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "isolated_empty_assignments",
+      "passed": true,
+      "details": "No unapproved trip may populate Drive"
+    },
+    {
+      "name": "api_/api/drive/T01/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T02/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T03/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T04/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T05/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T06/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T07/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/drive/T08/focus_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "dedicated_view_avoids_bulk_evidence_requests",
+      "passed": true,
+      "details": "[\"/api/network\",\"/api/drive/T01\"]"
+    },
+    {
+      "name": "dedicated_view_hides_command_navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "empty_view_does_not_invent_trip",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "default_locked_has_no_typing",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "default_locked_Trip route",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "default_locked_Dispatch instructions",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "default_locked_Report an issue",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "api_/api/proposals/B_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/proposals/3c9045ef-6402-4440-9206-45f57dddfba7/approve_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "approved_plan_has_multi_trip_truck",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "api_/api/driver/SH11/acknowledge_423",
+      "passed": true,
+      "details": "HTTP 423"
+    },
+    {
+      "name": "api_/api/driver/incident_423",
+      "passed": true,
+      "details": "HTTP 423"
+    },
+    {
+      "name": "api_/api/driver/SH11/instruction-ack_423",
+      "passed": true,
+      "details": "HTTP 423"
+    },
+    {
+      "name": "api_/api/drive/T03/quick-report_423",
+      "passed": true,
+      "details": "HTTP 423"
+    },
+    {
+      "name": "locked_writes_preserve_assignment",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T01/focus",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "park_confirmation_has_finite_expiry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "truck_switch_relocks_controls",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T03/focus",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "nonfirst_trip_updates_destination_and_cargo",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "fuel_matches_deterministic_server_scenario",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "fuel_and_position_provenance_visible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/route",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "trip_route_or_explicit_fallback_rendered",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "route_review_does_not_reassign",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T03/quick-report",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "quick_report_kind_refrigeration",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T03/quick-report",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "quick_report_kind_road_delay",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T03/quick-report",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "quick_report_kind_vehicle_issue",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T03/quick-report",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "quick_report_kind_cargo_issue",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/driver/incident",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "all_five_reports_reach_dispatcher",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "reports_preserve_nonfirst_trip_context",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "mobile_parked_reporting_no_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "api_/api/dispatch/assignments/SH11/instruction_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/dispatch/assignments/SH11/instruction_200",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "api_/api/driver/SH11/instruction-ack_409",
+      "passed": true,
+      "details": "HTTP 409"
+    },
+    {
+      "name": "ui_/api/driver/SH11/instruction-ack",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "ui_/api/driver/SH11/acknowledge",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "assignment_and_exact_instruction_ack_recorded",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ui_/api/drive/T03/focus",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "driving_focus_hides_forms_and_acknowledgments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "driving_focus_locks_visual_actions",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "api_/api/driver/incident_423",
+      "passed": true,
+      "details": "HTTP 423"
+    },
+    {
+      "name": "lock_does_not_create_extra_reports",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "mobile_locked_drive_no_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "mobile_retains_destination_and_sensor_labels",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "desktop_drive_no_overflow",
+      "passed": true,
+      "details": "{\"viewport\":1440,\"document\":1440}"
+    },
+    {
+      "name": "only_one_deliberate_road_request",
+      "passed": true,
+      "details": "1 route requests from UI"
+    },
+    {
+      "name": "operator_network_unchanged_by_driver_actions",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "no_uncaught_javascript",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "name": "no_unexpected_application_http_failure",
+      "passed": true,
+      "details": "[]"
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "tile_failures": [],
+  "screenshots": [
+    "desktop-locked-empty.png",
+    "desktop-approved-parked.png",
+    "parked-route-review.png",
+    "mobile-parked-report.png",
+    "parked-approved-instructions.png",
+    "mobile-locked-trip-and-gauges.png",
+    "desktop-locked-assigned.png"
+  ],
+  "route_requests": 1,
+  "page_api_requests": [
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T01"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T01"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T01/focus"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T01"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T03/focus"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/shipments/SH11/exposure"
+    },
+    {
+      "method": "POST",
+      "path": "/api/route"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T03/quick-report"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T03/quick-report"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T03/quick-report"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T03/quick-report"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/driver/incident"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "POST",
+      "path": "/api/driver/SH11/instruction-ack"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/driver/SH11/acknowledge"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    },
+    {
+      "method": "GET",
+      "path": "/api/network"
+    },
+    {
+      "method": "POST",
+      "path": "/api/drive/T03/focus"
+    },
+    {
+      "method": "GET",
+      "path": "/api/drive/T03"
+    }
+  ],
+  "browser_version": "156.0.8078.48",
+  "initial_page_api_paths": [
+    "/api/network",
+    "/api/drive/T01"
+  ],
+  "target": {
+    "shipment_id": "SH11",
+    "truck_id": "T03",
+    "lot_id": "L11",
+    "destination": "D11",
+    "selected_nonfirst_trip": true
+  },
+  "simulated_vehicle": {
+    "truck_id": "T03",
+    "fuel_percent": 69,
+    "tank_capacity_liters": 180,
+    "scenario_observed_at": "2026-10-26T08:00:00-05:00",
+    "provenance": "DETERMINISTIC SIMULATION: fuel level, tank size and consumption are scenario assumptions. Position is a dispatch-origin reference, not live GPS. These values do not advance as a trip proceeds."
+  },
+  "routing": {
+    "fallback": false,
+    "cache": false,
+    "stale": false,
+    "retrieved_at": "2026-10-28T06:18:49.717373+00:00",
+    "provenance": "OSRM driving route; truck restrictions and MoDOT closures not incorporated",
+    "road_review_retrieved_at": "2026-10-28T06:10:00.003724+00:00",
+    "distance_m": 10554.6,
+    "duration_seconds": 876.8
+  },
+  "route_map_tiles_loaded": 1,
+  "passed": true,
+  "finished_at": "2026-10-28T06:18:51.724Z"
+}

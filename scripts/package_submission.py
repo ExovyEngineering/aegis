@@ -12,6 +12,7 @@ ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirem
 SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','frontend')
 SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env'}
 REPORTS=('usda_food_environment.json','fsis_ingestion.json','ingestion_verification.json','transport_check.json','source_actions.json','operational_state_preservation.json','aegis_project_brief.pdf','project_brief.md','project_brief_manifest.json','session_verification.json','aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
+REPORTS=REPORTS+('clean_install.json',)
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -54,6 +55,13 @@ Packaged Parquet tables permit model reproduction; NOAA originals are included
 with their provider response/checksum metadata. Absolute paths in historical
 audit reports describe the source workstation, not the extracted location.
 
+For an isolated guided rehearsal, start a second server with
+`.venv/Scripts/python scripts/start_rehearsal.py --port 8001` and open the printed
+URL. Check the isolated-runtime banner; a query parameter alone is not isolation.
+The six stages and server timer retain immutable evidence without resetting the
+operator database. Default rehearsal uses dated fixtures and route estimates.
+See docs/rehearsal_guide.md and docs/core_release.md.
+
 Credentials, .env, operational SQLite state, runtime installations, Kiro account
 data and node_modules are excluded. The app creates a fresh simulated database.
 Kiro must be installed separately; installation/version evidence is not genuine
@@ -79,7 +87,7 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     for name in REPORTS:add(root/'reports'/name)
-    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/checks','reports/verification_history'):
+    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/checks','reports/verification_history'):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)

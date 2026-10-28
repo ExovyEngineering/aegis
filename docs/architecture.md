@@ -177,3 +177,23 @@ verification records remain distinct from trip acknowledgment. Actual departure,
 delivery execution, commercial-truck clearance and authenticated identities are
 outside this report. [The workflow guide](operations_workflow.md) and
 [read-only/concurrency tests](../tests/test_readiness.py) describe the boundary.
+
+## Isolated rehearsal runtime
+
+`scripts/start_rehearsal.py` creates one fresh UUID SQLite file and launches a
+separate loopback process. `backend/runtime.py` validates the ID/path/offline
+profile before database initialization; requests never rebind the global DB.
+The operator app rejects rehearsal recording. Main network snapshots carry the
+verified runtime context so every rehearsal view can display its banner without
+adding bulk requests to dedicated Drive.
+
+`backend/rehearsal.py` stores ordered, versioned stages and server-clock times in
+the isolated database. Completed/aborted snapshots preserve audit/network state
+and evidence-file hashes. Operational coverage requires coherent recorded
+operations; manual coverage is explicitly self-reported. Exports never claim a
+genuine human presentation, Kiro execution or author approval.
+
+Offline rehearsal disables provider HTTP/cache access before lookup, rejects
+source refresh and reads dated fixtures only. OSRM failures become labeled
+estimates. Public base-map tiles and deliberately opened external links are
+separate browser requests. Operator mode retains ordinary source refresh behavior.

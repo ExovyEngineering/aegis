@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-27T07:58:39.813Z",
+  "checked_at": "2026-10-28T06:19:25.790Z",
   "base_url": "http://127.0.0.1:8001",
   "isolated_database": true,
   "checks": [
@@ -114,7 +114,7 @@
       "details": "HTTP 200"
     },
     {
-      "name": "/api/proposals/7d1083cb-3bec-4ccd-b671-81125fb30371/approve",
+      "name": "/api/proposals/0a612422-2fa9-4761-841b-6b4c9e9ae1c0/approve",
       "passed": true,
       "details": "HTTP 200"
     },
@@ -301,7 +301,7 @@
     {
       "name": "source_refresh_fsis_recalls_reports_actual_outcome",
       "passed": true,
-      "details": "Usable dated response; cache status retained"
+      "details": "Explicit failure/fallback shown"
     },
     {
       "name": "/api/refresh/modot?summary=true",
@@ -334,13 +334,13 @@
   "source_actions": [
     {
       "source": "openmeteo",
-      "retrieved_at": "2026-10-27T07:20:24.054695+00:00",
+      "retrieved_at": "2026-10-28T06:09:56.032473+00:00",
       "cache": true,
       "stale": false
     },
     {
       "source": "nws_alerts",
-      "retrieved_at": "2026-10-27T07:58:57.625293+00:00",
+      "retrieved_at": "2026-10-28T06:19:41.124002+00:00",
       "cache": false,
       "stale": false
     },
@@ -354,11 +354,12 @@
       "source": "fsis_recalls",
       "retrieved_at": "2026-10-27T07:20:27.326810+00:00",
       "cache": true,
-      "stale": false
+      "stale": true,
+      "refresh_error": "ConnectError: [Errno 11002] getaddrinfo failed"
     },
     {
       "source": "modot",
-      "retrieved_at": "2026-10-27T07:59:00.895054+00:00",
+      "retrieved_at": "2026-10-28T06:19:43.581518+00:00",
       "cache": false,
       "stale": false,
       "refresh_error": null
@@ -368,5 +369,5 @@
     "source-refresh-controls.png"
   ],
   "passed": true,
-  "finished_at": "2026-10-27T07:59:11.563Z"
+  "finished_at": "2026-10-28T06:19:54.205Z"
 }

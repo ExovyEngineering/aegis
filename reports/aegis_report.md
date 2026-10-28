@@ -2,7 +2,7 @@
 
 **Draft scientific competition report — genuine Kiro application usage, author signoff, and official-rubric review pending.**
 
-Report compiled from saved artifacts on 2026-10-27. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
+Report compiled from saved artifacts on 2026-10-28. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
 
 ## Abstract
 
@@ -31,7 +31,14 @@ The audit ran against `C:\Users\ericp\Downloads\NAFSI`. CSV and nested JSON are 
 | MoDOT events and OSRM | Road evidence and ordinary driving estimates | Proximity screening is not closure-aware, truck-certified navigation |
 | USDA food-access/environment workbooks | Audited food-security context | Not yet weighted into allocation without vintage/geography/denominator validation |
 
-The saved connectivity probe recorded 18/18 HTTP successes. Documentation/catalog reachability is distinguished from working data feeds. Exact URLs, response types, request times, latencies, and failures are in `reports/api_status.json` and the API registry. These results describe the recorded probes, not guaranteed present availability.
+The saved connectivity probe recorded 13/18 HTTP successes. Documentation/catalog reachability is distinguished from working data feeds. Exact URLs, response types, request times, latencies, and failures are in `reports/api_status.json` and the API registry. These results describe the recorded probes, not guaranteed present availability.
+
+Recorded probe failures:
+- fsis_recalls: ConnectError: [Errno 11002] getaddrinfo failed
+- fsis_sampling: ConnectError: [Errno 11002] getaddrinfo failed
+- fsis_directory: ConnectError: [Errno 11002] getaddrinfo failed
+- food_access: ConnectError: [Errno 11002] getaddrinfo failed
+- food_environment: ConnectError: [Errno 11002] getaddrinfo failed
 
 ### 2.1 Bounded NOAA coverage
 
@@ -132,7 +139,7 @@ The accelerated isolated workflow recorded 13 approved simulated assignments. Ac
 
 Required inputs, retrieval records, seeds, commands, and test artifacts remain inspectable. This report compiler performs no new HTTP requests. Its input-file hashes are recorded in `reports/figures/input_manifest.json`; regenerating after evidence changes updates the draft transparently.
 
-The saved validation artifact records 370 passing pytest tests, 60 passing Vitest tests, frontend build status `passed`, and 26 real HTTP checks. Browser visual QA: `58 new USDA/provenance/readiness checks passed; earlier 65 Drive, 65 controls, 36 depth and 50 operations runs retain separate timestamps`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
+The saved validation artifact records 443 passing pytest tests, 77 passing Vitest tests, frontend build status `passed`, and 28 real HTTP checks. Browser visual QA: `Dated actual-Chrome core and guided rehearsal checks; see each artifact for counts, failures and source freshness`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
 
 ```powershell
 .venv/Scripts/python scripts/audit_data.py

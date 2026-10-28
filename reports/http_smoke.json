@@ -6,7 +6,7 @@
       "status": 200
     },
     {
-      "path": "/assets/index-DEcSrvrF.js",
+      "path": "/assets/index-CrQME9Lm.js",
       "status": 200
     },
     {
@@ -18,7 +18,7 @@
       "status": 200
     },
     {
-      "path": "/assets/index-DhpV2M_J.css",
+      "path": "/assets/index-BPXtTJDm.css",
       "status": 200
     },
     {
@@ -104,8 +104,16 @@
     {
       "path": "/api/food-access",
       "status": 200
+    },
+    {
+      "path": "/api/runtime-context",
+      "status": 200
+    },
+    {
+      "path": "/api/rehearsal",
+      "status": 200
     }
   ],
-  "passed": 26,
+  "passed": 28,
   "browser_visual_qa": false
 }

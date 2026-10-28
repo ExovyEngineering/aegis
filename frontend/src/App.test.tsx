@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { api } from './api';
@@ -88,6 +88,26 @@ describe('AEGIS workflow', () => {
     fireEvent.click(screen.getByRole('button',{name:'Reload application data'}));
     await waitFor(() => expect(vi.mocked(api).mock.calls.filter(([p]) => p === '/network').length).toBeGreaterThan(1));
     expect(screen.getByText(/Requested route for SH01/)).toBeInTheDocument();
+  });
+  it('shows actual ingestion outcomes without calling unrecognized or duplicate inputs accepted', async () => {
+    const normal=vi.mocked(api).getMockImplementation()!;
+    vi.mocked(api).mockImplementation(async(path,body)=>path==='/evidence-summary' ? [
+      {file:'unrecognized.csv',status:'unrecognized'},
+      {file:'duplicate.csv',source:'beam',status:'duplicate',duplicate_of:'original.csv',rows:12},
+      {file:'conflict.csv',source:'beam',status:'conflict'},
+      {file:'accepted.csv',source:'beam',status:'ingested',rows:12},
+      {file:'legacy.csv',source:'beam',rows:12},
+    ] as any : normal(path,body));
+    render(<App/>);await screen.findByText('Missouri logistics map');
+    fireEvent.click(screen.getByRole('button',{name:'Sources & evidence'}));
+    await screen.findByText('unrecognized.csv');
+    const row=(name:string)=>within(screen.getByText(name).closest('tr')!);
+    expect(row('unrecognized.csv').getByText(/not ingested or merged/)).toBeInTheDocument();
+    expect(row('duplicate.csv').getByText(/no additional observations/)).toBeInTheDocument();
+    expect(row('conflict.csv').getByText(/Conflicting exports/)).toBeInTheDocument();
+    expect(row('legacy.csv').getByText(/acceptance has not been established/)).toBeInTheDocument();
+    expect(row('accepted.csv').getByText(/Source schema accepted/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Source schema accepted/)).toHaveLength(1);
   });
   it('dedicated Drive avoids fetching bulk recall, inventory and model evidence', async () => {
     window.history.replaceState(null,'','/?mode=drive');

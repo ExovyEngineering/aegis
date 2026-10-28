@@ -1,6 +1,6 @@
 # AEGIS submission checklist
 
-October 26, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
+Updated October 28, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
 
 ## P0 release gates
 
@@ -10,10 +10,10 @@ October 26, 2026. This checklist records required evidence, not a claim that eve
 | Provenance and source failures | Manifest, schemas, dated fixtures, exact errors and coverage API | Rehearse stale/offline coverage in the final UI; distinguish observations, forecast, reanalysis and cargo simulation |
 | Risk estimator and baseline | Retrospective prevalence/logistic, calibration/uncertainty and frozen earlier-snapshot sensitivity | Actual publication timing remains unknown; no prospective-validation claim |
 | Three or more interventions | Four solver scenarios with hold/recall, stock, eligibility and capacity checks | Rehearse changed-event tradeoffs and capture final reproducible results |
-| Functional application | Built React/FastAPI app; documented startup, backend/UI tests, HTTP smoke and 26 passing real-browser checks (`reports/browser_qa/final/results.json`) | Fresh-environment reproduction and final timed presentation rehearsal |
+| Functional application | Built React/FastAPI app; documented startup, dated backend/UI tests, loopback HTTP and separate actual-Chrome rehearsals; executable reviewer-package verification; 51 pinned packages and full automated HTTP workflow verified in a fresh Python environment (`reports/clean_install.json`) | Final timed team presentation rehearsal and author review |
 | Genuine AWS Kiro workflow | Signature-verified official IDE 1.4.26 installed and version checked | User sign-in, actual spec execution and authentic evidence. Gate remains open; see `docs/kiro_handoff.md` |
 | Report and code | Architecture, model card, assumptions, audit and demo script | Assemble final methods/results/limitations report and verify any additional official rubric requirements |
-| Five-minute demo | Deterministic seed, accelerated isolated workflow and desktop/mobile screenshots with browser workflow verification | Timed five-minute rehearsal and backup fixture demonstration |
+| Five-minute demo | Deterministic seed, accelerated isolated workflow, verified fresh-session launcher, offline-demo profile and separate browser workflow evidence | Actual timed team presentation, recorded presenter review and backup fixture demonstration |
 
 ## Final reviewer checks
 
@@ -29,6 +29,8 @@ October 26, 2026. This checklist records required evidence, not a claim that eve
 - Show MoDOT source time, route proximity limitations, OSRM restrictions and any estimated fallback.
 - Demonstrate farm and multi-location planning presets with consistent simulation labels; avoid account/tenancy claims.
 - Keep Drive use parked, with short advisories and explicit dispatcher authority.
+- Start human rehearsals with `scripts/start_rehearsal.py`, then verify `/api/runtime-context` identifies the expected isolated UUID and offline profile. Never reset the operator app on port 8000 for a demo.
+- Keep accelerated `scripts/demo_run.py` results distinct from a timed human rehearsal. Confirm its measured original SQLite/sidecar preservation fields rather than relying on a hardcoded success flag.
 - Confirm the final official submission rubric, delivery format and evidence requirements from organizer materials; the public announcement is not a full rulebook.
 
 ## Genuine Kiro handoff

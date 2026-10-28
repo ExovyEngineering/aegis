@@ -3,10 +3,16 @@ import hashlib, json, math, os
 from datetime import datetime, timezone
 import httpx
 from backend.paths import ROOT, write_json, read_json
+from backend.runtime import runtime_context
 
 def now(): return datetime.now(timezone.utc).isoformat()
 class CachedHTTP:
     def get(self,url,ttl=3600):
+        runtime=runtime_context(root=ROOT)
+        if runtime['mode']=='misconfigured':
+            raise RuntimeError('Rehearsal configuration is invalid; provider requests are disabled until corrected')
+        if runtime['isolated'] and runtime['offline']:
+            raise RuntimeError('Offline rehearsal disables provider requests and mutable HTTP caches; use the labeled routing estimate or dated evidence fixtures')
         p=ROOT/'data/cache'/(hashlib.sha256(url.encode()).hexdigest()+'.json')
         previous=read_json(p) if p.exists() else None
         if previous and (datetime.now(timezone.utc)-datetime.fromisoformat(previous['retrieved_at'])).total_seconds()<ttl:

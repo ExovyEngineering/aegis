@@ -49,6 +49,13 @@ def sections(root):
         if value:
             checks=value.get('checks',[])
             testlines.append(f"{label}: {sum(bool(c.get('passed')) for c in checks)} / {len(checks)} recorded checks passed. Timestamp: {value.get('checked_at','see artifact')}. Evidence: {path}. This is a separate run from local unit/build checks.")
+    rehearsal=load(root,'reports/browser_qa/rehearsal/results.json',{})
+    if rehearsal:
+        tested=rehearsal.get('checks',[])
+        testlines.append(f"Guided rehearsal actual-Chrome QA: {sum(bool(c.get('passed')) for c in tested)} / {len(tested)} checks passed, checked {rehearsal.get('checked_at','not recorded')}. Record kind: {rehearsal.get('run_kind','not recorded')}; measured duration {rehearsal.get('recorded_elapsed_seconds','not recorded')} seconds. This automated workflow does not establish a genuine five-minute team presentation. Evidence: reports/browser_qa/rehearsal/results.json.")
+    clean=load(root,'reports/clean_install.json',{})
+    if clean:
+        testlines.append(f"Separate Python dependency installation: passed={clean.get('passed','not recorded')}; pinned packages verified={clean.get('pinned_dependencies_verified','not recorded')}; real HTTP checks={clean.get('http_checks_passed','not recorded')}; operator DB modified={clean.get('operator_database_modified','not recorded')}. Fresh Node installation tested={clean.get('fresh_node_install_tested','not recorded')}. Evidence: reports/clean_install.json.")
     smoke=load(root,'reports/http_smoke.json',{})
     if smoke:testlines.append(f"Loopback HTTP smoke artifact records {smoke.get('passed','unknown')} checks against {smoke.get('base_url','unknown')}. It does not certify current public-source freshness.")
     testlines+=['Meaningful failure cases include held/recalled stock, nonrefrigerated trucks, capacity/inventory shortages, stale approval and instruction versions, invalid coordinates, altered planning metrics, corrupt source files, bounded queries and preservation of operator state.',
@@ -79,6 +86,16 @@ def sections(root):
         f"USDA missing observations by field: {usda.get('coverage',{}).get('null_counts','not recorded')}. Original sentinel codes and sheet/row identities are retained. Missing/suppressed values are never replaced with zero. Repeated county names remain distinct by FIPS; no simulated-destination or route-location join is inferred.",
         'Dispatch readiness checks current approved assignments in one consistent read-only database snapshot. Thirteen constraint diagnostics and three workflow checks expose resource limits, assignment acknowledgment, exact-version instruction acknowledgment and scenario-B verification. A passing checklist does not dispatch, consume stock, create a hold, certify food safety or clear a commercial-truck route.',
         'Use Sources to compare counties, inspect definitions and download the checked county CSV. Use Dispatcher desk to select a trip, filter readiness status and inspect the evidence for each check. Genuine Kiro work and final author review remain separate gates.'
+    ]))
+    output.append(('Rehearsal | Practice without altering operator state',[
+        'Start scripts/start_rehearsal.py --port 8001 in a separate terminal. It reserves a new UUID database and launches a separate loopback server. The operator app remains on port 8000. Partial/mismatched runtime settings are rejected before database initialization.',
+        'The rehearsal URL opens the Project brief panel with six stages totaling 300 planned seconds. Every view displays the verified isolated-runtime banner. A URL parameter alone never creates isolation.',
+        'Start with a self-declared presenter, purpose and record type. Elapsed time comes from the backend clock. Navigation and reload do not stop the timer; the UI does not infer attendance or presentation quality.',
+        'Record stage coverage or an explicit skip reason. Operational stages require recorded events, human approval and a coherent parked acknowledgment/report sequence during that run. Stale versions and unrelated or invalidated trip evidence are rejected.',
+        'Completion or abort retains an immutable snapshot of timing, milestones, network/audit state and evidence-file hashes. Download the JSON or reopen history; subsequent resets and regenerated reports cannot rewrite that export.',
+        'Offline rehearsal uses dated source fixtures, disables provider refresh and returns labeled OSRM estimates without mutable HTTP cache access. Map tiles and deliberately opened external source links can still need internet.',
+        'The accelerated demo script now measures original/configured operator SQLite and sidecar hashes before and after. A modified or unreadable protected file cannot become an invented preservation success. This utility is separate from the guided browser timer.',
+        'Automated checks and self-reported practice do not complete genuine Kiro execution, author/rubric review or a live timed team presentation. The reserved Kiro task remains untouched.'
     ]))
     output.append(('Walkthrough | What to show behind the buttons',[
         'Command: compare A/B/C/D metrics. Open decision details to inspect selected shipments, exclusion reasons and resource limits. Review a proposal with an identity and rationale; stale or unsafe plans are rejected.',

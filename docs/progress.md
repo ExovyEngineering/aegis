@@ -1,8 +1,58 @@
 # Progress and acceptance evidence
 
-Session date: October 27, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Session date: October 28, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: source integrity, county context and readiness (October 27)
+## Latest: core software handoff and isolated rehearsal (October 28)
+
+- Added a fresh-session launcher and verified runtime profile. The operator app
+  rejects rehearsal recording; partial/mismatched configuration is rejected
+  before directory creation or SQLite initialization. No HTTP handler rebinds
+  the global database. Rehearsal state stays in its separate UUID database.
+- Project brief now guides six stages with a 300-second planned budget,
+  server-clock timing, notes, explicit skips, version guards, history and
+  immutable JSON snapshots. Operational stages require actual recorded actions;
+  driver evidence must refer to a coherent parked trip sequence. Automated runs
+  do not establish a genuine human presentation, Kiro usage or author approval.
+- Offline rehearsal uses dated source fixtures only, disables provider/cache
+  access and source refresh, and returns labeled routing estimates. Base-map
+  tiles and external links remain separate browser network requests.
+- Corrected the published manual walkthrough to use isolated state, parked
+  confirmation and displayed network revision. The accelerated script now
+  measures original/configured operator SQLite and sidecar hashes rather than
+  hardcoding preservation; errors and inherited rehearsal profiles are handled.
+- Fixed stale notes after a rejected action, a route-selection effect race,
+  misleading acceptance text on unrecognized/duplicate imports and compressed
+  mobile readiness cells. The current test/build outcomes are recorded in
+  `reports/session_verification.json`; earlier failures remain dated in history.
+- New actual-Chrome guided rehearsal: 76 checks passed with immutable export,
+  reset/history/abort, expected conflict rejection, offline behavior and unchanged
+  operator fingerprints. The four existing core suites were re-run: Drive65,
+  depth36, operations50 and controls65 passed. Additional final mobile captures
+  are tracked in their separate artifacts.
+- Current public probe: 13/18 HTTP successes. Three FSIS and two USDA ERS URLs
+  failed DNS resolution. Source refresh returned three new provider responses,
+  one usable NOAA TTL cache and an explicitly stale FSIS fallback. MoDOT layers,
+  forecast and NWS refreshes succeeded; a documentation probe is still distinct
+  from a feed. No missing observations or source successes were invented.
+- Clean dependency installation succeeded in a separate Python environment;
+  package/HTTP reproduction outcomes are recorded in `reports/clean_install.json`
+  when available. Raw hashes and the ten pre-existing operator tables remain
+  preserved. The maintained PDF and reviewer bundle are regenerated for handoff.
+- Software scope and startup: `docs/core_release.md`. Genuine Kiro execution,
+  final report/rubric and author review, and a timed human presentation remain
+  team submission gates; no cloud release or submission is claimed.
+
+Final release evidence: **443 pytest tests passed, two Windows symlink checks
+skipped, 77 Vitest tests passed, and the production build passed**. Six current
+Chrome suites record **353 checks**: rehearsal76, readiness61, Drive65,
+operations50, depth36 and controls65. There are zero uncaught JavaScript or
+unexpected application HTTP failures in those runs. The clean Python install
+verified all 51 pins, passed dependency checks, and completed 31 real HTTP checks
+including the full automated rehearsal. That short automated run does not prove
+a five-minute human presentation. All raw hashes and pre-existing operator
+tables remain unchanged.
+
+## Previous: source integrity, county context and readiness (October 27)
 
 - Recursive content-based ingestion now preserves source identities regardless
   of filename, folder or download order. Exact duplicates are recorded without

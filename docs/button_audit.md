@@ -19,6 +19,7 @@ linked artifacts; browser mutations used only the isolated port8001 database.
 | USDA county context | County selection/comparison, historical definitions, missing/suppressed grocery observations, CSV download and source hash | `reports/browser_qa/readiness/results.json`, `tests/test_usda_ingestion.py`, `tests/test_food_context.py` |
 | Source import identity | Eight semantic identities, input-file hashes, displayed row snapshot integrity, conflicts and corrupt-file continuation | `reports/browser_qa/readiness/results.json`, `reports/ingestion_verification.json`, `tests/test_ingestion_identity.py` |
 | Readiness diagnostics | Empty state, status filter, per-trip checks, refresh, parked acknowledgment, three verification checks, exact instruction revision and hold/removal | `reports/browser_qa/readiness/results.json`, `tests/test_readiness.py`, `frontend/src/DispatchReadiness.test.tsx` |
+| Guided rehearsal | Verified runtime, identified start, timer, six stages, actual audit requirements, stale/missing evidence rejection, completion/abort, history and immutable download | `reports/browser_qa/rehearsal/results.json`, `tests/test_rehearsal.py`, `tests/test_rehearsal_integration.py`, `frontend/src/RehearsalWorkspace.test.tsx` |
 
 Corrected findings include stale assignments surviving partial reloads, requested
 routes being replaced by reference routes, stale fallback being called a refresh

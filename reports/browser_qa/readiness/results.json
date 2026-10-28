@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-27T21:07:50.127Z",
+  "checked_at": "2026-10-28T06:27:38.973Z",
   "base_url": "http://127.0.0.1:8001",
   "isolated_database": true,
   "public_refresh_requested": false,
@@ -21,6 +21,16 @@
     },
     {
       "name": "empty_readiness_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unrecognized_imports_never_claim_schema_acceptance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "accepted_import_notes_match_actual_ingested_status",
       "passed": true,
       "detail": ""
     },
@@ -145,7 +155,7 @@
       "detail": ""
     },
     {
-      "name": "ui_/api/proposals/113bff9a-326c-4159-8fd6-791320f9e2a0/approve",
+      "name": "ui_/api/proposals/2b136630-124a-4e09-b8f9-84ce937b68cd/approve",
       "passed": true,
       "detail": "HTTP 200"
     },
@@ -245,6 +255,11 @@
       "detail": "{\"viewport\":390,\"document\":390}"
     },
     {
+      "name": "mobile_readiness_evidence_has_readable_stacked_width",
+      "passed": true,
+      "detail": "{\"width\":316,\"height\":49.375,\"wordBreak\":\"normal\",\"text\":\"EvidenceApproved record matches a known shipment identifier.\"}"
+    },
+    {
       "name": "ui_/api/dispatch/lots/L03/hold",
       "passed": true,
       "detail": "HTTP 200"
@@ -299,17 +314,19 @@
   "http_failures": [],
   "screenshots": [
     "desktop-empty-readiness.png",
+    "desktop-ingestion-status-notes.png",
     "desktop-historical-county-context.png",
     "desktop-source-import-provenance.png",
     "mobile-historical-county-context.png",
     "mobile-suppressed-grocery-observation.png",
     "desktop-readiness-before-review.png",
     "desktop-readiness-checks-complete.png",
-    "mobile-readiness-review.png"
+    "mobile-readiness-review.png",
+    "mobile-readiness-check-detail.png"
   ],
   "post_requests": [
     "/api/proposals/B",
-    "/api/proposals/113bff9a-326c-4159-8fd6-791320f9e2a0/approve",
+    "/api/proposals/2b136630-124a-4e09-b8f9-84ce937b68cd/approve",
     "/api/driver/SH03/acknowledge",
     "/api/dispatch/assignments/SH03/verification",
     "/api/dispatch/assignments/SH03/instruction",
@@ -332,5 +349,5 @@
     "lot_id": "L03"
   },
   "passed": true,
-  "finished_at": "2026-10-27T21:07:57.481Z"
+  "finished_at": "2026-10-28T06:27:46.054Z"
 }

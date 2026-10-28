@@ -6,6 +6,9 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Run locally
 
+For the finished core walkthrough and verification commands, start with
+[the core software handoff](docs/core_release.md).
+
 Teammates cloning the repository can follow [CONTRIBUTING.md](CONTRIBUTING.md)
 to run with the included derived datasets and dated fixtures, create feature
 branches, and verify changes. Original bulk downloads and local operator state
@@ -69,6 +72,28 @@ or sensor readings. Quick reports reach the local dispatcher inbox. No route
 change or lot hold happens automatically. See [Drive design](docs/drive_design.md)
 and [stretch entry criteria](docs/stretch_feature_gates.md). This is the shared
 web application; no native mobile package or cloud deployment is claimed.
+
+## Isolated presentation rehearsal
+
+Keep the operator app on port 8000. In a separate terminal from the project folder:
+
+```powershell
+.venv/Scripts/python scripts/start_rehearsal.py --port 8001
+```
+
+Open the printed URL, normally <http://127.0.0.1:8001/?mode=rehearsal>. The launcher
+reserves a fresh UUID database, and the app verifies that path before accepting
+rehearsal actions. Every view displays the isolated-runtime banner. A URL
+parameter alone does not isolate the operator app.
+
+Project brief contains six guided stages, a server-based timer, notes, saved
+history and immutable JSON evidence exports. Operational stages require recorded
+events, approval and a coherent parked driver workflow. Default rehearsal mode
+uses dated source fixtures and labeled routing estimates; provider refresh is
+disabled. Map tiles may need internet. Nothing resets the operator database.
+
+The measured timer and self-reported coverage do not prove a human presentation,
+Kiro execution or final approval. See [the rehearsal guide](docs/rehearsal_guide.md).
 
 ## Team status and presentation planning
 

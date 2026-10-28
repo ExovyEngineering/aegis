@@ -1,4 +1,9 @@
-# Team review - October 27, 2026
+# Team review - October 28, 2026
+
+Start with [the core software handoff](core_release.md). It covers Command,
+Drive, the isolated rehearsal, reviewer installation and current source failures.
+Use `scripts/start_rehearsal.py` for practice; the URL parameter alone never
+isolates the operator app. The updated PDF records actual test evidence.
 
 No overnight account action is required. The local draft package has not been uploaded or submitted.
 

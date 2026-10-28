@@ -1,0 +1,306 @@
+{
+  "base_url": "http://127.0.0.1:8001",
+  "isolated_database": true,
+  "checked_at": "2026-10-28T06:19:12.139Z",
+  "checks": [
+    {
+      "name": "isolated_reset_succeeded",
+      "passed": true,
+      "details": "Only port 8001 QA state reset"
+    },
+    {
+      "name": "read_/api/network",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/operations/presets",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "partial_negative_longitude_remains_editable",
+      "passed": true,
+      "details": "Partial minus retained instead of reverting to old coordinate"
+    },
+    {
+      "name": "invalid_coordinate_disables_planning",
+      "passed": true,
+      "details": "No request allowed while longitude is incomplete"
+    },
+    {
+      "name": "valid_longitude_enables_planning",
+      "passed": true,
+      "details": "Finite longitude accepted"
+    },
+    {
+      "name": "action_/api/route-lab",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "custom_coordinate_reaches_backend",
+      "passed": true,
+      "details": "Edited longitude returned in canonical planning operation"
+    },
+    {
+      "name": "custom_planning_preserves_safety",
+      "passed": true,
+      "details": "Feasible custom routes, zero checked violations"
+    },
+    {
+      "name": "read_/api/network",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/driver",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "custom_planning_does_not_dispatch",
+      "passed": true,
+      "details": "Operator network and assignments unchanged by route test"
+    },
+    {
+      "name": "read_/api/operations/presets",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "preset_layouts_are_unchanged",
+      "passed": true,
+      "details": "Preset copy remains separate from original"
+    },
+    {
+      "name": "mobile_custom_editor_no_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "scenario_approval_requires_identity",
+      "passed": true,
+      "details": "Name and rationale required"
+    },
+    {
+      "name": "read_/api/driver",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "approved_assignments_exist",
+      "passed": true,
+      "details": "13 assignments"
+    },
+    {
+      "name": "action_/api/driver/incident",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/dispatch",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "driver_report_uses_selected_trip",
+      "passed": true,
+      "details": "Report attached to selected SH11, truck T03"
+    },
+    {
+      "name": "driver_report_retains_traceability_snapshot",
+      "passed": true,
+      "details": "Reported lot/truck/revision snapshot retained"
+    },
+    {
+      "name": "mobile_driver_report_no_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "desk_review_requires_identified_dispatcher",
+      "passed": true,
+      "details": "No unidentified review action"
+    },
+    {
+      "name": "action_/api/dispatch/incidents/9e8e6076-c537-4159-acb3-416d4e66ccfb/review",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "incident_review_is_versioned",
+      "passed": true,
+      "details": "Review advances report version"
+    },
+    {
+      "name": "action_/api/dispatch/assignments/SH11/instruction",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "instruction_has_its_own_acknowledgment",
+      "passed": true,
+      "details": "New instruction version requires explicit driver acknowledgment"
+    },
+    {
+      "name": "read_/api/dispatch",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "stale_instruction_is_rejected",
+      "passed": true,
+      "details": "HTTP 409"
+    },
+    {
+      "name": "driver_receives_dispatcher_text",
+      "passed": true,
+      "details": "Approved text visible in selected driver assignment"
+    },
+    {
+      "name": "action_/api/driver/SH11/instruction-ack",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/driver",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "driver_acknowledges_exact_instruction_version",
+      "passed": true,
+      "details": "Current instruction version acknowledged"
+    },
+    {
+      "name": "mobile_instruction_no_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "read_/api/driver",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "action_/api/dispatch/lots/L11/hold",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/driver",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "human_hold_removes_affected_assignments",
+      "passed": true,
+      "details": "Held lot cannot remain assigned"
+    },
+    {
+      "name": "action_/api/dispatch/lots/L11/release",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/driver",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "release_does_not_redispatch",
+      "passed": true,
+      "details": "Release requires a newly reviewed scenario before dispatch"
+    },
+    {
+      "name": "action_/api/dispatch/incidents/9e8e6076-c537-4159-acb3-416d4e66ccfb/review",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "read_/api/dispatch",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "incident_resolves_with_preserved_reporting_snapshot",
+      "passed": true,
+      "details": "Historical report context retained after hold/release"
+    },
+    {
+      "name": "mobile_dispatcher_no_horizontal_overflow",
+      "passed": true,
+      "details": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "read_/api/audit",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "operational_decisions_have_audit_records",
+      "passed": true,
+      "details": "All local workflow actions recorded"
+    },
+    {
+      "name": "no_uncaught_javascript_errors",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "name": "no_application_resource_failures",
+      "passed": true,
+      "details": "[]"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "http_failures": [],
+  "request_failures": [
+    {
+      "url": "https://a.tile.openstreetmap.org/7/30/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://b.tile.openstreetmap.org/7/31/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://b.tile.openstreetmap.org/7/30/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/31/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/29/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/32/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/7/29/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/7/32/49.png",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "screenshots": [
+    "custom-operation-editor.png",
+    "custom-operation-routes.png",
+    "mobile-custom-operation.png",
+    "dispatcher-inbox.png",
+    "mobile-instruction-pending.png",
+    "mobile-instruction-acknowledged.png",
+    "dispatcher-resolved.png",
+    "mobile-dispatcher.png"
+  ],
+  "browser_version": "156.0.8078.48",
+  "passed": true
+}

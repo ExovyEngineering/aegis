@@ -67,6 +67,15 @@ features:
   evidence: reports/aegis_report.md
   detail: Local reviewer bundle, measured results, demonstration scripts and this
     regenerated planning brief. Not submitted.
+- id: rehearsal
+  priority: P0
+  name: Isolated guided rehearsal and saved evidence
+  status: implemented; genuine team presentation remains pending
+  evidence: docs/rehearsal_guide.md
+  detail: Fresh verified database, six planned stages, server-clock timer, version
+    guards and immutable evidence exports. Offline mode uses dated fixtures and
+    labeled route estimates. Automated checks do not establish a human rehearsal,
+    Kiro execution or author approval.
 - id: digital-twin
   priority: P1
   name: Interactive Missouri digital twin

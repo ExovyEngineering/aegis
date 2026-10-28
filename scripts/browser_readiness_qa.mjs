@@ -58,6 +58,23 @@ try {
   await capture('desktop-empty-readiness');
 
   await page.getByRole('button',{name:'Sources & evidence',exact:true}).click();
+  const ingestionPanel=page.locator('section.panel').filter({has:page.getByRole('heading',{name:'Source-specific ingestion',exact:true})});
+  await ingestionPanel.getByRole('row').nth(1).waitFor();
+  const ingestion=await get('/api/evidence-summary');
+  const unrecognized=ingestion.filter(item=>item.status==='unrecognized');
+  let unsupportedLabelsCorrect=unrecognized.length>0;
+  for(const item of unrecognized) {
+    const text=await ingestionPanel.getByRole('row').filter({hasText:item.file}).innerText();
+    unsupportedLabelsCorrect=unsupportedLabelsCorrect&&!text.includes('Source schema accepted')&&/not.*(?:ingested|merged)|unsupported/i.test(text);
+  }
+  check('unrecognized_imports_never_claim_schema_acceptance',unsupportedLabelsCorrect);
+  let acceptedLabelsCorrect=true;
+  for(const item of ingestion.filter(row=>row.status==='ingested')) {
+    const text=await ingestionPanel.getByRole('row').filter({hasText:item.file}).innerText();
+    acceptedLabelsCorrect=acceptedLabelsCorrect&&text.includes('Source schema accepted');
+  }
+  check('accepted_import_notes_match_actual_ingested_status',acceptedLabelsCorrect);
+  await alignTop(ingestionPanel);await capture('desktop-ingestion-status-notes');
   const countyPanel=page.getByRole('region',{name:'Historical USDA food access context',exact:true});
   await countyPanel.getByLabel('USDA county',{exact:true}).waitFor();
   const countyData=await get('/api/food-access');result.usda_source={source_id:countyData.source_id,source_sha256:countyData.source_file.sha256,processed_sha256:countyData.processed_file.sha256,ingested_at:countyData.ingested_at,counties:countyData.records.length};
@@ -145,7 +162,11 @@ try {
   await uiPost('/api/driver/SH03/instruction-ack',()=>page.getByRole('button',{name:'Acknowledge new instruction',exact:true}).click());
   check('driver_acknowledges_the_displayed_current_version',(await get('/api/driver')).find(assignment=>assignment.id==='SH03').instruction_revision===secondInstruction.instruction_revision&&(await get('/api/readiness')).assignments.find(assignment=>assignment.shipment_id==='SH03').status==='ready_for_review');
   await openDesk();await selectReadiness('ready_for_review');await alignTop(checklist());await capture('desktop-readiness-checks-complete');
-  await page.setViewportSize({width:390,height:844});await alignTop(checklist());await noOverflow('mobile_readiness_has_no_horizontal_overflow');await capture('mobile-readiness-review');await page.setViewportSize({width:1440,height:1000});
+  await page.setViewportSize({width:390,height:844});await alignTop(checklist());await noOverflow('mobile_readiness_has_no_horizontal_overflow');await capture('mobile-readiness-review');
+  const firstReadinessRow=checklist().locator('.readiness-detail tbody tr').first();
+  const cellLayout=await firstReadinessRow.locator('td').nth(2).evaluate(element=>({width:element.getBoundingClientRect().width,height:element.getBoundingClientRect().height,wordBreak:getComputedStyle(element).wordBreak,text:element.textContent}));
+  check('mobile_readiness_evidence_has_readable_stacked_width',cellLayout.width>=200&&cellLayout.height<150&&cellLayout.wordBreak==='normal',JSON.stringify(cellLayout));
+  await alignTop(firstReadinessRow);await capture('mobile-readiness-check-detail');await page.setViewportSize({width:1440,height:1000});
   await page.getByLabel('Reviewing dispatcher',{exact:true}).fill('Readiness QA dispatcher');
   await page.getByLabel('Decision reason',{exact:true}).fill('Explicit precautionary hold for the isolated workflow test; no predictive score imposed this hold');
   const beforeHold=await get('/api/driver');
