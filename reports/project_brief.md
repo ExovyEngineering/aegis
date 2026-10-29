@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 29, 2026 at 02:43 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 29, 2026 at 03:45 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -158,6 +158,12 @@ Local self-declared identities are not production authentication or tenant isola
 
 Evidence: docs/stretch_feature_gates.md
 
+Inspectable disruption impact and Command workflow | implemented with read-only previews and explicit guarded application
+
+Six simulated events compute exact direct/resource changes and four before/after allocations. Preview changes nothing; applying requires matching revision/hash in Command and clears all approved assignments. Map overlays, road-alternative selection, exports and page guides explain what changes. No automatic road reroute, official incident or prospective risk is invented.
+
+Evidence: docs/command_workflow.md
+
 Real-time streaming infrastructure | deferred pending an actual live stream
 
 Dated public feeds and deterministic simulation are not live sensor streams. Polling retains source timestamps.
@@ -166,13 +172,13 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-29T06:51:53.907233+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-29T20:42:09.350945+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 660; 54.427 seconds. Log: reports/checks/20261029T065020945211Z/pytest.txt. Checked: 2026-10-29T06:50:20.945420+00:00.
+pytest: PASS; exit 0; tests passed 711; 50.195 seconds. Log: reports/checks/20261029T204048897082Z/pytest.txt. Checked: 2026-10-29T20:40:48.897347+00:00.
 
-vitest: PASS; exit 0; tests passed 121; 27.286 seconds. Log: reports/checks/20261029T065020945211Z/vitest.txt. Checked: 2026-10-29T06:51:15.386867+00:00.
+vitest: PASS; exit 0; tests passed 192; 18.287 seconds. Log: reports/checks/20261029T204048897082Z/vitest.txt. Checked: 2026-10-29T20:41:39.117004+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 11.212 seconds. Log: reports/checks/20261029T065020945211Z/frontend_build.txt. Checked: 2026-10-29T06:51:42.685839+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 11.913 seconds. Log: reports/checks/20261029T204048897082Z/frontend_build.txt. Checked: 2026-10-29T20:41:57.422201+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 

@@ -176,6 +176,16 @@ features:
   evidence: docs/stretch_feature_gates.md
   detail: Local self-declared identities are not production authentication or tenant
     isolation. No cloud release is claimed.
+- id: event-impact
+  priority: P2
+  name: Inspectable disruption impact and Command workflow
+  status: implemented with read-only previews and explicit guarded application
+  evidence: docs/command_workflow.md
+  detail: Six simulated events compute exact direct/resource changes and four
+    before/after allocations. Preview changes nothing; applying requires matching
+    revision/hash in Command and clears all approved assignments. Map overlays,
+    road-alternative selection, exports and page guides explain what changes.
+    No automatic road reroute, official incident or prospective risk is invented.
 - id: streaming
   priority: P2
   name: Real-time streaming infrastructure

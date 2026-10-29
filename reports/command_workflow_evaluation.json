@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-10-29T20:44:14.114313+00:00",
+  "passed": true,
+  "scope": "Command feedback, read-only disruption comparison, guarded application and route/plan visualization",
+  "pytest_passed": 711,
+  "vitest_passed": 192,
+  "production_build_passed": true,
+  "full_suite_artifact": "reports/session_verification.json",
+  "package_followup_tests_passed": 35,
+  "browser_checks_passed": 214,
+  "browser_artifact": "reports/browser_qa/command_workflow/results.json",
+  "screenshots": 11,
+  "actual_ui_events_previewed": [
+    "road_closure",
+    "severe_weather",
+    "delivery_delay",
+    "refrigeration_fault",
+    "temperature_excursion",
+    "inventory_shortage"
+  ],
+  "scenario_comparisons_per_preview": 4,
+  "preview_outputs_independently_checked": true,
+  "preview_database_unchanged": true,
+  "actual_guarded_event_applied_only_in_isolated_qa": true,
+  "approved_assignments_removed_in_qa": 13,
+  "actual_stale_approval_rejected_in_visible_dialog": true,
+  "route_source": "Actual offline endpoint returned visibly labeled estimated fallback; two-alternative case is explicitly browser-injected",
+  "confirmed_receipt_survives_total_network_reload_failure": true,
+  "network_failure_case": "Actual guarded apply followed by explicitly browser-injected HTTP 503 on GET /api/network; receipt/export/dismiss/recovery checked",
+  "actual_osrm_queried": false,
+  "actual_llm_queried": false,
+  "public_source_refresh_requested": false,
+  "operator_database_and_sidecars_unchanged": true,
+  "source_fixtures_and_cache_unchanged": true,
+  "raw_hashes_unchanged": 42,
+  "limitations": [
+    "Effects reflect fixed simulator assumptions, not observed disruptions or safety findings",
+    "Allocation overlays and road comparisons do not automatically reroute or dispatch",
+    "Prior scientific, Kiro, genomic-data, production-access and presentation gates remain open"
+  ]
+}

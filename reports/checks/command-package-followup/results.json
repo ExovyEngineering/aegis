@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-29T20:44:14.113954+00:00",
+  "passed": true,
+  "tests_passed": 35,
+  "scope": [
+    "tests/test_package_verification.py",
+    "tests/test_package_submission.py"
+  ],
+  "temporary_directory": "Fresh unique workspace-owned directory under .tools/pytest-command-package-*",
+  "prior_attempt": {
+    "passed": false,
+    "stage": "pytest temporary-directory setup",
+    "tests_passed": 1,
+    "setup_errors": 34,
+    "reason": "Shared default Windows pytest temporary-directory setup reported access denied; no assertion failure or product fix was inferred"
+  },
+  "cache_provider_disabled": true,
+  "log": "reports/checks/command-package-followup/pytest.txt"
+}

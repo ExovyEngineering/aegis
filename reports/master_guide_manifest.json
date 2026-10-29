@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-29T03:31:21.685388-05:00",
+  "generated_at": "2026-10-29T15:43:26.379797-05:00",
   "title": "AEGIS Master User Guide",
   "pdf": "reports/aegis_master_guide.pdf",
   "markdown": "docs/aegis_master_guide.md",
   "html": "reports/aegis_master_guide.html",
-  "sha256": "d9dfaca8328565abf7d5b167d9ccfab9eb316b903b6e7adb346a071af8744aaf",
-  "bytes": 410605,
-  "pages": 68,
+  "sha256": "6802ef03475dad676c21e5525832e46b1b2ea1f6d12687ae0bab39aa85367b16",
+  "bytes": 432566,
+  "pages": 71,
   "chapters": [
     {
       "id": "start-here-what-aegis-does",
@@ -23,116 +23,116 @@
     {
       "id": "open-the-site-and-choose-a-safe-practice-workspace",
       "title": "Open the site and choose a safe practice workspace",
-      "body_page_index": 4,
-      "page": 7
-    },
-    {
-      "id": "command-center-understand-the-current-operation",
-      "title": "Command center: understand the current operation",
       "body_page_index": 5,
       "page": 8
     },
     {
+      "id": "command-center-understand-the-current-operation",
+      "title": "Command center: understand the current operation",
+      "body_page_index": 6,
+      "page": 9
+    },
+    {
       "id": "route-laboratory-test-a-farm-or-a-multi-location-fleet",
       "title": "Route laboratory: test a farm or a multi-location fleet",
-      "body_page_index": 11,
-      "page": 14
+      "body_page_index": 14,
+      "page": 17
     },
     {
       "id": "road-intelligence-inspect-independent-road-evidence",
       "title": "Road intelligence: inspect independent road evidence",
-      "body_page_index": 15,
-      "page": 18
-    },
-    {
-      "id": "dispatcher-desk-turn-reports-into-recorded-decisions",
-      "title": "Dispatcher desk: turn reports into recorded decisions",
       "body_page_index": 18,
       "page": 21
     },
     {
+      "id": "dispatcher-desk-turn-reports-into-recorded-decisions",
+      "title": "Dispatcher desk: turn reports into recorded decisions",
+      "body_page_index": 21,
+      "page": 24
+    },
+    {
       "id": "aegis-drive-a-simplified-view-for-a-parked-driver",
       "title": "AEGIS Drive: a simplified view for a parked driver",
-      "body_page_index": 24,
-      "page": 27
+      "body_page_index": 27,
+      "page": 30
     },
     {
       "id": "guided-practice-a-driver-concern-through-dispatcher-response",
       "title": "Guided practice: a driver concern through dispatcher response",
-      "body_page_index": 28,
-      "page": 31
+      "body_page_index": 31,
+      "page": 34
     },
     {
       "id": "sources-evidence-understand-where-each-claim-comes-from",
       "title": "Sources & evidence: understand where each claim comes from",
-      "body_page_index": 32,
-      "page": 35
+      "body_page_index": 35,
+      "page": 38
     },
     {
       "id": "model-evaluation-understand-the-measured-result",
       "title": "Model evaluation: understand the measured result",
-      "body_page_index": 41,
-      "page": 44
+      "body_page_index": 44,
+      "page": 47
     },
     {
       "id": "evidence-assistant-explain-a-captured-decision-context",
       "title": "Evidence assistant: explain a captured decision context",
-      "body_page_index": 47,
-      "page": 50
-    },
-    {
-      "id": "project-brief-the-learning-and-presentation-hub",
-      "title": "Project brief: the learning and presentation hub",
       "body_page_index": 50,
       "page": 53
     },
     {
-      "id": "guided-rehearsal-practice-a-complete-story",
-      "title": "Guided rehearsal: practice a complete story",
-      "body_page_index": 51,
-      "page": 54
+      "id": "project-brief-the-learning-and-presentation-hub",
+      "title": "Project brief: the learning and presentation hub",
+      "body_page_index": 53,
+      "page": 56
     },
     {
-      "id": "storage-exports-and-sharing",
-      "title": "Storage, exports and sharing",
+      "id": "guided-rehearsal-practice-a-complete-story",
+      "title": "Guided rehearsal: practice a complete story",
       "body_page_index": 54,
       "page": 57
     },
     {
-      "id": "local-backup-and-recovery",
-      "title": "Local backup and recovery",
-      "body_page_index": 56,
-      "page": 59
-    },
-    {
-      "id": "troubleshooting-by-what-you-see",
-      "title": "Troubleshooting by what you see",
+      "id": "storage-exports-and-sharing",
+      "title": "Storage, exports and sharing",
       "body_page_index": 57,
       "page": 60
     },
     {
-      "id": "glossary-for-reading-the-site",
-      "title": "Glossary for reading the site",
+      "id": "local-backup-and-recovery",
+      "title": "Local backup and recovery",
       "body_page_index": 59,
       "page": 62
     },
     {
-      "id": "present-the-project-accurately",
-      "title": "Present the project accurately",
+      "id": "troubleshooting-by-what-you-see",
+      "title": "Troubleshooting by what you see",
+      "body_page_index": 60,
+      "page": 63
+    },
+    {
+      "id": "glossary-for-reading-the-site",
+      "title": "Glossary for reading the site",
       "body_page_index": 62,
       "page": 65
     },
     {
+      "id": "present-the-project-accurately",
+      "title": "Present the project accurately",
+      "body_page_index": 65,
+      "page": 68
+    },
+    {
       "id": "keep-this-master-guide-current",
       "title": "Keep this master guide current",
-      "body_page_index": 63,
-      "page": 66
+      "body_page_index": 66,
+      "page": 69
     },
     {
       "id": "recorded-verification-and-what-remains-open",
       "title": "Recorded verification and what remains open",
-      "body_page_index": 64,
-      "page": 67
+      "body_page_index": 67,
+      "page": 70
     }
   ],
   "overflow_count": 0,
@@ -144,11 +144,11 @@
   "source_files": [
     {
       "path": "docs/manual_parts/start.md",
-      "sha256": "fa325398a5b3d4f1b01276dddb76570d2f6d03ba3b5129b8ad196cfa73b513ea"
+      "sha256": "6e30baf7b2e47c2945f323733df690959e7c0f74d3753a5a67dd48d34f11df84"
     },
     {
       "path": "docs/manual_parts/operations.md",
-      "sha256": "6be2ab49e3befaeef862b3402ed9d9378aaa0bc556dde5a229650300293f330f"
+      "sha256": "eededaeba14b2c5f90517b2109169045a65f2efc6c9cc5c40b70dbdca2894ec0"
     },
     {
       "path": "docs/manual_parts/dispatch_drive.md",

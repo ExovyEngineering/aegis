@@ -13,11 +13,15 @@ The standard scenario has 3 simulated suppliers, 2 distribution centers, 15 dest
 | APPROVED ASSIGNMENTS | Current dispatcher-approved simulated trips, with acknowledgment count | Check whether a proposed plan has actually been approved and whether drivers acknowledged it |
 | PUBLIC ENDPOINT PROBES | Successful saved HTTP probes divided by registered probes | Inspect connectivity evidence; a successful documentation page does not prove full or current data coverage |
 
-The **Review queue** combines simulated excursions, active simulated holds and a small preview of dated NWS alerts. Its cards are prompts to inspect evidence. They do not themselves approve a response, impose a hold or send a message. A count can exceed the few cards displayed in the preview.
+The **Review queue** combines simulated excursions, active simulated holds and a small preview of dated NWS alerts. **Inspect SH...** selects the corresponding candidate and brings its trip detail into view. **Open lot review** navigates to Dispatcher desk. **Inspect official evidence** opens Sources & evidence. The header bell, **Open review queue**, returns to this queue from another Command workspace. These are navigation actions; they do not approve a response, impose a hold or send a message. A count can exceed the five cards displayed in the preview.
 
 ### Explore the distribution map
 
 Open the **Evidence layers** controls on the map. Their checkboxes change what is drawn; they do not change the underlying operation.
+
+Use **Show allocation on map** to choose which simulated origin-destination links are drawn. The selector is labeled **Map allocation** for accessibility. **All ... candidate shipments** shows the available candidate set; **Scenario A/B/C/D** shows that response's proposed trips; **Current approved assignments** shows the recorded assignment set. The caption reports the displayed scope and count. A proposed or approved lot can differ from the candidate's original lot, so inspect the popup and assignment detail before reading a line as the original candidate. If there are no approved assignments, the approved overlay is empty rather than silently showing candidates.
+
+Changing an overlay selects a view of an allocation, not a road route. The dashed connections still join fixed origins and destinations. If the currently selected candidate is outside the chosen overlay, the caption explains why its connection is hidden. A scenario row's **Show on map** control changes to that scenario's overlay and brings the map into view; it does not approve the scenario.
 
 | Layer | What appears | Meaning |
 | --- | --- | --- |
@@ -29,19 +33,25 @@ Open the **Evidence layers** controls on the map. Their checkboxes change what i
 
 Click a simulated shipment line or truck marker to select its associated trip. A truck's Command marker is an illustrative midpoint of an origin-to-destination connection, not GPS. Click a location or evidence geometry for its popup. Zoom and pan to investigate the area. The OpenStreetMap base map needs internet; a missing tile is different from a missing shipment or provider record.
 
-The map can initially show a labeled Columbia-to-St. Louis reference route that is independent of the selected shipment. Check the route label before interpreting it. To request a route for the actual selected trip, use **Request road route** in the trip panel. Changing selection or network revision can invalidate an earlier shipment-specific route.
+A fresh Command view starts without an automatically loaded cached reference road route. Its dashed logistics links are not road geometry. To produce road geometry for the selected trip, use **Request road route** in the trip panel. Changing the selected shipment or network revision clears an earlier shipment-specific road comparison; request the current trip again. The map focuses on the selected candidate's origin and destination when it has no usable road comparison.
 
 ### Inspect cargo and weather separately
 
-In **Cold-chain & trip detail**, use **Select shipment** to change the truck, destination, cargo quantity, current simulated temperature and displayed temperature history together. The fixed trip estimate uses straight-line distance multiplied by 1.25 at an assumed 65 km/h. Requesting an OSRM road route does not silently replace the allocation model's fixed travel assumptions.
+In **Cold-chain & trip detail**, use **Select shipment** to change the candidate truck, destination, cargo quantity, current simulated temperature and displayed seeded temperature history together. A context message states whether that candidate currently has an approved driver assignment and identifies the approved truck and lot separately from the candidate's original lot. A candidate is not an assigned trip simply because it is selected.
 
-**Request road route** asks OSRM for ordinary-driving geometry and available alternatives. **Route alternatives & road review** then shows each route's distance, travel estimate and captured MoDOT geometries within a 250-meter buffer. Read whether the geometry is estimated, whether road evidence is stale or incomplete, and whether the route label belongs to the selected shipment. Nearby parallel roads and duplicate point/line records can produce matches. Zero matches is not road clearance. OSRM does not validate truck height, weight or other commercial restrictions and does not automatically avoid current DOT closures.
+The fixed trip estimate uses straight-line distance multiplied by 1.25 at an assumed 65 km/h. Requesting an OSRM road route does not silently replace the allocation model's fixed travel assumptions. The chart is the seeded historical simulation trace. An injected event can change the current cargo reading without rewriting those history points; the chart is not a newly acquired sensor stream.
+
+**Request road route** asks OSRM for ordinary-driving geometry and available alternatives. While it runs, the button says **Finding road route...** and a nearby status explains what is being computed. A successful result brings **Route alternatives & road review** into view. A failure is reported by the trip control; unusable geometry is not presented as a successful comparison. An estimated fallback is visibly labeled when that is what was returned.
+
+The result shows distances, travel estimates and captured MoDOT geometries within a 250-meter buffer. **Highlight alternative 1/2/...** changes the comparison selected for the map. **Focus route map** brings that map into view; enable the **Route geometry** layer if you previously hid it. **Export route comparison JSON** downloads the captured comparison and selected alternative without creating an assignment. No alternative button changes a lot, stop order, fixed allocation estimate or driver instruction.
+
+Read whether geometry is estimated, whether road evidence is stale or incomplete, and whether the route label belongs to the selected shipment. The comparison displays Command's planning duration separately from the road-service estimate; a difference is not a measured time saving. Nearby parallel roads and duplicate point/line records can produce matches. Zero matches is not road clearance. OSRM does not validate truck height, weight or other commercial restrictions, incorporate the simulated event delay, or automatically avoid current DOT closures.
 
 **Weather exposure** is an Open-Meteo forecast for Columbia. Its first timestep and chart are ambient forecast values, not measurements from the cargo. The selected trip's simulated cargo trace, a weather forecast, historical station observations and the laboratory's temperature projection are four different things. The current system has no validated weather-to-FSIS predictive linkage.
 
 ### Compare the four response scenarios
 
-**Compare operational scenarios** is a one-wave allocation exercise. It chooses among fixed candidate shipments subject to stock, demand, truck, supplier and distribution-center constraints. It does not build a multi-stop vehicle itinerary. **Recompute** reloads current scenario calculations; it does not approve them.
+**Compare operational scenarios** is a one-wave allocation exercise. It chooses among fixed candidate shipments subject to stock, demand, truck, supplier and distribution-center constraints. It does not build a multi-stop vehicle itinerary. **Recompute** runs the current scenario calculations and reports a completion time, network revision and result count below the table. It explicitly says when totals and selected trips match the previous run. That is a valid deterministic result when inputs are unchanged; it does not mean the button was inactive. Failed or incomplete recomputations show an error instead of a successful receipt. Nothing is approved by recomputing.
 
 | Scenario | Question it explores | What changes relative to the baseline |
 | --- | --- | --- |
@@ -79,10 +89,12 @@ Use an isolated practice workspace for this walkthrough if you are learning or p
 
 1. Compare A through D and inspect resources, selected shipments and exclusions.
 2. Click **Review** on the desired scenario. This saves a pending proposal and opens its review dialog; it does not yet publish driver trips.
-3. Inspect cost, unmet demand, checked violations and any proposed lot holds. Enter **Dispatcher name** and **Reason for approval**. Names are self-declared in this local demonstrator, not authenticated enterprise accounts.
+3. Inspect cost, unmet demand, checked violations and any proposed lot holds. Expand **Inspect ... proposed assignments and lots** to read each trip, truck, proposed lot, destination and load. A substituted lot is labeled. Enter **Dispatcher name** and **Reason for approval**. Names are self-declared in this local demonstrator, not authenticated enterprise accounts.
 4. Choose **Keep under review** to close the dialog without approval. This is not an approval or rejection record.
 5. Choose **Approve simulated plan** only after reviewing the proposed action. The server checks the current network revision, recomputes the plan and independently rechecks constraints. A stale or changed proposal is rejected and must be recreated.
 6. On accepted approval, the app replaces the current assignment set with this plan, records an audit entry, applies scenario C's proposed holds if applicable and updates Drive. It does not physically dispatch a vehicle or consume real inventory.
+
+If approval fails, **Approval did not complete** appears inside the still-open dialog, where the decision was being made. Do not treat an attempted click as an approval. A stale proposal needs a fresh review of the current network rather than a repeated approval of old inputs. After success, select **Current approved assignments** on the map or open Dispatcher desk and Drive to inspect the actual published set.
 
 The present one-wave model does not decrement the simulated stock as a warehouse shipment transaction when a plan is approved. Stock quantities are constraints for the current allocation exercise, not a continuously reconciled warehouse ledger. Approving another plan replaces the current assignment set rather than appending a second independent wave.
 
@@ -90,18 +102,34 @@ Held, recalled and ineligible lots remain excluded regardless of cost preference
 
 ### Exercise a disruption and see its consequences
 
-In **Exercise the response workflow**, select a shipment, choose **Event type**, then click **Introduce event**. These are deliberately simulated events. They alter the current network, advance its revision and invalidate all current assignments so a fresh plan can be reviewed. Repeated clicks can accumulate changes; they are not a replay of a single official incident.
+In **Preview a disruption before applying it**, choose the candidate with **Select shipment**, then choose **Event type**. The panel produces a before/after experiment before you decide whether to alter this workspace. These are deliberately simulated effects, not live incidents or observations.
 
 | Event type | Present simulator effect | What it does not establish |
 | --- | --- | --- |
-| road closure | Adds two hours to the selected trip's fixed travel estimate | No real road is closed and no MoDOT record is created |
-| severe weather | Adds two hours to that trip estimate | No official weather warning is issued |
-| delivery delay | Adds two hours to that trip estimate | No real vehicle progress or arrival is measured |
-| refrigeration fault | Changes current simulated cargo temperature to 9°C and makes its assigned truck ineligible | No physical refrigeration diagnosis or sensor stream |
-| temperature excursion | Changes the current simulated cargo temperature to 9°C and raises review priority | No laboratory finding, illness estimate or automatic lot hold |
-| inventory shortage | Sets the affected lot's available stock to zero | No actual inventory transaction |
+| Road closure | Adds two planning hours and reduces the selected candidate's deadline margin by two hours | No real road is closed, no MoDOT record is created and no road path is recomputed |
+| Severe weather | Adds the same fixed two-hour planning delay and reduces deadline margin | No official warning or weather-derived delay estimate is produced |
+| Delivery delay | Adds two planning hours and reduces deadline margin | No physical progress or arrival timestamp is measured |
+| Refrigeration fault | Sets current simulated cargo to 9°C, raises review priority to high and makes the shared truck ineligible | No physical diagnosis; other candidates using that truck can also be affected |
+| Cargo temperature excursion | Sets current simulated cargo to 9°C and raises review priority to high | No laboratory finding, illness probability or automatic lot hold |
+| Inventory shortage | Sets the candidate's original shared lot inventory to zero | No warehouse transaction; other candidates using that lot can also be affected |
 
-**Reset demo** restores the deterministic network and removes current approved assignments. It records the reset in audit history; it does not erase all historical records or saved route projects. Original public/raw datasets are unchanged. Seeded temperature-history points are not a physical real-time sensor feed; an injected current event is not proof of new observed telemetry.
+1. Click **Preview event impact**. The server reads the current simulation and computes all four allocation scenarios before and after a copy of the selected event. This step does not write an event, clear assignments or create a proposal.
+2. Read **direct changes**: only changed fields are listed, with before, after and numeric delta where applicable. The supported fields include planning travel duration, deadline margin, simulated cargo temperature, shared lot inventory, truck eligibility and operational review priority. These relative hours are not a departure clock or a live ETA.
+3. Read **Allocation outcomes: before → after**. Compare selected trips, simulated logistics cost, unmet demand, solver status and violations. Expand **Inspect changed shipments, resources and limitations** for shared resources, added/removed trips, lot substitutions and changed proposed holds. The same totals can hide different trip choices. An optimizer difference is not proof of why it made that choice.
+4. Inspect the warning that road geometry and stop order stay unchanged, and the count of **all ... approved assignments** that applying would clear. Unrelated trips are included. Use **Export event impact JSON** if you want a captured read-only comparison for discussion.
+5. If changing this simulation is intended, check **I intend to change this simulation and clear all approved assignments.** Then click **Apply previewed event**. The checkbox and apply control remain unavailable for an older comparison after the event, selected shipment or network has changed. The server checks the displayed revision and preview checksum against the actual state before applying; it does not trust consent to an obsolete comparison.
+6. Read the applied-event receipt: affected candidate, new revision and actual assignment-removal count. **Compare refreshed response plans** brings the recomputed allocation table into view. Command also retains a separate **Confirmed event receipt** even if the entire network becomes unavailable and the simulator panel disappears. **Export confirmed event JSON** saves that exact result; **Dismiss confirmed receipt** only hides the message. Reload application data before another action after a refresh failure. A failed or unverified apply is not shown as successful.
+7. Review and propose a fresh allocation, then use the separate human approval workflow to publish new assignments. Applying an event does not create replacement assignments or a dispatcher-approved detour. An export after a successful apply includes the recorded receipt and identifies that stage separately from a read-only preview.
+
+Repeated delay events accumulate two-hour increments. Some other repeated events can produce no further direct field changes because cargo is already 9°C, the truck already ineligible or stock already zero. The panel explicitly warns when its direct values are unchanged. Applying even that event still records another event, advances the revision and clears every approved assignment; do not click Apply just to make a chart move.
+
+**Reset demo** first opens **Reset the simulated network?** Read its assignment count and stale-proposal warning. **Keep current network** cancels. **Confirm reset simulation** restores the deterministic network, removes approved assignments and advances the revision; a failed reset remains visible inside the dialog. The reset is recorded in audit history. It does not erase all historical records or saved route projects, and original public/raw datasets stay unchanged.
+
+### A first read-only walkthrough
+
+Start in Command, read its **WHAT YOU ARE LOOKING AT** guide, and select a candidate in **Cold-chain & trip detail**. Request its road route and inspect the result that comes into view. Highlight an available alternative, focus the map, and compare the road-service estimate with the candidate's separate planning input. Then click **Show on map** on a scenario row to see its selected allocation links. This changes a display, not an approved route.
+
+Preview **Delivery delay** for the same candidate. Read the two-hour duration change, reduced deadline margin and all four allocation outcomes without checking consent or applying. Export the comparison if useful. Use **Recompute** to confirm what the unchanged current network produces; the unapplied preview has not altered it. When you are ready to practice changes, use a verified isolated rehearsal and follow the explicit apply, fresh proposal, approval and parked-driver steps.
 
 ## Route laboratory: test a farm or a multi-location fleet
 

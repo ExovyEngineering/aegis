@@ -1,5 +1,26 @@
 # Architecture
 
+## Command feedback and impact comparison (October 29)
+
+`backend/event_impact.py` captures bounded network and assignment records with
+SQLite `mode=ro`/`query_only` and computes a pure before/after experiment with
+the existing simulator and all four allocation scenarios. A second read rejects
+changed input state. Preview is independent of provider/model calls and never
+initializes, seeds, writes a proposal or clears an assignment.
+
+The Command UI requires preview plus explicit consent before applying an event.
+The event transaction checks the expected revision and recomputed preview hash,
+then records the event, advances revision and clears every approved assignment
+atomically. Legacy API clients may still apply directly without a preview;
+providing a preview requires its revision. No preview creates an approval.
+
+Map allocation projections and road-alternative highlighting are display state.
+They do not change optimizer OD inputs, stop order or approved assignments.
+Route geometry comes only from an explicit request and stays separate from
+simulated two-hour delays and source overlays. Inline results/errors, captured
+exports and per-workspace guides distinguish these steps. See
+`docs/command_workflow.md` and `docs/event_impact.md` for exact semantics.
+
 `backend/evidence_assistant.py` captures network and approved assignments with
 a separate SQLite `mode=ro`, `query_only` transaction; it never initializes or
 seeds a missing database. Report hashes and parsing use the same bounded bytes,

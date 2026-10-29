@@ -2,7 +2,43 @@
 
 Session date: October 29, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: read-only cited evidence assistant (October 29)
+## Latest: visible Command results and disruption impact (October 29)
+
+- Audited the Command controls and fixed concrete feedback failures: approval
+  errors now appear inside the dialog; recompute records completion even when
+  results match; road results appear near the trip detail and receive focus.
+  Rejected/empty route responses are visible rather than blank success states.
+- Added a read-only six-event impact experiment using the existing simulator
+  and all four real allocation computations. It reports exact field/resource
+  changes, candidate/lot differences, constraints and all-assignment invalidation.
+  Applying requires explicit consent and a transaction-checked revision/hash;
+  stale context is rejected without mutation. Confirmed receipts survive a
+  subsequent incomplete refresh. These are modeled effects, not live impacts.
+- Added candidate/scenario/approved allocation overlays, selected road geometry
+  and focus, route/impact JSON exports, working review-queue navigation and reset
+  confirmation. No reference route is silently shown for an unrelated candidate.
+  A map choice does not change optimizer geometry or publish a driver instruction.
+- Added compact purpose/scope/connection guidance to all workspaces, preserving
+  the simplified dedicated parked-use Drive. Candidate trucks, approved lots,
+  seeded telemetry history and injected current readings are distinguished.
+- Executed full local checks: **711 pytest passed** (three Windows symlink
+  skips), **192 Vitest passed**, production build passed. The preview/apply suite
+  includes 51 focused cases. **214 actual-Chrome workflow checks** and a
+  **35-test package follow-up** passed. All six UI previews matched independent
+  simulator/solver results; the real stale-proposal HTTP 409 was visible inside
+  its dialog. A browser-injected network failure after an actual event application
+  confirmed that its receipt/export survived the loss of the simulator panel
+  without duplicate application. The updated handbook has 71 pages and 35 browser download/print
+  checks. Artifacts remain separately dated; no provider/model evaluation is
+  inferred. A shared Windows pytest temporary-directory setup failure is retained
+  in the follow-up record; the retry used a fresh workspace-owned temp directory.
+- The operator process on port 8000 was no longer listening and was started with
+  the updated backend. Its original database and all 42 raw hashes stayed intact.
+  Browser mutations run only in a fresh offline QA database on port 8014.
+- Existing scientific/data coverage limits, prior FSIS/ERS failures, genuine
+  Kiro execution, final rubric/author review and a timed human demo remain open.
+
+## Previous: read-only cited evidence assistant (October 29)
 
 - Added six bounded summaries of scenarios, selected shipments, measured model
   results, source coverage, driver workflow and available review views. Network

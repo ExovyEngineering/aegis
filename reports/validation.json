@@ -1,8 +1,8 @@
 {
   "session_date": "2026-10-28",
-  "pytest_passed": 660,
+  "pytest_passed": 711,
   "pytest_warnings": 5,
-  "vitest_passed": 121,
+  "vitest_passed": 192,
   "frontend_production_build": "passed",
   "compileall": "passed",
   "real_http_checks_passed": 29,
@@ -86,11 +86,13 @@
   "backup_recovery_artifact": "reports/backup_recovery.json",
   "stretch_verification_artifact": "reports/stretch_verification.json",
   "clean_install_scope": "Earlier core install is separately dated; updated package verification reuses its environment.",
-  "master_guide_pages": 68,
+  "master_guide_pages": 71,
   "master_guide_chapters": 21,
   "master_guide_browser_checks_passed": 35,
   "master_guide_artifact": "reports/master_guide_verification.json",
   "assistant_browser_checks_passed": 81,
   "assistant_evaluation_artifact": "reports/assistant_evaluation.json",
-  "assistant_actual_model_evaluated": false
+  "assistant_actual_model_evaluated": false,
+  "command_browser_checks_passed": 214,
+  "command_workflow_artifact": "reports/command_workflow_evaluation.json"
 }

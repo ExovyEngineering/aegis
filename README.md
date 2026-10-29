@@ -103,6 +103,20 @@ disabled. Map tiles may need internet. Nothing resets the operator database.
 The measured timer and self-reported coverage do not prove a human presentation,
 Kiro execution or final approval. See [the rehearsal guide](docs/rehearsal_guide.md).
 
+## Understand and exercise Command
+
+Command includes **Preview event impact**. Choose a candidate shipment and a
+simulated disruption to calculate direct before/after changes and all four
+allocation comparisons. Preview changes nothing; applying requires explicit
+consent and matching revision/checksum guards, and clears all approved
+assignments. Fresh assignments still need human approval.
+
+Every workspace has a compact purpose/scope guide. **Show on map** inspects a
+proposed allocation; **Request road route** produces a separate road comparison,
+alternative highlighting and JSON export. Neither action dispatches or silently
+replaces the fixed allocation inputs. Recompute reports completion even when
+deterministic results match. See [the Command walkthrough](docs/command_workflow.md).
+
 ## Read-only evidence assistant
 
 Open **Evidence assistant** for six cited explanations: response scenarios,

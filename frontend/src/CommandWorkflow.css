@@ -1,0 +1,55 @@
+.command-explanation { margin: 12px 22px; color: #64765e; font-size: 12px; line-height: 1.7; }
+.command-route-result, .event-impact-panel { margin: 22px 0; scroll-margin-top: 90px; }
+.command-route-summary { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 22px; padding: 16px 22px; background: #f0f5ec; color: #375d45; font-size: 13px; }
+.command-route-summary strong, .command-route-summary span { display: block; }
+.command-route-summary button { margin-left: auto; }
+.command-result-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px 22px; font-size: 11px; color: #72816a; }
+.command-route-result > .coverage-warning { margin: 14px 22px; }
+.command-route-result tr[aria-selected=true] { background: #f1f6ec; }
+.command-map-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 12px 20px; border-bottom: 1px solid #e2e8db; color: #65785d; font-size: 12px; }
+.command-map-controls label { display: flex; align-items: center; gap: 9px; }
+.command-map-controls select { font-size: 12px; padding: 8px; max-width: 100%; }
+.command-map-controls p { font-size: 11px; line-height: 1.6; }
+.command-inline-status { padding: 12px 20px; background: #f1f6ec; color: #3f6147; font-size: 12px; line-height: 1.7; }
+.command-loading { padding: 14px 22px; border: 1px solid #d8e3ce; border-radius: 7px; background: #f4f7ef; font-size: 13px; color: #4d6d43; }
+.command-chart-note { margin: 0 22px 12px; font-size: 11px; color: #6b7a61; line-height: 1.6; }
+.command-review-action { margin-top: 8px; font-size: 11px; }
+.command-approval-error { margin: 16px 0; }
+.command-proposed-trips { margin: 18px 0; font-size: 12px; }
+.command-proposed-trips > summary { cursor: pointer; padding: 10px 0; color: #42633f; font-weight: 600; }
+.command-proposed-trips .table-scroll { max-height: 220px; overflow-y: auto; }
+.command-proposed-trips td, .command-proposed-trips th { font-size: 11px; padding: 9px; }
+.event-impact-controls { display: flex; gap: 14px; align-items: end; flex-wrap: wrap; padding: 0 22px 20px; }
+.event-impact-controls .field { margin: 0; min-width: 190px; flex: 1; }
+.event-impact-controls .field select { font-size: 13px; }
+.event-impact-comparison { padding: 0 22px 20px; }
+.event-impact-comparison h3 { margin: 16px 0 10px; font-size: 15px; color: #41613e; }
+.event-impact-comparison td, .event-impact-comparison th { font-size: 12px; padding: 12px; }
+.event-impact-comparison .coverage-warning { margin: 12px 0; font-size: 12px; }
+.event-impact-comparison .event-route-scope { display: block; }
+.event-route-scope > strong { display: block; margin-bottom: 5px; }
+.event-impact-consent { display: flex; align-items: start; gap: 10px; padding: 12px 0; color: #66593f; font-size: 12px; line-height: 1.7; }
+.event-impact-consent input { margin-top: 4px; }
+.event-impact-empty { margin: 0 22px 20px; border: 1px dashed #ccd9c1; border-radius: 7px; padding: 18px; color: #64775a; font-size: 13px; line-height: 1.7; }
+.event-impact-applied { border: 1px solid #b8d1b0; background: #edf6e9; padding: 16px; color: #3c643c; margin: 12px 0; font-size: 13px; line-height: 1.8; }
+.event-impact-details { margin: 12px 0; color: #65735e; font-size: 12px; line-height: 1.7; }
+.event-impact-details summary { cursor: pointer; font-weight: 600; }
+.event-impact-details ul { padding-left: 20px; }
+.command-context-badge { margin: 0 22px 14px; padding: 10px 12px; border-radius: 5px; background: #f3f5ee; font-size: 12px; line-height: 1.7; color: #5c7052; }
+.command-confirmed-event { margin: 16px 0; background: #f0f7ed; border-color: #b9d0ae; }
+.command-confirmed-event > div:first-child { padding: 16px 22px 0; font-size: 13px; line-height: 1.7; color: #385d3c; }
+.command-confirmed-event p { margin-top: 7px; }
+.command-confirmed-event p[role=alert] { color: #805b27; font-weight: 600; }
+@media(max-width:700px) {
+ .command-route-summary { align-items: start; flex-direction: column; padding: 15px; }
+ .command-route-summary button { margin-left: 0; }
+ .command-explanation, .command-route-result > .coverage-warning { margin-left: 15px; margin-right: 15px; }
+ .command-map-controls, .command-result-actions { padding: 12px 15px; }
+ .command-map-controls label { flex-wrap: wrap; width: 100%; }
+ .command-map-controls select { width: 100%; }
+ .event-impact-controls { padding: 0 15px 15px; align-items: stretch; flex-direction: column; }
+ .event-impact-comparison { padding: 0 15px 15px; }
+ .event-impact-empty { margin: 0 15px 15px; }
+ .command-route-result, .event-impact-panel { scroll-margin-top: 20px; }
+ .command-chart-note { margin-left: 15px; margin-right: 15px; }
+}

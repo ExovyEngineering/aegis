@@ -1,0 +1,76 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/MapViewport.test.tsx (2 tests) 30ms
+ ✓ src/routingProvenance.test.ts (2 tests) 3ms
+ ✓ src/api.test.ts (3 tests) 12ms
+ ✓ src/networkMapModel.test.ts (11 tests) 37ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 124ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 212ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 248ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 411ms
+   ✓ loads exact saved inputs/results instead of recomputing or dispatching  330ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 272ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 454ms
+   ✓ filters one named source, shows literal source values and page missingness  383ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 313ms
+ ✓ src/ProjectBrief.test.tsx (2 tests) 696ms
+   ✓ shows recorded failures and pending gates beside downloadable evidence  475ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 469ms
+   ✓ requires human identity and every checkbox for completion, with version guards  458ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 828ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  645ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 849ms
+   ✓ inspects each trip and filters constraint blocks separately from workflow review  430ms
+   ✓ clears a failed report instead of keeping earlier passing checks visible  310ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 801ms
+   ✓ clears old routes on trip changes and ignores a slower earlier route response  377ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 955ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  801ms
+ ✓ src/WorkspaceGuide.test.tsx (13 tests) 913ms
+   ✓ explains comparison, simulation and approval separately in Command  327ms
+ ✓ src/NetworkMap.test.tsx (6 tests) 634ms
+ ✓ src/RouteLab.test.tsx (2 tests) 1150ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  868ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1436ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  771ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1703ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  607ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  623ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 1859ms
+   ✓ keeps operator mode read-only and copies a real isolated-launch command  419ms
+ ✓ src/EventImpactPanel.test.tsx (32 tests) 2690ms
+   ✓ produces a read-only result and four comparisons without applying an event  597ms
+   ✓ requires consent and submits the exact preview identity and network revision  311ms
+ ✓ src/EvidenceAssistant.test.tsx (25 tests) 3855ms
+   ✓ offers six bounded topics and clearly identifies deterministic read-only facts  828ms
+   ✓ matches typed wording using rules by default and omits prompt text from export  556ms
+ ✓ src/RoadIntelligence.test.tsx (18 tests) 3859ms
+   ✓ shows dated, incomplete and failed sources without claiming clear roads  686ms
+ ✓ src/App.test.tsx (15 tests) 5000ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  872ms
+   ✓ AEGIS workflow > clears old driver assignments and scenario rows when a partial refresh fails  307ms
+   ✓ AEGIS workflow > reports stale fallback as a failed refresh rather than new source success  326ms
+   ✓ AEGIS workflow > preserves a requested shipment route across application reloads  338ms
+   ✓ AEGIS workflow > shows an approval rejection inside the still-open dialog and clears prior success  380ms
+   ✓ AEGIS workflow > shows failed recomputation near the results and removes a stale successful receipt  389ms
+   ✓ AEGIS workflow > changes only the map overlay when inspecting a scenario allocation  307ms
+   ✓ AEGIS workflow > selects a road alternative without writing a new assignment or changing planning inputs  485ms
+   ✓ AEGIS workflow > makes a malformed route response visibly fail instead of showing an empty result  309ms
+   ✓ AEGIS workflow > requires reset confirmation and keeps reset errors visible in its dialog  306ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 482ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  481ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 1109ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  472ms
+   ✓ does not overwrite an opened saved project with a late computation or its run id  318ms
+   ✓ ignores a failed older run after opening a saved project  318ms
+
+ Test Files  29 passed (29)
+      Tests  191 passed (191)
+   Start at  15:29:53
+   Duration  34.34s (transform 8.55s, setup 61.74s, collect 67.68s, tests 31.40s, environment 269.54s, prepare 25.42s)
+

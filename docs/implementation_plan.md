@@ -71,3 +71,13 @@ separate justified inputs and validation.
 4. Verify grounding, stale races, unsupported requests, provider/malformed-output fallback, mobile navigation and immutable exports; update the handbook and review package.
 
 Actual model evaluation remains pending; configuration/mock tests are not inference evidence. Genuine Kiro and final team submission review remain separate.
+
+## October 29 Command clarity increment
+
+Implemented the audited controls and visible results before unrelated stretches:
+read-only disruption experiments, guarded explicit application, route/plan
+visualization and exports, per-workspace explanations and visible failure states.
+Use docs/command_workflow.md for the connected walkthrough. Verify actual Chrome
+flows against a fresh offline rehearsal database; keep the operator untouched.
+Genuine Kiro, final author/rubric review and timed human presentation are separate
+remaining P0 tasks; this UX increment does not close them.

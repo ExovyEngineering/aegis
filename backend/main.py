@@ -19,6 +19,7 @@ from backend.rehearsal import create_rehearsal_router
 from backend.road_intelligence import create_road_intelligence_router
 from backend.evidence_assistant import create_assistant_router
 from backend.assistant_intent import create_assistant_intent_router
+from backend.event_impact import create_event_impact_router, build_event_impact
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -106,15 +107,30 @@ def facilities():
     df=pd.read_parquet(paths[0]); return json.loads(df[['establishment_id','establishment_name','latitude','longitude','activities']].to_json(orient='records'))
 
 class Event(BaseModel):
+    model_config=ConfigDict(extra='forbid',str_strip_whitespace=True)
     event:str
     shipment_id:str
+    expected_network_revision:int|None=Field(default=None,ge=0,strict=True)
+    preview_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{64}$')
+    @model_validator(mode='after')
+    def preview_context(self):
+        if self.preview_id is not None and self.expected_network_revision is None:
+            raise ValueError('Applying a preview requires its expected network revision')
+        return self
 @app.post('/api/events')
 def event(request:Event):
     with db() as c:
         c.execute('BEGIN IMMEDIATE'); n,rev=load(c)
+        if request.expected_network_revision is not None and request.expected_network_revision!=rev:
+            raise HTTPException(409,'Network changed; reload and preview the event again before applying')
+        assignments=[dict(json.loads(row[0]),acknowledged=bool(row[1])) for row in c.execute('SELECT payload,acknowledged FROM assignments ORDER BY id')]
+        if request.preview_id is not None:
+            impact=build_event_impact(n,rev,assignments,request.event,request.shipment_id)
+            if impact['preview_id']!=request.preview_id:
+                raise HTTPException(409,'The event or assignment context no longer matches the displayed preview; preview again before applying')
         try: apply_event(n,request.event,request.shipment_id)
         except ValueError as e: raise HTTPException(400,str(e))
-        c.execute('UPDATE state SET payload=?,revision=? WHERE id=1',(json.dumps(n),rev+1)); c.execute('DELETE FROM assignments'); record(c,'simulator','event',request.model_dump()); return {'revision':rev+1,'assignments_invalidated':True}
+        c.execute('UPDATE state SET payload=?,revision=? WHERE id=1',(json.dumps(n),rev+1)); c.execute('DELETE FROM assignments'); record(c,'simulator','event',request.model_dump()); return {'revision':rev+1,'network_revision_before':rev,'assignments_invalidated':True,'assignments_removed':len(assignments),'preview_id':request.preview_id,'operational_state_modified':True}
 @app.post('/api/demo/reset')
 def reset():
     with db() as c:
@@ -275,6 +291,7 @@ app.include_router(create_rehearsal_router(db,load,record,lambda:DB,root=lambda:
 app.include_router(create_road_intelligence_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_assistant_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_assistant_intent_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_event_impact_router(lambda:DB,root=lambda:ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

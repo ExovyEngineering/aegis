@@ -31,7 +31,7 @@ Real establishment coordinates do not prove that the simulated distributor buys 
 
 ### What is already available, and what is not?
 
-Available now: the nine connected workspaces in this guide; deterministic network/event simulation; four allocation responses; constrained farm/fleet route experiments; saved planning versions and exports; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
+Available now: the nine connected workspaces in this guide; deterministic network/event simulation with read-only before/after previews; four allocation responses; separate candidate, proposed and approved map overlays; selectable road-route comparisons and captured exports; constrained farm/fleet route experiments; saved planning versions; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
 
 Still outside the implemented product: live physical sensors or vehicle tracking, native phone-app distribution, commercial truck certification, automatic closure avoidance, production accounts, cloud hosting, evaluated language-model advice, isolate-level genomic reconstruction and a validated prospective illness forecast. These are recorded future extensions or scientific gaps. The Evidence assistant provides deterministic cited summaries; an optional, unverified Ollama connector can select a topic but cannot author facts or perform actions.
 
@@ -55,11 +55,28 @@ The desktop control tower is **AEGIS Command**. Its navigation opens these nine 
 
 ### Common controls and labels
 
-**Reload application data**, the header refresh button, rereads the main app's saved network and supporting data. It does not independently refresh every public provider, retrain a model or reset the network. Individual workspaces have their own refresh/recheck controls, described later. The bell and avatar in the Command header are visual status elements; they are not a separate notification inbox, sign-in form or account-settings feature.
+Each Command workspace starts with **WHAT YOU ARE LOOKING AT**: a short explanation of the page, a visible description of what it can change, and two links to connected workspaces. Expand **How this connects** for the plain-language workflow. These links navigate; they do not approve a plan or apply an event. The guide closes its expanded details when you change pages. Dedicated Drive omits it to keep the driver surface simple.
+
+**Reload application data**, the header refresh button, rereads the main app's saved network and supporting data, including recomputed allocation scenarios. It does not independently refresh every public provider, retrain a model or reset the network. Individual workspaces have their own refresh/recheck controls, described later. The header bell, labeled **Open review queue**, opens Command and focuses its review queue. The avatar is a visual status element, not a sign-in form or account-settings feature.
+
+After **Recompute**, read the completion time, network revision and number of response plans. If totals and selected trips match the previous calculation, the system says so. An unchanged result can be the correct outcome when the inputs are unchanged; it is different from a request that failed or never completed. Route requests, event previews, applied events and approvals have separate outputs and errors beside the relevant controls.
 
 **SIMULATED OPERATIONS** and the scenario reference date describe the exercise. They do not describe current live trucks. Source timestamps are separate. Green, amber and red status pills must be read with their text: green does not mean an agency certified a product or truck route. A success notice appears after an accepted action; an error or stale-version notice means stop and reread the current context before retrying.
 
 **Pending**, **approved**, **acknowledged**, **verification recorded**, **held** and **resolved** mean different things. A pending proposal is not an assignment. A driver acknowledgment is not targeted verification. Resolving an incident does not release a lot. A released lot is not automatically reassigned. Read the workflow chapters before treating one label as a substitute for another.
+
+### Understand what changes a route
+
+| Your action | Result to look for | Effect on the current operation |
+| --- | --- | --- |
+| Toggle evidence layers or change the map allocation | Different visible geometry or candidate/proposed/approved links | Display changes only |
+| Request a road route and highlight an alternative | A road comparison, distances and travel estimates | No replacement of Command planning inputs or driver instructions |
+| Preview an event | Direct before/after values and four recalculated allocation comparisons | Read-only; existing state and assignments stay unchanged |
+| Apply a previewed event after consent | An applied-event receipt and refreshed simulated plans | Changes the simulation and clears all approved assignments; does not reroute |
+| Run a farm or fleet experiment in Route laboratory | Computed stop sequence, truck allocation and road or estimated geometry | Independent planning result; it does not dispatch or replace Command trips |
+| Approve a reviewed Command proposal | Recorded simulated assignments and any approved proposed holds | Changes the approved work for Drive; it does not validate a commercial-truck detour |
+
+Use **Route laboratory** when your question is how to redesign a farm or multi-stop fleet journey. Use **Command center** when your question is which fixed candidate trips and eligible lots should be included in a one-wave response. Those are related decisions, but a visible map line is not proof that one tool changed the other's plan.
 
 ### Useful reading paths
 

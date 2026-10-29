@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "passed": true,
-  "checked_at": "2026-10-29T08:31:52.518213+00:00",
+  "checked_at": "2026-10-29T20:45:12.501008+00:00",
   "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\aegis-review-draft.zip",
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
@@ -16,6 +16,7 @@
     "openmeteo dated fixture works without network/cache",
     "network, measured model and source coverage reports are available",
     "read-only assistant explains exact captured facts without a provider or model call",
+    "read-only disruption preview computes four real before/after allocations without changing network or route geometry",
     "separate dated Iowa/Missouri road fixtures and estimated comparison work without network",
     "all eight semantic source tables browse with matching snapshot checksums",
     "historical USDA context retains 115 Missouri county units, FIPS and export provenance",
@@ -62,6 +63,10 @@
     },
     {
       "name": "read-only assistant explains exact captured facts without a provider or model call",
+      "status": "passed"
+    },
+    {
+      "name": "read-only disruption preview computes four real before/after allocations without changing network or route geometry",
       "status": "passed"
     },
     {
@@ -126,14 +131,14 @@
     "Only trusted project archives may be executed. Internal hashes are not a signature or an untrusted-code security sandbox.",
     "Offline ASGI workflows do not prove a real browser rendering, live provider connectivity or a completed timed presentation."
   ],
-  "archive_sha256": "acdefaf42a978d4d26b2132828007767c8f3da019cdcb052b7492a858fc8fc70",
-  "manifest_files_verified": 524,
-  "archive_files": 525,
-  "uncompressed_bytes": 31577242,
+  "archive_sha256": "612160f466d520b526f39bf330c418d6c3f46ae5cf058d135648f6e1d046f59c",
+  "manifest_files_verified": 580,
+  "archive_files": 581,
+  "uncompressed_bytes": 34073932,
   "network_guard_enabled": true,
   "network_attempts": [],
   "worker_exit_code": 0,
   "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\clean-room-20261028\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
-  "finished_at": "2026-10-29T08:32:00.029689+00:00",
-  "duration_seconds": 7.512
+  "finished_at": "2026-10-29T20:45:20.574326+00:00",
+  "duration_seconds": 8.074
 }

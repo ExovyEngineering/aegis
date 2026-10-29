@@ -1,0 +1,65 @@
+{
+  "fallback": true,
+  "provenance": "Explicit browser-injected two-alternative fixture; no actual OSRM call",
+  "error": "Offline rehearsal disables provider requests and mutable HTTP caches; use the labeled routing estimate or dated evidence fixtures",
+  "payload": {
+    "routes": [
+      {
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -92.42311998024472,
+              38.93146933444767
+            ]
+          ]
+        },
+        "distance": 10026.119340755497,
+        "duration": 555.2927634879967
+      },
+      {
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -92.22860999012235,
+              39.021584667223834
+            ],
+            [
+              -92.42311998024472,
+              38.93146933444767
+            ]
+          ]
+        },
+        "distance": 11530.03724186882,
+        "duration": 610.8220398367964
+      }
+    ]
+  },
+  "road_review": {
+    "alternatives": [
+      {
+        "alternative_index": 0,
+        "distance_m": 10026.119340755497,
+        "duration_seconds": 555.2927634879967,
+        "nearby_events": [],
+        "review_required": true
+      }
+    ],
+    "proximity_buffer_m": 250,
+    "modot_retrieved_at": "2026-10-26T06:13:03.598488+00:00",
+    "coverage_complete": true,
+    "unusable_geometry_count": 0,
+    "stale": true,
+    "geographic_scope": "MoDOT is a Missouri feed; complete route coverage and state-boundary containment are not established.",
+    "warning": "MoDOT covers Missouri only; out-of-state route portions and state-boundary containment are not verified. Proximity can include nearby parallel roads. Events may duplicate across point/line layers. Missing or invalid point/line geometry is counted and not screened. OSRM ignores current closures and commercial restrictions. Alternatives require dispatcher review and truck-route validation; no truck-safe assertion."
+  }
+}

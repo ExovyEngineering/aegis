@@ -1,0 +1,5 @@
+.command-map-caption { padding: 13px 18px; border-top: 1px solid #e3e7db; background: #f8faf3; color: #536c59; font-size: 11px; line-height: 1.7; }
+.command-map-caption strong { color: #264d3a; }
+.command-map-caption p + p { margin-top: 5px; }
+.command-map-caption .map-geometry-warning { color: #935b27; }
+@media (max-width:700px) { .command-map-caption { padding: 12px 14px; font-size: 10px; } }

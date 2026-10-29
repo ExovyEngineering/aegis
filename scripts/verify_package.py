@@ -176,6 +176,11 @@ def run_extracted_workflows(target):
                 explained=client.post('/api/assistant/ask',json={'question_id':'model_limits','expected_snapshot_id':captured_assistant['snapshot_id']})
                 _assert(explained.status_code==200 and explained.json()['engine']['llm_used'] is False and all(fact in captured_assistant['facts'] for fact in explained.json()['answer']['items']),'Assistant invented a fact or failed its deterministic grounding contract')
                 checks.append('read-only assistant explains exact captured facts without a provider or model call')
+                impact_network=client.get('/api/network').json()
+                impact=client.post('/api/events/preview',json={'event':'road_closure','shipment_id':impact_network['shipments'][0]['id'],'expected_network_revision':impact_network['revision']})
+                _assert(impact.status_code==200 and impact.json()['read_only'] is True and impact.json()['operational_state_modified'] is False and len(impact.json()['scenarios'])==4 and impact.json()['route_effects']['geometry_changed'] is False,'Read-only event comparison failed its simulation or route scope')
+                _assert(client.get('/api/network').json()==impact_network,'Event preview changed the packaged network')
+                checks.append('read-only disruption preview computes four real before/after allocations without changing network or route geometry')
                 roads=client.get('/api/road-intelligence')
                 _assert(roads.status_code==200,'Packaged road workspace unavailable')
                 captured=roads.json();road_sources={source['id']:source for source in captured.get('sources',[])}

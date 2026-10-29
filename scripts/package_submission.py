@@ -15,7 +15,7 @@ REPORTS=('usda_food_environment.json','fsis_ingestion.json','ingestion_verificat
 REPORTS=REPORTS+('clean_install.json',)
 REPORTS=REPORTS+('backup_recovery.json','road_intelligence_live.json','stretch_verification.json','ci_followup.json')
 REPORTS=REPORTS+('aegis_master_guide.pdf','aegis_master_guide.html','master_guide_manifest.json','master_guide_verification.json')
-REPORTS=REPORTS+('assistant_evaluation.json',)
+REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -90,7 +90,7 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     for name in REPORTS:add(root/'reports'/name)
-    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/checks','reports/verification_history'):
+    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/checks','reports/verification_history'):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)

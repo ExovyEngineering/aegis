@@ -1,8 +1,8 @@
 {
   "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\aegis-review-draft.zip",
-  "bytes": 15580306,
-  "sha256": "acdefaf42a978d4d26b2132828007767c8f3da019cdcb052b7492a858fc8fc70",
-  "file_count": 525,
+  "bytes": 17575163,
+  "sha256": "612160f466d520b526f39bf330c418d6c3f46ae5cf058d135648f6e1d046f59c",
+  "file_count": 581,
   "draft": true,
   "excluded": [
     "original supplied downloads",

@@ -1,5 +1,20 @@
 # AEGIS implementation history
 
+## October 29, 2026 - inspectable Command actions and disruption impact
+
+- Added read-only before/after experiments for six simulated disruptions and
+  four actual allocation responses, explicit consent and revision/hash-guarded
+  application, assignment-clear warnings and captured JSON receipts.
+- Made Command results visible: recompute completion, focused road comparison,
+  selected alternatives, display-only allocation overlays and exports.
+- Fixed hidden approval errors, old success notices, empty route results and
+  candidate/approved ambiguity; added queue navigation and reset confirmation.
+- Added purpose/scope/connection guides across the application and updated the
+  printable handbook sources. Historical telemetry remains explicitly seeded.
+- Full local tests: 711 backend and 192 frontend passed, plus production build.
+  Current browser/package evidence is separately dated. No new source success,
+  real road closure avoidance, model skill or genuine Kiro execution is claimed.
+
 ## October 29, 2026 - cited evidence assistant
 
 - Added six read-only explanation topics over a captured operational snapshot
