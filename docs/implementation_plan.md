@@ -61,3 +61,13 @@ The Iowa adapter, road workspace and local recovery are implemented. Executed
 results are dated in reports/session_verification.json and the road/recovery
 artifacts. Additional feeds, genomic inference, LLMs and cloud publication need
 separate justified inputs and validation.
+
+
+## October 29: bounded explanation stretch
+
+1. Capture current operational fields with a strict read-only SQLite reader and independently hashed report files.
+2. Supply six server-authored, cited explanation topics with explicit scientific and simulation limits.
+3. Add guided questions, rule-based wording interpretation and an optional model topic enum, without action tools or model-authored claims.
+4. Verify grounding, stale races, unsupported requests, provider/malformed-output fallback, mobile navigation and immutable exports; update the handbook and review package.
+
+Actual model evaluation remains pending; configuration/mock tests are not inference evidence. Genuine Kiro and final team submission review remain separate.

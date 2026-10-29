@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-28T19:04:45.416670-05:00",
+  "generated_at": "2026-10-29T03:31:21.685388-05:00",
   "title": "AEGIS Master User Guide",
   "pdf": "reports/aegis_master_guide.pdf",
   "markdown": "docs/aegis_master_guide.md",
   "html": "reports/aegis_master_guide.html",
-  "sha256": "83f8f4c4bb68e6cf600ce2d7fd7d69c74785c5f31cca834cdb43dee46df00b0b",
-  "bytes": 393829,
-  "pages": 65,
+  "sha256": "d9dfaca8328565abf7d5b167d9ccfab9eb316b903b6e7adb346a071af8744aaf",
+  "bytes": 410605,
+  "pages": 68,
   "chapters": [
     {
       "id": "start-here-what-aegis-does",
@@ -75,70 +75,76 @@
       "page": 44
     },
     {
-      "id": "project-brief-the-learning-and-presentation-hub",
-      "title": "Project brief: the learning and presentation hub",
+      "id": "evidence-assistant-explain-a-captured-decision-context",
+      "title": "Evidence assistant: explain a captured decision context",
       "body_page_index": 47,
       "page": 50
     },
     {
-      "id": "guided-rehearsal-practice-a-complete-story",
-      "title": "Guided rehearsal: practice a complete story",
-      "body_page_index": 48,
-      "page": 51
+      "id": "project-brief-the-learning-and-presentation-hub",
+      "title": "Project brief: the learning and presentation hub",
+      "body_page_index": 50,
+      "page": 53
     },
     {
-      "id": "storage-exports-and-sharing",
-      "title": "Storage, exports and sharing",
+      "id": "guided-rehearsal-practice-a-complete-story",
+      "title": "Guided rehearsal: practice a complete story",
       "body_page_index": 51,
       "page": 54
     },
     {
-      "id": "local-backup-and-recovery",
-      "title": "Local backup and recovery",
-      "body_page_index": 53,
-      "page": 56
-    },
-    {
-      "id": "troubleshooting-by-what-you-see",
-      "title": "Troubleshooting by what you see",
+      "id": "storage-exports-and-sharing",
+      "title": "Storage, exports and sharing",
       "body_page_index": 54,
       "page": 57
     },
     {
-      "id": "glossary-for-reading-the-site",
-      "title": "Glossary for reading the site",
+      "id": "local-backup-and-recovery",
+      "title": "Local backup and recovery",
       "body_page_index": 56,
       "page": 59
     },
     {
-      "id": "present-the-project-accurately",
-      "title": "Present the project accurately",
+      "id": "troubleshooting-by-what-you-see",
+      "title": "Troubleshooting by what you see",
+      "body_page_index": 57,
+      "page": 60
+    },
+    {
+      "id": "glossary-for-reading-the-site",
+      "title": "Glossary for reading the site",
       "body_page_index": 59,
       "page": 62
     },
     {
+      "id": "present-the-project-accurately",
+      "title": "Present the project accurately",
+      "body_page_index": 62,
+      "page": 65
+    },
+    {
       "id": "keep-this-master-guide-current",
       "title": "Keep this master guide current",
-      "body_page_index": 60,
-      "page": 63
+      "body_page_index": 63,
+      "page": 66
     },
     {
       "id": "recorded-verification-and-what-remains-open",
       "title": "Recorded verification and what remains open",
-      "body_page_index": 61,
-      "page": 64
+      "body_page_index": 64,
+      "page": 67
     }
   ],
   "overflow_count": 0,
   "paper": "US Letter",
   "body_font_points": 10.7,
   "table_font_points": 9.7,
-  "bookmarks": 20,
-  "contents_links": 20,
+  "bookmarks": 21,
+  "contents_links": 21,
   "source_files": [
     {
       "path": "docs/manual_parts/start.md",
-      "sha256": "12db59e8bcbbd292835e2fd552bfc3b79356463d66433b323f2e797d4fde3687"
+      "sha256": "fa325398a5b3d4f1b01276dddb76570d2f6d03ba3b5129b8ad196cfa73b513ea"
     },
     {
       "path": "docs/manual_parts/operations.md",
@@ -150,11 +156,15 @@
     },
     {
       "path": "docs/manual_parts/evidence_science.md",
-      "sha256": "f67359363bfcc0b62bc08de96c61995dee7ae2fc05db40e3e962991563f6714a"
+      "sha256": "2a31c9acddcf45c92f198f3259017cd566e6ffa1180c99b84cd21fdae620d8ea"
+    },
+    {
+      "path": "docs/manual_parts/assistant.md",
+      "sha256": "83299f98201a1d2bf87bb4415aa0e5dd4791f07a40ce239744a8fedc58cc5cf3"
     },
     {
       "path": "docs/manual_parts/rehearsal.md",
-      "sha256": "b3d41d21d518abddea8d1330dc9606e63181022a375ddd34250151574ae1515c"
+      "sha256": "c7cf68978252d456502c7448c154c1bc133e2d0701c6caa9d7cba865142c62a8"
     },
     {
       "path": "docs/manual_parts/reference.md",

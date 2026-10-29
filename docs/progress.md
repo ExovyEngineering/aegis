@@ -1,6 +1,29 @@
 # Progress and acceptance evidence
 
-Session date: October 28, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Session date: October 29, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+
+## Latest: read-only cited evidence assistant (October 29)
+
+- Added six bounded summaries of scenarios, selected shipments, measured model
+  results, source coverage, driver workflow and available review views. Network
+  and assignments are read in a separate SQLite read-only transaction; source
+  reports are bounded, independently hashed byte snapshots. Missing evidence
+  remains explicit, and context changes reject an old request.
+- Added a ninth workspace with cited facts, source details, captured briefing
+  exports and strict client validation against the original fact objects.
+  User wording can select a topic through deterministic rules. An explicitly
+  configured/opted-in Ollama service can select a topic only; it receives no
+  captured operational data or tools and cannot author a factual claim.
+- The working default requires no model. No real configured model inference or
+  quality evaluation has been recorded; connector protocol/error tests use
+  clearly identified mocks. Offline rehearsal blocks model requests.
+- Full local checks: 660 pytest and 121 Vitest tests passed; production build
+  passed. Current browser/package evidence belongs in the associated dated
+  artifacts. Source and operational fingerprints remain separately measured.
+- The master handbook now covers the assistant and mobile navigation retains
+  readable labels through horizontal scrolling. The existing source failures,
+  NOAA gaps, availability/genomic limits and human Kiro/review/rehearsal gates
+  have not been closed by this stretch feature.
 
 ## Latest: complete master user guide (October 28)
 

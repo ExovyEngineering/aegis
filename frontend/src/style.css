@@ -42,7 +42,7 @@
 .planning-library th, .scenario-details th, .data-explorer th, .project-brief-view th { font-size: 9px; }
 .planning-actions a.secondary { display: inline-flex; align-items: center; justify-content: center; padding: 10px 15px; border: 1px solid #cbd8c7; border-radius: 6px; background: #fff; font-size: 12px; font-weight: 600; }
 .planning-library p + p, .data-explorer p + p, .project-brief-view p + p { margin-top: 10px; }
-@media(max-width:700px) { .sidebar nav button { width: 14.285%; font-size: 8px; line-height: 1.2; padding: 6px 2px; } }
+@media(max-width:700px) { .sidebar nav { justify-content:flex-start; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; } .sidebar nav button { flex:0 0 70px; width:70px; min-width:70px; height:58px; font-size:9px; line-height:1.2; padding:5px 4px; scroll-margin-inline:8px; } }
 
 /* Drive uses a quiet visual surface; interaction controls require parked use. */
 .driver-only main { width: 100%; margin: 0; padding-bottom: 0; }

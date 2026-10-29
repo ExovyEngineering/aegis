@@ -177,7 +177,7 @@ The **Historical prevalence** baseline gives every held-out observation the same
 
 ### Primary chronological holdout: the numbers shown
 
-The following values were checked against `reports/model_evaluation.json` for this October 28, 2026 guide. That saved artifact does not record a model-run timestamp; the guide's check date is not an invented training date.
+The following values were checked against `reports/model_evaluation.json` for this October 29, 2026 guide. That saved artifact does not record a model-run timestamp; the guide's check date is not an invented training date.
 
 | Quantity | Saved result |
 |---|---|

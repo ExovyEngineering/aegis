@@ -1,0 +1,617 @@
+{
+  "checked_at": "2026-10-29T07:35:44.583Z",
+  "base_url": "http://127.0.0.1:8000",
+  "read_only": true,
+  "public_provider_refresh_requested": false,
+  "actual_llm_queried": false,
+  "checks": [
+    {
+      "name": "GET /api/runtime-context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "operator_runtime_identified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/assistant/context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/assistant/engine",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "six_supported_questions_and_captured_facts_exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual_model_not_configured_or_claimed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "assistant_context_load_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "real_navigation_opens_assistant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "deterministic_fact_and_readonly_provenance_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_unconfigured_model_optin_control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_scenario_compare_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_scenario_compare_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_scenario_compare_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_scenario_compare_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all_four_current_scenarios_explained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "B_C_D_effects_are_distinguished",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "citation_paths_expand",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_hash_is_visible_when_known",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "interpretation_limits_remain_next_to_fact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "held_candidate_test_case_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_shipment_review_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_shipment_review_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_shipment_review_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_shipment_review_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "held_candidate_and_approved_assignment_context_are_separate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_model_limits_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model_numbers_match_saved_metrics_not_invented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sampling_is_not_illness_probability",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_source_coverage_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_source_coverage_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_source_coverage_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_source_coverage_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_summary_matches_dated_probe_counts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "NOAA_CDC_and_traceability_limits_retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_driver_workflow_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_driver_workflow_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_driver_workflow_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_driver_workflow_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "driver_acknowledgment_is_not_verification",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_next_actions_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_next_actions_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_next_actions_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_next_actions_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "next_actions_are_review_navigation_only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_export_matches_exact_captured_answer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "typed_question_rules_HTTP_success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "typed_question_maps_to_supported_model_topic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "typed_rules_provenance_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "typed_prompt_is_omitted_from_export",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_navigation_opens_actual_science_view",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "assistant_context_load_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_model_limits_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_model_limits_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_navigation_opens_actual_sources_view",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "assistant_context_load_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "actual_action_request_is_rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "action_refusal_clears_context_and_no_success_shown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit_context_reload_success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injected_stale_snapshot_is_409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "stale_snapshot_requires_explicit_reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit_context_reload_success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "foreign_fact_response_is_rejected_by_grounding_guard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit_context_reload_success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_topics_support_keyboard_selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_HTTP_success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guided_model_limits_matches_question",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_uses_captured_facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided_model_limits_actual_fact_text_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop_no_horizontal_document_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "mobile_nine_navigation_labels_scroll_in_readable_tabs",
+      "passed": true,
+      "detail": "{\"width\":378,\"scroll\":630,\"count\":9,\"font\":9}"
+    },
+    {
+      "name": "mobile_no_horizontal_document_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"scroll\":390}"
+    },
+    {
+      "name": "all_browser_POSTs_are_readonly_assistant_endpoints",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_actual_model_request_was_opted_into",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_uncaught_JavaScript_errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no_unexpected_application_HTTP_failures",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "operator_database_and_sidecars_unchanged",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "expected_api_rejections": [
+    {
+      "url": "http://127.0.0.1:8000/api/assistant/interpret",
+      "status": 422,
+      "phase": "actual_action_refusal"
+    }
+  ],
+  "expected_injected_failures": [
+    {
+      "url": "http://127.0.0.1:8000/api/assistant/ask",
+      "status": 409,
+      "phase": "browser_injected_stale"
+    }
+  ],
+  "post_requests": [
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "scenario_compare",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "shipment_review",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+        "shipment_id": "SH01"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "model_limits",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "source_coverage",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "driver_workflow",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "next_actions",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/interpret",
+      "phase": "actual",
+      "body": {
+        "prompt": "Why was the historical baseline selected?",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+        "allow_model": false,
+        "shipment_id": "SH01"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "model_limits",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/interpret",
+      "phase": "actual_action_refusal",
+      "body": {
+        "prompt": "Dispatch every truck immediately",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+        "allow_model": false,
+        "shipment_id": "SH01"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "browser_injected_stale",
+      "body": {
+        "question_id": "scenario_compare",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "browser_injected_foreign_fact",
+      "body": {
+        "question_id": "scenario_compare",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    },
+    {
+      "path": "/api/assistant/ask",
+      "phase": "actual",
+      "body": {
+        "question_id": "model_limits",
+        "expected_snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+      }
+    }
+  ],
+  "screenshots": [
+    "desktop-scenario-explanation.png",
+    "desktop-cited-scenario-fact.png",
+    "desktop-held-shipment-review.png",
+    "desktop-rule-based-question.png",
+    "desktop-readonly-action-refusal.png",
+    "desktop-measured-model-explanation.png",
+    "mobile-assistant-intro.png",
+    "mobile-guided-and-typed-controls.png",
+    "mobile-cited-model-briefing.png"
+  ],
+  "injected_cases": [
+    {
+      "id": "stale_snapshot_409",
+      "source": "browser-only fulfilled response; no state change or actual server conflict"
+    },
+    {
+      "id": "foreign_fact_200",
+      "source": "browser-only altered response after a read-only backend ask; not a provider result"
+    }
+  ],
+  "database_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 143360,
+      "sha256": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "browser_version": "156.0.8078.48",
+  "captured_context": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "facts": 131,
+    "questions": [
+      "scenario_compare",
+      "shipment_review",
+      "model_limits",
+      "source_coverage",
+      "driver_workflow",
+      "next_actions"
+    ],
+    "generated_at": "2026-10-29T07:35:44.762996+00:00"
+  },
+  "engine": {
+    "configured": false,
+    "provider": "none",
+    "label": "Rules-based question topics",
+    "operational_data_sent": false,
+    "quality_evaluation": "No actual model evaluation has been recorded",
+    "prompt_version": "aegis-topic-router-v1",
+    "warning": "Optional model routing is disabled. Guided questions and deterministic summaries work without it."
+  },
+  "export": {
+    "filename": "AEGIS-evidence-next_actions-8ff7c7f917e2.json",
+    "response_sha256": "f2f321d521ad4ac7ca44489064d45c95a8487830741ef382c02ea26e9cc5801e",
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8"
+  },
+  "database_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 143360,
+      "sha256": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "passed": true,
+  "finished_at": "2026-10-29T07:35:48.070Z"
+}

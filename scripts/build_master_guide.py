@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PARTS = (
     'docs/manual_parts/start.md', 'docs/manual_parts/operations.md',
     'docs/manual_parts/dispatch_drive.md', 'docs/manual_parts/evidence_science.md',
-    'docs/manual_parts/rehearsal.md', 'docs/manual_parts/reference.md',
+    'docs/manual_parts/assistant.md', 'docs/manual_parts/rehearsal.md', 'docs/manual_parts/reference.md',
 )
 TITLE = 'AEGIS Master User Guide'
 
@@ -123,7 +123,7 @@ def evidence_chapter(root):
              '- Final organizer-rubric review, author review and a timed human team presentation remain pending unless the team records their actual completion.',
              '- Actual per-result public availability dates are missing. Retrospective sampling results are not a validated prospective forecast.',
              '- NOAA coverage is bounded and retains precipitation gaps; no validated FSIS-weather join is claimed.',
-             '- Isolate-level genomic linkage, production accounts, physical sensors, cloud hosting and an evaluated LLM assistant are not implemented.', '',
+             '- Isolate-level genomic linkage, production accounts, physical sensors, cloud hosting and evaluated language-model advice are not implemented. The evidence assistant uses server-authored facts; optional topic selection is not a validated advisory model.', '',
              'Use the application to explain a transparent decision-support workflow and measured limitations. Do not replace an open requirement with a feature count or an invented accuracy figure.']
     return '\n'.join(body)
 

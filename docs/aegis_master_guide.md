@@ -1,6 +1,6 @@
 # AEGIS Master User Guide
 
-Generated October 28, 2026 at 07:04 PM CT. Complete product handbook.
+Generated October 29, 2026 at 03:30 AM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
@@ -37,15 +37,15 @@ Real establishment coordinates do not prove that the simulated distributor buys 
 
 ### What is already available, and what is not?
 
-Available now: the eight connected workspaces in this guide; deterministic network/event simulation; four allocation responses; constrained farm/fleet route experiments; saved planning versions and exports; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
+Available now: the nine connected workspaces in this guide; deterministic network/event simulation; four allocation responses; constrained farm/fleet route experiments; saved planning versions and exports; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
 
-Still outside the implemented product: live physical sensors or vehicle tracking, native phone-app distribution, commercial truck certification, automatic closure avoidance, production accounts, cloud hosting, an evaluated LLM assistant, isolate-level genomic reconstruction and a validated prospective illness forecast. These are recorded future extensions or scientific gaps. No menu item secretly supplies them.
+Still outside the implemented product: live physical sensors or vehicle tracking, native phone-app distribution, commercial truck certification, automatic closure avoidance, production accounts, cloud hosting, evaluated language-model advice, isolate-level genomic reconstruction and a validated prospective illness forecast. These are recorded future extensions or scientific gaps. The Evidence assistant provides deterministic cited summaries; an optional, unverified Ollama connector can select a topic but cannot author facts or perform actions.
 
 Genuine Kiro specification execution, final report/rubric author review and the timed team presentation remain separate submission tasks. An installed IDE, a generated document or a successful automated demonstration does not complete those tasks.
 
 ## Find your way around the application
 
-The desktop control tower is **AEGIS Command**. Its navigation opens these eight workspaces. The mobile navigation offers the same workspaces in a narrow layout; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
+The desktop control tower is **AEGIS Command**. Its navigation opens these nine workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
 
 | Navigation label | Main question it answers | Does simply reading it change dispatch? |
 | --- | --- | --- |
@@ -55,6 +55,7 @@ The desktop control tower is **AEGIS Command**. Its navigation opens these eight
 | Dispatcher desk | What did a driver report, and what human review, hold or instruction is recorded? | Reading does not; submitted decisions can change assignments/holds/instructions |
 | Sources & evidence | Where did each evidence layer come from, and what coverage is missing? | No; source refresh can update caches, not dispatch |
 | Model evaluation | What was actually measured in the historical FSIS study? | No; opening this view never trains a model |
+| Evidence assistant | How do captured facts explain scenario tradeoffs, a shipment, model limits or the driver workflow? | No; it only returns cited explanations and navigation |
 | Project brief | Where are the master guide, shorter status brief, feature register and rehearsal tools? | Document downloads do not; recording an isolated rehearsal writes its practice record |
 | AEGIS Drive | What assignment and instruction has the dispatcher approved for this truck? | Reading does not; parked acknowledgments and reports create records |
 
@@ -794,7 +795,7 @@ The **Historical prevalence** baseline gives every held-out observation the same
 
 ### Primary chronological holdout: the numbers shown
 
-The following values were checked against `reports/model_evaluation.json` for this October 28, 2026 guide. That saved artifact does not record a model-run timestamp; the guide's check date is not an invented training date.
+The following values were checked against `reports/model_evaluation.json` for this October 29, 2026 guide. That saved artifact does not record a model-run timestamp; the guide's check date is not an invented training date.
 
 | Quantity | Saved result |
 |---|---|
@@ -885,6 +886,53 @@ The app does not currently provide isolate-level molecular attribution, a valida
 
 For deeper source records, consult `docs/data_catalog.md`, `docs/ingestion_provenance.md`, `docs/food_access_context.md`, `docs/model_card.md`, `reports/model_evaluation.json`, `reports/model_timing.json`, `reports/noaa_coverage.json`, and the source-specific import manifests. These files support the screen; they should not be described as additional live integrations.
 
+## Evidence assistant: explain a captured decision context
+
+Open **Evidence assistant** when you want a concise explanation with inspectable sources instead of moving through several screens to assemble one. It can compare the four current response scenarios, review a simulated candidate shipment, explain saved model results or source coverage, describe the driver handoff, and point to the next review workspace.
+
+The factual engine is **Deterministic evidence summary**. Its sentences are authored by the application and populated with values from a captured network and dated reports. It is not an illness model, an autonomous dispatcher or an unrestricted chatbot. It has no tool for approving, holding, releasing, dispatching, refreshing a provider or rewriting scientific metrics.
+
+### Capture context and choose an explanation
+
+| Control | What to do | What happens |
+| --- | --- | --- |
+| Reload evidence context | Capture the current network and saved evidence again | Clears obsolete answer context and records a new content-addressed snapshot |
+| Guided question cards | Choose one of the six supported topics | Selects a topic; this alone does not submit a question or change operations |
+| Simulated shipment to review | Choose the candidate trip when reviewing a shipment | Used only for shipment-specific explanations; candidate and approved assignment can differ |
+| Explain captured evidence | Request the selected topic for the captured context | Returns only facts from that context, with their source labels and limits |
+| Your evidence question / Interpret question | Phrase one supported question in your own words | Rules match the text to one of the same six topics; unsupported or action requests are rejected |
+| Export captured answer JSON | Save the displayed answer and citations | Downloads a captured explanation; it does not create an assignment or future live update |
+| Suggested workspace links | Open the relevant existing screen | Navigates for review; consequential decisions still require their ordinary explicit forms |
+
+The snapshot identifier ties the answer to captured content and the network revision. Network and assignment fields share a single read-only SQLite transaction. Each report is read independently from a bounded byte snapshot; this is not a globally atomic snapshot of all providers. Source times and the report hashes remain important.
+
+If the network, assignments or report files change, a question using an old snapshot is rejected. Reload the context and inspect it before asking again. Changed topic, shipment or wording marks an already displayed briefing as belonging to the previous request. Do not treat an earlier answer as an explanation of newly edited inputs.
+
+### Six useful topics
+
+- **Compare response scenarios:** inspect cost, unmet demand, selected shipments, solver status and modeled constraints together. Scenario D can substitute eligible lots on fixed trips; this is not automatic rerouting. Scenario C's described holds remain proposals until a separate human approval.
+- **Review a simulated shipment:** read candidate lot/truck/temperature and direct modeled exclusions. The current approved assignment may use a different lot. Passing a single-candidate check does not establish aggregate plan feasibility or product safety.
+- **Explain model performance:** see the actual historical baseline/model metrics, sampling target and availability limitations. Positivity is not consumer illness probability; no new model is trained.
+- **Explain source coverage:** distinguish saved HTTP probes, dated source evidence and numeric observation coverage. Reading a report does not refresh the provider or turn a stale success into a current success.
+- **Explain the driver handoff:** distinguish approval, targeted verification, parked attestation, acknowledgment and incident reporting. A report or acknowledgment does not impose a hold or complete every readiness check.
+- **Find the next review steps:** follow read-only navigation to the appropriate workspace. A suggestion is not an executed recommendation or an approval.
+
+Expand a fact's evidence details to inspect its source path, available retrieval timestamp, checksum and uncertainty. A missing or unusable report produces an explicit unavailable fact rather than a fabricated metric. CDC evidence stays separate from FSIS outcomes. Historical observations, forecasts, cargo simulation and illustrative thermal projections retain their different meanings.
+
+### Optional Ollama topic selection
+
+The default requires no language model. A technical teammate can explicitly configure an Ollama service at a permitted loopback address. If configured, the interface offers an opt-in checkbox for that request. Only the question text and fixed topic descriptions are sent; operational records, source payloads, actor names and decision tools are not supplied to the model.
+
+The model can return only a supported topic identifier. The server then selects the same authored, cited facts used by the guided questions. Invalid output, tool calls, extra claims, model-identity mismatch, excessive response size or service failure falls back visibly to rules where the question is supported. Offline rehearsal disables the optional model request entirely.
+
+A loopback endpoint does not independently certify how the service runs its model. Configuration is not a successful request, a measured quality evaluation or validated advice. No actual configured model inference has been established by the mocked connector tests. The screen distinguishes **LLM topic selection only** from the deterministic factual engine. No new scientific probability or decision authority comes from enabling it.
+
+### Practice use case
+
+Capture context, choose **Compare response scenarios**, and inspect the cited scenario facts. Open Command to examine the constraints. Return, choose a shipment and request its review. Then ask “Why did the historical baseline beat the model?” and inspect which topic was selected and which measured facts support the answer. Export the briefing if useful for discussion. Make any consequential decision separately in the existing human-review workflow.
+
+If a question is ambiguous or matched to the wrong topic, choose the appropriate guided card instead. Topic matching is not proof that the system understood every intention. Requests such as “approve this plan” do not execute anything; the assistant explains the read-only boundary. For credentials, installation and connector protocol details, a technical teammate can consult docs/evidence_assistant.md and .env.example without putting secrets into chat or Git.
+
 ## Project brief: the learning and presentation hub
 
 Open **Project brief** to find this master handbook, the shorter project/status brief, the team's code repository, dated local-check summaries and the capability register. These documents answer different questions:
@@ -900,7 +948,7 @@ Open **Project brief** to find this master handbook, the shorter project/status 
 
 The shorter **Download project brief PDF** and **Download editable Markdown** remain available. **Team GitHub repository** opens the private repository when your GitHub account has access. It is not a button that adds collaborators, deploys the app, signs into Kiro or uploads a submission.
 
-The **Latest recorded local checks** table shows saved pass/fail outcomes, counts, duration and log paths. Opening the page does not run these tests again. The feature register separates P0 required work, P1 operational differentiators, and P2 stretches/deferred work. Read each row's actual status: Iowa road evidence and local recovery are implemented stretches, while cloud accounts, LLMs and physical sensors remain deferred.
+The **Latest recorded local checks** table shows saved pass/fail outcomes, counts, duration and log paths. Opening the page does not run these tests again. The feature register separates P0 required work, P1 operational differentiators, and P2 stretches/deferred work. Read each row's actual status: Iowa road evidence and local recovery are implemented stretches, while cloud accounts and physical sensors remain deferred; language-model topic selection is optional and its quality remains unevaluated.
 
 ## Guided rehearsal: practice a complete story
 
@@ -1075,13 +1123,13 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-10-29T00:02:51.324212+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-10-29T06:51:53.907233+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 567 tests | Executed local command; see reports/checks/20261028T235945558251Z/pytest.txt |
-| vitest | PASS; 96 tests | Executed local command; see reports/checks/20261028T235945558251Z/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/20261028T235945558251Z/frontend_build.txt |
+| pytest | PASS; 660 tests | Executed local command; see reports/checks/20261029T065020945211Z/pytest.txt |
+| vitest | PASS; 121 tests | Executed local command; see reports/checks/20261029T065020945211Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261029T065020945211Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 
@@ -1103,6 +1151,6 @@ A deliberately injected browser failure is a test case, not a provider outage. A
 - Final organizer-rubric review, author review and a timed human team presentation remain pending unless the team records their actual completion.
 - Actual per-result public availability dates are missing. Retrospective sampling results are not a validated prospective forecast.
 - NOAA coverage is bounded and retains precipitation gaps; no validated FSIS-weather join is claimed.
-- Isolate-level genomic linkage, production accounts, physical sensors, cloud hosting and an evaluated LLM assistant are not implemented.
+- Isolate-level genomic linkage, production accounts, physical sensors, cloud hosting and evaluated language-model advice are not implemented. The evidence assistant uses server-authored facts; optional topic selection is not a validated advisory model.
 
 Use the application to explain a transparent decision-support workflow and measured limitations. Do not replace an open requirement with a feature count or an invented accuracy figure.

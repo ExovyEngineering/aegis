@@ -1,5 +1,14 @@
 # Architecture
 
+`backend/evidence_assistant.py` captures network and approved assignments with
+a separate SQLite `mode=ro`, `query_only` transaction; it never initializes or
+seeds a missing database. Report hashes and parsing use the same bounded bytes,
+but separate files are not a globally atomic provider snapshot. Content hashes
+bind six server-authored explanation topics to the captured context.
+`backend/assistant_intent.py` optionally classifies a question through a bounded
+Ollama loopback call; no operational data/tools are sent and only a topic enum
+is accepted. Fact text remains deterministic and stale contexts are rejected.
+
 AEGIS runs as a local FastAPI service with a built React/TypeScript frontend. It can also use Vite's development server. SQLite stores the simulated operational state, proposals, approved assignments, and audit history. Downloaded raw files are read-only inputs.
 
 The read-only road workspace (`backend/road_intelligence.py`) keeps MoDOT and

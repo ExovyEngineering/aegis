@@ -17,6 +17,8 @@ from backend.food_context import create_food_context_router
 from backend.runtime import runtime_context, require_valid_runtime
 from backend.rehearsal import create_rehearsal_router
 from backend.road_intelligence import create_road_intelligence_router
+from backend.evidence_assistant import create_assistant_router
+from backend.assistant_intent import create_assistant_intent_router
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -271,6 +273,8 @@ app.include_router(create_readiness_router(db,load))
 app.include_router(create_food_context_router(ROOT))
 app.include_router(create_rehearsal_router(db,load,record,lambda:DB,root=lambda:ROOT))
 app.include_router(create_road_intelligence_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_assistant_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_assistant_intent_router(lambda:DB,root=lambda:ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

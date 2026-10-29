@@ -13,7 +13,7 @@ Open **Project brief** to find this master handbook, the shorter project/status 
 
 The shorter **Download project brief PDF** and **Download editable Markdown** remain available. **Team GitHub repository** opens the private repository when your GitHub account has access. It is not a button that adds collaborators, deploys the app, signs into Kiro or uploads a submission.
 
-The **Latest recorded local checks** table shows saved pass/fail outcomes, counts, duration and log paths. Opening the page does not run these tests again. The feature register separates P0 required work, P1 operational differentiators, and P2 stretches/deferred work. Read each row's actual status: Iowa road evidence and local recovery are implemented stretches, while cloud accounts, LLMs and physical sensors remain deferred.
+The **Latest recorded local checks** table shows saved pass/fail outcomes, counts, duration and log paths. Opening the page does not run these tests again. The feature register separates P0 required work, P1 operational differentiators, and P2 stretches/deferred work. Read each row's actual status: Iowa road evidence and local recovery are implemented stretches, while cloud accounts and physical sensors remain deferred; language-model topic selection is optional and its quality remains unevaluated.
 
 ## Guided rehearsal: practice a complete story
 

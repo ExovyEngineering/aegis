@@ -42,7 +42,7 @@ try{
   check('PDF_response_matches_exact_recorded_hash',digest(await pdfResponse.body())===manifest.sha256);
   check('PDF_response_is_downloadable',pdfResponse.headers()['content-type'].includes('application/pdf')&&pdfResponse.headers()['content-disposition'].includes('attachment'));
   const mdResponse=await get('/api/master-guide.md');
-  const markdown=await mdResponse.text();check('editable_master_has_all_workspace_chapters',['Command center','Route laboratory','Road intelligence','Dispatcher desk','AEGIS Drive','Sources & evidence','Model evaluation','Project brief'].every(name=>markdown.includes(name)));
+  const markdown=await mdResponse.text();check('editable_master_has_all_workspace_chapters',['Command center','Route laboratory','Road intelligence','Dispatcher desk','AEGIS Drive','Sources & evidence','Model evaluation','Project brief','Evidence assistant'].every(name=>markdown.includes(name)));
   check('master_includes_use_cases_glossary_and_limits',markdown.includes('Guided practice')&&markdown.includes('Glossary')&&markdown.includes('not a consumer illness probability'));
   page=await context.newPage();page.setDefaultTimeout(20000);
   await page.goto(base,{waitUntil:'domcontentloaded'});

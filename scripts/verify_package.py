@@ -170,6 +170,12 @@ def run_extracted_workflows(target):
                 for source in ('network','model','model-timing','noaa-coverage','facilities','inventory'):
                     _assert(client.get('/api/'+source).status_code==200,f'Required read endpoint failed: {source}')
                 checks.append('network, measured model and source coverage reports are available')
+                assistant=client.get('/api/assistant/context')
+                _assert(assistant.status_code==200,'Read-only assistant context unavailable')
+                captured_assistant=assistant.json()
+                explained=client.post('/api/assistant/ask',json={'question_id':'model_limits','expected_snapshot_id':captured_assistant['snapshot_id']})
+                _assert(explained.status_code==200 and explained.json()['engine']['llm_used'] is False and all(fact in captured_assistant['facts'] for fact in explained.json()['answer']['items']),'Assistant invented a fact or failed its deterministic grounding contract')
+                checks.append('read-only assistant explains exact captured facts without a provider or model call')
                 roads=client.get('/api/road-intelligence')
                 _assert(roads.status_code==200,'Packaged road workspace unavailable')
                 captured=roads.json();road_sources={source['id']:source for source in captured.get('sources',[])}

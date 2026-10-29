@@ -1,5 +1,18 @@
 # AEGIS implementation history
 
+## October 29, 2026 - cited evidence assistant
+
+- Added six read-only explanation topics over a captured operational snapshot
+  and independently captured report bytes, with citations, hashes, unavailable
+  evidence states and stale-context rejection. No action or provider tool exists.
+- Added wording-to-topic rules and an optional explicitly configured Ollama
+  selector. It can return a topic only; factual text remains server-authored.
+  Default requires no model. Actual model inference/quality remains unverified.
+- Added the assistant workspace, captured JSON exports, read-only navigation,
+  strict client grounding and readable horizontally scrollable mobile navigation.
+- Updated the master handbook and implementation register. Executed full and
+  browser results are recorded separately; genuine Kiro/scientific gaps remain.
+
 Update this file when behavior or evidence changes. The generated presentation
 brief is `reports/aegis_project_brief.pdf`; its editable companion is
 `reports/project_brief.md`. Recorded tests are separate from implementation claims.

@@ -103,6 +103,22 @@ disabled. Map tiles may need internet. Nothing resets the operator database.
 The measured timer and self-reported coverage do not prove a human presentation,
 Kiro execution or final approval. See [the rehearsal guide](docs/rehearsal_guide.md).
 
+## Read-only evidence assistant
+
+Open **Evidence assistant** for six cited explanations: response scenarios,
+selected simulated shipments, measured model limits, source coverage, driver
+handoff and next review views. It reads a consistent operational snapshot and
+independently captured report files, identifies sources and rejects stale
+contexts. It cannot approve, dispatch, hold/release stock, refresh sources or
+train a model. Captured briefings export as JSON.
+
+The default works without a language model. An optional explicitly configured
+Ollama connector can select a topic from your wording; it cannot author factual
+claims or execute tools. Configuration is not a successful model evaluation.
+See [the assistant contract and setup](docs/evidence_assistant.md). The master
+handbook now covers this ninth workspace; mobile navigation scrolls horizontally
+to preserve readable labels. Dedicated Drive remains simplified.
+
 ## Road intelligence and local recovery
 
 Open **Road intelligence** for separately attributed MoDOT and Iowa DOT 511

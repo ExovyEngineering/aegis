@@ -1,5 +1,5 @@
 project: AEGIS
-updated: '2026-10-28'
+updated: '2026-10-29'
 features:
 - id: provenance
   priority: P0
@@ -124,10 +124,13 @@ features:
     verification. Passing the listed checks does not dispatch or certify safety.
 - id: assistant
   priority: P2
-  name: LLM operations assistant
-  status: deferred behind P0 gates
-  evidence: docs/priority_matrix.md
-  detail: No assistant or generated safety decisions are claimed.
+  name: Cited evidence assistant and optional model topic selection
+  status: deterministic assistant implemented; actual LLM evaluation remains pending
+  evidence: docs/evidence_assistant.md
+  detail: Six bounded explanations use a read-only network/report snapshot,
+    source citations and measured values. Optional explicitly configured Ollama
+    can select a topic only; it cannot author claims or execute actions. Default
+    requires no model. Configuration and mocked tests are not model evaluation.
 - id: accounts
   priority: P2
   name: Farm and enterprise accounts

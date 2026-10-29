@@ -148,5 +148,6 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     assert any('USDA' in check for check in result['checks']) and any('readiness' in check for check in result['checks'])
     assert any('Iowa' in check for check in result['checks']) and any('backup' in check for check in result['checks'])
     assert any('master user handbook' in check for check in result['checks'])
+    assert any('read-only assistant' in check for check in result['checks'])
     assert database.read_bytes()==b'original operator state'
     assert list((workspace/'.tools/package-verification').iterdir())==[]

@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 28, 2026 at 07:05 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 29, 2026 at 02:43 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -116,11 +116,11 @@ Evidence: tests/test_readiness.py
 
 # P2 | Stretch work and deferred extensions
 
-LLM operations assistant | deferred behind P0 gates
+Cited evidence assistant and optional model topic selection | deterministic assistant implemented; actual LLM evaluation remains pending
 
-No assistant or generated safety decisions are claimed.
+Six bounded explanations use a read-only network/report snapshot, source citations and measured values. Optional explicitly configured Ollama can select a topic only; it cannot author claims or execute actions. Default requires no model. Configuration and mocked tests are not model evaluation.
 
-Evidence: docs/priority_matrix.md
+Evidence: docs/evidence_assistant.md
 
 Farm and enterprise accounts | deferred
 
@@ -166,13 +166,13 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-29T00:02:51.324212+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-29T06:51:53.907233+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 567; 83.944 seconds. Log: reports/checks/20261028T235945558251Z/pytest.txt. Checked: 2026-10-28T23:59:45.558491+00:00.
+pytest: PASS; exit 0; tests passed 660; 54.427 seconds. Log: reports/checks/20261029T065020945211Z/pytest.txt. Checked: 2026-10-29T06:50:20.945420+00:00.
 
-vitest: PASS; exit 0; tests passed 96; 57.415 seconds. Log: reports/checks/20261028T235945558251Z/vitest.txt. Checked: 2026-10-29T00:01:09.521942+00:00.
+vitest: PASS; exit 0; tests passed 121; 27.286 seconds. Log: reports/checks/20261029T065020945211Z/vitest.txt. Checked: 2026-10-29T06:51:15.386867+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 44.342 seconds. Log: reports/checks/20261028T235945558251Z/frontend_build.txt. Checked: 2026-10-29T00:02:06.966622+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 11.212 seconds. Log: reports/checks/20261029T065020945211Z/frontend_build.txt. Checked: 2026-10-29T06:51:42.685839+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -326,7 +326,7 @@ Rehearsal is a planned narrative, not a claim that a timed live presentation has
 
 3. Rehearse the five-minute presentation with the team, verify a clean checkout, and inspect the final reviewer ZIP before submission.
 
-P2 gate: leave account tenancy, billing, LLM assistance and physical sensors deferred while P0 signoff is incomplete. Farm/fleet planning does not imply multi-tenant production readiness.
+P2 gate: leave account tenancy, billing, model-authored advice and physical sensors deferred while P0 signoff is incomplete. Farm/fleet planning does not imply multi-tenant production readiness.
 
 Operational limitation: this is a local loopback demonstrator with self-declared identities. Teammates share code through GitHub; each local app has separate state unless deliberately provisioned otherwise.
 

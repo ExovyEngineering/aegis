@@ -52,7 +52,7 @@ def test_built_guide_is_printable_bookmarked_and_served_without_database_or_netw
     reader=PdfReader(tmp_path/result['pdf'])
     assert len(reader.pages)==result['pages'] and reader.pages[0].mediabox.width==612
     assert reader.pages[0].mediabox.height==792
-    assert len(reader.outline)==result['bookmarks']==7
+    assert len(reader.outline)==result['bookmarks']==len(PARTS)+1
     text='\n'.join(page.extract_text() for page in reader.pages)
     assert '$3,018' in text and '$3,093' in text and 'Not recorded' in text
     assert 'Local suite | PASS' not in text

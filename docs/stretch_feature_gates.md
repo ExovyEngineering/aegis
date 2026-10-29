@@ -89,10 +89,13 @@ findings or food-safety dispositions should be invented to make a demo richer.
 
 ## LLM explanations
 
-**Current boundary:** measured model results, source labels, deterministic
-scenario details and human decision records already supply inspectable
-explanations. The repository's P2 gate defers an LLM assistant behind P0
-acceptance. An LLM cannot repair missing scientific linkage or source timing.
+**Current boundary (October 29):** a read-only Evidence assistant now assembles
+six cited, server-authored explanations from captured operational fields and
+saved reports. An optional, disabled-by-default Ollama connector can select a
+question topic only. No actual model inference or quality evaluation is claimed;
+configuration/mocked tests are separate from that evidence. Human submission
+gates remain open. An LLM cannot repair missing linkage or source timing. See
+[the assistant contract](evidence_assistant.md).
 
 **Entry criteria:**
 
@@ -177,5 +180,6 @@ The shared-backend mobile Drive workflow is implemented and retains its parked
 attestation requirements. October 28 adds the road workspace and local recovery
 without changing approvals, held/recalled exclusions, model results or original
 observations. Continue through genuine Kiro execution, author review and the
-timed team rehearsal. LLMs, genomic inference, physical sensors, production
-accounts and cloud publication need their own missing inputs and validation.
+timed team rehearsal. The bounded evidence assistant is implemented, with optional unevaluated model topic
+selection. Genomic inference, physical sensors, production accounts and cloud
+publication still need their missing inputs and validation.
