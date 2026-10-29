@@ -4,6 +4,19 @@ Update this file when behavior or evidence changes. The generated presentation
 brief is `reports/aegis_project_brief.pdf`; its editable companion is
 `reports/project_brief.md`. Recorded tests are separate from implementation claims.
 
+## October 28, 2026 - complete printable master user guide
+
+- Added a complete handbook for all eight workspaces, exact controls, farm/fleet
+  and dispatcher/driver use cases, evidence and model interpretation, rehearsal,
+  storage/recovery, troubleshooting and glossary. Reviewed against current code.
+- Added US Letter PDF layout with measured margins, page-numbered contents and
+  bookmarks, standalone print HTML and editable master Markdown. Generation uses
+  existing dependencies and never opens the operational DB or refreshes sources.
+- Added an in-app master-guide download card and explicit unavailable states;
+  corrected the P2 heading to distinguish implemented stretches from deferred work.
+- Current verification and print/download checks are recorded in the session
+  reports and `reports/master_guide_verification.json` after actual execution.
+
 ## October 28, 2026 - road intelligence and local recovery
 
 - Added an official, tested Iowa DOT 511 point-event adapter and a 599-record

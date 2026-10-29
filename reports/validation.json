@@ -1,8 +1,8 @@
 {
   "session_date": "2026-10-28",
-  "pytest_passed": 563,
+  "pytest_passed": 567,
   "pytest_warnings": 5,
-  "vitest_passed": 95,
+  "vitest_passed": 96,
   "frontend_production_build": "passed",
   "compileall": "passed",
   "real_http_checks_passed": 29,
@@ -12,7 +12,7 @@
   "exact_duplicate_hashes": 0,
   "fsis_declared_count_comparisons": 17,
   "public_registry_probes_successful": 14,
-  "browser_visual_qa": "New road workspace Chrome checks; earlier core suites retain their own timestamps and were not all repeated",
+  "browser_visual_qa": "Current master-guide read-only Chrome checks; earlier feature/browser suites retain separate dated evidence",
   "genuine_kiro_workflow": "Installed IDE; authentic signed-in spec task remains pending",
   "browser_checks_passed": 26,
   "noaa_station_days": 2730,
@@ -85,5 +85,9 @@
   "road_live_provider_artifact": "reports/road_intelligence_live.json",
   "backup_recovery_artifact": "reports/backup_recovery.json",
   "stretch_verification_artifact": "reports/stretch_verification.json",
-  "clean_install_scope": "Earlier core install is separately dated; updated package verification reuses its environment."
+  "clean_install_scope": "Earlier core install is separately dated; updated package verification reuses its environment.",
+  "master_guide_pages": 65,
+  "master_guide_chapters": 20,
+  "master_guide_browser_checks_passed": 35,
+  "master_guide_artifact": "reports/master_guide_verification.json"
 }

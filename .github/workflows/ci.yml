@@ -29,6 +29,9 @@ jobs:
       - name: Regenerate presentation brief from recorded evidence
         if: always()
         run: python scripts/build_project_brief.py
+      - name: Regenerate the complete printable user guide
+        if: always()
+        run: python scripts/build_master_guide.py
       - name: Preserve team brief and test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -41,3 +44,7 @@ jobs:
             reports/project_brief_manifest.json
             reports/session_verification.json
             reports/checks/
+            reports/aegis_master_guide.pdf
+            reports/aegis_master_guide.html
+            reports/master_guide_manifest.json
+            docs/aegis_master_guide.md

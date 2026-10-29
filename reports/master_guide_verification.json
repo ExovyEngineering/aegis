@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-29T00:13:44.001100+00:00",
+  "passed": true,
+  "guide_pdf": "reports/aegis_master_guide.pdf",
+  "guide_markdown": "docs/aegis_master_guide.md",
+  "guide_html": "reports/aegis_master_guide.html",
+  "pdf_sha256": "83f8f4c4bb68e6cf600ce2d7fd7d69c74785c5f31cca834cdb43dee46df00b0b",
+  "pages": 65,
+  "chapters": 20,
+  "bookmarks_verified": 20,
+  "contents_link_targets_verified": 20,
+  "paper": "US Letter",
+  "all_pages_have_correct_numbers": true,
+  "all_source_chapter_hashes_match": true,
+  "body_font_points": 10.7,
+  "table_font_points": 9.7,
+  "measured_text_margin_overflows": 0,
+  "visual_review": {
+    "method": "Native previews from the same Matplotlib page layout that produced the PDF; not an independent PDF rasterizer",
+    "pages_opened_and_inspected": [
+      2,
+      8,
+      44
+    ],
+    "previews": "reports/browser_qa/master_guide/print-render",
+    "assessment": "Contents, control table and scientific prose were readable, with no observed clipped text"
+  },
+  "browser_checks_passed": 35,
+  "browser_artifact": "reports/browser_qa/master_guide/results.json",
+  "browser_uncaught_js_errors": 0,
+  "browser_failed_app_requests": 0,
+  "physical_printer_tested": false,
+  "print_control_check": "Actual Chrome click against a stub of window.print; print CSS checked separately",
+  "operator_database_and_sidecars_unchanged": true,
+  "raw_hashes_unchanged": 42,
+  "pytest_passed": 567,
+  "vitest_passed": 96,
+  "production_build_passed": true,
+  "verification_artifact": "reports/session_verification.json",
+  "scientific_numbers_checked_against": "reports/model_evaluation.json",
+  "public_provider_api_refreshes_requested": false,
+  "base_map_tile_requests_may_occur": true
+}

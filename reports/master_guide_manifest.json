@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-10-28T19:04:45.416670-05:00",
+  "title": "AEGIS Master User Guide",
+  "pdf": "reports/aegis_master_guide.pdf",
+  "markdown": "docs/aegis_master_guide.md",
+  "html": "reports/aegis_master_guide.html",
+  "sha256": "83f8f4c4bb68e6cf600ce2d7fd7d69c74785c5f31cca834cdb43dee46df00b0b",
+  "bytes": 393829,
+  "pages": 65,
+  "chapters": [
+    {
+      "id": "start-here-what-aegis-does",
+      "title": "Start here: what AEGIS does",
+      "body_page_index": 0,
+      "page": 3
+    },
+    {
+      "id": "find-your-way-around-the-application",
+      "title": "Find your way around the application",
+      "body_page_index": 2,
+      "page": 5
+    },
+    {
+      "id": "open-the-site-and-choose-a-safe-practice-workspace",
+      "title": "Open the site and choose a safe practice workspace",
+      "body_page_index": 4,
+      "page": 7
+    },
+    {
+      "id": "command-center-understand-the-current-operation",
+      "title": "Command center: understand the current operation",
+      "body_page_index": 5,
+      "page": 8
+    },
+    {
+      "id": "route-laboratory-test-a-farm-or-a-multi-location-fleet",
+      "title": "Route laboratory: test a farm or a multi-location fleet",
+      "body_page_index": 11,
+      "page": 14
+    },
+    {
+      "id": "road-intelligence-inspect-independent-road-evidence",
+      "title": "Road intelligence: inspect independent road evidence",
+      "body_page_index": 15,
+      "page": 18
+    },
+    {
+      "id": "dispatcher-desk-turn-reports-into-recorded-decisions",
+      "title": "Dispatcher desk: turn reports into recorded decisions",
+      "body_page_index": 18,
+      "page": 21
+    },
+    {
+      "id": "aegis-drive-a-simplified-view-for-a-parked-driver",
+      "title": "AEGIS Drive: a simplified view for a parked driver",
+      "body_page_index": 24,
+      "page": 27
+    },
+    {
+      "id": "guided-practice-a-driver-concern-through-dispatcher-response",
+      "title": "Guided practice: a driver concern through dispatcher response",
+      "body_page_index": 28,
+      "page": 31
+    },
+    {
+      "id": "sources-evidence-understand-where-each-claim-comes-from",
+      "title": "Sources & evidence: understand where each claim comes from",
+      "body_page_index": 32,
+      "page": 35
+    },
+    {
+      "id": "model-evaluation-understand-the-measured-result",
+      "title": "Model evaluation: understand the measured result",
+      "body_page_index": 41,
+      "page": 44
+    },
+    {
+      "id": "project-brief-the-learning-and-presentation-hub",
+      "title": "Project brief: the learning and presentation hub",
+      "body_page_index": 47,
+      "page": 50
+    },
+    {
+      "id": "guided-rehearsal-practice-a-complete-story",
+      "title": "Guided rehearsal: practice a complete story",
+      "body_page_index": 48,
+      "page": 51
+    },
+    {
+      "id": "storage-exports-and-sharing",
+      "title": "Storage, exports and sharing",
+      "body_page_index": 51,
+      "page": 54
+    },
+    {
+      "id": "local-backup-and-recovery",
+      "title": "Local backup and recovery",
+      "body_page_index": 53,
+      "page": 56
+    },
+    {
+      "id": "troubleshooting-by-what-you-see",
+      "title": "Troubleshooting by what you see",
+      "body_page_index": 54,
+      "page": 57
+    },
+    {
+      "id": "glossary-for-reading-the-site",
+      "title": "Glossary for reading the site",
+      "body_page_index": 56,
+      "page": 59
+    },
+    {
+      "id": "present-the-project-accurately",
+      "title": "Present the project accurately",
+      "body_page_index": 59,
+      "page": 62
+    },
+    {
+      "id": "keep-this-master-guide-current",
+      "title": "Keep this master guide current",
+      "body_page_index": 60,
+      "page": 63
+    },
+    {
+      "id": "recorded-verification-and-what-remains-open",
+      "title": "Recorded verification and what remains open",
+      "body_page_index": 61,
+      "page": 64
+    }
+  ],
+  "overflow_count": 0,
+  "paper": "US Letter",
+  "body_font_points": 10.7,
+  "table_font_points": 9.7,
+  "bookmarks": 20,
+  "contents_links": 20,
+  "source_files": [
+    {
+      "path": "docs/manual_parts/start.md",
+      "sha256": "12db59e8bcbbd292835e2fd552bfc3b79356463d66433b323f2e797d4fde3687"
+    },
+    {
+      "path": "docs/manual_parts/operations.md",
+      "sha256": "6be2ab49e3befaeef862b3402ed9d9378aaa0bc556dde5a229650300293f330f"
+    },
+    {
+      "path": "docs/manual_parts/dispatch_drive.md",
+      "sha256": "8157e812089c52de616e2bdde14c604dc1f8007997e393879641eb4da89a8796"
+    },
+    {
+      "path": "docs/manual_parts/evidence_science.md",
+      "sha256": "f67359363bfcc0b62bc08de96c61995dee7ae2fc05db40e3e962991563f6714a"
+    },
+    {
+      "path": "docs/manual_parts/rehearsal.md",
+      "sha256": "b3d41d21d518abddea8d1330dc9606e63181022a375ddd34250151574ae1515c"
+    },
+    {
+      "path": "docs/manual_parts/reference.md",
+      "sha256": "06823b4dbd0670c4fc056bc91392b932157661f795a6a7084cc607d19a47e2e6"
+    }
+  ],
+  "verification_snapshot": "reports/session_verification.json",
+  "live_api_requests_performed": false,
+  "operational_database_accessed": false
+}

@@ -6,6 +6,14 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Run locally
 
+For a complete explanation of every workspace and its use cases, read the
+[master user guide](docs/aegis_master_guide.md). The print-ready PDF is
+`reports/aegis_master_guide.pdf`; standalone HTML is
+`reports/aegis_master_guide.html`. Both, plus Markdown, are linked from
+**Project brief** in the app. Rebuild after reviewing chapter changes with
+`.venv/Scripts/python scripts/build_master_guide.py`. The existing shorter
+project/status brief remains available separately.
+
 For the finished core walkthrough and verification commands, start with
 [the core software handoff](docs/core_release.md).
 

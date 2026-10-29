@@ -1,0 +1,97 @@
+/** Read-only Chrome checks of the master handbook, downloads and print action. */
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {chromium} from '../.tools/browser-qa/node_modules/playwright-core/index.mjs';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const base='http://127.0.0.1:8000';
+const folder=path.join(root,'reports/browser_qa/master_guide');
+const downloads=path.join(root,'.tools/master-guide-downloads');
+await fs.mkdir(folder,{recursive:true});await fs.mkdir(downloads,{recursive:true});
+const digest=body=>createHash('sha256').update(body).digest('hex');
+const fingerprint=async file=>{try{const body=await fs.readFile(file);return {exists:true,bytes:body.length,sha256:digest(body)};}catch(error){if(error.code==='ENOENT')return {exists:false};throw error;}};
+const dbFiles=['','-wal','-shm','-journal'];
+const database=async()=>Object.fromEntries(await Promise.all(dbFiles.map(async suffix=>[suffix||'sqlite',await fingerprint(path.join(root,'data/aegis.sqlite'+suffix))])));
+const result={checked_at:new Date().toISOString(),base_url:base,read_only:true,physical_printer_tested:false,public_provider_refresh_requested:false,checks:[],page_errors:[],http_failures:[],post_requests:[],screenshots:[]};
+const check=(name,passed,detail='')=>{result.checks.push({name,passed,detail});if(!passed)throw new Error(`${name}: ${detail}`);};
+let browser,page,htmlPage;
+try{
+  result.database_before=await database();
+  const manifest=JSON.parse(await fs.readFile(path.join(root,'reports/master_guide_manifest.json'),'utf8'));
+  result.guide={sha256:manifest.sha256,pages:manifest.pages,chapters:manifest.chapters.length,generated_at:manifest.generated_at};
+  result.document_before=await fingerprint(path.join(root,manifest.pdf));
+  browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  result.browser_version=browser.version();
+  const context=await browser.newContext({viewport:{width:1440,height:1000},locale:'en-US',timezoneId:'America/Chicago',acceptDownloads:true});
+  await context.addInitScript(()=>{window.__guidePrintCalls=0;window.print=()=>{window.__guidePrintCalls++;};});
+  context.on('page',current=>{
+    current.on('pageerror',error=>result.page_errors.push(error.message));
+    current.on('response',response=>{if(response.url().startsWith(base)&&response.status()>=400)result.http_failures.push({url:response.url(),status:response.status()});});
+    current.on('request',request=>{if(request.method()!=='GET'&&request.method()!=='HEAD')result.post_requests.push({url:request.url(),method:request.method()});});
+  });
+  const capture=async(current,name)=>{await current.screenshot({path:path.join(folder,name+'.png'),fullPage:false});result.screenshots.push(name+'.png');};
+  const overflow=async(current,name)=>{const value=await current.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));check(name,value.scroll<=value.width,JSON.stringify(value));};
+  const get=async endpoint=>{const response=await context.request.get(base+endpoint);check('HTTP '+endpoint,response.ok(),`HTTP ${response.status()}`);return response;};
+  const runtime=await (await get('/api/runtime-context')).json();check('operator_runtime_identified_without_mutation',runtime.mode==='operator'&&!runtime.isolated);
+  const status=await (await get('/api/project-status')).json();
+  check('served_metadata_matches_current_edition',status.manual?.sha256===manifest.sha256&&status.manual?.pages===manifest.pages);
+  check('print_layout_records_no_margin_overflow',manifest.overflow_count===0&&manifest.paper==='US Letter');
+  const pdfResponse=await get('/api/master-guide.pdf');
+  check('PDF_response_matches_exact_recorded_hash',digest(await pdfResponse.body())===manifest.sha256);
+  check('PDF_response_is_downloadable',pdfResponse.headers()['content-type'].includes('application/pdf')&&pdfResponse.headers()['content-disposition'].includes('attachment'));
+  const mdResponse=await get('/api/master-guide.md');
+  const markdown=await mdResponse.text();check('editable_master_has_all_workspace_chapters',['Command center','Route laboratory','Road intelligence','Dispatcher desk','AEGIS Drive','Sources & evidence','Model evaluation','Project brief'].every(name=>markdown.includes(name)));
+  check('master_includes_use_cases_glossary_and_limits',markdown.includes('Guided practice')&&markdown.includes('Glossary')&&markdown.includes('not a consumer illness probability'));
+  page=await context.newPage();page.setDefaultTimeout(20000);
+  await page.goto(base,{waitUntil:'domcontentloaded'});
+  await page.getByRole('button',{name:'Project brief',exact:true}).click();
+  const panel=page.getByRole('region',{name:'Master user guide',exact:true});
+  await panel.getByRole('link',{name:'Download master guide PDF',exact:true}).waitFor();
+  check('master_card_is_in_real_Project_brief',await panel.getByRole('heading',{name:'Understand everything in AEGIS'}).isVisible());
+  check('new_master_and_short_status_brief_are_separate',await page.getByRole('link',{name:'Download project brief PDF',exact:true}).count()===1);
+  check('edition_page_count_and_paper_are_visible',(await panel.innerText()).includes(`${manifest.pages} pages · US Letter`));
+  await capture(page,'desktop-master-downloads');await overflow(page,'desktop_app_has_no_horizontal_overflow');
+  for(const [label,filename,expected] of [['Download master guide PDF','master.pdf',manifest.sha256],['Download master guide Markdown','master.md',digest(Buffer.from(markdown))]]){
+    const pending=page.waitForEvent('download');await panel.getByRole('link',{name:label,exact:true}).click();const downloaded=await pending;
+    const destination=path.join(downloads,filename);await downloaded.saveAs(destination);
+    check(label+' browser_download_exact_bytes',digest(await fs.readFile(destination))===expected,downloaded.suggestedFilename());
+  }
+  const pending=page.waitForEvent('popup');await panel.getByRole('link',{name:'Read or print guide',exact:true}).click();htmlPage=await pending;
+  await htmlPage.waitForLoadState('domcontentloaded');
+  check('HTML_reading_link_opens_inline',htmlPage.url()===base+'/api/master-guide.html');
+  check('HTML_title_identifies_master_guide',await htmlPage.title()==='AEGIS Master User Guide');
+  const contents=htmlPage.getByRole('navigation',{name:'Guide contents'});
+  check('HTML_contents_has_every_chapter',await contents.getByRole('link').count()===manifest.chapters.length);
+  const targets=await contents.getByRole('link').evaluateAll(links=>links.map(link=>({href:link.getAttribute('href'),exists:!!document.getElementById(link.getAttribute('href').slice(1))})));
+  check('every_HTML_contents_target_exists',targets.every(row=>row.exists));
+  check('HTML_requires_no_external_assets',await htmlPage.locator('script[src],link[rel="stylesheet"],img,iframe').count()===0);
+  await htmlPage.getByRole('button',{name:'Print this guide',exact:true}).click();
+  check('print_control_invokes_browser_print',await htmlPage.evaluate(()=>window.__guidePrintCalls)===1,'Browser print stub; no physical printer or native dialog was used.');
+  await capture(htmlPage,'desktop-html-contents');await overflow(htmlPage,'desktop_HTML_has_no_horizontal_overflow');
+  const drive=manifest.chapters.find(row=>row.title.startsWith('AEGIS Drive:'));
+  await contents.locator(`a[href="#${drive.id}"]`).click();
+  check('contents_navigates_to_Drive',new URL(htmlPage.url()).hash==='#'+drive.id);
+  check('Drive_chapter_is_readable',await htmlPage.locator('#'+drive.id).isVisible());
+  await capture(htmlPage,'desktop-driver-chapter');
+  await htmlPage.emulateMedia({media:'print'});
+  check('print_styles_hide_the_screen_print_button',await htmlPage.getByRole('button',{name:'Print this guide',exact:true}).isHidden());
+  await htmlPage.emulateMedia({media:'screen'});
+  await page.setViewportSize({width:390,height:844});await panel.scrollIntoViewIfNeeded();
+  check('mobile_download_control_is_reachable',await panel.getByRole('link',{name:'Download master guide PDF',exact:true}).isVisible());
+  await overflow(page,'mobile_app_has_no_horizontal_overflow');await capture(page,'mobile-master-downloads');
+  await htmlPage.setViewportSize({width:390,height:844});await htmlPage.goto(base+'/api/master-guide.html',{waitUntil:'domcontentloaded'});
+  await overflow(htmlPage,'mobile_HTML_has_no_horizontal_overflow');await capture(htmlPage,'mobile-html-reading');
+  await htmlPage.locator('#'+drive.id).scrollIntoViewIfNeeded();await capture(htmlPage,'mobile-driver-chapter');
+  check('no_uncaught_JavaScript_errors',result.page_errors.length===0,JSON.stringify(result.page_errors));
+  check('no_failed_application_requests',result.http_failures.length===0,JSON.stringify(result.http_failures));
+  check('no_write_requests_were_sent',result.post_requests.length===0,JSON.stringify(result.post_requests));
+  result.database_after=await database();result.document_after=await fingerprint(path.join(root,manifest.pdf));
+  check('operator_SQLite_and_sidecars_unchanged',JSON.stringify(result.database_before)===JSON.stringify(result.database_after));
+  check('guide_bytes_stayed_fixed_during_checks',JSON.stringify(result.document_before)===JSON.stringify(result.document_after));
+  result.passed=true;
+}catch(error){result.passed=false;result.error=String(error);if(page)await page.screenshot({path:path.join(folder,'failure.png')}).catch(()=>{});}
+finally{if(browser)await browser.close();result.finished_at=new Date().toISOString();await fs.writeFile(path.join(folder,'results.json'),JSON.stringify(result,null,2)+'\n');}
+console.log(JSON.stringify({passed:result.passed,checks:result.checks.length,error:result.error,screenshots:result.screenshots.length}));
+if(!result.passed)process.exitCode=1;

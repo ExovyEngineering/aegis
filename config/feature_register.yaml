@@ -1,5 +1,5 @@
 project: AEGIS
-updated: '2026-10-27'
+updated: '2026-10-28'
 features:
 - id: provenance
   priority: P0
@@ -76,6 +76,15 @@ features:
     guards and immutable evidence exports. Offline mode uses dated fixtures and
     labeled route estimates. Automated checks do not establish a human rehearsal,
     Kiro execution or author approval.
+- id: master-guide
+  priority: P0
+  name: Complete printable product handbook
+  status: implemented; dated edition requires review when capabilities change
+  evidence: docs/aegis_master_guide.md
+  detail: Every workspace, visible controls, farm/fleet and dispatcher/driver use
+    cases, source meanings, measured-model interpretation, rehearsal, storage,
+    recovery and troubleshooting. PDF contents/bookmarks, print-friendly HTML
+    and editable Markdown are available through Project brief.
 - id: digital-twin
   priority: P1
   name: Interactive Missouri digital twin

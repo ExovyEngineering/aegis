@@ -215,6 +215,12 @@ def run_extracted_workflows(target):
                 pdf=client.get('/api/project-brief.pdf')
                 _assert(pdf.status_code==200 and pdf.content.startswith(b'%PDF'),'Presentation PDF absent or invalid')
                 checks.append('presentation PDF is included and downloadable')
+                if (target/'reports/master_guide_manifest.json').exists():
+                    handbook=json.loads((target/'reports/master_guide_manifest.json').read_text(encoding='utf-8'))
+                    downloaded=client.get('/api/master-guide.pdf')
+                    _assert(downloaded.status_code==200 and downloaded.content.startswith(b'%PDF') and hashlib.sha256(downloaded.content).hexdigest()==handbook['sha256'],'Master user guide PDF/hash missing')
+                    _assert(client.get('/api/master-guide.html').status_code==200 and client.get('/api/master-guide.md').status_code==200,'Master guide reading/Markdown formats missing')
+                    checks.append('complete master user handbook downloads in PDF, print HTML and Markdown with recorded checksum')
                 proposal=client.post('/api/proposals/A')
                 _assert(proposal.status_code==200,'Scenario proposal unavailable')
                 approval='/api/proposals/'+proposal.json()['id']+'/approve'

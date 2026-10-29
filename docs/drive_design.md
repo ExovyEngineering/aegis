@@ -1,7 +1,7 @@
 # AEGIS Drive: visual trip view and parked-use controls
 
 Design and acceptance contract, October 27, 2026. This document describes the
-Drive extension being implemented. A capability is verified only when the
+implemented Drive extension. A capability is verified only when the
 corresponding executed tests and browser evidence appear in the current
 verification reports; this design document alone is not completion evidence.
 

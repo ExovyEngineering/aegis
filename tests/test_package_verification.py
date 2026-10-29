@@ -122,9 +122,11 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     shutil.copy2(ROOT/'scripts/backup_state.py',source/'scripts/backup_state.py')
     for name in ('data/processed','data/fixtures','data/manifests'):
         shutil.copytree(ROOT/name,source/name)
-    required_reports=('api_status.json','model_evaluation.json','model_timing.json','noaa_coverage.json','evidence_ingestion.json','usda_food_environment.json','fsis_ingestion.json','project_brief_manifest.json','project_brief.md','aegis_project_brief.pdf','aegis_report.md')
+    required_reports=('api_status.json','model_evaluation.json','model_timing.json','noaa_coverage.json','evidence_ingestion.json','usda_food_environment.json','fsis_ingestion.json','project_brief_manifest.json','project_brief.md','aegis_project_brief.pdf','aegis_report.md','master_guide_manifest.json','aegis_master_guide.pdf','aegis_master_guide.html')
     (source/'reports').mkdir()
     for name in required_reports:shutil.copy2(ROOT/'reports'/name,source/'reports'/name)
+    (source/'docs').mkdir()
+    shutil.copy2(ROOT/'docs/aegis_master_guide.md',source/'docs/aegis_master_guide.md')
     shutil.copy2(ROOT/'requirements-lock.txt',source/'requirements-lock.txt')
     frontend=source/'frontend/dist';(frontend/'assets').mkdir(parents=True)
     (frontend/'index.html').write_text('<html><title>AEGIS package test</title><script src="/assets/fixture.js"></script></html>')
@@ -145,5 +147,6 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     assert all(check['status']=='passed' for check in result['check_results'])
     assert any('USDA' in check for check in result['checks']) and any('readiness' in check for check in result['checks'])
     assert any('Iowa' in check for check in result['checks']) and any('backup' in check for check in result['checks'])
+    assert any('master user handbook' in check for check in result['checks'])
     assert database.read_bytes()==b'original operator state'
     assert list((workspace/'.tools/package-verification').iterdir())==[]

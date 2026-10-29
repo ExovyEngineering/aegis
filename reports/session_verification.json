@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-28T19:26:32.890872+00:00",
-  "finished_at": "2026-10-28T19:27:34.084133+00:00",
+  "generated_at": "2026-10-28T23:59:45.553480+00:00",
+  "finished_at": "2026-10-29T00:02:51.324212+00:00",
   "all_passed": true,
   "checks": [
     {
@@ -11,13 +11,13 @@
         "pytest",
         "-q"
       ],
-      "checked_at": "2026-10-28T19:26:32.896790+00:00",
+      "checked_at": "2026-10-28T23:59:45.558491+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 39.287,
-      "tests_passed": 563,
-      "log": "reports/checks/20261028T192632896379Z/pytest.txt",
-      "log_sha256": "2be28224b1e98fa99ddb020478dcb680051ce2bf6ef217fcbe6d9a38bd9f1c70"
+      "duration_seconds": 83.944,
+      "tests_passed": 567,
+      "log": "reports/checks/20261028T235945558251Z/pytest.txt",
+      "log_sha256": "95f7a9df21c96cbd6a1879991c1104bad3fde5909f88362a6818330bcf0402bf"
     },
     {
       "name": "vitest",
@@ -28,13 +28,13 @@
         "frontend",
         "test"
       ],
-      "checked_at": "2026-10-28T19:27:12.201092+00:00",
+      "checked_at": "2026-10-29T00:01:09.521942+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 10.326,
-      "tests_passed": 95,
-      "log": "reports/checks/20261028T192632896379Z/vitest.txt",
-      "log_sha256": "0bca5992e4a5564a43aab2c89ddc56c0fbdd1f474773188d701321f779140c43"
+      "duration_seconds": 57.415,
+      "tests_passed": 96,
+      "log": "reports/checks/20261028T235945558251Z/vitest.txt",
+      "log_sha256": "5063f1043491b0b5fba475ed8d694969fc50491acb7c3869c9786b47e56ffc2e"
     },
     {
       "name": "frontend_build",
@@ -46,13 +46,13 @@
         "run",
         "build"
       ],
-      "checked_at": "2026-10-28T19:27:22.544720+00:00",
+      "checked_at": "2026-10-29T00:02:06.966622+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 11.523,
+      "duration_seconds": 44.342,
       "tests_passed": null,
-      "log": "reports/checks/20261028T192632896379Z/frontend_build.txt",
-      "log_sha256": "7e4b212843e187a310c7dd99de0918798287eeedc39c5d8e18db6e083ae0c0b0"
+      "log": "reports/checks/20261028T235945558251Z/frontend_build.txt",
+      "log_sha256": "c09e0400afcad83985e389b8ee3dcebcc257abb9f0465c44ed9695d00c899a34"
     }
   ],
   "live_api_requests_included": false,

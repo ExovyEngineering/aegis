@@ -10,4 +10,15 @@ it('shows recorded failures and pending gates beside downloadable evidence', asy
   expect(await screen.findByText('FAIL')).toBeInTheDocument();
   expect(screen.getByText('pending actual execution')).toBeInTheDocument();
   expect(screen.getByText('Download project brief PDF')).toHaveAttribute('href','/api/project-brief.pdf');
+  expect(screen.queryByRole('link',{name:'Download master guide PDF'})).not.toBeInTheDocument();
+});
+it('offers the complete master guide separately from the shorter status brief',async()=>{
+  vi.mocked(api).mockResolvedValue({register:{features:[]},verification:null,brief:null,manual:{generated_at:'2026-10-28T14:00:00-05:00',pages:65,sha256:'guidehash',paper:'US Letter'},notice:'Dated results'});
+  render(<ProjectBrief/>);
+  expect(await screen.findByRole('link',{name:'Download master guide PDF'})).toHaveAttribute('href','/api/master-guide.pdf');
+  expect(screen.getByRole('link',{name:'Read or print guide'})).toHaveAttribute('href','/api/master-guide.html');
+  expect(screen.getByRole('link',{name:'Download master guide Markdown'})).toHaveAttribute('href','/api/master-guide.md');
+  expect(screen.getByText(/65 pages · US Letter/)).toBeInTheDocument();
+  expect(screen.getByRole('link',{name:'Download project brief PDF'})).toBeInTheDocument();
+  expect(screen.getByRole('heading',{name:'P2 · Stretch work and deferred extensions'})).toBeInTheDocument();
 });

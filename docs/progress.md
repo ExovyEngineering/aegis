@@ -2,7 +2,23 @@
 
 Session date: October 28, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: road intelligence and local recovery (October 28)
+## Latest: complete master user guide (October 28)
+
+- Added a detailed, print-oriented product handbook with all eight workspaces,
+  controls and use cases, plus a glossary, walkthroughs, troubleshooting, evidence
+  meanings and explicit implemented/deferred boundaries. Content was reviewed
+  against the current code and saved scientific artifacts.
+- Project brief now links a page-numbered/bookmarked US Letter PDF, standalone
+  print HTML and editable Markdown, separately from the shorter status brief.
+- Source chapters live under `docs/manual_parts/`; `scripts/build_master_guide.py`
+  assembles the master, measures print margins, adds internal contents links and
+  reads dated verification evidence without provider or operational DB access.
+- Tests/build and actual download/browser/print evidence are recorded separately
+  in `reports/session_verification.json` and `reports/master_guide_verification.json`.
+  No new predictive validity, genuine Kiro evidence or production deployment is
+  inferred from documentation.
+
+## Previous: road intelligence and local recovery (October 28)
 
 - Added a separate official Iowa DOT 511 adapter and dated fixture: 599 point
   records acquired in six bounded pages. Repeated CARS event IDs and raw event
