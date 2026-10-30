@@ -6,6 +6,19 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Run locally
 
+After installing the dependencies below, Windows users can double-click
+**Start-AEGIS.cmd**, or run `.venv/Scripts/python scripts/start_local.py`.
+The launcher builds the current frontend and starts the operator server in that
+terminal. **Keep the terminal open**; Ctrl+C stops its owned server. It never
+downloads dependencies or stops an existing listener automatically.
+
+Use `Start-AEGIS.cmd --no-build` with the prebuilt reviewer package when Node is
+unavailable. This checks existing assets without claiming they match current
+source. `scripts/start_local.py --check-only` diagnoses configuration, local
+assets and the listener without opening SQLite, building or starting a server.
+An already responding app is reported with backend freshness unverified; stop
+its known terminal and relaunch to load backend changes.
+
 For a complete explanation of every workspace and its use cases, read the
 [master user guide](docs/aegis_master_guide.md). The print-ready PDF is
 `reports/aegis_master_guide.pdf`; standalone HTML is
@@ -104,6 +117,13 @@ The measured timer and self-reported coverage do not prove a human presentation,
 Kiro execution or final approval. See [the rehearsal guide](docs/rehearsal_guide.md).
 
 ## Understand and exercise Command
+
+**Recent activity** in the header opens an internal action history without
+adding another workspace. Filter recorded events, approvals, reports and driver
+actions, inspect raw payloads/citations, load older rows from the same captured
+snapshot and export the captured pages. Browsing changes no operational state.
+Unapplied previews, map highlights and route calculations are not inferred to be
+recorded decisions. See [the activity contract](docs/activity_history.md).
 
 Command includes **Preview event impact**. Choose a candidate shipment and a
 simulated disruption to calculate direct before/after changes and all four

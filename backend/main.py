@@ -20,6 +20,7 @@ from backend.road_intelligence import create_road_intelligence_router
 from backend.evidence_assistant import create_assistant_router
 from backend.assistant_intent import create_assistant_intent_router
 from backend.event_impact import create_event_impact_router, build_event_impact
+from backend.activity import create_activity_router, read_legacy_audit
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -194,7 +195,10 @@ def incident(request:Incident):
     with db() as c:return create_driver_incident(c,request.shipment_id,request.description,record,request.expected_network_revision)
 @app.get('/api/audit')
 def audit():
-    with db() as c: return [dict(id=r[0],timestamp=r[1],actor=r[2],action=r[3],payload=json.loads(r[4])) for r in c.execute('SELECT * FROM audit ORDER BY id DESC LIMIT 100')]
+    # Preserve legacy initialization for parallel cold-start loads; the bounded
+    # read itself uses a separate read-only transaction and tolerates bad rows.
+    with db(): pass
+    return read_legacy_audit(DB,ROOT)
 class Route(BaseModel):
     coordinates:list[tuple[float,float]]=Field(min_length=2,max_length=20)
     alternatives:bool=False
@@ -292,6 +296,7 @@ app.include_router(create_road_intelligence_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_assistant_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_assistant_intent_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_event_impact_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_activity_router(lambda:DB,root=lambda:ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

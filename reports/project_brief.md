@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 29, 2026 at 03:45 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 29, 2026 at 11:15 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -82,6 +82,12 @@ Every workspace, visible controls, farm/fleet and dispatcher/driver use cases, s
 
 Evidence: docs/aegis_master_guide.md
 
+Reliable local foreground startup | implemented with configuration, asset and listener checks
+
+Windows Start-AEGIS.cmd keeps a visible user-owned terminal. Source-build, explicit prebuilt and check-only modes remain distinct. Existing listeners are never killed/rebuilt; inherited rehearsal settings are rejected. No installation, original-data reset or background-service persistence is implied.
+
+Evidence: scripts/start_local.py
+
 # P1 | Operational differentiators
 
 Interactive Missouri digital twin | implemented for deterministic simulation
@@ -113,6 +119,12 @@ Inspectable dispatch readiness | implemented as read-only diagnostics
 Sixteen checks distinguish hard eligibility/resource constraints from outstanding assignment acknowledgment, instruction acknowledgment and targeted verification. Passing the listed checks does not dispatch or certify safety.
 
 Evidence: tests/test_readiness.py
+
+Inspectable internal activity history | implemented read-only with captured pagination and export
+
+Header panel explains actual saved audit rows across existing workspaces, with explicit action/shipment filters, payload errors and bounded snapshots. It never replays decisions or invents missing historical effects. Self-declared actors and incomplete audit coverage are explicit; no production identity claim.
+
+Evidence: docs/activity_history.md
 
 # P2 | Stretch work and deferred extensions
 
@@ -172,13 +184,13 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-29T20:42:09.350945+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-30T04:06:05.429930+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 711; 50.195 seconds. Log: reports/checks/20261029T204048897082Z/pytest.txt. Checked: 2026-10-29T20:40:48.897347+00:00.
+pytest: PASS; exit 0; tests passed 824; 53.301 seconds. Log: reports/checks/20261030T034205062600Z/pytest.txt. Checked: 2026-10-30T03:42:05.062871+00:00.
 
-vitest: PASS; exit 0; tests passed 192; 18.287 seconds. Log: reports/checks/20261029T204048897082Z/vitest.txt. Checked: 2026-10-29T20:41:39.117004+00:00.
+vitest: PASS; exit 0; tests passed 240; 28.774 seconds. Log: reports/checks/activity-frontend-followup/vitest.txt. Checked: 2026-10-30T03:56:07.712713+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 11.913 seconds. Log: reports/checks/20261029T204048897082Z/frontend_build.txt. Checked: 2026-10-29T20:41:57.422201+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 14.62 seconds. Log: reports/checks/activity-frontend-followup/frontend_build.txt. Checked: 2026-10-30T03:56:36.508058+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 

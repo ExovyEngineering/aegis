@@ -1,5 +1,17 @@
 # AEGIS implementation history
 
+## October 29, 2026 - foreground startup and internal activity
+
+- Added Start-AEGIS.cmd and an operator launcher with bounded preflight,
+  source-build/prebuilt/check-only modes, profile guards and owned-child cleanup.
+- Added read-only recorded activity, explicit filters, stable snapshot paging,
+  per-row source/error inspection, navigation and captured JSON exports.
+- Kept comparison clicks distinct from recorded decisions and self-declared
+  actors distinct from production authentication. Updated maintained guidance.
+- Full local tests: 824 backend and 240 frontend passed; production build passed.
+  Actual lifecycle/browser results remain separately dated. No new provider,
+  model quality, real sensor, cloud deployment or genuine Kiro claim is inferred.
+
 ## October 29, 2026 - inspectable Command actions and disruption impact
 
 - Added read-only before/after experiments for six simulated disruptions and

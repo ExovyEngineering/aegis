@@ -1,5 +1,22 @@
 # Architecture
 
+## Local startup and activity inspection (October 29)
+
+`scripts/start_local.py` validates effective dotenv/environment settings before
+any operator database access, checks an occupied loopback listener before
+building, validates local frontend assets and runs its owned Uvicorn child in
+the foreground. `Start-AEGIS.cmd` is a Windows convenience entry point. Explicit
+prebuilt mode makes no source-freshness claim; check-only never opens SQLite.
+An already responding service is inspected without restarting or rebuilding it.
+
+`backend/activity.py` reads bounded existing audit rows through a separate
+SQLite read-only/query-only transaction. Stable captured pagination excludes
+later higher IDs and rejects changes in the inspected prefix. Exact payload
+hashes are distinct from explicitly bounded prefix hashes. The React activity
+panel is navigation/inspection/export only and adds no tenth workspace or action
+authority. Actor text is self-declared and missing historical effects stay
+missing; this is not a tamper-proof event-sourcing ledger.
+
 ## Command feedback and impact comparison (October 29)
 
 `backend/event_impact.py` captures bounded network and assignment records with

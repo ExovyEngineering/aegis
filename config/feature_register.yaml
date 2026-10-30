@@ -186,6 +186,24 @@ features:
     revision/hash in Command and clears all approved assignments. Map overlays,
     road-alternative selection, exports and page guides explain what changes.
     No automatic road reroute, official incident or prospective risk is invented.
+- id: activity-history
+  priority: P1
+  name: Inspectable internal activity history
+  status: implemented read-only with captured pagination and export
+  evidence: docs/activity_history.md
+  detail: Header panel explains actual saved audit rows across existing workspaces,
+    with explicit action/shipment filters, payload errors and bounded snapshots.
+    It never replays decisions or invents missing historical effects. Self-declared
+    actors and incomplete audit coverage are explicit; no production identity claim.
+- id: local-launcher
+  priority: P0
+  name: Reliable local foreground startup
+  status: implemented with configuration, asset and listener checks
+  evidence: scripts/start_local.py
+  detail: Windows Start-AEGIS.cmd keeps a visible user-owned terminal. Source-build,
+    explicit prebuilt and check-only modes remain distinct. Existing listeners are
+    never killed/rebuilt; inherited rehearsal settings are rejected. No installation,
+    original-data reset or background-service persistence is implied.
 - id: streaming
   priority: P2
   name: Real-time streaming infrastructure

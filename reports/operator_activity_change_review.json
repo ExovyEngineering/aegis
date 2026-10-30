@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-30T04:06:05.271794+00:00",
+  "review_completed": true,
+  "session_start_database_sha256": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+  "current_database_sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f",
+  "database_unchanged_for_entire_session": false,
+  "logical_comparison_baseline": "Previously verified October 28 operator backup; source original hash matches this session start",
+  "baseline_source_sha256": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+  "baseline_backup_sha256": "3053eb11abceda571428c5bd910172bd2e185de8e5cb8bf997edc40d55d4e80c",
+  "changed_tables": [
+    "planning_runs"
+  ],
+  "unchanged_tables": [
+    "assignments",
+    "audit",
+    "dispatch_instruction_versions",
+    "driver_focus",
+    "incidents",
+    "planning_projects",
+    "planning_versions",
+    "proposals",
+    "state"
+  ],
+  "added_planning_run": {
+    "count": 1,
+    "created_at": "2026-10-30T03:26:47.824672+00:00",
+    "scope": "One separate preset farm-planning calculation; request/result payloads remain private",
+    "actor_recorded": false
+  },
+  "attribution": "The route-laboratory run stores no actor; initiating actor is not established by this record. Timestamp and request are preserved without attribution.",
+  "dispatch_state_assignments_and_audit_unchanged": true,
+  "operator_data_restored_reset_or_deleted": false,
+  "handling": "Preserved the newly saved run. No rollback to the historical backup was performed. QA/lifecycle phase fingerprints are evaluated separately."
+}

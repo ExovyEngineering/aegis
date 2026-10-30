@@ -2,7 +2,38 @@
 
 Session date: October 29, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: visible Command results and disruption impact (October 29)
+## Latest: local launcher and recorded activity (October 29)
+
+- Added a Windows entry point and foreground Python launcher with separate
+  source-build, explicitly prebuilt and non-mutating diagnostic modes. Effective
+  dotenv/environment rehearsal settings are guarded, local assets are validated
+  and occupied listeners are inspected before any build. No other service is
+  stopped, no dependencies downloaded and no original data reset.
+- Added bounded, read-only internal activity inspection across the existing
+  nine workspaces. Filter known recorded actions or an explicit shipment ID,
+  inspect raw payload/citation/error details, page within a captured snapshot,
+  export loaded pages and navigate to the appropriate workspace. History does
+  not replay actions, infer missing before/after effects or authenticate actors.
+- Full local release checks: **824 pytest passed**, **240 Vitest passed** and
+  production build passed, with a later full frontend/build follow-up for focus
+  polish. **109 actual-Chrome history checks**, six screenshots and **11 actual
+  owned-process lifecycle checks** passed. The corrupt-history browser failure
+  prompted a bounded per-row fix in the legacy audit reader; initial harness/QA
+  failures remain separately preserved. A 35-test package follow-up passed.
+- The operator app was started through the new launcher. A user-owned terminal
+  must remain open; an interrupted agent session does not guarantee persistence.
+  Isolated QA uses port 8016 and a fresh UUID database, never the operator store.
+- The session-wide operator hash changed because one new preset farm-planning
+  run was saved. A read-only comparison to the previously verified backup found
+  all other tables unchanged, including dispatch state, holds/recalls, assignments
+  and audit. The run stores no actor, so attribution is not invented. It is
+  preserved; request/result payloads remain private. Phase-specific browser and
+  lifecycle fingerprints stayed unchanged. See `reports/operator_activity_change_review.json`.
+- Genuine Kiro execution, final author/rubric review, timed team presentation,
+  source/NOAA/publication gaps, genomic linkage and production access controls
+  remain open. This increment refreshes no provider or scientific model.
+
+## Previous: visible Command results and disruption impact (October 29)
 
 - Audited the Command controls and fixed concrete feedback failures: approval
   errors now appear inside the dialog; recompute records completion even when

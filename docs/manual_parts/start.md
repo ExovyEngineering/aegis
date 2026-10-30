@@ -55,6 +55,23 @@ The desktop control tower is **AEGIS Command**. Its navigation opens these nine 
 
 ### Common controls and labels
 
+**Recent activity**, in the header beside the bell, opens **Activity history**
+inside the current workspace. It shows actions actually present in the local
+audit table. Filter by **Recorded action** and an **Explicit shipment ID**, then
+click **Apply activity filters** to produce a new captured result. Draft filter
+edits do not change the records or export until applied. **Load older activity**
+continues the same snapshot; new actions appear after **Refresh activity**.
+**Export captured activity JSON** downloads the pages already loaded. Source
+details expose the actual raw payload and any unreadable-record error.
+
+Activity is a recorded internal history, not an authenticated or complete replay
+of every click. Actor names are self-declared. Map changes, unapplied previews and
+computed routes do not create decision records. Shipment filtering matches only
+an explicitly recorded top-level ID; an approval covering a plan is not silently
+linked to every trip. A workspace or current-trip link only navigates, and the
+historical entry can describe an earlier state. Close the panel to return to the
+page beneath it; there is no tenth workspace or new dispatch authority.
+
 Each Command workspace starts with **WHAT YOU ARE LOOKING AT**: a short explanation of the page, a visible description of what it can change, and two links to connected workspaces. Expand **How this connects** for the plain-language workflow. These links navigate; they do not approve a plan or apply an event. The guide closes its expanded details when you change pages. Dedicated Drive omits it to keep the driver surface simple.
 
 **Reload application data**, the header refresh button, rereads the main app's saved network and supporting data, including recomputed allocation scenarios. It does not independently refresh every public provider, retrain a model or reset the network. Individual workspaces have their own refresh/recheck controls, described later. The header bell, labeled **Open review queue**, opens Command and focuses its review queue. The avatar is a visual status element, not a sign-in form or account-settings feature.
@@ -89,13 +106,27 @@ Use **Route laboratory** when your question is how to redesign a farm or multi-s
 
 The ordinary local app is available at **http://127.0.0.1:8000** while its server is running. Dedicated Drive uses **http://127.0.0.1:8000/?mode=drive**. These are addresses on the current computer, not publicly deployed team links. A teammate normally runs a separate checkout or reviewer package on their own computer; GitHub shares code, not one automatically synchronized live database.
 
-If the local server is stopped, open PowerShell in the project folder and run:
+If the local server is stopped after setup, double-click **Start-AEGIS.cmd**, or
+open PowerShell in the project folder and run:
 
 ```powershell
-.venv/Scripts/python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+.venv/Scripts/python scripts/start_local.py
 ```
 
-Leave that terminal running. The documented setup in README.md and CONTRIBUTING.md covers installing dependencies on a different computer. The included reviewer ZIP contains a prebuilt frontend; viewing it does not require rebuilding React.
+The launcher builds current frontend source, checks the operator configuration
+and starts the backend in that terminal. Leave it running. Ctrl+C stops only its
+owned child. If another service already occupies the port, it reports that
+listener without killing or rebuilding it; an existing AEGIS backend's freshness
+is unverified until you stop its known terminal and relaunch.
+
+The documented setup in README.md and CONTRIBUTING.md covers installing
+dependencies on a different computer. The included reviewer ZIP contains a
+prebuilt frontend. Use **Start-AEGIS.cmd --no-build**, or add **--no-build** to
+the Python command, to inspect and serve those existing assets without Node or a
+React rebuild. This mode does not establish source freshness. **--check-only**
+diagnoses configuration/assets/listener without starting, building or opening
+SQLite. No launcher automatically downloads dependencies, resets original data
+or repurposes an isolated rehearsal configuration as the operator app.
 
 ### Practice actions in an isolated rehearsal
 

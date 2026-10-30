@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "passed": true,
-  "checked_at": "2026-10-29T20:45:12.501008+00:00",
+  "checked_at": "2026-10-30T04:15:40.030098+00:00",
   "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\aegis-review-draft.zip",
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
@@ -11,6 +11,7 @@
     "archive paths, exact manifest membership, hashes, sizes and exclusions verified",
     "extracted backend imports and fresh database are isolated from checkout",
     "prebuilt frontend and bundled assets load",
+    "packaged foreground launcher and prebuilt assets validate without building or downloading dependencies",
     "fsis_recalls dated fixture works without network/cache",
     "modot dated fixture works without network/cache",
     "openmeteo dated fixture works without network/cache",
@@ -25,6 +26,7 @@
     "presentation PDF is included and downloadable",
     "complete master user handbook downloads in PDF, print HTML and Markdown with recorded checksum",
     "human approval publishes simulated assignments in the fresh extracted database",
+    "read-only activity history exposes the actual recorded approval without changing state",
     "Drive default lock and parked confirmation gate contextual trip acknowledgment",
     "read-only readiness distinguishes approved acknowledged work without dispatching",
     "route review uses a supplied OSRM fixture and dated MoDOT evidence offline",
@@ -43,6 +45,10 @@
     },
     {
       "name": "prebuilt frontend and bundled assets load",
+      "status": "passed"
+    },
+    {
+      "name": "packaged foreground launcher and prebuilt assets validate without building or downloading dependencies",
       "status": "passed"
     },
     {
@@ -102,6 +108,10 @@
       "status": "passed"
     },
     {
+      "name": "read-only activity history exposes the actual recorded approval without changing state",
+      "status": "passed"
+    },
+    {
       "name": "Drive default lock and parked confirmation gate contextual trip acknowledgment",
       "status": "passed"
     },
@@ -131,14 +141,14 @@
     "Only trusted project archives may be executed. Internal hashes are not a signature or an untrusted-code security sandbox.",
     "Offline ASGI workflows do not prove a real browser rendering, live provider connectivity or a completed timed presentation."
   ],
-  "archive_sha256": "612160f466d520b526f39bf330c418d6c3f46ae5cf058d135648f6e1d046f59c",
-  "manifest_files_verified": 580,
-  "archive_files": 581,
-  "uncompressed_bytes": 34073932,
+  "archive_sha256": "a6eee66768b811066ca1477a451ea72a9c457a2b5d9f7d86464be064cab0410f",
+  "manifest_files_verified": 628,
+  "archive_files": 629,
+  "uncompressed_bytes": 35347817,
   "network_guard_enabled": true,
   "network_attempts": [],
   "worker_exit_code": 0,
   "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\clean-room-20261028\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
-  "finished_at": "2026-10-29T20:45:20.574326+00:00",
-  "duration_seconds": 8.074
+  "finished_at": "2026-10-30T04:15:59.278698+00:00",
+  "duration_seconds": 19.25
 }

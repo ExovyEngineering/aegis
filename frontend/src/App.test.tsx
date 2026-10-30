@@ -222,4 +222,20 @@ describe('AEGIS workflow', () => {
     expect(vi.mocked(api).mock.calls.filter(([path])=>path==='/events')).toHaveLength(1);
     expect(within(receipt).getByRole('button',{name:'Export confirmed event JSON'})).toBeEnabled();
   });
+  it('opens and closes activity inspection without creating an extra workspace or a decision', async () => {
+    const normal=vi.mocked(api).getMockImplementation()!;
+    vi.mocked(api).mockImplementation(async(path,body)=>path.startsWith('/activity')?{available:true,records:[],actions:[],snapshot_latest_id:0,snapshot_id:'a'.repeat(64),total_matching:0,next_cursor:null,read_only:true,operational_state_modified:false,generated_at:'2026-10-29T20:00:00+00:00',limitations:['Only explicitly recorded local actions appear.']} as any:normal(path,body));
+    render(<App/>);await screen.findByText('Missouri logistics map');
+    fireEvent.click(screen.getByRole('button',{name:'Open activity history'}));
+    expect(await screen.findByRole('heading',{name:'Activity history'})).toBeInTheDocument();
+    expect(screen.getByRole('button',{name:'Open activity history'})).toHaveAttribute('aria-expanded','true');
+    screen.getByRole('button',{name:'Request road route'}).focus();
+    fireEvent.click(screen.getByRole('button',{name:'Open activity history'}));
+    expect(document.activeElement?.id).toBe('activity-history');
+    expect(within(screen.getByRole('navigation',{name:'Main navigation'})).getAllByRole('button')).toHaveLength(9);
+    fireEvent.click(screen.getByRole('button',{name:'Close activity history'}));
+    expect(screen.queryByRole('heading',{name:'Activity history'})).not.toBeInTheDocument();
+    expect(screen.getByRole('button',{name:'Open activity history'})).toHaveFocus();
+    expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined)).toHaveLength(0);
+  });
 });

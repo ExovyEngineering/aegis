@@ -8,14 +8,14 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from backend.paths import ROOT,write_json
 
-ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore')
+ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore','Start-AEGIS.cmd')
 SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','frontend')
 SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env'}
 REPORTS=('usda_food_environment.json','fsis_ingestion.json','ingestion_verification.json','transport_check.json','source_actions.json','operational_state_preservation.json','aegis_project_brief.pdf','project_brief.md','project_brief_manifest.json','session_verification.json','aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
 REPORTS=REPORTS+('clean_install.json',)
 REPORTS=REPORTS+('backup_recovery.json','road_intelligence_live.json','stretch_verification.json','ci_followup.json')
 REPORTS=REPORTS+('aegis_master_guide.pdf','aegis_master_guide.html','master_guide_manifest.json','master_guide_verification.json')
-REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json')
+REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json','local_startup_verification.json','activity_workflow_evaluation.json','operator_activity_change_review.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -35,6 +35,11 @@ python -m venv .venv
 
 Open http://127.0.0.1:8000. The included frontend/dist means Node is not needed
 to view this build. Node/npm are needed to rebuild frontend source or run Vitest.
+On Windows after creating .venv and installing requirements, you can also run
+`Start-AEGIS.cmd --no-build` to keep the operator server in a visible terminal.
+Keep that terminal open; Ctrl+C stops its owned server. Without --no-build the
+launcher builds current frontend source and needs Node/npm. It never downloads
+dependencies or stops an existing listener automatically.
 Map tiles and live API requests require internet. Source views fall back to
 explicitly dated fixtures. Route laboratory estimated mode works offline;
 OSRM requests can fail over to visibly labeled estimates.
@@ -90,7 +95,7 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     for name in REPORTS:add(root/'reports'/name)
-    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/checks','reports/verification_history'):
+    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/browser_qa/activity','reports/checks','reports/verification_history'):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)

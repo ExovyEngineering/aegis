@@ -161,6 +161,11 @@ def run_extracted_workflows(target):
                 _assert(bool(assets),'Prebuilt frontend has no bundled assets')
                 for asset in assets:_assert(client.get(asset).status_code==200,f'Bundled frontend asset unavailable: {asset}')
                 checks.append('prebuilt frontend and bundled assets load')
+                if (target/'scripts/start_local.py').exists():
+                    from scripts.start_local import frontend_assets
+                    _assert((target/'Start-AEGIS.cmd').is_file(),'Windows local launcher missing from reviewer package')
+                    _assert(frontend_assets(target)['local_asset_count']>0,'Packaged launcher could not validate prebuilt assets without Node')
+                    checks.append('packaged foreground launcher and prebuilt assets validate without building or downloading dependencies')
                 for source in ('fsis_recalls','modot','openmeteo'):
                     response=client.get('/api/evidence/'+source,params={'limit':2} if source=='fsis_recalls' else {})
                     _assert(response.status_code==200,f'Packaged source evidence unavailable: {source}')
@@ -240,6 +245,11 @@ def run_extracted_workflows(target):
                 assignments=client.get('/api/driver').json()
                 _assert(bool(assignments),'Approval did not create simulated driver assignments')
                 checks.append('human approval publishes simulated assignments in the fresh extracted database')
+                history_network=client.get('/api/network').json()
+                history=client.get('/api/activity',params={'action':'approve','limit':25})
+                _assert(history.status_code==200 and history.json()['read_only'] is True and history.json()['operational_state_modified'] is False and history.json()['total_matching']>=1 and all(row['action']=='approve' for row in history.json()['records']),'Recorded approval activity unavailable or falsely classified')
+                _assert(client.get('/api/network').json()==history_network,'Activity inspection changed the packaged network')
+                checks.append('read-only activity history exposes the actual recorded approval without changing state')
                 assignment=assignments[0];sid=assignment['id'];truck=assignment['truck_id']
                 _assert(client.post('/api/driver/'+sid+'/acknowledge').status_code==423,'Drive acknowledgment was not initially locked')
                 drive=client.get('/api/drive/'+truck).json()

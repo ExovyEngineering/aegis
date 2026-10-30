@@ -4,6 +4,7 @@
 *.parquet binary
 *.xlsx binary
 *.pdf binary
+*.cmd text eol=crlf
 
 # Provider responses and audit evidence retain their exact stored bytes.
 data/external/** -text

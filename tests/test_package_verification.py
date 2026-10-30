@@ -120,6 +120,8 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     shutil.copytree(ROOT/'backend',source/'backend',ignore=shutil.ignore_patterns('__pycache__'))
     (source/'scripts').mkdir()
     shutil.copy2(ROOT/'scripts/backup_state.py',source/'scripts/backup_state.py')
+    shutil.copy2(ROOT/'scripts/start_local.py',source/'scripts/start_local.py')
+    shutil.copy2(ROOT/'Start-AEGIS.cmd',source/'Start-AEGIS.cmd')
     for name in ('data/processed','data/fixtures','data/manifests'):
         shutil.copytree(ROOT/name,source/name)
     required_reports=('api_status.json','model_evaluation.json','model_timing.json','noaa_coverage.json','evidence_ingestion.json','usda_food_environment.json','fsis_ingestion.json','project_brief_manifest.json','project_brief.md','aegis_project_brief.pdf','aegis_report.md','master_guide_manifest.json','aegis_master_guide.pdf','aegis_master_guide.html')
@@ -148,6 +150,8 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     assert any('USDA' in check for check in result['checks']) and any('readiness' in check for check in result['checks'])
     assert any('Iowa' in check for check in result['checks']) and any('backup' in check for check in result['checks'])
     assert any('master user handbook' in check for check in result['checks'])
+    assert any('read-only activity history' in check for check in result['checks'])
+    assert any('packaged foreground launcher' in check for check in result['checks'])
     assert any('read-only assistant' in check for check in result['checks'])
     assert any('read-only disruption preview' in check for check in result['checks'])
     assert database.read_bytes()==b'original operator state'

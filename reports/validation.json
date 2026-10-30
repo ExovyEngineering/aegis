@@ -1,8 +1,8 @@
 {
-  "session_date": "2026-10-28",
-  "pytest_passed": 711,
+  "session_date": "2026-10-29",
+  "pytest_passed": 824,
   "pytest_warnings": 5,
-  "vitest_passed": 192,
+  "vitest_passed": 240,
   "frontend_production_build": "passed",
   "compileall": "passed",
   "real_http_checks_passed": 29,
@@ -31,11 +31,11 @@
   "targeted_verification_verified": true,
   "data_explorer_verified": true,
   "project_brief_pdf_verified": true,
-  "public_sources_retested_this_feature_session": true,
+  "public_sources_retested_this_feature_session": false,
   "browser_drive_checks_passed": 65,
   "browser_controls_checks_passed": 65,
-  "source_refresh_new_provider_successes": 3,
-  "source_refresh_failed_or_stale": 1,
+  "source_refresh_new_provider_successes": 0,
+  "source_refresh_failed_or_stale": 0,
   "driver_parked_gate_verified": true,
   "bounded_evidence_transport_verified": true,
   "driver_action_context_verified": true,
@@ -47,8 +47,8 @@
   "usda_counties": 115,
   "usda_variables": 10,
   "dispatch_readiness_verified": true,
-  "operator_state_preservation_artifact": "reports/operational_state_preservation.json",
-  "pytest_skipped": 3,
+  "operator_state_preservation_artifact": "reports/operator_activity_change_review.json",
+  "pytest_skipped": 4,
   "public_registry_probe_failures": [
     {
       "id": "fsis_recalls",
@@ -71,15 +71,13 @@
       "failure": "ConnectError: [Errno 11002] getaddrinfo failed"
     }
   ],
-  "source_refresh_usable_payloads": 4,
+  "source_refresh_usable_payloads": 0,
   "guided_rehearsal_verified": true,
   "human_presentation_verified": false,
   "browser_rehearsal_checks_passed": 76,
   "clean_python_install_verified": true,
   "clean_install_artifact": "reports/clean_install.json",
-  "registry_sources_probed_this_increment": [
-    "iowa_dot"
-  ],
+  "registry_sources_probed_this_increment": [],
   "browser_roads_checks_passed": 58,
   "browser_roads_artifact": "reports/browser_qa/roads/results.json",
   "road_live_provider_artifact": "reports/road_intelligence_live.json",
@@ -94,5 +92,16 @@
   "assistant_evaluation_artifact": "reports/assistant_evaluation.json",
   "assistant_actual_model_evaluated": false,
   "command_browser_checks_passed": 214,
-  "command_workflow_artifact": "reports/command_workflow_evaluation.json"
+  "command_workflow_artifact": "reports/command_workflow_evaluation.json",
+  "activity_browser_checks_passed": 109,
+  "activity_workflow_artifact": "reports/activity_workflow_evaluation.json",
+  "local_startup_checks_passed": 11,
+  "prior_source_refresh_counts": {
+    "source_refresh_new_provider_successes": 3,
+    "source_refresh_failed_or_stale": 1,
+    "source_refresh_usable_payloads": 4
+  },
+  "operator_database_unchanged_for_entire_session": false,
+  "operator_new_planning_run_preserved": true,
+  "validation_rollup_note": "Latest increment is startup/activity. Earlier scientific/source/browser counts retain separate artifact dates; they were not all rerun. Source refresh counts for this increment are zero; earlier counts remain in prior_source_refresh_counts and reports/source_actions.json."
 }

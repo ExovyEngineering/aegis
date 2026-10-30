@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-30T03:42:05.057315+00:00",
+  "finished_at": "2026-10-30T04:06:05.429930+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "pytest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "checked_at": "2026-10-30T03:42:05.062871+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 53.301,
+      "tests_passed": 824,
+      "log": "reports/checks/20261030T034205062600Z/pytest.txt",
+      "log_sha256": "09dafac055de2d12aac3e6abc6243cee838d790a41ae53370ee8ac23a9f57e42"
+    },
+    {
+      "name": "vitest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test"
+      ],
+      "checked_at": "2026-10-30T03:56:07.712713+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 28.774,
+      "tests_passed": 240,
+      "log": "reports/checks/activity-frontend-followup/vitest.txt",
+      "log_sha256": "a41390a16ff65c6a4b631a482254687fa2d0917b28867769b76c1d7e0bdb71fb"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "checked_at": "2026-10-30T03:56:36.508058+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 14.62,
+      "tests_passed": null,
+      "log": "reports/checks/activity-frontend-followup/frontend_build.txt",
+      "log_sha256": "2cd4d56c0f49c903d1e98c2c61b1628f5afeb7a3d5895e6cfa28748b32940789"
+    }
+  ],
+  "live_api_requests_included": false,
+  "browser_checks_included": false,
+  "note": "Executed full backend run retained; full frontend tests/build rerun after activity focus refinement. Each check retains its actual command/time/log. Prior runs remain in verification_history.",
+  "frontend_followup_artifact": "reports/checks/activity-frontend-followup/results.json"
+}

@@ -81,3 +81,12 @@ Use docs/command_workflow.md for the connected walkthrough. Verify actual Chrome
 flows against a fresh offline rehearsal database; keep the operator untouched.
 Genuine Kiro, final author/rubric review and timed human presentation are separate
 remaining P0 tasks; this UX increment does not close them.
+
+## October 29: persistent user-controlled startup and inspectable history
+
+Implement a foreground launcher with truthful lifecycle/asset/profile checks,
+then a read-only activity panel that connects actual recorded actions across the
+existing workspaces. Verify owned-process startup, unit and full frontend/backend
+checks, isolated Chrome history/filter/export behavior, immutable operator/source
+fingerprints and the packaged offline workflow. Update the printable guide and
+status brief from executed evidence. Keep human and scientific P0 gates explicit.
