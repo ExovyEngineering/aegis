@@ -40,6 +40,12 @@ def prepare(root):
         {'id':'openmeteo','success':True,'http_status':200,'tested_at':'2026-10-26T12:00:00Z'},
         {'id':'fsis_recalls','success':False,'http_status':None,'tested_at':'2026-10-26T12:00:01Z','failure':'ConnectError: test-only DNS outage'},
     ])
+    # The local scope sources are real checked-in implementation/documentation
+    # bytes, copied into the isolated fixture root rather than synthesized claims.
+    repository=Path(assistant.__file__).resolve().parents[1]
+    for relative in assistant.OUTLOOK_GUIDANCE:
+        destination=root/relative;destination.parent.mkdir(parents=True,exist_ok=True)
+        destination.write_bytes((repository/relative).read_bytes())
     return path
 
 
@@ -379,3 +385,110 @@ def test_helper_answer_and_routing_never_accept_arbitrary_action_names(workspace
     assert all('approve' not in row['view'] and row['view'] in {'command','dispatch','science','evidence','roads','drive','brief'}
                for question in context['questions']
                for row in assistant.answer_from_context(context,question['id'],'SH01' if question['id']=='shipment_review' else None)['suggested_views'])
+
+
+def test_delivery_outlook_scope_is_one_exact_cited_fact_shared_by_relevant_answers(workspace):
+    root,path=workspace
+    with app_client(path,root) as client:
+        context=get_context(client);lookup=facts(context);scope=lookup['outlook.scope']
+        assert scope['category']=='next_actions'
+        assert scope['provenance']=='server-authored scope guidance; captured local documentation and implementation bytes'
+        assert {citation['path'] for citation in scope['citations']}==set(assistant.OUTLOOK_GUIDANCE)
+        for citation in scope['citations']:
+            assert citation['sha256']==fingerprint(root/citation['path'])
+            assert citation['retrieved_at'] is None
+            source=next(item for item in context['snapshot_sources'] if item['path']==citation['path'])
+            assert source['status']=='captured' and source['sha256']==citation['sha256']
+            assert source['bytes']==(root/citation['path']).stat().st_size and source['error'] is None
+        assert 'every simulated candidate trip' in scope['text']
+        assert 'newly computed scenario-A allocation' in scope['text']
+        assert 'not the approved driver-assignment list' in scope['text']
+        assert 'illustrative projections capped at six hours' in scope['text']
+        assert 'not a learned disruption forecast or live ETA' in scope['text']
+        assert 'changes no route, inventory, hold or driver assignment' in scope['text']
+        assert 'human approval' in scope['text']
+        assert 'measured' not in scope['text'] and 'kg' not in scope['text'] and '%' not in scope['text']
+        for question_id in ('scenario_compare','model_limits','next_actions'):
+            answer=ask(client,context,question_id).json()
+            assert answer['snapshot_id']==context['snapshot_id']
+            assert next(item for item in answer['answer']['items'] if item['id']=='outlook.scope')==scope
+            assert all(item==lookup[item['id']] for item in answer['answer']['items'])
+            assert 'delivery' in answer['answer']['summary'].lower()
+            assert any(row['view']=='command' and 'delivery' in row['label'].lower() for row in answer['suggested_views'])
+        for question_id,extra in [('source_coverage',{}),('driver_workflow',{}),('shipment_review',{'shipment_id':'SH02'})]:
+            answer=ask(client,context,question_id,**extra).json()
+            assert all(item['id']!='outlook.scope' for item in answer['answer']['items'])
+        model_answer=ask(client,context,'model_limits').json()
+        assert next(item for item in model_answer['answer']['items'] if item['id']=='model.metrics')==lookup['model.metrics']
+        assert 'FSIS' in ' '.join(scope['uncertainty']) and 'CDC BEAM' in ' '.join(scope['uncertainty'])
+        assert 'NORS' in ' '.join(scope['uncertainty']) and 'consumer illness' in ' '.join(scope['uncertainty'])
+
+
+@pytest.mark.parametrize('relative',assistant.OUTLOOK_GUIDANCE)
+def test_changed_delivery_scope_source_invalidates_the_captured_answer(workspace,relative):
+    root,path=workspace;before=fingerprint(path)
+    with app_client(path,root) as client:
+        context=get_context(client);source=root/relative
+        source.write_bytes(source.read_bytes()+b'\n')
+        response=ask(client,context,'model_limits')
+        assert response.status_code==409
+        current=get_context(client)
+        assert current['snapshot_id']!=context['snapshot_id']
+        assert current['network_revision']==context['network_revision']
+        citation=next(item for item in facts(current)['outlook.scope']['citations'] if item['path']==relative)
+        assert citation['sha256']==fingerprint(source)
+    assert fingerprint(path)==before
+
+
+@pytest.mark.parametrize('failure',['missing','invalid_utf8','empty','oversized'])
+def test_unavailable_scope_source_is_explicit_and_does_not_hide_other_evidence(workspace,monkeypatch,failure):
+    root,path=workspace;source=root/assistant.OUTLOOK_GUIDANCE[0]
+    if failure=='missing':source.unlink()
+    elif failure=='invalid_utf8':source.write_bytes(b'\xff\xfe\x00')
+    elif failure=='empty':source.write_bytes(b' \n')
+    else:monkeypatch.setattr(assistant,'MAX_GUIDANCE_BYTES',32)
+    before=fingerprint(path);context=assistant.capture_context(path,root);lookup=facts(context)
+    assert 'outlook.scope' not in lookup and 'outlook.unavailable' in lookup
+    assert 'model.metrics' in lookup and 'scenario.A' in lookup and 'sources.noaa' in lookup
+    unavailable=lookup['outlook.unavailable']
+    assert unavailable['provenance']=='recorded local guidance failure'
+    metadata=next(item for item in context['snapshot_sources'] if item['path']==assistant.OUTLOOK_GUIDANCE[0])
+    assert metadata['status']=='unavailable' and metadata['error']
+    citation=next(item for item in unavailable['citations'] if item['path']==metadata['path'])
+    if failure in {'missing','oversized'}:
+        assert 'sha256' not in citation and metadata['sha256'] is None
+    else:assert citation['sha256']==fingerprint(source)
+    if failure=='oversized':
+        assert metadata['bytes_read']==33 and metadata['read_prefix_sha256']==hashlib.sha256(source.read_bytes()[:33]).hexdigest()
+    for question_id in ('scenario_compare','model_limits','next_actions'):
+        answer=assistant.answer_from_context(context,question_id)
+        assert next(item for item in answer['answer']['items'] if item['id']=='outlook.unavailable')==unavailable
+        assert all(item['id']!='outlook.scope' for item in answer['answer']['items'])
+    assert fingerprint(path)==before
+
+
+def test_outlook_guidance_reads_neither_compute_an_outlook_nor_contact_providers_or_write_state(workspace,monkeypatch):
+    import httpx
+    import backend.adapters as adapters
+    import backend.cold_chain as cold_chain
+    import backend.delivery_outlook as delivery_outlook
+    root,path=workspace;before=fingerprint(path)
+    guidance_before={relative:fingerprint(root/relative) for relative in assistant.OUTLOOK_GUIDANCE}
+    def forbidden(*args,**kwargs):raise AssertionError('Scope guidance cannot execute a projection, provider or model call')
+    monkeypatch.setattr(httpx,'get',forbidden);monkeypatch.setattr(httpx,'post',forbidden)
+    monkeypatch.setattr(adapters.CachedHTTP,'get',forbidden)
+    monkeypatch.setattr(cold_chain,'project_temperature',forbidden)
+    monkeypatch.setattr(delivery_outlook,'build_delivery_outlook',forbidden)
+    with app_client(path,root) as client:
+        monkeypatch.setattr(httpx.Client,'__init__',forbidden)
+        context=get_context(client)
+        for question_id in ('scenario_compare','model_limits','next_actions'):
+            response=ask(client,context,question_id)
+            assert response.status_code==200
+            assert response.json()['operational_state_modified'] is False
+            assert response.json()['engine']['mode']=='deterministic' and response.json()['engine']['llm_used'] is False
+    assert fingerprint(path)==before
+    assert guidance_before=={relative:fingerprint(root/relative) for relative in assistant.OUTLOOK_GUIDANCE}
+    with closing(sqlite3.connect(path)) as connection:
+        assert connection.execute('SELECT COUNT(*) FROM audit').fetchone()[0]==0
+        assert connection.execute('SELECT COUNT(*) FROM assignments').fetchone()[0]==0

@@ -54,3 +54,56 @@ it('clears a transient loading error after a successful desk retry',async()=>{
   expect(await screen.findByText('Refrigeration alarm while parked')).toBeInTheDocument();
   expect(screen.queryByRole('alert')).not.toBeInTheDocument();
 });
+
+it('shows the actual next review and focuses name, reason and report controls without submitting a decision',async()=>{
+  render(<DispatcherDesk/>);await screen.findByText('Refrigeration alarm while parked');
+  expect(screen.getByText('1 driver report still needs review.')).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button',{name:'Add name and reason'}));
+  expect(document.activeElement?.id).toBe('dispatcher-reviewer-name');
+  fireEvent.change(screen.getByLabelText('Reviewing dispatcher'),{target:{value:'Taylor'}});
+  fireEvent.click(screen.getByRole('button',{name:'Add name and reason'}));
+  expect(document.activeElement?.id).toBe('dispatcher-decision-reason');
+  fireEvent.click(screen.getByRole('button',{name:'Go to driver reports'}));
+  expect(document.activeElement?.id).toBe('dispatch-report-inbox');
+  expect(screen.getByText('Add your name and decision reason in Step 2 to enable report decisions.')).toBeInTheDocument();
+  expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined)).toHaveLength(0);
+});
+
+it('gives an empty desk a working plan-selection path and labels missing data separately',async()=>{
+  const navigate=vi.fn();vi.mocked(api).mockResolvedValueOnce({...snapshot,assignments:[],incidents:[]});
+  render(<DispatcherDesk onNavigate={navigate}/>);await screen.findByRole('heading',{name:'No approved trips available'});
+  fireEvent.click(screen.getByRole('button',{name:'Choose a response plan'}));
+  expect(navigate).toHaveBeenCalledWith('command');
+  fireEvent.click(screen.getByRole('button',{name:'Open Command planning'}));
+  expect(navigate).toHaveBeenCalledTimes(2);
+  expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined)).toHaveLength(0);
+});
+
+it('guides pending targeted verification before an instruction when no driver reports are open',async()=>{
+  vi.mocked(api).mockResolvedValueOnce({...snapshot,incidents:[],assignments:[{...snapshot.assignments[0],verification_required:true,verification_status:'pending'}]});
+  render(<DispatcherDesk/>);await screen.findByText('Previous reviewed instruction');
+  expect(screen.getByText('1 approved trip still needs targeted verification review.')).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button',{name:'Go to trip verification'}));
+  expect(document.activeElement?.id).toBe('dispatch-verification-section');
+});
+
+it('keeps a saved decision visible when its post-save refresh fails',async()=>{
+  let loads=0;vi.mocked(api).mockImplementation(async path=>{
+    if(path==='/dispatch'){loads++;if(loads>1)throw new Error('Desk disconnected');return snapshot as any;}
+    return {status:'held'} as any;
+  });
+  render(<DispatcherDesk/>);await screen.findByText('Refrigeration alarm while parked');identify();
+  fireEvent.click(screen.getByRole('button',{name:'Place hold on L02'}));
+  expect(await screen.findByRole('alert')).toHaveTextContent('Your decision was recorded, but the refreshed view could not be loaded completely');
+  expect(screen.getByRole('status')).toHaveTextContent('L02 held. Affected assignments were removed');
+  expect(screen.queryByRole('heading',{name:'No approved trips available'})).not.toBeInTheDocument();
+  expect(screen.getByText('Trip information is unavailable. Load the current desk before approving instructions.')).toBeInTheDocument();
+  expect(vi.mocked(api).mock.calls.filter(([path])=>path.endsWith('/hold'))).toHaveLength(1);
+});
+
+it('opens the driver handoff without altering an approved assignment',async()=>{
+  const navigate=vi.fn();render(<DispatcherDesk onNavigate={navigate}/>);await screen.findByText('Previous reviewed instruction');
+  fireEvent.click(screen.getByRole('button',{name:'See the approved driver view'}));
+  expect(navigate).toHaveBeenCalledWith('drive');
+  expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined)).toHaveLength(0);
+});

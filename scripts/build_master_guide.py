@@ -116,6 +116,10 @@ def evidence_chapter(root):
             value = json.loads(path.read_text(encoding='utf-8')); rows = value.get('checks', [])
             passed = sum(bool(row.get('passed')) for row in rows)
             body.append(f"- {label}: {passed}/{len(rows)} saved browser checks, recorded {value.get('checked_at', 'at the timestamp in its artifact')}. Evidence: reports/browser_qa/{folder}/results.json. Runs have separate dates and are not all repeated for every change.")
+    friendly=root/'reports/friendliness_workflow_evaluation.json'
+    if friendly.is_file():
+        value=json.loads(friendly.read_text(encoding='utf-8'));rows=value.get('checks',[])
+        body += ['', f"The guided delivery-outlook, chicken-question, map-layer, road and dispatcher walkthrough recorded {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} actual-Chrome checks at {value.get('checked_at','the artifact timestamp')}. External map tiles used browser-only QA placeholders; no public providers or language model were queried. This verifies application behavior, not prospective prediction accuracy. Evidence: reports/friendliness_workflow_evaluation.json."]
     body += ['', 'The reviewer-package check verifies paths and checksums, extracts trusted project code into a separate directory, blocks application networking, and exercises offline workflows. It does not establish a new dependency installation unless a separate installation report explicitly records one.', '',
              'A deliberately injected browser failure is a test case, not a provider outage. A test failure and its correction remain part of the evidence history. The earlier duplicate CI timing failure and synchronized follow-up are described in reports/ci_followup.json. For the current remote commit, inspect GitHub checks directly rather than assuming an older run applies.', '',
              '### Submission and scientific gates still requiring real evidence', '',

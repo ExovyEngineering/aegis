@@ -1,5 +1,24 @@
 # AEGIS implementation history
 
+## October 30, 2026 - guided delivery outlook and understandable controls
+
+- Added a read-only delivery planning outlook with actual allocation comparisons,
+  candidate deadline/shortage review, labeled cargo assumptions, captured exports
+  and direct navigation to shipment/road inspection. Independent review failures
+  abstain; estimates cannot impose holds, dispatch or claim learned accuracy.
+- Made broad assistant queries useful, added one-click questions and example
+  prompts, preserved recoverable context and collapsed technical source details.
+- Added purpose-based map presets/counts, a named-road journey and next-action
+  Dispatcher guidance. Connected workspace shortcuts now work in the real App.
+- Added exact candidate road handoffs with copied endpoints/revision, captured
+  comparison attribution, manual detachment and direct current-plan focus.
+  Assistant guidance now cites the outlook implementation and explains its scope.
+- Full local validation: 930 backend tests and 337 frontend tests passed, four
+  platform skips, production build passed. Browser and reviewer-package outcomes
+  remain separately dated. Original 42 hashes and operator state were preserved.
+- Updated maintained handbook chapters and PDF/status generators. No new public
+  source success, prospective predictive skill, real LLM, cloud or Kiro claim.
+
 ## October 29, 2026 - foreground startup and internal activity
 
 - Added Start-AEGIS.cmd and an operator launcher with bounded preflight,

@@ -1,6 +1,6 @@
 # AEGIS Master User Guide
 
-Generated October 29, 2026 at 11:07 PM CT. Complete product handbook.
+Generated October 30, 2026 at 02:43 PM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
@@ -9,6 +9,12 @@ This master file is assembled from docs/manual_parts/ and dated reports. Edit th
 AEGIS means **Adaptive Early-warning & Guidance for Integrated Supply Chains**. We built it to help a regional poultry distributor examine food-safety evidence, understand disruption scenarios, compare constrained operational responses and keep a human dispatcher responsible for consequential decisions.
 
 The core demonstration is centered on Missouri: Columbia, Kansas City, Jefferson City, Springfield and St. Louis. An optional Iowa road-evidence layer supports a cross-state planning example. National historical food-safety data support the retrospective modeling study; this is not a separately validated Missouri-only predictor.
+
+For a quick start, open **Command center** and use **Try a 1-hour delay** in the
+delivery outlook. Inspect a trip, then check road alternatives. The outlook is a
+conditional planning projection over simulated inputs; the separate measured
+FSIS model does not establish prospective delay or consumer-illness accuracy.
+In **Evidence assistant**, type **chicken** or click a question for guided help.
 
 The simplest way to read the product is a sequence: **inspect evidence → explore a response → check constraints → record a human decision → inform the driver → retain the record**. Some screens are planning experiments and never enter that dispatch sequence. This guide explains those boundaries as well as the controls.
 
@@ -154,6 +160,20 @@ Use **Command center** when you want to see the simulated Missouri distribution 
 
 The standard scenario has 3 simulated suppliers, 2 distribution centers, 15 destinations, 8 refrigerated trucks, 12 lots and 24 candidate shipments. These are reproducible planning entities, not a live business account. The scenario reference date is October 26, 2026. An October 26 cargo trace is not today's observed temperature. Different saved operator states can produce different current results.
 
+### Start with the delivery outlook
+
+**Where could this delivery plan run into trouble?** calculates a read-only planning estimate when Command opens. Read **Unserved demand**, **Deadline pressure** and **Cargo checks**, then use **Inspect SH...** to open a candidate's trip detail. **Check road alternatives** opens the separate Road intelligence workspace; it does not apply a detour.
+
+Choose **Extra road delay**, then **Estimate impact**, or use **Try a 1-hour delay**. The interface offers 0, 30, 60, 120 or 240 added minutes. Delay is applied uniformly to every candidate's planning duration, including trips the allocation never selects. It is your assumption, not a delay inferred from a closure or weather warning. **Check current inputs** resets the additional assumptions to no extra delay, 30°C ambient and no additional fault.
+
+Expand **Cargo assumptions** to set ambient temperature from −20 to 45°C and optionally assume a refrigeration fault on a simulated truck. A fault also excludes that truck from the preview allocation. Previously recorded simulated faults remain in effect. Ambient temperature is a chosen assumption, not fetched weather; cargo readings are simulated. Each thermal calculation checks the earlier of modeled arrival and six hours. A trip beyond six hours is explicitly labeled **at six hours; not yet arrived**. Review flags describe the modeled window, not measured cargo failure.
+
+The backend recomputes current-input scenario A and the four A–D responses under the chosen assumptions using the actual allocation solver. Stock, capacity, demand, deadlines, holds, recalls and eligibility still constrain the results. **Compare the four preview responses** shows solver status, cost, selected trips, unmet demand and constraint checks. The comparison baseline is recomputed scenario A, not the approved driver-assignment list. **Which destinations have unmet demand?** identifies the remaining service gaps; **Why?** on an unselected candidate explains recorded exclusions.
+
+This is a deterministic what-if calculation using uncalibrated thermal assumptions. No prospective delay or cargo-failure prediction skill has been established. The saved FSIS sampling-model evaluation is separate. Projected temperatures do not replace current cargo readings, impose holds or become newly observed excursions in scenario C. No result changes routes, inventory or driver assignments.
+
+**Export outlook JSON** saves the captured assumptions and result. Editing inputs leaves that result and its export unchanged until a new estimate succeeds; an older network revision is labeled. Read **How this estimate works** before presenting it as evidence. A failed calculation is reported; reload the current plan when requested rather than presenting an older estimate as current.
+
 ### Read the four summary cards
 
 | Card | What it tells you | How to use it |
@@ -167,7 +187,9 @@ The **Review queue** combines simulated excursions, active simulated holds and a
 
 ### Explore the distribution map
 
-Open the **Evidence layers** controls on the map. Their checkboxes change what is drawn; they do not change the underlying operation.
+Start with a map view: **Plan deliveries** focuses on logistics and any requested route; **Check weather** adds warning areas; **Review roads** adds captured road incidents; **View facilities** compares official locations with the fictional network. These presets change visibility only. They do not recalculate or approve a delivery plan.
+
+Below the map, **What is on this map?** gives each layer's purpose, available counts or missing-data message. Use its checkboxes for a custom view and **What is this for?** for one layer's explanation and available source times. A layer switch cannot download missing evidence or generate a road route. The compact symbol guide explains the fictional locations and dashed shipment links.
 
 Use **Show allocation on map** to choose which simulated origin-destination links are drawn. The selector is labeled **Map allocation** for accessibility. **All ... candidate shipments** shows the available candidate set; **Scenario A/B/C/D** shows that response's proposed trips; **Current approved assignments** shows the recorded assignment set. The caption reports the displayed scope and count. A proposed or approved lot can differ from the candidate's original lot, so inspect the popup and assignment detail before reading a line as the original candidate. If there are no approved assignments, the approved overlay is empty rather than silently showing candidates.
 
@@ -175,11 +197,11 @@ Changing an overlay selects a view of an allocation, not a road route. The dashe
 
 | Layer | What appears | Meaning |
 | --- | --- | --- |
-| Simulated logistics | Fictional locations, shipment links and truck markers | A distribution-network exercise; dashed links are estimated connections rather than roads |
-| FSIS establishments | Coordinates from the supplied official establishment directory | Real source locations; no simulated contract or shipment relationship is implied |
-| NWS alert geometry | Captured official alert polygons or points where geometry is supplied | Dated severe-weather evidence; read retrieval and provider times separately |
-| MoDOT incident geometry | Captured Missouri road-event points or lines | Independent road evidence; it is not automatically incorporated into a route |
-| Route geometry | The displayed OSRM route alternatives or labeled estimated fallback | A route comparison, not a dispatched detour or certified truck route |
+| Simulated deliveries | Fictional locations, shipment links and truck markers | A distribution-network exercise; dashed links join origins and destinations rather than following roads |
+| FSIS facilities | Coordinates from the supplied official establishment directory | Real source locations; no simulated contract or shipment relationship is implied |
+| Weather warnings | Captured official alert polygons or points where geometry is supplied | Dated public warnings, not measurements of cargo temperature |
+| Road incidents | Captured Missouri road-event points or lines | Independent road evidence; proximity does not establish that a route is blocked |
+| Requested route | The requested OSRM alternatives or labeled estimated fallback | A route comparison, not a dispatched detour or certified truck route |
 
 Click a simulated shipment line or truck marker to select its associated trip. A truck's Command marker is an illustrative midpoint of an origin-to-destination connection, not GPS. Click a location or evidence geometry for its popup. Zoom and pan to investigate the area. The OpenStreetMap base map needs internet; a missing tile is different from a missing shipment or provider record.
 
@@ -193,7 +215,7 @@ The fixed trip estimate uses straight-line distance multiplied by 1.25 at an ass
 
 **Request road route** asks OSRM for ordinary-driving geometry and available alternatives. While it runs, the button says **Finding road route...** and a nearby status explains what is being computed. A successful result brings **Route alternatives & road review** into view. A failure is reported by the trip control; unusable geometry is not presented as a successful comparison. An estimated fallback is visibly labeled when that is what was returned.
 
-The result shows distances, travel estimates and captured MoDOT geometries within a 250-meter buffer. **Highlight alternative 1/2/...** changes the comparison selected for the map. **Focus route map** brings that map into view; enable the **Route geometry** layer if you previously hid it. **Export route comparison JSON** downloads the captured comparison and selected alternative without creating an assignment. No alternative button changes a lot, stop order, fixed allocation estimate or driver instruction.
+The result shows distances, travel estimates and captured MoDOT geometries within a 250-meter buffer. **Highlight alternative 1/2/...** changes the comparison selected for the map. **Focus route map** brings that map into view; enable **Requested route** if you previously hid it. **Export route comparison JSON** downloads the captured comparison and selected alternative without creating an assignment. No alternative button changes a lot, stop order, fixed allocation estimate or driver instruction.
 
 Read whether geometry is estimated, whether road evidence is stale or incomplete, and whether the route label belongs to the selected shipment. The comparison displays Command's planning duration separately from the road-service estimate; a difference is not a measured time saving. Nearby parallel roads and duplicate point/line records can produce matches. Zero matches is not road clearance. OSRM does not validate truck height, weight or other commercial restrictions, incorporate the simulated event delay, or automatically avoid current DOT closures.
 
@@ -249,6 +271,12 @@ If approval fails, **Approval did not complete** appears inside the still-open d
 The present one-wave model does not decrement the simulated stock as a warehouse shipment transaction when a plan is approved. Stock quantities are constraints for the current allocation exercise, not a continuously reconciled warehouse ledger. Approving another plan replaces the current assignment set rather than appending a second independent wave.
 
 Held, recalled and ineligible lots remain excluded regardless of cost preferences. The hard constraints cannot be traded away for a cheaper solution. A precautionary release is handled separately in Dispatcher desk; it cannot clear a confirmed recall.
+
+### Follow the next action in Dispatcher desk
+
+**Handle a delivery decision in three steps** starts with the actual approved-trip count. With no approved trips, **Choose a response plan** opens Command; otherwise the first step can open the approved driver view. Next, **Add name and reason** takes you to the required decision-record fields. Identity is self-declared in this local demonstration.
+
+The final step points to outstanding driver reports first, then targeted verification, then instructions and acknowledgment readiness. Its buttons focus the relevant section; they do not submit a decision. Disabled controls explain which information is missing. To change operational state, review and submit the specific report, hold, verification or instruction form. A projected temperature or an assistant suggestion never submits it for you.
 
 ### Exercise a disruption and see its consequences
 
@@ -360,6 +388,12 @@ Save is disabled until there is a completed run, the name is long enough, and th
 ## Road intelligence: inspect independent road evidence
 
 Use **Road intelligence** when you want a separately attributed Missouri/Iowa road-event view or a route comparison between two locations. It does not select cargo, allocate a fleet, dispatch a driver or alter an approved assignment. A corridor's real locations do not create a supply contract.
+
+To inspect a particular candidate, start in Command's delivery outlook and choose **Compare roads for SH...** on that row. Road intelligence opens with that candidate's named origin, destination and captured network revision. Click **Compare this journey** to calculate its route comparison; opening the workspace alone does not run it. The sidebar's **Road intelligence** and the outlook's general **Check road alternatives** button open the named journey examples instead. Editing an endpoint or choosing another journey detaches candidate attribution.
+
+**Export comparison JSON** preserves the compared candidate ID, endpoints and network revision when the comparison came from Command; a later edit does not rewrite that captured result. Read any older-input warning and reopen the candidate from Command to use current endpoints. **Compare delivery responses in Command** returns to the current operational scenario table. The outlook's **Review current response plans** reaches the same table; its extra-delay and cargo assumptions remain in the preview. These links do not approve a trip, transfer route geometry into an assignment or change Drive.
+
+Start with **Check a journey in three steps**: **Choose the journey**, **Compare travel options**, then **Read the notices, then decide**. The first button takes you to the journey selector. **Compare this journey** runs the calculation; the last step opens a nearby notice or focuses the comparison result. When inputs change, the guide asks you to run the comparison again. No notices is a coverage-limited result, not road clearance.
 
 ### Start with source cards
 
@@ -964,7 +998,7 @@ For deeper source records, consult `docs/data_catalog.md`, `docs/ingestion_prove
 
 ## Evidence assistant: explain a captured decision context
 
-Open **Evidence assistant** when you want a concise explanation with inspectable sources instead of moving through several screens to assemble one. It can compare the four current response scenarios, review a simulated candidate shipment, explain saved model results or source coverage, describe the driver handoff, and point to the next review workspace.
+Open **Evidence assistant** when you want help understanding a delivery plan or its evidence. Start by typing **chicken** in **Your evidence question**, then click **Ask AEGIS**. The helper offers **Choose what to check** choices; click one to get a cited explanation. A broad word is a starting point, not a failed search or an illness prediction.
 
 The factual engine is **Deterministic evidence summary**. Its sentences are authored by the application and populated with values from a captured network and dated reports. It is not an illness model, an autonomous dispatcher or an unrestricted chatbot. It has no tool for approving, holding, releasing, dispatching, refreshing a provider or rewriting scientific metrics.
 
@@ -973,16 +1007,19 @@ The factual engine is **Deterministic evidence summary**. Its sentences are auth
 | Control | What to do | What happens |
 | --- | --- | --- |
 | Reload evidence context | Capture the current network and saved evidence again | Clears obsolete answer context and records a new content-addressed snapshot |
-| Guided question cards | Choose one of the six supported topics | Selects a topic; this alone does not submit a question or change operations |
+| Guided question cards | Click one of the six supported questions | Immediately requests its explanation; no second click is needed |
 | Simulated shipment to review | Choose the candidate trip when reviewing a shipment | Used only for shipment-specific explanations; candidate and approved assignment can differ |
-| Explain captured evidence | Request the selected topic for the captured context | Returns only facts from that context, with their source labels and limits |
-| Your evidence question / Interpret question | Phrase one supported question in your own words | Rules match the text to one of the same six topics; unsupported or action requests are rejected |
+| Get answer | Ask again for the selected question and shipment | Returns facts from the captured context with source labels and limits |
+| Your evidence question / Ask AEGIS | Enter 1–400 characters, such as **chicken**, **late truck** or a full question | Matches a supported topic or offers useful choices when the wording is broad or unfamiliar |
+| Example questions | Click **Chicken** or another example | Fills in the wording and immediately asks it |
 | Export captured answer JSON | Save the displayed answer and citations | Downloads a captured explanation; it does not create an assignment or future live update |
 | Suggested workspace links | Open the relevant existing screen | Navigates for review; consequential decisions still require their ordinary explicit forms |
 
-The snapshot identifier ties the answer to captured content and the network revision. Network and assignment fields share a single read-only SQLite transaction. Each report is read independently from a bounded byte snapshot; this is not a globally atomic snapshot of all providers. Source times and the report hashes remain important.
+Expand **What this helper can do** for the captured snapshot and technical explanation. Within an answer, expand **Sources & provenance** to inspect source paths, retrieval times, checksums and limitations. The snapshot ties facts to captured content and a network revision; saved source reports retain their own dates.
 
 If the network, assignments or report files change, a question using an old snapshot is rejected. Reload the context and inspect it before asking again. Changed topic, shipment or wording marks an already displayed briefing as belonging to the previous request. Do not treat an earlier answer as an explanation of newly edited inputs.
+
+An action request such as “approve this plan” shows an explanation and **Open Dispatcher desk**. It keeps the evidence context available so you can choose another question. The link opens the decision workspace; it does not approve anything. A stale snapshot or an inconsistent answer instead requires **Reload evidence context**.
 
 ### Six useful topics
 
@@ -997,7 +1034,7 @@ Expand a fact's evidence details to inspect its source path, available retrieval
 
 ### Optional Ollama topic selection
 
-The default requires no language model. A technical teammate can explicitly configure an Ollama service at a permitted loopback address. If configured, the interface offers an opt-in checkbox for that request. Only the question text and fixed topic descriptions are sent; operational records, source payloads, actor names and decision tools are not supplied to the model.
+The default requires no language model. **Advanced matching options** is collapsed when none is configured. A technical teammate can explicitly configure an Ollama service at a permitted loopback address. If configured, the interface offers an opt-in checkbox for that request. Only the question text and fixed topic descriptions are sent; operational records, source payloads, actor names and decision tools are not supplied to the model.
 
 The model can return only a supported topic identifier. The server then selects the same authored, cited facts used by the guided questions. Invalid output, tool calls, extra claims, model-identity mismatch, excessive response size or service failure falls back visibly to rules where the question is supported. Offline rehearsal disables the optional model request entirely.
 
@@ -1005,7 +1042,7 @@ A loopback endpoint does not independently certify how the service runs its mode
 
 ### Practice use case
 
-Capture context, choose **Compare response scenarios**, and inspect the cited scenario facts. Open Command to examine the constraints. Return, choose a shipment and request its review. Then ask “Why did the historical baseline beat the model?” and inspect which topic was selected and which measured facts support the answer. Export the briefing if useful for discussion. Make any consequential decision separately in the existing human-review workflow.
+Type **chicken**, click **Ask AEGIS**, then choose **Compare response scenarios** from the suggested choices. Inspect a fact's sources. Open Command to examine the proposed trips, then return, select a shipment and click **Review a simulated shipment**. Export the captured answer for discussion. Make consequential decisions separately in the human-review workflow.
 
 If a question is ambiguous or matched to the wrong topic, choose the appropriate guided card instead. Topic matching is not proof that the system understood every intention. Requests such as “approve this plan” do not execute anything; the assistant explains the read-only boundary. For credentials, installation and connector protocol details, a technical teammate can consult docs/evidence_assistant.md and .env.example without putting secrets into chat or Git.
 
@@ -1199,13 +1236,13 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-10-30T04:06:05.429930+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-10-30T19:40:31.641554+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 824 tests | Executed local command; see reports/checks/20261030T034205062600Z/pytest.txt |
-| vitest | PASS; 240 tests | Executed local command; see reports/checks/activity-frontend-followup/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/activity-frontend-followup/frontend_build.txt |
+| pytest | PASS; 930 tests | Executed local command; see reports/checks/20261030T193821929669Z/pytest.txt |
+| vitest | PASS; 337 tests | Executed local command; see reports/checks/20261030T193821929669Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261030T193821929669Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 
@@ -1216,6 +1253,8 @@ Backend tests exercise data handling, holds, recalls, capacities, eligibility, a
 - Dispatcher/custom operations: 50/50 saved browser checks, recorded 2026-10-28T06:27:54.619Z. Evidence: reports/browser_qa/operations/results.json. Runs have separate dates and are not all repeated for every change.
 - Planning/evidence depth: 36/36 saved browser checks, recorded 2026-10-28T06:19:01.253Z. Evidence: reports/browser_qa/depth/results.json. Runs have separate dates and are not all repeated for every change.
 - Command controls: 65/65 saved browser checks, recorded 2026-10-28T06:19:25.790Z. Evidence: reports/browser_qa/controls/results.json. Runs have separate dates and are not all repeated for every change.
+
+The guided delivery-outlook, chicken-question, map-layer, road and dispatcher walkthrough recorded 76/76 actual-Chrome checks at 2026-10-30T19:40:42.320Z. External map tiles used browser-only QA placeholders; no public providers or language model were queried. This verifies application behavior, not prospective prediction accuracy. Evidence: reports/friendliness_workflow_evaluation.json.
 
 The reviewer-package check verifies paths and checksums, extracts trusted project code into a separate directory, blocks application networking, and exercises offline workflows. It does not establish a new dependency installation unless a separate installation report explicitly records one.
 

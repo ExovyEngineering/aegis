@@ -115,6 +115,7 @@ def test_offline_disabled_and_busy_do_not_call_model(monkeypatch):
     finally:intent._model_lock.release()
 
 
-def test_unrelated_question_is_explicitly_unsupported():
-    with pytest.raises(HTTPException) as error:intent.select_topic('Write a purple poem',env={})
-    assert error.value.status_code==422
+def test_unrelated_question_requests_a_supported_starting_point_without_claims():
+    selection=intent.select_topic('Write a purple poem',env={})
+    assert selection['question_id'] is None and selection['clarification_reason']=='unrecognized_topic'
+    assert not selection['llm_routing_used']

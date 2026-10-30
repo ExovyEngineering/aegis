@@ -18,7 +18,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from backend.paths import ROOT
 from backend.runtime import require_valid_runtime
 
-PROMPT_VERSION = 'aegis-topic-router-v1'
+PROMPT_VERSION = 'aegis-topic-router-v2'
 TOPICS = {
     'scenario_compare': 'Compare the four response scenarios, simulated costs, unmet demand and constraints.',
     'shipment_review': 'Explain a selected simulated shipment, lot, truck, eligibility and review needs.',
@@ -63,22 +63,61 @@ def public_engine(env=None):
     return {key:value for key,value in engine_config(env).items() if key != 'endpoint'}
 
 
+FOOD_WORDS = {'chicken','chickens','poultry','food','foods'}
+MATCH_LABELS = {
+    'scenario_compare':'Compare response scenarios',
+    'shipment_review':'Review a simulated shipment',
+    'model_limits':'Explain model performance',
+    'source_coverage':'Explain source coverage',
+    'driver_workflow':'Explain the driver handoff',
+    'next_actions':'Find the next review steps',
+}
+
+
+def _words(prompt):
+    # Whole tokens keep "ill" out of "will" and "data" out of "database".
+    return set(re.findall(r'[a-z0-9]+', prompt.casefold()))
+
+
+def _broad_food(prompt):
+    words = _words(prompt)
+    return bool(words & FOOD_WORDS) and words <= FOOD_WORDS | {
+        'a','about','all','an','and','can','explain','help','i','information','me',
+        'on','please','some','tell','the','to','want','with','you',
+    }
+
+
 def rules_topic(prompt):
     question = prompt.casefold().strip()
-    if re.match(r'^(please\s+)?(approve|dispatch|release|hold|recall|reroute|delete|reset|override|ignore|execute|send)\b', question):
-        raise HTTPException(422, 'The assistant is read-only and has not performed an action. Use the dispatcher workflow for consequential decisions.')
-    if any(word in question for word in ('model','brier','accuracy','auc','calibration','illness','ill ','sick','salmonella','predict','baseline','prevalence','safe to eat')):
+    words = _words(question)
+    action = re.match(r'^(?:(?:please|can you|could you|would you|i want you to|i need you to)\s+)*(approve|dispatch|release|hold|recall|reroute|delete|reset|override|ignore|execute|send)\b', question)
+    # A one-word noun such as "recall" or "hold" is an explanation request,
+    # while commands targeting cargo/plans still stop before an optional model.
+    noun_lookup = question in {'recall','recalls','hold','holds'} or bool(re.fullmatch(r'recall (?:notices|data|information|status)', question))
+    if action and not noun_lookup:
+        raise HTTPException(422, 'I can explain or compare, but this assistant is read-only. Open Command or Dispatcher desk to approve or change a plan. No action was taken.')
+    if _broad_food(question):
+        return None
+    if words & {'model','models','brier','accuracy','auc','calibration','illness','ill','sick','salmonella','baseline','prevalence'} or 'safe to eat' in question or bool(words & FOOD_WORDS and words & {'safety','safe','unsafe'}):
         return 'model_limits'
-    if any(word in question for word in ('driver','drive empty','assignment','acknowledg','park','instruction','incident','approve','approval','release','hold')):
-        return 'driver_workflow'
-    if any(word in question for word in ('shipment','truck','cargo','temperature','lot ')):
-        return 'shipment_review'
-    if any(word in question for word in ('scenario','cost','unmet','demand','waste','solver','constraint','alternative supply')):
-        return 'scenario_compare'
-    if any(word in question for word in ('source','coverage','weather','noaa','nws','recall','road','route','fsis','cdc','nors','beam','data','provenance','cached','stale')):
+    if words & {'source','sources','coverage','noaa','ncei','nws','fsis','cdc','nors','beam','data','provenance','cached','stale'}:
         return 'source_coverage'
-    if any(word in question for word in ('next','kiro','presentation','rehearsal','submission','remaining','what can')):
+    if words & {'scenario','scenarios','cost','costs','unmet','demand','waste','solver','constraint','constraints','capacity','shortage'} or 'alternative supply' in question:
+        return 'scenario_compare'
+    if words & {'road','roads','route','routes','weather','storm','storms','closure','closures'} and words & {'delay','delays','late','disruption','disruptions','closure','closures','closed','closes','impact','affect','reroute'}:
+        return 'scenario_compare'
+    if words & {'truck','trucks','shipment','shipments','delivery','deliveries','cargo','driver','drivers'} and words & {'late','delay','delays','delayed','arrival','arrive','timing','deadline','deadlines','eta'}:
+        return 'shipment_review'
+    if words & {'driver','drivers','assignment','assignments','acknowledge','acknowledged','acknowledgment','acknowledgements','park','parked','instruction','instructions','incident','incidents','report','reports','approve','approval','release','hold','holds'}:
+        return 'driver_workflow'
+    if words & {'shipment','shipments','truck','trucks','cargo','temperature','temperatures','lot','lots'} or re.search(r'\bsh\d+\b', question):
+        return 'shipment_review'
+    if words & {'weather','recall','recalls','road','roads','route','routes','forecast','forecasts'}:
+        return 'source_coverage'
+    if words & {'next','kiro','presentation','rehearsal','submission','remaining','help'} or 'what can' in question or 'how to use' in question:
         return 'next_actions'
+    if words & {'predict','predicts','prediction','predictions','predictive','forecasting'}:
+        return 'model_limits'
     return None
 
 
@@ -129,7 +168,9 @@ def select_topic(prompt, *, allow_model=False, offline=False, env=None):
     fallback = rules_topic(prompt)  # Reject action requests before any optional call.
     selection = {'mode':'rules','question_id':fallback,'llm_routing_used':False,'prompt_version':PROMPT_VERSION}
     config = engine_config(env)
-    if allow_model and offline:
+    if _broad_food(prompt):
+        selection['clarification_reason']='broad_topic'
+    elif allow_model and offline:
         selection['warning']='Offline rehearsal disables model requests; using rules-based topics.'
     elif allow_model and not config['configured']:
         selection['warning']=config['warning']
@@ -148,13 +189,16 @@ def select_topic(prompt, *, allow_model=False, offline=False, env=None):
             finally:
                 _model_lock.release()
     if selection['question_id'] is None:
-        raise HTTPException(422,'This question does not match a supported evidence topic. Choose one of the six guided questions; no action was performed.')
+        selection.setdefault('clarification_reason','unrecognized_topic')
+    else:
+        selection['matched_topic_label']=MATCH_LABELS[selection['question_id']]
+        selection['match_explanation']='I matched your wording to this supported topic. The explanation uses captured facts; it does not generate a new forecast or carry out an action.'
     return selection
 
 
 class InterpretQuestion(BaseModel):
     model_config = ConfigDict(extra='forbid',str_strip_whitespace=True)
-    prompt: str = Field(min_length=5,max_length=400)
+    prompt: str = Field(min_length=1,max_length=400)
     shipment_id: str | None = Field(default=None,pattern=r'^[A-Za-z0-9_-]{1,64}$')
     expected_snapshot_id: str = Field(pattern=r'^[a-f0-9]{64}$')
     allow_model: bool = Field(default=False,strict=True)
@@ -189,8 +233,27 @@ def create_assistant_intent_router(db_path,root=ROOT):
         context=capture_context(db_path,root)
         if context['snapshot_id']!=before['snapshot_id']:
             raise HTTPException(409,'Evidence context changed during question interpretation; reload before asking again')
+        if selected['question_id'] is None or (selected['question_id']=='shipment_review' and request.shipment_id is None):
+            reason='choose_shipment' if selected['question_id']=='shipment_review' else selected.get('clarification_reason','unrecognized_topic')
+            suggestions = {
+                'broad_topic':['shipment_review','scenario_compare','source_coverage','model_limits'],
+                'choose_shipment':['shipment_review','scenario_compare','driver_workflow'],
+                'unrecognized_topic':list(TOPICS),
+            }
+            messages = {
+                'broad_topic':('What would you like to know about chicken shipments?','Choose a starting point below: check a simulated shipment, compare delivery responses, inspect food-safety sources or understand what the model can predict.'),
+                'choose_shipment':('Which shipment should we look at?','Select a simulated shipment, then ask again. You can also compare the available response plans or learn how assignments reach a driver.'),
+                'unrecognized_topic':('Let’s find a useful starting point','I could not confidently match that to a supported task. Choose one below, or try a question such as “What should I do about a late truck?”'),
+            }
+            title,message=messages.get(reason,messages['unrecognized_topic'])
+            return {'kind':'clarification','snapshot_id':context['snapshot_id'],'network_revision':context['network_revision'],
+                    'generated_at':context['generated_at'],'engine':dict(context['engine']),
+                    'question_id':None,'shipment_id':None,'interpretation':selected,
+                    'clarification':{'reason':reason,'title':title,'message':message,'question_ids':suggestions.get(reason,suggestions['unrecognized_topic'])},
+                    'limitations':context['limitations'],'operational_state_modified':False}
         shipment=request.shipment_id if selected['question_id']=='shipment_review' else None
         answer=answer_from_context(context,selected['question_id'],shipment)
+        answer['kind']='answer'
         answer['interpretation']=selected
         return answer
     return router

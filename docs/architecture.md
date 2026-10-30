@@ -252,3 +252,20 @@ Offline rehearsal disables provider HTTP/cache access before lookup, rejects
 source refresh and reads dated fixtures only. OSRM failures become labeled
 estimates. Public base-map tiles and deliberately opened external links are
 separate browser requests. Operator mode retains ordinary source refresh behavior.
+
+## Guided delivery outlook
+
+`backend/delivery_outlook.py` reads a bounded SQLite snapshot without writes,
+copies simulated inputs and computes baseline A plus four changed-assumption
+allocations with independent constraint checks. It reuses `cold_chain.py` for a
+capped six-hour illustrative projection and rejects stale semantic snapshots.
+`DeliveryOutlook.tsx` separates draft assumptions from captured output/export and
+links to existing shipment/road review. No provider request, event application or
+approval occurs. The historical FSIS estimator remains separate.
+
+App copies an explicitly chosen candidate's endpoints, names and network revision
+into a client-side `RoadJourneyContext`. Road comparison still sends the ordinary
+coordinate request. Result attribution/export freezes that context at calculation
+time; edits detach it and later network revisions warn about the older inputs.
+Generic Road navigation uses an independent named example. Review shortcuts focus
+the existing current-plan table without creating a proposal or dispatching.

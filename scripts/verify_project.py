@@ -24,11 +24,11 @@ def main():
         npm=[npm_path]
     environment=dict(os.environ)
     environment['PATH']=str(Path(node).parent)+os.pathsep+environment.get('PATH','')
-    temp_root=ROOT/'.tools/pytest-temp';temp_root.mkdir(parents=True,exist_ok=True)
+    session_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    temp_root=ROOT/'.tools'/('pytest-temp-'+session_id);temp_root.mkdir(parents=True,exist_ok=False)
     environment['PYTEST_DEBUG_TEMPROOT']=str(temp_root)
     jobs=[('pytest',[sys.executable,'-m','pytest','-q']),('vitest',npm+['--prefix','frontend','test']),('frontend_build',npm+['--prefix','frontend','run','build'])]
     checks=[]
-    session_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     folder=ROOT/'reports/checks'/session_id;folder.mkdir(parents=True,exist_ok=True)
     for name,command in jobs:
         started=time.monotonic();checked_at=datetime.now(timezone.utc).isoformat()

@@ -1,4 +1,26 @@
-# Team review - October 28, 2026
+# Team review - October 30, 2026
+
+## Start with the clearer delivery workflow
+
+1. Open Command center. **Try a 1-hour delay** produces a new delivery outlook:
+   unserved demand, candidates under deadline pressure and illustrative cargo
+   checks. **Inspect** takes you to the trip; changing assumptions marks the
+   previous result until you calculate again. This preview changes no assignments.
+   **Compare roads for SH…** opens that candidate's actual endpoints in Road
+   intelligence. **Review current response plans** takes you directly to the
+   separate current-network comparison table.
+2. In Evidence assistant, type **chicken**, click **Ask AEGIS**, then choose what
+   you want to check. Common question cards answer in one click. Technical source
+   details remain available under the expandable provenance controls.
+3. Below the map, choose a task preset or read a layer's purpose and actual count.
+   Road intelligence starts with a named journey and three steps. Dispatcher desk
+   explains the next action, including how to obtain an approved assignment.
+
+The printable master guide and short status brief include this workflow. The
+outlook is a deterministic planning projection, not a validated prospective
+predictor. Your saved farm experiment and operational state are preserved.
+
+The existing source/server and submission guidance follows.
 
 Start with [the core software handoff](core_release.md). It covers Command,
 Drive, the isolated rehearsal, reviewer installation and current source failures.

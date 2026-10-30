@@ -33,7 +33,7 @@ async function mount(onNavigate?: (view: any) => void) {
   await act(async () => { view = render(<EvidenceAssistant onNavigate={onNavigate} />); });
   return view;
 }
-async function ask() { await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Explain captured evidence' })); }); }
+async function ask() { await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Get answer' })); }); }
 const normal = async (path: string, body: any) => {
   if (path === '/assistant/context') return snapshot();
   if (path === '/assistant/engine') return noModel;
@@ -49,7 +49,7 @@ beforeEach(() => { vi.mocked(api).mockReset(); vi.mocked(api).mockImplementation
 it('offers six bounded topics and clearly identifies deterministic read-only facts', async () => {
   await mount();
   for (const [, label] of catalog) expect(screen.getByRole('button', { name: new RegExp(label) })).toBeInTheDocument();
-  expect(screen.getByText('DETERMINISTIC FACTS')).toBeInTheDocument();
+  expect(screen.getByText('READ-ONLY HELP')).toBeInTheDocument();
   expect(screen.getByText(/Guided questions use no language model/)).toBeInTheDocument();
   expect(screen.getByText(/No Ollama topic selector is configured/)).toBeInTheDocument();
   expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
@@ -57,7 +57,7 @@ it('offers six bounded topics and clearly identifies deterministic read-only fac
 });
 
 it.each(catalog.filter(([id]) => id !== 'shipment_review'))('captures the %s guided topic without operational writes', async (id, label) => {
-  await mount();fireEvent.click(screen.getByRole('button', { name: new RegExp(label) }));await ask();
+  await mount();await act(async()=>{fireEvent.click(screen.getByRole('button', { name: new RegExp(label) }));});
   expect(api).toHaveBeenCalledWith('/assistant/ask', { question_id: id, expected_snapshot_id: 'snapshot-a' });
   const briefing = screen.getByRole('region', { name: 'Captured evidence briefing' });
   expect(within(briefing).getByText(`Unit-test captured ${id} evidence.`)).toBeInTheDocument();
@@ -65,7 +65,7 @@ it.each(catalog.filter(([id]) => id !== 'shipment_review'))('captures the %s gui
 });
 
 it('submits the selected simulated shipment and explains that exact captured trip', async () => {
-  await mount();fireEvent.click(screen.getByRole('button', { name: /Review a shipment/ }));
+  await mount();await act(async()=>{fireEvent.click(screen.getByRole('button', { name: /Review a shipment/ }));});
   fireEvent.change(screen.getByRole('combobox', { name: 'Simulated shipment to review' }), { target: { value: 'SH02' } });await ask();
   expect(api).toHaveBeenCalledWith('/assistant/ask', { question_id: 'shipment_review', shipment_id: 'SH02', expected_snapshot_id: 'snapshot-a' });
   expect(screen.getByRole('article', { name: 'SH02 constraints' })).toHaveTextContent('Unit-test shipment SH02 requires review.');
@@ -93,12 +93,12 @@ it('allows navigation only through the provided view callback', async () => {
 
 it('marks a delayed answer as a previous request if inputs changed while it ran', async () => {
   const pending = deferred<any>();vi.mocked(api).mockImplementation(async (path, body) => path === '/assistant/ask' ? pending.promise : normal(path, body));
-  await mount();fireEvent.click(screen.getByRole('button', { name: 'Explain captured evidence' }));
-  fireEvent.click(screen.getByRole('button', { name: /Understand the model/ }));
+  await mount();fireEvent.click(screen.getByRole('button', { name: 'Get answer' }));
+  fireEvent.change(screen.getByLabelText('Your evidence question'),{target:{value:'What can the model predict?'}});
   await act(async () => { pending.resolve(answer({ question_id: 'scenario_compare', expected_snapshot_id: 'snapshot-a' })); });
   expect(screen.getByRole('region', { name: 'Captured evidence briefing' })).toHaveTextContent('Compare responses');
   expect(screen.getByText(/briefing below belongs to the previous request/)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /Understand the model/ })).toHaveAttribute('aria-pressed', 'true');
+  expect(screen.getByLabelText('Your evidence question')).toHaveValue('What can the model predict?');
 });
 
 it('invalidates an outstanding explanation when context is reloaded', async () => {
@@ -107,7 +107,7 @@ it('invalidates an outstanding explanation when context is reloaded', async () =
     if (path === '/assistant/context') return snapshot({ snapshot_id: ++loads === 1 ? 'snapshot-a' : 'snapshot-b', network_revision: loads === 1 ? 7 : 8 });
     return path === '/assistant/ask' ? pending.promise : normal(path, body);
   });
-  await mount();fireEvent.click(screen.getByRole('button', { name: 'Explain captured evidence' }));
+  await mount();fireEvent.click(screen.getByRole('button', { name: 'Get answer' }));
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Reload evidence context' })); });
   await act(async () => { pending.resolve(answer({ question_id: 'scenario_compare', expected_snapshot_id: 'snapshot-a' })); });
   expect(screen.queryByRole('region', { name: 'Captured evidence briefing' })).not.toBeInTheDocument();
@@ -116,7 +116,7 @@ it('invalidates an outstanding explanation when context is reloaded', async () =
 
 it('prevents duplicate requests before the first explanation resolves', async () => {
   const pending = deferred<any>();vi.mocked(api).mockImplementation(async (path, body) => path === '/assistant/ask' ? pending.promise : normal(path, body));
-  await mount();const button = screen.getByRole('button', { name: 'Explain captured evidence' });
+  await mount();const button = screen.getByRole('button', { name: 'Get answer' });
   act(() => { fireEvent.click(button);fireEvent.click(button); });
   expect(vi.mocked(api).mock.calls.filter(([path]) => path === '/assistant/ask')).toHaveLength(1);
   expect(button).toBeDisabled();
@@ -128,10 +128,10 @@ it('clears stale context after a rejected snapshot and requires an explicit relo
   await mount();await ask();
   expect(screen.getByRole('alert')).toHaveTextContent('Evidence snapshot changed');
   expect(screen.getByRole('alert')).toHaveTextContent('Reload evidence context before asking again');
-  expect(screen.queryByRole('button', { name: 'Explain captured evidence' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Get answer' })).not.toBeInTheDocument();
   expect(vi.mocked(api).mock.calls.filter(([path]) => path === '/assistant/context')).toHaveLength(1);
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Reload evidence context' })); });
-  expect(screen.getByRole('button', { name: 'Explain captured evidence' })).toBeEnabled();
+  expect(screen.getByRole('button', { name: 'Get answer' })).toBeEnabled();
 });
 
 it.each(['changed fact', 'wrong question', 'wrong snapshot', 'write flag', 'unknown navigation'])('rejects a response with %s rather than showing unsupported claims', async fault => {
@@ -152,7 +152,7 @@ it.each(['changed fact', 'wrong question', 'wrong snapshot', 'write flag', 'unkn
 it('reports missing or invalid context without fabricating evidence', async () => {
   vi.mocked(api).mockImplementation(async (path, body) => path === '/assistant/context' ? { ...snapshot(), facts: [] } : normal(path, body));
   await mount();expect(screen.getByRole('alert')).toHaveTextContent('unsupported schema');
-  expect(screen.queryByRole('button', { name: 'Explain captured evidence' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Get answer' })).not.toBeInTheDocument();
 });
 
 it('permits unknown citation checksums without inventing a hash', async () => {
@@ -172,7 +172,7 @@ it('matches typed wording using rules by default and omits prompt text from expo
   Object.defineProperty(URL, 'revokeObjectURL', { configurable: true, value: vi.fn() });
   const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
   await mount();fireEvent.change(screen.getByRole('textbox', { name: 'Your evidence question' }), { target: { value: 'Why was the historical baseline selected?' } });
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Interpret question' })); });
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Ask AEGIS' })); });
   expect(api).toHaveBeenCalledWith('/assistant/interpret', { prompt: 'Why was the historical baseline selected?', expected_snapshot_id: 'snapshot-a', allow_model: false, shipment_id: 'SH01' });
   expect(screen.getByText('RULE-BASED TOPIC MATCH')).toBeInTheDocument();
   expect(within(screen.getByRole('region', { name: 'Captured evidence briefing' })).getByText('Why was the historical baseline selected?')).toBeInTheDocument();
@@ -192,9 +192,9 @@ it('requires explicit opt-in before requesting configured local model topic sele
   });
   await mount();const checkbox = screen.getByRole('checkbox', { name: /Use the configured Ollama service/ });expect(checkbox).not.toBeChecked();
   fireEvent.change(screen.getByRole('textbox', { name: 'Your evidence question' }), { target: { value: 'Explain the model baseline' } });
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Interpret question' })); });
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Ask AEGIS' })); });
   expect(vi.mocked(api).mock.calls.filter(([path]) => path === '/assistant/interpret')[0][1]).toMatchObject({ allow_model: false });
-  fireEvent.click(checkbox);await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Interpret question' })); });
+  fireEvent.click(checkbox);await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Ask AEGIS' })); });
   expect(vi.mocked(api).mock.calls.filter(([path]) => path === '/assistant/interpret')[1][1]).toMatchObject({ allow_model: true });
   expect(screen.getByText('LLM TOPIC SELECTION ONLY')).toBeInTheDocument();
   expect(screen.getByText(/All factual wording below remains server-authored and cited/)).toBeInTheDocument();
@@ -203,7 +203,7 @@ it('requires explicit opt-in before requesting configured local model topic sele
 it('shows a local model failure fallback as rules rather than model success', async () => {
   vi.mocked(api).mockImplementation(async (path, body) => path === '/assistant/interpret' ? answer({ ...body as any, question_id: 'model_limits', shipment_id: undefined }, { interpretation: { question_id: 'model_limits', mode: 'rules', llm_routing_used: false, prompt_version: 'test-router-v1', warning: 'Local topic selector unavailable; rules were used.', fallback_reason: 'Unit-test connection refused' } }) : normal(path, body));
   await mount();fireEvent.change(screen.getByRole('textbox', { name: 'Your evidence question' }), { target: { value: 'Explain the model baseline' } });
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Interpret question' })); });
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Ask AEGIS' })); });
   expect(screen.getByText('RULE-BASED TOPIC MATCH')).toBeInTheDocument();
   expect(screen.getByText('Unit-test connection refused')).toBeInTheDocument();
   expect(screen.queryByText('LLM TOPIC SELECTION ONLY')).not.toBeInTheDocument();
@@ -212,7 +212,7 @@ it('shows a local model failure fallback as rules rather than model success', as
 it('blocks unsupported or action-like requests without showing an operational result', async () => {
   vi.mocked(api).mockImplementation(async (path, body) => { if (path === '/assistant/interpret') throw new Error('Read-only assistant cannot dispatch or approve actions');return normal(path, body); });
   await mount();fireEvent.change(screen.getByRole('textbox', { name: 'Your evidence question' }), { target: { value: 'Dispatch every truck immediately' } });
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Interpret question' })); });
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Ask AEGIS' })); });
   expect(screen.getByRole('alert')).toHaveTextContent('cannot dispatch or approve');
   expect(screen.queryByRole('region', { name: 'Captured evidence briefing' })).not.toBeInTheDocument();
 });

@@ -171,7 +171,7 @@ describe('AEGIS workflow', () => {
     expect(screen.getByTestId('map-alternative')).toHaveTextContent('1');
     expect(screen.getByRole('button',{name:'Highlight alternative 2'})).toHaveAttribute('aria-pressed','true');
     expect(screen.getByText(/does not replace the candidate's fixed planning estimate/)).toBeInTheDocument();
-    expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined).map(([path])=>path)).toEqual(['/route']);
+    expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined).map(([path])=>path)).toEqual(['/delivery-outlook','/route']);
   });
   it('makes a malformed route response visibly fail instead of showing an empty result', async () => {
     const normal=vi.mocked(api).getMockImplementation()!;
@@ -236,6 +236,6 @@ describe('AEGIS workflow', () => {
     fireEvent.click(screen.getByRole('button',{name:'Close activity history'}));
     expect(screen.queryByRole('heading',{name:'Activity history'})).not.toBeInTheDocument();
     expect(screen.getByRole('button',{name:'Open activity history'})).toHaveFocus();
-    expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined)).toHaveLength(0);
+    expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined).map(([path])=>path)).toEqual(['/delivery-outlook']);
   });
 });

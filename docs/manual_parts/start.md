@@ -4,6 +4,12 @@ AEGIS means **Adaptive Early-warning & Guidance for Integrated Supply Chains**. 
 
 The core demonstration is centered on Missouri: Columbia, Kansas City, Jefferson City, Springfield and St. Louis. An optional Iowa road-evidence layer supports a cross-state planning example. National historical food-safety data support the retrospective modeling study; this is not a separately validated Missouri-only predictor.
 
+For a quick start, open **Command center** and use **Try a 1-hour delay** in the
+delivery outlook. Inspect a trip, then check road alternatives. The outlook is a
+conditional planning projection over simulated inputs; the separate measured
+FSIS model does not establish prospective delay or consumer-illness accuracy.
+In **Evidence assistant**, type **chicken** or click a question for guided help.
+
 The simplest way to read the product is a sequence: **inspect evidence → explore a response → check constraints → record a human decision → inform the driver → retain the record**. Some screens are planning experiments and never enter that dispatch sequence. This guide explains those boundaries as well as the controls.
 
 ### Who can use the current application?

@@ -12,10 +12,11 @@ interface Guide {
 
 const guides: Record<WorkspaceView, Guide> = {
   command: {
-    title: 'Understand the current operation',
-    summary: 'This is your current simulated distribution network: candidate shipments, disruptions and response plans.',
+    title: 'Find delivery problems before choosing a response',
+    summary: 'Start with the delivery outlook. Test a delay, inspect the affected trips, then compare and review a response plan.',
     scope: 'Changes simulation only after explicit apply or approval',
     details: [
+      'The outlook is a read-only planning estimate over this simulated delivery wave. Chosen delay, ambient and fault assumptions do not apply an event or publish a plan.',
       'A route request draws a travel comparison for the selected shipment. It does not change a truck assignment or automatically avoid a closure.',
       'Applying a simulation event changes the current network and clears approved assignments. Compare the refreshed plans before proposing a new response.',
       'A proposal is a plan awaiting review. Only a separate human approval publishes simulated driver assignments; held and recalled lots remain excluded.',
@@ -79,7 +80,7 @@ const guides: Record<WorkspaceView, Guide> = {
   },
   assistant: {
     title: 'Ask for an explanation of captured evidence',
-    summary: 'Choose a supported question to read cited facts from a captured network and dated reports.',
+    summary: 'Type a word like chicken, describe a delivery problem, or click a question for a cited explanation.',
     scope: 'Read-only explanation · cannot perform an action',
     details: [
       'Guided questions and topic lookup return authored facts from the captured context. The optional model, if configured and explicitly selected, can choose a topic only.',

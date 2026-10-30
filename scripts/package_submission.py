@@ -16,6 +16,8 @@ REPORTS=REPORTS+('clean_install.json',)
 REPORTS=REPORTS+('backup_recovery.json','road_intelligence_live.json','stretch_verification.json','ci_followup.json')
 REPORTS=REPORTS+('aegis_master_guide.pdf','aegis_master_guide.html','master_guide_manifest.json','master_guide_verification.json')
 REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json','local_startup_verification.json','activity_workflow_evaluation.json','operator_activity_change_review.json')
+REPORTS=REPORTS+('friendliness_workflow_evaluation.json','friendliness_raw_integrity.json')
+REPORTS=REPORTS+('friendliness_operator_smoke.json',)
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -99,6 +101,9 @@ def collect(root):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)
+    folder=root/'reports/browser_qa/friendliness'
+    if folder.exists():
+        for path in folder.rglob('*'):add(path)
     # Only include NOAA responses/metadata actually referenced by the coverage report.
     coverage=root/'reports/noaa_coverage.json'
     if coverage.exists():

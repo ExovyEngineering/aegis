@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import { beforeEach, expect, it, vi } from 'vitest';
-import RoadIntelligence from './RoadIntelligence';
+import RoadIntelligence, { type RoadJourneyContext } from './RoadIntelligence';
 import { api } from './api';
 
 vi.mock('./api', () => ({ api: vi.fn() }));
@@ -104,6 +104,7 @@ it('compares estimated travel by default and separates nearby events from unavai
 it('selects a supplied corridor and validates coordinates, distinct locations and the buffer', async () => {
   await ready();
   fireEvent.change(screen.getByRole('combobox', { name: 'Planning corridor' }), { target: { value: 'columbia-desmoines' } });
+  fireEvent.click(screen.getByText('Edit map coordinates'));
   expect(screen.getByRole('spinbutton', { name: 'Destination latitude' })).toHaveValue(41.5868);
   fireEvent.change(screen.getByRole('spinbutton', { name: 'Origin latitude' }), { target: { value: '100' } });
   expect(screen.getByRole('button', { name: 'Compare planning routes' })).toBeDisabled();
@@ -116,6 +117,7 @@ it('selects a supplied corridor and validates coordinates, distinct locations an
 
 it('retains original comparison inputs and warns when they change during a pending request', async () => {
   await ready();
+  fireEvent.click(screen.getByText('Edit map coordinates'));
   const pending = deferred<ReturnType<typeof comparison>>();
   vi.mocked(api).mockReturnValueOnce(pending.promise);
   fireEvent.click(screen.getByRole('button', { name: 'Compare planning routes' }));
@@ -255,4 +257,186 @@ it('shows routing-cache retrieval time and stale refresh failures separately fro
   expect(screen.getByText(/The routing response is stale/)).toBeInTheDocument();
   expect(screen.getByText('Routing refresh failure:')).toBeInTheDocument();
   expect(screen.getByText(/ReadTimeout: routing refresh timed out/)).toBeInTheDocument();
+});
+
+it('starts with a named journey and keeps technical coordinate editing optional',async()=>{
+  await ready();
+  expect(screen.getByRole('combobox',{name:'Planning corridor'})).toHaveValue('columbia-desmoines');
+  expect(screen.getByLabelText('Origin longitude')).not.toBeVisible();
+  fireEvent.click(screen.getByRole('button',{name:'Choose or change journey'}));
+  expect(document.activeElement?.id).toBe('road-journey-choice');
+  expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined)).toHaveLength(0);
+  fireEvent.change(screen.getByRole('combobox',{name:'Planning corridor'}),{target:{value:''}});
+  expect(screen.getByRole('spinbutton',{name:'Origin longitude'})).toBeInTheDocument();
+});
+
+it('the guided compare produces the same route review and focuses its result',async()=>{
+  await ready();vi.mocked(api).mockResolvedValueOnce(comparison());
+  fireEvent.click(screen.getByRole('button',{name:'Compare this journey'}));
+  await screen.findByRole('heading',{name:'Alternative review'});
+  await vi.waitFor(()=>expect(document.activeElement?.id).toBe('road-comparison-result'));
+  expect(api).toHaveBeenLastCalledWith('/road-intelligence/compare',request);
+  const meaning=screen.getByLabelText('Road comparison meaning');
+  expect(meaning).toHaveTextContent('400.0 km, about 300 minutes');
+  expect(meaning).toHaveTextContent('rough estimated connection');
+  expect(meaning).toHaveTextContent('1 listed notice is near this option');
+  fireEvent.click(screen.getByRole('button',{name:'Inspect first nearby notice'}));
+  await vi.waitFor(()=>expect(document.activeElement?.id).toBe('road-selected-event'));
+  expect(screen.getByRole('article',{name:'Road event detail'})).toHaveTextContent('COMPARISON SNAPSHOT RECORD');
+});
+
+it('route review points to the next workspace without approving or dispatching',async()=>{
+  const navigate=vi.fn();render(<RoadIntelligence onNavigate={navigate}/>);
+  await screen.findByRole('button',{name:'Inspect IA events'});vi.mocked(api).mockResolvedValueOnce(comparison());
+  fireEvent.click(screen.getByRole('button',{name:'Compare this journey'}));
+  await screen.findByRole('heading',{name:'Alternative review'});
+  fireEvent.click(screen.getByRole('button',{name:'Read first nearby notice'}));
+  fireEvent.click(screen.getByRole('button',{name:'Open dispatcher review'}));
+  expect(navigate).toHaveBeenCalledWith('dispatch');
+  fireEvent.click(screen.getByRole('button',{name:'Compare delivery responses in Command'}));
+  expect(navigate).toHaveBeenCalledWith('command');
+  expect(vi.mocked(api).mock.calls.filter(([,body])=>body!==undefined).map(([path])=>path)).toEqual(['/road-intelligence/compare']);
+});
+
+it('stale journey inputs disable the guided notice step until a fresh comparison',async()=>{
+  await ready();vi.mocked(api).mockResolvedValueOnce(comparison());
+  fireEvent.click(screen.getByRole('button',{name:'Compare this journey'}));await screen.findByRole('heading',{name:'Alternative review'});
+  fireEvent.change(screen.getByRole('spinbutton',{name:'Event proximity buffer (meters)'}),{target:{value:'500'}});
+  expect(screen.getByRole('button',{name:'Inspect first nearby notice'})).toBeDisabled();
+  expect(screen.getByRole('button',{name:'Read first nearby notice'})).toBeDisabled();
+  expect(screen.getByText('The journey or evidence changed. Run the comparison again.')).toBeInTheDocument();
+});
+
+it('a no-hit result gives a coverage-aware next step instead of a clear-road assertion',async()=>{
+  await ready();
+  const base=comparison();
+  vi.mocked(api).mockResolvedValueOnce(comparison({alternatives:[{...base.alternatives[0],reviews:base.alternatives[0].reviews.map(row=>({...row,nearby_event_count:0,nearby_events:[]}))}]}));
+  fireEvent.click(screen.getByRole('button',{name:'Compare this journey'}));await screen.findByRole('heading',{name:'Alternative review'});
+  expect(screen.getByLabelText('Road comparison meaning')).toHaveTextContent('No listed notice matched this option. That does not establish a clear road.');
+  expect(screen.getByRole('button',{name:'Read comparison result'})).toBeEnabled();
+  expect(screen.queryByRole('button',{name:'Inspect first nearby notice'})).not.toBeInTheDocument();
+});
+
+const commandJourney: RoadJourneyContext = { shipmentId: 'SH11', networkRevision: 7, origin: [-92.3341, 38.9517], destination: [-90.1994, 38.627], originName: 'Columbia DC (simulated)', destinationName: 'St. Louis delivery (simulated)' };
+function candidateComparison(journey: RoadJourneyContext) {
+  const capturedRequest = { ...request, origin: [...journey.origin], destination: [...journey.destination] };
+  const base = comparison();
+  return comparison({ request: capturedRequest, alternatives: [{ ...base.alternatives[0], geometry: { type: 'LineString', coordinates: [capturedRequest.origin, capturedRequest.destination] } }] });
+}
+async function exportCapturedComparison() {
+  const create = vi.fn().mockReturnValue('blob:captured-candidate');
+  const anchorClick = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+  vi.stubGlobal('URL', class extends URL { static createObjectURL = create; static revokeObjectURL = vi.fn(); });
+  try {
+    fireEvent.click(screen.getByRole('button', { name: 'Export comparison JSON' }));
+    const blob = create.mock.calls[0][0] as Blob;
+    const text = await new Promise<string>((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.onerror = () => reject(reader.error); reader.readAsText(blob); });
+    await act(async () => { await new Promise(resolve => setTimeout(resolve, 1)); });
+    return JSON.parse(text);
+  } finally { vi.unstubAllGlobals(); anchorClick.mockRestore(); }
+}
+
+it('opens actual named candidate endpoints without a POST and keeps them when source loading finishes late', async () => {
+  const pending = deferred<typeof snapshot>();vi.mocked(api).mockReturnValueOnce(pending.promise);
+  render(<RoadIntelligence initialJourney={commandJourney} currentNetworkRevision={7} />);
+  expect(screen.getByRole('region', { name: 'Selected Command candidate' })).toHaveTextContent('Selected candidate SH11: Columbia DC (simulated) → St. Louis delivery (simulated)');
+  expect(screen.getByRole('region', { name: 'Selected Command candidate' })).toHaveTextContent('captured network revision 7');
+  expect(vi.mocked(api).mock.calls.filter(([, body]) => body !== undefined)).toHaveLength(0);
+  await act(async () => { pending.resolve(snapshot); await pending.promise; });
+  const selected = screen.getByRole('combobox', { name: 'Planning corridor' }) as HTMLSelectElement;
+  expect(selected.selectedOptions[0]).toHaveTextContent('Selected candidate SH11:');
+  expect(screen.getByLabelText('Destination longitude')).toHaveValue(-90.1994);
+  expect(screen.getByLabelText('Destination latitude')).toHaveValue(38.627);
+  vi.mocked(api).mockResolvedValueOnce(candidateComparison(commandJourney));
+  fireEvent.click(screen.getByRole('button', { name: 'Compare this journey' }));
+  await screen.findByRole('heading', { name: 'Alternative review' });
+  expect(api).toHaveBeenLastCalledWith('/road-intelligence/compare', { ...request, origin: commandJourney.origin, destination: commandJourney.destination });
+  expect(screen.getByLabelText('Captured candidate provenance')).toHaveTextContent('candidate SH11 · network revision 7');
+  expect(screen.getByLabelText('Captured candidate provenance')).toHaveTextContent('not an approved assignment');
+});
+
+it('selecting another named journey detaches the candidate and equivalent parent props do not restore it', async () => {
+  const rendered = render(<RoadIntelligence initialJourney={commandJourney} />);
+  await screen.findByRole('button', { name: 'Inspect IA events' });
+  fireEvent.change(screen.getByRole('combobox', { name: 'Planning corridor' }), { target: { value: 'columbia-desmoines' } });
+  rendered.rerender(<RoadIntelligence initialJourney={{ ...commandJourney, origin: [...commandJourney.origin], destination: [...commandJourney.destination] }} />);
+  expect(screen.queryByRole('region', { name: 'Selected Command candidate' })).not.toBeInTheDocument();
+  expect(screen.getByRole('combobox', { name: 'Planning corridor' })).toHaveValue('columbia-desmoines');
+  expect(screen.getByLabelText('Destination longitude')).toHaveValue(-93.625);
+  vi.mocked(api).mockResolvedValueOnce(comparison());fireEvent.click(screen.getByRole('button', { name: 'Compare this journey' }));
+  await screen.findByRole('heading', { name: 'Alternative review' });
+  const exported = await exportCapturedComparison();
+  expect(exported.journey_context).toBeNull();expect(exported.journey_label).toBe('Columbia to Des Moines');
+  expect(exported.request).toEqual(request);
+});
+
+it('editing a candidate endpoint changes it into custom coordinates and detaches its attribution', async () => {
+  const rendered = render(<RoadIntelligence initialJourney={commandJourney} />);
+  await screen.findByRole('button', { name: 'Inspect IA events' });fireEvent.click(screen.getByText('Edit map coordinates'));
+  fireEvent.change(screen.getByRole('spinbutton', { name: 'Destination longitude' }), { target: { value: '-91' } });
+  rendered.rerender(<RoadIntelligence initialJourney={{ ...commandJourney }} />);
+  expect(screen.queryByRole('region', { name: 'Selected Command candidate' })).not.toBeInTheDocument();
+  expect(screen.getByRole('combobox', { name: 'Planning corridor' })).toHaveValue('');
+  expect(screen.getByRole('spinbutton', { name: 'Destination longitude' })).toHaveValue(-91);
+  expect(vi.mocked(api).mock.calls.filter(([, body]) => body !== undefined)).toHaveLength(0);
+});
+
+it('new candidate props keep a pending comparison and its export tied to the original candidate', async () => {
+  const rendered = render(<RoadIntelligence initialJourney={commandJourney} currentNetworkRevision={7} />);
+  await screen.findByRole('button', { name: 'Inspect IA events' });
+  const pending = deferred<ReturnType<typeof comparison>>();vi.mocked(api).mockReturnValueOnce(pending.promise);
+  fireEvent.click(screen.getByRole('button', { name: 'Compare this journey' }));
+  const next: RoadJourneyContext = { ...commandJourney, shipmentId: 'SH12', networkRevision: 8, destination: [-94.5786, 39.0997], destinationName: 'Kansas City delivery (simulated)' };
+  rendered.rerender(<RoadIntelligence initialJourney={next} currentNetworkRevision={8} />);
+  expect(screen.getByLabelText('Destination longitude')).toHaveValue(-94.5786);
+  await act(async () => { pending.resolve(candidateComparison(commandJourney)); await pending.promise; });
+  const result = document.getElementById('road-comparison-result')!;
+  expect(within(result).getByText(/Selected candidate SH11:/)).toBeInTheDocument();
+  expect(within(result).queryByText(/Selected candidate SH12:/)).not.toBeInTheDocument();
+  expect(screen.getByText(/Displayed routes describe the previous comparison/)).toBeInTheDocument();
+  const exported = await exportCapturedComparison();
+  expect(exported.journey_context).toMatchObject({ ...commandJourney, label: expect.stringContaining('Selected candidate SH11:'), kind: 'simulated_command_candidate', approved_assignment: false });
+  expect(exported.request).toEqual({ ...request, origin: commandJourney.origin, destination: commandJourney.destination });
+  expect(exported.inputs_changed_since_comparison).toBe(true);
+  expect(vi.mocked(api).mock.calls.filter(([, body]) => body !== undefined)).toHaveLength(1);
+  vi.mocked(api).mockResolvedValueOnce(candidateComparison(next));fireEvent.click(screen.getByRole('button', { name: 'Compare this journey' }));
+  await vi.waitFor(() => expect(screen.getByLabelText('Captured candidate provenance')).toHaveTextContent('candidate SH12 · network revision 8'));
+  expect(screen.queryByText(/Displayed routes describe the previous comparison/)).not.toBeInTheDocument();
+});
+
+it('clearing the handoff returns to the default public journey while an older comparison retains its provenance', async () => {
+  const rendered = render(<RoadIntelligence initialJourney={commandJourney} />);await screen.findByRole('button', { name: 'Inspect IA events' });
+  vi.mocked(api).mockResolvedValueOnce(candidateComparison(commandJourney));fireEvent.click(screen.getByRole('button', { name: 'Compare this journey' }));await screen.findByRole('heading', { name: 'Alternative review' });
+  rendered.rerender(<RoadIntelligence />);
+  expect(screen.getByRole('combobox', { name: 'Planning corridor' })).toHaveValue('columbia-desmoines');
+  expect(screen.queryByRole('region', { name: 'Selected Command candidate' })).not.toBeInTheDocument();
+  expect(screen.getByLabelText('Captured candidate provenance')).toHaveTextContent('candidate SH11');
+  expect(screen.getByText(/Displayed routes describe the previous comparison/)).toBeInTheDocument();
+});
+
+it('warns when Command has advanced without rebasing or making another comparison', async () => {
+  const rendered = render(<RoadIntelligence initialJourney={commandJourney} currentNetworkRevision={7} />);await screen.findByRole('button', { name: 'Inspect IA events' });
+  rendered.rerender(<RoadIntelligence initialJourney={commandJourney} currentNetworkRevision={9} />);
+  expect(screen.getByRole('status')).toHaveTextContent('Command is now at network revision 9; this candidate was captured at revision 7');
+  expect(screen.getByLabelText('Destination longitude')).toHaveValue(-90.1994);
+  expect(screen.getByRole('button', { name: 'Compare this journey' })).toBeEnabled();
+  expect(vi.mocked(api).mock.calls.filter(([, body]) => body !== undefined)).toHaveLength(0);
+});
+
+it.each([
+  ['invalid coordinate', { ...commandJourney, origin: [NaN, 38] }],
+  ['same endpoints', { ...commandJourney, destination: commandJourney.origin }],
+  ['invalid revision', { ...commandJourney, networkRevision: -1 }],
+  ['missing place name', { ...commandJourney, destinationName: '' }],
+])('rejects a candidate with %s before any request or invented map endpoints', async (_label, invalid) => {
+  render(<RoadIntelligence initialJourney={invalid as RoadJourneyContext} />);await screen.findByRole('button', { name: 'Inspect IA events' });
+  expect(screen.getByRole('alert')).toHaveTextContent('incomplete or invalid journey details');
+  expect(screen.getByRole('button', { name: 'Compare this journey' })).toBeDisabled();
+  expect(screen.getByRole('spinbutton', { name: 'Origin longitude' })).toHaveValue(null);
+  expect(screen.queryByTestId('road-map')).not.toBeInTheDocument();
+  expect(screen.queryByRole('region', { name: 'Selected Command candidate' })).not.toBeInTheDocument();
+  expect(vi.mocked(api).mock.calls.filter(([, body]) => body !== undefined)).toHaveLength(0);
+  fireEvent.change(screen.getByRole('combobox', { name: 'Planning corridor' }), { target: { value: 'columbia-desmoines' } });
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Compare this journey' })).toBeEnabled();
 });

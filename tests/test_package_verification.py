@@ -153,6 +153,8 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     assert any('read-only activity history' in check for check in result['checks'])
     assert any('packaged foreground launcher' in check for check in result['checks'])
     assert any('read-only assistant' in check for check in result['checks'])
+    assert any('broad chicken question' in check for check in result['checks'])
+    assert any('read-only delivery outlook' in check for check in result['checks'])
     assert any('read-only disruption preview' in check for check in result['checks'])
     assert database.read_bytes()==b'original operator state'
     assert list((workspace/'.tools/package-verification').iterdir())==[]

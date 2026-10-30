@@ -1,6 +1,6 @@
 ## Evidence assistant: explain a captured decision context
 
-Open **Evidence assistant** when you want a concise explanation with inspectable sources instead of moving through several screens to assemble one. It can compare the four current response scenarios, review a simulated candidate shipment, explain saved model results or source coverage, describe the driver handoff, and point to the next review workspace.
+Open **Evidence assistant** when you want help understanding a delivery plan or its evidence. Start by typing **chicken** in **Your evidence question**, then click **Ask AEGIS**. The helper offers **Choose what to check** choices; click one to get a cited explanation. A broad word is a starting point, not a failed search or an illness prediction.
 
 The factual engine is **Deterministic evidence summary**. Its sentences are authored by the application and populated with values from a captured network and dated reports. It is not an illness model, an autonomous dispatcher or an unrestricted chatbot. It has no tool for approving, holding, releasing, dispatching, refreshing a provider or rewriting scientific metrics.
 
@@ -9,16 +9,19 @@ The factual engine is **Deterministic evidence summary**. Its sentences are auth
 | Control | What to do | What happens |
 | --- | --- | --- |
 | Reload evidence context | Capture the current network and saved evidence again | Clears obsolete answer context and records a new content-addressed snapshot |
-| Guided question cards | Choose one of the six supported topics | Selects a topic; this alone does not submit a question or change operations |
+| Guided question cards | Click one of the six supported questions | Immediately requests its explanation; no second click is needed |
 | Simulated shipment to review | Choose the candidate trip when reviewing a shipment | Used only for shipment-specific explanations; candidate and approved assignment can differ |
-| Explain captured evidence | Request the selected topic for the captured context | Returns only facts from that context, with their source labels and limits |
-| Your evidence question / Interpret question | Phrase one supported question in your own words | Rules match the text to one of the same six topics; unsupported or action requests are rejected |
+| Get answer | Ask again for the selected question and shipment | Returns facts from the captured context with source labels and limits |
+| Your evidence question / Ask AEGIS | Enter 1–400 characters, such as **chicken**, **late truck** or a full question | Matches a supported topic or offers useful choices when the wording is broad or unfamiliar |
+| Example questions | Click **Chicken** or another example | Fills in the wording and immediately asks it |
 | Export captured answer JSON | Save the displayed answer and citations | Downloads a captured explanation; it does not create an assignment or future live update |
 | Suggested workspace links | Open the relevant existing screen | Navigates for review; consequential decisions still require their ordinary explicit forms |
 
-The snapshot identifier ties the answer to captured content and the network revision. Network and assignment fields share a single read-only SQLite transaction. Each report is read independently from a bounded byte snapshot; this is not a globally atomic snapshot of all providers. Source times and the report hashes remain important.
+Expand **What this helper can do** for the captured snapshot and technical explanation. Within an answer, expand **Sources & provenance** to inspect source paths, retrieval times, checksums and limitations. The snapshot ties facts to captured content and a network revision; saved source reports retain their own dates.
 
 If the network, assignments or report files change, a question using an old snapshot is rejected. Reload the context and inspect it before asking again. Changed topic, shipment or wording marks an already displayed briefing as belonging to the previous request. Do not treat an earlier answer as an explanation of newly edited inputs.
+
+An action request such as “approve this plan” shows an explanation and **Open Dispatcher desk**. It keeps the evidence context available so you can choose another question. The link opens the decision workspace; it does not approve anything. A stale snapshot or an inconsistent answer instead requires **Reload evidence context**.
 
 ### Six useful topics
 
@@ -33,7 +36,7 @@ Expand a fact's evidence details to inspect its source path, available retrieval
 
 ### Optional Ollama topic selection
 
-The default requires no language model. A technical teammate can explicitly configure an Ollama service at a permitted loopback address. If configured, the interface offers an opt-in checkbox for that request. Only the question text and fixed topic descriptions are sent; operational records, source payloads, actor names and decision tools are not supplied to the model.
+The default requires no language model. **Advanced matching options** is collapsed when none is configured. A technical teammate can explicitly configure an Ollama service at a permitted loopback address. If configured, the interface offers an opt-in checkbox for that request. Only the question text and fixed topic descriptions are sent; operational records, source payloads, actor names and decision tools are not supplied to the model.
 
 The model can return only a supported topic identifier. The server then selects the same authored, cited facts used by the guided questions. Invalid output, tool calls, extra claims, model-identity mismatch, excessive response size or service failure falls back visibly to rules where the question is supported. Offline rehearsal disables the optional model request entirely.
 
@@ -41,6 +44,6 @@ A loopback endpoint does not independently certify how the service runs its mode
 
 ### Practice use case
 
-Capture context, choose **Compare response scenarios**, and inspect the cited scenario facts. Open Command to examine the constraints. Return, choose a shipment and request its review. Then ask “Why did the historical baseline beat the model?” and inspect which topic was selected and which measured facts support the answer. Export the briefing if useful for discussion. Make any consequential decision separately in the existing human-review workflow.
+Type **chicken**, click **Ask AEGIS**, then choose **Compare response scenarios** from the suggested choices. Inspect a fact's sources. Open Command to examine the proposed trips, then return, select a shipment and click **Review a simulated shipment**. Export the captured answer for discussion. Make consequential decisions separately in the human-review workflow.
 
 If a question is ambiguous or matched to the wrong topic, choose the appropriate guided card instead. Topic matching is not proof that the system understood every intention. Requests such as “approve this plan” do not execute anything; the assistant explains the read-only boundary. For credentials, installation and connector protocol details, a technical teammate can consult docs/evidence_assistant.md and .env.example without putting secrets into chat or Git.

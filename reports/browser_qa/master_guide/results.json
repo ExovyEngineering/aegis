@@ -1,9 +1,12 @@
 {
-  "checked_at": "2026-10-30T04:10:57.762Z",
+  "checked_at": "2026-10-30T19:45:31.483Z",
   "base_url": "http://127.0.0.1:8000",
   "read_only": true,
   "physical_printer_tested": false,
   "public_provider_refresh_requested": false,
+  "read_only_post_allowlist": [
+    "POST /api/delivery-outlook with validated planning inputs and current expected network revision"
+  ],
   "checks": [
     {
       "name": "HTTP /api/runtime-context",
@@ -12,6 +15,16 @@
     },
     {
       "name": "operator_runtime_identified_without_mutation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP /api/network",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "current_network_revision_available_for_read_only_request_guard",
       "passed": true,
       "detail": ""
     },
@@ -168,7 +181,7 @@
     {
       "name": "no_write_requests_were_sent",
       "passed": true,
-      "detail": "[]"
+      "detail": "{\"allowed_read_only_computations\":[],\"blocked_mutations\":[]}"
     },
     {
       "name": "operator_SQLite_and_sidecars_unchanged",
@@ -184,6 +197,7 @@
   "page_errors": [],
   "http_failures": [],
   "post_requests": [],
+  "blocked_mutation_requests": [],
   "screenshots": [
     "desktop-master-downloads.png",
     "desktop-html-contents.png",
@@ -209,15 +223,15 @@
     }
   },
   "guide": {
-    "sha256": "0fb2deaf84a07ddd544af9145580f5cf50085733c0c87b134311238636eea187",
-    "pages": 71,
+    "sha256": "ad7752d8e05923024457ecd29922ea88916788d6959a1394751760b0343b7996",
+    "pages": 73,
     "chapters": 21,
-    "generated_at": "2026-10-29T23:07:37.867032-05:00"
+    "generated_at": "2026-10-30T14:44:16.863125-05:00"
   },
   "document_before": {
     "exists": true,
-    "bytes": 433536,
-    "sha256": "0fb2deaf84a07ddd544af9145580f5cf50085733c0c87b134311238636eea187"
+    "bytes": 446797,
+    "sha256": "ad7752d8e05923024457ecd29922ea88916788d6959a1394751760b0343b7996"
   },
   "browser_version": "156.0.8078.74",
   "database_after": {
@@ -238,9 +252,9 @@
   },
   "document_after": {
     "exists": true,
-    "bytes": 433536,
-    "sha256": "0fb2deaf84a07ddd544af9145580f5cf50085733c0c87b134311238636eea187"
+    "bytes": 446797,
+    "sha256": "ad7752d8e05923024457ecd29922ea88916788d6959a1394751760b0343b7996"
   },
   "passed": true,
-  "finished_at": "2026-10-30T04:11:00.870Z"
+  "finished_at": "2026-10-30T19:45:39.724Z"
 }

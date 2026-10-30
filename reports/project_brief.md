@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 29, 2026 at 11:15 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 30, 2026 at 02:43 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -126,6 +126,12 @@ Header panel explains actual saved audit rows across existing workspaces, with e
 
 Evidence: docs/activity_history.md
 
+Guided delivery planning outlook | implemented as a read-only deterministic planning projection
+
+Current-input and what-if allocations show unmet demand, candidate deadline pressure and illustrative six-hour cargo checks. Four actual solver responses retain independent constraint review. Inputs and exports remain captured; exact candidate road handoffs and current-plan review shortcuts preserve captured inputs. No prospective delay skill, automatic hold, road reroute or approval is claimed.
+
+Evidence: docs/delivery_outlook.md
+
 # P2 | Stretch work and deferred extensions
 
 Cited evidence assistant and optional model topic selection | deterministic assistant implemented; actual LLM evaluation remains pending
@@ -184,13 +190,13 @@ Evidence: docs/stretch_feature_gates.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-30T04:06:05.429930+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-30T19:40:31.641554+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 824; 53.301 seconds. Log: reports/checks/20261030T034205062600Z/pytest.txt. Checked: 2026-10-30T03:42:05.062871+00:00.
+pytest: PASS; exit 0; tests passed 930; 71.14 seconds. Log: reports/checks/20261030T193821929669Z/pytest.txt. Checked: 2026-10-30T19:38:21.930251+00:00.
 
-vitest: PASS; exit 0; tests passed 240; 28.774 seconds. Log: reports/checks/activity-frontend-followup/vitest.txt. Checked: 2026-10-30T03:56:07.712713+00:00.
+vitest: PASS; exit 0; tests passed 337; 27.841 seconds. Log: reports/checks/20261030T193821929669Z/vitest.txt. Checked: 2026-10-30T19:39:33.086714+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 14.62 seconds. Log: reports/checks/activity-frontend-followup/frontend_build.txt. Checked: 2026-10-30T03:56:36.508058+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 30.681 seconds. Log: reports/checks/20261030T193821929669Z/frontend_build.txt. Checked: 2026-10-30T19:40:00.944308+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -205,6 +211,8 @@ Earlier dispatcher/custom-planning browser QA: 50 / 50 recorded checks passed. T
 Guided rehearsal actual-Chrome QA: 76 / 76 checks passed, checked 2026-10-28T06:07:06.190Z. Record kind: automated_check; measured duration 5.37 seconds. This automated workflow does not establish a genuine five-minute team presentation. Evidence: reports/browser_qa/rehearsal/results.json.
 
 Road intelligence actual-Chrome QA: 58 / 58 checks passed, checked 2026-10-28T19:15:52.092Z. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.
+
+Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: 76/76 checks at 2026-10-30T19:40:42.320Z. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.
 
 A duplicate push CI run failed a rehearsal frontend test while its PR run passed. The test acted before initial React effects settled; synchronization was corrected without relaxing the original assertions or changing product behavior. The failed log and focused follow-up outcomes are retained in reports/ci_followup.json and reports/checks/. Later full checks and remote runs have their own timestamps; a historical pass never substitutes for them.
 

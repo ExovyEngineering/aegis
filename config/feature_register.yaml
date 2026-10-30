@@ -1,5 +1,5 @@
 project: AEGIS
-updated: '2026-10-29'
+updated: '2026-10-30'
 features:
 - id: provenance
   priority: P0
@@ -204,6 +204,17 @@ features:
     explicit prebuilt and check-only modes remain distinct. Existing listeners are
     never killed/rebuilt; inherited rehearsal settings are rejected. No installation,
     original-data reset or background-service persistence is implied.
+- id: delivery-outlook
+  priority: P1
+  name: Guided delivery planning outlook
+  status: implemented as a read-only deterministic planning projection
+  evidence: docs/delivery_outlook.md
+  detail: Current-input and what-if allocations show unmet demand, candidate deadline
+    pressure and illustrative six-hour cargo checks. Four actual solver responses
+    retain independent constraint review. Inputs and exports remain captured;
+    exact candidate road handoffs and current-plan review shortcuts preserve
+    captured inputs. No prospective delay skill, automatic hold, road reroute or
+    approval is claimed.
 - id: streaming
   priority: P2
   name: Real-time streaming infrastructure

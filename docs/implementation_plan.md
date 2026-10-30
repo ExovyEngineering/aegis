@@ -7,6 +7,18 @@
 
 Actual Kiro application usage must be verified separately; generated steering/spec files do not establish Kiro usage.
 
+## October 30: guided operational workflow
+
+1. Make broad assistant questions actionable through explicit choices and
+   one-click cited answers; preserve grounding and read-only behavior.
+2. Put a delivery planning outlook in Command, with real allocation comparisons,
+   clear thermal assumptions and inspectable captured results.
+3. Explain map layers through task presets/counts; guide Road and Dispatcher
+   users toward a concrete next action.
+4. Verify isolated browser behavior, raw/state preservation, full local checks,
+   printable documentation and the offline reviewer package. Keep genuine Kiro,
+   human presentation and scientific availability gaps separate.
+
 
 ## October 26 follow-on: deeper decisions and presentation evidence
 

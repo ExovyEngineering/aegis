@@ -13,3 +13,8 @@ Measured results: `reports/model_evaluation.json`. The logistic model is not ope
 - Single chronological holdout; no external validation
 - No CDC or weather linkage
 - Intervals quantify within-holdout weekly variation, not publication-lag uncertainty
+
+Command's delivery outlook is a separate deterministic planning projection over
+simulated trips and user assumptions. It combines allocation constraints and
+uncalibrated cargo-temperature calculations; it has no measured prospective
+delay/failure accuracy. See [delivery_outlook.md](delivery_outlook.md).

@@ -10,8 +10,9 @@ import { Activity, ArrowDownToLine, ArrowRight, Bell, Check, CheckCircle2, Chevr
 import { Area, AreaChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import NetworkMap from './NetworkMap';
 import RouteLab from './RouteLab';
-import RoadIntelligence from './RoadIntelligence';
+import RoadIntelligence, { type RoadJourneyContext } from './RoadIntelligence';
 import EvidenceAssistant from './EvidenceAssistant';
+import DeliveryOutlook from './DeliveryOutlook';
 import WorkspaceGuide from './WorkspaceGuide';
 import EventImpactPanel from './EventImpactPanel';
 import ActivityTimeline from './ActivityTimeline';
@@ -71,6 +72,25 @@ export default function App() {
   const [lastRecompute, setLastRecompute] = useState<{time:string; revision:number; count:number; same:boolean}>();
   const [confirmedEvent, setConfirmedEvent] = useState<{receipt:any;comparison:any}>();
   const [activityOpen, setActivityOpen] = useState(false);
+  const [roadJourney, setRoadJourney] = useState<RoadJourneyContext>();
+  function navigate(target: View) {
+    if (target === 'roads') setRoadJourney(undefined);
+    if (target === 'command' && (view === 'dispatch' || view === 'roads')) setFocusTarget('command-scenarios');
+    setView(target);
+  }
+  function compareShipmentRoad(id: string) {
+    const candidate = network?.shipments.find(row => row.id === id);
+    const origin = network?.nodes.find(row => row.id === candidate?.origin);
+    const destination = network?.nodes.find(row => row.id === candidate?.destination);
+    const usable = (point: unknown): point is [number,number] => Array.isArray(point) && point.length === 2 && point.every(value => typeof value === 'number' && Number.isFinite(value)) && Math.abs(point[0]) <= 180 && Math.abs(point[1]) <= 90;
+    if (!network || !candidate || !origin || !destination || !usable(origin.coordinates) || !usable(destination.coordinates)) {
+      setError('This candidate has no usable journey in the current network. Reload the plan before comparing roads.');
+      return;
+    }
+    setSelectedId(candidate.id);
+    setRoadJourney({shipmentId:candidate.id,networkRevision:network.revision,origin:[...origin.coordinates],destination:[...destination.coordinates],originName:origin.name,destinationName:destination.name});
+    setView('roads');
+  }
   function focusActivity() { const panel=document.getElementById('activity-history'); panel?.scrollIntoView?.({block:'start',behavior:'auto'}); panel?.focus({preventScroll:true}); }
   useEffect(() => { if (activityOpen) focusActivity(); },[activityOpen]);
   function setActionBusy(value: boolean) { actionLock.current = value; setBusy(value); if (value) { setNotice(''); setError(''); } }
@@ -181,7 +201,7 @@ export default function App() {
       <nav aria-label="Main navigation">
         <button className={view === 'command' ? 'active' : ''} onClick={() => setView('command')}><Gauge size={19} /> Command center <ChevronRight size={14} /></button>
         <button className={view === 'routes' ? 'active' : ''} onClick={() => setView('routes')}><Route size={19} /> Route laboratory</button>
-        <button className={view === 'roads' ? 'active' : ''} onClick={() => setView('roads')}><MapPin size={19} /> Road intelligence</button>
+        <button className={view === 'roads' ? 'active' : ''} onClick={() => navigate('roads')}><MapPin size={19} /> Road intelligence</button>
         <button className={view === 'dispatch' ? 'active' : ''} onClick={() => setView('dispatch')}><ClipboardCheck size={19} /> Dispatcher desk</button>
         <button className={view === 'evidence' ? 'active' : ''} onClick={() => setView('evidence')}><Database size={19} /> Sources & evidence</button>
         <button className={view === 'science' ? 'active' : ''} onClick={() => setView('science')}><Activity size={19} /> Model evaluation</button>
@@ -196,7 +216,7 @@ export default function App() {
       {!driverOnly && <header className="topbar"><span><span className="breadcrumb">AEGIS</span><ChevronRight size={13} /> {view === 'brief' ? 'Team status and presentation' : view === 'routes' ? 'Farm & fleet planning' : view === 'roads' ? 'Independent road evidence' : view === 'assistant' ? 'Cited operational explanations' : view === 'dispatch' ? 'Dispatcher review' : view === 'drive' ? 'Driver workspace' : view === 'science' ? 'Scientific validation' : view === 'evidence' ? 'Data provenance' : 'Command center'}</span><div><span className="environment-badge">SIMULATED OPERATIONS</span><button aria-label="Reload application data" className="icon-button" disabled={busy} onClick={() => void refreshApplication()}><RefreshCw size={17} /></button><button className="icon-button" aria-label="Open review queue" onClick={() => jump("command-review-queue")}><Bell size={18} /></button><button className="secondary small" id="open-activity-history" aria-label="Open activity history" aria-controls="activity-history" aria-expanded={activityOpen} onClick={() => { if (activityOpen) focusActivity(); else setActivityOpen(true); }}>Recent activity</button><span className="avatar">OP</span></div></header>}
       <div className="content"><RuntimeBanner runtime={network?.runtime} requestedRehearsal={!!network && new URLSearchParams(window.location.search).get('mode') === 'rehearsal'} />
         {!driverOnly && <div className="page-heading"><div><div className="eyebrow">{view === 'drive' ? 'AEGIS DRIVE' : 'ADAPTIVE EARLY-WARNING & GUIDANCE'}</div><h1>{view === 'brief' ? 'Know what works. Show the evidence.' : view === 'routes' ? 'Test the journey ahead' : view === 'roads' ? 'Inspect the road ahead' : view === 'assistant' ? 'Understand the evidence behind a decision' : view === 'dispatch' ? 'Turn reports into reviewed action' : view === 'command' ? 'Regional command center' : view === 'evidence' ? 'Evidence with a clear origin' : view === 'science' ? 'Measured model performance' : 'Your assigned journey'}</h1><p>{view === 'brief' ? 'Your maintained feature register, executed checks and downloadable presentation brief.' : view === 'routes' ? 'Single-farm dispatch and multi-location fleets · Simulated operations, explicit assumptions, inspectable routes.' : view === 'assistant' ? 'Read-only answers grounded in a captured network and dated evidence. Human decisions stay in their existing workflows.' : view === 'roads' ? 'Explore Missouri and Iowa official road events, compare alternatives, and inspect coverage before any operational decision.' : view === 'dispatch' ? 'Driver reports, human-approved holds, and versioned trip instructions in one shared workflow.' : view === 'command' ? 'Missouri poultry network · Monitor conditions. Compare responses. Keep people in control.' : view === 'drive' ? 'Park safely before using this interface. Assignments appear only after dispatcher approval.' : view === 'science' ? 'A retrospective feasibility study of selected FSIS poultry samples. No consumer illness probability.' : 'Public source responses, coverage gaps, retrieval times, and supplied data.'}</p></div><div className="date-block"><span>SCENARIO REFERENCE DATE</span><strong>October 26, 2026</strong></div></div>}
-        {!driverOnly && <WorkspaceGuide view={view} onNavigate={setView} />}
+        {!driverOnly && <WorkspaceGuide view={view} onNavigate={navigate} />}
         {!driverOnly && activityOpen && <div id="activity-history" tabIndex={-1} style={{scrollMarginTop:90}}><ActivityTimeline onClose={() => { setActivityOpen(false); document.getElementById('open-activity-history')?.focus(); }} onNavigate={target => { setActivityOpen(false); setView(target); }} onSelectShipment={id => { setActivityOpen(false); setView('command'); if (network?.shipments.some(row => row.id === id)) { setSelectedId(id); setFocusTarget('command-trip-detail'); } else setNotice(`Recorded trip ${id} is not present in the current network. Its historical audit entry remains available.`); }} /></div>}
         {error && <div role="alert" className="feedback error"><TriangleAlert size={18} />{error}<button onClick={() => setError('')} aria-label="Dismiss error"><X size={16} /></button></div>}
         {notice && <div role="status" className="feedback success"><CheckCircle2 size={18} />{notice}<button onClick={() => setNotice('')} aria-label="Dismiss notification"><X size={16} /></button></div>}
@@ -204,6 +224,7 @@ export default function App() {
         {!network && <div className="empty-state"><Radio size={30} /><h2>Connecting to the local backend</h2><p>Run <code>python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000</code>.</p><button onClick={() => load()}>Retry connection</button></div>}
         {view === 'brief' && <ProjectBrief onNavigate={setView} />}
         {network && view === 'command' && <>
+          <DeliveryOutlook network={network} onInspectShipment={id => { setSelectedId(id); jump('command-trip-detail'); }} onNavigate={navigate} onReviewPlans={() => jump('command-scenarios')} onCompareShipmentRoad={compareShipmentRoad} onReloadNetwork={load} />
           <div className="stats-grid"><Stat label="NETWORK SHIPMENTS" value={network.shipments.length} note={`${network.nodes.filter(n => n.kind === 'destination').length} destinations · all simulated`} icon={<Truck size={20} />} /><Stat label="COLD-CHAIN REVIEW" value={excursions.length} note="Simulated cargo excursions > 4°C" icon={<Snowflake size={20} />} alert /><Stat label="APPROVED ASSIGNMENTS" value={assignments.length} note={`${assignments.filter(s => s.acknowledged).length} acknowledged by simulated drivers`} icon={<ClipboardCheck size={20} />} /><Stat label="PUBLIC ENDPOINT PROBES" value={`${totalSuccessful}/${coverage.length}`} note="HTTP success; data coverage differs" icon={<Radio size={20} />} /></div>
           <div className="operations-grid"><section className="panel map-panel" id="command-network-map" tabIndex={-1}><div className="panel-heading"><div><h2>Distribution network</h2><span>20 fictional locations across Missouri</span></div><span className="pill green"><i className="live-dot" /> Seed {network.seed}</span></div><div className="command-map-controls"><label>Show allocation on map<select aria-label="Map allocation" value={mapPlan} onChange={event => setMapPlan(event.target.value)}><option value="candidates">All {network.shipments.length} candidate shipments</option><option value="approved">Current approved assignments ({assignments.length})</option>{scenarios.map(row => <option key={row.scenario} value={row.scenario}>Scenario {row.scenario}: {row.shipments.length} proposed trips</option>)}</select></label><p>Allocation links show which candidates a plan selects. Request a road route separately to see road geometry.</p></div><NetworkMap selectedAlternative={selectedAlternative} planOverlay={mapOverlay} network={network} facilities={facilities} weather={evidence.nws_alerts} roads={evidence.modot} route={route} selected={selected} onSelect={setSelectedId} /><div className="map-footer"><MapPin size={14} /><span>OpenStreetMap base map · internet required for tiles</span><span>Real source layers + explicitly simulated entities</span></div></section>
           <section className="panel review-panel" id="command-review-queue" tabIndex={-1}><div className="panel-heading"><div><h2>Review queue</h2><span>Evidence prompts a human decision</span></div><span className="count-badge">{reviewAlerts.length}</span></div><div className="review-list">{reviewAlerts.slice(0, 5).map((a, i) => <div className="review-item" key={i}><span className={`review-icon ${a.color}`}><TriangleAlert size={16} /></span><div><strong>{a.title}</strong><p>{a.body}</p><span className="tiny">{a.title.startsWith('NWS') ? 'Official dated evidence' : 'SIMULATED · OPERATIONAL REVIEW'}</span><button className="text-button command-review-action" onClick={() => { if ('shipmentId' in a && a.shipmentId) { setSelectedId(a.shipmentId); jump('command-trip-detail'); } else if ('target' in a && a.target) setView(a.target); }}>{'shipmentId' in a ? `Inspect ${a.shipmentId}` : 'target' in a && a.target === 'dispatch' ? 'Open lot review' : 'Inspect official evidence'}<ArrowRight size={13} /></button></div></div>)}</div><div className="queue-footnote"><ShieldCheck size={16} /> Predictive scores never impose a mandatory hold.</div></section></div>
@@ -216,9 +237,9 @@ export default function App() {
           <div className="command-result-actions"><button className="secondary" disabled={busy} onClick={() => { setResetError(''); setResetOpen(true); }}>Reset demo</button><span>Restores the seeded network and clears approved assignments after confirmation.</span></div>
         </>}
         {view === 'routes' && <RouteLab />}
-        {view === 'roads' && <RoadIntelligence />}
-        {view === 'assistant' && <EvidenceAssistant onNavigate={setView} />}
-        {view === 'dispatch' && <DispatcherDesk onChange={async () => { await load(); }} />}
+        {view === 'roads' && <RoadIntelligence onNavigate={navigate} initialJourney={roadJourney} currentNetworkRevision={network?.revision} />}
+        {view === 'assistant' && <EvidenceAssistant onNavigate={navigate} initialShipmentId={selected?.id} />}
+        {view === 'dispatch' && <DispatcherDesk onNavigate={navigate} onChange={async () => { await load(); }} />}
         {network && view === 'command' && <ScenarioDetails scenarios={scenarios} />}
         {view === 'science' && <ModelTimingCard />}
         {view === 'science' && <ModelErrorAnalysis model={model} />}

@@ -4,6 +4,20 @@ Use **Command center** when you want to see the simulated Missouri distribution 
 
 The standard scenario has 3 simulated suppliers, 2 distribution centers, 15 destinations, 8 refrigerated trucks, 12 lots and 24 candidate shipments. These are reproducible planning entities, not a live business account. The scenario reference date is October 26, 2026. An October 26 cargo trace is not today's observed temperature. Different saved operator states can produce different current results.
 
+### Start with the delivery outlook
+
+**Where could this delivery plan run into trouble?** calculates a read-only planning estimate when Command opens. Read **Unserved demand**, **Deadline pressure** and **Cargo checks**, then use **Inspect SH...** to open a candidate's trip detail. **Check road alternatives** opens the separate Road intelligence workspace; it does not apply a detour.
+
+Choose **Extra road delay**, then **Estimate impact**, or use **Try a 1-hour delay**. The interface offers 0, 30, 60, 120 or 240 added minutes. Delay is applied uniformly to every candidate's planning duration, including trips the allocation never selects. It is your assumption, not a delay inferred from a closure or weather warning. **Check current inputs** resets the additional assumptions to no extra delay, 30°C ambient and no additional fault.
+
+Expand **Cargo assumptions** to set ambient temperature from −20 to 45°C and optionally assume a refrigeration fault on a simulated truck. A fault also excludes that truck from the preview allocation. Previously recorded simulated faults remain in effect. Ambient temperature is a chosen assumption, not fetched weather; cargo readings are simulated. Each thermal calculation checks the earlier of modeled arrival and six hours. A trip beyond six hours is explicitly labeled **at six hours; not yet arrived**. Review flags describe the modeled window, not measured cargo failure.
+
+The backend recomputes current-input scenario A and the four A–D responses under the chosen assumptions using the actual allocation solver. Stock, capacity, demand, deadlines, holds, recalls and eligibility still constrain the results. **Compare the four preview responses** shows solver status, cost, selected trips, unmet demand and constraint checks. The comparison baseline is recomputed scenario A, not the approved driver-assignment list. **Which destinations have unmet demand?** identifies the remaining service gaps; **Why?** on an unselected candidate explains recorded exclusions.
+
+This is a deterministic what-if calculation using uncalibrated thermal assumptions. No prospective delay or cargo-failure prediction skill has been established. The saved FSIS sampling-model evaluation is separate. Projected temperatures do not replace current cargo readings, impose holds or become newly observed excursions in scenario C. No result changes routes, inventory or driver assignments.
+
+**Export outlook JSON** saves the captured assumptions and result. Editing inputs leaves that result and its export unchanged until a new estimate succeeds; an older network revision is labeled. Read **How this estimate works** before presenting it as evidence. A failed calculation is reported; reload the current plan when requested rather than presenting an older estimate as current.
+
 ### Read the four summary cards
 
 | Card | What it tells you | How to use it |
@@ -17,7 +31,9 @@ The **Review queue** combines simulated excursions, active simulated holds and a
 
 ### Explore the distribution map
 
-Open the **Evidence layers** controls on the map. Their checkboxes change what is drawn; they do not change the underlying operation.
+Start with a map view: **Plan deliveries** focuses on logistics and any requested route; **Check weather** adds warning areas; **Review roads** adds captured road incidents; **View facilities** compares official locations with the fictional network. These presets change visibility only. They do not recalculate or approve a delivery plan.
+
+Below the map, **What is on this map?** gives each layer's purpose, available counts or missing-data message. Use its checkboxes for a custom view and **What is this for?** for one layer's explanation and available source times. A layer switch cannot download missing evidence or generate a road route. The compact symbol guide explains the fictional locations and dashed shipment links.
 
 Use **Show allocation on map** to choose which simulated origin-destination links are drawn. The selector is labeled **Map allocation** for accessibility. **All ... candidate shipments** shows the available candidate set; **Scenario A/B/C/D** shows that response's proposed trips; **Current approved assignments** shows the recorded assignment set. The caption reports the displayed scope and count. A proposed or approved lot can differ from the candidate's original lot, so inspect the popup and assignment detail before reading a line as the original candidate. If there are no approved assignments, the approved overlay is empty rather than silently showing candidates.
 
@@ -25,11 +41,11 @@ Changing an overlay selects a view of an allocation, not a road route. The dashe
 
 | Layer | What appears | Meaning |
 | --- | --- | --- |
-| Simulated logistics | Fictional locations, shipment links and truck markers | A distribution-network exercise; dashed links are estimated connections rather than roads |
-| FSIS establishments | Coordinates from the supplied official establishment directory | Real source locations; no simulated contract or shipment relationship is implied |
-| NWS alert geometry | Captured official alert polygons or points where geometry is supplied | Dated severe-weather evidence; read retrieval and provider times separately |
-| MoDOT incident geometry | Captured Missouri road-event points or lines | Independent road evidence; it is not automatically incorporated into a route |
-| Route geometry | The displayed OSRM route alternatives or labeled estimated fallback | A route comparison, not a dispatched detour or certified truck route |
+| Simulated deliveries | Fictional locations, shipment links and truck markers | A distribution-network exercise; dashed links join origins and destinations rather than following roads |
+| FSIS facilities | Coordinates from the supplied official establishment directory | Real source locations; no simulated contract or shipment relationship is implied |
+| Weather warnings | Captured official alert polygons or points where geometry is supplied | Dated public warnings, not measurements of cargo temperature |
+| Road incidents | Captured Missouri road-event points or lines | Independent road evidence; proximity does not establish that a route is blocked |
+| Requested route | The requested OSRM alternatives or labeled estimated fallback | A route comparison, not a dispatched detour or certified truck route |
 
 Click a simulated shipment line or truck marker to select its associated trip. A truck's Command marker is an illustrative midpoint of an origin-to-destination connection, not GPS. Click a location or evidence geometry for its popup. Zoom and pan to investigate the area. The OpenStreetMap base map needs internet; a missing tile is different from a missing shipment or provider record.
 
@@ -43,7 +59,7 @@ The fixed trip estimate uses straight-line distance multiplied by 1.25 at an ass
 
 **Request road route** asks OSRM for ordinary-driving geometry and available alternatives. While it runs, the button says **Finding road route...** and a nearby status explains what is being computed. A successful result brings **Route alternatives & road review** into view. A failure is reported by the trip control; unusable geometry is not presented as a successful comparison. An estimated fallback is visibly labeled when that is what was returned.
 
-The result shows distances, travel estimates and captured MoDOT geometries within a 250-meter buffer. **Highlight alternative 1/2/...** changes the comparison selected for the map. **Focus route map** brings that map into view; enable the **Route geometry** layer if you previously hid it. **Export route comparison JSON** downloads the captured comparison and selected alternative without creating an assignment. No alternative button changes a lot, stop order, fixed allocation estimate or driver instruction.
+The result shows distances, travel estimates and captured MoDOT geometries within a 250-meter buffer. **Highlight alternative 1/2/...** changes the comparison selected for the map. **Focus route map** brings that map into view; enable **Requested route** if you previously hid it. **Export route comparison JSON** downloads the captured comparison and selected alternative without creating an assignment. No alternative button changes a lot, stop order, fixed allocation estimate or driver instruction.
 
 Read whether geometry is estimated, whether road evidence is stale or incomplete, and whether the route label belongs to the selected shipment. The comparison displays Command's planning duration separately from the road-service estimate; a difference is not a measured time saving. Nearby parallel roads and duplicate point/line records can produce matches. Zero matches is not road clearance. OSRM does not validate truck height, weight or other commercial restrictions, incorporate the simulated event delay, or automatically avoid current DOT closures.
 
@@ -99,6 +115,12 @@ If approval fails, **Approval did not complete** appears inside the still-open d
 The present one-wave model does not decrement the simulated stock as a warehouse shipment transaction when a plan is approved. Stock quantities are constraints for the current allocation exercise, not a continuously reconciled warehouse ledger. Approving another plan replaces the current assignment set rather than appending a second independent wave.
 
 Held, recalled and ineligible lots remain excluded regardless of cost preferences. The hard constraints cannot be traded away for a cheaper solution. A precautionary release is handled separately in Dispatcher desk; it cannot clear a confirmed recall.
+
+### Follow the next action in Dispatcher desk
+
+**Handle a delivery decision in three steps** starts with the actual approved-trip count. With no approved trips, **Choose a response plan** opens Command; otherwise the first step can open the approved driver view. Next, **Add name and reason** takes you to the required decision-record fields. Identity is self-declared in this local demonstration.
+
+The final step points to outstanding driver reports first, then targeted verification, then instructions and acknowledgment readiness. Its buttons focus the relevant section; they do not submit a decision. Disabled controls explain which information is missing. To change operational state, review and submit the specific report, hold, verification or instruction form. A projected temperature or an assistant suggestion never submits it for you.
 
 ### Exercise a disruption and see its consequences
 
@@ -210,6 +232,12 @@ Save is disabled until there is a completed run, the name is long enough, and th
 ## Road intelligence: inspect independent road evidence
 
 Use **Road intelligence** when you want a separately attributed Missouri/Iowa road-event view or a route comparison between two locations. It does not select cargo, allocate a fleet, dispatch a driver or alter an approved assignment. A corridor's real locations do not create a supply contract.
+
+To inspect a particular candidate, start in Command's delivery outlook and choose **Compare roads for SH...** on that row. Road intelligence opens with that candidate's named origin, destination and captured network revision. Click **Compare this journey** to calculate its route comparison; opening the workspace alone does not run it. The sidebar's **Road intelligence** and the outlook's general **Check road alternatives** button open the named journey examples instead. Editing an endpoint or choosing another journey detaches candidate attribution.
+
+**Export comparison JSON** preserves the compared candidate ID, endpoints and network revision when the comparison came from Command; a later edit does not rewrite that captured result. Read any older-input warning and reopen the candidate from Command to use current endpoints. **Compare delivery responses in Command** returns to the current operational scenario table. The outlook's **Review current response plans** reaches the same table; its extra-delay and cargo assumptions remain in the preview. These links do not approve a trip, transfer route geometry into an assignment or change Drive.
+
+Start with **Check a journey in three steps**: **Choose the journey**, **Compare travel options**, then **Read the notices, then decide**. The first button takes you to the journey selector. **Compare this journey** runs the calculation; the last step opens a nearby notice or focuses the comparison result. When inputs change, the guide asks you to run the comparison again. No notices is a coverage-limited result, not road clearance.
 
 ### Start with source cards
 

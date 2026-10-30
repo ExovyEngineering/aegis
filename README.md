@@ -6,6 +6,17 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Run locally
 
+In **Command center**, start with the delivery outlook: test a one-hour delay,
+inspect the trips under pressure, then compare a response. These are clearly
+labeled planning estimates over simulated inputs. In **Evidence assistant**,
+type “chicken” or click a question to get guided, cited help. Map presets and the
+Road/Dispatcher steps explain what to do next. See
+[the outlook's scope](docs/delivery_outlook.md).
+
+Use **Compare roads for SH…** to carry that candidate's endpoints into Road
+intelligence. **Review current response plans** opens Command's comparison table;
+the preview itself does not apply its what-if assumptions or approve a plan.
+
 After installing the dependencies below, Windows users can double-click
 **Start-AEGIS.cmd**, or run `.venv/Scripts/python scripts/start_local.py`.
 The launcher builds the current frontend and starts the operator server in that

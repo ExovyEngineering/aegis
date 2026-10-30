@@ -4,7 +4,7 @@ export async function api<T>(path: string, body?: unknown): Promise<T> {
   try { data = await response.json(); } catch { throw new Error(`The server returned an unreadable response (${response.status ?? 'unknown status'}). Check the backend connection and retry.`); }
   if (!response.ok) {
     const detail = typeof data.detail === 'string' ? data.detail : Array.isArray(data.detail) ? data.detail.map((error: { loc?: (string | number)[]; msg?: string }) => `${error.loc?.filter(part => part !== 'body').map(part => typeof part === 'number' ? part + 1 : part.replaceAll('_', ' ')).join(' > ') || 'Input'}: ${error.msg ?? 'Check this value'}`).join('; ') : `Request failed (${response.status})`;
-    throw new Error(detail);
+    throw Object.assign(new Error(detail), { status: response.status });
   }
   return data as T;
 }

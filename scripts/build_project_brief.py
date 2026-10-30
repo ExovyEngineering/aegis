@@ -57,6 +57,10 @@ def sections(root):
     if roads:
         tested=roads.get('checks',[])
         testlines.append(f"Road intelligence actual-Chrome QA: {sum(bool(c.get('passed')) for c in tested)} / {len(tested)} checks passed, checked {roads.get('checked_at','not recorded')}. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.")
+    friendly=load(root,'reports/friendliness_workflow_evaluation.json',{})
+    if friendly:
+        rows=friendly.get('checks',[])
+        testlines.append(f"Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} checks at {friendly.get('checked_at','not recorded')}. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.")
     followup=load(root,'reports/ci_followup.json',{})
     if followup:
         testlines.append('A duplicate push CI run failed a rehearsal frontend test while its PR run passed. The test acted before initial React effects settled; synchronization was corrected without relaxing the original assertions or changing product behavior. The failed log and focused follow-up outcomes are retained in reports/ci_followup.json and reports/checks/. Later full checks and remote runs have their own timestamps; a historical pass never substitutes for them.')

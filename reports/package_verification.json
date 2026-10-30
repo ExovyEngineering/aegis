@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "passed": true,
-  "checked_at": "2026-10-30T04:15:40.030098+00:00",
+  "checked_at": "2026-10-30T19:49:33.103103+00:00",
   "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\aegis-review-draft.zip",
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
@@ -17,6 +17,8 @@
     "openmeteo dated fixture works without network/cache",
     "network, measured model and source coverage reports are available",
     "read-only assistant explains exact captured facts without a provider or model call",
+    "broad chicken question returns canonical read-only assistant choices without a model call",
+    "read-only delivery outlook compares current and delayed allocations with simulation provenance and independent constraints",
     "read-only disruption preview computes four real before/after allocations without changing network or route geometry",
     "separate dated Iowa/Missouri road fixtures and estimated comparison work without network",
     "all eight semantic source tables browse with matching snapshot checksums",
@@ -69,6 +71,14 @@
     },
     {
       "name": "read-only assistant explains exact captured facts without a provider or model call",
+      "status": "passed"
+    },
+    {
+      "name": "broad chicken question returns canonical read-only assistant choices without a model call",
+      "status": "passed"
+    },
+    {
+      "name": "read-only delivery outlook compares current and delayed allocations with simulation provenance and independent constraints",
       "status": "passed"
     },
     {
@@ -141,14 +151,14 @@
     "Only trusted project archives may be executed. Internal hashes are not a signature or an untrusted-code security sandbox.",
     "Offline ASGI workflows do not prove a real browser rendering, live provider connectivity or a completed timed presentation."
   ],
-  "archive_sha256": "a6eee66768b811066ca1477a451ea72a9c457a2b5d9f7d86464be064cab0410f",
-  "manifest_files_verified": 628,
-  "archive_files": 629,
-  "uncompressed_bytes": 35347817,
+  "archive_sha256": "d540287460f41e014195796cbe6f03b0847678338ad737e081ebd37a41ec5482",
+  "manifest_files_verified": 724,
+  "archive_files": 725,
+  "uncompressed_bytes": 46170696,
   "network_guard_enabled": true,
   "network_attempts": [],
   "worker_exit_code": 0,
-  "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\clean-room-20261028\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
-  "finished_at": "2026-10-30T04:15:59.278698+00:00",
-  "duration_seconds": 19.25
+  "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
+  "finished_at": "2026-10-30T19:49:41.659047+00:00",
+  "duration_seconds": 8.557
 }

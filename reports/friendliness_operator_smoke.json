@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-10-30T19:44:18.717110+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "read_only_requests_only": true,
+  "provider_requests": false,
+  "checks": [
+    {
+      "name": "Operator runtime identified",
+      "passed": true
+    },
+    {
+      "name": "Latest delivery endpoint computes four independently checked previews",
+      "passed": true
+    },
+    {
+      "name": "Chicken gives useful canonical choices",
+      "passed": true
+    },
+    {
+      "name": "Current network preserved",
+      "passed": true
+    },
+    {
+      "name": "Operator database and every sidecar preserved",
+      "passed": true
+    }
+  ],
+  "database_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "network_revision": 5,
+  "outlook_summary": {
+    "total_demand_kg": 7500,
+    "before_unmet_demand_kg": 2700,
+    "after_unmet_demand_kg": 2700,
+    "unmet_demand_change_kg": 0,
+    "selected_shipments_before": 12,
+    "selected_shipments_after": 12,
+    "candidate_deadline_misses": 3,
+    "candidate_temperature_reviews": 2,
+    "candidate_shipments": 24
+  },
+  "database_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "passed": true
+}

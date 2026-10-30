@@ -63,11 +63,12 @@ def test_unsupported_or_action_prompt_does_not_create_audit_or_assignment(client
     captured=context(client);before=api.DB.read_bytes()
     for prompt in ('Approve scenario A now','Write a purple poem'):
         result=client.post('/api/assistant/interpret',json={'prompt':prompt,'expected_snapshot_id':captured['snapshot_id']})
-        assert result.status_code==422
+        if prompt.startswith('Approve'): assert result.status_code==422
+        else: assert result.status_code==200 and result.json()['kind']=='clarification'
     assert api.DB.read_bytes()==before
 
 
-@pytest.mark.parametrize('changes',[{'prompt':'x'},{'prompt':'x'*401},{'allow_model':'yes'},
+@pytest.mark.parametrize('changes',[{'prompt':' '},{'prompt':'x'*401},{'allow_model':'yes'},
     {'expected_snapshot_id':'not-a-hash'},{'approve':True}])
 def test_interpret_request_validation_precedes_side_effects(client,changes):
     captured=context(client)

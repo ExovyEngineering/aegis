@@ -1,8 +1,55 @@
 # Progress and acceptance evidence
 
-Session date: October 29, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Session date: October 30, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
-## Latest: local launcher and recorded activity (October 29)
+## Latest: guided delivery planning and clearer workspaces (October 30)
+
+- Command now starts with a read-only delivery outlook: current-input and chosen
+  delay/fault/ambient comparisons, actual baseline-plus-four allocation runs,
+  independently checked constraints, destination shortages, candidate deadlines
+  and capped six-hour cargo projections. Captured exports do not change with
+  draft inputs. Cargo flags explain peak temperature and time above the review
+  level even if arrival temperature is lower. No prospective skill is claimed.
+- Broad assistant queries such as **chicken** now return useful canonical choices.
+  Common questions answer in one click, selected shipments carry into the helper,
+  short questions work, recoverable action errors retain context and technical
+  provenance stays available under expandable details. Answers remain exact
+  server-authored facts; the optional model does not write evidence or act.
+- Map presets explain each task/layer, count actual features and distinguish an
+  empty source from hidden features. Road intelligence starts with a named
+  journey and three steps; Dispatcher desk provides actionable next steps,
+  including the empty-assignment path back to plan review.
+- Follow-up handoffs carry an exact candidate's endpoints, names and revision
+  into Road intelligence. Source loading cannot overwrite them; manual choices
+  detach candidate attribution. Comparison/export retain their original captured
+  trip if inputs change. Generic Road navigation starts a separate named example.
+  Outlook, Road and Dispatcher shortcuts focus the current response-plan table.
+  The assistant's new scope fact cites bounded, hashed documentation/code and
+  reports unavailable guidance without inventing projection results.
+- Final full local checks: **930 pytest passed** (four platform skips),
+  **337 Vitest passed**, production build passed. Four upstream Python warnings
+  remain. Executed logs: `reports/checks/20261030T193821929669Z/`.
+  **76 actual-Chrome workflow checks** and 14 desktop/mobile screenshots are in
+  `reports/friendliness_workflow_evaluation.json`; public tiles used explicitly
+  labeled browser-only placeholders. No public provider or model was queried.
+  Earlier morning checks (922/316 and 61 browser checks) remain separately dated.
+- Five real operator HTTP checks passed on the latest foreground launcher:
+  current outlook, chicken clarification and unchanged
+  network/SQLite/sidecars. The previously saved farm experiment is preserved.
+  All **42 original SHA256 hashes matched** (1,017,948,267 bytes streamed) in
+  `reports/friendliness_raw_integrity.json`. No raw/cache/fixture refresh occurred.
+- Updated maintained user chapters, model/architecture scope, morning review,
+  feature register and printable-guide generators. Reviewer checks now exercise
+  chicken guidance and both current/delayed outlooks with networking disabled.
+  Genuine Kiro execution, author/rubric review, timed team presentation and the
+  existing scientific/data-access gaps remain separate open requirements.
+- The final reviewer bundle passed **27 offline extracted checks**, including
+  both outlooks and broad-question guidance with socket/DNS guards. The updated
+  **73-page handbook** passed **37 actual-Chrome download/print checks**;
+  page numbers, bookmarks, contents destinations and source hashes were verified.
+  Original data, active databases and credentials stay excluded from the ZIP.
+
+## Previous: local launcher and recorded activity (October 29)
 
 - Added a Windows entry point and foreground Python launcher with separate
   source-build, explicitly prebuilt and non-mutating diagnostic modes. Effective

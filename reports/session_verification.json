@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T03:42:05.057315+00:00",
-  "finished_at": "2026-10-30T04:06:05.429930+00:00",
+  "generated_at": "2026-10-30T19:38:21.922959+00:00",
+  "finished_at": "2026-10-30T19:40:31.641554+00:00",
   "all_passed": true,
   "checks": [
     {
@@ -11,13 +11,13 @@
         "pytest",
         "-q"
       ],
-      "checked_at": "2026-10-30T03:42:05.062871+00:00",
+      "checked_at": "2026-10-30T19:38:21.930251+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 53.301,
-      "tests_passed": 824,
-      "log": "reports/checks/20261030T034205062600Z/pytest.txt",
-      "log_sha256": "09dafac055de2d12aac3e6abc6243cee838d790a41ae53370ee8ac23a9f57e42"
+      "duration_seconds": 71.14,
+      "tests_passed": 930,
+      "log": "reports/checks/20261030T193821929669Z/pytest.txt",
+      "log_sha256": "9144575821b3cd8688215076fcd79cef9717bb0295ae10711ffe1c993732307a"
     },
     {
       "name": "vitest",
@@ -28,13 +28,13 @@
         "frontend",
         "test"
       ],
-      "checked_at": "2026-10-30T03:56:07.712713+00:00",
+      "checked_at": "2026-10-30T19:39:33.086714+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 28.774,
-      "tests_passed": 240,
-      "log": "reports/checks/activity-frontend-followup/vitest.txt",
-      "log_sha256": "a41390a16ff65c6a4b631a482254687fa2d0917b28867769b76c1d7e0bdb71fb"
+      "duration_seconds": 27.841,
+      "tests_passed": 337,
+      "log": "reports/checks/20261030T193821929669Z/vitest.txt",
+      "log_sha256": "6851b6300d48d5e69e6d90bb68209ce3da3568ed723e4809d3cb1d9d2f2a6bf6"
     },
     {
       "name": "frontend_build",
@@ -46,17 +46,16 @@
         "run",
         "build"
       ],
-      "checked_at": "2026-10-30T03:56:36.508058+00:00",
+      "checked_at": "2026-10-30T19:40:00.944308+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 14.62,
+      "duration_seconds": 30.681,
       "tests_passed": null,
-      "log": "reports/checks/activity-frontend-followup/frontend_build.txt",
-      "log_sha256": "2cd4d56c0f49c903d1e98c2c61b1628f5afeb7a3d5895e6cfa28748b32940789"
+      "log": "reports/checks/20261030T193821929669Z/frontend_build.txt",
+      "log_sha256": "1ef1332c7c873e7634e1989128bf718fe4e1fb2f15d1c11d66f5bb382d3b0edb"
     }
   ],
   "live_api_requests_included": false,
   "browser_checks_included": false,
-  "note": "Executed full backend run retained; full frontend tests/build rerun after activity focus refinement. Each check retains its actual command/time/log. Prior runs remain in verification_history.",
-  "frontend_followup_artifact": "reports/checks/activity-frontend-followup/results.json"
+  "note": "Local executed commands, not a claim of GitHub CI or browser completion. Previous reports remain separately dated."
 }

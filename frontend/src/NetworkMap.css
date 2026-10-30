@@ -3,3 +3,34 @@
 .command-map-caption p + p { margin-top: 5px; }
 .command-map-caption .map-geometry-warning { color: #935b27; }
 @media (max-width:700px) { .command-map-caption { padding: 12px 14px; font-size: 10px; } }
+.map-purpose-bar { padding: 15px 18px 12px; border-top: 1px solid #e1e8d9; background: #f4f7ef; color: #426044; }
+.map-purpose-bar > div:first-child { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.map-purpose-bar strong { font-size: 13px; }
+.map-purpose-bar span, .map-view-status { font-size: 11px; line-height: 1.6; }
+.map-presets { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 9px; }
+.map-presets button { min-height: 36px; font-size: 11px; padding: 8px 11px; }
+.map-view-status { margin: 0; }
+.map-layer-guide { padding: 15px 18px; background: #fffef9; border-top: 1px solid #dfe6d6; color: #496443; }
+.map-layer-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.map-layer-heading h3 { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; }
+.map-layer-heading > span { font-size: 10px; background: #eef4e6; border-radius: 4px; padding: 5px 8px; }
+.map-layer-options { display: grid; grid-template-columns: repeat(auto-fit,minmax(145px,1fr)); gap: 9px; }
+.map-layer-option { min-width: 0; padding: 11px; border: 1px solid #e1e7d8; border-radius: 6px; background: #fafbf6; }
+.map-layer-option.enabled { background: #f0f6ea; border-color: #c2d4b5; }
+.map-layer-option label { display: flex; align-items: start; gap: 7px; cursor: pointer; }
+.map-layer-option input { accent-color: #30664f; margin: 2px 0 0; flex-shrink: 0; }
+.map-layer-option strong { font-size: 11px; line-height: 1.5; }
+.map-layer-option p { font-size: 10px; line-height: 1.6; margin: 7px 0; }
+.map-layer-option small { display: block; font-size: 9px; line-height: 1.6; color: #75856c; }
+.map-layer-explain { font-size: 10px; margin-top: 8px; gap: 5px; padding: 4px 0; }
+.map-layer-explanation { padding: 13px 15px; margin-top: 12px; border-left: 3px solid #9dbb8b; border-radius: 4px; background: #f1f6ec; font-size: 11px; line-height: 1.7; }
+.map-layer-explanation > div { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+.map-layer-explanation .pill { font-size: 8px; }
+.map-layer-explanation p { margin: 6px 0; }
+.map-layer-explanation small { display: block; color: #7b806a; font-size: 10px; margin-top: 8px; }
+.map-layer-limit { color: #7b693d; }
+.map-comparison-details { margin-top: 7px; }
+.map-comparison-details summary { cursor: pointer; color: #3d654d; font-size: 11px; }
+.map-comparison-details p { margin-top: 7px; }
+@media (max-width:700px) { .map-purpose-bar,.map-layer-guide { padding: 13px 14px; } .map-presets { display: grid; grid-template-columns: 1fr 1fr; } .map-presets button { min-height: 42px; font-size: 11px; } .map-layer-options { grid-template-columns: 1fr 1fr; } .map-layer-option { padding: 10px; } .map-layer-option label { min-height: 34px; align-items: start; } .map-layer-option input { width: 16px; height: 16px; } .map-layer-explanation { font-size: 12px; } .map-layer-option p { font-size: 11px; } .map-layer-option small { font-size: 10px; } .map-layer-explain { font-size: 11px; min-height: 32px; } }
+@media (max-width:380px) { .map-layer-options { grid-template-columns: 1fr; } }

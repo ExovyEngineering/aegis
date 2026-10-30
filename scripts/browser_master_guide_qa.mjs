@@ -10,11 +10,17 @@ const base='http://127.0.0.1:8000';
 const folder=path.join(root,'reports/browser_qa/master_guide');
 const downloads=path.join(root,'.tools/master-guide-downloads');
 await fs.mkdir(folder,{recursive:true});await fs.mkdir(downloads,{recursive:true});
+try{
+  await fs.access(path.join(folder,'results.json'));
+  const history=path.join(folder,'history',new Date().toISOString().replace(/[:.]/g,'-'));
+  await fs.mkdir(history,{recursive:true});
+  for(const filename of await fs.readdir(folder))if(filename.endsWith('.json')||filename.endsWith('.png'))await fs.copyFile(path.join(folder,filename),path.join(history,filename));
+}catch(error){if(error.code!=='ENOENT')throw error;}
 const digest=body=>createHash('sha256').update(body).digest('hex');
 const fingerprint=async file=>{try{const body=await fs.readFile(file);return {exists:true,bytes:body.length,sha256:digest(body)};}catch(error){if(error.code==='ENOENT')return {exists:false};throw error;}};
 const dbFiles=['','-wal','-shm','-journal'];
 const database=async()=>Object.fromEntries(await Promise.all(dbFiles.map(async suffix=>[suffix||'sqlite',await fingerprint(path.join(root,'data/aegis.sqlite'+suffix))])));
-const result={checked_at:new Date().toISOString(),base_url:base,read_only:true,physical_printer_tested:false,public_provider_refresh_requested:false,checks:[],page_errors:[],http_failures:[],post_requests:[],screenshots:[]};
+const result={checked_at:new Date().toISOString(),base_url:base,read_only:true,physical_printer_tested:false,public_provider_refresh_requested:false,read_only_post_allowlist:['POST /api/delivery-outlook with validated planning inputs and current expected network revision'],checks:[],page_errors:[],http_failures:[],post_requests:[],blocked_mutation_requests:[],screenshots:[]};
 const check=(name,passed,detail='')=>{result.checks.push({name,passed,detail});if(!passed)throw new Error(`${name}: ${detail}`);};
 let browser,page,htmlPage;
 try{
@@ -25,16 +31,24 @@ try{
   browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
   result.browser_version=browser.version();
   const context=await browser.newContext({viewport:{width:1440,height:1000},locale:'en-US',timezoneId:'America/Chicago',acceptDownloads:true});
+  let expectedRevision;
+  const readonlyOutlook=request=>{
+    const url=new URL(request.url());let body;try{body=request.postDataJSON();}catch{return false;}
+    return request.method()==='POST'&&url.origin===new URL(base).origin&&url.pathname==='/api/delivery-outlook'&&!url.search&&body&&Object.keys(body).sort().join(',')==='added_delay_minutes,ambient_temperature_c,expected_network_revision,fault_truck_id'&&Number.isInteger(expectedRevision)&&body.expected_network_revision===expectedRevision&&Number.isInteger(body.added_delay_minutes)&&body.added_delay_minutes>=0&&body.added_delay_minutes<=240&&typeof body.ambient_temperature_c==='number'&&Number.isFinite(body.ambient_temperature_c)&&body.ambient_temperature_c>=-20&&body.ambient_temperature_c<=45&&body.fault_truck_id===null;
+  };
+  await context.route('**/*',async route=>{const request=route.request();if(['GET','HEAD'].includes(request.method())||readonlyOutlook(request))await route.continue();else{result.blocked_mutation_requests.push({url:request.url(),method:request.method()});await route.abort('blockedbyclient');}});
   await context.addInitScript(()=>{window.__guidePrintCalls=0;window.print=()=>{window.__guidePrintCalls++;};});
   context.on('page',current=>{
     current.on('pageerror',error=>result.page_errors.push(error.message));
     current.on('response',response=>{if(response.url().startsWith(base)&&response.status()>=400)result.http_failures.push({url:response.url(),status:response.status()});});
-    current.on('request',request=>{if(request.method()!=='GET'&&request.method()!=='HEAD')result.post_requests.push({url:request.url(),method:request.method()});});
+    current.on('request',request=>{if(request.method()!=='GET'&&request.method()!=='HEAD')result.post_requests.push({url:request.url(),method:request.method(),allowed_read_only_outlook:!!readonlyOutlook(request),body:request.postData()});});
   });
   const capture=async(current,name)=>{await current.screenshot({path:path.join(folder,name+'.png'),fullPage:false});result.screenshots.push(name+'.png');};
   const overflow=async(current,name)=>{const value=await current.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));check(name,value.scroll<=value.width,JSON.stringify(value));};
   const get=async endpoint=>{const response=await context.request.get(base+endpoint);check('HTTP '+endpoint,response.ok(),`HTTP ${response.status()}`);return response;};
   const runtime=await (await get('/api/runtime-context')).json();check('operator_runtime_identified_without_mutation',runtime.mode==='operator'&&!runtime.isolated);
+  const network=await (await get('/api/network')).json();expectedRevision=network.revision;
+  check('current_network_revision_available_for_read_only_request_guard',Number.isInteger(expectedRevision));
   const status=await (await get('/api/project-status')).json();
   check('served_metadata_matches_current_edition',status.manual?.sha256===manifest.sha256&&status.manual?.pages===manifest.pages);
   check('print_layout_records_no_margin_overflow',manifest.overflow_count===0&&manifest.paper==='US Letter');
@@ -86,7 +100,7 @@ try{
   await htmlPage.locator('#'+drive.id).scrollIntoViewIfNeeded();await capture(htmlPage,'mobile-driver-chapter');
   check('no_uncaught_JavaScript_errors',result.page_errors.length===0,JSON.stringify(result.page_errors));
   check('no_failed_application_requests',result.http_failures.length===0,JSON.stringify(result.http_failures));
-  check('no_write_requests_were_sent',result.post_requests.length===0,JSON.stringify(result.post_requests));
+  check('no_write_requests_were_sent',result.blocked_mutation_requests.length===0&&result.post_requests.every(request=>request.allowed_read_only_outlook),JSON.stringify({allowed_read_only_computations:result.post_requests,blocked_mutations:result.blocked_mutation_requests}));
   result.database_after=await database();result.document_after=await fingerprint(path.join(root,manifest.pdf));
   check('operator_SQLite_and_sidecars_unchanged',JSON.stringify(result.database_before)===JSON.stringify(result.database_after));
   check('guide_bytes_stayed_fixed_during_checks',JSON.stringify(result.document_before)===JSON.stringify(result.document_after));

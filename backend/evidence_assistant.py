@@ -26,18 +26,18 @@ ENGINE = {'mode':'deterministic', 'label':'Deterministic evidence summary',
 QUESTION_IDS = Literal['scenario_compare','shipment_review','model_limits',
                        'source_coverage','driver_workflow','next_actions']
 QUESTIONS = [
-    {'id':'scenario_compare','label':'Compare response scenarios',
-     'prompt':'What are the measured tradeoffs across the four current response scenarios?'},
-    {'id':'shipment_review','label':'Review a simulated shipment',
+    {'id':'scenario_compare','label':'What if deliveries are disrupted?',
+     'prompt':'How can I try a delivery what-if and compare the four current response scenarios?'},
+    {'id':'shipment_review','label':'What needs attention on this shipment?',
      'prompt':'What should a dispatcher inspect for the selected simulated shipment?'},
-    {'id':'model_limits','label':'Explain model performance',
-     'prompt':'What did the historical baseline and model actually achieve, and what remains unvalidated?'},
-    {'id':'source_coverage','label':'Explain source coverage',
+    {'id':'model_limits','label':'What can AEGIS actually predict?',
+     'prompt':'How does delivery outlook differ from the measured historical baseline and model, and what remains unvalidated?'},
+    {'id':'source_coverage','label':'Which sources can I use for this plan?',
      'prompt':'Which saved source checks succeeded or failed, and what coverage is missing?'},
-    {'id':'driver_workflow','label':'Explain the driver handoff',
+    {'id':'driver_workflow','label':'How does a plan reach the driver?',
      'prompt':'How do approval, parked acknowledgment, verification and driver reporting connect?'},
-    {'id':'next_actions','label':'Find the next review steps',
-     'prompt':'Which existing workspaces should a human review next without changing state here?'},
+    {'id':'next_actions','label':'Where should I go next?',
+     'prompt':'Where should I start with delivery outlook and continue reviewing without changing state here?'},
 ]
 LIMITATIONS = [
     'Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.',
@@ -45,10 +45,12 @@ LIMITATIONS = [
     'Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.',
     'Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.',
     'A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.',
-    'Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.',
+    'Network/assignment fields share one read-only SQLite transaction. Report and local guidance files are captured independently; provider, retrieval and filesystem reads are not globally atomic.',
     'Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation.',
 ]
 REPORTS = ('model_evaluation.json','model_timing.json','noaa_coverage.json','api_status.json')
+OUTLOOK_GUIDANCE = ('docs/delivery_outlook.md','backend/delivery_outlook.py')
+MAX_GUIDANCE_BYTES = 128 * 1024
 MAX_REPORT_BYTES = 1024 * 1024
 MAX_STATE_BYTES = 8 * 1024 * 1024
 MAX_ASSIGNMENTS = 200
@@ -244,6 +246,28 @@ def _read_reports(root):
     return captured
 
 
+def _read_outlook_guidance(root):
+    """Fingerprint fixed local guidance; never execute or interpret its contents."""
+    sources=[]
+    for relative in OUTLOOK_GUIDANCE:
+        metadata={'path':relative,'status':'unavailable','sha256':None,'bytes':None,'error':None}
+        try:
+            with (root/relative).open('rb') as stream:
+                body=stream.read(MAX_GUIDANCE_BYTES+1)
+            if len(body)>MAX_GUIDANCE_BYTES:
+                metadata.update(bytes_read=len(body),read_prefix_sha256=_sha(body))
+                raise ValueError(f'Guidance exceeds the inspection bound ({MAX_GUIDANCE_BYTES:,} bytes)')
+            metadata.update(bytes=len(body),sha256=_sha(body))
+            if not body.decode('utf-8').strip():
+                raise ValueError('Guidance is empty')
+            metadata['status']='captured'
+        except (OSError,ValueError,UnicodeError) as error:
+            detail=error.strerror if isinstance(error,OSError) else str(error)
+            metadata['error']=f'{type(error).__name__}: {detail}'
+        sources.append(metadata)
+    return sources
+
+
 def _citation(identifier, label, path, sha256=None, retrieved_at=None):
     result={'id':identifier,'label':label,'path':path,'retrieved_at':retrieved_at}
     if sha256 is not None:result['sha256']=sha256
@@ -270,6 +294,7 @@ def capture_context(db_path, root=ROOT):
     path = db_path() if callable(db_path) else db_path
     network, revision, assignments, database = _read_database(path, root)
     reports = _read_reports(root)
+    outlook_guidance = _read_outlook_guidance(root)
     generated = datetime.now(timezone.utc).isoformat()
     facts = []
     db_cite = _citation('network.snapshot','Captured simulated network',database['path'],database['state_sha256'])
@@ -313,6 +338,26 @@ def capture_context(db_path, root=ROOT):
         'Compare feasible scenarios using cost, unmet demand, exclusions and constraints together. Held, recalled and ineligible lots cannot dispatch. A predictive score alone does not impose a mandatory hold. Approval must be recorded in Command against the current revision.',
         'scenario_compare','implemented workflow rules',[rules],
         ['The objective selects a single allocation wave with fixed candidate trip estimates; it is not a continuous inventory ledger.']))
+    outlook_citations=[_citation('outlook.guide' if source['path'].startswith('docs/') else 'outlook.implementation',
+        'Delivery outlook guide' if source['path'].startswith('docs/') else 'Read-only delivery outlook implementation',
+        source['path'],source['sha256']) for source in outlook_guidance]
+    if all(source['status']=='captured' for source in outlook_guidance):
+        facts.append(_fact('outlook.scope','Try a delivery what-if in Command',
+            "Open Command center's delivery outlook. Choose an extra road-delay assumption and select Estimate impact, or use Try a 1-hour delay. "
+            'The chosen delay is added to every simulated candidate trip. The preview compares a newly computed scenario-A allocation of current inputs with responses A-D under the chosen assumptions. '
+            'Cargo checks are illustrative projections capped at six hours. The baseline is not the approved driver-assignment list. '
+            'This is a deterministic planning projection, not a learned disruption forecast or live ETA. Use Inspect to review a candidate or Check road alternatives to inspect separate route evidence. '
+            'The preview changes no route, inventory, hold or driver assignment; any consequential action needs the separate human approval workflow.',
+            'next_actions','server-authored scope guidance; captured local documentation and implementation bytes',outlook_citations,
+            ['This assistant has not calculated a delivery outlook, inferred a delay from DOT or weather, or established predictive skill.',
+             'Ambient temperature is a user planning assumption. Cargo is simulated; thermal coefficients are uncalibrated and review flags do not create holds.',
+             'Measured retrospective FSIS sampling performance remains separate from delivery what-ifs, CDC BEAM surveillance and NORS outbreaks; none is a consumer illness probability.']))
+    else:
+        failures='; '.join(source['path']+': '+source['error'] for source in outlook_guidance if source['status']!='captured')
+        facts.append(_fact('outlook.unavailable','Delivery outlook guidance could not be captured',
+            'The local delivery outlook guide and implementation could not both be captured. '+failures,
+            'next_actions','recorded local guidance failure',outlook_citations,
+            ['No missing documentation, source hash, delivery projection or model performance is invented. Other captured evidence remains available.']))
     lots = {row['id']:row for row in network['lots']}; trucks = {row['id']:row for row in network['trucks']}
     assigned = {row['id']:row for row in assignments}; shipment_roster=[]
     for shipment in network['shipments']:
@@ -457,7 +502,7 @@ def capture_context(db_path, root=ROOT):
         ['This answer navigates to review; it cannot execute a recommendation or override a hold, recall or eligibility constraint.']))
     context={'network_revision':revision,'generated_at':generated,'engine':dict(ENGINE),'questions':QUESTIONS,
              'shipments':shipment_roster,'facts':facts,'scenarios':scenarios,'limitations':LIMITATIONS,
-             'snapshot_sources':[database,*[value['metadata'] for value in reports.values()]],
+             'snapshot_sources':[database,*[value['metadata'] for value in reports.values()],*outlook_guidance],
              'operational_state_modified':False}
     captured=_canonical({key:value for key,value in context.items() if key!='generated_at'})
     if len(captured)>MAX_CONTEXT_BYTES:
@@ -476,15 +521,16 @@ def answer_from_context(context, question_id, shipment_id=None):
             raise HTTPException(404,'Unknown simulated shipment in this captured context')
     elif shipment_id is not None:raise HTTPException(422,'Shipment selection applies only to shipment review')
     details={
-        'scenario_compare':('Current response tradeoffs','Review all feasible allocations and their limitations before a human chooses a response.', [('command','Review scenarios and constraints'),('dispatch','Open dispatcher review')]),
+        'scenario_compare':('Current response tradeoffs','Try a read-only delivery what-if in Command, then compare feasible allocations and their limitations before a human chooses a response.', [('command','Try delivery outlook and compare current responses'),('dispatch','Open dispatcher review')]),
         'shipment_review':('Selected shipment review','Inspect the candidate, current assignment context and separate evidence. No disposition is made here.', [('command','Inspect the shipment and scenarios'),('dispatch','Inspect current lot and assignment state'),('roads','Inspect independent road evidence')]),
-        'model_limits':('Measured model performance and limits','Read the actual retrospective result together with feature-availability and target limitations.', [('science','Open measured model evaluation'),('evidence','Inspect source provenance')]),
+        'model_limits':('Measured model performance and limits','Delivery outlook explores chosen planning assumptions. Read measured retrospective FSIS results separately, together with feature-availability and target limitations.', [('command','Try an illustrative delivery what-if'),('science','Open measured model evaluation'),('evidence','Inspect source provenance')]),
         'source_coverage':('Saved source coverage and failures','These are captured records and coverage reports, not a new live provider check.', [('evidence','Inspect source times and failures'),('roads','Inspect Missouri and Iowa road evidence')]),
         'driver_workflow':('Human-approved driver handoff','Approval, verification, acknowledgment and incident review remain distinct actions.', [('dispatch','Open dispatcher desk'),('drive','Open parked-use Drive')]),
-        'next_actions':('Review steps available now','Use the linked workspaces to inspect evidence before any separate human-approved action.', [('command','Compare current responses'),('evidence','Inspect source gaps'),('brief','Read the handbook and rehearsal guide')]),
+        'next_actions':('Review steps available now','Start with delivery outlook in Command, inspect candidates and separate evidence, then review a current plan before any human-approved action.', [('command','Start with delivery outlook in Command'),('evidence','Inspect source gaps'),('brief','Read the handbook and rehearsal guide')]),
     }
     title,summary,views=details[question_id]
-    items=[fact for fact in context['facts'] if fact['category']==question_id
+    items=[fact for fact in context['facts'] if (fact['category']==question_id
+           or question_id in {'scenario_compare','model_limits'} and fact['id'] in {'outlook.scope','outlook.unavailable'})
            and (question_id!='shipment_review' or fact.get('shipment_id')==shipment_id)]
     return {'snapshot_id':context['snapshot_id'],'network_revision':context['network_revision'],
             'generated_at':context['generated_at'],'engine':dict(context['engine']),
