@@ -9,7 +9,7 @@
   evidence and reject old driver acknowledgment after reassignment.
 - Added saved freshness methods/results to the report compiler with explicit
   malformed/missing/failed-evidence handling and uncalibrated quality limits.
-- Full checks passed: 1,198 backend, 384 frontend, production build. Six actual
+- Full checks passed: 1,198 backend, 385 frontend, production build. Six actual
   public recall/weather/road/routing probes succeeded; other source dates and
   coverage limits remain distinct. No human video or final submission is inferred.
 

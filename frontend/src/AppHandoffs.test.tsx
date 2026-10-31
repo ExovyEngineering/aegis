@@ -10,6 +10,7 @@ vi.mock('./MapViewport',()=>({default:()=>null}));
 vi.mock('./DispatchReadiness',()=>({default:()=>null}));
 vi.mock('./FreshnessLab',()=>({default:({initialShipmentId,onOpenDrive}:any)=><section aria-label="Test freshness handoff"><span>{initialShipmentId?`Freshness target ${initialShipmentId}`:'Freshness demo selection'}</span><button onClick={()=>onOpenDrive({truckId:'T02',shipmentId:'SH02'})}>Open rescued driver trip</button></section>}));
 vi.mock('./DriverWorkspace',()=>({default:({initialTruckId,initialShipmentId}:any)=><div>Driver target {initialTruckId} / {initialShipmentId}</div>}));
+vi.mock('./ProjectBrief',()=>({default:({onNavigate}:any)=><button onClick={()=>onNavigate('freshness')}>Open Save the Load from rehearsal</button>}));
 // The real Outlook tests validate its captured data and button guards. Here its
 // callback contract exercises App, real Road inputs and real Dispatcher links.
 vi.mock('./DeliveryOutlook',()=>({default:({network,onCompareShipmentRoad,onReviewPlans}:any)=><section aria-label="Test outlook callback harness"><button onClick={onReviewPlans}>Review current response plans</button>{network.shipments.map((row:any)=><button key={row.id} onClick={()=>onCompareShipmentRoad(row.id)}>Compare roads for {row.id}</button>)}</section>}));
@@ -96,6 +97,16 @@ it('carries an explicitly selected candidate into freshness modeling',async()=>{
   await begin();fireEvent.change(screen.getByLabelText('Select shipment'),{target:{value:'SH02'}});
   fireEvent.click(screen.getByRole('button',{name:'Model this lot’s shelf life'}));
   expect(await screen.findByText('Freshness target SH02')).toBeInTheDocument();
+});
+
+it('starts the documented rehearsal demo after previously modeling a different Command candidate',async()=>{
+  await begin();fireEvent.change(screen.getByLabelText('Select shipment'),{target:{value:'SH02'}});
+  fireEvent.click(screen.getByRole('button',{name:'Model this lot’s shelf life'}));
+  expect(await screen.findByText('Freshness target SH02')).toBeInTheDocument();
+  fireEvent.click(within(nav()).getByRole('button',{name:'Project brief'}));
+  fireEvent.click(await screen.findByRole('button',{name:'Open Save the Load from rehearsal'}));
+  expect(await screen.findByText('Freshness demo selection')).toBeInTheDocument();
+  expect(screen.queryByText('Freshness target SH02')).not.toBeInTheDocument();
 });
 
 it('opens the rescued driver truck and trip instead of defaulting to an unrelated truck',async()=>{

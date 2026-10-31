@@ -78,6 +78,7 @@ export default function App() {
   const [roadJourney, setRoadJourney] = useState<RoadJourneyContext>();
   function navigate(target: View) {
     if (target === 'roads') setRoadJourney(undefined);
+    if (target === 'freshness') setFreshnessShipmentId(undefined);
     if (target === 'command' && (view === 'dispatch' || view === 'roads')) setFocusTarget('command-scenarios');
     setView(target);
   }
@@ -203,7 +204,7 @@ export default function App() {
       <div className="workspace-label">OPERATIONS WORKSPACE</div>
       <nav aria-label="Main navigation">
         <button className={view === 'command' ? 'active' : ''} onClick={() => setView('command')}><Gauge size={19} /> Command center <ChevronRight size={14} /></button>
-        <button className={view === 'freshness' ? 'active' : ''} onClick={() => {setFreshnessShipmentId(undefined);setView('freshness');}}><Snowflake size={19} /> Save the Load</button>
+        <button className={view === 'freshness' ? 'active' : ''} onClick={() => navigate('freshness')}><Snowflake size={19} /> Save the Load</button>
         <button className={view === 'routes' ? 'active' : ''} onClick={() => setView('routes')}><Route size={19} /> Route laboratory</button>
         <button className={view === 'roads' ? 'active' : ''} onClick={() => navigate('roads')}><MapPin size={19} /> Road intelligence</button>
         <button className={view === 'dispatch' ? 'active' : ''} onClick={() => setView('dispatch')}><ClipboardCheck size={19} /> Dispatcher desk</button>
@@ -226,7 +227,7 @@ export default function App() {
         {notice && <div role="status" className="feedback success"><CheckCircle2 size={18} />{notice}<button onClick={() => setNotice('')} aria-label="Dismiss notification"><X size={16} /></button></div>}
         {!driverOnly && confirmedEvent && view === 'command' && <aside className="panel command-confirmed-event" aria-label="Confirmed event receipt"><div><strong>Confirmed: {confirmedEvent.comparison.event_label} on {confirmedEvent.comparison.shipment_id}</strong><p>Applied at network revision {confirmedEvent.receipt.revision}; {confirmedEvent.receipt.assignments_removed} approved assignments were removed. This is a captured result, not a new action.</p>{!network && <p role="alert">The event was applied, but the current network is unavailable. The confirmed receipt is preserved here. Reload application data before applying another event.</p>}</div><div className="command-result-actions"><button className="secondary small" onClick={() => downloadCaptured(`aegis-confirmed-event-${confirmedEvent.comparison.shipment_id}.json`,{stage:'applied',comparison:confirmedEvent.comparison,receipt:confirmedEvent.receipt})}>Export confirmed event JSON</button><button className="text-button" onClick={() => setConfirmedEvent(undefined)}>Dismiss confirmed receipt</button></div></aside>}
         {!network && <div className="empty-state"><Radio size={30} /><h2>Connecting to the local backend</h2><p>Run <code>python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000</code>.</p><button onClick={() => load()}>Retry connection</button></div>}
-        {view === 'brief' && <ProjectBrief onNavigate={setView} />}
+        {view === 'brief' && <ProjectBrief onNavigate={navigate} />}
         {network && view === 'command' && <>
           <DeliveryOutlook network={network} onInspectShipment={id => { setSelectedId(id); jump('command-trip-detail'); }} onNavigate={navigate} onReviewPlans={() => jump('command-scenarios')} onCompareShipmentRoad={compareShipmentRoad} onReloadNetwork={load} />
           <div className="stats-grid"><Stat label="NETWORK SHIPMENTS" value={network.shipments.length} note={`${network.nodes.filter(n => n.kind === 'destination').length} destinations · all simulated`} icon={<Truck size={20} />} /><Stat label="COLD-CHAIN REVIEW" value={excursions.length} note="Simulated cargo excursions > 4°C" icon={<Snowflake size={20} />} alert /><Stat label="APPROVED ASSIGNMENTS" value={assignments.length} note={`${assignments.filter(s => s.acknowledged).length} acknowledged by simulated drivers`} icon={<ClipboardCheck size={20} />} /><Stat label="PUBLIC ENDPOINT PROBES" value={`${totalSuccessful}/${coverage.length}`} note="HTTP success; data coverage differs" icon={<Radio size={20} />} /></div>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T07:07:45.429139+00:00",
+  "generated_at": "2026-10-31T07:17:56.976193+00:00",
   "inputs": [
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\manifests\\inventory.json",
@@ -31,7 +31,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\validation.json",
-      "sha256": "d770dad53b71f919a229d1feba0bf774467096c84ea4b059a345719837cc369e"
+      "sha256": "d8a5cd4b1b80870e1aae2b618c6c923c01a4672e8de5729f64510d2a5b08fbb5"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\evidence_ingestion.json",

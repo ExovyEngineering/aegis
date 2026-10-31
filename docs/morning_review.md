@@ -10,9 +10,9 @@ distinguishes rehearsal actions, actual video review and scientific limitations.
 Save the Load now has its own page heading and directs you to the actual
 observation times rather than a conflicting global scenario date.
 
-The recording preparation passed 113 Chrome checks across desktop/mobile and
+The recording preparation passed 116 Chrome checks across desktop/mobile and
 actual rescue/parked-driver actions, with explicitly automated tracker coverage.
-The full local suite passed 1,198 backend tests and 384 frontend tests plus build.
+The full local suite passed 1,198 backend tests and 385 frontend tests plus build.
 Six core public endpoint probes succeeded; complete data coverage remains
 separate. The master guide is now 83 pages, including the new recording chapter.
 Your actual timed video and final human gates remain unverified.

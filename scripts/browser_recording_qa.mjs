@@ -143,7 +143,11 @@ try{
   result.guide={url:guide.url(),anchor_text:await guide.locator('#record-the-final-video').innerText()};await guide.close();
   phase='start_automated_tracker';run=await post('/api/rehearsal/start',{presenter,purpose:'Automated recording preparation; this is not a human rehearsal or a recorded video.',run_kind:'automated_check'});result.run_id=run.id;
   check('tracker is explicitly automated and preserves five-minute target',run.run_kind==='automated_check'&&run.target_seconds===300);await covered('overview');await covered('evidence_science');
-  phase='actual_heat_replay';await navigate('Save the Load');await lab().getByRole('combobox',{name:'Candidate to explore',exact:true}).waitFor();
+  phase='rehearsal_freshness_navigation';await navigate('Command center');await page.getByLabel('Select shipment',{exact:true}).selectOption('SH02');await page.getByRole('button',{name:'Model this lot’s shelf life',exact:true}).click();await lab().getByRole('combobox',{name:'Candidate to explore',exact:true}).waitFor();
+  check('explicit Command handoff selects SH02 without starting an experiment',await lab().getByRole('combobox',{name:'Candidate to explore',exact:true}).inputValue()==='SH02'&&(await json('/api/freshness/context')).sessions.length===0);
+  await navigate('Project brief');await panel().getByRole('button',{name:'Open Save the Load',exact:true}).click();await lab().getByRole('combobox',{name:'Candidate to explore',exact:true}).waitFor();
+  check('guided rehearsal handoff clears explicit selection and opens default SH05',await lab().getByRole('combobox',{name:'Candidate to explore',exact:true}).inputValue()==='SH05');
+  phase='actual_heat_replay';
   check('default Save the Load candidate is SH05',await lab().getByRole('combobox',{name:'Candidate to explore',exact:true}).inputValue()==='SH05');
   let snapshot=await uiPost('/api/freshness/sessions',()=>lab().getByRole('button',{name:'Start rescue experiment',exact:true}).click());sessionId=snapshot.id;result.session_id=sessionId;await settled(snapshot);await lab().getByRole('checkbox',{name:'Follow incoming readings every 5s',exact:true}).uncheck();
   snapshot=await uiPost(sessionPath('replay'),()=>lab().getByRole('button',{name:'Replay heat excursion',exact:true}).click());await settled(snapshot);await save('actual-heated-experiment',snapshot);

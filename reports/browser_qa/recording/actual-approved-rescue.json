@@ -1,13 +1,13 @@
 {
   "snapshot": {
-    "id": "6b298426-321f-493c-9afa-3f881888a899",
+    "id": "7dc9fe19-3450-49df-8a16-3c66311601ff",
     "version": 4,
     "network_revision": 0,
     "current_network_revision": 1,
     "simulation": true,
     "status": "approved",
-    "created_at": "2026-10-31T07:05:31.300475+00:00",
-    "updated_at": "2026-10-31T07:05:33.039166+00:00",
+    "created_at": "2026-10-31T07:15:32.813188+00:00",
+    "updated_at": "2026-10-31T07:15:34.342540+00:00",
     "shipment": {
       "deadline_hours": 6,
       "destination": [
@@ -43,7 +43,7 @@
       "lot_id": "L05",
       "normalized_observed_at": "2026-10-30T16:01:00+00:00",
       "observed_at": "2026-10-30T16:01:00+00:00",
-      "retrieved_at": "2026-10-31T07:05:31.750088+00:00",
+      "retrieved_at": "2026-10-31T07:15:33.140609+00:00",
       "source": "simulated_replay",
       "source_kind": "simulated_replay",
       "temperature_basis": "product",
@@ -61,7 +61,7 @@
         "lot_id": "L05",
         "normalized_observed_at": "2026-10-30T13:00:00+00:00",
         "observed_at": "2026-10-30T13:00:00+00:00",
-        "retrieved_at": "2026-10-31T07:05:31.301369+00:00",
+        "retrieved_at": "2026-10-31T07:15:32.814543+00:00",
         "source": "simulated_replay",
         "source_kind": "simulated_replay",
         "temperature_basis": "product",
@@ -78,7 +78,7 @@
         "lot_id": "L05",
         "normalized_observed_at": "2026-10-30T14:00:00+00:00",
         "observed_at": "2026-10-30T14:00:00+00:00",
-        "retrieved_at": "2026-10-31T07:05:31.301848+00:00",
+        "retrieved_at": "2026-10-31T07:15:32.815016+00:00",
         "source": "simulated_replay",
         "source_kind": "simulated_replay",
         "temperature_basis": "product",
@@ -95,7 +95,7 @@
         "lot_id": "L05",
         "normalized_observed_at": "2026-10-30T14:01:00+00:00",
         "observed_at": "2026-10-30T14:01:00+00:00",
-        "retrieved_at": "2026-10-31T07:05:31.749648+00:00",
+        "retrieved_at": "2026-10-31T07:15:33.140108+00:00",
         "source": "simulated_replay",
         "source_kind": "simulated_replay",
         "temperature_basis": "product",
@@ -112,7 +112,7 @@
         "lot_id": "L05",
         "normalized_observed_at": "2026-10-30T16:01:00+00:00",
         "observed_at": "2026-10-30T16:01:00+00:00",
-        "retrieved_at": "2026-10-31T07:05:31.750088+00:00",
+        "retrieved_at": "2026-10-31T07:15:33.140609+00:00",
         "source": "simulated_replay",
         "source_kind": "simulated_replay",
         "temperature_basis": "product",
@@ -825,8 +825,8 @@
           ]
         }
       ],
-      "proposal_id": "rescue-c95584ecc4c943bd",
-      "proposal_hash": "c95584ecc4c943bde3c594babfae21152f5b1fce95ef9e7ab35ff938acee0de9",
+      "proposal_id": "rescue-663d07c4c7cd2606",
+      "proposal_hash": "663d07c4c7cd2606a0f5e642fbe54321ef84afa5059c4d48ffd7759deebee812",
       "proposed_destination_id": "D06",
       "plan_summary": {
         "assignments_count": 12,
@@ -6696,7 +6696,7 @@
     },
     "approval": {
       "actor": "Automated recording QA dispatcher",
-      "approved_at": "2026-10-31T07:05:33.038501+00:00",
+      "approved_at": "2026-10-31T07:15:34.342027+00:00",
       "assignments_count": 12,
       "network_revision": 1,
       "reason": "Automated isolated SIMULATION check: reviewed modeled quality, receiving assumptions and route limitations; no real dispatcher or recipient approval is claimed.",
@@ -6727,7 +6727,7 @@
   "receipt": {
     "actor": "Automated recording QA dispatcher",
     "reason": "Automated isolated SIMULATION check: reviewed modeled quality, receiving assumptions and route limitations; no real dispatcher or recipient approval is claimed.",
-    "approved_at": "2026-10-31T07:05:33.038501+00:00",
+    "approved_at": "2026-10-31T07:15:34.342027+00:00",
     "network_revision": 1,
     "assignments_count": 12,
     "selected_destination_id": "D06",

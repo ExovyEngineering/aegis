@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-31T07:08:37.336682+00:00",
+  "checked_at": "2026-10-31T07:17:58.691162+00:00",
   "passed": true,
   "checks": [
     {
@@ -23,7 +23,7 @@
       "passed": true
     },
     {
-      "endpoint": "/assets/index-CzXvYdRS.js",
+      "endpoint": "/assets/index-DQaAO38Q.js",
       "status": 200,
       "passed": true
     }
@@ -62,5 +62,5 @@
   },
   "mutations_requested": false,
   "public_provider_refresh_requested": false,
-  "note": "Read-only operator smoke; this does not reset or open a freshness experiment. Actual browser mutations were isolated separately."
+  "note": "Read-only operator smoke; no freshness experiment opened or reset. Browser mutations were isolated separately."
 }

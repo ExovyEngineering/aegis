@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 31, 2026 at 02:06 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 31, 2026 at 02:16 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -196,13 +196,13 @@ Evidence: docs/freshness_gateway.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-31T07:03:54.304614+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-31T07:14:59.940348+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 1198; 106.357 seconds. Log: reports/checks/20261031T070133626609Z/pytest.txt. Checked: 2026-10-31T07:01:33.627224+00:00.
+pytest: PASS; exit 0; tests passed 1198; 98.127 seconds. Log: reports/checks/20261031T071250192098Z/pytest.txt. Checked: 2026-10-31T07:12:50.192664+00:00.
 
-vitest: PASS; exit 0; tests passed 384; 21.011 seconds. Log: reports/checks/20261031T070133626609Z/vitest.txt. Checked: 2026-10-31T07:03:20.003116+00:00.
+vitest: PASS; exit 0; tests passed 385; 19.351 seconds. Log: reports/checks/20261031T071250192098Z/vitest.txt. Checked: 2026-10-31T07:14:28.334383+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 13.252 seconds. Log: reports/checks/20261031T070133626609Z/frontend_build.txt. Checked: 2026-10-31T07:03:41.036665+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 12.218 seconds. Log: reports/checks/20261031T071250192098Z/frontend_build.txt. Checked: 2026-10-31T07:14:47.708501+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -220,7 +220,7 @@ Road intelligence actual-Chrome QA: 58 / 58 checks passed, checked 2026-10-28T19
 
 Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: 76/76 checks at 2026-10-30T19:40:42.320Z. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.
 
-Recording preparation: real Chrome rescue/driver and automated tracker housekeeping: 113/113 recorded checks passed. Evidence: reports/browser_qa/recording/results.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
+Recording preparation: real Chrome rescue/driver and automated tracker housekeeping: 116/116 recorded checks passed. Evidence: reports/browser_qa/recording/results.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
 
 Save the Load actual-Chrome workflow: 94/94 recorded checks passed. Evidence: reports/browser_qa/freshness/results.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
 

@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-31T07:05:20.928Z",
-  "base_url": "http://127.0.0.1:8061",
-  "expected_rehearsal_id": "7cda3752-5dd1-438b-9ff1-63fd0f294c23",
+  "checked_at": "2026-10-31T07:15:22.941Z",
+  "base_url": "http://127.0.0.1:8062",
+  "expected_rehearsal_id": "851d286b-a8f2-44e1-89af-c90f8bc061f9",
   "run_kind": "automated_check",
   "human_rehearsal_verified": false,
   "video_recorded": false,
@@ -298,7 +298,7 @@
     {
       "name": "guarded POST /api/rehearsal/start",
       "passed": true,
-      "detail": "HTTP 200: {\"presenter\":\"Automated recording preparation QA\",\"purpose\":\"Automated recording preparation; this is not a human rehearsal or a recorded video.\",\"run_kind\":\"automated_check\",\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"version\":1,\"status\":\"active\",\"rehearsal_id\":\"7cda3752-5dd1-438b-9ff1-63fd0f294c23\",\"started_at\":\"2026-10-31T07:05:31.180908+00:00\",\"finished_at\":null,\"milestones\":[],\"notes\":\"\",\"audit_start_id\":0,\"start_network_revision\":0,\"seed\":20261026,\"start_evidence\":[{\"path\":\"reports/api_status.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":7519,\"sha256\":\"4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4\"},{\"path\":\"reports/model_evaluation.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":8380,\"sha256\":\"e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8\"},{\"path\":\"reports/model_timing.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":4444,\"sha256\":\"32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7\"},{\"path\":\"reports/noaa_coverage.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":13161,\"sha256\":\"b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e\"},{\"path\":\"reports/usda_food_environment.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":88925,\"sha256\":\"1519620538d580b3e8d3669c9f09ee9dd218159a99fe5484d57f39129e1960d0\"},{\"path\":\"reports/session_verification.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":2098,\"sha256\":\"d8dd9e3f79db962649557639378a45aa0b5de1c93e1f8390f6ff2aaac96ee261\"},{\"path\":\"reports/project_brief_manifest.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":415,\"sha256\":\"9a09f3e5f5477eb7e91eed6a0993a42e2a0d1e1c2d359b37c24e465709bca256\"},{\"path\":\"reports/ingestion_verification.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"byt"
+      "detail": "HTTP 200: {\"presenter\":\"Automated recording preparation QA\",\"purpose\":\"Automated recording preparation; this is not a human rehearsal or a recorded video.\",\"run_kind\":\"automated_check\",\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"version\":1,\"status\":\"active\",\"rehearsal_id\":\"851d286b-a8f2-44e1-89af-c90f8bc061f9\",\"started_at\":\"2026-10-31T07:15:32.372500+00:00\",\"finished_at\":null,\"milestones\":[],\"notes\":\"\",\"audit_start_id\":0,\"start_network_revision\":0,\"seed\":20261026,\"start_evidence\":[{\"path\":\"reports/api_status.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":7519,\"sha256\":\"4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4\"},{\"path\":\"reports/model_evaluation.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":8380,\"sha256\":\"e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8\"},{\"path\":\"reports/model_timing.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":4444,\"sha256\":\"32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7\"},{\"path\":\"reports/noaa_coverage.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":13161,\"sha256\":\"b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e\"},{\"path\":\"reports/usda_food_environment.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":88925,\"sha256\":\"1519620538d580b3e8d3669c9f09ee9dd218159a99fe5484d57f39129e1960d0\"},{\"path\":\"reports/session_verification.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":2097,\"sha256\":\"04e819ac07b3bac6141a9950c9e736e3da54b7e8e92e7f7bab740b4644377d77\"},{\"path\":\"reports/project_brief_manifest.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"bytes\":415,\"sha256\":\"06bdc9518c11a0b93145ebc48b28ae25350790cad7a7f8a1dc649c4c0d7ba51c\"},{\"path\":\"reports/ingestion_verification.json\",\"kind\":\"recorded_report\",\"status\":\"recorded\",\"byt"
     },
     {
       "name": "tracker is explicitly automated and preserves five-minute target",
@@ -306,9 +306,9 @@
       "detail": ""
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"stage_id\":\"overview\",\"outcome\":\"covered\",\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"elapsed_seconds\":0.035,\"evidence\":{\"kind\":\"self_reported_coverage\",\"requirements\":[],\"audit_ids\":[],\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\"}}],\"notes\":\"\",\"presenter\":\"Automated recording preparation QA\",\"purpose\":\"Automated recording preparation; this is not a human rehearsal or a recorded video.\",\"rehearsal_id\":\"7cda3752-5dd1-438b-9ff1-63fd0f294c23\",\"run_kind\":\"automated_check\",\"seed\":20261026,\"start_evidence\":[{\"bytes\":7519,\"kind\":\"recorded_report\",\"path\":\"reports/api_status.json\",\"sha256\":\"4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4\",\"status\":\"recorded\"},{\"bytes\":8380,\"kind\":\"recorded_report\",\"path\":\"reports/model_evaluation.json\",\"sha256\":\"e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8\",\"status\":\"recorded\"},{\"bytes\":4444,\"kind\":\"recorded_report\",\"path\":\"reports/model_timing.json\",\"sha256\":\"32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7\",\"status\":\"recorded\"},{\"bytes\":13161,\"kind\":\"recorded_report\",\"path\":\"reports/noaa_coverage.json\",\"sha256\":\"b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e\",\"status\":\"recorded\"},{\"bytes\":88925,\"kind\":\"recorded_report\",\"path\":\"reports/usda_food_environment.json\",\"sha256\":\"1519620538d580b3e8d3669c9f09ee9dd218159a99fe5484d57f39129e1960d0\",\"status\":\"recorded\"},{\"bytes\":2098,\"kind\":\"recorded_report\",\"path\":\"reports/session_verification.json\",\"sha256\":\"d8dd9e3f79db962649557639378a45aa0b5de1c93e1f8390f"
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"stage_id\":\"overview\",\"outcome\":\"covered\",\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"elapsed_seconds\":0.032,\"evidence\":{\"kind\":\"self_reported_coverage\",\"requirements\":[],\"audit_ids\":[],\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\"}}],\"notes\":\"\",\"presenter\":\"Automated recording preparation QA\",\"purpose\":\"Automated recording preparation; this is not a human rehearsal or a recorded video.\",\"rehearsal_id\":\"851d286b-a8f2-44e1-89af-c90f8bc061f9\",\"run_kind\":\"automated_check\",\"seed\":20261026,\"start_evidence\":[{\"bytes\":7519,\"kind\":\"recorded_report\",\"path\":\"reports/api_status.json\",\"sha256\":\"4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4\",\"status\":\"recorded\"},{\"bytes\":8380,\"kind\":\"recorded_report\",\"path\":\"reports/model_evaluation.json\",\"sha256\":\"e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8\",\"status\":\"recorded\"},{\"bytes\":4444,\"kind\":\"recorded_report\",\"path\":\"reports/model_timing.json\",\"sha256\":\"32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7\",\"status\":\"recorded\"},{\"bytes\":13161,\"kind\":\"recorded_report\",\"path\":\"reports/noaa_coverage.json\",\"sha256\":\"b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e\",\"status\":\"recorded\"},{\"bytes\":88925,\"kind\":\"recorded_report\",\"path\":\"reports/usda_food_environment.json\",\"sha256\":\"1519620538d580b3e8d3669c9f09ee9dd218159a99fe5484d57f39129e1960d0\",\"status\":\"recorded\"},{\"bytes\":2097,\"kind\":\"recorded_report\",\"path\":\"reports/session_verification.json\",\"sha256\":\"04e819ac07b3bac6141a9950c9e736e3da54b7e8e92e7f7ba"
     },
     {
       "name": "ordered overview checkpoint",
@@ -316,12 +316,27 @@
       "detail": ""
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"elapsed_seconds\":0.035,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"stage_id\":\"overview\"},{\"stage_id\":\"evidence_science\",\"outcome\":\"covered\",\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"recorded_at\":\"2026-10-31T07:05:31.226783+00:00\",\"elapsed_seconds\":0.046,\"evidence\":{\"kind\":\"self_reported_coverage\",\"requirements\":[],\"audit_ids\":[],\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\"}}],\"notes\":\"\",\"presenter\":\"Automated recording preparation QA\",\"purpose\":\"Automated recording preparation; this is not a human rehearsal or a recorded video.\",\"rehearsal_id\":\"7cda3752-5dd1-438b-9ff1-63fd0f294c23\",\"run_kind\":\"automated_check\",\"seed\":20261026,\"start_evidence\":[{\"bytes\":7519,\"kind\":\"recorded_report\",\"path\":\"reports/api_status.json\",\"sha256\":\"4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4\",\"status\":\"recorded\"},{\"bytes\":8380,\"kind\":\"recorded_report\",\"path\":\"reports/model_evaluation.json\",\"sha256\":\"e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8\",\"status\":\"recorded\"},{\"bytes\":4444,\"kind\":\"recorded_report\",\"path\":\"reports/model_timing.json\",\"sha256\":\"32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7\",\"status\":\"recorded\"},{\"bytes\":13161,\"kind\":\"recorded_report\",\"path\":\"reports/noaa"
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"elapsed_seconds\":0.032,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"stage_id\":\"overview\"},{\"stage_id\":\"evidence_science\",\"outcome\":\"covered\",\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"recorded_at\":\"2026-10-31T07:15:32.414268+00:00\",\"elapsed_seconds\":0.042,\"evidence\":{\"kind\":\"self_reported_coverage\",\"requirements\":[],\"audit_ids\":[],\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\"}}],\"notes\":\"\",\"presenter\":\"Automated recording preparation QA\",\"purpose\":\"Automated recording preparation; this is not a human rehearsal or a recorded video.\",\"rehearsal_id\":\"851d286b-a8f2-44e1-89af-c90f8bc061f9\",\"run_kind\":\"automated_check\",\"seed\":20261026,\"start_evidence\":[{\"bytes\":7519,\"kind\":\"recorded_report\",\"path\":\"reports/api_status.json\",\"sha256\":\"4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4\",\"status\":\"recorded\"},{\"bytes\":8380,\"kind\":\"recorded_report\",\"path\":\"reports/model_evaluation.json\",\"sha256\":\"e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8\",\"status\":\"recorded\"},{\"bytes\":4444,\"kind\":\"recorded_report\",\"path\":\"reports/model_timing.json\",\"sha256\":\"32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7\",\"status\":\"recorded\"},{\"bytes\":13161,\"kind\":\"recorded_report\",\"path\":\"reports/noaa"
     },
     {
       "name": "ordered evidence_science checkpoint",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/freshness/context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "explicit Command handoff selects SH02 without starting an experiment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guided rehearsal handoff clears explicit selection and opens default SH05",
       "passed": true,
       "detail": ""
     },
@@ -333,12 +348,12 @@
     {
       "name": "actual UI POST /api/freshness/sessions",
       "passed": true,
-      "detail": "HTTP 200: {\"id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"version\":1,\"network_revision\":0,\"current_network_revision\":0,\"simulation\":true,\"status\":\"active\",\"created_at\":\"2026-10-31T07:05:31.300475+00:00\",\"updated_at\":\"2026-10-31T07:05:31.302524+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-60-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T14:00:00+00:00\",\"observed_at\":\"2026-10-30T14:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.301848+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.301369+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified"
+      "detail": "HTTP 200: {\"id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"version\":1,\"network_revision\":0,\"current_network_revision\":0,\"simulation\":true,\"status\":\"active\",\"created_at\":\"2026-10-31T07:15:32.813188+00:00\",\"updated_at\":\"2026-10-31T07:15:32.815960+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-60-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T14:00:00+00:00\",\"observed_at\":\"2026-10-30T14:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:32.815016+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:32.814543+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified"
     },
     {
-      "name": "actual UI POST /api/freshness/sessions/6b298426-321f-493c-9afa-3f881888a899/replay",
+      "name": "actual UI POST /api/freshness/sessions/7dc9fe19-3450-49df-8a16-3c66311601ff/replay",
       "passed": true,
-      "detail": "HTTP 200: {\"id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"version\":2,\"network_revision\":0,\"current_network_revision\":0,\"simulation\":true,\"status\":\"active\",\"created_at\":\"2026-10-31T07:05:31.300475+00:00\",\"updated_at\":\"2026-10-31T07:05:31.750861+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":32,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.04,\"event_id\":\"v1-121-L05\",\"humidity_percent\":83,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T16:01:00+00:00\",\"observed_at\":\"2026-10-30T16:01:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.750088+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.301369+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"d"
+      "detail": "HTTP 200: {\"id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"version\":2,\"network_revision\":0,\"current_network_revision\":0,\"simulation\":true,\"status\":\"active\",\"created_at\":\"2026-10-31T07:15:32.813188+00:00\",\"updated_at\":\"2026-10-31T07:15:33.141312+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":32,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.04,\"event_id\":\"v1-121-L05\",\"humidity_percent\":83,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T16:01:00+00:00\",\"observed_at\":\"2026-10-30T16:01:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:33.140609+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:32.814543+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"d"
     },
     {
       "name": "stored simulated heat recalculates an actual rescue proposal",
@@ -346,9 +361,9 @@
       "detail": ""
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"elapsed_seconds\":0.035,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.046,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.226783+00:00\",\"stage_id\":\"evidence_science\"},{\"stage_id\":\"disruption\",\"outcome\":\"covered\",\"notes\":\"Automated Chrome check: disruption; simulated app workflow only, no human presentation, screen narration or video claim.\",\"recorded_at\":\"2026-10-31T07:05:32.036670+00:00\",\"elapsed_seconds\":0.856,\"evidence\":{\"kind\":\"recorded_operational_actions\",\"requirements\":[\"event\"],\"audit_ids\":[5],\"actions\":[{\"id\":5,\"action\":\"freshness_replay\",\"timestamp\":\"2026-10-31T07:05:31.751005+00:00\"}],\"freshness_context\":{\"session_id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"event\":\"heat_excursion\",\"source_version\":1,\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"stored_session_sha256\":\"06acc2773675ebdc8cda9feaaf725d252309d9ad310cafc52c1440f6ccaccdc7\",\"stored_frames_sha256\":\"63e6a8a1f220c454645ec57d90c0a"
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"elapsed_seconds\":0.032,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.042,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.414268+00:00\",\"stage_id\":\"evidence_science\"},{\"stage_id\":\"disruption\",\"outcome\":\"covered\",\"notes\":\"Automated Chrome check: disruption; simulated app workflow only, no human presentation, screen narration or video claim.\",\"recorded_at\":\"2026-10-31T07:15:33.397468+00:00\",\"elapsed_seconds\":1.025,\"evidence\":{\"kind\":\"recorded_operational_actions\",\"requirements\":[\"event\"],\"audit_ids\":[5],\"actions\":[{\"id\":5,\"action\":\"freshness_replay\",\"timestamp\":\"2026-10-31T07:15:33.141428+00:00\"}],\"freshness_context\":{\"session_id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"event\":\"heat_excursion\",\"source_version\":1,\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"stored_session_sha256\":\"923e78cc9e7c978e82abbe4dd0acdbbe4b7a4d6a8df44c36fc04e3c497045310\",\"stored_frames_sha256\":\"4ae9f21554db137740aab89a1ce98"
     },
     {
       "name": "ordered disruption checkpoint",
@@ -366,9 +381,9 @@
       "detail": ""
     },
     {
-      "name": "actual UI POST /api/freshness/sessions/6b298426-321f-493c-9afa-3f881888a899/routes",
+      "name": "actual UI POST /api/freshness/sessions/7dc9fe19-3450-49df-8a16-3c66311601ff/routes",
       "passed": true,
-      "detail": "HTTP 200: {\"id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"version\":3,\"network_revision\":0,\"current_network_revision\":0,\"simulation\":true,\"status\":\"active\",\"created_at\":\"2026-10-31T07:05:31.300475+00:00\",\"updated_at\":\"2026-10-31T07:05:32.153398+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":32,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.04,\"event_id\":\"v1-121-L05\",\"humidity_percent\":83,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T16:01:00+00:00\",\"observed_at\":\"2026-10-30T16:01:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.750088+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.301369+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"d"
+      "detail": "HTTP 200: {\"id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"version\":3,\"network_revision\":0,\"current_network_revision\":0,\"simulation\":true,\"status\":\"active\",\"created_at\":\"2026-10-31T07:15:32.813188+00:00\",\"updated_at\":\"2026-10-31T07:15:33.536683+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":32,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.04,\"event_id\":\"v1-121-L05\",\"humidity_percent\":83,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T16:01:00+00:00\",\"observed_at\":\"2026-10-30T16:01:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:33.140609+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:32.814543+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"d"
     },
     {
       "name": "offline D06 route is a labeled estimate, not public OSRM success",
@@ -406,9 +421,9 @@
       "detail": ""
     },
     {
-      "name": "actual UI POST /api/freshness/sessions/6b298426-321f-493c-9afa-3f881888a899/approve",
+      "name": "actual UI POST /api/freshness/sessions/7dc9fe19-3450-49df-8a16-3c66311601ff/approve",
       "passed": true,
-      "detail": "HTTP 200: {\"snapshot\":{\"id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"version\":4,\"network_revision\":0,\"current_network_revision\":1,\"simulation\":true,\"status\":\"approved\",\"created_at\":\"2026-10-31T07:05:31.300475+00:00\",\"updated_at\":\"2026-10-31T07:05:33.039166+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":32,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.04,\"event_id\":\"v1-121-L05\",\"humidity_percent\":83,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T16:01:00+00:00\",\"observed_at\":\"2026-10-30T16:01:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.750088+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:05:31.301369+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independentl"
+      "detail": "HTTP 200: {\"snapshot\":{\"id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"version\":4,\"network_revision\":0,\"current_network_revision\":1,\"simulation\":true,\"status\":\"approved\",\"created_at\":\"2026-10-31T07:15:32.813188+00:00\",\"updated_at\":\"2026-10-31T07:15:34.342540+00:00\",\"shipment\":{\"deadline_hours\":6,\"destination\":[-90.23742422131505,38.653449031901474],\"estimated_distance_km\":230.86,\"estimated_hours\":3.552,\"id\":\"SH05\",\"lot_id\":\"L05\",\"origin\":[-92.3341,38.9517],\"quantity_kg\":400,\"review_priority\":\"routine\",\"routing_provenance\":\"haversine x 1.25 at 65 km/h; not road geometry\",\"status\":\"pending dispatcher approval\",\"temperature_c\":3,\"truck_id\":\"T05\",\"origin_name\":\"Columbia DC (simulated)\",\"destination_name\":\"St. Louis destination 5 (simulated)\",\"original_duration_hours\":3.552,\"original_distance_km\":230.86},\"sensor\":{\"ambient_temperature_c\":32,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.04,\"event_id\":\"v1-121-L05\",\"humidity_percent\":83,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T16:01:00+00:00\",\"observed_at\":\"2026-10-30T16:01:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:33.140609+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},\"readings\":[{\"ambient_temperature_c\":30,\"calibration_status\":\"not independently verified\",\"device_id\":\"demo-L05\",\"ethylene_ppm\":0.02,\"event_id\":\"initial-0-L05\",\"humidity_percent\":78,\"lot_id\":\"L05\",\"normalized_observed_at\":\"2026-10-30T13:00:00+00:00\",\"observed_at\":\"2026-10-30T13:00:00+00:00\",\"retrieved_at\":\"2026-10-31T07:15:32.814543+00:00\",\"source\":\"simulated_replay\",\"source_kind\":\"simulated_replay\",\"temperature_basis\":\"product\",\"temperature_c\":4,\"vibration_g\":0.03},{\"ambient_temperature_c\":30,\"calibration_status\":\"not independentl"
     },
     {
       "name": "GET /api/network",
@@ -431,9 +446,9 @@
       "detail": ""
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"elapsed_seconds\":0.035,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.046,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.226783+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":0.856,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:05:31.751005+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"63e6a8a1f220c454645ec57d90c0abb9a1e371687db16b22068e1f230a3d0a39\",\"stored_session_sha256\":\"06acc2773675ebdc8cda9feaaf725d252309d9ad310cafc52c1440f6ccaccdc7\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored simulated freshness evidence "
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"elapsed_seconds\":0.032,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.042,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.414268+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":1.025,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:15:33.141428+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"4ae9f21554db137740aab89a1ce98957df978a4710fe94e631b57120fc54f72a\",\"stored_session_sha256\":\"923e78cc9e7c978e82abbe4dd0acdbbe4b7a4d6a8df44c36fc04e3c497045310\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored simulated freshness evidence "
     },
     {
       "name": "ordered approval checkpoint",
@@ -458,7 +473,7 @@
     {
       "name": "actual UI POST /api/drive/T05/focus",
       "passed": true,
-      "detail": "HTTP 200: {\"mode\":\"parked\",\"version\":1,\"parked_until\":\"2026-10-31T07:15:33.848086+00:00\",\"parked_confirmed_at\":\"2026-10-31T07:05:33.848086+00:00\",\"interaction_allowed\":true,\"expired\":false,\"server_time\":\"2026-10-31T07:05:33.848086+00:00\",\"provenance\":\"Self-declared parked confirmation in a local simulated application; no vehicle-motion sensing or operating-system distraction prevention.\"}"
+      "detail": "HTTP 200: {\"mode\":\"parked\",\"version\":1,\"parked_until\":\"2026-10-31T07:25:35.093066+00:00\",\"parked_confirmed_at\":\"2026-10-31T07:15:35.093066+00:00\",\"interaction_allowed\":true,\"expired\":false,\"server_time\":\"2026-10-31T07:15:35.093066+00:00\",\"provenance\":\"Self-declared parked confirmation in a local simulated application; no vehicle-motion sensing or operating-system distraction prevention.\"}"
     },
     {
       "name": "actual T05 parked confirmation enables temporary interaction",
@@ -488,12 +503,12 @@
     {
       "name": "actual UI POST /api/driver/incident",
       "passed": true,
-      "detail": "HTTP 200: {\"status\":\"recorded for dispatcher review\",\"incident_id\":\"aa31e52c-a1c5-4fef-b763-5fdc67be3581\"}"
+      "detail": "HTTP 200: {\"status\":\"recorded for dispatcher review\",\"incident_id\":\"1fed4763-82a9-4f98-b8ad-b7fcf2c50a25\"}"
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"elapsed_seconds\":0.035,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.046,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.226783+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":0.856,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:05:31.751005+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"63e6a8a1f220c454645ec57d90c0abb9a1e371687db16b22068e1f230a3d0a39\",\"stored_session_sha256\":\"06acc2773675ebdc8cda9feaaf725d252309d9ad310cafc52c1440f6ccaccdc7\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored simulated freshness evidence "
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"elapsed_seconds\":0.032,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.042,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.414268+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":1.025,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:15:33.141428+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"4ae9f21554db137740aab89a1ce98957df978a4710fe94e631b57120fc54f72a\",\"stored_session_sha256\":\"923e78cc9e7c978e82abbe4dd0acdbbe4b7a4d6a8df44c36fc04e3c497045310\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored simulated freshness evidence "
     },
     {
       "name": "ordered driver checkpoint",
@@ -506,9 +521,9 @@
       "detail": ""
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"elapsed_seconds\":0.035,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.046,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.226783+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":0.856,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:05:31.751005+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"63e6a8a1f220c454645ec57d90c0abb9a1e371687db16b22068e1f230a3d0a39\",\"stored_session_sha256\":\"06acc2773675ebdc8cda9feaaf725d252309d9ad310cafc52c1440f6ccaccdc7\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored simulated freshness evidence "
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":null,\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"elapsed_seconds\":0.032,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.042,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.414268+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":1.025,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:15:33.141428+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"4ae9f21554db137740aab89a1ce98957df978a4710fe94e631b57120fc54f72a\",\"stored_session_sha256\":\"923e78cc9e7c978e82abbe4dd0acdbbe4b7a4d6a8df44c36fc04e3c497045310\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored simulated freshness evidence "
     },
     {
       "name": "ordered closing checkpoint",
@@ -516,9 +531,9 @@
       "detail": ""
     },
     {
-      "name": "guarded POST /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/finish",
+      "name": "guarded POST /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/finish",
       "passed": true,
-      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":\"2026-10-31T07:05:34.626682+00:00\",\"id\":\"0a19ec0e-95e1-4ae2-84b6-76371906c428\",\"milestones\":[{\"elapsed_seconds\":0.035,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.215449+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.046,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:05:31.226783+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":0.856,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:05:31.751005+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"6b298426-321f-493c-9afa-3f881888a899\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"63e6a8a1f220c454645ec57d90c0abb9a1e371687db16b22068e1f230a3d0a39\",\"stored_session_sha256\":\"06acc2773675ebdc8cda9feaaf725d252309d9ad310cafc52c1440f6ccaccdc7\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored"
+      "detail": "HTTP 200: {\"audit_start_id\":0,\"finished_at\":\"2026-10-31T07:15:35.905825+00:00\",\"id\":\"53ecfd8b-614d-4fbe-9f10-86323d6f6dde\",\"milestones\":[{\"elapsed_seconds\":0.032,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.404030+00:00\",\"stage_id\":\"overview\"},{\"elapsed_seconds\":0.042,\"evidence\":{\"audit_ids\":[],\"kind\":\"self_reported_coverage\",\"notice\":\"Presenter reports coverage; the application does not verify what was shown or said.\",\"requirements\":[]},\"notes\":\"Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.\",\"outcome\":\"covered\",\"recorded_at\":\"2026-10-31T07:15:32.414268+00:00\",\"stage_id\":\"evidence_science\"},{\"elapsed_seconds\":1.025,\"evidence\":{\"actions\":[{\"action\":\"freshness_replay\",\"id\":5,\"timestamp\":\"2026-10-31T07:15:33.141428+00:00\"}],\"audit_ids\":[5],\"freshness_context\":{\"captured_version\":2,\"evaluation_at\":\"2026-10-30T16:01:00+00:00\",\"event\":\"heat_excursion\",\"frame_ids\":[\"v1-1-L05\",\"v1-121-L05\"],\"profiles_sha256\":\"ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa\",\"quality_model_version\":\"q10-equivalent-age-quality-v1\",\"session_id\":\"7dc9fe19-3450-49df-8a16-3c66311601ff\",\"shipment_id\":\"SH05\",\"source\":\"simulated_replay\",\"source_version\":1,\"stored_frame_count\":48,\"stored_frames_sha256\":\"4ae9f21554db137740aab89a1ce98957df978a4710fe94e631b57120fc54f72a\",\"stored_session_sha256\":\"923e78cc9e7c978e82abbe4dd0acdbbe4b7a4d6a8df44c36fc04e3c497045310\"},\"kind\":\"recorded_operational_actions\",\"notice\":\"Stored"
     },
     {
       "name": "completed timer retains actual duration and six covered stages",
@@ -526,7 +541,7 @@
       "detail": ""
     },
     {
-      "name": "GET /api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/export",
+      "name": "GET /api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/export",
       "passed": true,
       "detail": "HTTP 200"
     },
@@ -758,63 +773,123 @@
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "mobile_navigation",
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://a.tile.openstreetmap.org/10/248/391.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "mobile_navigation",
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://b.tile.openstreetmap.org/10/249/391.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "mobile_navigation",
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://c.tile.openstreetmap.org/10/248/390.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "mobile_navigation",
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://a.tile.openstreetmap.org/10/249/390.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "mobile_navigation",
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://b.tile.openstreetmap.org/10/248/392.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "mobile_navigation",
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://c.tile.openstreetmap.org/10/249/392.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "actual_heat_replay",
-      "url": "https://b.tile.openstreetmap.org/7/31/48.png",
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://c.tile.openstreetmap.org/10/247/391.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "actual_heat_replay",
-      "url": "https://c.tile.openstreetmap.org/7/31/49.png",
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://c.tile.openstreetmap.org/10/250/391.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "actual_heat_replay",
-      "url": "https://a.tile.openstreetmap.org/7/30/48.png",
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://b.tile.openstreetmap.org/10/247/390.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "actual_heat_replay",
-      "url": "https://c.tile.openstreetmap.org/7/32/48.png",
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://b.tile.openstreetmap.org/10/250/390.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "actual_heat_replay",
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://a.tile.openstreetmap.org/10/247/392.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://a.tile.openstreetmap.org/10/250/392.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://b.tile.openstreetmap.org/7/30/49.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     },
     {
-      "phase": "actual_heat_replay",
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://c.tile.openstreetmap.org/7/31/49.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://a.tile.openstreetmap.org/7/30/48.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://b.tile.openstreetmap.org/7/31/48.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://c.tile.openstreetmap.org/7/30/50.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://a.tile.openstreetmap.org/7/31/50.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://a.tile.openstreetmap.org/7/29/49.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
       "url": "https://a.tile.openstreetmap.org/7/32/49.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://c.tile.openstreetmap.org/7/29/48.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://c.tile.openstreetmap.org/7/32/48.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://b.tile.openstreetmap.org/7/29/50.png",
+      "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
+    },
+    {
+      "phase": "rehearsal_freshness_navigation",
+      "url": "https://b.tile.openstreetmap.org/7/32/50.png",
       "kind": "Browser-only labeled QA tile placeholder; OpenStreetMap was not contacted."
     }
   ],
@@ -842,6 +917,17 @@
       "allowed": true
     },
     {
+      "phase": "rehearsal_freshness_navigation",
+      "path": "/api/delivery-outlook",
+      "body": {
+        "added_delay_minutes": 0,
+        "ambient_temperature_c": 30,
+        "fault_truck_id": null,
+        "expected_network_revision": 0
+      },
+      "allowed": true
+    },
+    {
       "phase": "actual_heat_replay",
       "path": "/api/freshness/sessions",
       "body": {
@@ -853,7 +939,7 @@
     },
     {
       "phase": "actual_heat_replay",
-      "path": "/api/freshness/sessions/6b298426-321f-493c-9afa-3f881888a899/replay",
+      "path": "/api/freshness/sessions/7dc9fe19-3450-49df-8a16-3c66311601ff/replay",
       "body": {
         "expected_version": 1,
         "event": "heat_excursion"
@@ -862,7 +948,7 @@
     },
     {
       "phase": "actual_heat_replay",
-      "path": "/api/freshness/sessions/6b298426-321f-493c-9afa-3f881888a899/routes",
+      "path": "/api/freshness/sessions/7dc9fe19-3450-49df-8a16-3c66311601ff/routes",
       "body": {
         "expected_version": 2,
         "destination_id": "D06",
@@ -872,11 +958,11 @@
     },
     {
       "phase": "actual_explicit_rescue_approval",
-      "path": "/api/freshness/sessions/6b298426-321f-493c-9afa-3f881888a899/approve",
+      "path": "/api/freshness/sessions/7dc9fe19-3450-49df-8a16-3c66311601ff/approve",
       "body": {
         "expected_version": 3,
         "expected_network_revision": 0,
-        "proposal_hash": "f6d0b62c4b139dccd68421d85de7bfd5aa8bf45147cdb9e8dcdcdf69455dcb11",
+        "proposal_hash": "c59b473486c538a78da80728653f43365c108c93d52276e16f167748d9866575",
         "destination_id": "D06",
         "actor": "Automated recording QA dispatcher",
         "reason": "Automated isolated SIMULATION check: reviewed modeled quality, receiving assumptions and route limitations; no real dispatcher or recipient approval is claimed.",
@@ -959,7 +1045,7 @@
     },
     {
       "phase": "start_automated_tracker",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "method": "POST",
       "body": {
         "expected_version": 1,
@@ -971,7 +1057,7 @@
     },
     {
       "phase": "start_automated_tracker",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "method": "POST",
       "body": {
         "expected_version": 2,
@@ -982,8 +1068,14 @@
       "status": 200
     },
     {
+      "phase": "rehearsal_freshness_navigation",
+      "endpoint": "/api/freshness/context",
+      "method": "GET",
+      "status": 200
+    },
+    {
       "phase": "actual_heat_replay",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "method": "POST",
       "body": {
         "expected_version": 3,
@@ -1007,7 +1099,7 @@
     },
     {
       "phase": "actual_explicit_rescue_approval",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "method": "POST",
       "body": {
         "expected_version": 4,
@@ -1019,7 +1111,7 @@
     },
     {
       "phase": "actual_exact_driver_handoff",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "method": "POST",
       "body": {
         "expected_version": 5,
@@ -1031,7 +1123,7 @@
     },
     {
       "phase": "actual_exact_driver_handoff",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/checkpoint",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/checkpoint",
       "method": "POST",
       "body": {
         "expected_version": 6,
@@ -1043,7 +1135,7 @@
     },
     {
       "phase": "freeze_automated_record",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/finish",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/finish",
       "method": "POST",
       "body": {
         "expected_version": 7,
@@ -1054,7 +1146,7 @@
     },
     {
       "phase": "freeze_automated_record",
-      "endpoint": "/api/rehearsal/0a19ec0e-95e1-4ae2-84b6-76371906c428/export",
+      "endpoint": "/api/rehearsal/53ecfd8b-614d-4fbe-9f10-86323d6f6dde/export",
       "method": "GET",
       "status": 200
     }
@@ -1729,8 +1821,8 @@
     "mode": "isolated_rehearsal",
     "isolated": true,
     "offline": true,
-    "rehearsal_id": "7cda3752-5dd1-438b-9ff1-63fd0f294c23",
-    "database_relative_path": "data/rehearsals/7cda3752-5dd1-438b-9ff1-63fd0f294c23.sqlite",
+    "rehearsal_id": "851d286b-a8f2-44e1-89af-c90f8bc061f9",
+    "database_relative_path": "data/rehearsals/851d286b-a8f2-44e1-89af-c90f8bc061f9.sqlite",
     "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
   },
   "isolated_before": {
@@ -1750,21 +1842,21 @@
     }
   },
   "guide": {
-    "url": "http://127.0.0.1:8061/api/master-guide.html#record-the-final-video",
+    "url": "http://127.0.0.1:8062/api/master-guide.html#record-the-final-video",
     "anchor_text": "Record the final video"
   },
-  "run_id": "0a19ec0e-95e1-4ae2-84b6-76371906c428",
-  "session_id": "6b298426-321f-493c-9afa-3f881888a899",
+  "run_id": "53ecfd8b-614d-4fbe-9f10-86323d6f6dde",
+  "session_id": "7dc9fe19-3450-49df-8a16-3c66311601ff",
   "approval": {
     "snapshot": {
-      "id": "6b298426-321f-493c-9afa-3f881888a899",
+      "id": "7dc9fe19-3450-49df-8a16-3c66311601ff",
       "version": 4,
       "network_revision": 0,
       "current_network_revision": 1,
       "simulation": true,
       "status": "approved",
-      "created_at": "2026-10-31T07:05:31.300475+00:00",
-      "updated_at": "2026-10-31T07:05:33.039166+00:00",
+      "created_at": "2026-10-31T07:15:32.813188+00:00",
+      "updated_at": "2026-10-31T07:15:34.342540+00:00",
       "shipment": {
         "deadline_hours": 6,
         "destination": [
@@ -1800,7 +1892,7 @@
         "lot_id": "L05",
         "normalized_observed_at": "2026-10-30T16:01:00+00:00",
         "observed_at": "2026-10-30T16:01:00+00:00",
-        "retrieved_at": "2026-10-31T07:05:31.750088+00:00",
+        "retrieved_at": "2026-10-31T07:15:33.140609+00:00",
         "source": "simulated_replay",
         "source_kind": "simulated_replay",
         "temperature_basis": "product",
@@ -1818,7 +1910,7 @@
           "lot_id": "L05",
           "normalized_observed_at": "2026-10-30T13:00:00+00:00",
           "observed_at": "2026-10-30T13:00:00+00:00",
-          "retrieved_at": "2026-10-31T07:05:31.301369+00:00",
+          "retrieved_at": "2026-10-31T07:15:32.814543+00:00",
           "source": "simulated_replay",
           "source_kind": "simulated_replay",
           "temperature_basis": "product",
@@ -1835,7 +1927,7 @@
           "lot_id": "L05",
           "normalized_observed_at": "2026-10-30T14:00:00+00:00",
           "observed_at": "2026-10-30T14:00:00+00:00",
-          "retrieved_at": "2026-10-31T07:05:31.301848+00:00",
+          "retrieved_at": "2026-10-31T07:15:32.815016+00:00",
           "source": "simulated_replay",
           "source_kind": "simulated_replay",
           "temperature_basis": "product",
@@ -1852,7 +1944,7 @@
           "lot_id": "L05",
           "normalized_observed_at": "2026-10-30T14:01:00+00:00",
           "observed_at": "2026-10-30T14:01:00+00:00",
-          "retrieved_at": "2026-10-31T07:05:31.749648+00:00",
+          "retrieved_at": "2026-10-31T07:15:33.140108+00:00",
           "source": "simulated_replay",
           "source_kind": "simulated_replay",
           "temperature_basis": "product",
@@ -1869,7 +1961,7 @@
           "lot_id": "L05",
           "normalized_observed_at": "2026-10-30T16:01:00+00:00",
           "observed_at": "2026-10-30T16:01:00+00:00",
-          "retrieved_at": "2026-10-31T07:05:31.750088+00:00",
+          "retrieved_at": "2026-10-31T07:15:33.140609+00:00",
           "source": "simulated_replay",
           "source_kind": "simulated_replay",
           "temperature_basis": "product",
@@ -2582,8 +2674,8 @@
             ]
           }
         ],
-        "proposal_id": "rescue-c95584ecc4c943bd",
-        "proposal_hash": "c95584ecc4c943bde3c594babfae21152f5b1fce95ef9e7ab35ff938acee0de9",
+        "proposal_id": "rescue-663d07c4c7cd2606",
+        "proposal_hash": "663d07c4c7cd2606a0f5e642fbe54321ef84afa5059c4d48ffd7759deebee812",
         "proposed_destination_id": "D06",
         "plan_summary": {
           "assignments_count": 12,
@@ -8453,7 +8545,7 @@
       },
       "approval": {
         "actor": "Automated recording QA dispatcher",
-        "approved_at": "2026-10-31T07:05:33.038501+00:00",
+        "approved_at": "2026-10-31T07:15:34.342027+00:00",
         "assignments_count": 12,
         "network_revision": 1,
         "reason": "Automated isolated SIMULATION check: reviewed modeled quality, receiving assumptions and route limitations; no real dispatcher or recipient approval is claimed.",
@@ -8484,7 +8576,7 @@
     "receipt": {
       "actor": "Automated recording QA dispatcher",
       "reason": "Automated isolated SIMULATION check: reviewed modeled quality, receiving assumptions and route limitations; no real dispatcher or recipient approval is claimed.",
-      "approved_at": "2026-10-31T07:05:33.038501+00:00",
+      "approved_at": "2026-10-31T07:15:34.342027+00:00",
       "network_revision": 1,
       "assignments_count": 12,
       "selected_destination_id": "D06",
@@ -8492,11 +8584,11 @@
       "simulation": true
     }
   },
-  "recorded_elapsed_seconds": 3.446,
-  "export_sha256": "9b8ae29f84cb2cabac130ecd2c16d4985624bbb714b2a363045154767116f8cc",
+  "recorded_elapsed_seconds": 3.533,
+  "export_sha256": "3c5b7d4fe0b554b061ec07354bbd465c07026a6844752dbef0b3c415cec6e21b",
   "milestones": [
     {
-      "elapsed_seconds": 0.035,
+      "elapsed_seconds": 0.032,
       "evidence": {
         "audit_ids": [],
         "kind": "self_reported_coverage",
@@ -8505,11 +8597,11 @@
       },
       "notes": "Automated Chrome check: overview; simulated app workflow only, no human presentation, screen narration or video claim.",
       "outcome": "covered",
-      "recorded_at": "2026-10-31T07:05:31.215449+00:00",
+      "recorded_at": "2026-10-31T07:15:32.404030+00:00",
       "stage_id": "overview"
     },
     {
-      "elapsed_seconds": 0.046,
+      "elapsed_seconds": 0.042,
       "evidence": {
         "audit_ids": [],
         "kind": "self_reported_coverage",
@@ -8518,17 +8610,17 @@
       },
       "notes": "Automated Chrome check: evidence_science; simulated app workflow only, no human presentation, screen narration or video claim.",
       "outcome": "covered",
-      "recorded_at": "2026-10-31T07:05:31.226783+00:00",
+      "recorded_at": "2026-10-31T07:15:32.414268+00:00",
       "stage_id": "evidence_science"
     },
     {
-      "elapsed_seconds": 0.856,
+      "elapsed_seconds": 1.025,
       "evidence": {
         "actions": [
           {
             "action": "freshness_replay",
             "id": 5,
-            "timestamp": "2026-10-31T07:05:31.751005+00:00"
+            "timestamp": "2026-10-31T07:15:33.141428+00:00"
           }
         ],
         "audit_ids": [
@@ -8544,13 +8636,13 @@
           ],
           "profiles_sha256": "ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa",
           "quality_model_version": "q10-equivalent-age-quality-v1",
-          "session_id": "6b298426-321f-493c-9afa-3f881888a899",
+          "session_id": "7dc9fe19-3450-49df-8a16-3c66311601ff",
           "shipment_id": "SH05",
           "source": "simulated_replay",
           "source_version": 1,
           "stored_frame_count": 48,
-          "stored_frames_sha256": "63e6a8a1f220c454645ec57d90c0abb9a1e371687db16b22068e1f230a3d0a39",
-          "stored_session_sha256": "06acc2773675ebdc8cda9feaaf725d252309d9ad310cafc52c1440f6ccaccdc7"
+          "stored_frames_sha256": "4ae9f21554db137740aab89a1ce98957df978a4710fe94e631b57120fc54f72a",
+          "stored_session_sha256": "923e78cc9e7c978e82abbe4dd0acdbbe4b7a4d6a8df44c36fc04e3c497045310"
         },
         "kind": "recorded_operational_actions",
         "notice": "Stored simulated freshness evidence was checked against its experiment; this does not prove it was shown on screen or establish physical sensing or food safety.",
@@ -8560,17 +8652,17 @@
       },
       "notes": "Automated Chrome check: disruption; simulated app workflow only, no human presentation, screen narration or video claim.",
       "outcome": "covered",
-      "recorded_at": "2026-10-31T07:05:32.036670+00:00",
+      "recorded_at": "2026-10-31T07:15:33.397468+00:00",
       "stage_id": "disruption"
     },
     {
-      "elapsed_seconds": 2.372,
+      "elapsed_seconds": 2.42,
       "evidence": {
         "actions": [
           {
             "action": "freshness_rescue_approve",
             "id": 7,
-            "timestamp": "2026-10-31T07:05:33.039589+00:00"
+            "timestamp": "2026-10-31T07:15:34.342818+00:00"
           }
         ],
         "audit_ids": [
@@ -8591,12 +8683,12 @@
           "profiles_sha256": "ae9996b1ed433fcf37991be502d6826c1267cf13e8d83311205c02e3217d98fa",
           "quality_model_version": "q10-equivalent-age-quality-v1",
           "sensor_version": 4,
-          "session_id": "6b298426-321f-493c-9afa-3f881888a899",
+          "session_id": "7dc9fe19-3450-49df-8a16-3c66311601ff",
           "shipment_id": "SH05",
           "source": "simulated_replay",
           "stored_frame_count": 48,
-          "stored_frames_sha256": "63e6a8a1f220c454645ec57d90c0abb9a1e371687db16b22068e1f230a3d0a39",
-          "stored_session_sha256": "42a76bb19d6ea2ccaa65e95bb1d08757239ffc4d21bff48619f63e19508585d4"
+          "stored_frames_sha256": "4ae9f21554db137740aab89a1ce98957df978a4710fe94e631b57120fc54f72a",
+          "stored_session_sha256": "62063563a94adbbcb04ab86ee4253bc16967b9bb830580bb3118c633caa19ab4"
         },
         "kind": "recorded_operational_actions",
         "notice": "Stored simulated freshness evidence was checked against its experiment; this does not prove it was shown on screen or establish physical sensing or food safety.",
@@ -8606,27 +8698,27 @@
       },
       "notes": "Automated Chrome check: approval; simulated app workflow only, no human presentation, screen narration or video claim.",
       "outcome": "covered",
-      "recorded_at": "2026-10-31T07:05:33.553107+00:00",
+      "recorded_at": "2026-10-31T07:15:34.792657+00:00",
       "stage_id": "approval"
     },
     {
-      "elapsed_seconds": 3.163,
+      "elapsed_seconds": 3.223,
       "evidence": {
         "actions": [
           {
             "action": "driver_focus",
             "id": 9,
-            "timestamp": "2026-10-31T07:05:33.849767+00:00"
+            "timestamp": "2026-10-31T07:15:35.094675+00:00"
           },
           {
             "action": "acknowledge",
             "id": 10,
-            "timestamp": "2026-10-31T07:05:33.911673+00:00"
+            "timestamp": "2026-10-31T07:15:35.142927+00:00"
           },
           {
             "action": "incident",
             "id": 11,
-            "timestamp": "2026-10-31T07:05:34.325839+00:00"
+            "timestamp": "2026-10-31T07:15:35.576407+00:00"
           }
         ],
         "assignment_context": {
@@ -8641,7 +8733,7 @@
           10,
           11
         ],
-        "incident_id": "aa31e52c-a1c5-4fef-b763-5fdc67be3581",
+        "incident_id": "1fed4763-82a9-4f98-b8ad-b7fcf2c50a25",
         "kind": "recorded_operational_actions",
         "notice": "One trip has a recorded parked-confirmation, acknowledgment and report sequence after the run began; this does not prove it was shown on screen.",
         "reported_network_revision": 1,
@@ -8653,11 +8745,11 @@
       },
       "notes": "Automated Chrome check: driver; simulated app workflow only, no human presentation, screen narration or video claim.",
       "outcome": "covered",
-      "recorded_at": "2026-10-31T07:05:34.344167+00:00",
+      "recorded_at": "2026-10-31T07:15:35.595006+00:00",
       "stage_id": "driver"
     },
     {
-      "elapsed_seconds": 3.434,
+      "elapsed_seconds": 3.475,
       "evidence": {
         "audit_ids": [],
         "kind": "self_reported_coverage",
@@ -8666,7 +8758,7 @@
       },
       "notes": "Automated Chrome check: closing; simulated app workflow only, no human presentation, screen narration or video claim.",
       "outcome": "covered",
-      "recorded_at": "2026-10-31T07:05:34.615365+00:00",
+      "recorded_at": "2026-10-31T07:15:35.847421+00:00",
       "stage_id": "closing"
     }
   ],
@@ -9338,7 +9430,7 @@
     "sqlite": {
       "exists": true,
       "bytes": 335872,
-      "sha256": "a01155fc58db62081baa2d89c83d5459ee22c902a7d6416a793e31b74981b7ac"
+      "sha256": "4a0d5d15e308a43342f49b8e67caa7e605406588771380e5299596d7de27a57a"
     },
     "-wal": {
       "exists": false
@@ -9350,5 +9442,5 @@
       "exists": false
     }
   },
-  "finished_at": "2026-10-31T07:05:36.343Z"
+  "finished_at": "2026-10-31T07:15:37.653Z"
 }

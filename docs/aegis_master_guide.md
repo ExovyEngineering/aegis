@@ -1,6 +1,6 @@
 # AEGIS Master User Guide
 
-Generated October 31, 2026 at 02:05 AM CT. Complete product handbook.
+Generated October 31, 2026 at 02:16 AM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
@@ -1522,17 +1522,17 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-10-31T07:03:54.304614+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-10-31T07:14:59.940348+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 1198 tests | Executed local command; see reports/checks/20261031T070133626609Z/pytest.txt |
-| vitest | PASS; 384 tests | Executed local command; see reports/checks/20261031T070133626609Z/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/20261031T070133626609Z/frontend_build.txt |
+| pytest | PASS; 1198 tests | Executed local command; see reports/checks/20261031T071250192098Z/pytest.txt |
+| vitest | PASS; 385 tests | Executed local command; see reports/checks/20261031T071250192098Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261031T071250192098Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 
-- Recording preparation: Chrome workflows and automated tracker record: 113/113 saved browser checks, recorded 2026-10-31T07:05:20.928Z. Evidence: reports/browser_qa/recording/results.json. Runs have separate dates and are not all repeated for every change.
+- Recording preparation: Chrome workflows and automated tracker record: 116/116 saved browser checks, recorded 2026-10-31T07:15:22.941Z. Evidence: reports/browser_qa/recording/results.json. Runs have separate dates and are not all repeated for every change.
 - Save the Load, FEFO and driver handoff: 94/94 saved browser checks, recorded 2026-10-31T06:30:41.552Z. Evidence: reports/browser_qa/freshness/results.json. Runs have separate dates and are not all repeated for every change.
 - Road intelligence: 58/58 saved browser checks, recorded 2026-10-28T19:15:52.092Z. Evidence: reports/browser_qa/roads/results.json. Runs have separate dates and are not all repeated for every change.
 - Guided rehearsal: 76/76 saved browser checks, recorded 2026-10-28T06:07:06.190Z. Evidence: reports/browser_qa/rehearsal/results.json. Runs have separate dates and are not all repeated for every change.

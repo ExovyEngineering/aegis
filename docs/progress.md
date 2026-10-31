@@ -15,8 +15,8 @@ Session date: October 31, 2026, America/Chicago. This document distinguishes imp
   acknowledgments. Exported stage evidence retains immutable session/frame/profile
   hashes while human video, Kiro and authorship gates remain explicitly open.
 - Final full local checks: **1,198 pytest passed**, four platform skips and four
-  upstream warnings; **384 Vitest passed**; production build passed. Logs:
-  `reports/checks/20261031T070133626609Z/`. Focused report/compiler checks also
+  upstream warnings; **385 Vitest passed**; production build passed. Logs:
+  `reports/checks/20261031T071250192098Z/`. Focused report/compiler checks also
   exercised absent, malformed, failed and nonfinite optional freshness evidence.
 - Six actual public HTTP probes succeeded: FSIS recall JSON, NWS alerts,
   Open-Meteo forecast, MoDOT service discovery and OSRM route/table. Exact times,
@@ -27,13 +27,16 @@ Session date: October 31, 2026, America/Chicago. This document distinguishes imp
 - Added an optional scientific-report appendix from saved freshness replay
   results. Existing model/figure values remain separate from simulated quality,
   FEFO/FIFO and rescue outputs. Missing/failed optional evidence is disclosed.
-- **113 recording-preparation Chrome checks passed**, with six desktop/mobile
+- **116 recording-preparation Chrome checks passed**, with six desktop/mobile
   screenshots in `reports/browser_qa/recording/results.json`. All ten workspace
   headings/orders, the guide anchor, actual rescue/driver UI and an automated
   six-stage tracker/export were exercised. Tracker housekeeping used guarded APIs;
   manual narrative coverage was explicitly synthetic. This is not a human video.
   Operator SQLite/sidecars, raw originals, fixtures and provider caches matched
   their before/after fingerprints during this QA.
+- A follow-up App handoff regression and Chrome check verify that the rehearsal
+  shortcut clears an older explicitly modeled candidate and reopens the documented
+  SH05 demo. Generic navigation cannot silently inherit that prior selection.
 - The updated **83-page, 23-chapter master guide** passed **37 read-only Chrome
   checks**. PDF page numbers, bookmarks, contents targets and chapter hashes were
   verified; native navigation/runbook previews were inspected. A separate 18-page
