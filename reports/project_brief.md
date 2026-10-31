@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 31, 2026 at 01:30 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 31, 2026 at 02:06 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -72,7 +72,7 @@ Evidence: reports/aegis_report.md
 
 Isolated guided rehearsal and saved evidence | implemented; genuine team presentation remains pending
 
-Fresh verified database, six planned stages, server-clock timer, version guards and immutable evidence exports. Offline mode uses dated fixtures and labeled route estimates. Automated checks do not establish a human rehearsal, Kiro execution or author approval.
+Fresh verified database, six planned stages, server-clock timer, version guards and immutable evidence exports. Command and stored freshness-rescue workflows retain distinct operational provenance; reassignment requires a new contextual driver acknowledgment. A linked recording runbook covers the timed narrative and full hands-on review. Offline mode uses dated fixtures and labeled route estimates. Automated checks do not establish a human rehearsal, Kiro execution or author approval.
 
 Evidence: docs/rehearsal_guide.md
 
@@ -196,13 +196,13 @@ Evidence: docs/freshness_gateway.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-31T06:30:24.344365+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-31T07:03:54.304614+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 1169; 92.39 seconds. Log: reports/checks/20261031T062820174887Z/pytest.txt. Checked: 2026-10-31T06:28:20.175411+00:00.
+pytest: PASS; exit 0; tests passed 1198; 106.357 seconds. Log: reports/checks/20261031T070133626609Z/pytest.txt. Checked: 2026-10-31T07:01:33.627224+00:00.
 
-vitest: PASS; exit 0; tests passed 384; 19.335 seconds. Log: reports/checks/20261031T062820174887Z/vitest.txt. Checked: 2026-10-31T06:29:52.579913+00:00.
+vitest: PASS; exit 0; tests passed 384; 21.011 seconds. Log: reports/checks/20261031T070133626609Z/vitest.txt. Checked: 2026-10-31T07:03:20.003116+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 12.386 seconds. Log: reports/checks/20261031T062820174887Z/frontend_build.txt. Checked: 2026-10-31T06:30:11.937516+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 13.252 seconds. Log: reports/checks/20261031T070133626609Z/frontend_build.txt. Checked: 2026-10-31T07:03:41.036665+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -219,6 +219,8 @@ Guided rehearsal actual-Chrome QA: 76 / 76 checks passed, checked 2026-10-28T06:
 Road intelligence actual-Chrome QA: 58 / 58 checks passed, checked 2026-10-28T19:15:52.092Z. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.
 
 Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: 76/76 checks at 2026-10-30T19:40:42.320Z. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.
+
+Recording preparation: real Chrome rescue/driver and automated tracker housekeeping: 113/113 recorded checks passed. Evidence: reports/browser_qa/recording/results.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
 
 Save the Load actual-Chrome workflow: 94/94 recorded checks passed. Evidence: reports/browser_qa/freshness/results.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
 

@@ -1,5 +1,11 @@
 # Five-minute AEGIS demonstration
 
+The updated [recording runbook](../docs/recording_guide.md) includes a five-minute
+presentation outline with the Save the Load highlight and a longer hands-on
+click-through checklist. It is available in **Project brief → Recording checklist
+& video runbook** and in the master guide. The established scenario-C sequence
+and reproducible commands below remain available as the detailed core path.
+
 Build and test the application before presenting. Start a fresh isolated server with `.venv/Scripts/python scripts/start_rehearsal.py` and open the printed URL, normally `http://127.0.0.1:8001/?mode=rehearsal`. Keep the normal operator app on port 8000. Source timestamps and simulated operational time are different; map tiles may need internet. Do not claim dated evidence is live.
 
 The launcher reserves a new UUID-named SQLite file, uses the verified isolated runtime profile and requests offline-demo adapters. It never resets the operator database or kills another server. See [the rehearsal guide](../docs/rehearsal_guide.md) for port conflicts, prepare-only output and source limitations. A URL query parameter alone does not provide database isolation.

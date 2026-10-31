@@ -11,8 +11,8 @@
       "geographic_scope": "national",
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
-      "test_status": "failed",
-      "last_successful_request": "2026-10-27T21:03:19.060413+00:00",
+      "test_status": "HTTP success",
+      "last_successful_request": "2026-10-31T07:00:26.559932+00:00",
       "response_schema": {
         "type": "array",
         "rows": 2032,
@@ -175,7 +175,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "5 minutes",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-28T06:09:29.802362+00:00",
+      "last_successful_request": "2026-10-31T07:00:27.755420+00:00",
       "response_schema": [
         "@context",
         "type",
@@ -221,7 +221,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "hourly",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-28T06:09:31.638122+00:00",
+      "last_successful_request": "2026-10-31T07:00:29.304790+00:00",
       "response_schema": [
         "latitude",
         "longitude",
@@ -275,7 +275,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "5 minutes",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-28T06:09:34.324627+00:00",
+      "last_successful_request": "2026-10-31T07:00:30.413695+00:00",
       "response_schema": [
         "documentInfo",
         "maxImageWidth",
@@ -345,7 +345,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-28T06:09:35.079354+00:00",
+      "last_successful_request": "2026-10-31T07:00:31.101151+00:00",
       "response_schema": [
         "code",
         "routes",
@@ -366,7 +366,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-28T06:09:36.428215+00:00",
+      "last_successful_request": "2026-10-31T07:00:32.306992+00:00",
       "response_schema": [
         "code",
         "destinations",

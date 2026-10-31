@@ -21,7 +21,8 @@ PARTS = (
     'docs/manual_parts/start.md', 'docs/manual_parts/operations.md',
     'docs/manual_parts/freshness.md',
     'docs/manual_parts/dispatch_drive.md', 'docs/manual_parts/evidence_science.md',
-    'docs/manual_parts/assistant.md', 'docs/manual_parts/rehearsal.md', 'docs/manual_parts/reference.md',
+    'docs/manual_parts/assistant.md', 'docs/manual_parts/rehearsal.md',
+    'docs/recording_guide.md', 'docs/manual_parts/reference.md',
 )
 TITLE = 'AEGIS Master User Guide'
 
@@ -108,7 +109,7 @@ def evidence_chapter(root):
     if not checks.get('checks'):
         body.append('| Local suite | Not recorded | Run the documented checks; no result inferred |')
     body += ['', 'Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.', '']
-    for folder, label in [('freshness','Save the Load, FEFO and driver handoff'), ('roads','Road intelligence'), ('rehearsal','Guided rehearsal'),
+    for folder, label in [('recording','Recording preparation: Chrome workflows and automated tracker record'), ('freshness','Save the Load, FEFO and driver handoff'), ('roads','Road intelligence'), ('rehearsal','Guided rehearsal'),
                           ('readiness','County context/readiness'), ('drive','Drive'),
                           ('operations','Dispatcher/custom operations'), ('depth','Planning/evidence depth'),
                           ('controls','Command controls')]:
@@ -268,6 +269,10 @@ def render_pdf(blocks, output, generated, preview_dir=None):
         toc_pages[-1].append((chapter,lines,toc_y));toc_y-=len(lines)*16+9
     offset=1+len(toc_pages); total=offset+len(pages); links=[]
     for chapter in chapter_pages:chapter['page']=offset+chapter['body_page_index']+1
+    preview_pages={1,2,8,14,21,27,28,29,35,44,59,total}
+    for chapter in chapter_pages:
+        if chapter['id']=='record-the-final-video':
+            preview_pages.update(range(chapter['page'],min(chapter['page']+3,total+1)))
 
     def figure(number,chapter):
         fig=Figure(figsize=(8.5,11),facecolor='white')
@@ -278,7 +283,7 @@ def render_pdf(blocks, output, generated, preview_dir=None):
         return fig
     def save_page(pdf,fig,number):
         pdf.savefig(fig)
-        if preview_dir is not None and number in {1,2,8,14,21,27,28,29,35,44,59,total}:
+        if preview_dir is not None and number in preview_pages:
             preview_dir.mkdir(parents=True,exist_ok=True)
             fig.savefig(preview_dir/f'print-render-page-{number:02}.png',dpi=120)
     with PdfPages(output,metadata={'Title':TITLE,'Author':'AEGIS project team','Subject':'Complete product handbook, controls, use cases and limitations'}) as pdf:

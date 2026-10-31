@@ -1,5 +1,22 @@
 # Team review - October 31, 2026
 
+## Prepare for the final recording
+
+The sidebar now follows operational order: Command, Save the Load, route and road
+planning, Dispatcher, Drive, assistant, model, Project brief, then Sources. In
+**Project brief**, open **Recording checklist & video runbook** for the timed
+outline and complete hands-on review. Use fresh isolated sessions; the guide
+distinguishes rehearsal actions, actual video review and scientific limitations.
+Save the Load now has its own page heading and directs you to the actual
+observation times rather than a conflicting global scenario date.
+
+The recording preparation passed 113 Chrome checks across desktop/mobile and
+actual rescue/parked-driver actions, with explicitly automated tracker coverage.
+The full local suite passed 1,198 backend tests and 384 frontend tests plus build.
+Six core public endpoint probes succeeded; complete data coverage remains
+separate. The master guide is now 83 pages, including the new recording chapter.
+Your actual timed video and final human gates remain unverified.
+
 ## Try Save the Load first
 
 Open **Save the Load** in the sidebar, then **Start rescue experiment** and

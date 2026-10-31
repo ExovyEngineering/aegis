@@ -51,6 +51,11 @@ project/status brief remains available separately.
 For the finished core walkthrough and verification commands, start with
 [the core software handoff](docs/core_release.md).
 
+Before filming, use the [recording runbook and click-through checklist](docs/recording_guide.md).
+It is also linked directly from **Project brief** and included in the printable
+master guide. Launch fresh isolated rehearsals for practice; preserve operator
+state. Operations appear first in navigation and **Sources & evidence** is last.
+
 Teammates cloning the repository can follow [CONTRIBUTING.md](CONTRIBUTING.md)
 to run with the included derived datasets and dated fixtures, create feature
 branches, and verify changes. Original bulk downloads and local operator state

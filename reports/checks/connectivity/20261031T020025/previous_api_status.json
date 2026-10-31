@@ -1,0 +1,269 @@
+[
+  {
+    "id": "fsis_recalls",
+    "tested_at": "2026-10-28T06:09:21.270824+00:00",
+    "success": false,
+    "http_status": null,
+    "content_type": null,
+    "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
+    "latency_ms": 1747
+  },
+  {
+    "id": "fsis_sampling",
+    "tested_at": "2026-10-28T06:09:23.318096+00:00",
+    "success": false,
+    "http_status": null,
+    "content_type": null,
+    "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
+    "latency_ms": 330
+  },
+  {
+    "id": "fsis_directory",
+    "tested_at": "2026-10-28T06:09:23.949178+00:00",
+    "success": false,
+    "http_status": null,
+    "content_type": null,
+    "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
+    "latency_ms": 316
+  },
+  {
+    "id": "cdc_beam",
+    "tested_at": "2026-10-28T06:09:24.565158+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html",
+    "failure": null,
+    "latency_ms": 1378
+  },
+  {
+    "id": "cdc_nors",
+    "tested_at": "2026-10-28T06:09:26.243185+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html",
+    "failure": null,
+    "latency_ms": 1254
+  },
+  {
+    "id": "ncei_docs",
+    "tested_at": "2026-10-28T06:09:27.797453+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "failure": null,
+    "latency_ms": 727
+  },
+  {
+    "id": "ncei_historical",
+    "tested_at": "2026-10-28T06:09:28.825020+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json;charset=utf-8",
+    "failure": null,
+    "response_schema": {
+      "type": "array",
+      "rows": 7,
+      "item_fields": [
+        "DATE",
+        "STATION",
+        "TMAX",
+        "TMIN",
+        "PRCP"
+      ]
+    },
+    "latency_ms": 677
+  },
+  {
+    "id": "nws_alerts",
+    "tested_at": "2026-10-28T06:09:29.802362+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/geo+json",
+    "failure": null,
+    "response_schema": [
+      "@context",
+      "type",
+      "features",
+      "title",
+      "updated"
+    ],
+    "latency_ms": 714
+  },
+  {
+    "id": "nws_points",
+    "tested_at": "2026-10-28T06:09:30.816909+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/geo+json",
+    "failure": null,
+    "response_schema": [
+      "@context",
+      "id",
+      "type",
+      "geometry",
+      "properties"
+    ],
+    "latency_ms": 521
+  },
+  {
+    "id": "openmeteo",
+    "tested_at": "2026-10-28T06:09:31.638122+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "failure": null,
+    "response_schema": [
+      "latitude",
+      "longitude",
+      "generationtime_ms",
+      "utc_offset_seconds",
+      "timezone",
+      "timezone_abbreviation",
+      "elevation",
+      "hourly_units",
+      "hourly"
+    ],
+    "latency_ms": 1106
+  },
+  {
+    "id": "openmeteo_archive",
+    "tested_at": "2026-10-28T06:09:33.044113+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "failure": null,
+    "response_schema": [
+      "latitude",
+      "longitude",
+      "generationtime_ms",
+      "utc_offset_seconds",
+      "timezone",
+      "timezone_abbreviation",
+      "elevation",
+      "daily_units",
+      "daily"
+    ],
+    "latency_ms": 980
+  },
+  {
+    "id": "modot",
+    "tested_at": "2026-10-28T06:09:34.324627+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "failure": null,
+    "response_schema": [
+      "documentInfo",
+      "maxImageWidth",
+      "maxRecordCount",
+      "description",
+      "datesInUnknownTimezone",
+      "supportsQueryDomains",
+      "units",
+      "maxSelectionCount",
+      "supportedImageFormatTypes",
+      "supportsClipping",
+      "exportTilesAllowed",
+      "maxImageHeight",
+      "tables",
+      "hasVersionedData",
+      "supportsDatumTransformation",
+      "cimVersion",
+      "supportsQueryDataElements",
+      "layers",
+      "mapName",
+      "minScale",
+      "archivingInfo",
+      "spatialReference",
+      "fullExtent",
+      "supportedExtensions",
+      "capabilities",
+      "supportsDynamicLayers",
+      "maxScale",
+      "singleFusedMapCache",
+      "currentVersion",
+      "hasBranchVersionedData"
+    ],
+    "latency_ms": 454
+  },
+  {
+    "id": "osrm_route",
+    "tested_at": "2026-10-28T06:09:35.079354+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "failure": null,
+    "response_schema": [
+      "code",
+      "routes",
+      "waypoints"
+    ],
+    "latency_ms": 1048
+  },
+  {
+    "id": "osrm_table",
+    "tested_at": "2026-10-28T06:09:36.428215+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "failure": null,
+    "response_schema": [
+      "code",
+      "destinations",
+      "durations",
+      "sources"
+    ],
+    "latency_ms": 812
+  },
+  {
+    "id": "osrm_docs",
+    "tested_at": "2026-10-28T06:09:37.540385+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "failure": null,
+    "latency_ms": 634
+  },
+  {
+    "id": "osm_missouri",
+    "tested_at": "2026-10-28T06:09:38.474262+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "text/html",
+    "failure": null,
+    "latency_ms": 1047
+  },
+  {
+    "id": "food_access",
+    "tested_at": "2026-10-28T06:09:39.821210+00:00",
+    "success": false,
+    "http_status": null,
+    "content_type": null,
+    "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
+    "latency_ms": 2832
+  },
+  {
+    "id": "food_environment",
+    "tested_at": "2026-10-28T06:09:42.954113+00:00",
+    "success": false,
+    "http_status": null,
+    "content_type": null,
+    "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
+    "latency_ms": 321
+  },
+  {
+    "id": "iowa_dot",
+    "tested_at": "2026-10-28T19:04:18.887645+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "failure": null,
+    "response_schema": [
+      "type",
+      "crs",
+      "properties",
+      "features"
+    ],
+    "latency_ms": 902
+  }
+]

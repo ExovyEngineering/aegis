@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-31T01:30:44.930017-05:00",
+  "generated_at": "2026-10-31T02:06:07.288558-05:00",
   "pdf": "reports/aegis_project_brief.pdf",
   "markdown": "reports/project_brief.md",
   "pages": 18,
-  "sha256": "b078632c9b97c5e2a48c55480013c30bb66f98247430c8d6ce5bd4859571ac78",
-  "bytes": 116010,
+  "sha256": "b0927bd7c039d0404672de0563515728655b43853a2a0d809b4afa8a7b437807",
+  "bytes": 116883,
   "live_api_requests_performed": false,
   "feature_register": "config/feature_register.yaml",
   "verification": "reports/session_verification.json"

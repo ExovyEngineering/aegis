@@ -2,6 +2,14 @@
 
 Canonical registry: `config/api_registry.yaml` (YAML-compatible JSON). Google Sheets import: `config/api_registry.csv`. Probe evidence: `reports/api_status.json`. Documentation/catalog HTTP success does not establish a working data integration.
 
+October 31 recording preparation rechecked six core public endpoints: FSIS recall
+JSON, NWS alerts, Open-Meteo forecast, MoDOT service discovery, OSRM route and OSRM
+table all returned HTTP 200 and the expected payload type. Exact results are in
+`reports/recording_connectivity.json`; prior results are retained under
+`reports/checks/connectivity/`. Other providers keep their separate test dates.
+These probes do not refresh every MoDOT incident layer, validate complete sampling
+or weather coverage, prove truck restrictions, or establish a recall-to-lot match.
+
 - **fsis_recalls** — USDA FSIS: https://www.fsis.usda.gov/fsis/api/recall/v/1
   Type: official recall JSON. Fallback: Local dated response cache; unavailable banner.
 - **fsis_sampling** — USDA FSIS: https://www.fsis.usda.gov/science-data/data-sets-visualizations/laboratory-sampling-data

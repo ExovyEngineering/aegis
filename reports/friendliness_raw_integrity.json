@@ -1,8 +1,8 @@
 {
   "kind": "independent_original_raw_sha256_verification",
-  "started_at": "2026-10-31T06:27:43.102632+00:00",
-  "checked_at": "2026-10-31T06:27:44.357470+00:00",
-  "duration_seconds": 1.255,
+  "started_at": "2026-10-31T07:05:44.466978+00:00",
+  "checked_at": "2026-10-31T07:05:45.511127+00:00",
+  "duration_seconds": 1.044,
   "provenance": {
     "inventory_path": "data/manifests/inventory.json",
     "inventory_sha256": "346a242b531178d992eb01600d1dcea2344198cb0730800851677c2e6bbc513a",

@@ -61,7 +61,7 @@ def sections(root):
     if friendly:
         rows=friendly.get('checks',[])
         testlines.append(f"Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} checks at {friendly.get('checked_at','not recorded')}. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.")
-    for path,label in [('reports/browser_qa/freshness/results.json','Save the Load actual-Chrome workflow'),('reports/freshness_demo.json','Accelerated deterministic freshness replay')]:
+    for path,label in [('reports/browser_qa/recording/results.json','Recording preparation: real Chrome rescue/driver and automated tracker housekeeping'),('reports/browser_qa/freshness/results.json','Save the Load actual-Chrome workflow'),('reports/freshness_demo.json','Accelerated deterministic freshness replay')]:
         value=load(root,path,{})
         if value:
             rows=value.get('checks',[])

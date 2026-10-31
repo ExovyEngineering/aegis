@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-31T06:31:20.131Z",
+  "checked_at": "2026-10-31T07:07:10.655Z",
   "base_url": "http://127.0.0.1:8000",
   "read_only": true,
   "physical_printer_tested": false,
@@ -209,8 +209,8 @@
   "database_before": {
     "sqlite": {
       "exists": true,
-      "bytes": 196608,
-      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+      "bytes": 286720,
+      "sha256": "a64de3f894ec840a4c842d41e17461862d3769f574d4c32e8b73076390a9f6e5"
     },
     "-wal": {
       "exists": false
@@ -223,22 +223,22 @@
     }
   },
   "guide": {
-    "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b",
-    "pages": 77,
-    "chapters": 22,
-    "generated_at": "2026-10-31T01:31:14.833007-05:00"
+    "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567",
+    "pages": 83,
+    "chapters": 23,
+    "generated_at": "2026-10-31T02:06:30.490612-05:00"
   },
   "document_before": {
     "exists": true,
-    "bytes": 466440,
-    "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b"
+    "bytes": 498426,
+    "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567"
   },
   "browser_version": "156.0.8078.74",
   "database_after": {
     "sqlite": {
       "exists": true,
-      "bytes": 196608,
-      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+      "bytes": 286720,
+      "sha256": "a64de3f894ec840a4c842d41e17461862d3769f574d4c32e8b73076390a9f6e5"
     },
     "-wal": {
       "exists": false
@@ -252,9 +252,9 @@
   },
   "document_after": {
     "exists": true,
-    "bytes": 466440,
-    "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b"
+    "bytes": 498426,
+    "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567"
   },
   "passed": true,
-  "finished_at": "2026-10-31T06:31:28.186Z"
+  "finished_at": "2026-10-31T07:07:18.948Z"
 }

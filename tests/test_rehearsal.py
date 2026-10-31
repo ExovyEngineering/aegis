@@ -418,7 +418,7 @@ def test_driver_coverage_requires_acknowledgment_before_report(practice):
     assert checkpoint(practice,run).status_code==409
 
 
-@pytest.mark.parametrize('action',['event','reset','lot_hold'])
+@pytest.mark.parametrize('action',['event','reset','lot_hold','freshness_rescue_approve'])
 def test_driver_acknowledgment_must_follow_trip_invalidation(practice,action):
     run=driver_stage(practice)
     actions(practice,'driver_focus','acknowledge')

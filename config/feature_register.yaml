@@ -73,7 +73,10 @@ features:
   status: implemented; genuine team presentation remains pending
   evidence: docs/rehearsal_guide.md
   detail: Fresh verified database, six planned stages, server-clock timer, version
-    guards and immutable evidence exports. Offline mode uses dated fixtures and
+    guards and immutable evidence exports. Command and stored freshness-rescue
+    workflows retain distinct operational provenance; reassignment requires a new
+    contextual driver acknowledgment. A linked recording runbook covers the timed
+    narrative and full hands-on review. Offline mode uses dated fixtures and
     labeled route estimates. Automated checks do not establish a human rehearsal,
     Kiro execution or author approval.
 - id: master-guide

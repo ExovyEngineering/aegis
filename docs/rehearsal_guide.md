@@ -90,6 +90,16 @@ A skipped stage needs a reason and remains visibly skipped. The disruption,
 approval and driver stages additionally require matching audit actions recorded
 after this run began; older actions or a written assertion cannot substitute.
 
+The disruption/approval stages also offer **Open Save the Load**. An actual
+stored **Replay heat excursion** or **Add road-delay frame**, followed by a
+coherent approved rescue from the same experiment, can supply those operational
+stages. Normal/recovery frames and an unapproved proposal do not substitute.
+The tracker retains the actual action names and bounded freshness provenance;
+missing, stale or mismatched records fail visibly. Reassignment invalidates an
+earlier driver acknowledgment: confirm parking, acknowledge the current trip and
+submit its incident after the reviewed rescue. Evidence/model narration and the
+closing stage still need their own coverage notes.
+
 After all stages have a recorded outcome, add closing notes and choose **Finish
 and save rehearsal**. Use **Abort and save record** if stopping early. Open a
 saved record to inspect its timing, coverage and source snapshot, or choose

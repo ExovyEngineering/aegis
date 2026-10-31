@@ -1,5 +1,18 @@
 # AEGIS implementation history
 
+## October 31, 2026 - recording readiness and workspace order
+
+- Put operational work first, Drive after Dispatcher and Sources & evidence last
+  on desktop/mobile. Corrected Save the Load's page-level heading and time caption.
+- Added the recording runbook/full hands-on checklist to Project brief and the
+  printable handbook. Rehearsal stages now accept verified same-experiment rescue
+  evidence and reject old driver acknowledgment after reassignment.
+- Added saved freshness methods/results to the report compiler with explicit
+  malformed/missing/failed-evidence handling and uncalibrated quality limits.
+- Full checks passed: 1,198 backend, 384 frontend, production build. Six actual
+  public recall/weather/road/routing probes succeeded; other source dates and
+  coverage limits remain distinct. No human video or final submission is inferred.
+
 ## October 31, 2026 - Save the Load and constrained predictive FEFO
 
 - Added chronological temperature-history quality budgets, point/conservative

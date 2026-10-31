@@ -1,12 +1,47 @@
 [
   {
     "id": "fsis_recalls",
-    "tested_at": "2026-10-28T06:09:21.270824+00:00",
-    "success": false,
-    "http_status": null,
-    "content_type": null,
-    "failure": "ConnectError: [Errno 11002] getaddrinfo failed",
-    "latency_ms": 1747
+    "tested_at": "2026-10-31T07:00:26.559932+00:00",
+    "success": true,
+    "http_status": 200,
+    "content_type": "application/json",
+    "failure": null,
+    "response_schema": {
+      "type": "array",
+      "rows": 2032,
+      "item_fields": [
+        "field_title",
+        "field_recall_number_export",
+        "field_recall_url",
+        "field_active_notice",
+        "field_states",
+        "field_archive_recall",
+        "field_closed_year",
+        "field_company_media_contact",
+        "field_distro_list",
+        "field_en_press_release",
+        "field_establishment",
+        "field_labels",
+        "field_media_contact",
+        "field_risk_level",
+        "field_last_modified_date",
+        "field_press_release",
+        "field_processing",
+        "field_product_items",
+        "field_qty_recovered",
+        "field_recall_classification",
+        "field_recall_date",
+        "field_recall_number",
+        "field_recall_reason",
+        "field_recall_type",
+        "field_related_to_outbreak",
+        "field_summary",
+        "field_year",
+        "langcode",
+        "field_has_spanish"
+      ]
+    },
+    "latency_ms": 895
   },
   {
     "id": "fsis_sampling",
@@ -75,7 +110,7 @@
   },
   {
     "id": "nws_alerts",
-    "tested_at": "2026-10-28T06:09:29.802362+00:00",
+    "tested_at": "2026-10-31T07:00:27.755420+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/geo+json",
@@ -87,7 +122,7 @@
       "title",
       "updated"
     ],
-    "latency_ms": 714
+    "latency_ms": 1249
   },
   {
     "id": "nws_points",
@@ -107,7 +142,7 @@
   },
   {
     "id": "openmeteo",
-    "tested_at": "2026-10-28T06:09:31.638122+00:00",
+    "tested_at": "2026-10-31T07:00:29.304790+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=utf-8",
@@ -123,7 +158,7 @@
       "hourly_units",
       "hourly"
     ],
-    "latency_ms": 1106
+    "latency_ms": 808
   },
   {
     "id": "openmeteo_archive",
@@ -147,7 +182,7 @@
   },
   {
     "id": "modot",
-    "tested_at": "2026-10-28T06:09:34.324627+00:00",
+    "tested_at": "2026-10-31T07:00:30.413695+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "text/plain; charset=UTF-8",
@@ -184,11 +219,11 @@
       "currentVersion",
       "hasBranchVersionedData"
     ],
-    "latency_ms": 454
+    "latency_ms": 387
   },
   {
     "id": "osrm_route",
-    "tested_at": "2026-10-28T06:09:35.079354+00:00",
+    "tested_at": "2026-10-31T07:00:31.101151+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=UTF-8",
@@ -198,11 +233,11 @@
       "routes",
       "waypoints"
     ],
-    "latency_ms": 1048
+    "latency_ms": 905
   },
   {
     "id": "osrm_table",
-    "tested_at": "2026-10-28T06:09:36.428215+00:00",
+    "tested_at": "2026-10-31T07:00:32.306992+00:00",
     "success": true,
     "http_status": 200,
     "content_type": "application/json; charset=UTF-8",
@@ -213,7 +248,7 @@
       "durations",
       "sources"
     ],
-    "latency_ms": 812
+    "latency_ms": 611
   },
   {
     "id": "osrm_docs",

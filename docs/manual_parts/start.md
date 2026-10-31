@@ -45,7 +45,7 @@ Genuine Kiro specification execution, final report/rubric author review and the 
 
 ## Find your way around the application
 
-The desktop control tower is **AEGIS Command**. Its navigation opens these ten workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
+The desktop control tower is **AEGIS Command**. Its navigation opens these ten workspaces. Operations appear first; driver work follows dispatcher review, and Sources & evidence is last. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
 
 | Navigation label | Main question it answers | Does simply reading it change dispatch? |
 | --- | --- | --- |
@@ -54,11 +54,11 @@ The desktop control tower is **AEGIS Command**. Its navigation opens these ten w
 | Route laboratory | How could one farm or a multi-origin fleet serve these stops under assumptions? | No; even saved laboratory runs do not dispatch |
 | Road intelligence | What do captured Missouri/Iowa road records say near these route alternatives? | No; comparison is read-only planning |
 | Dispatcher desk | What did a driver report, and what human review, hold or instruction is recorded? | Reading does not; submitted decisions can change assignments/holds/instructions |
-| Sources & evidence | Where did each evidence layer come from, and what coverage is missing? | No; source refresh can update caches, not dispatch |
-| Model evaluation | What was actually measured in the historical FSIS study? | No; opening this view never trains a model |
-| Evidence assistant | How do captured facts explain scenario tradeoffs, a shipment, model limits or the driver workflow? | No; it only returns cited explanations and navigation |
-| Project brief | Where are the master guide, shorter status brief, feature register and rehearsal tools? | Document downloads do not; recording an isolated rehearsal writes its practice record |
 | AEGIS Drive | What assignment and instruction has the dispatcher approved for this truck? | Reading does not; parked acknowledgments and reports create records |
+| Evidence assistant | How do captured facts explain scenario tradeoffs, a shipment, model limits or the driver workflow? | No; it only returns cited explanations and navigation |
+| Model evaluation | What was actually measured in the historical FSIS study? | No; opening this view never trains a model |
+| Project brief | Where are the master guide, shorter status brief, feature register and rehearsal tools? | Document downloads do not; recording an isolated rehearsal writes its practice record |
+| Sources & evidence | Where did each evidence layer come from, and what coverage is missing? | No; source refresh can update caches, not dispatch |
 
 ### Common controls and labels
 

@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-10-31T07:08:37.336682+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "endpoint": "/api/health",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "endpoint": "/api/runtime-context",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "endpoint": "/api/freshness/context",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "endpoint": "/api/project-status",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "endpoint": "/assets/index-CzXvYdRS.js",
+      "status": 200,
+      "passed": true
+    }
+  ],
+  "operator_before": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 286720,
+      "sha256": "a64de3f894ec840a4c842d41e17461862d3769f574d4c32e8b73076390a9f6e5"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "operator_after": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 286720,
+      "sha256": "a64de3f894ec840a4c842d41e17461862d3769f574d4c32e8b73076390a9f6e5"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "mutations_requested": false,
+  "public_provider_refresh_requested": false,
+  "note": "Read-only operator smoke; this does not reset or open a freshness experiment. Actual browser mutations were isolated separately."
+}

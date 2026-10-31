@@ -8,6 +8,8 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import re
+import sqlite3
 from typing import Literal
 import uuid
 
@@ -25,9 +27,9 @@ STAGES = [
     {'id':'evidence_science', 'title':'Sources, coverage and measured science', 'planned_seconds':80,
      'description':'Show provenance, NOAA gaps and measured baseline/model limits. Coverage is self-reported.', 'requires_evidence':[]},
     {'id':'disruption', 'title':'Simulated disruption and tradeoffs', 'planned_seconds':60,
-     'description':'Introduce a simulated event and compare responses. Covered requires an event recorded since this run began.', 'requires_evidence':['event']},
+     'description':'Introduce a simulated Command event or stored freshness heat/road replay and compare responses. Covered requires recorded evidence since this run began.', 'requires_evidence':['event']},
     {'id':'approval', 'title':'Explicit dispatcher decision', 'planned_seconds':60,
-     'description':'Review and approve a simulated scenario. Covered requires an approval recorded since this run began.', 'requires_evidence':['approve']},
+     'description':'Review and approve a simulated Command scenario or the checked freshness rescue. Covered requires a recorded approval since this run began.', 'requires_evidence':['approve']},
     {'id':'driver', 'title':'Parked driver workflow', 'planned_seconds':40,
      'description':'Confirm parking, acknowledge an assignment and report an incident. Covered requires those recorded actions during this run.', 'requires_evidence':['driver_focus','acknowledge','incident']},
     {'id':'closing', 'title':'Contribution and honest limitations', 'planned_seconds':20,
@@ -119,7 +121,149 @@ def _audit_delta(connection, start_id):
     return output, len(rows) > MAX_AUDIT_SNAPSHOT
 
 
-def _driver_evidence(connection, audit):
+def _freshness_session(connection, payload):
+    """Read validated stored context without creating tables or inferring success."""
+    if not isinstance(payload, dict) or not isinstance(payload.get('session_id'), str):
+        return None
+    from backend.freshness import session_row, frame_rows
+    try:
+        meta = session_row(connection, payload['session_id'])
+        if meta['shipment_id'] != payload.get('shipment_id') or meta['source'] != 'simulated_replay':
+            return None
+        return meta, frame_rows(connection, meta['id'])
+    except (HTTPException, sqlite3.Error, ValueError, TypeError, KeyError):
+        return None
+
+
+def _freshness_fingerprint(connection, meta):
+    """Capture small immutable references to the exact retained experiment rows."""
+    from backend.freshness_kinetics import MODEL_VERSION
+    session = connection.execute('SELECT id,payload,version,created_at,updated_at FROM freshness_sessions WHERE id=?',
+                                 (meta['id'],)).fetchone()
+    digest = hashlib.sha256()
+    count = 0
+    for row in connection.execute('SELECT session_id,event_id,device_id,observed_at,payload,sha256 FROM freshness_frames WHERE session_id=? ORDER BY rowid', (meta['id'],)):
+        digest.update((_json(row) + '\n').encode())
+        count += 1
+    return {'captured_version': meta['version'], 'evaluation_at': meta['evaluation_at'],
+            'stored_session_sha256': hashlib.sha256(_json(session).encode()).hexdigest(),
+            'stored_frames_sha256': digest.hexdigest(), 'stored_frame_count': count,
+            'profiles_sha256': hashlib.sha256(_json(meta['devices']).encode()).hexdigest(),
+            'quality_model_version': MODEL_VERSION}
+
+
+def _freshness_disruption(connection, run, item):
+    payload = item['payload']
+    if (not isinstance(payload, dict) or payload.get('event') not in {'heat_excursion', 'road_delay'}
+            or payload.get('operational_state_modified') is not False):
+        return None
+    stored = _freshness_session(connection, payload)
+    if stored is None:
+        return None
+    from backend.freshness import instant
+    meta, frames = stored
+    points = [(1, 16.), (121, 4.)] if payload['event'] == 'heat_excursion' else [(15, 4.)]
+    if type(payload.get('frames_added')) is not int or payload['frames_added'] != len(points) * len(meta['devices']):
+        return None
+    trip = next(row for row in meta['network']['shipments'] if row['id'] == meta['shipment_id'])
+    pattern = re.compile(r'^v([1-9][0-9]*)-' + str(points[0][0]) + '-' + re.escape(trip['lot_id']) + r'$')
+    try:
+        started, recorded = instant(run['started_at']), instant(item['timestamp'])
+        by_id = {row['event_id']: row for row in frames}
+        for frame in reversed(frames):
+            match = pattern.fullmatch(frame['event_id'])
+            if not match or int(match[1]) >= meta['version']:
+                continue
+            prefix = 'v' + match[1]
+            captured = []
+            for minutes, temperature in points:
+                for device in meta['devices']:
+                    row = by_id.get(f'{prefix}-{minutes}-{device["lot_id"]}')
+                    if (row is None or row.get('device_id') != device['device_id']
+                            or row.get('lot_id') != device['lot_id'] or row.get('source_kind') != 'simulated_replay'
+                            or row.get('temperature_c') != (temperature if device['lot_id'] == trip['lot_id'] else 4.)
+                            or row.get('vibration_g') != (.22 if payload['event'] == 'road_delay' else .03)
+                            or not started <= instant(row.get('retrieved_at')) <= recorded):
+                        break
+                    captured.append(row)
+                else:
+                    continue
+                break
+            if len(captured) != payload['frames_added']:
+                continue
+            if len(points) == 2 and any(
+                    (instant(by_id[f'{prefix}-121-{device["lot_id"]}']['observed_at'])
+                     - instant(by_id[f'{prefix}-1-{device["lot_id"]}']['observed_at'])).total_seconds() != 7200
+                    for device in meta['devices']):
+                continue
+            return {'session_id': meta['id'], 'shipment_id': meta['shipment_id'],
+                    'source': 'simulated_replay', 'event': payload['event'], 'source_version': int(match[1]),
+                    'frame_ids': [row['event_id'] for row in captured if row['lot_id'] == trip['lot_id']],
+                    **_freshness_fingerprint(connection, meta)}
+    except (HTTPException, ValueError, TypeError, KeyError):
+        return None
+    return None
+
+
+def _freshness_approval(connection, run, item):
+    """Bind the audited decision to its receipt, checked plan and current operation."""
+    payload = item['payload']
+    stored = _freshness_session(connection, payload)
+    if stored is None:
+        return None
+    from backend.freshness import build_snapshot, instant
+    meta, frames = stored
+    receipt = meta.get('approval')
+    if not isinstance(receipt, dict):
+        return None
+    try:
+        version, revision = receipt['sensor_version'], receipt['network_revision']
+        if (type(version) is not int or version != meta['version'] or version < 2
+                or not instant(run['started_at']) <= instant(receipt['approved_at']) <= instant(item['timestamp'])
+                or type(revision) is not int or revision != meta['network_revision'] + 1
+                or receipt.get('simulation') is not True or receipt.get('actor') != item['actor']
+                or receipt.get('reason') != payload.get('reason')
+                or receipt.get('selected_destination_id') != payload.get('destination_id')
+                or receipt.get('network_revision') != payload.get('network_revision')
+                or receipt.get('assignments_count') != payload.get('assignments_count')
+                or not all(payload.get(key) is True for key in
+                           ('quality_review_confirmed', 'recipient_confirmed', 'routing_review_confirmed'))):
+            return None
+        state = connection.execute('SELECT payload,revision FROM state WHERE id=1').fetchone()
+        if state is None or state[1] != revision:
+            return None
+        network = json.loads(state[0])
+        assignments = [json.loads(row[0]) for row in connection.execute('SELECT payload FROM assignments ORDER BY id')]
+        # Approval increments only the session version. Recreate the captured
+        # preapproval calculation to check its hash and every published trip.
+        captured = build_snapshot(dict(meta, version=version - 1), frames, meta['network_revision'])
+        rescue = captured['rescue']
+        expected = {row['id']: row for row in rescue['proposed_assignments']}
+        if (not rescue['proposal_hash'] or rescue['proposal_hash'] != payload.get('proposal_hash')
+                or rescue['proposed_destination_id'] != receipt['selected_destination_id']
+                or len(assignments) != receipt['assignments_count'] or len(expected) != len(assignments)
+                or any(row.get('id') not in expected or any(row.get(key) != value for key, value in expected[row['id']].items() if key != 'instruction')
+                       for row in assignments)):
+            return None
+        selected = next(row for row in assignments if row['id'] == meta['shipment_id'])
+        link = selected.get('freshness_rescue', {})
+        current_trip = next(row for row in network['shipments'] if row['id'] == selected['id'])
+        lot = next(row for row in network['lots'] if row['id'] == selected['lot_id'])
+        if (selected['destination'] != receipt['selected_destination_id']
+                or current_trip['destination'] != selected['destination']
+                or link.get('session_id') != meta['id'] or link.get('source_version') != version - 1
+                or link.get('quality_only') is not True
+                or lot.get('quality_session_id') != meta['id'] or lot.get('quality_source_version') != version):
+            return None
+        return {'session_id': meta['id'], 'shipment_id': meta['shipment_id'], 'source': 'simulated_replay',
+                'sensor_version': version, 'network_revision': revision, 'destination_id': selected['destination'],
+                'assignment_context': {key: selected[key] for key in ('id', 'lot_id', 'truck_id', 'origin', 'destination')},
+                **_freshness_fingerprint(connection, meta)}
+    except (HTTPException, sqlite3.Error, ValueError, TypeError, KeyError, AttributeError, StopIteration):
+        return None
+
+
+def _driver_evidence(connection, audit, freshness_context=None):
     """Match parked -> acknowledgment -> report for one immutable trip context."""
     if not connection.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='incidents'").fetchone():
         return None
@@ -139,8 +283,11 @@ def _driver_evidence(connection, audit):
             continue
         if not isinstance(assignment,dict) or assignment.get('id')!=shipment_id or not isinstance(truck_id,str):
             continue
+        if freshness_context and (assignment != freshness_context['assignment_context']
+                                  or report.get('reported_network_revision') != freshness_context['network_revision']):
+            continue
         earlier=[item for item in audit if item['id']<incident['id']]
-        invalidations=[item['id'] for item in earlier if item['action'] in {'approve','event','reset'}
+        invalidations=[item['id'] for item in earlier if item['action'] in {'approve','event','reset','freshness_rescue_approve'}
                        or item['action']=='lot_hold' and isinstance(item['payload'],dict)
                        and shipment_id in item['payload'].get('invalidated_shipments',[])]
         boundary=max(invalidations,default=0)
@@ -170,8 +317,36 @@ def _evidence(connection, run, stage, outcome):
     audit, truncated = _audit_delta(connection, run['audit_start_id'])
     if truncated:
         raise HTTPException(409, 'Rehearsal audit exceeds its bounded evidence window; abort and begin a fresh run rather than infer missing actions')
+    freshness_context = None
+    if stage['id'] in {'disruption', 'approval'}:
+        action = 'freshness_replay' if stage['id'] == 'disruption' else 'freshness_rescue_approve'
+        previous = next((item['evidence'].get('freshness_context') for item in run['milestones']
+                         if item['stage_id'] == 'disruption'), None)
+        for item in reversed(audit):
+            if item['action'] != action:
+                continue
+            candidate = (_freshness_disruption(connection, run, item) if stage['id'] == 'disruption'
+                         else _freshness_approval(connection, run, item))
+            if candidate and (not previous or candidate['session_id'] == previous['session_id']):
+                freshness_context = candidate
+                return {'kind': 'recorded_operational_actions', 'requirements': required,
+                        'audit_ids': [item['id']],
+                        'actions': [{'id': item['id'], 'action': item['action'], 'timestamp': item['timestamp']}],
+                        'freshness_context': freshness_context,
+                        'notice': 'Stored simulated freshness evidence was checked against its experiment; this does not prove it was shown on screen or establish physical sensing or food safety.'}
+        if stage['id'] == 'approval' and previous:
+            raise HTTPException(409, 'Cannot mark approval covered: record a current reviewed freshness rescue for the same experiment as the disruption, or explicitly skip it with a reason')
     if stage['id']=='driver':
-        chain=_driver_evidence(connection,audit)
+        previous = next((item['evidence'].get('freshness_context') for item in run['milestones']
+                         if item['stage_id'] == 'approval'), None)
+        if previous:
+            freshness_context = next((_freshness_approval(connection, run, item) for item in reversed(audit)
+                                      if item['action'] == 'freshness_rescue_approve'
+                                      and isinstance(item['payload'], dict)
+                                      and item['payload'].get('session_id') == previous['session_id']), None)
+            if freshness_context is None:
+                raise HTTPException(409, 'Cannot mark driver covered: the freshness approval is no longer current; review the stored experiment and current assignment, or explicitly skip it with a reason')
+        chain=_driver_evidence(connection,audit,freshness_context)
         if chain is None:
             raise HTTPException(409,'Cannot mark driver covered: record parked confirmation, then acknowledgment and incident for the same approved trip during this rehearsal, or explicitly skip it with a reason')
         matched=chain['matched']

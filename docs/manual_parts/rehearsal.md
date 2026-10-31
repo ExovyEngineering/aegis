@@ -17,6 +17,11 @@ The **Latest recorded local checks** table shows saved pass/fail outcomes, count
 
 ## Guided rehearsal: practice a complete story
 
+For filming and the complete hands-on review, use **Project brief → Recording
+checklist & video runbook** or the **Record the final video** chapter below. A
+completed practice record does not establish that a human video was recorded or
+reviewed. The operator app stays separate from fresh rehearsal sessions.
+
 The **Practice the five-minute story** panel is part of Project brief. On the operator server it explains how to open a separate practice workspace. **Copy rehearsal launch command** copies the actual command; clipboard access can fail, in which case copy the displayed text manually. This button does not start a server.
 
 On a verified isolated server the panel exposes a timer, ordered stages, notes, history and export. The timer measures elapsed wall-clock time on the server and continues through navigation or reload. It does not prove who was present, whether a presenter showed each screen, or whether the presentation was effective.

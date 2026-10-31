@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import sqlite3
 import uuid
 
 import pytest
@@ -211,4 +212,204 @@ def test_completed_export_is_frozen_after_new_events_and_report_changes(
         save_json(isolated_root / 'reports/model_evaluation.json', {'status': 'new unrelated report'})
         after = client.get(f'/api/rehearsal/{run_id}/export')
         assert after.content == before.content
+    assert not (isolated_root / 'data/aegis.sqlite').exists()
+
+
+def rehearsal_checkpoint(client, run, stage):
+    return client.post(f'/api/rehearsal/{run["id"]}/checkpoint', json={
+        'expected_version': run['version'], 'stage_id': stage, 'outcome': 'covered',
+        'notes': 'Automated isolated freshness integration; no human presentation claim.',
+    })
+
+
+def freshness_rehearsal(client):
+    run = client.post('/api/rehearsal/start', json=START).json()
+    for stage in ('overview', 'evidence_science'):
+        response = rehearsal_checkpoint(client, run, stage)
+        assert response.status_code == 200, response.text
+        run = response.json()
+    response = client.post('/api/freshness/sessions', json={
+        'expected_network_revision': client.get('/api/network').json()['revision'],
+        'shipment_id': 'SH05', 'scenario': 'poultry_demo',
+    })
+    assert response.status_code == 200, response.text
+    return run, response.json()
+
+
+def freshness_heat(client, snapshot):
+    response = client.post(f'/api/freshness/sessions/{snapshot["id"]}/replay', json={
+        'expected_version': snapshot['version'], 'event': 'heat_excursion',
+    })
+    assert response.status_code == 200, response.text
+    return response.json()
+
+
+def freshness_approve(client, snapshot):
+    response = client.post(f'/api/freshness/sessions/{snapshot["id"]}/approve', json={
+        'expected_version': snapshot['version'], 'expected_network_revision': snapshot['network_revision'],
+        'proposal_hash': snapshot['rescue']['proposal_hash'],
+        'destination_id': snapshot['rescue']['proposed_destination_id'],
+        'actor': 'Automated freshness integration dispatcher',
+        'reason': 'Review simulated quality disposition, recipient acceptance and route restrictions separately',
+        'quality_review_confirmed': True, 'recipient_confirmed': True, 'routing_review_confirmed': True,
+    })
+    assert response.status_code == 200, response.text
+    return response.json()
+
+
+def test_freshness_only_rehearsal_requires_real_approval_and_complete_parked_driver_chain(
+        isolated_root, monkeypatch):
+    database = configure_rehearsal(isolated_root, monkeypatch)
+    with TestClient(api.app) as client:
+        run, baseline = freshness_rehearsal(client)
+        snapshot = freshness_heat(client, baseline)
+        response = rehearsal_checkpoint(client, run, 'disruption')
+        assert response.status_code == 200, response.text
+        run = response.json()
+        disruption = run['milestones'][-1]['evidence']
+        assert disruption['actions'][0]['action'] == 'freshness_replay'
+        assert disruption['freshness_context']['session_id'] == snapshot['id']
+        assert disruption['freshness_context']['event'] == 'heat_excursion'
+        assert rehearsal_checkpoint(client, run, 'approval').status_code == 409
+        approved = freshness_approve(client, snapshot)
+        response = rehearsal_checkpoint(client, run, 'approval')
+        assert response.status_code == 200, response.text
+        run = response.json()
+        decision = run['milestones'][-1]['evidence']
+        assert decision['actions'][0]['action'] == 'freshness_rescue_approve'
+        assert decision['freshness_context']['network_revision'] == approved['receipt']['network_revision']
+        provenance = decision['freshness_context']
+        assert provenance['captured_version'] == approved['snapshot']['version']
+        assert provenance['stored_frame_count'] > 0
+        assert len(provenance['stored_session_sha256']) == len(provenance['stored_frames_sha256']) == len(provenance['profiles_sha256']) == 64
+        selected = next(row for row in client.get('/api/driver').json() if row['id'] == 'SH05')
+        assert selected['destination'] == approved['receipt']['selected_destination_id']
+        truck = selected['truck_id']
+        focus = client.get(f'/api/drive/{truck}').json()['focus']
+        assert client.post(f'/api/drive/{truck}/focus', json={
+            'expected_version': focus['version'], 'mode': 'parked', 'parked_confirmation': True,
+        }).status_code == 200
+        assert rehearsal_checkpoint(client, run, 'driver').status_code == 409
+        revision = approved['receipt']['network_revision']
+        assert client.post('/api/driver/SH05/acknowledge', json={'expected_network_revision': revision}).status_code == 200
+        assert rehearsal_checkpoint(client, run, 'driver').status_code == 409
+        assert client.post('/api/driver/incident', json={
+            'shipment_id': 'SH05', 'description': 'Automated parked receiving check for the reviewed rescue.',
+            'expected_network_revision': revision,
+        }).status_code == 200
+        response = rehearsal_checkpoint(client, run, 'driver')
+        assert response.status_code == 200, response.text
+        run = response.json()
+        proof = run['milestones'][-1]['evidence']
+        assert [item['action'] for item in proof['actions']] == ['driver_focus', 'acknowledge', 'incident']
+        assert proof['assignment_context']['id'] == 'SH05'
+        assert proof['assignment_context']['destination'] == approved['receipt']['selected_destination_id']
+        run = rehearsal_checkpoint(client, run, 'closing').json()
+        response = client.post(f'/api/rehearsal/{run["id"]}/finish', json={
+            'expected_version': run['version'], 'outcome': 'completed',
+            'notes': 'Automated integration only; actual presenter timing remains unverified.',
+        })
+        assert response.status_code == 200, response.text
+        exported = client.get(f'/api/rehearsal/{run["id"]}/export').json()
+        assert exported['run']['run_kind'] == 'automated_check'
+        assert exported['five_minute_presentation_verified'] is False
+        assert exported['genuine_kiro_execution_verified'] is False
+        assert all(item['outcome'] == 'covered' for item in exported['run']['milestones'])
+        frozen = client.get(f'/api/rehearsal/{run["id"]}/export').content
+        assert client.post(f'/api/freshness/sessions/{snapshot["id"]}/replay', json={
+            'expected_version': approved['snapshot']['version'], 'event': 'normal',
+        }).status_code == 200
+        assert client.get(f'/api/rehearsal/{run["id"]}/export').content == frozen
+    assert database.exists() and not (isolated_root / 'data/aegis.sqlite').exists()
+
+
+@pytest.mark.parametrize('case', ['normal_frame', 'audit_only', 'old_frames', 'missing_frames'])
+def test_freshness_disruption_requires_actual_disruptive_frames_during_this_run(
+        isolated_root, monkeypatch, case):
+    database = configure_rehearsal(isolated_root, monkeypatch)
+    with TestClient(api.app) as client:
+        run, baseline = freshness_rehearsal(client)
+        if case == 'normal_frame':
+            assert client.post(f'/api/freshness/sessions/{baseline["id"]}/replay', json={
+                'expected_version': baseline['version'], 'event': 'normal',
+            }).status_code == 200
+        elif case == 'audit_only':
+            device_count = len(client.get('/api/network').json()['lots'])
+            with api.db() as connection:
+                api.record(connection, 'Unverified claim', 'freshness_replay', {
+                    'session_id': baseline['id'], 'shipment_id': 'SH05', 'event': 'heat_excursion',
+                    'frames_added': 2 * device_count,
+                    'operational_state_modified': False,
+                })
+        else:
+            freshness_heat(client, baseline)
+            with sqlite3.connect(database) as connection:
+                if case == 'old_frames':
+                    rows = connection.execute('SELECT event_id,payload FROM freshness_frames').fetchall()
+                    for identity, encoded in rows:
+                        row = json.loads(encoded)
+                        row['retrieved_at'] = '2020-01-01T00:00:00+00:00'
+                        connection.execute('UPDATE freshness_frames SET payload=? WHERE session_id=? AND event_id=?',
+                                           (json.dumps(row), baseline['id'], identity))
+                else:
+                    connection.execute('DELETE FROM freshness_frames WHERE event_id LIKE ?', ('v1-%',))
+        response = rehearsal_checkpoint(client, run, 'disruption')
+        assert response.status_code == 409, response.text
+    assert not (isolated_root / 'data/aegis.sqlite').exists()
+
+
+@pytest.mark.parametrize('case', ['audit_only', 'new_reading', 'assignment_changed', 'network_changed', 'hash_changed', 'old_receipt', 'other_session', 'command_approval'])
+def test_freshness_approval_requires_matching_persisted_decision_and_current_plan(
+        isolated_root, monkeypatch, case):
+    database = configure_rehearsal(isolated_root, monkeypatch)
+    with TestClient(api.app) as client:
+        run, baseline = freshness_rehearsal(client)
+        snapshot = freshness_heat(client, baseline)
+        response = rehearsal_checkpoint(client, run, 'disruption')
+        assert response.status_code == 200, response.text
+        run = response.json()
+        if case == 'command_approval':
+            proposal = client.post('/api/proposals/A', json={}).json()
+            assert client.post(f'/api/proposals/{proposal["id"]}/approve', json={
+                'actor': 'Automated Command dispatcher', 'reason': 'Command allocation is separate from the stored freshness experiment',
+            }).status_code == 200
+        elif case == 'other_session':
+            other = client.post('/api/freshness/sessions', json={
+                'expected_network_revision': 0, 'shipment_id': 'SH05', 'scenario': 'poultry_demo',
+            }).json()
+            freshness_approve(client, freshness_heat(client, other))
+        elif case == 'audit_only':
+            with api.db() as connection:
+                api.record(connection, 'Unverified claim', 'freshness_rescue_approve', {
+                    'session_id': snapshot['id'], 'shipment_id': 'SH05',
+                    'proposal_hash': snapshot['rescue']['proposal_hash'],
+                })
+        else:
+            approved = freshness_approve(client, snapshot)
+            if case == 'new_reading':
+                current = approved['snapshot']
+                assert client.post(f'/api/freshness/sessions/{current["id"]}/replay', json={
+                    'expected_version': current['version'], 'event': 'normal',
+                }).status_code == 200
+            elif case == 'network_changed':
+                assert client.post('/api/events', json={'event': 'road_closure', 'shipment_id': 'SH11'}).status_code == 200
+            else:
+                with sqlite3.connect(database) as connection:
+                    if case == 'assignment_changed':
+                        encoded = connection.execute("SELECT payload FROM assignments WHERE id='SH05'").fetchone()[0]
+                        row = json.loads(encoded)
+                        row['destination'] = 'D01'
+                        connection.execute("UPDATE assignments SET payload=? WHERE id='SH05'", (json.dumps(row),))
+                    elif case == 'old_receipt':
+                        encoded = connection.execute('SELECT payload FROM freshness_sessions WHERE id=?', (snapshot['id'],)).fetchone()[0]
+                        row = json.loads(encoded)
+                        row['approval']['approved_at'] = '2020-01-01T00:00:00+00:00'
+                        connection.execute('UPDATE freshness_sessions SET payload=? WHERE id=?', (json.dumps(row), snapshot['id']))
+                    else:
+                        identity, encoded = connection.execute("SELECT id,payload FROM audit WHERE action='freshness_rescue_approve'").fetchone()
+                        row = json.loads(encoded)
+                        row['proposal_hash'] = '0' * 64
+                        connection.execute('UPDATE audit SET payload=? WHERE id=?', (json.dumps(row), identity))
+        response = rehearsal_checkpoint(client, run, 'approval')
+        assert response.status_code == 409, response.text
     assert not (isolated_root / 'data/aegis.sqlite').exists()

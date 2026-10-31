@@ -2,7 +2,7 @@
 
 **Draft scientific competition report — genuine Kiro application usage, author signoff, and official-rubric review pending.**
 
-Report compiled from saved artifacts on 2026-10-30. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
+Report compiled from saved artifacts on 2026-10-31. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
 
 ## Abstract
 
@@ -31,10 +31,9 @@ The audit ran against `C:\Users\ericp\Downloads\NAFSI`. CSV and nested JSON are 
 | MoDOT events and OSRM | Road evidence and ordinary driving estimates | Proximity screening is not closure-aware, truck-certified navigation |
 | USDA food-access/environment workbooks | Audited food-security context | Not yet weighted into allocation without vintage/geography/denominator validation |
 
-The saved connectivity probe recorded 14/19 HTTP successes. Documentation/catalog reachability is distinguished from working data feeds. Exact URLs, response types, request times, latencies, and failures are in `reports/api_status.json` and the API registry. These results describe the recorded probes, not guaranteed present availability.
+The saved connectivity probe recorded 15/19 HTTP successes. Documentation/catalog reachability is distinguished from working data feeds. Exact URLs, response types, request times, latencies, and failures are in `reports/api_status.json` and the API registry. These results describe the recorded probes, not guaranteed present availability.
 
 Recorded probe failures:
-- fsis_recalls: ConnectError: [Errno 11002] getaddrinfo failed
 - fsis_sampling: ConnectError: [Errno 11002] getaddrinfo failed
 - fsis_directory: ConnectError: [Errno 11002] getaddrinfo failed
 - food_access: ConnectError: [Errno 11002] getaddrinfo failed
@@ -139,7 +138,7 @@ The accelerated isolated workflow recorded 13 approved simulated assignments. Ac
 
 Required inputs, retrieval records, seeds, commands, and test artifacts remain inspectable. This report compiler performs no new HTTP requests. Its input-file hashes are recorded in `reports/figures/input_manifest.json`; regenerating after evidence changes updates the draft transparently.
 
-The saved validation artifact records 824 passing pytest tests, 240 passing Vitest tests, frontend build status `passed`, and 29 real HTTP checks. Browser visual QA: `Current master-guide read-only Chrome checks; earlier feature/browser suites retain separate dated evidence`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
+The saved validation artifact records 1198 passing pytest tests, 384 passing Vitest tests, frontend build status `passed`, and 29 real HTTP checks. Browser visual QA: `Current master-guide read-only Chrome checks plus isolated recording and freshness workflows; older suites remain separately dated`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission.
 
 ```powershell
 .venv/Scripts/python scripts/audit_data.py
@@ -200,3 +199,52 @@ Saved null counts: {'LACCESS_POP19': 0, 'PCT_LACCESS_POP19': 0, 'LACCESS_LOWI19'
 The content-based re-import checked 8 previous derived tables. All checked frame values/dtypes were unchanged: True. Model artifact hashes unchanged: True. Exact-byte duplicate downloads are not pooled; differing exports for one supported semantic table are explicit conflicts. Source-browser checksums and displayed values use the same immutable request snapshot. Schema recognition establishes supported structure, not provider authenticity or publication availability. See `reports/ingestion_verification.json`.
 
 Dispatch readiness is read-only: thirteen constraint diagnostics and three workflow checks expose current resource use, eligibility, acknowledgments and targeted verification. Passing listed checks does not dispatch, consume inventory, certify food safety or validate commercial-truck restrictions. No model score creates a mandatory hold.
+## Appendix: Save the Load methods and simulated results
+
+Save the Load is a deterministic, uncalibrated quality-planning experiment, separate from the FSIS selected-sample estimator. Equivalent reference age is declared initial age plus the sum of interval hours multiplied by Q10 ** ((product temperature - reference temperature) / 10). Each preceding reading is held constant over supported intervals. Remaining reference budget is divided by the rate at the assumed future product temperature to obtain a forward quality window. Cooling cannot reverse consumed age; missing or unsupported history is unscored, and independent use-by limits still cap eligibility.
+
+Ambient temperature, humidity, vibration and ethylene remain contextual channels; they receive no arbitrary poultry degradation coefficients. The minimum forward result among chosen Q10 cases is conservative only among those cases. The range is parameter sensitivity, not a statistical confidence interval or a guaranteed bound. Scientific assumptions and primary references are documented in [the freshness science contract](../docs/freshness_science.md), including Taoukis, Yimenu et al. (2019), USDA FSIS and the commodity-specific UC Davis example. No reference coefficients or accuracy are transferred to these lots.
+
+Rescue proposals are complete replacement assignment plans, checked against stock, hold/recall, eligibility, capacity, deadlines and quality/use-by constraints. An identified human review separately confirms food-safety disposition, receiving capacity/acceptance and route/vehicle limitations before publishing simulated assignments. A later reading requires renewed review without automatic rerouting. This workflow does not measure molecular freshness, establish pathogen growth or safety clearance, validate physical sensors, or demonstrate prospective poultry-spoilage accuracy.
+
+Evidence source: `reports/freshness_demo.json`. This accelerated deterministic replay is software evidence, not a timed human presentation, physical hardware experiment, measured food waste or guaranteed commercial savings.
+
+The saved replay reports 15/15 automated checks passed. Finished at 2026-10-31T06:22:06.121303+00:00; physical hardware connected=False. These checks do not measure predictive accuracy.
+
+Declared profile: reference life 240.0000 h at 4.0000 °C; initial equivalent age 230.0000 h; point Q10 2.0000; future product temperature 4.0000 °C; maximum supported gap 120.0000 minutes. These are illustrative assumptions, not a recommended storage life.
+
+Saved starting reference budget: 9.0000 h. After the heat replay, point forward window: 4.3885 h; conservative chosen-case window: 1.5089 h.
+
+| Chosen Q10 | Equivalent age (h) | Remaining reference budget (h) | Forward quality window (h) |
+|---:|---:|---:|---:|
+| 1.5000 | 234.2701 | 5.7299 | 5.7299 |
+| 2.0000 | 235.6115 | 4.3885 | 4.3885 |
+| 3.0000 | 238.4911 | 1.5089 | 1.5089 |
+
+| Picking policy | Supplied (kg) | Unmet demand (kg) | Modeled expiry exposure (kg) |
+|---|---:|---:|---:|
+| FEFO | 6,400.0000 | 1,100.0000 | 0.0000 |
+| FIFO | 6,400.0000 | 1,100.0000 | 1,500.0000 |
+
+These are actual saved allocation outputs under simulated quality assumptions. Expiry exposure is modeled stock exposure, not observed waste or a guaranteed quantity saved.
+
+Saved whole-plan proposal for SH05: original trip plus receiving required 4.0520 h; selected destination D06. Solver OPTIMAL; 12 assignments; simulated logistics cost $2,714.0000; unmet demand 2,700.0000 kg; 0 checked violations. The saved synthetic-dispatcher receipt records that destination and assignment count; it is not authentic human presentation evidence.
+
+Saved exact driver handoff: trip SH05, truck T05, destination D06. After a new frame, 1 quality-review advisory record(s) and readiness status review_required were saved. The automated check reports review without redispatch only when listed below; this is not live navigation or a safety release.
+
+Saved automated assertions (not human signoff):
+- verified fresh isolated offline runtime: passed=True
+- actual eligible demonstration candidate exists: passed=True
+- baseline quality has supported coverage: passed=True
+- no assignment published by experiment creation: passed=True
+- heat consumes the remaining quality budget: passed=True
+- conservative case is separate from point estimate: passed=True
+- rescue automatically computes a concrete feasible plan: passed=True
+- FEFO and FIFO use actual independently reviewed allocations: passed=True
+- sensor replay does not change operational state: passed=True
+- reading a stored experiment preserves SQLite and sidecars: passed=True
+- human approval updates the actual simulated driver destination: passed=True
+- held and recalled stock stays out of every approved assignment: passed=True
+- approval preserves inventory quantities: passed=True
+- new telemetry flags driver review without redispatch: passed=True
+- readiness distinguishes the pending freshness review: passed=True

@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-31T01:31:14.833007-05:00",
+  "generated_at": "2026-10-31T02:06:30.490612-05:00",
   "title": "AEGIS Master User Guide",
   "pdf": "reports/aegis_master_guide.pdf",
   "markdown": "docs/aegis_master_guide.md",
   "html": "reports/aegis_master_guide.html",
-  "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b",
-  "bytes": 466440,
-  "pages": 77,
+  "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567",
+  "bytes": 498426,
+  "pages": 83,
   "chapters": [
     {
       "id": "start-here-what-aegis-does",
@@ -99,58 +99,64 @@
       "page": 63
     },
     {
-      "id": "storage-exports-and-sharing",
-      "title": "Storage, exports and sharing",
+      "id": "record-the-final-video",
+      "title": "Record the final video",
       "body_page_index": 63,
       "page": 66
     },
     {
-      "id": "local-backup-and-recovery",
-      "title": "Local backup and recovery",
-      "body_page_index": 65,
-      "page": 68
-    },
-    {
-      "id": "troubleshooting-by-what-you-see",
-      "title": "Troubleshooting by what you see",
-      "body_page_index": 66,
-      "page": 69
-    },
-    {
-      "id": "glossary-for-reading-the-site",
-      "title": "Glossary for reading the site",
+      "id": "storage-exports-and-sharing",
+      "title": "Storage, exports and sharing",
       "body_page_index": 68,
       "page": 71
     },
     {
-      "id": "present-the-project-accurately",
-      "title": "Present the project accurately",
+      "id": "local-backup-and-recovery",
+      "title": "Local backup and recovery",
+      "body_page_index": 70,
+      "page": 73
+    },
+    {
+      "id": "troubleshooting-by-what-you-see",
+      "title": "Troubleshooting by what you see",
       "body_page_index": 71,
       "page": 74
     },
     {
+      "id": "glossary-for-reading-the-site",
+      "title": "Glossary for reading the site",
+      "body_page_index": 73,
+      "page": 76
+    },
+    {
+      "id": "present-the-project-accurately",
+      "title": "Present the project accurately",
+      "body_page_index": 76,
+      "page": 79
+    },
+    {
       "id": "keep-this-master-guide-current",
       "title": "Keep this master guide current",
-      "body_page_index": 72,
-      "page": 75
+      "body_page_index": 77,
+      "page": 80
     },
     {
       "id": "recorded-verification-and-what-remains-open",
       "title": "Recorded verification and what remains open",
-      "body_page_index": 73,
-      "page": 76
+      "body_page_index": 78,
+      "page": 81
     }
   ],
   "overflow_count": 0,
   "paper": "US Letter",
   "body_font_points": 10.7,
   "table_font_points": 9.7,
-  "bookmarks": 22,
-  "contents_links": 22,
+  "bookmarks": 23,
+  "contents_links": 23,
   "source_files": [
     {
       "path": "docs/manual_parts/start.md",
-      "sha256": "910cca7483f163e4b0a0bb67f37d48bfb2581a99f36353cb18d27570d603eee8"
+      "sha256": "5d0547067a42702d29a296e58e694796289633172439b7e0051452bdcb3b516d"
     },
     {
       "path": "docs/manual_parts/operations.md",
@@ -174,7 +180,11 @@
     },
     {
       "path": "docs/manual_parts/rehearsal.md",
-      "sha256": "c7cf68978252d456502c7448c154c1bc133e2d0701c6caa9d7cba865142c62a8"
+      "sha256": "240f42a2928cf59465a010c36453f3ea66a119af7f2bbc43fef6116dddaaf9d8"
+    },
+    {
+      "path": "docs/recording_guide.md",
+      "sha256": "a369718a15d48b6ea64113adf19b8bf7584a55c2a705218c65ce18721b149228"
     },
     {
       "path": "docs/manual_parts/reference.md",

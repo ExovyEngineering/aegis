@@ -1,6 +1,6 @@
 # AEGIS Master User Guide
 
-Generated October 31, 2026 at 01:30 AM CT. Complete product handbook.
+Generated October 31, 2026 at 02:05 AM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
@@ -51,7 +51,7 @@ Genuine Kiro specification execution, final report/rubric author review and the 
 
 ## Find your way around the application
 
-The desktop control tower is **AEGIS Command**. Its navigation opens these ten workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
+The desktop control tower is **AEGIS Command**. Its navigation opens these ten workspaces. Operations appear first; driver work follows dispatcher review, and Sources & evidence is last. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
 
 | Navigation label | Main question it answers | Does simply reading it change dispatch? |
 | --- | --- | --- |
@@ -60,11 +60,11 @@ The desktop control tower is **AEGIS Command**. Its navigation opens these ten w
 | Route laboratory | How could one farm or a multi-origin fleet serve these stops under assumptions? | No; even saved laboratory runs do not dispatch |
 | Road intelligence | What do captured Missouri/Iowa road records say near these route alternatives? | No; comparison is read-only planning |
 | Dispatcher desk | What did a driver report, and what human review, hold or instruction is recorded? | Reading does not; submitted decisions can change assignments/holds/instructions |
-| Sources & evidence | Where did each evidence layer come from, and what coverage is missing? | No; source refresh can update caches, not dispatch |
-| Model evaluation | What was actually measured in the historical FSIS study? | No; opening this view never trains a model |
-| Evidence assistant | How do captured facts explain scenario tradeoffs, a shipment, model limits or the driver workflow? | No; it only returns cited explanations and navigation |
-| Project brief | Where are the master guide, shorter status brief, feature register and rehearsal tools? | Document downloads do not; recording an isolated rehearsal writes its practice record |
 | AEGIS Drive | What assignment and instruction has the dispatcher approved for this truck? | Reading does not; parked acknowledgments and reports create records |
+| Evidence assistant | How do captured facts explain scenario tradeoffs, a shipment, model limits or the driver workflow? | No; it only returns cited explanations and navigation |
+| Model evaluation | What was actually measured in the historical FSIS study? | No; opening this view never trains a model |
+| Project brief | Where are the master guide, shorter status brief, feature register and rehearsal tools? | Document downloads do not; recording an isolated rehearsal writes its practice record |
+| Sources & evidence | Where did each evidence layer come from, and what coverage is missing? | No; source refresh can update caches, not dispatch |
 
 ### Common controls and labels
 
@@ -1171,6 +1171,11 @@ The **Latest recorded local checks** table shows saved pass/fail outcomes, count
 
 ## Guided rehearsal: practice a complete story
 
+For filming and the complete hands-on review, use **Project brief → Recording
+checklist & video runbook** or the **Record the final video** chapter below. A
+completed practice record does not establish that a human video was recorded or
+reviewed. The operator app stays separate from fresh rehearsal sessions.
+
 The **Practice the five-minute story** panel is part of Project brief. On the operator server it explains how to open a separate practice workspace. **Copy rehearsal launch command** copies the actual command; clipboard access can fail, in which case copy the displayed text manually. This button does not start a server.
 
 On a verified isolated server the panel exposes a timer, ordered stages, notes, history and export. The timer measures elapsed wall-clock time on the server and continues through navigation or reload. It does not prove who was present, whether a presenter showed each screen, or whether the presentation was effective.
@@ -1213,6 +1218,181 @@ Route laboratory and Road intelligence make useful optional demonstrations of sc
 ### What rehearsal does not complete
 
 A saved practice record does not prove authentic Kiro development, final author review, a reviewed organizer rubric, completed NOAA coverage, prospective predictive validity, truck-route safety or final submission acceptance. Keep these gates explicit even after a technically successful practice run.
+
+## Record the final video
+
+Use the five-minute path for the presentation and the longer checklist for the
+weekend hands-on review. The sidebar puts operational work first and **Sources &
+evidence** last; the presentation can open evidence earlier to support its claims.
+This guide prepares a recording. It does not establish that a human has recorded,
+reviewed or submitted the final video.
+
+### Prepare clean sessions
+
+From the NAFSI folder in PowerShell, with dependencies installed and the frontend
+built using the README commands, run:
+
+```powershell
+.venv/Scripts/python scripts/start_rehearsal.py
+```
+
+Leave the terminal open and open its printed URL, normally
+`http://127.0.0.1:8001/?mode=rehearsal`. Check the isolated-runtime banner. Before
+any event, hold or approval, open `/api/runtime-context` on that same server and
+require `mode: isolated_rehearsal`, `isolated: true`, `offline: true` and the UUID
+printed by the launcher. A URL parameter alone does not isolate the database.
+
+If the port is occupied, use `--port 8123`; do not stop its owner. For a second
+clean Save the Load session, run the same command with `--port 8124` in another
+terminal and verify its separate UUID. Each launch reserves a fresh private file
+under `data/rehearsals/`. Never reset the operator app on port 8000, reuse an old
+reviewed lot as a clean start, overwrite a rehearsal file or alter raw data.
+Stop only your rehearsal server with Ctrl+C; retain its database and exports.
+
+Before recording, check microphone, readable browser zoom, desktop and mobile
+layouts, notifications and download location. Pre-open the two verified sessions
+and the evidence/model sections. Preserve a dated screenshot/export for a failed
+source or blank map. Offline mode uses dated fixtures, caches and labeled route
+estimates; it does not make them current. Browser OpenStreetMap tiles still need
+internet. If tiles fail, explain the missing background and show the route
+geometry/results. Do not hide failures or describe QA placeholder tiles as live.
+
+### Five-minute presentation path
+
+Keep the operational story on one isolated server. Use the second, clearly
+identified session only for the short freshness highlight. Practice the sequence
+before recording; the full checklist below is longer than five minutes.
+
+| Time | Click and explain |
+|---|---|
+| 0:00–0:30 | **Command center**: identify the dispatcher, Missouri map, two simulated DCs and fictional shipments. Show **SIMULATED OPERATIONS** and distinguish official establishment markers from the simulated network. |
+| 0:30–1:10 | **Sources & evidence**: show retrieval/source dates, an actual failure or stale warning, official recall notices and NOAA coverage: five stations, 2,730 date rows, nine missing precipitation values. Keep CDC surveillance/outbreak evidence separate from FSIS sample outcomes. |
+| 1:10–1:45 | **Model evaluation**: show the chronological holdout, prevalence baseline, logistic metrics and calibration. Read measured values from the screen. Explain selected-sample positivity, the baseline comparison and unavailable historical publication timing; no consumer illness probability or prospective-validation claim. |
+| 1:45–2:45 | Back in **Command center**, select **SH11**, choose **Cargo temperature excursion**, then **Preview event impact**. Compare A/B/C/D cost, unmet demand, changed trips and solver/constraint outcomes. Check the intention box and **Apply previewed event**; it clears approved assignments and does not impose a hold automatically. |
+| 2:45–3:35 | **Compare refreshed response plans**, then **Review** on scenario C. Inspect proposed assignments, lots and precautionary holds. Enter **Dispatcher name** and **Reason for approval**, then **Approve simulated plan**. Show that held/recalled stock is excluded and the approval is recorded in **Recent activity**. |
+| 3:35–4:10 | **AEGIS Drive**, on the same server at mobile width: select a truck with an approved assignment, **Confirm safely parked**, open **Dispatch instructions**, **Acknowledge assignment**, then **Report an issue** and **Send to dispatcher** with a short simulated incident. Show its receipt; route, fuel and position are simulated. |
+| 4:10–4:45 | Switch to the separate fresh session and say so. **Save the Load** → **Start rescue experiment** → **Replay heat excursion**. Show the point and conservative quality windows, nearer recipient and **Show FEFO pick order** / **Show FIFO pick order**. This short highlight previews a separately reviewed rescue; use the longer path below for its approval and driver handoff. |
+| 4:45–5:00 | Close with the contribution: inspectable evidence, constrained tradeoffs and human authority. State the remaining scientific and human gates. Record the actual elapsed presentation time. |
+
+In **Project brief** → **Practice the five-minute story**, enter the real
+presenter/purpose, choose **Self-reported team practice** and **Start rehearsal
+timer** before the practice actions. Return to record stages in the displayed
+order with notes; the main scenario-C path supplies the disruption and approval
+actions. **Record stage skipped** needs a reason. Finish with closing notes and
+**Finish and save rehearsal**, or **Abort and save record** if stopping early;
+download the rehearsal evidence JSON. Stage records are separate from the video.
+Freshness alone does not cover the evidence/model narrative or the required
+parked confirmation, assignment acknowledgment and incident. Do not treat a
+timer, a saved record or five planned minutes as proof of presentation quality.
+
+### Full hands-on click-through
+
+Use this as a coverage sheet before the final take. Record pass/failure, session
+UUID and export/screenshot names separately. Use fresh sessions for independent
+mutation stories; scenario approvals and rescue approvals replace assignment
+sets, while events and holds can invalidate decisions already under review.
+
+- [ ] **Command center**: **Try a 1-hour delay**, inspect unserved demand,
+  deadline pressure and cargo checks; open **Cargo assumptions** and compare the
+  four preview responses. **Inspect SH…** opens that candidate;
+  **Compare roads for SH…** carries its actual endpoints into Road intelligence.
+  Change an assumption, observe that the captured result needs recomputation,
+  then **Estimate impact**. Export the outlook. These previews publish nothing.
+- [ ] **Command center**: inspect map presets/layer counts, candidate versus
+  approved/scenario allocations, **Cold-chain & trip detail**, weather provenance
+  and **Request road route**. Read route/fallback provenance. Run the complete
+  SH11 event → A/B/C/D comparison → scenario-C review/approval → Drive sequence
+  above. Open **Recent activity**, inspect the actual event/approval/report
+  payloads and export the relevant history. Test stale-proposal rejection in a
+  separate practice session; refresh and review again instead of bypassing it.
+- [ ] **Save the Load**, in its own fresh session: keep the default demonstration
+  candidate; **Start rescue experiment**, inspect **Sensor gateway connection**,
+  then **Replay heat excursion**. Read observation and receipt times, the product
+  temperature and reference-budget charts, **Point quality-window estimate**,
+  **Conservative sensitivity window** and **How the quality clock is estimated**.
+  Ambient, humidity, vibration and ethylene remain contextual channels.
+- [ ] Inspect eligible and excluded rescue destinations, original-trip duration
+  plus receiving buffer, quality margin and fallback route label. Use **Check
+  road route** if needed; use **Prepare selected rescue** when shown, then
+  **Review [destination]**. Open all proposed assignments and compare whole-plan
+  cost, unmet demand, solver status and violations. Toggle both FEFO/FIFO pick
+  orders and read actual lot, quantity and arrival-quality differences; do not
+  assume FEFO always improves every measure.
+- [ ] In the rescue review, fill **Reviewing dispatcher** and **Reason for rescue
+  approval**. Confirm the three separate reviews: quality/food-safety disposition,
+  receiving capacity/recipient acceptance, and route/vehicle limitations. Choose
+  **Approve simulated rescue plan**, inspect the receipt, then **Open approved
+  driver assignments**. Verify the exact truck, trip, lot and destination.
+  While parked, acknowledge the assignment and submit an incident if this is a
+  full rehearsal. Return to the same experiment and **Replay cooling recovery**
+  or add a later frame: show renewed-review advice and the unchanged route.
+  **Refresh plan for new review** retains accumulated exposure; **Continue lot’s
+  exposure history** reopens it. Export the captured experiment. Repeat a clean
+  story through another launcher session, never by resetting consumed quality age.
+- [ ] **Route laboratory**: run **Single farm dispatch** and **Multi-location
+  fleet** with estimated routing and **Test dispatch plan**. Inspect truck loads,
+  unserved stops, constraints and the illustrative cold-chain projection. Try a
+  delay/fault and rerun. Explore **Your operation**, then name and **Save as new
+  project**; change and rerun before **Save next version**. Reopen a saved version,
+  compare two experiments and export snapshot/stop sequence. Save before leaving
+  an editor; route experiments do not publish Command assignments.
+- [ ] **Road intelligence**: choose a named journey, **Compare planning routes**,
+  inspect geometry, source/retrieval ages and a nearby notice; inspect Missouri
+  and Iowa events separately, including provider time fields and coverage limits.
+  **Export comparison JSON**. Zero nearby matches is not road clearance; ordinary
+  driving/estimated routes do not certify truck restrictions or closure avoidance.
+- [ ] **Dispatcher desk** and **AEGIS Drive**: review the submitted incident,
+  fill the decision record, **Start review**, send a concise versioned instruction
+  with **Approve and send instruction**, then acknowledge that exact instruction
+  in parked Drive. **Resolve report** records an operational review. Inspect
+  **Dispatch readiness review** and refresh it. In a separate session, place a
+  human hold, show affected assignments removed and recalled lots blocked, then
+  release the hold and show that a fresh plan still needs approval. **Listed
+  checks passed** requests final human review; it neither dispatches nor certifies
+  food safety. In Drive, **Lock for driving** must disable reports/acknowledgments.
+- [ ] **Evidence assistant**: type **chicken**, **Ask AEGIS**, choose a suggested
+  question, inspect its citations and expandable provenance, then try a common
+  question card. Answers explain a captured network; they do not approve actions.
+- [ ] **Model evaluation**: inspect timing/sensitivity and error analysis,
+  **Chronological holdout comparison**, calibration and limitations. Confirm the
+  sampling target/units, temporal split and displayed baseline comparison. Keep
+  the FSIS estimator distinct from illustrative cargo and freshness calculations.
+- [ ] **Project brief**: open the recording guide, maintained master guide and
+  project brief downloads; inspect check timestamps and pending capability gates.
+  Record actual presenter practice with the timer and notes as described above.
+  Browser/script verification belongs to **Automated workflow check**.
+- [ ] **Sources & evidence**, last in the workspace tour: inspect **Food access
+  across Missouri**, county measure vintages/units/missingness and CSV export;
+  these values do not rate safety or change dispatch. Inspect underlying evidence,
+  filters, pagination, schema/import provenance, NOAA variable gaps, source-specific
+  ingestion, official recall notices, connectivity and raw inventory. HTTP success
+  is distinct from validated coverage. Offline **Refresh** is disabled; retain
+  dated failures and never claim a verified recall match to a fictional lot.
+
+### Claims and final human gates
+
+Call Save the Load an illustrative Q10 quality-planning experiment. Its
+coefficient sensitivity range is not a confidence interval. No connected physical
+hardware, calibrated poultry spoilage/molecular measurement or microbiological
+safety clearance has been demonstrated. Keep label/use-by limits, food-safety
+review and receiving approval independent. Document coverage abstention,
+unavailable FSIS publication timing and other unresolved limits in the report.
+
+Pytest, frontend tests/build, Chrome workflow checks and the accelerated
+`scripts/demo_run.py` / `scripts/freshness_demo.py` are software evidence from
+their recorded timestamps. They do not establish a timed human video, current
+source coverage, genuine Kiro work or final submission. Consult
+[progress](progress.md) and the dated reports for executed results; do not invent
+new counts or source successes for the recording.
+
+Before delivery, a person must complete authentic signed-in Kiro spec/task work
+and preserve its evidence, review authorship and the final methods/results/limits,
+confirm organizer rubric, duration and delivery requirements from official
+materials, and watch/listen to a real timed final take. Check the saved video and
+backup evidence, then record the actual submission separately. The maintained
+[demo script](../reports/demo_script.md), [rehearsal guide](rehearsal_guide.md),
+[morning review](morning_review.md) and [submission checklist](submission_checklist.md)
+provide the supporting handoff.
 
 ## Storage, exports and sharing
 
@@ -1342,17 +1522,18 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-10-31T06:30:24.344365+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-10-31T07:03:54.304614+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 1169 tests | Executed local command; see reports/checks/20261031T062820174887Z/pytest.txt |
-| vitest | PASS; 384 tests | Executed local command; see reports/checks/20261031T062820174887Z/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/20261031T062820174887Z/frontend_build.txt |
+| pytest | PASS; 1198 tests | Executed local command; see reports/checks/20261031T070133626609Z/pytest.txt |
+| vitest | PASS; 384 tests | Executed local command; see reports/checks/20261031T070133626609Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261031T070133626609Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 
-- Save the Load, FEFO and driver handoff: 94/94 saved browser checks, recorded 2026-10-31T06:26:06.570Z. Evidence: reports/browser_qa/freshness/results.json. Runs have separate dates and are not all repeated for every change.
+- Recording preparation: Chrome workflows and automated tracker record: 113/113 saved browser checks, recorded 2026-10-31T07:05:20.928Z. Evidence: reports/browser_qa/recording/results.json. Runs have separate dates and are not all repeated for every change.
+- Save the Load, FEFO and driver handoff: 94/94 saved browser checks, recorded 2026-10-31T06:30:41.552Z. Evidence: reports/browser_qa/freshness/results.json. Runs have separate dates and are not all repeated for every change.
 - Road intelligence: 58/58 saved browser checks, recorded 2026-10-28T19:15:52.092Z. Evidence: reports/browser_qa/roads/results.json. Runs have separate dates and are not all repeated for every change.
 - Guided rehearsal: 76/76 saved browser checks, recorded 2026-10-28T06:07:06.190Z. Evidence: reports/browser_qa/rehearsal/results.json. Runs have separate dates and are not all repeated for every change.
 - County context/readiness: 61/61 saved browser checks, recorded 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. Runs have separate dates and are not all repeated for every change.

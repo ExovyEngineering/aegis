@@ -18,7 +18,7 @@ REPORTS=REPORTS+('aegis_master_guide.pdf','aegis_master_guide.html','master_guid
 REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json','local_startup_verification.json','activity_workflow_evaluation.json','operator_activity_change_review.json')
 REPORTS=REPORTS+('friendliness_workflow_evaluation.json','friendliness_raw_integrity.json')
 REPORTS=REPORTS+('friendliness_operator_smoke.json',)
-REPORTS=REPORTS+('freshness_demo.json','freshness_operator_smoke.json')
+REPORTS=REPORTS+('freshness_demo.json','freshness_operator_smoke.json','recording_connectivity.json','recording_operator_smoke.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -99,7 +99,7 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     for name in REPORTS:add(root/'reports'/name)
-    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/browser_qa/activity','reports/checks','reports/verification_history'):
+    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/browser_qa/activity','reports/browser_qa/recording','reports/checks','reports/verification_history'):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)
