@@ -1,7 +1,7 @@
 import { ArrowRight, Compass } from 'lucide-react';
 import './WorkspaceGuide.css';
 
-export type WorkspaceView = 'command' | 'routes' | 'roads' | 'dispatch' | 'evidence' | 'science' | 'assistant' | 'brief' | 'drive';
+export type WorkspaceView = 'command' | 'routes' | 'roads' | 'dispatch' | 'evidence' | 'science' | 'assistant' | 'brief' | 'drive' | 'freshness';
 interface Guide {
   title: string;
   summary: string;
@@ -11,6 +11,17 @@ interface Guide {
 }
 
 const guides: Record<WorkspaceView, Guide> = {
+  freshness: {
+    title: 'Give an at-risk load a reviewed second route',
+    summary: 'Replay a sensor excursion, watch the estimated quality budget change, and compare closer receiving options and FEFO picks.',
+    scope: 'Simulated logistics · uncalibrated quality projection · explicit approval',
+    details: [
+      'Replay creates stored sensor frames in a separate experiment. Temperature consumes a declared quality budget; humidity, vibration and ethylene remain contextual channels.',
+      'A modeled shortfall automatically calculates closer receiving options. Preparing a plan changes no assignments; approval publishes the complete independently checked simulated plan.',
+      'FEFO and FIFO use identical demand and safety constraints. The quality model cannot clear pathogen safety, extend a use-by cap, or establish real buyer acceptance.',
+    ],
+    next: [{view:'command',label:'Review current distribution'},{view:'drive',label:'See approved driver work'}],
+  },
   command: {
     title: 'Find delivery problems before choosing a response',
     summary: 'Start with the delivery outlook. Test a delay, inspect the affected trips, then compare and review a response plan.',

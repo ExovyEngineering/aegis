@@ -6,6 +6,16 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Run locally
 
+Open **Save the Load** for the new temperature-history-to-rescue workflow:
+**Start rescue experiment → Replay heat excursion → Review → approve → Drive**.
+The same workspace compares warehouse FEFO and FIFO picks using actual constrained
+allocations. Use an [isolated rehearsal](#isolated-presentation-rehearsal) for practice.
+The replay is simulated; Q10 parameters are illustrative quality assumptions,
+not measured molecular freshness or microbial safety. Hardware can later use
+the [authenticated ingestion endpoint](docs/freshness_gateway.md).
+Reproduce the isolated workflow with
+`.venv/Scripts/python scripts/freshness_demo.py`.
+
 In **Command center**, start with the delivery outlook: test a one-hour delay,
 inspect the trips under pressure, then compare a response. These are clearly
 labeled planning estimates over simulated inputs. In **Evidence assistant**,

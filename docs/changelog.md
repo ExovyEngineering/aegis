@@ -1,5 +1,25 @@
 # AEGIS implementation history
 
+## October 31, 2026 - Save the Load and constrained predictive FEFO
+
+- Added chronological temperature-history quality budgets, point/conservative
+  sensitivity clocks, raw time-axis plots and contextual humidity/vibration/
+  ethylene channels. Unsupported coverage abstains. No hardware or measured
+  spoilage/illness accuracy is claimed.
+- Added a bounded authenticated sensor-ingestion endpoint, append-only frames,
+  atomic batch validation, idempotent retries and durable exposure history.
+- Added OR-Tools FEFO/FIFO allocations, eligible closer-recipient ranking and
+  independently checked whole-plan rescue proposals with three-part human review.
+  Holds, recalls, use-by, stock, receiving and truck constraints remain binding.
+- Connected approval to the exact rescued driver assignment; new frames create
+  readiness/Drive advisories without redispatch. Reviewed history cannot be reset
+  by a new experiment or overwritten by an older counterfactual session.
+- Final application checks: 1,169 pytest passed, 384 Vitest passed and production
+  build passed. The isolated Chrome workflow passed 94 checks; the deterministic
+  replay passed 15. Separate dated reports retain errors and earlier attempts.
+- Added the full handbook chapter, gateway/science guides and reproducible CLI.
+  No new provider refresh or genuine Kiro execution is inferred.
+
 ## October 30, 2026 - guided delivery outlook and understandable controls
 
 - Added a read-only delivery planning outlook with actual allocation comparisons,

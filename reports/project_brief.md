@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 30, 2026 at 02:43 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated October 31, 2026 at 01:30 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -132,6 +132,12 @@ Current-input and what-if allocations show unmet demand, candidate deadline pres
 
 Evidence: docs/delivery_outlook.md
 
+Kinetic quality windows, rescue planning and FEFO | implemented with explicit review and uncalibrated model assumptions
+
+Declared product-temperature exposure consumes an irreversible equivalent-age budget. Conservative chosen-case clocks rank closer recipients and constrained OR-Tools FEFO versus FIFO. Only identified, versioned human approval replaces the checked simulated plan and updates Drive; new readings flag renewed review.
+
+Evidence: docs/freshness_science.md
+
 # P2 | Stretch work and deferred extensions
 
 Cited evidence assistant and optional model topic selection | deterministic assistant implemented; actual LLM evaluation remains pending
@@ -182,21 +188,21 @@ Six simulated events compute exact direct/resource changes and four before/after
 
 Evidence: docs/command_workflow.md
 
-Real-time streaming infrastructure | deferred pending an actual live stream
+Physical sensor streaming infrastructure | bounded authenticated HTTP ingestion and replay implemented; physical hardware unverified
 
-Dated public feeds and deterministic simulation are not live sensor streams. Polling retains source timestamps.
+Append-only gateway packets retain source/observation/retrieval metadata. A five-second browser poll reads stored experiments. No physical device, production broker, calibrated sensor or cloud telemetry deployment is claimed.
 
-Evidence: docs/stretch_feature_gates.md
+Evidence: docs/freshness_gateway.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-30T19:40:31.641554+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-10-31T06:30:24.344365+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 930; 71.14 seconds. Log: reports/checks/20261030T193821929669Z/pytest.txt. Checked: 2026-10-30T19:38:21.930251+00:00.
+pytest: PASS; exit 0; tests passed 1169; 92.39 seconds. Log: reports/checks/20261031T062820174887Z/pytest.txt. Checked: 2026-10-31T06:28:20.175411+00:00.
 
-vitest: PASS; exit 0; tests passed 337; 27.841 seconds. Log: reports/checks/20261030T193821929669Z/vitest.txt. Checked: 2026-10-30T19:39:33.086714+00:00.
+vitest: PASS; exit 0; tests passed 384; 19.335 seconds. Log: reports/checks/20261031T062820174887Z/vitest.txt. Checked: 2026-10-31T06:29:52.579913+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 30.681 seconds. Log: reports/checks/20261030T193821929669Z/frontend_build.txt. Checked: 2026-10-30T19:40:00.944308+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 12.386 seconds. Log: reports/checks/20261031T062820174887Z/frontend_build.txt. Checked: 2026-10-31T06:30:11.937516+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 
@@ -213,6 +219,10 @@ Guided rehearsal actual-Chrome QA: 76 / 76 checks passed, checked 2026-10-28T06:
 Road intelligence actual-Chrome QA: 58 / 58 checks passed, checked 2026-10-28T19:15:52.092Z. Offline comparisons, exports and explicit browser-injected failure cases remain separate from actual public-provider requests. Evidence: reports/browser_qa/roads/results.json.
 
 Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: 76/76 checks at 2026-10-30T19:40:42.320Z. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.
+
+Save the Load actual-Chrome workflow: 94/94 recorded checks passed. Evidence: reports/browser_qa/freshness/results.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
+
+Accelerated deterministic freshness replay: 15/15 recorded checks passed. Evidence: reports/freshness_demo.json. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.
 
 A duplicate push CI run failed a rehearsal frontend test while its PR run passed. The test acted before initial React effects settled; synchronization was corrected without relaxing the original assertions or changing product behavior. The failed log and focused follow-up outcomes are retained in reports/ci_followup.json and reports/checks/. Later full checks and remote runs have their own timestamps; a historical pass never substitutes for them.
 

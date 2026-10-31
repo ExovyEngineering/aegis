@@ -26,8 +26,8 @@ interface Props {
   initialShipmentId?: string;
   onClose?: () => void;
 }
-const destinations: WorkspaceView[] = ['command', 'dispatch', 'drive', 'routes', 'brief'];
-const viewNames: Partial<Record<WorkspaceView, string>> = { command: 'Command', dispatch: 'Dispatcher desk', drive: 'AEGIS Drive', routes: 'Route laboratory', brief: 'Project brief' };
+const destinations: WorkspaceView[] = ['command', 'dispatch', 'drive', 'routes', 'brief', 'freshness'];
+const viewNames: Partial<Record<WorkspaceView, string>> = { command: 'Command', dispatch: 'Dispatcher desk', drive: 'AEGIS Drive', routes: 'Route laboratory', brief: 'Project brief', freshness:'Save the Load' };
 const integer = (value: unknown, min = 0): value is number => typeof value === 'number' && Number.isSafeInteger(value) && value >= min;
 const text = (value: unknown, max = 20000): value is string => typeof value === 'string' && value.length <= max;
 const hash = (value: unknown) => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);

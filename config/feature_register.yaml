@@ -1,5 +1,5 @@
 project: AEGIS
-updated: '2026-10-30'
+updated: '2026-10-31'
 features:
 - id: provenance
   priority: P0
@@ -217,8 +217,18 @@ features:
     approval is claimed.
 - id: streaming
   priority: P2
-  name: Real-time streaming infrastructure
-  status: deferred pending an actual live stream
-  evidence: docs/stretch_feature_gates.md
-  detail: Dated public feeds and deterministic simulation are not live sensor streams.
-    Polling retains source timestamps.
+  name: Physical sensor streaming infrastructure
+  status: bounded authenticated HTTP ingestion and replay implemented; physical hardware unverified
+  evidence: docs/freshness_gateway.md
+  detail: Append-only gateway packets retain source/observation/retrieval metadata.
+    A five-second browser poll reads stored experiments. No physical device,
+    production broker, calibrated sensor or cloud telemetry deployment is claimed.
+- id: save-the-load
+  priority: P1
+  name: Kinetic quality windows, rescue planning and FEFO
+  status: implemented with explicit review and uncalibrated model assumptions
+  evidence: docs/freshness_science.md
+  detail: Declared product-temperature exposure consumes an irreversible equivalent-age
+    budget. Conservative chosen-case clocks rank closer recipients and constrained
+    OR-Tools FEFO versus FIFO. Only identified, versioned human approval replaces
+    the checked simulated plan and updates Drive; new readings flag renewed review.

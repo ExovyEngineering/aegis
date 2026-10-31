@@ -18,6 +18,7 @@ REPORTS=REPORTS+('aegis_master_guide.pdf','aegis_master_guide.html','master_guid
 REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json','local_startup_verification.json','activity_workflow_evaluation.json','operator_activity_change_review.json')
 REPORTS=REPORTS+('friendliness_workflow_evaluation.json','friendliness_raw_integrity.json')
 REPORTS=REPORTS+('friendliness_operator_smoke.json',)
+REPORTS=REPORTS+('freshness_demo.json','freshness_operator_smoke.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -53,6 +54,7 @@ OSRM requests can fail over to visibly labeled estimates.
 .venv/Scripts/python scripts/validate_model_timing.py
 .venv/Scripts/python scripts/acquire_noaa.py
 .venv/Scripts/python scripts/demo_run.py
+.venv/Scripts/python scripts/freshness_demo.py
 .venv/Scripts/python scripts/build_submission_report.py
 .venv/Scripts/python -m pytest -q
 ```
@@ -102,6 +104,9 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     folder=root/'reports/browser_qa/friendliness'
+    if folder.exists():
+        for path in folder.rglob('*'):add(path)
+    folder=root/'reports/browser_qa/freshness'
     if folder.exists():
         for path in folder.rglob('*'):add(path)
     # Only include NOAA responses/metadata actually referenced by the coverage report.

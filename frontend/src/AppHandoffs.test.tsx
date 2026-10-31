@@ -8,6 +8,8 @@ vi.mock('./api', async original => ({ ...await original<object>(), api:vi.fn() }
 vi.mock('./NetworkMap',()=>({default:()=> <div>Test network map</div>}));
 vi.mock('./MapViewport',()=>({default:()=>null}));
 vi.mock('./DispatchReadiness',()=>({default:()=>null}));
+vi.mock('./FreshnessLab',()=>({default:({initialShipmentId,onOpenDrive}:any)=><section aria-label="Test freshness handoff"><span>{initialShipmentId?`Freshness target ${initialShipmentId}`:'Freshness demo selection'}</span><button onClick={()=>onOpenDrive({truckId:'T02',shipmentId:'SH02'})}>Open rescued driver trip</button></section>}));
+vi.mock('./DriverWorkspace',()=>({default:({initialTruckId,initialShipmentId}:any)=><div>Driver target {initialTruckId} / {initialShipmentId}</div>}));
 // The real Outlook tests validate its captured data and button guards. Here its
 // callback contract exercises App, real Road inputs and real Dispatcher links.
 vi.mock('./DeliveryOutlook',()=>({default:({network,onCompareShipmentRoad,onReviewPlans}:any)=><section aria-label="Test outlook callback harness"><button onClick={onReviewPlans}>Review current response plans</button>{network.shipments.map((row:any)=><button key={row.id} onClick={()=>onCompareShipmentRoad(row.id)}>Compare roads for {row.id}</button>)}</section>}));
@@ -83,4 +85,21 @@ it('rejects an unusable candidate coordinate before navigation or a route reques
   expect(await screen.findByText(/This candidate has no usable journey/)).toBeInTheDocument();
   expect(screen.queryByRole('region',{name:'Road intelligence workspace'})).not.toBeInTheDocument();
   expect(vi.mocked(api).mock.calls.some(([path])=>path==='/road-intelligence'||path==='/road-intelligence/compare')).toBe(false);
+});
+
+it('lets generic Save the Load navigation use its documented demo rather than the Command selection',async()=>{
+  await begin();fireEvent.click(within(nav()).getByRole('button',{name:'Save the Load'}));
+  expect(await screen.findByText('Freshness demo selection')).toBeInTheDocument();
+});
+
+it('carries an explicitly selected candidate into freshness modeling',async()=>{
+  await begin();fireEvent.change(screen.getByLabelText('Select shipment'),{target:{value:'SH02'}});
+  fireEvent.click(screen.getByRole('button',{name:'Model this lot’s shelf life'}));
+  expect(await screen.findByText('Freshness target SH02')).toBeInTheDocument();
+});
+
+it('opens the rescued driver truck and trip instead of defaulting to an unrelated truck',async()=>{
+  await begin();fireEvent.click(within(nav()).getByRole('button',{name:'Save the Load'}));
+  fireEvent.click(await screen.findByRole('button',{name:'Open rescued driver trip'}));
+  expect(await screen.findByText('Driver target T02 / SH02')).toBeInTheDocument();
 });

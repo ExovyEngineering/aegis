@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-30T19:45:31.483Z",
+  "checked_at": "2026-10-31T06:31:20.131Z",
   "base_url": "http://127.0.0.1:8000",
   "read_only": true,
   "physical_printer_tested": false,
@@ -223,15 +223,15 @@
     }
   },
   "guide": {
-    "sha256": "ad7752d8e05923024457ecd29922ea88916788d6959a1394751760b0343b7996",
-    "pages": 73,
-    "chapters": 21,
-    "generated_at": "2026-10-30T14:44:16.863125-05:00"
+    "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b",
+    "pages": 77,
+    "chapters": 22,
+    "generated_at": "2026-10-31T01:31:14.833007-05:00"
   },
   "document_before": {
     "exists": true,
-    "bytes": 446797,
-    "sha256": "ad7752d8e05923024457ecd29922ea88916788d6959a1394751760b0343b7996"
+    "bytes": 466440,
+    "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b"
   },
   "browser_version": "156.0.8078.74",
   "database_after": {
@@ -252,9 +252,9 @@
   },
   "document_after": {
     "exists": true,
-    "bytes": 446797,
-    "sha256": "ad7752d8e05923024457ecd29922ea88916788d6959a1394751760b0343b7996"
+    "bytes": 466440,
+    "sha256": "824a341ea5a0bd1d525c70221158389aa196900348692c37745fa949eed5496b"
   },
   "passed": true,
-  "finished_at": "2026-10-30T19:45:39.724Z"
+  "finished_at": "2026-10-31T06:31:28.186Z"
 }

@@ -1,6 +1,6 @@
 # AEGIS submission checklist
 
-Updated October 28, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
+Updated October 31, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
 
 ## P0 release gates
 
@@ -31,6 +31,14 @@ Updated October 28, 2026. This checklist records required evidence, not a claim 
 - If showing the optional road workspace, distinguish Iowa and Missouri feed scope, preview truncation, raw event-clock values and ordinary-driving/estimated routes. Do not imply closure avoidance or truck certification.
 - Review local recovery evidence separately from cloud deployment. Restored state belongs in a fresh private file and needs human review; no operator overwrite or automatic server rebind.
 - Keep Drive use parked, with short advisories and explicit dispatcher authority.
+- If presenting Save the Load, distinguish point and conservative sensitivity
+  quality windows, show actual FEFO/FIFO picks and whole-plan tradeoffs, and use
+  three-part human review before changing assignments. Demonstrate the exact
+  driver handoff and a later reading's renewed-review advisory. No physical
+  hardware, calibrated molecular freshness or microbial safety claim is supported.
+- Keep the accelerated `scripts/freshness_demo.py` replay separate from a timed
+  presentation; repeat from a fresh isolated session rather than resetting a
+  reviewed lot's accumulated exposure history.
 - Start human rehearsals with `scripts/start_rehearsal.py`, then verify `/api/runtime-context` identifies the expected isolated UUID and offline profile. Never reset the operator app on port 8000 for a demo.
 - Keep accelerated `scripts/demo_run.py` results distinct from a timed human rehearsal. Confirm its measured original SQLite/sidecar preservation fields rather than relying on a hardcoded success flag.
 - Confirm the final official submission rubric, delivery format and evidence requirements from organizer materials; the public announcement is not a full rulebook.

@@ -156,5 +156,8 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     assert any('broad chicken question' in check for check in result['checks'])
     assert any('read-only delivery outlook' in check for check in result['checks'])
     assert any('read-only disruption preview' in check for check in result['checks'])
+    assert any('stored sensor replay' in check for check in result['checks'])
+    assert any('identified rescue approval' in check for check in result['checks'])
+    assert any('later sensor frames' in check for check in result['checks'])
     assert database.read_bytes()==b'original operator state'
     assert list((workspace/'.tools/package-verification').iterdir())==[]

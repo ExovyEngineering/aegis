@@ -27,6 +27,9 @@ MAX_METADATA_BYTES = 2048
 MAX_ID = 9007199254740991
 IDENTIFIER = re.compile(r'^[A-Za-z0-9_.-]{1,64}$')
 CATALOG = {
+    'freshness_session': ('Freshness experiment', 'A separately labeled sensor/quality planning experiment was created.', 'freshness'),
+    'freshness_replay': ('Sensor replay frame', 'Simulated sensor frames were appended to an experiment; operational assignments were not changed.', 'freshness'),
+    'freshness_rescue_approve': ('Save the Load approval', 'A human-reviewed simulated rescue plan was approved and assignments replaced.', 'freshness'),
     'event': ('Simulated event', 'A simulator event was recorded.', 'command'),
     'reset': ('Simulation reset', 'A simulated network reset was recorded.', 'command'),
     'approve': ('Plan approval', 'A simulated plan approval was recorded.', 'command'),

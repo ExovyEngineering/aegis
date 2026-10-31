@@ -269,3 +269,26 @@ coordinate request. Result attribution/export freezes that context at calculatio
 time; edits detach it and later network revisions warn about the older inputs.
 Generic Road navigation uses an independent named example. Review shortcuts focus
 the existing current-plan table without creating a proposal or dispatching.
+
+## Save the Load and bounded sensor ingestion
+
+`freshness_kinetics.py` evaluates chronological, timezone-aware product-temperature
+history using explicit Q10 assumptions and bounded holds. Gaps, invalid coverage
+or unsupported temperatures abstain. Ambient, humidity, vibration and ethylene
+remain contextual channels. `freshness_planning.py` uses OR-Tools for constrained
+FEFO/FIFO comparisons and ranks eligible rescue recipients; unknown quality,
+holds, recalls, use-by caps and capacity remain binding.
+
+`freshness.py` stores versioned sessions and append-only, idempotent sensor frames
+in SQLite. Replay and bearer-authenticated gateway ingestion share the evaluator.
+Read-only snapshots do not initialize tables. Batches, retained sessions and device
+history are bounded; rejected/conflicting frames roll back atomically. Gateway
+clocks age by server time even between packets. See `freshness_gateway.md`.
+
+Rescue review binds a network/assignment digest, frame version, route and exact
+independently checked whole-plan assignment set. Explicit three-part human review
+is required to publish it. Drive opens the rescued truck/trip; later sensor frames
+produce a persistent review advisory without redispatch. The reviewed lot retains
+its original linked exposure session and decreasing use-by deadline; new or older
+counterfactual experiments cannot reset that history. This remains a local
+simulated decision-support system, without production identity or hardware claims.

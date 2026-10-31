@@ -24,6 +24,25 @@ it('shows visual simulated trip data with typing and acknowledgment locked by de
   expect(screen.queryByText('Acknowledge assignment')).not.toBeInTheDocument();
   expect(screen.getByText(/does not detect actual motion/)).toBeInTheDocument();
 });
+
+it('shows a new freshness review visually without unlocking driver interactions or changing the assignment',async()=>{
+  vi.mocked(api).mockImplementation(async()=>({...snapshot(),freshness_reviews:[{session_id:'test-session',shipment_id:'SH01',lot_id:'L02',reason:'New readings arrived after the reviewed quality capture',latest_version:4,approved_version:3,quality_only:true}]} as any));
+  render(<DriverWorkspace network={network} onChanged={vi.fn()}/>);
+  expect(await screen.findByRole('region',{name:'Freshness review advisory'})).toHaveTextContent('SH01');
+  expect(screen.getByText(/New readings arrived/)).toBeInTheDocument();
+  expect(screen.getByRole('button',{name:/Report an issue/})).toBeDisabled();
+  expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+  expect(vi.mocked(api).mock.calls.every(([,body])=>body===undefined)).toBe(true);
+});
+
+it('loads an explicitly handed-off rescued truck and shipment',async()=>{
+  const rescued={...shipment,id:'SH02',truck_id:'T02',destination:'D02'};
+  vi.mocked(api).mockImplementation(async()=>({...snapshot('T02'),assignments:[rescued]} as any));
+  render(<DriverWorkspace network={{...network,nodes:[...network.nodes,{id:'D02',name:'Reviewed rescue destination'}]}} initialTruckId="T02" initialShipmentId="SH02" onChanged={vi.fn()}/>);
+  expect(await screen.findByRole('heading',{name:'Reviewed rescue destination'})).toBeInTheDocument();
+  expect(api).toHaveBeenCalledWith('/drive/T02');
+  expect(vi.mocked(api).mock.calls.some(([path])=>path==='/drive/T01')).toBe(false);
+});
 it('requires parked attestation before reporting and hides the form again when locked', async () => {
   const changed=vi.fn().mockResolvedValue(undefined);render(<DriverWorkspace network={network} onChanged={changed} />);
   await screen.findByRole('heading',{name:'Simulated next destination'});

@@ -22,6 +22,7 @@ from backend.assistant_intent import create_assistant_intent_router
 from backend.event_impact import create_event_impact_router, build_event_impact
 from backend.activity import create_activity_router, read_legacy_audit
 from backend.delivery_outlook import create_delivery_outlook_router
+from backend.freshness import create_freshness_router
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -299,6 +300,7 @@ app.include_router(create_assistant_intent_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_event_impact_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_activity_router(lambda:DB,root=lambda:ROOT))
 app.include_router(create_delivery_outlook_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_freshness_router(db,load,record,lambda:DB,root=lambda:ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

@@ -1,4 +1,26 @@
-# Team review - October 30, 2026
+# Team review - October 31, 2026
+
+## Try Save the Load first
+
+Open **Save the Load** in the sidebar, then **Start rescue experiment** and
+**Replay heat excursion**. Inspect the point/conservative quality clocks, nearer
+recipient and FEFO/FIFO picks. **Review** shows the complete replacement plan and
+its tradeoffs. In a fresh isolated rehearsal, supply the three review confirmations
+and approve; **Open approved driver assignments** takes you to that exact truck.
+Another reading produces a visible review advisory without changing its route.
+Once reviewed, **Continue lot's exposure history** retains consumed quality age.
+Start a new isolated rehearsal to repeat from the beginning.
+
+No hardware is connected. The working gateway endpoint is ready for declared,
+authenticated packets, but the illustrative kinetics are not calibrated poultry
+spoilage, molecular freshness or safety clearance. See the new chapter in the
+printable handbook and docs/freshness_science.md. Latest full tests are 1,169
+backend and 384 frontend passed with a successful production build; the isolated
+Chrome walkthrough passed 94 checks. Source status remains separately dated.
+
+The next three team actions are still genuine Kiro task evidence, report/rubric
+and authorship review, and a timed five-minute presentation. These additions do
+not close those human requirements.
 
 ## Start with the clearer delivery workflow
 

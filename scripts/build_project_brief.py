@@ -61,6 +61,11 @@ def sections(root):
     if friendly:
         rows=friendly.get('checks',[])
         testlines.append(f"Guided delivery outlook, chicken question, map, road and dispatcher actual-Chrome QA: {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} checks at {friendly.get('checked_at','not recorded')}. Read-only computations preserved operator/rehearsal state. External tiles used browser-only placeholders; no provider/LLM call or prospective prediction accuracy is inferred. Evidence: reports/friendliness_workflow_evaluation.json.")
+    for path,label in [('reports/browser_qa/freshness/results.json','Save the Load actual-Chrome workflow'),('reports/freshness_demo.json','Accelerated deterministic freshness replay')]:
+        value=load(root,path,{})
+        if value:
+            rows=value.get('checks',[])
+            testlines.append(f"{label}: {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} recorded checks passed. Evidence: {path}. These isolated runs use simulated sensor packets and do not establish physical calibration, microbial safety, public-provider availability or a timed human presentation.")
     followup=load(root,'reports/ci_followup.json',{})
     if followup:
         testlines.append('A duplicate push CI run failed a rehearsal frontend test while its PR run passed. The test acted before initial React effects settled; synchronization was corrected without relaxing the original assertions or changing product behavior. The failed log and focused follow-up outcomes are retained in reports/ci_followup.json and reports/checks/. Later full checks and remote runs have their own timestamps; a historical pass never substitutes for them.')

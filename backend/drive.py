@@ -1,9 +1,10 @@
 """Local Drive snapshots and a parked-attestation interaction gate.
 
-No GPS, vehicle speed or physical sensor is connected. A parked declaration is
-self-reported and expires after ten minutes; it cannot prove a vehicle is stopped
-or prevent interaction with another application. Fuel and position are explicitly
-deterministic scenario values, never real telematics.
+Fuel/position have no GPS, vehicle-speed or physical-sensor connection. A parked
+declaration is self-reported and expires after ten minutes; it cannot prove a
+vehicle is stopped or prevent interaction with another application. Optional
+freshness-review metadata refers to the separate declared replay/gateway workflow,
+not independently verified physical sensing.
 """
 from datetime import datetime, timedelta, timezone
 import hashlib
@@ -12,6 +13,8 @@ from typing import Literal
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, model_validator
+
+from backend.readiness import freshness_review_records
 
 PARKED_WINDOW_SECONDS = 600
 SCENARIO_OBSERVED_AT = '2026-10-26T08:00:00-05:00'
@@ -42,12 +45,12 @@ def ensure_drive_schema(connection):
 
 
 def _focus(connection, truck_id, instant=None):
-    ensure_drive_schema(connection)
     instant = instant or _utc_now()
+    exists = connection.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='driver_focus'").fetchone()
     row = connection.execute(
         'SELECT mode,version,parked_until,updated_at FROM driver_focus WHERE truck_id=?',
         (truck_id,),
-    ).fetchone()
+    ).fetchone() if exists else None
     active = False
     if row and row[0] == 'parked' and row[2]:
         try:
@@ -163,12 +166,12 @@ def create_drive_router(db, load, record):
     @router.get('/api/drive/{truck_id}')
     def snapshot(truck_id: str):
         with db() as connection:
-            ensure_drive_schema(connection)
             if not connection.in_transaction:
                 connection.execute('BEGIN')
             network, revision = load(connection)
             truck = _truck(network, truck_id)
             assignments = _assignments(connection, truck_id)
+            freshness_reviews = freshness_review_records(connection, revision, assignments, _utc_now(), network=network)
             selected_ids = {item['id'] for item in assignments}
             return {
                 'truck_id': truck_id,
@@ -176,13 +179,14 @@ def create_drive_router(db, load, record):
                 'network_revision': revision,
                 'focus': _focus(connection, truck_id),
                 'assignments': assignments,
+                **({'freshness_reviews': freshness_reviews} if freshness_reviews else {}),
                 'vehicle': _vehicle(network, truck_id, assignments),
                 'events': [item for item in network['events'] if item['shipment_id'] in selected_ids],
                 'source': 'Approved local simulated assignments and deterministic scenario telemetry',
                 'limitations': [
                     'Parked status is self-declared, expires after ten minutes, and is not inferred from GPS or speed.',
                     'The app interaction gate does not prevent device use outside AEGIS or prove the vehicle is stopped.',
-                    'Fuel, consumption, range and dispatch-origin position are simulated; no physical sensor or live progress is connected.',
+                    'Fuel, consumption, range and dispatch-origin position are simulated. Optional freshness reviews refer to a separate declared replay/gateway context; no physical feed is independently verified.',
                     'Only current approved trips and their simulated events are included. Missing events do not prove real roads are clear.',
                     'Trip acknowledgment and operational review do not certify food safety or authorize an unapproved detour.',
                 ],

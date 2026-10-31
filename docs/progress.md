@@ -1,6 +1,45 @@
 # Progress and acceptance evidence
 
-Session date: October 30, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Session date: October 31, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+
+## Latest: Save the Load and predictive FEFO (October 31)
+
+- Implemented simulated sensor replay and bounded authenticated gateway ingestion;
+  Q10 equivalent-age budgets with explicit assumptions, genuine observation-time
+  plots, point/conservative sensitivity cases, contextual channels, coverage
+  abstention and independent decreasing use-by caps. No physical hardware or
+  measured molecular freshness/spoilage prediction is claimed.
+- Implemented actual OR-Tools FEFO/FIFO allocations and eligible rescue ranking.
+  Concrete whole-plan proposals receive independent checks and three-part human
+  approval. Held/recalled/ineligible/unknown-quality stock remains unavailable.
+  DC contingencies cannot dispatch using invented receiving capacity.
+- Approval publishes the checked simulated assignment set and opens the exact
+  rescued truck in Drive. New frames persist review advisories without rerouting.
+  Network/assignment/frame digests reject stale decisions; reviewed exposure
+  history cannot be reset by starting a new or older counterfactual experiment.
+- Final full application checks: **1,169 pytest passed**, four platform skips,
+  **384 Vitest passed**, production build passed. Four upstream Python warnings
+  remain. Logs: `reports/checks/20261031T062820174887Z/`.
+  **94 actual-Chrome workflow checks**, nine desktop/mobile screenshots:
+  `reports/browser_qa/freshness/results.json`. Deliberate writes were confined
+  to a fresh verified UUID rehearsal; operator DB/sidecars, original raw hashes,
+  caches and fixtures were preserved. Browser map tiles used QA placeholders.
+- `scripts/freshness_demo.py` passed **15 isolated deterministic checks** over
+  actual API/solver/approval/driver/readiness operations. It is accelerated replay,
+  not a timed human presentation. Science, gateway, UI and maintained print chapter
+  now document the assumptions and all consequential actions.
+- Public providers were not refreshed during this feature. Latest API failures
+  and historical cache provenance remain visible. Missing genuine Kiro execution,
+  calibrated hardware data, FSIS publication timing, broader NOAA validation,
+  isolate-level genomic linkage and production deployment remain open.
+- Rebuilt the **77-page, 22-chapter handbook** and separate **18-page brief**.
+  All **37 read-only Chrome handbook checks** passed; every page number,
+  bookmark, contents destination and source-chapter hash was checked. Native
+  print previews were visually inspected; no physical-printer test is claimed.
+- The updated reviewer ZIP passed **30 offline extracted checks**, including
+  replay, FEFO/FIFO, human rescue approval, exact Drive assignment and subsequent
+  review advisory. Socket/DNS guards observed zero application network attempts.
+  The installed dependency environment was reused; no fresh-install claim.
 
 ## Latest: guided delivery planning and clearer workspaces (October 30)
 

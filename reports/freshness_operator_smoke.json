@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-10-31T06:29:40.191755+00:00",
+  "passed": true,
+  "base_url": "http://127.0.0.1:8000",
+  "checks": [
+    {
+      "endpoint": "/api/health",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "endpoint": "/api/network",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "endpoint": "/api/freshness/context",
+      "status": 200,
+      "passed": true
+    }
+  ],
+  "operator_before": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "operator_after": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "mutations_requested": false,
+  "public_provider_refresh_requested": false,
+  "physical_sensor_queried": false
+}

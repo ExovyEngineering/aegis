@@ -232,7 +232,7 @@ describe('AEGIS workflow', () => {
     screen.getByRole('button',{name:'Request road route'}).focus();
     fireEvent.click(screen.getByRole('button',{name:'Open activity history'}));
     expect(document.activeElement?.id).toBe('activity-history');
-    expect(within(screen.getByRole('navigation',{name:'Main navigation'})).getAllByRole('button')).toHaveLength(9);
+    expect(within(screen.getByRole('navigation',{name:'Main navigation'})).getAllByRole('button')).toHaveLength(10);
     fireEvent.click(screen.getByRole('button',{name:'Close activity history'}));
     expect(screen.queryByRole('heading',{name:'Activity history'})).not.toBeInTheDocument();
     expect(screen.getByRole('button',{name:'Open activity history'})).toHaveFocus();

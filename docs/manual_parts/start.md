@@ -37,7 +37,7 @@ Real establishment coordinates do not prove that the simulated distributor buys 
 
 ### What is already available, and what is not?
 
-Available now: the nine connected workspaces in this guide; deterministic network/event simulation with read-only before/after previews; four allocation responses; separate candidate, proposed and approved map overlays; selectable road-route comparisons and captured exports; constrained farm/fleet route experiments; saved planning versions; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
+Available now: the ten connected workspaces in this guide; deterministic network/event simulation with read-only before/after previews; four allocation responses; separate candidate, proposed and approved map overlays; selectable road-route comparisons and captured exports; constrained farm/fleet route experiments; saved planning versions; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
 
 Still outside the implemented product: live physical sensors or vehicle tracking, native phone-app distribution, commercial truck certification, automatic closure avoidance, production accounts, cloud hosting, evaluated language-model advice, isolate-level genomic reconstruction and a validated prospective illness forecast. These are recorded future extensions or scientific gaps. The Evidence assistant provides deterministic cited summaries; an optional, unverified Ollama connector can select a topic but cannot author facts or perform actions.
 
@@ -45,11 +45,12 @@ Genuine Kiro specification execution, final report/rubric author review and the 
 
 ## Find your way around the application
 
-The desktop control tower is **AEGIS Command**. Its navigation opens these nine workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
+The desktop control tower is **AEGIS Command**. Its navigation opens these ten workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
 
 | Navigation label | Main question it answers | Does simply reading it change dispatch? |
 | --- | --- | --- |
 | Command center | What does the simulated network look like, and how do four responses compare? | No; event/reset and explicit approval controls do change local state |
+| Save the Load | Can a temperature-exposed lot reach a closer recipient, and how should FEFO change the picks? | Replay changes a stored experiment; separate human approval changes the simulated plan |
 | Route laboratory | How could one farm or a multi-origin fleet serve these stops under assumptions? | No; even saved laboratory runs do not dispatch |
 | Road intelligence | What do captured Missouri/Iowa road records say near these route alternatives? | No; comparison is read-only planning |
 | Dispatcher desk | What did a driver report, and what human review, hold or instruction is recorded? | Reading does not; submitted decisions can change assignments/holds/instructions |

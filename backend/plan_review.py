@@ -12,6 +12,13 @@ def hard_exclusions(shipment, lot, truck, proposed_holds=()):
     if not truck['refrigerated']: reasons.append('truck not refrigerated')
     if shipment['estimated_hours'] > shipment['deadline_hours']: reasons.append('delivery deadline exceeded')
     if shipment['estimated_hours'] > lot['shelf_life_hours']: reasons.append('lot shelf life exceeded')
+    if 'quality_remaining_hours' in lot:
+        import math
+        quality=lot['quality_remaining_hours'];buffer=shipment.get('quality_receiving_buffer_hours',0)
+        if lot.get('quality_coverage_complete') is not True or type(quality) not in (int,float) or not math.isfinite(quality) or quality<0:
+            reasons.append('modeled quality coverage unavailable')
+        elif type(buffer) not in (int,float) or not math.isfinite(buffer) or buffer<0 or shipment['estimated_hours']+buffer>=quality:
+            reasons.append('modeled quality window exceeded after receiving buffer')
     if lot['inventory_kg'] < shipment['quantity_kg']: reasons.append('insufficient lot inventory for shipment')
     if truck['capacity_kg'] < shipment['quantity_kg']: reasons.append('shipment exceeds truck capacity')
     return reasons

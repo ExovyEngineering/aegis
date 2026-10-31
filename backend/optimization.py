@@ -1,8 +1,10 @@
 """Binary one-wave dispatch optimization, not vehicle routing or truck-safe navigation."""
 from ortools.sat.python import cp_model
 SCENARIOS={'A':'Baseline distribution','B':'Targeted verification','C':'Precautionary hold pending review','D':'Alternative eligible supply'}
-def optimize(network,scenario='A'):
+def optimize(network,scenario='A',required_shipment_ids=()):
     if scenario not in SCENARIOS: raise ValueError('Unknown scenario')
+    required=set(required_shipment_ids)
+    if not required.issubset({row['id'] for row in network['shipments']}):raise ValueError('Required shipment is not a canonical candidate')
     m=cp_model.CpModel(); shipments=network['shipments']; lots={l['id']:l for l in network['lots']}; trucks={t['id']:t for t in network['trucks']}; destinations={n['id']:n for n in network['nodes'] if n['kind']=='destination'}
     choices={}; costs={}; candidate_holds={s['lot_id'] for s in shipments if s['temperature_c']>4} if scenario=='C' else set()
     for i,s in enumerate(shipments):
@@ -10,10 +12,16 @@ def optimize(network,scenario='A'):
         for lid in eligible_lots:
             lot=lots[lid]; x=m.new_bool_var(f'{i}_{lid}'); choices[i,lid]=x
             if lot['held'] or lot['recalled'] or not lot['eligible'] or lid in candidate_holds or not trucks[s['truck_id']]['eligible'] or not trucks[s['truck_id']]['refrigerated'] or s['estimated_hours']>min(s['deadline_hours'],lot['shelf_life_hours']): m.add(x==0)
+            if 'quality_remaining_hours' in lot:
+                import math
+                quality=lot['quality_remaining_hours'];buffer=s.get('quality_receiving_buffer_hours',0)
+                if (lot.get('quality_coverage_complete') is not True or type(quality) not in (int,float) or not math.isfinite(quality) or quality<0
+                        or type(buffer) not in (int,float) or not math.isfinite(buffer) or buffer<0 or s['estimated_hours']+buffer>=quality):m.add(x==0)
             # A model score never creates a hold. C is a proposed human-reviewed scenario.
             cost=round(50+s['estimated_distance_km']*1.4+(75 if scenario=='B' and s['temperature_c']>4 else 0)+(45 if lid!=s['lot_id'] else 0))
             costs[i,lid]=cost
         m.add(sum(choices[i,lid] for lid in eligible_lots)<=1)
+        if s['id'] in required:m.add(sum(choices[i,lid] for lid in eligible_lots)==1)
     for lid,l in lots.items(): m.add(sum(shipments[i]['quantity_kg']*x for (i,k),x in choices.items() if k==lid)<=l['inventory_kg'])
     for tid,t in trucks.items(): m.add(sum(shipments[i]['quantity_kg']*x for (i,k),x in choices.items() if shipments[i]['truck_id']==tid)<=t['capacity_kg'])
     for did,d in destinations.items(): m.add(sum(shipments[i]['quantity_kg']*x for (i,k),x in choices.items() if shipments[i]['destination']==did)<=d['demand_kg'])

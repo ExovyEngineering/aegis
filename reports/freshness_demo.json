@@ -1,0 +1,478 @@
+{
+  "started_at": "2026-10-31T06:22:04.619471+00:00",
+  "simulation": true,
+  "physical_hardware_connected": false,
+  "mode": "accelerated deterministic replay; not a timed human presentation",
+  "passed": true,
+  "checks": [
+    {
+      "name": "verified fresh isolated offline runtime",
+      "passed": true
+    },
+    {
+      "name": "actual eligible demonstration candidate exists",
+      "passed": true
+    },
+    {
+      "name": "baseline quality has supported coverage",
+      "passed": true
+    },
+    {
+      "name": "no assignment published by experiment creation",
+      "passed": true
+    },
+    {
+      "name": "heat consumes the remaining quality budget",
+      "passed": true
+    },
+    {
+      "name": "conservative case is separate from point estimate",
+      "passed": true
+    },
+    {
+      "name": "rescue automatically computes a concrete feasible plan",
+      "passed": true
+    },
+    {
+      "name": "FEFO and FIFO use actual independently reviewed allocations",
+      "passed": true
+    },
+    {
+      "name": "sensor replay does not change operational state",
+      "passed": true
+    },
+    {
+      "name": "reading a stored experiment preserves SQLite and sidecars",
+      "passed": true
+    },
+    {
+      "name": "human approval updates the actual simulated driver destination",
+      "passed": true
+    },
+    {
+      "name": "held and recalled stock stays out of every approved assignment",
+      "passed": true
+    },
+    {
+      "name": "approval preserves inventory quantities",
+      "passed": true
+    },
+    {
+      "name": "new telemetry flags driver review without redispatch",
+      "passed": true
+    },
+    {
+      "name": "readiness distinguishes the pending freshness review",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Illustrative temperature-driven quality estimates, not measured spoilage or food safety.",
+    "All logistics, warehouse placement, receiving acceptance and sensor packets are simulated.",
+    "FEFO expiry exposure is not observed food waste or a guaranteed quantity saved."
+  ],
+  "database_relative_path": "data/rehearsals/b9d8f3e5-f6db-434d-b300-efcb5e87d8db.sqlite",
+  "rehearsal_id": "b9d8f3e5-f6db-434d-b300-efcb5e87d8db",
+  "quality": {
+    "baseline_reference_hours": 9.0,
+    "point_forward_hours": 4.388539913345198,
+    "conservative_case_hours": 1.5089476956402166,
+    "sensitivity": {
+      "kind": "chosen-parameter sensitivity; not a confidence interval or guaranteed bound",
+      "q10_values": [
+        1.5,
+        2.0,
+        3.0
+      ],
+      "cases": [
+        {
+          "q10": 1.5,
+          "equivalent_age_hours": 234.27008198025976,
+          "remaining_reference_hours": 5.729918019740239,
+          "remaining_hours_at_forecast_temperature": 5.729918019740239
+        },
+        {
+          "q10": 2.0,
+          "equivalent_age_hours": 235.6114600866548,
+          "remaining_reference_hours": 4.388539913345198,
+          "remaining_hours_at_forecast_temperature": 4.388539913345198
+        },
+        {
+          "q10": 3.0,
+          "equivalent_age_hours": 238.49105230435978,
+          "remaining_reference_hours": 1.5089476956402166,
+          "remaining_hours_at_forecast_temperature": 1.5089476956402166
+        }
+      ],
+      "remaining_reference_hours": {
+        "lower": 1.5089476956402166,
+        "upper": 5.729918019740239
+      },
+      "remaining_hours_at_forecast_temperature": {
+        "lower": 1.5089476956402166,
+        "upper": 5.729918019740239
+      },
+      "lower_hours": 1.5089476956402166,
+      "upper_hours": 5.729918019740239
+    },
+    "profile": {
+      "reference_temperature_c": 4.0,
+      "reference_life_hours": 240.0,
+      "initial_equivalent_age_hours": 230.0,
+      "q10": 2.0,
+      "q10_low": 1.5,
+      "q10_high": 3.0,
+      "forecast_temperature_c": 4.0,
+      "max_gap_minutes": 120.0,
+      "minimum_temperature_c": 0.0,
+      "maximum_temperature_c": 30.0,
+      "temperature_basis": "product",
+      "calibration_status": "illustrative_unvalidated",
+      "started_at": "2026-10-30T08:00:00-05:00"
+    }
+  },
+  "warehouse": {
+    "fefo": {
+      "supplied_kg": 6400.0,
+      "unmet_demand_kg": 1100.0,
+      "projected_expiry_exposure_kg": 0.0,
+      "priority_lot_ids": [
+        "L05",
+        "L10",
+        "L09",
+        "L04",
+        "L08",
+        "L03",
+        "L12",
+        "L07",
+        "L02",
+        "L11",
+        "L06",
+        "L01"
+      ],
+      "lot_totals": [
+        {
+          "lot_id": "L05",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 1.508947696,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 1.508947696,
+          "received_at": "2026-10-30T01:00:00+00:00"
+        },
+        {
+          "lot_id": "L10",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 24.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 24.983333333,
+          "received_at": "2026-10-28T04:00:00+00:00"
+        },
+        {
+          "lot_id": "L09",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 32.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 32.983333333,
+          "received_at": "2026-10-28T05:00:00+00:00"
+        },
+        {
+          "lot_id": "L04",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 32.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 32.983333333,
+          "received_at": "2026-10-28T10:00:00+00:00"
+        },
+        {
+          "lot_id": "L08",
+          "picked_kg": 400.0,
+          "remaining_inventory_kg": 1100.0,
+          "remaining_quality_hours": 40.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 40.983333333,
+          "received_at": "2026-10-28T06:00:00+00:00"
+        },
+        {
+          "lot_id": "L03",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 40.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 40.983333333,
+          "received_at": "2026-10-28T11:00:00+00:00"
+        },
+        {
+          "lot_id": "L12",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 48.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 48.983333333,
+          "received_at": "2026-10-28T02:00:00+00:00"
+        },
+        {
+          "lot_id": "L07",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 48.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 48.983333333,
+          "received_at": "2026-10-28T07:00:00+00:00"
+        },
+        {
+          "lot_id": "L02",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 48.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 48.983333333,
+          "received_at": "2026-10-28T12:00:00+00:00"
+        },
+        {
+          "lot_id": "L11",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 56.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 56.983333333,
+          "received_at": "2026-10-28T03:00:00+00:00"
+        },
+        {
+          "lot_id": "L06",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 56.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 56.983333333,
+          "received_at": "2026-10-28T08:00:00+00:00"
+        },
+        {
+          "lot_id": "L01",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 56.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 56.983333333,
+          "received_at": "2026-10-28T13:00:00+00:00"
+        }
+      ]
+    },
+    "fifo": {
+      "supplied_kg": 6400.0,
+      "unmet_demand_kg": 1100.0,
+      "projected_expiry_exposure_kg": 1500.0,
+      "priority_lot_ids": [
+        "L12",
+        "L11",
+        "L10",
+        "L09",
+        "L08",
+        "L07",
+        "L06",
+        "L04",
+        "L03",
+        "L02",
+        "L01",
+        "L05"
+      ],
+      "lot_totals": [
+        {
+          "lot_id": "L12",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 48.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 48.983333333,
+          "received_at": "2026-10-28T02:00:00+00:00"
+        },
+        {
+          "lot_id": "L11",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 56.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 56.983333333,
+          "received_at": "2026-10-28T03:00:00+00:00"
+        },
+        {
+          "lot_id": "L10",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 24.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 24.983333333,
+          "received_at": "2026-10-28T04:00:00+00:00"
+        },
+        {
+          "lot_id": "L09",
+          "picked_kg": 1500.0,
+          "remaining_inventory_kg": 0.0,
+          "remaining_quality_hours": 32.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 32.983333333,
+          "received_at": "2026-10-28T05:00:00+00:00"
+        },
+        {
+          "lot_id": "L08",
+          "picked_kg": 400.0,
+          "remaining_inventory_kg": 1100.0,
+          "remaining_quality_hours": 40.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 40.983333333,
+          "received_at": "2026-10-28T06:00:00+00:00"
+        },
+        {
+          "lot_id": "L07",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 48.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 48.983333333,
+          "received_at": "2026-10-28T07:00:00+00:00"
+        },
+        {
+          "lot_id": "L06",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 56.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 56.983333333,
+          "received_at": "2026-10-28T08:00:00+00:00"
+        },
+        {
+          "lot_id": "L04",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 32.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 32.983333333,
+          "received_at": "2026-10-28T10:00:00+00:00"
+        },
+        {
+          "lot_id": "L03",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 40.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 40.983333333,
+          "received_at": "2026-10-28T11:00:00+00:00"
+        },
+        {
+          "lot_id": "L02",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 48.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 48.983333333,
+          "received_at": "2026-10-28T12:00:00+00:00"
+        },
+        {
+          "lot_id": "L01",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 56.983333333,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 56.983333333,
+          "received_at": "2026-10-28T13:00:00+00:00"
+        },
+        {
+          "lot_id": "L05",
+          "picked_kg": 0.0,
+          "remaining_inventory_kg": 1500.0,
+          "remaining_quality_hours": 1.508947696,
+          "use_by_remaining_hours": 68.983333333,
+          "effective_remaining_hours": 1.508947696,
+          "received_at": "2026-10-30T01:00:00+00:00"
+        }
+      ]
+    }
+  },
+  "rescue_before_approval": {
+    "shipment_id": "SH05",
+    "original_destination": "St. Louis destination 5 (simulated)",
+    "required_hours": 4.052,
+    "selected_destination_id": "D06",
+    "plan_summary": {
+      "assignments_count": 12,
+      "total_logistics_cost": 2714,
+      "unmet_demand_kg": 2700,
+      "constraint_violations": 0,
+      "solver_status": "OPTIMAL"
+    }
+  },
+  "approval": {
+    "actor": "Synthetic demo dispatcher",
+    "reason": "Isolated reproducible quality-rescue exercise; eligibility, receiving and route assumptions reviewed",
+    "approved_at": "2026-10-31T06:22:05.641040+00:00",
+    "network_revision": 1,
+    "assignments_count": 12,
+    "selected_destination_id": "D06",
+    "sensor_version": 3,
+    "simulation": true
+  },
+  "driver": {
+    "truck_id": "T05",
+    "shipment_id": "SH05",
+    "destination_id": "D06",
+    "freshness_reviews": [
+      {
+        "session_id": "443da09c-d078-4c58-90a1-1756a371c553",
+        "shipment_id": "SH05",
+        "lot_id": "L05",
+        "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+        "reasons": [
+          "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        ],
+        "latest_version": 4,
+        "approved_version": 3,
+        "source": "simulated_replay",
+        "observed_at": null,
+        "max_gap_minutes": null,
+        "telemetry_age_minutes": null,
+        "context": "lot_quality_link",
+        "timestamp_basis": null,
+        "quality_only": true,
+        "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+      }
+    ],
+    "readiness_status_after_new_frame": "review_required"
+  },
+  "finished_at": "2026-10-31T06:22:06.121303+00:00",
+  "operator_database_before": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "operator_database_after": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "operator_database_modified": false
+}

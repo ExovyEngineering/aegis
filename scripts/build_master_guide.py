@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 PARTS = (
     'docs/manual_parts/start.md', 'docs/manual_parts/operations.md',
+    'docs/manual_parts/freshness.md',
     'docs/manual_parts/dispatch_drive.md', 'docs/manual_parts/evidence_science.md',
     'docs/manual_parts/assistant.md', 'docs/manual_parts/rehearsal.md', 'docs/manual_parts/reference.md',
 )
@@ -107,7 +108,7 @@ def evidence_chapter(root):
     if not checks.get('checks'):
         body.append('| Local suite | Not recorded | Run the documented checks; no result inferred |')
     body += ['', 'Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.', '']
-    for folder, label in [('roads','Road intelligence'), ('rehearsal','Guided rehearsal'),
+    for folder, label in [('freshness','Save the Load, FEFO and driver handoff'), ('roads','Road intelligence'), ('rehearsal','Guided rehearsal'),
                           ('readiness','County context/readiness'), ('drive','Drive'),
                           ('operations','Dispatcher/custom operations'), ('depth','Planning/evidence depth'),
                           ('controls','Command controls')]:
@@ -120,6 +121,10 @@ def evidence_chapter(root):
     if friendly.is_file():
         value=json.loads(friendly.read_text(encoding='utf-8'));rows=value.get('checks',[])
         body += ['', f"The guided delivery-outlook, chicken-question, map-layer, road and dispatcher walkthrough recorded {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} actual-Chrome checks at {value.get('checked_at','the artifact timestamp')}. External map tiles used browser-only QA placeholders; no public providers or language model were queried. This verifies application behavior, not prospective prediction accuracy. Evidence: reports/friendliness_workflow_evaluation.json."]
+    replay=root/'reports/freshness_demo.json'
+    if replay.is_file():
+        value=json.loads(replay.read_text(encoding='utf-8'));rows=value.get('checks',[])
+        body += ['', f"The accelerated deterministic freshness replay recorded {sum(bool(row.get('passed')) for row in rows)}/{len(rows)} checks. Evidence: reports/freshness_demo.json. It uses a fresh isolated database and simulated sensor packets; no physical hardware, calibrated spoilage prediction or timed human presentation is inferred."]
     body += ['', 'The reviewer-package check verifies paths and checksums, extracts trusted project code into a separate directory, blocks application networking, and exercises offline workflows. It does not establish a new dependency installation unless a separate installation report explicitly records one.', '',
              'A deliberately injected browser failure is a test case, not a provider outage. A test failure and its correction remain part of the evidence history. The earlier duplicate CI timing failure and synchronized follow-up are described in reports/ci_followup.json. For the current remote commit, inspect GitHub checks directly rather than assuming an older run applies.', '',
              '### Submission and scientific gates still requiring real evidence', '',
@@ -273,7 +278,7 @@ def render_pdf(blocks, output, generated, preview_dir=None):
         return fig
     def save_page(pdf,fig,number):
         pdf.savefig(fig)
-        if preview_dir is not None and number in {1,2,8,14,21,35,44,59,total}:
+        if preview_dir is not None and number in {1,2,8,14,21,27,28,29,35,44,59,total}:
             preview_dir.mkdir(parents=True,exist_ok=True)
             fig.savefig(preview_dir/f'print-render-page-{number:02}.png',dpi=120)
     with PdfPages(output,metadata={'Title':TITLE,'Author':'AEGIS project team','Subject':'Complete product handbook, controls, use cases and limitations'}) as pdf:

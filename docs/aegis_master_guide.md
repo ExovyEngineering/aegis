@@ -1,6 +1,6 @@
 # AEGIS Master User Guide
 
-Generated October 30, 2026 at 02:43 PM CT. Complete product handbook.
+Generated October 31, 2026 at 01:30 AM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
@@ -43,7 +43,7 @@ Real establishment coordinates do not prove that the simulated distributor buys 
 
 ### What is already available, and what is not?
 
-Available now: the nine connected workspaces in this guide; deterministic network/event simulation with read-only before/after previews; four allocation responses; separate candidate, proposed and approved map overlays; selectable road-route comparisons and captured exports; constrained farm/fleet route experiments; saved planning versions; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
+Available now: the ten connected workspaces in this guide; deterministic network/event simulation with read-only before/after previews; four allocation responses; separate candidate, proposed and approved map overlays; selectable road-route comparisons and captured exports; constrained farm/fleet route experiments; saved planning versions; explicit approval, holds and instructions; a parked-use driver mode; separate public/historical evidence; measured retrospective model evaluation; guided isolated rehearsal; and local backup/recovery tools.
 
 Still outside the implemented product: live physical sensors or vehicle tracking, native phone-app distribution, commercial truck certification, automatic closure avoidance, production accounts, cloud hosting, evaluated language-model advice, isolate-level genomic reconstruction and a validated prospective illness forecast. These are recorded future extensions or scientific gaps. The Evidence assistant provides deterministic cited summaries; an optional, unverified Ollama connector can select a topic but cannot author facts or perform actions.
 
@@ -51,11 +51,12 @@ Genuine Kiro specification execution, final report/rubric author review and the 
 
 ## Find your way around the application
 
-The desktop control tower is **AEGIS Command**. Its navigation opens these nine workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
+The desktop control tower is **AEGIS Command**. Its navigation opens these ten workspaces. The mobile navigation offers the same workspaces in a horizontally scrollable bar; the dedicated Drive URL removes the Command navigation to give drivers a simpler surface.
 
 | Navigation label | Main question it answers | Does simply reading it change dispatch? |
 | --- | --- | --- |
 | Command center | What does the simulated network look like, and how do four responses compare? | No; event/reset and explicit approval controls do change local state |
+| Save the Load | Can a temperature-exposed lot reach a closer recipient, and how should FEFO change the picks? | Replay changes a stored experiment; separate human approval changes the simulated plan |
 | Route laboratory | How could one farm or a multi-origin fleet serve these stops under assumptions? | No; even saved laboratory runs do not dispatch |
 | Road intelligence | What do captured Missouri/Iowa road records say near these route alternatives? | No; comparison is read-only planning |
 | Dispatcher desk | What did a driver report, and what human review, hold or instruction is recorded? | Reading does not; submitted decisions can change assignments/holds/instructions |
@@ -440,6 +441,111 @@ A dispatcher wants to review a potential Columbia-to-Des Moines journey. Open th
 - **“No nearby road events means the route is clear.”** Coverage, geometry, event schedules, reported-event completeness and truck eligibility remain limited.
 
 These chapters were checked against the current Command, planning, optimization and road-workspace implementations. Use the dated execution reports elsewhere in this guide for what was actually tested; the walkthrough descriptions themselves do not certify new provider success or a live operational deployment.
+
+## Save the Load: exposure, remaining quality and reviewed rescue
+
+**Save the Load** connects a stored sensor history, a conditional shelf-life
+calculation, closer receiving options, warehouse FEFO and a human-approved driver
+handoff. No physical sensors are connected in the current demo. The replay and
+the separately authenticated ingestion endpoint exercise the same calculation
+pipeline with explicit source labels.
+
+### A two-minute walkthrough
+
+1. Open **Save the Load** in the sidebar. Generic entry selects the documented
+   SH05 demonstration; **Model this lot’s shelf life** in Command instead carries
+   the candidate you explicitly selected.
+2. Click **Start rescue experiment**. The seeded lot has a declared 240-hour
+   reference budget and 230 hours of assumed prior equivalent age. After the
+   initial normal hour, its modeled remaining budget is nine hours. This is an
+   illustrative starting condition, not a recommended ten-day poultry life.
+3. Click **Replay heat excursion** immediately after creation. Stored product
+   readings hold 16°C for two hours, then record restored 4°C control. The point
+   forward estimate becomes about 4.39 hours; the minimum forward estimate across the chosen Q10 cases gives
+   about 1.51 hours. The range is parameter sensitivity, not a confidence bound.
+   **Play sensor replay** includes an extra normal frame, so its clocks differ
+   from this manual example. It pauses when a checked rescue plan is available.
+4. Inspect the original trip and receiving buffer against the conservative
+   quality clock. The engine automatically ranks closer simulated recipients.
+   Select a candidate to see its route, travel time, quality margin and exclusions.
+   Expand **Show all N candidates and exclusions** to inspect blocked options.
+5. An estimated connection stays labeled. **Check road route** deliberately
+   requests an ordinary-driving OSRM route when available; offline rehearsal uses
+   a visible estimate. Neither method verifies truck restrictions or closure
+   avoidance. A DC contingency is review-only, with no invented receiving space.
+6. **Prepare selected rescue** computes a concrete plan when changing the chosen
+   recipient. **Review** opens its complete proposed assignment list, cost, unmet
+   demand and checked constraints. The original destination can lose supply; a
+   rescue is not presented as a cost-free improvement.
+7. Add the reviewer and reason, confirm the three separate quality/disposition,
+   receiving and routing reviews, then **Approve simulated rescue plan**. This
+   replaces the entire checked simulated assignment set and advances the network
+   revision. It never releases held/recalled stock. **Open approved driver
+   assignments** carries the rescued truck and trip into Drive.
+8. A later replay or gateway frame flags the earlier decision for review. Drive
+   and dispatch readiness show the pending freshness review without silently
+   rerouting, holding stock or publishing another plan. **Refresh plan for new
+   review** retains all exposure history and original use-by caps.
+
+### What FEFO changes
+
+FIFO prioritizes receipt order. Predictive FEFO prioritizes the smallest usable
+modeled quality window among eligible warehouse lots. Both policies first
+maximize demand fulfillment under the same stock, truck, warehouse, destination,
+deadline and quality constraints. The second priority is lexicographic lot order,
+not a weighted score that can quietly sacrifice the preceding priority.
+
+The picking table shows the actual solver's lot/warehouse/destination quantities
+and quality margin. A newer warm lot can precede an older cold lot. Compare the
+two policies' picks and stock exposed to modeled expiry within the declared
+planning horizon. Exposure is not observed food waste, a pathogen result or a
+guaranteed amount of food saved. Pick recommendations do not debit a WMS ledger.
+Warehouse placement and receiving acceptance are declared simulation assumptions.
+
+### What each channel contributes
+
+| Channel | Use in this implementation | Boundary |
+| --- | --- | --- |
+| Product temperature, °C | Drives the Q10 equivalent-age calculation | Uncalibrated parameters and a declared bounded hold between samples |
+| Ambient temperature, °C | Contextual reefer environment | Never silently substituted for product/core temperature |
+| Relative humidity, % | Retained and displayed | Not product water activity; no invented poultry coefficient |
+| Vibration, g | Retained and displayed | Sensor definition and damage relationship need validation |
+| Ethylene, ppm | Retained and displayed | Commodity-specific response; no invented poultry spoilage coefficient |
+
+Cooling cannot reverse accumulated quality age. Supplied label/use-by caps keep
+decreasing and cannot be extended by cooling, a new forecast or rebasing. Missing
+history, stale gateway coverage or out-of-domain readings make the quality clock
+unscored. Unknown quality is excluded from model-driven picking and rescue.
+
+### Captures, hardware and scientific limits
+
+Stored frames are append-only within an experiment. Original observation times
+and server retrieval times remain separate. Duplicate event IDs are idempotent
+only when their contents match; conflicting, reversed or unsupported frames are
+rejected. The browser can follow the stored stream every five seconds. Refreshing
+the page can reopen an experiment; it does not manufacture another observation.
+
+After an approved rescue, **Continue lot's exposure history** reopens the linked
+experiment. A second experiment cannot reset that lot's consumed quality age.
+Older counterfactual experiments cannot overwrite the reviewed exposure record.
+Use a fresh isolated rehearsal for another demonstration from the beginning.
+
+**Export captured freshness experiment** preserves the full received snapshot,
+source labels, profiles, clocks, routing and picking results. New readings or
+planning inputs invalidate older approval context. A confirmed decision receipt
+survives a subsequent incomplete application refresh.
+
+The optional gateway needs a server-side bearer token, registered device/lot
+bindings, a declared baseline and valid units. Authentication does not establish
+physical calibration or genuine lot traceability. The application remains a
+loopback research demonstrator; it is not production IoT tenancy or hardware
+certification. See `docs/freshness_gateway.md` for the bounded protocol.
+
+The model is mechanistic quality estimation plus mathematical optimization. No
+trained AI decay model, measured molecular freshness, actual spoilage rate or
+microbiological safety clearance is claimed. The historical FSIS sampling model
+remains separate. Equations and primary references are in
+`docs/freshness_science.md`.
 
 ## Dispatcher desk: turn reports into recorded decisions
 
@@ -1236,16 +1342,17 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-10-30T19:40:31.641554+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-10-31T06:30:24.344365+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 930 tests | Executed local command; see reports/checks/20261030T193821929669Z/pytest.txt |
-| vitest | PASS; 337 tests | Executed local command; see reports/checks/20261030T193821929669Z/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/20261030T193821929669Z/frontend_build.txt |
+| pytest | PASS; 1169 tests | Executed local command; see reports/checks/20261031T062820174887Z/pytest.txt |
+| vitest | PASS; 384 tests | Executed local command; see reports/checks/20261031T062820174887Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261031T062820174887Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 
+- Save the Load, FEFO and driver handoff: 94/94 saved browser checks, recorded 2026-10-31T06:26:06.570Z. Evidence: reports/browser_qa/freshness/results.json. Runs have separate dates and are not all repeated for every change.
 - Road intelligence: 58/58 saved browser checks, recorded 2026-10-28T19:15:52.092Z. Evidence: reports/browser_qa/roads/results.json. Runs have separate dates and are not all repeated for every change.
 - Guided rehearsal: 76/76 saved browser checks, recorded 2026-10-28T06:07:06.190Z. Evidence: reports/browser_qa/rehearsal/results.json. Runs have separate dates and are not all repeated for every change.
 - County context/readiness: 61/61 saved browser checks, recorded 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. Runs have separate dates and are not all repeated for every change.
@@ -1255,6 +1362,8 @@ Backend tests exercise data handling, holds, recalls, capacities, eligibility, a
 - Command controls: 65/65 saved browser checks, recorded 2026-10-28T06:19:25.790Z. Evidence: reports/browser_qa/controls/results.json. Runs have separate dates and are not all repeated for every change.
 
 The guided delivery-outlook, chicken-question, map-layer, road and dispatcher walkthrough recorded 76/76 actual-Chrome checks at 2026-10-30T19:40:42.320Z. External map tiles used browser-only QA placeholders; no public providers or language model were queried. This verifies application behavior, not prospective prediction accuracy. Evidence: reports/friendliness_workflow_evaluation.json.
+
+The accelerated deterministic freshness replay recorded 15/15 checks. Evidence: reports/freshness_demo.json. It uses a fresh isolated database and simulated sensor packets; no physical hardware, calibrated spoilage prediction or timed human presentation is inferred.
 
 The reviewer-package check verifies paths and checksums, extracts trusted project code into a separate directory, blocks application networking, and exercises offline workflows. It does not establish a new dependency installation unless a separate installation report explicitly records one.
 

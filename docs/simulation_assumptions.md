@@ -59,3 +59,29 @@ Parked status is a human declaration valid for at most ten minutes by server tim
 The interaction gate blocks local reporting/acknowledgment when locked or expired;
 it cannot prove a vehicle is parked or prevent other device use. Simulation
 planning dates remain distinct from current source-retrieval and interaction times.
+
+## Freshness replay and warehouse picking
+
+Save the Load uses a separately labeled October 30, 2026 replay clock. Its seeded
+SH05 lot starts with a 240-hour reference budget and 230 equivalent hours of
+assumed prior age; this is a demonstration condition, not a recommended poultry
+shelf life. One normal 4°C hour leaves nine hours. An immediately replayed heat
+event adds one normal minute and two 16°C hours before restored 4°C control:
+point remaining quality is about 4.39 hours and the minimum forward quality across
+Q10 sensitivity cases is about 1.51 hours. Automatic playback includes an extra
+normal frame and therefore yields different clocks. Cooling cannot reverse age.
+
+Reference temperature, Q10 (2; sensitivity 1.5–3), domain and interpolation caps
+are explicit uncalibrated assumptions. Humidity/vibration/ethylene readings are
+synthetic context only. Existing label deadlines decrease independently. Simulated
+warehouse placement, receipt times, order capacity and receiving buffers are
+declared inputs; FEFO/FIFO solve actual allocations under identical constraints.
+Projected expiry exposure is a planning metric, not observed food waste.
+
+Automatic rescue calculation compares the conservative window against transit
+plus receiving buffer. Ordinary-driving OSRM geometry or a labeled estimated
+connection does not establish truck eligibility or closure avoidance. Recipient
+acceptance requires explicit review. The entire feasible replacement assignment
+set is shown before approval, including lost supply at the original destination.
+The accelerated replay is reproducible with scripts/freshness_demo.py; it does
+not prove physical sensor integration or a timed team presentation.
