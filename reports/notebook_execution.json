@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-11-02T20:12:34.537473+00:00",
+  "profile": "bundled",
+  "passed": true,
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+  "raw_data_requested": false,
+  "original_raws_bundled": false,
+  "requirements_lock_sha256": "2f9e94a847821c2b18f10923867eee973baffefe533c937c9475268d49e6c5de",
+  "optional_requirements_sha256": "bedf83caf2a5d5ef9159f5f61d4237f64554af958f01999cd9724a10cfe4f4bc",
+  "versions": {
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "jupyterlab": "4.6.5",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "ortools": "9.15.6755"
+  },
+  "notebooks": [
+    {
+      "notebook": "00_Start_Here_and_Coverage.ipynb",
+      "source_code_sha256": "c5c60f75b9cef612bcfbca33733893363288363b55c5d5de9150c10083085990",
+      "status": "passed",
+      "code_cells": 8,
+      "duration_seconds": 9.608,
+      "executed_notebook_sha256": "776304c0e1dadb880f65f75ba631999581cc529063d155e5597922d27801a953",
+      "executed_code_cells": 8,
+      "html_sha256": "8100bd67a2ab5d8191ee8de462b3f0d4175969a2dc6b0dfc9c02ed0bc7c40037"
+    },
+    {
+      "notebook": "01_Preprocessing_and_Integration.ipynb",
+      "source_code_sha256": "a05680a583fb9569d911a5f383a2cbd251262b0d4550a391f8c0679336deb599",
+      "status": "passed",
+      "code_cells": 11,
+      "duration_seconds": 14.076,
+      "executed_notebook_sha256": "432d8a0acea82b566d1bd085eebcad3be27dbf8c1cc58f99adb8f6f37b479a2b",
+      "executed_code_cells": 11,
+      "html_sha256": "2f1cda43e450fc4204bdb36d642408527b4035f0d198c2bb3e9cb3e681c16b03"
+    },
+    {
+      "notebook": "02_Modeling_and_Evaluation.ipynb",
+      "source_code_sha256": "726856f2477bf4e55d7e4201d47bb3cf7f204186434c4e8dc47e115b1d1d7d38",
+      "status": "passed",
+      "code_cells": 8,
+      "duration_seconds": 25.251,
+      "executed_notebook_sha256": "c2787b910ee813ab4f82bfc9b372edb2603b44ffc96247a3faa00ee8f3b76233",
+      "executed_code_cells": 8,
+      "html_sha256": "a294a71ba18df79b47c4dd2db2932281539d1c71be61d6cc045e863ef8704e82"
+    },
+    {
+      "notebook": "03_Scenario_Analysis.ipynb",
+      "source_code_sha256": "5a7e2cda2c0535f971d8f5ef27674a056c83f7d953710558b61e5ca8b52c0d0e",
+      "status": "passed",
+      "code_cells": 7,
+      "duration_seconds": 13.052,
+      "executed_notebook_sha256": "53e3aa4cb70c6fcdc76fcbc7c179dc70df79d95afa46fe12ed412f5c3fa2b637",
+      "executed_code_cells": 7,
+      "html_sha256": "34b265635da244ceaa7e2d7fc7fb3c877eb8bb4b8d8d0af3c6a5db97c2c46b4e"
+    }
+  ],
+  "operator_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "note": "Real kernel execution. Numeric reproducibility assertions run inside notebooks; timestamps, copied paths, UUIDs and execution timings are not fixed scientific results.",
+  "operator_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "operator_preserved": true,
+  "finished_at": "2026-11-02T20:13:39.101323+00:00"
+}

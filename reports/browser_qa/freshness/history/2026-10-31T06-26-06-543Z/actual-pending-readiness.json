@@ -1,0 +1,2532 @@
+{
+  "network_revision": 1,
+  "checked_at": "2026-10-31T06:11:43.835704+00:00",
+  "assignments": [
+    {
+      "shipment_id": "SH02",
+      "truck_id": "T02",
+      "lot_id": "L02",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "4.652 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "4.652 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "4.652 travel hours plus 0.5 receiving-buffer hours against 48.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L02: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T02: 400 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC2: 2400 kg allocated against 10000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP2: 2000 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D02: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH02",
+          "lot_id": "L02",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH03",
+      "truck_id": "T03",
+      "lot_id": "L03",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "1.031 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "1.031 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "1.031 travel hours plus 0.5 receiving-buffer hours against 40.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L03: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T03: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC1: 2400 kg allocated against 12000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP3: 1600 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D03: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH03",
+          "lot_id": "L03",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH04",
+      "truck_id": "T04",
+      "lot_id": "L04",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.069 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.069 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.069 travel hours plus 0.5 receiving-buffer hours against 32.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L04: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T04: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC2: 2400 kg allocated against 10000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP1: 1200 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D04: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH04",
+          "lot_id": "L04",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH05",
+      "truck_id": "T05",
+      "lot_id": "L05",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.0913807 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.0913807 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.0913807 travel hours plus 0.5 receiving-buffer hours against 1.50895 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L05: 400 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T05: 400 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC1: 2400 kg allocated against 12000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP2: 2000 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D06: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH05",
+          "lot_id": "L05",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH07",
+      "truck_id": "T07",
+      "lot_id": "L07",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.818 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.818 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.818 travel hours plus 0.5 receiving-buffer hours against 48.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L07: 400 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T07: 1200 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC1: 2400 kg allocated against 12000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP1: 1200 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D07: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH07",
+          "lot_id": "L07",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH11",
+      "truck_id": "T03",
+      "lot_id": "L11",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.154 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.154 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.154 travel hours plus 0.5 receiving-buffer hours against 56.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L11: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T03: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC1: 2400 kg allocated against 12000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP2: 2000 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D11: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH11",
+          "lot_id": "L11",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH12",
+      "truck_id": "T04",
+      "lot_id": "L12",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "4.445 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "4.445 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "4.445 travel hours plus 0.5 receiving-buffer hours against 48.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L12: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T04: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC2: 2400 kg allocated against 10000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP3: 1600 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D12: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH12",
+          "lot_id": "L12",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH14",
+      "truck_id": "T06",
+      "lot_id": "L02",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.181 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.181 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.181 travel hours plus 0.5 receiving-buffer hours against 48.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L02: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T06: 400 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC2: 2400 kg allocated against 10000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP2: 2000 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D14: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH14",
+          "lot_id": "L02",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH15",
+      "truck_id": "T07",
+      "lot_id": "L03",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.724 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.724 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.724 travel hours plus 0.5 receiving-buffer hours against 40.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L03: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T07: 1200 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC1: 2400 kg allocated against 12000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP3: 1600 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D15: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH15",
+          "lot_id": "L03",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH16",
+      "truck_id": "T08",
+      "lot_id": "L04",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.904 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.904 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "3.904 travel hours plus 0.5 receiving-buffer hours against 32.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L04: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T08: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC2: 2400 kg allocated against 10000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP1: 1200 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D01: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH16",
+          "lot_id": "L04",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH23",
+      "truck_id": "T07",
+      "lot_id": "L11",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "1.072 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "1.072 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "1.072 travel hours plus 0.5 receiving-buffer hours against 56.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L11: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T07: 1200 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC1: 2400 kg allocated against 12000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP2: 2000 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D08: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH23",
+          "lot_id": "L11",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    },
+    {
+      "shipment_id": "SH24",
+      "truck_id": "T08",
+      "lot_id": "L12",
+      "status": "review_required",
+      "checks": [
+        {
+          "id": "canonical_assignment",
+          "label": "Current canonical shipment",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved record matches a known shipment identifier."
+        },
+        {
+          "id": "canonical_fields",
+          "label": "Current shipment assumptions",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved fields match the current shipment assumptions; eligible lot substitution remains permitted."
+        },
+        {
+          "id": "lot_eligibility",
+          "label": "Lot eligibility and disposition",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Lot is eligible and is neither held nor recalled in the current simulation."
+        },
+        {
+          "id": "truck_eligibility",
+          "label": "Truck eligibility",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is eligible in the current simulation."
+        },
+        {
+          "id": "refrigeration",
+          "label": "Refrigerated truck",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Truck is configured as refrigerated; this is not physical equipment verification."
+        },
+        {
+          "id": "shipment_quantity",
+          "label": "Positive cargo quantity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "Approved quantity: 400 kg."
+        },
+        {
+          "id": "delivery_deadline",
+          "label": "Planned delivery deadline",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.115 planned travel hours against 6 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "shelf_life",
+          "label": "Planned lot shelf life",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.115 planned travel hours against 68.9833 available hours; no live ETA is inferred."
+        },
+        {
+          "id": "quality_window",
+          "label": "Modeled quality delivery window",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "0.115 travel hours plus 0.5 receiving-buffer hours against 48.9833 modeled quality hours. This is a planning constraint, not a hold or food-safety clearance."
+        },
+        {
+          "id": "aggregate_lot_inventory",
+          "label": "Allocated lot inventory",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "L12: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_truck_capacity",
+          "label": "Allocated truck capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "T08: 800 kg allocated against 1500 kg."
+        },
+        {
+          "id": "aggregate_origin_capacity",
+          "label": "Allocated origin capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "DC2: 2400 kg allocated against 10000 kg."
+        },
+        {
+          "id": "aggregate_supplier_capacity",
+          "label": "Allocated supplier capacity",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "SUP3: 1600 kg allocated against 6000 kg."
+        },
+        {
+          "id": "aggregate_destination_demand",
+          "label": "Destination demand limit",
+          "category": "hard_constraint",
+          "status": "pass",
+          "detail": "D09: 400 kg allocated against 500 kg."
+        },
+        {
+          "id": "assignment_acknowledged",
+          "label": "Driver assignment acknowledgment",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Driver assignment acknowledgment is outstanding. Review while safely parked."
+        },
+        {
+          "id": "instruction_acknowledged",
+          "label": "Current instruction acknowledgment",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "No separately versioned dispatcher instruction is outstanding."
+        },
+        {
+          "id": "targeted_verification",
+          "label": "Requested targeted verification",
+          "category": "workflow",
+          "status": "pass",
+          "detail": "Targeted verification is not requested by this approved assignment."
+        },
+        {
+          "id": "freshness_telemetry_review",
+          "label": "Freshness inputs since approval",
+          "category": "workflow",
+          "status": "review_required",
+          "detail": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+        }
+      ],
+      "blockers": [],
+      "reviews_required": [
+        "assignment_acknowledged",
+        "freshness_telemetry_review"
+      ],
+      "freshness_reviews": [
+        {
+          "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+          "shipment_id": "SH24",
+          "lot_id": "L12",
+          "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+          "reasons": [
+            "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+          ],
+          "latest_version": 7,
+          "approved_version": 5,
+          "source": "simulated_replay",
+          "observed_at": null,
+          "max_gap_minutes": null,
+          "telemetry_age_minutes": null,
+          "context": "lot_quality_link",
+          "timestamp_basis": null,
+          "quality_only": true,
+          "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_assignments": 12,
+    "blocked": 0,
+    "review_required": 12,
+    "ready_for_review": 0
+  },
+  "resources": [
+    {
+      "kind": "lot",
+      "id": "L01",
+      "used_kg": 0,
+      "limit_kg": 1500,
+      "remaining_kg": 1500,
+      "status": "pass",
+      "detail": "L01: 0 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L02",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "L02: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L03",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "L03: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L04",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "L04: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L05",
+      "used_kg": 400,
+      "limit_kg": 1500,
+      "remaining_kg": 1100,
+      "status": "pass",
+      "detail": "L05: 400 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L06",
+      "used_kg": 0,
+      "limit_kg": 1500,
+      "remaining_kg": 1500,
+      "status": "pass",
+      "detail": "L06: 0 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L07",
+      "used_kg": 400,
+      "limit_kg": 1500,
+      "remaining_kg": 1100,
+      "status": "pass",
+      "detail": "L07: 400 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L08",
+      "used_kg": 0,
+      "limit_kg": 1500,
+      "remaining_kg": 1500,
+      "status": "pass",
+      "detail": "L08: 0 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L09",
+      "used_kg": 0,
+      "limit_kg": 1500,
+      "remaining_kg": 1500,
+      "status": "pass",
+      "detail": "L09: 0 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L10",
+      "used_kg": 0,
+      "limit_kg": 1500,
+      "remaining_kg": 1500,
+      "status": "pass",
+      "detail": "L10: 0 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L11",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "L11: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "lot",
+      "id": "L12",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "L12: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T01",
+      "used_kg": 0,
+      "limit_kg": 1500,
+      "remaining_kg": 1500,
+      "status": "pass",
+      "detail": "T01: 0 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T02",
+      "used_kg": 400,
+      "limit_kg": 1500,
+      "remaining_kg": 1100,
+      "status": "pass",
+      "detail": "T02: 400 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T03",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "T03: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T04",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "T04: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T05",
+      "used_kg": 400,
+      "limit_kg": 1500,
+      "remaining_kg": 1100,
+      "status": "pass",
+      "detail": "T05: 400 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T06",
+      "used_kg": 400,
+      "limit_kg": 1500,
+      "remaining_kg": 1100,
+      "status": "pass",
+      "detail": "T06: 400 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T07",
+      "used_kg": 1200,
+      "limit_kg": 1500,
+      "remaining_kg": 300,
+      "status": "pass",
+      "detail": "T07: 1200 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "truck",
+      "id": "T08",
+      "used_kg": 800,
+      "limit_kg": 1500,
+      "remaining_kg": 700,
+      "status": "pass",
+      "detail": "T08: 800 kg allocated against 1500 kg."
+    },
+    {
+      "kind": "origin",
+      "id": "DC1",
+      "used_kg": 2400,
+      "limit_kg": 12000,
+      "remaining_kg": 9600,
+      "status": "pass",
+      "detail": "DC1: 2400 kg allocated against 12000 kg."
+    },
+    {
+      "kind": "origin",
+      "id": "DC2",
+      "used_kg": 2400,
+      "limit_kg": 10000,
+      "remaining_kg": 7600,
+      "status": "pass",
+      "detail": "DC2: 2400 kg allocated against 10000 kg."
+    },
+    {
+      "kind": "supplier",
+      "id": "SUP1",
+      "used_kg": 1200,
+      "limit_kg": 6000,
+      "remaining_kg": 4800,
+      "status": "pass",
+      "detail": "SUP1: 1200 kg allocated against 6000 kg."
+    },
+    {
+      "kind": "supplier",
+      "id": "SUP2",
+      "used_kg": 2000,
+      "limit_kg": 6000,
+      "remaining_kg": 4000,
+      "status": "pass",
+      "detail": "SUP2: 2000 kg allocated against 6000 kg."
+    },
+    {
+      "kind": "supplier",
+      "id": "SUP3",
+      "used_kg": 1600,
+      "limit_kg": 6000,
+      "remaining_kg": 4400,
+      "status": "pass",
+      "detail": "SUP3: 1600 kg allocated against 6000 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D01",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D01: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D02",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D02: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D03",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D03: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D04",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D04: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D05",
+      "used_kg": 0,
+      "limit_kg": 500,
+      "remaining_kg": 500,
+      "status": "pass",
+      "detail": "D05: 0 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D06",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D06: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D07",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D07: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D08",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D08: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D09",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D09: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D10",
+      "used_kg": 0,
+      "limit_kg": 500,
+      "remaining_kg": 500,
+      "status": "pass",
+      "detail": "D10: 0 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D11",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D11: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D12",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D12: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D13",
+      "used_kg": 0,
+      "limit_kg": 500,
+      "remaining_kg": 500,
+      "status": "pass",
+      "detail": "D13: 0 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D14",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D14: 400 kg allocated against 500 kg."
+    },
+    {
+      "kind": "destination",
+      "id": "D15",
+      "used_kg": 400,
+      "limit_kg": 500,
+      "remaining_kg": 100,
+      "status": "pass",
+      "detail": "D15: 400 kg allocated against 500 kg."
+    }
+  ],
+  "limitations": [
+    "Read-only diagnostics for simulated assignments; this report does not dispatch cargo, consume inventory, create a hold or approve a decision.",
+    "Ready for review means the listed checks passed, not that a shipment is safe, legally cleared or authorized to depart.",
+    "Capacity and stock are checked across the current one-wave allocation. Multi-stop sequencing, commercial-truck restrictions and live road clearance are not validated here.",
+    "Acknowledgments and verification are local human-recorded workflow evidence, not authenticated identity, laboratory results or physical sensor observations.",
+    "A predictive score alone never creates a hard block. This refers to FSIS sampling-risk scores; an explicitly approved modeled quality-window constraint is separate. Consequential disposition still requires human approval."
+  ],
+  "freshness_reviews": [
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH02",
+      "lot_id": "L02",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH03",
+      "lot_id": "L03",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH04",
+      "lot_id": "L04",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH05",
+      "lot_id": "L05",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH07",
+      "lot_id": "L07",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH11",
+      "lot_id": "L11",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH12",
+      "lot_id": "L12",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH14",
+      "lot_id": "L02",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH15",
+      "lot_id": "L03",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH16",
+      "lot_id": "L04",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH23",
+      "lot_id": "L11",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    },
+    {
+      "session_id": "b9bd6f28-a240-4d42-9282-f336f16f3ca3",
+      "shipment_id": "SH24",
+      "lot_id": "L12",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    }
+  ],
+  "provenance": "Read-only checks of current approved simulated assignments and local workflow records."
+}

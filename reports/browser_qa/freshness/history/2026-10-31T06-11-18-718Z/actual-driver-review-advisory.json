@@ -1,0 +1,108 @@
+{
+  "truck_id": "T05",
+  "truck": {
+    "capacity_kg": 1500,
+    "eligible": true,
+    "id": "T05",
+    "refrigerated": true
+  },
+  "network_revision": 1,
+  "focus": {
+    "mode": "parked",
+    "version": 1,
+    "parked_until": "2026-10-31T06:18:52.317297+00:00",
+    "parked_confirmed_at": "2026-10-31T06:08:52.317297+00:00",
+    "interaction_allowed": true,
+    "expired": false,
+    "server_time": "2026-10-31T06:08:59.044750+00:00",
+    "provenance": "Self-declared parked confirmation in a local simulated application; no vehicle-motion sensing or operating-system distraction prevention."
+  },
+  "assignments": [
+    {
+      "deadline_hours": 6,
+      "destination": "D06",
+      "estimated_distance_km": 5.939747553499719,
+      "estimated_hours": 0.09138073159230335,
+      "freshness_rescue": {
+        "quality_margin_hours": 0.917566964,
+        "quality_only": true,
+        "route": {
+          "coordinates": [
+            [
+              -92.3341,
+              38.9517
+            ],
+            [
+              -92.38904895518336,
+              38.95136030760434
+            ]
+          ],
+          "type": "LineString"
+        },
+        "route_fallback": true,
+        "session_id": "5feb4c4c-ad86-4077-8609-d981a958444d",
+        "source_version": 4
+      },
+      "id": "SH05",
+      "instruction": "Dispatcher approved simulated freshness-rescue plan; verify quality disposition and vehicle routing separately. Park before interacting. Save the Load: reviewed destination D06; estimated quality margin 0.92 h under declared assumptions.",
+      "logistics_cost": 58,
+      "lot_id": "L05",
+      "origin": "DC1",
+      "quality_receiving_buffer_hours": 0.5,
+      "quantity_kg": 400,
+      "review_priority": "routine",
+      "routing_provenance": "Estimated haversine ×1.25 at 65 km/h; not road geometry",
+      "status": "pending dispatcher approval",
+      "temperature_c": 3,
+      "truck_id": "T05",
+      "verification_required": false,
+      "acknowledged": false
+    }
+  ],
+  "freshness_reviews": [
+    {
+      "session_id": "5feb4c4c-ad86-4077-8609-d981a958444d",
+      "shipment_id": "SH05",
+      "lot_id": "L05",
+      "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
+      "reasons": [
+        "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked."
+      ],
+      "latest_version": 7,
+      "approved_version": 5,
+      "source": "simulated_replay",
+      "observed_at": null,
+      "max_gap_minutes": null,
+      "telemetry_age_minutes": null,
+      "context": "lot_quality_link",
+      "timestamp_basis": null,
+      "quality_only": true,
+      "provenance": "Read-only freshness-context review; no lot hold, route change, sensor measurement or safety clearance is created."
+    }
+  ],
+  "vehicle": {
+    "fuel_percent": 50,
+    "fuel_liters": 90,
+    "tank_capacity_liters": 180,
+    "estimated_range_km": 321.4,
+    "consumption_l_per_100km": 28,
+    "coordinates": [
+      -92.3341,
+      38.9517
+    ],
+    "position_label": "Simulated dispatch-origin snapshot: Columbia DC (simulated)",
+    "origin_id": "DC1",
+    "observed_at": "2026-10-26T08:00:00-05:00",
+    "provenance": "DETERMINISTIC SIMULATION: fuel level, tank size and consumption are scenario assumptions. Position is a dispatch-origin reference, not live GPS. These values do not advance as a trip proceeds.",
+    "simulation": true
+  },
+  "events": [],
+  "source": "Approved local simulated assignments and deterministic scenario telemetry",
+  "limitations": [
+    "Parked status is self-declared, expires after ten minutes, and is not inferred from GPS or speed.",
+    "The app interaction gate does not prevent device use outside AEGIS or prove the vehicle is stopped.",
+    "Fuel, consumption, range and dispatch-origin position are simulated. Optional freshness reviews refer to a separate declared replay/gateway context; no physical feed is independently verified.",
+    "Only current approved trips and their simulated events are included. Missing events do not prove real roads are clear.",
+    "Trip acknowledgment and operational review do not certify food safety or authorize an unapproved detour."
+  ]
+}

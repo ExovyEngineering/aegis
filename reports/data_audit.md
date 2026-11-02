@@ -1,11 +1,11 @@
 # Raw data audit
-2026-10-26T06:26:49.812037+00:00
+2026-10-27T20:59:15.270672+00:00
 
 200 records; workbook 201 rows/sheet; JSON fully streamed for syntax and object counts. Missingness only for sampled CSV/JSONL records.
 
 | File | Bytes | Source | Errors |
 |---|---:|---|---|
-| 2025-food-environment-atlas-data.xlsx | 9104656 | Unrecognized / documentation; do not merge |  |
+| 2025-food-environment-atlas-data.xlsx | 9104656 | USDA Food Environment Atlas |  |
 | 2025-sram-fara-data.xlsx | 112608645 | USDA food access atlas |  |
 | AEGIS API & Dataset Registry.xlsx | 8266 | Unrecognized / documentation; do not merge |  |
 | BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv | 100469 | Possible CDC BEAM; requires metadata confirmation |  |
@@ -56,7 +56,7 @@ Files: 42. Exact duplicate hashes: 0. Files with recorded errors: 0.
 ## Coverage and schemas
 
 ### 2025-food-environment-atlas-data.xlsx
-- Source: Unrecognized / documentation; do not merge. Path: `C:\Users\ericp\Downloads\NAFSI\2025-food-environment-atlas-data.xlsx`.
+- Source: USDA Food Environment Atlas. Path: `C:\Users\ericp\Downloads\NAFSI\2025-food-environment-atlas-data.xlsx`.
 - Workbook sheets (declared dimensions): Read_Me (12 rows x 4 columns),  Variable List (306 rows x 6 columns), ACCESS (3146 rows x 68 columns), STORES (3146 rows x 41 columns), RESTAURANTS (3146 rows x 15 columns), ASSISTANCE (3149 rows x 57 columns), INSECURITY (3154 rows x 9 columns), TAXES (3144 rows x 8 columns), LOCAL (3163 rows x 98 columns), HEALTH (3146 rows x 14 columns), SOCIOECONOMIC (3155 rows x 21 columns).
 - Geographic, time, identifier and outcome fields: `State`, `County`, `State`, `County`, `State`, `County`, `State`, `County`, `State`, `County`, `State`, `County`, `State`, `County`, `State`, `County`, `State`, `County`.
 - Workbook dimensions are declared, not verified exact counts. First 201 rows sampled per sheet.

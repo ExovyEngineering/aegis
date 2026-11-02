@@ -1,0 +1,10 @@
+scenario_id,policy_id,simulation,distributed_kg,unmet_demand_kg,demand_service_fraction,retained_inventory_kg,eligible_retained_inventory_kg,held_or_recalled_inventory_excluded_kg,held_or_recalled_dispatched_kg,projected_quality_budget_exposure_kg,short_quality_clock_delivered_kg,destinations_served,destinations_meeting_50_percent_demand,min_demand_service_fraction,mean_capped_service_fraction,total_estimated_distance_km,total_estimated_shipment_hours,mean_estimated_shipment_hours,temperature_review_shipments,temperature_review_cargo_kg,constraint_violations
+baseline,status_quo,True,4400,3100,0.5866666666666667,13600,12100,1500,0,4800,1200,11,11,0.0,0.36666666666666664,1878.67,28.903,2.6275454545454546,2,800,0
+baseline,model_volume,True,4400,3100,0.5866666666666667,13600,12100,1500,0,4800,1200,11,11,0.0,0.36666666666666664,1209.27,18.604,1.6912727272727273,1,400,0
+baseline,model_balanced,True,4400,3100,0.5866666666666667,13600,12100,1500,0,4800,1200,11,11,0.0,0.36666666666666664,1209.27,18.604,1.6912727272727273,1,400,0
+fleet_scarcity,status_quo,True,2800,6200,0.3111111111111111,15200,13700,1500,0,5600,400,6,6,0.0,0.2,1294.85,19.92,2.4899999999999998,2,800,0
+fleet_scarcity,model_volume,True,3200,5800,0.35555555555555557,14800,13300,1500,0,4400,1600,7,7,0.0,0.23333333333333334,1093.99,16.83,2.10375,1,400,0
+fleet_scarcity,model_balanced,True,3200,5800,0.35555555555555557,14800,13300,1500,0,4800,1200,8,8,0.0,0.26666666666666666,1266.32,19.482,2.43525,1,400,0
+delay_supply_stress,status_quo,True,3200,4300,0.4266666666666667,13700,10700,3000,0,4800,1200,8,8,0.0,0.26666666666666666,574.27,24.834,3.10425,0,0,0
+delay_supply_stress,model_volume,True,3200,4300,0.4266666666666667,13700,10700,3000,0,4800,1200,8,8,0.0,0.26666666666666666,574.27,24.834,3.10425,0,0,0
+delay_supply_stress,model_balanced,True,3200,4300,0.4266666666666667,13700,10700,3000,0,4800,1200,8,8,0.0,0.26666666666666666,574.27,24.834,3.10425,0,0,0

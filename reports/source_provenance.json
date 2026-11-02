@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-02T17:04:12.895427+00:00",
+  "command": "python scripts/build_data_dictionary.py",
+  "datasets": [
+    {
+      "dataset": "fsis_poultry",
+      "provider": "USDA FSIS",
+      "grain": "selected primary raw-poultry sample",
+      "geography": "national; retained establishment state",
+      "role": "food/animal outcome; retrospective model target",
+      "time_semantics": "collection date; no result-availability date",
+      "rows": 78607,
+      "columns": 9,
+      "path": "data/processed/fsis_poultry.parquet",
+      "sha256": "12304d0fb04e62c593fa7149eff43874bc2acc724aea49cec201fe36ca3c1d04",
+      "recorded_sha256": "12304d0fb04e62c593fa7149eff43874bc2acc724aea49cec201fe36ca3c1d04",
+      "integrity": "matched",
+      "recorded_ingestion_status": "complete",
+      "raw_lineage": [
+        {
+          "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+          "sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+          "metadata_creation_date": "March 19, 2026",
+          "publication_date": null
+        },
+        {
+          "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+          "sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+          "metadata_creation_date": "March 19, 2026",
+          "publication_date": null
+        },
+        {
+          "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+          "sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+          "metadata_creation_date": "October 09, 2026",
+          "publication_date": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "beam_0",
+      "provider": "CDC BEAM",
+      "grain": "pathogen x HHS region x month",
+      "geography": "HHS region",
+      "role": "human surveillance context; no isolate/genomic linkage",
+      "time_semantics": "calendar year/month; export snapshot",
+      "rows": 1650,
+      "columns": 7,
+      "path": "data/processed/beam_0.parquet",
+      "sha256": "a4e91dcab3d677721b1fc1c8d3278802f655fb727d9af3bd959ef0475477c3fe",
+      "recorded_sha256": "a4e91dcab3d677721b1fc1c8d3278802f655fb727d9af3bd959ef0475477c3fe",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+          "sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "beam_1",
+      "provider": "CDC BEAM",
+      "grain": "state x month x source type/site x pathogen x serotype",
+      "geography": "provider state codes; select MO explicitly",
+      "role": "PulseNet-derived aggregate human surveillance; source categories stay separate",
+      "time_semantics": "calendar year/month; no row publication date",
+      "rows": 262616,
+      "columns": 13,
+      "path": "data/processed/beam_1.parquet",
+      "sha256": "f9f997aa85c29152f647f370eff3fe88b757e8bf08810fc2b5f8f8876f06e7d7",
+      "recorded_sha256": "f9f997aa85c29152f647f370eff3fe88b757e8bf08810fc2b5f8f8876f06e7d7",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+          "sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "beam_2",
+      "provider": "CDC BEAM",
+      "grain": "food category x serotype x provider summary period",
+      "geography": "provider national summary",
+      "role": "historical burden/trajectory context",
+      "time_semantics": "Year and Year_range have distinct meanings",
+      "rows": 484,
+      "columns": 13,
+      "path": "data/processed/beam_2.parquet",
+      "sha256": "8984140a2ce478b98560e5711397c5e4bad534547623e601571bf7c112168284",
+      "recorded_sha256": "8984140a2ce478b98560e5711397c5e4bad534547623e601571bf7c112168284",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+          "sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "beam_3",
+      "provider": "CDC BEAM",
+      "grain": "food category x serotype x first-illness year x summary period",
+      "geography": "provider national summary",
+      "role": "historical illnesses/outbreaks context",
+      "time_semantics": "Year_first_ill differs from report Year and Year_range",
+      "rows": 2412,
+      "columns": 10,
+      "path": "data/processed/beam_3.parquet",
+      "sha256": "13ef86b755564be3d74a531fbb3c4aeb57b52229febdfda81eca8ccb169511db",
+      "recorded_sha256": "13ef86b755564be3d74a531fbb3c4aeb57b52229febdfda81eca8ccb169511db",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+          "sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "beam_4",
+      "provider": "CDC BEAM",
+      "grain": "pathogen x serotype/species/subgroup x month",
+      "geography": "provider national summary",
+      "role": "aggregate serotype context; not genomic clusters",
+      "time_semantics": "calendar year/month; export snapshot",
+      "rows": 4818,
+      "columns": 8,
+      "path": "data/processed/beam_4.parquet",
+      "sha256": "fa6e75365b49f42b1f210bd44378a4b3e0914211055be165e05b47930a298839",
+      "recorded_sha256": "fa6e75365b49f42b1f210bd44378a4b3e0914211055be165e05b47930a298839",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "BEAM_Dashboard_–_Top_30_Most_Common_Serotypes_20261026.csv",
+          "sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "nors_0",
+      "provider": "CDC NORS",
+      "grain": "reported historical outbreak record",
+      "geography": "provider jurisdiction; includes multi-state/territory categories",
+      "role": "human outbreak context; not FSIS-linked illness labels",
+      "time_semantics": "Year/Month; historical export through 2023",
+      "rows": 66713,
+      "columns": 19,
+      "path": "data/processed/nors_0.parquet",
+      "sha256": "b924774bd85127bb97e4304d6661d3457eba499c99f9edf8aa4e013c02ce00bc",
+      "recorded_sha256": "b924774bd85127bb97e4304d6661d3457eba499c99f9edf8aa4e013c02ce00bc",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "NORS_20261026.csv",
+          "sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "establishments_0",
+      "provider": "USDA FSIS MPI directory",
+      "grain": "establishment directory record",
+      "geography": "Missouri; official point coordinates",
+      "role": "additional directory context; no simulated supplier contract",
+      "time_semantics": "directory snapshot; grant_date is not a sampling date",
+      "rows": 175,
+      "columns": 19,
+      "path": "data/processed/establishments_0.parquet",
+      "sha256": "fa92b0f60d69db0ff54374ddeeec3c7a212d93f433a60c86822e6b5e6c1d399e",
+      "recorded_sha256": "fa92b0f60d69db0ff54374ddeeec3c7a212d93f433a60c86822e6b5e6c1d399e",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "MPI_Directory_by_Establishment_Name.csv",
+          "sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "usda_food_environment_missouri",
+      "provider": "USDA ERS Food Environment Atlas",
+      "grain": "county/county-equivalent",
+      "geography": "115 Missouri FIPS identities",
+      "role": "additional historical food-security context; not shipment need",
+      "time_semantics": "measure-specific 2019/2020/2023; July 2025 workbook release",
+      "rows": 115,
+      "columns": 14,
+      "path": "data/processed/usda_food_environment_missouri.parquet",
+      "sha256": "627e1c413685dd3f69eba64555864ee25a6fa580ebf9c69cda6bf0a02921297c",
+      "recorded_sha256": "627e1c413685dd3f69eba64555864ee25a6fa580ebf9c69cda6bf0a02921297c",
+      "integrity": "matched",
+      "recorded_ingestion_status": "available",
+      "raw_lineage": [
+        {
+          "filename": "2025-food-environment-atlas-data.xlsx",
+          "sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0",
+          "size_bytes": 9104656
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "integrated_mo_analytic",
+      "provider": "AEGIS derived retrospective study",
+      "grain": "selected Missouri FSIS sample; origin seven days before collection",
+      "geography": "Missouri aggregate; no establishment/station exposure assignment",
+      "role": "ecological historical feature alignment; not causal or prospective validation",
+      "time_semantics": "explicit origins and assumed feature lags; see integrated study",
+      "rows": 1534,
+      "columns": 26,
+      "path": "data/processed/integrated_mo_analytic.csv",
+      "sha256": "ecfd751025d06444049534210a24d38927035af1ec623861ac0d5f2e313db448",
+      "recorded_sha256": "ecfd751025d06444049534210a24d38927035af1ec623861ac0d5f2e313db448",
+      "integrity": "matched",
+      "recorded_ingestion_status": "derived exploratory study; not an ingestion status",
+      "raw_lineage": [
+        {
+          "source": "fsis",
+          "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+          "sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+          "metadata_creation_date": "March 19, 2026",
+          "actual_retrieved_at": null,
+          "publication_date": null
+        },
+        {
+          "source": "fsis",
+          "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+          "sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+          "metadata_creation_date": "March 19, 2026",
+          "actual_retrieved_at": null,
+          "publication_date": null
+        },
+        {
+          "source": "fsis",
+          "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+          "sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+          "metadata_creation_date": "October 09, 2026",
+          "actual_retrieved_at": null,
+          "publication_date": null
+        },
+        {
+          "source": "beam_1",
+          "filename": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+          "sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274",
+          "metadata_creation_date": null,
+          "actual_retrieved_at": null,
+          "publication_date": null
+        },
+        {
+          "source": "nors_0",
+          "filename": "NORS_20261026.csv",
+          "sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987",
+          "metadata_creation_date": null,
+          "actual_retrieved_at": null,
+          "publication_date": null
+        },
+        {
+          "source": "NOAA NCEI",
+          "station_id": "USW00003945",
+          "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac",
+          "actual_retrieved_at": "2026-10-26T06:38:45.301598+00:00",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "publication_date": null
+        },
+        {
+          "source": "NOAA NCEI",
+          "station_id": "USW00003947",
+          "sha256": "9ecfb639b8d4b43acc7a90d76861ba137de0451c06e59b58affae42e8862c14f",
+          "actual_retrieved_at": "2026-10-26T06:38:46.306466+00:00",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003947&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "publication_date": null
+        },
+        {
+          "source": "NOAA NCEI",
+          "station_id": "USW00003963",
+          "sha256": "cd0cec6d4c636d9e5ea3454bdcd75d2645bd3fe6b086939dd02102fe7843b378",
+          "actual_retrieved_at": "2026-10-26T06:38:47.273257+00:00",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003963&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "publication_date": null
+        },
+        {
+          "source": "NOAA NCEI",
+          "station_id": "USW00013995",
+          "sha256": "26ca1fac107c2ccb1c9651fe103e1412f94f6670de8103d59c1f54a055f556fe",
+          "actual_retrieved_at": "2026-10-26T06:38:48.334177+00:00",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013995&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "publication_date": null
+        },
+        {
+          "source": "NOAA NCEI",
+          "station_id": "USW00013994",
+          "sha256": "3477c320482a7d92d096b45b0d87e234503d8809fc03184e73def860c1a97cdc",
+          "actual_retrieved_at": "2026-10-26T06:39:10.817202+00:00",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013994&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "publication_date": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "dataset": "noaa_station_days",
+      "provider": "NOAA NCEI",
+      "grain": "station x provider daily reporting-period label",
+      "geography": "five Missouri airport stations",
+      "role": "ambient historical weather; not cargo exposure",
+      "time_semantics": "2025-01-01 through 2026-06-30; local observation periods retained",
+      "rows": 2730,
+      "columns": 12,
+      "path": "data/external/noaa/ (five report-selected response snapshots)",
+      "sha256": null,
+      "recorded_sha256": null,
+      "integrity": "not recorded",
+      "recorded_ingestion_status": "partial",
+      "raw_lineage": [
+        {
+          "filename": "data/external/noaa/USW00003945_2025-01-01_2026-06-30.response.json",
+          "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac",
+          "station_id": "USW00003945",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "retrieved_at": "2026-10-26T06:38:45.301598+00:00",
+          "publication_date": null
+        },
+        {
+          "filename": "data/external/noaa/USW00003947_2025-01-01_2026-06-30.response.json",
+          "sha256": "9ecfb639b8d4b43acc7a90d76861ba137de0451c06e59b58affae42e8862c14f",
+          "station_id": "USW00003947",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003947&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "retrieved_at": "2026-10-26T06:38:46.306466+00:00",
+          "publication_date": null
+        },
+        {
+          "filename": "data/external/noaa/USW00003963_2025-01-01_2026-06-30.response.json",
+          "sha256": "cd0cec6d4c636d9e5ea3454bdcd75d2645bd3fe6b086939dd02102fe7843b378",
+          "station_id": "USW00003963",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003963&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "retrieved_at": "2026-10-26T06:38:47.273257+00:00",
+          "publication_date": null
+        },
+        {
+          "filename": "data/external/noaa/USW00013995_2025-01-01_2026-06-30.response.json",
+          "sha256": "26ca1fac107c2ccb1c9651fe103e1412f94f6670de8103d59c1f54a055f556fe",
+          "station_id": "USW00013995",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013995&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "retrieved_at": "2026-10-26T06:38:48.334177+00:00",
+          "publication_date": null
+        },
+        {
+          "filename": "data/external/noaa/USW00013994_2025-01-01_2026-06-30.response.json",
+          "sha256": "3477c320482a7d92d096b45b0d87e234503d8809fc03184e73def860c1a97cdc",
+          "station_id": "USW00013994",
+          "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013994&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+          "retrieved_at": "2026-10-26T06:39:10.817202+00:00",
+          "publication_date": null
+        }
+      ],
+      "notes": "Logical schema only: no replacement NOAA table is written. Returned station-days differ from per-metric coverage. Raw provider attributes remain strings."
+    }
+  ],
+  "dictionary_rows": 150,
+  "artifact_sha256": {
+    "dictionary_csv": "8fce5278b28c996026874708512357ddc870271541a16c18f950026b24e73e59",
+    "provenance_csv": "20b637b90f5588c9f70b612406d562b96a40637ec697a9ba2d2f6d3d41589309",
+    "generator_script": "3c01e24252bdb456b1ff2d6b9723d60874ce037e2e5c12e46aed0b6e1dba2edf"
+  },
+  "scope": "Observed-schema inventory of derived evidence plus five report-selected original NOAA responses. No operator database, original supplied table, or model is changed.",
+  "interpretation": [
+    "Current input hashes are measured; raw lineage hashes for supplied files are copied from ingestion reports and are not a new provider-authentication or completeness check.",
+    "Null counts are exact for the local loaded columns, including provider strings that can encode unavailable data; a non-null text value is not necessarily a valid analytic value.",
+    "PulseNet-derived BEAM aggregates, NORS outbreaks and FSIS selected samples retain different units and labels; ecological alignment is not outbreak attribution.",
+    "Directory coordinates do not identify fictional supply contracts. USDA county context does not identify actual recipient demand or map fictional destinations to counties.",
+    "Publication timing, establishment exposure linkage, genomic linkage and prospective model validity remain unresolved."
+  ]
+}

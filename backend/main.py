@@ -1,14 +1,30 @@
 import json, sqlite3, uuid, os
-from typing import Literal
+from typing import Annotated, Literal
 from contextlib import contextmanager
 from pathlib import Path
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from backend.custom_operations import CustomOperation
 from backend.dispatch import ensure_dispatch_schema,create_driver_incident,create_dispatch_router
-from backend.paths import ROOT
+from backend.planning import ensure_planning_schema, store_run, create_planning_router
+from backend.data_explorer import create_data_router
+from backend.project_status import create_project_router
+from backend.drive import ensure_drive_schema, require_parked, create_drive_router
+from backend.readiness import create_readiness_router
+from backend.food_context import create_food_context_router
+from backend.runtime import runtime_context, require_valid_runtime
+from backend.rehearsal import create_rehearsal_router
+from backend.road_intelligence import create_road_intelligence_router
+from backend.evidence_assistant import create_assistant_router
+from backend.assistant_intent import create_assistant_intent_router
+from backend.event_impact import create_event_impact_router, build_event_impact
+from backend.activity import create_activity_router, read_legacy_audit
+from backend.delivery_outlook import create_delivery_outlook_router
+from backend.freshness import create_freshness_router
+from backend.challenge import create_challenge_router
+from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
 from backend.adapters import now, OSRMRoutingAdapter, OpenMeteoForecastAdapter,NWSAlertsAdapter,NCEIHistoricalAdapter,FSISRecallAdapter,MoDOTAdapter
@@ -18,6 +34,7 @@ app.add_middleware(CORSMiddleware,allow_origins=['http://localhost:5173','http:/
 DB=Path(os.getenv('AEGIS_DB_PATH') or ROOT/'data/aegis.sqlite')
 @contextmanager
 def db():
+    require_valid_runtime(DB,root=ROOT)
     DB.parent.mkdir(exist_ok=True,parents=True)
     conn=sqlite3.connect(DB,timeout=20)
     try:
@@ -26,6 +43,8 @@ def db():
         conn.execute('CREATE TABLE IF NOT EXISTS audit (id INTEGER PRIMARY KEY, timestamp TEXT, actor TEXT, action TEXT, payload TEXT)')
         conn.execute('CREATE TABLE IF NOT EXISTS assignments (id TEXT PRIMARY KEY, payload TEXT, acknowledged INTEGER DEFAULT 0)')
         ensure_dispatch_schema(conn)
+        ensure_planning_schema(conn)
+        ensure_drive_schema(conn)
         conn.execute('INSERT OR IGNORE INTO state VALUES (1,?,0)',(json.dumps(seed_network()),)); conn.commit()
         yield conn; conn.commit()
     except Exception: conn.rollback(); raise
@@ -34,14 +53,14 @@ def load(c):
     row=c.execute('SELECT payload,revision FROM state WHERE id=1').fetchone(); return json.loads(row[0]),row[1]
 def record(c,actor,action,payload): c.execute('INSERT INTO audit(timestamp,actor,action,payload) VALUES (?,?,?,?)',(now(),actor,action,json.dumps(payload)))
 def read_report(name,default):
-    p=ROOT/'reports'/name; return json.loads(p.read_text(encoding='utf-8')) if p.exists() else default
+    p=ROOT/'reports'/name; return read_json(p) if p.exists() else default
 
 @app.get('/api/health')
 def health(): return {'status':'ok','mode':'local simulated research demo'}
 @app.get('/api/network')
 def network():
     with db() as c:
-        n,rev=load(c); return dict(n,revision=rev)
+        n,rev=load(c); return dict(n,revision=rev,runtime=runtime_context(DB,root=ROOT))
 @app.get('/api/coverage')
 def coverage(): return read_report('api_status.json',[])
 @app.get('/api/model')
@@ -49,12 +68,28 @@ def model(): return read_report('model_evaluation.json',{'status':'not trained; 
 @app.get('/api/inventory')
 def inventory(): return read_report('../data/manifests/inventory.json',{'status':'audit not run'})
 @app.get('/api/evidence/{source}')
-def evidence(source:str):
+def evidence(source:str,limit:Annotated[int|None,Query(ge=1,le=100)]=None):
     if source not in {'fsis_recalls','nws_alerts','openmeteo','modot','ncei_historical','openmeteo_archive','osrm_route'}: raise HTTPException(404,'Unknown source')
-    p=ROOT/f'data/cache/probe_{source}.json'
+    if limit is not None and source!='fsis_recalls':raise HTTPException(422,'Record limits are supported only for FSIS recall evidence')
+    runtime=require_valid_runtime(DB,root=ROOT)
+    p=ROOT/f'data/fixtures/{source}.json' if runtime['isolated'] and runtime['offline'] else ROOT/f'data/cache/probe_{source}.json'
     if not p.exists():p=ROOT/f'data/fixtures/{source}.json'
     if not p.exists(): return {'status':'unavailable','source':source,'coverage_warning':'No successful dated response captured'}
-    result=json.loads(p.read_text())
+    result=read_json(p)
+    if limit is not None:
+        if not isinstance(result,dict):raise HTTPException(400,'Recall evidence wrapper has an unsupported schema; bounded preview unavailable')
+        payload=result.get('payload')
+        if isinstance(payload,list):
+            records=payload
+            result['payload']=records[:limit]
+        elif isinstance(payload,dict):
+            recognized=[key for key in ('results','data','recalls','items') if isinstance(payload.get(key),list)]
+            if len(recognized)!=1:raise HTTPException(400,'Recall payload schema does not identify one supported records array; request the full response')
+            key=recognized[0];records=payload[key]
+            result['payload']={**payload,key:records[:limit]}
+        else:raise HTTPException(400,'Recall payload schema does not contain a supported records array; request the full response')
+        result.update(total_records=len(records),returned_records=min(limit,len(records)),truncated=len(records)>limit,
+                      pagination_notice='First records in provider response order. This preview is not sorted by date and does not establish which notices are most recent. Request the full dated response for all records.')
     from datetime import datetime,timezone
     try:age=max(0,(datetime.now(timezone.utc)-datetime.fromisoformat(result['retrieved_at'])).total_seconds())
     except (KeyError,ValueError,TypeError):age=None
@@ -76,15 +111,30 @@ def facilities():
     df=pd.read_parquet(paths[0]); return json.loads(df[['establishment_id','establishment_name','latitude','longitude','activities']].to_json(orient='records'))
 
 class Event(BaseModel):
+    model_config=ConfigDict(extra='forbid',str_strip_whitespace=True)
     event:str
     shipment_id:str
+    expected_network_revision:int|None=Field(default=None,ge=0,strict=True)
+    preview_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{64}$')
+    @model_validator(mode='after')
+    def preview_context(self):
+        if self.preview_id is not None and self.expected_network_revision is None:
+            raise ValueError('Applying a preview requires its expected network revision')
+        return self
 @app.post('/api/events')
 def event(request:Event):
     with db() as c:
         c.execute('BEGIN IMMEDIATE'); n,rev=load(c)
+        if request.expected_network_revision is not None and request.expected_network_revision!=rev:
+            raise HTTPException(409,'Network changed; reload and preview the event again before applying')
+        assignments=[dict(json.loads(row[0]),acknowledged=bool(row[1])) for row in c.execute('SELECT payload,acknowledged FROM assignments ORDER BY id')]
+        if request.preview_id is not None:
+            impact=build_event_impact(n,rev,assignments,request.event,request.shipment_id)
+            if impact['preview_id']!=request.preview_id:
+                raise HTTPException(409,'The event or assignment context no longer matches the displayed preview; preview again before applying')
         try: apply_event(n,request.event,request.shipment_id)
         except ValueError as e: raise HTTPException(400,str(e))
-        c.execute('UPDATE state SET payload=?,revision=? WHERE id=1',(json.dumps(n),rev+1)); c.execute('DELETE FROM assignments'); record(c,'simulator','event',request.model_dump()); return {'revision':rev+1,'assignments_invalidated':True}
+        c.execute('UPDATE state SET payload=?,revision=? WHERE id=1',(json.dumps(n),rev+1)); c.execute('DELETE FROM assignments'); record(c,'simulator','event',request.model_dump()); return {'revision':rev+1,'network_revision_before':rev,'assignments_invalidated':True,'assignments_removed':len(assignments),'preview_id':request.preview_id,'operational_state_modified':True}
 @app.post('/api/demo/reset')
 def reset():
     with db() as c:
@@ -111,6 +161,9 @@ def approve(pid:str,request:Approval):
         if row[1]!=rev: raise HTTPException(409,'Network changed; generate a fresh proposal')
         result=json.loads(row[0]); fresh=optimize(n,result['scenario'])
         if not fresh['feasible'] or fresh['shipments']!=result['shipments']: raise HTTPException(409,'Plan failed safety revalidation')
+        from backend.plan_review import review_plan
+        checked=review_plan(n,result['shipments'],result['proposed_hold_lots'],result['scenario'])
+        if not checked['passed']:raise HTTPException(409,'Independent constraint review failed')
         for lot in n['lots']:
             if lot['id'] in result['proposed_hold_lots']: lot['held']=True
         c.execute('DELETE FROM assignments')
@@ -121,32 +174,46 @@ def approve(pid:str,request:Approval):
 @app.get('/api/driver')
 def driver():
     with db() as c:return [dict(json.loads(r[1]),acknowledged=bool(r[2])) for r in c.execute('SELECT * FROM assignments ORDER BY id')]
+class DriverActionContext(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    expected_network_revision:int|None=Field(default=None,ge=0,strict=True)
 @app.post('/api/driver/{sid}/acknowledge')
-def acknowledge(sid:str):
+def acknowledge(sid:str,request:DriverActionContext|None=None):
     with db() as c:
-        if not c.execute('SELECT id FROM assignments WHERE id=?',(sid,)).fetchone():raise HTTPException(404,'No approved assignment')
+        c.execute('BEGIN IMMEDIATE')
+        row=c.execute('SELECT payload FROM assignments WHERE id=?',(sid,)).fetchone()
+        if not row:raise HTTPException(404,'No approved assignment')
+        revision=c.execute('SELECT revision FROM state WHERE id=1').fetchone()[0]
+        if request is not None and request.expected_network_revision is not None and request.expected_network_revision!=revision:
+            raise HTTPException(409,'Network changed; refresh the displayed trip before acknowledging')
+        require_parked(c,json.loads(row[0])['truck_id'])
         c.execute('UPDATE assignments SET acknowledged=1 WHERE id=?',(sid,)); record(c,'simulated driver','acknowledge',{'shipment_id':sid}); return {'status':'acknowledged'}
 class Incident(BaseModel):
     model_config=ConfigDict(str_strip_whitespace=True)
     shipment_id:str
     description:str=Field(min_length=5,max_length=2000)
+    expected_network_revision:int|None=Field(default=None,ge=0,strict=True)
 @app.post('/api/driver/incident')
 def incident(request:Incident):
-    with db() as c:return create_driver_incident(c,request.shipment_id,request.description,record)
+    with db() as c:return create_driver_incident(c,request.shipment_id,request.description,record,request.expected_network_revision)
 @app.get('/api/audit')
 def audit():
-    with db() as c: return [dict(id=r[0],timestamp=r[1],actor=r[2],action=r[3],payload=json.loads(r[4])) for r in c.execute('SELECT * FROM audit ORDER BY id DESC LIMIT 100')]
+    # Preserve legacy initialization for parallel cold-start loads; the bounded
+    # read itself uses a separate read-only transaction and tolerates bad rows.
+    with db(): pass
+    return read_legacy_audit(DB,ROOT)
 class Route(BaseModel):
     coordinates:list[tuple[float,float]]=Field(min_length=2,max_length=20)
     alternatives:bool=False
 @app.post('/api/route')
 def route(request:Route):
+    runtime=require_valid_runtime(DB,root=ROOT)
     try:
         result=OSRMRoutingAdapter().route(request.coordinates,request.alternatives)
         from backend.route_review import review_routes
-        p=ROOT/'data/cache/probe_modot.json'
+        p=ROOT/('data/fixtures/modot.json' if runtime['isolated'] and runtime['offline'] else 'data/cache/probe_modot.json')
         if not p.exists():p=ROOT/'data/fixtures/modot.json'
-        modot=json.loads(p.read_text(encoding='utf-8')) if p.exists() else None
+        modot=read_json(p) if p.exists() else None
         result['road_review']=review_routes(result,modot); return result
     except ValueError as e:raise HTTPException(400,str(e))
 @app.get('/api/evidence-summary')
@@ -179,11 +246,13 @@ class RouteLabRequest(BaseModel):
         return self
 @app.post('/api/route-lab')
 def route_lab(request:RouteLabRequest):
+    require_valid_runtime(DB,root=ROOT)
     from backend.route_lab import plan_routes
     try:
         params=request.model_dump(exclude={'custom_operation'})
         if request.custom_operation is not None:params['operation']=request.custom_operation.build_operation()
-        return plan_routes(**params)
+        result=plan_routes(**params)
+        with db() as c:return store_run(c,request.model_dump(),result)
     except ValueError as e:raise HTTPException(400,str(e))
 @app.get('/api/shipments/{sid}/exposure')
 def shipment_exposure(sid:str):
@@ -195,16 +264,45 @@ def shipment_exposure(sid:str):
     result=project_temperature(min(1440,shipment['estimated_hours']*60),initial_c=shipment['temperature_c'],ambient_c=30,refrigeration_fault=fault)
     return dict(result,shipment_id=sid,network_revision=revision,ambient_provenance='30°C simulated planning assumption; not a current weather observation',advisories=[e for e in n['events'] if e['shipment_id']==sid])
 @app.post('/api/refresh/{source}')
-def refresh(source:str):
+def refresh(source:str,summary:bool=False):
+    runtime=require_valid_runtime(DB,root=ROOT)
+    if runtime['isolated'] and runtime['offline']:
+        raise HTTPException(403,'Public-source refresh is disabled in this offline rehearsal. Dated fixtures remain unchanged; use the operator app for deliberate live source checks.')
     adapters={'openmeteo':OpenMeteoForecastAdapter,'nws_alerts':NWSAlertsAdapter,'ncei_historical':NCEIHistoricalAdapter,'fsis_recalls':FSISRecallAdapter,'modot':MoDOTAdapter}
     if source not in adapters:raise HTTPException(404,'Unsupported source')
     try:
         result=adapters[source]().fetch()
         from backend.paths import write_json
-        write_json(ROOT/f'data/cache/probe_{source}.json',result); return result
-    except Exception as e: return {'status':'failed','error':f'{type(e).__name__}: {e}','source':source}
+        write_json(ROOT/f'data/cache/probe_{source}.json',result)
+    except Exception as e:result={'status':'failed','error':f'{type(e).__name__}: {e}','source':source}
+    if summary:
+        metadata={key:value for key,value in result.items() if key not in ('payload','incident_layers')}
+        metadata.update(summary_only=True,payload_present='payload' in result and result['payload'] is not None,
+                        incident_layer_count=len(result.get('incident_layers',[])))
+        payload=result.get('payload')
+        if isinstance(payload,list):metadata['record_count']=len(payload)
+        elif isinstance(payload,dict):
+            recognized=[key for key in ('results','data','recalls','items') if isinstance(payload.get(key),list)]
+            if len(recognized)==1:metadata['record_count']=len(payload[recognized[0]])
+        return metadata
+    return result
 
 app.include_router(create_dispatch_router(db,load,record))
+app.include_router(create_planning_router(db,record))
+app.include_router(create_data_router(ROOT))
+app.include_router(create_project_router(ROOT))
+app.include_router(create_challenge_router(ROOT))
+app.include_router(create_drive_router(db,load,record))
+app.include_router(create_readiness_router(db,load))
+app.include_router(create_food_context_router(ROOT))
+app.include_router(create_rehearsal_router(db,load,record,lambda:DB,root=lambda:ROOT))
+app.include_router(create_road_intelligence_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_assistant_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_assistant_intent_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_event_impact_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_activity_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_delivery_outlook_router(lambda:DB,root=lambda:ROOT))
+app.include_router(create_freshness_router(db,load,record,lambda:DB,root=lambda:ROOT))
 
 dist=ROOT/'frontend/dist'
 if dist.exists():app.mount('/',StaticFiles(directory=dist,html=True),name='frontend')

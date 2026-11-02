@@ -1,0 +1,15 @@
+{
+  "id": "SH05",
+  "origin": "DC1",
+  "destination": "D05",
+  "lot_id": "L05",
+  "truck_id": "T05",
+  "quantity_kg": 400,
+  "deadline_hours": 6,
+  "estimated_hours": 3.552,
+  "estimated_distance_km": 230.86,
+  "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+  "temperature_c": 3,
+  "review_priority": "routine",
+  "status": "pending dispatcher approval"
+}

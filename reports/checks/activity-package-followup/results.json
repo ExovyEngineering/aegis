@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "tests_passed": 35,
+  "scope": [
+    "tests/test_package_verification.py",
+    "tests/test_package_submission.py"
+  ],
+  "temporary_directory": "Fresh unique workspace-owned .tools/pytest-activity-package-*",
+  "log": "reports/checks/activity-package-followup/pytest.txt"
+}

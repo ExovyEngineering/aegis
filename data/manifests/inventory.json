@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-10-26T06:26:49.812037+00:00",
+  "retrieved_at": "2026-10-27T20:59:15.270672+00:00",
   "data_dir": "C:\\Users\\ericp\\Downloads\\NAFSI",
   "sampling_policy": "200 records; workbook 201 rows/sheet; JSON fully streamed for syntax and object counts. Missingness only for sampled CSV/JSONL records.",
   "files": [
@@ -2619,7 +2619,25 @@
         "POPLOSS15"
       ],
       "coverage_note": "Workbook dimensions are declared, not verified exact counts. First 201 rows sampled per sheet.",
-      "likely_source": "Unrecognized / documentation; do not merge",
+      "likely_source": "USDA Food Environment Atlas",
+      "source_recognition": {
+        "source": "USDA Food Environment Atlas",
+        "method": "Bounded workbook content: embedded title/provider, Variable List code/units/vintage, ACCESS and STORES headers.",
+        "sheets": [
+          "Read_Me",
+          " Variable List",
+          "ACCESS",
+          "STORES"
+        ],
+        "title": "Food Environment Atlas data download",
+        "provider_excerpt": "Source: USDA, Economic Research Service using data from various sources as documented on the Food Environment Atlas Documentation webpage.",
+        "variable_evidence": {
+          "code": "LACCESS_POP19",
+          "unit": "Count",
+          "label": "Population, low access to store, 2019"
+        },
+        "limitation": "Source-family recognition only; full row coverage, units, missing codes and geographic identity require the separate source-specific ingestion adapter."
+      },
       "duplicate_of": null
     },
     {

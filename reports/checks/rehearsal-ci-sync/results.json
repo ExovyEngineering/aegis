@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-28T19:26:02.899414+00:00",
+  "scope": "Three bounded repeats of all 13 rehearsal UI tests after synchronizing initial React load/effects and asserting enabled/submitted actions. No product behavior or timeout changes.",
+  "success": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-10-28T19:25:49.067139+00:00",
+      "elapsed_seconds": 5.202,
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test",
+        "--",
+        "RehearsalWorkspace.test.tsx"
+      ],
+      "exit_code": 0,
+      "log": "reports/checks/rehearsal-ci-sync/final-repeat-1.txt"
+    },
+    {
+      "attempt": 2,
+      "started_at": "2026-10-28T19:25:54.270335+00:00",
+      "elapsed_seconds": 4.808,
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test",
+        "--",
+        "RehearsalWorkspace.test.tsx"
+      ],
+      "exit_code": 0,
+      "log": "reports/checks/rehearsal-ci-sync/final-repeat-2.txt"
+    },
+    {
+      "attempt": 3,
+      "started_at": "2026-10-28T19:25:59.078993+00:00",
+      "elapsed_seconds": 3.82,
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test",
+        "--",
+        "RehearsalWorkspace.test.tsx"
+      ],
+      "exit_code": 0,
+      "log": "reports/checks/rehearsal-ci-sync/final-repeat-3.txt"
+    }
+  ]
+}

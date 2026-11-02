@@ -1,0 +1,741 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/routingProvenance.test.ts (2 tests) 3ms
+ ✓ src/api.test.ts (3 tests) 6ms
+ ✓ src/MapViewport.test.tsx (2 tests) 30ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 130ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 140ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 175ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 239ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 230ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 262ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 201ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 230ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 249ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 460ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  371ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 499ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 530ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 596ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  495ms
+ ✓ src/RouteLab.test.tsx (2 tests) 767ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  582ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1012ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  514ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1104ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  425ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  379ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 1211ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 373ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  371ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 611ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  354ms
+ ❯ src/App.test.tsx (7 tests | 1 failed) 2304ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  597ms
+   ✓ AEGIS workflow > shows no driver trip before approval 195ms
+   ✓ AEGIS workflow > clears old driver assignments and scenario rows when a partial refresh fails 142ms
+   ✓ AEGIS workflow > reports stale fallback as a failed refresh rather than new source success 175ms
+   × AEGIS workflow > preserves a requested shipment route across application reloads 1109ms
+     → Unable to find an element with the text: /Requested route for SH01/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="app-shell "
+    >
+      <aside
+        class="sidebar"
+      >
+        <div
+          class="brand"
+        >
+          <div
+            class="brand-symbol"
+          >
+            <svg
+              class="lucide lucide-shield-check"
+              fill="none"
+              height="25"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.6"
+              viewBox="0 0 24 24"
+              width="25"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              />
+              <path
+                d="m9 12 2 2 4-4"
+              />
+            </svg>
+          </div>
+          <div>
+            AEGIS
+            <small>
+              SUPPLY CHAIN INTELLIGENCE
+            </small>
+          </div>
+        </div>
+        <div
+          class="workspace-label"
+        >
+          OPERATIONS WORKSPACE
+        </div>
+        <nav
+          aria-label="Main navigation"
+        >
+          <button
+            class="active"
+          >
+            <svg
+              class="lucide lucide-gauge"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m12 14 4-4"
+              />
+              <path
+                d="M3.34 19a10 10 0 1 1 17.32 0"
+              />
+            </svg>
+             Command center 
+            <svg
+              class="lucide lucide-chevron-right"
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+              />
+            </svg>
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-route"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="6"
+                cy="19"
+                r="3"
+              />
+              <path
+                d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"
+              />
+              <circle
+                cx="18"
+                cy="5"
+                r="3"
+              />
+            </svg>
+             Route laboratory
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-clipboard-check"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="4"
+                rx="1"
+                ry="1"
+                width="8"
+                x="8"
+                y="2"
+              />
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              />
+              <path
+                d="m9 14 2 2 4-4"
+              />
+            </svg>
+             Dispatcher desk
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-database"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://...
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="app-shell "
+    >
+      <aside
+        class="sidebar"
+      >
+        <div
+          class="brand"
+        >
+          <div
+            class="brand-symbol"
+          >
+            <svg
+              class="lucide lucide-shield-check"
+              fill="none"
+              height="25"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.6"
+              viewBox="0 0 24 24"
+              width="25"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              />
+              <path
+                d="m9 12 2 2 4-4"
+              />
+            </svg>
+          </div>
+          <div>
+            AEGIS
+            <small>
+              SUPPLY CHAIN INTELLIGENCE
+            </small>
+          </div>
+        </div>
+        <div
+          class="workspace-label"
+        >
+          OPERATIONS WORKSPACE
+        </div>
+        <nav
+          aria-label="Main navigation"
+        >
+          <button
+            class="active"
+          >
+            <svg
+              class="lucide lucide-gauge"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m12 14 4-4"
+              />
+              <path
+                d="M3.34 19a10 10 0 1 1 17.32 0"
+              />
+            </svg>
+             Command center 
+            <svg
+              class="lucide lucide-chevron-right"
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+              />
+            </svg>
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-route"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="6"
+                cy="19"
+                r="3"
+              />
+              <path
+                d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"
+              />
+              <circle
+                cx="18"
+                cy="5"
+                r="3"
+              />
+            </svg>
+             Route laboratory
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-clipboard-check"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="4"
+                rx="1"
+                ry="1"
+                width="8"
+                x="8"
+                y="2"
+              />
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              />
+              <path
+                d="m9 14 2 2 4-4"
+              />
+            </svg>
+             Dispatcher desk
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-database"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://...
+   ✓ AEGIS workflow > shows actual ingestion outcomes without calling unrecognized or duplicate inputs accepted 72ms
+   ✓ AEGIS workflow > dedicated Drive avoids fetching bulk recall, inventory and model evidence 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/App.test.tsx > AEGIS workflow > preserves a requested shipment route across application reloads
+TestingLibraryElementError: Unable to find an element with the text: /Requested route for SH01/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="app-shell "
+    >
+      <aside
+        class="sidebar"
+      >
+        <div
+          class="brand"
+        >
+          <div
+            class="brand-symbol"
+          >
+            <svg
+              class="lucide lucide-shield-check"
+              fill="none"
+              height="25"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.6"
+              viewBox="0 0 24 24"
+              width="25"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              />
+              <path
+                d="m9 12 2 2 4-4"
+              />
+            </svg>
+          </div>
+          <div>
+            AEGIS
+            <small>
+              SUPPLY CHAIN INTELLIGENCE
+            </small>
+          </div>
+        </div>
+        <div
+          class="workspace-label"
+        >
+          OPERATIONS WORKSPACE
+        </div>
+        <nav
+          aria-label="Main navigation"
+        >
+          <button
+            class="active"
+          >
+            <svg
+              class="lucide lucide-gauge"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m12 14 4-4"
+              />
+              <path
+                d="M3.34 19a10 10 0 1 1 17.32 0"
+              />
+            </svg>
+             Command center 
+            <svg
+              class="lucide lucide-chevron-right"
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+              />
+            </svg>
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-route"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="6"
+                cy="19"
+                r="3"
+              />
+              <path
+                d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"
+              />
+              <circle
+                cx="18"
+                cy="5"
+                r="3"
+              />
+            </svg>
+             Route laboratory
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-clipboard-check"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="4"
+                rx="1"
+                ry="1"
+                width="8"
+                x="8"
+                y="2"
+              />
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              />
+              <path
+                d="m9 14 2 2 4-4"
+              />
+            </svg>
+             Dispatcher desk
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-database"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://...
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="app-shell "
+    >
+      <aside
+        class="sidebar"
+      >
+        <div
+          class="brand"
+        >
+          <div
+            class="brand-symbol"
+          >
+            <svg
+              class="lucide lucide-shield-check"
+              fill="none"
+              height="25"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.6"
+              viewBox="0 0 24 24"
+              width="25"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+              />
+              <path
+                d="m9 12 2 2 4-4"
+              />
+            </svg>
+          </div>
+          <div>
+            AEGIS
+            <small>
+              SUPPLY CHAIN INTELLIGENCE
+            </small>
+          </div>
+        </div>
+        <div
+          class="workspace-label"
+        >
+          OPERATIONS WORKSPACE
+        </div>
+        <nav
+          aria-label="Main navigation"
+        >
+          <button
+            class="active"
+          >
+            <svg
+              class="lucide lucide-gauge"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m12 14 4-4"
+              />
+              <path
+                d="M3.34 19a10 10 0 1 1 17.32 0"
+              />
+            </svg>
+             Command center 
+            <svg
+              class="lucide lucide-chevron-right"
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9 18 6-6-6-6"
+              />
+            </svg>
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-route"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="6"
+                cy="19"
+                r="3"
+              />
+              <path
+                d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"
+              />
+              <circle
+                cx="18"
+                cy="5"
+                r="3"
+              />
+            </svg>
+             Route laboratory
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-clipboard-check"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="4"
+                rx="1"
+                ry="1"
+                width="8"
+                x="8"
+                y="2"
+              />
+              <path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              />
+              <path
+                d="m9 14 2 2 4-4"
+              />
+            </svg>
+             Dispatcher desk
+          </button>
+          <button
+            class=""
+          >
+            <svg
+              class="lucide lucide-database"
+              fill="none"
+              height="19"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="19"
+              xmlns="http://...
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/App.test.tsx:87:18
+     85|     render(<App />);await screen.findByText('Missouri logistics map');
+     86|     fireEvent.click(screen.getByRole('button',{name:'Request road rout…
+     87|     await screen.findByText(/Requested route for SH01/);
+       |                  ^
+     88|     fireEvent.click(screen.getByRole('button',{name:'Reload applicatio…
+     89|     await waitFor(() => expect(vi.mocked(api).mock.calls.filter(([p]) …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 22 passed (23)
+      Tests  1 failed | 76 passed (77)
+   Start at  01:23:01
+   Duration  7.75s (transform 5.26s, setup 21.39s, collect 15.66s, tests 11.36s, environment 57.71s, prepare 10.09s)
+

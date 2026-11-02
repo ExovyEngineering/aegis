@@ -16,6 +16,7 @@ SOURCES=[
 ('openmeteo','Open-Meteo','https://api.open-meteo.com/v1/forecast?latitude=38.9517&longitude=-92.3341&hourly=temperature_2m,precipitation,wind_speed_10m&forecast_days=3&timezone=America%2FChicago','weather forecast JSON','Columbia MO','hourly','Dated cache or coverage warning'),
 ('openmeteo_archive','Open-Meteo','https://archive-api.open-meteo.com/v1/archive?latitude=38.9517&longitude=-92.3341&start_date=2024-07-01&end_date=2024-07-07&daily=temperature_2m_max,precipitation_sum&timezone=America%2FChicago','historical reanalysis JSON','Columbia MO','on demand','Unavailable; not NOAA observations'),
 ('modot','MoDOT','https://mapping.modot.mo.gov/arcgis/rest/services/TravelerInformation/TravelerInformationData/MapServer?f=pjson','ArcGIS layer discovery JSON','Missouri','5 minutes','Report failure; no assertion roads are clear'),
+('iowa_dot','Iowa DOT','https://services.arcgis.com/8lRhdTsQyJpO52F1/arcgis/rest/services/CARS511_Iowa_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultRecordCount=1','official 511 point-event GeoJSON','Iowa; Columbia MO to Des Moines IA planning comparison','10 minutes','Dated official fixture with stale label; unavailable coverage is not a clear road'),
 ('osrm_route','OSRM','https://router.project-osrm.org/route/v1/driving/-92.3341,38.9517;-90.1994,38.6270?overview=full&geometries=geojson','route GeoJSON','Missouri route','on demand','Straight-line estimated geometry; road factor 1.25 at 65 km/h'),
 ('osrm_table','OSRM','https://router.project-osrm.org/table/v1/driving/-92.3341,38.9517;-90.1994,38.6270','duration matrix JSON','Missouri OD','on demand','Estimated haversine matrix'),
 ('osrm_docs','OSRM','https://project-osrm.org/docs/v26.6.1/http','documentation HTML','global','on demand','Bundled request contract'),
@@ -25,8 +26,18 @@ SOURCES=[
 
 def main():
     rows=[]
+    existing=ROOT/'config/api_registry.yaml'
+    prior={row['id']:row for row in json.loads(existing.read_text(encoding='utf-8'))['sources']} if existing.exists() else {}
     for key,provider,url,kind,scope,refresh,fallback in SOURCES:
         rows.append(dict(id=key,provider=provider,endpoint=url,documentation=url if key!='ncei_historical' else SOURCES[5][2],authentication='No key used for public probe; NWS requires descriptive User-Agent',request_parameters=url.partition('?')[2] or 'none',data_type=kind,geographic_scope=scope,rate_limits='Not verified; sequential probes, 0.3 second spacing; honor 429',expected_refresh=refresh,test_status='not tested',last_successful_request=None,response_schema='Inspect successful response; HTML catalogs are not data feeds',known_limitations='Coverage and freshness must be validated; public services provide no availability guarantee',operational_fallback=fallback))
+        for field in ('test_status','last_successful_request','response_schema'):
+            if field in prior.get(key,{}):rows[-1][field]=prior[key][field]
+        if key=='iowa_dot':
+            rows[-1].update(documentation='https://iowadot.gov/travel-tools/iowa-511/511-data-feeds',
+                authentication='Official public ArcGIS feed; no credentials required',
+                request_parameters='outSR=4326; bounded objectIds groups of 100; outFields=*; f=geojson; maximum 2000 records',
+                rate_limits='Provider limit not verified; cache data 600s, metadata 86400s; 0.2s between bounded pages; honor 429',
+                known_limitations='Point events only, not winter road conditions or complete local-road coverage. Raw event-clock timezone unverified; record EditDate UTC. Repeated CARS IDs preserved. Non-atomic queries; no truck restrictions/closure avoidance. Iowa DOT attribution and CC BY 4.0 retained.')
     (ROOT/'config').mkdir(exist_ok=True)
     # JSON is valid YAML 1.2 and avoids a bootstrap YAML dependency.
     (ROOT/'config/api_registry.yaml').write_text(json.dumps({'sources':rows},indent=2),encoding='utf-8')

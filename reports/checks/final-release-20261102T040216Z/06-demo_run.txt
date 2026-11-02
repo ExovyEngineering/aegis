@@ -1,0 +1,157 @@
+C:\Users\ericp\Downloads\NAFSI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{
+  "mode": "Accelerated scripted validation of five-minute demo narrative; no real shipments or five-minute wall-clock claim",
+  "simulation": true,
+  "passed": true,
+  "started_at": "2026-11-02T04:02:31.614709+00:00",
+  "human_timed_rehearsal": false,
+  "seed": 20261026,
+  "baseline": [
+    {
+      "scenario": "A",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 3018,
+      "unmet_demand_kg": 2300,
+      "affected_shipments": 11,
+      "review_priority_count": 1,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "B",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 3093,
+      "unmet_demand_kg": 2300,
+      "affected_shipments": 11,
+      "review_priority_count": 1,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "C",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2838,
+      "unmet_demand_kg": 2700,
+      "affected_shipments": 12,
+      "review_priority_count": 0,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "D",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2904,
+      "unmet_demand_kg": 1900,
+      "affected_shipments": 10,
+      "review_priority_count": 1,
+      "constraint_violations": 0
+    }
+  ],
+  "after_events": [
+    {
+      "scenario": "A",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2564,
+      "unmet_demand_kg": 2700,
+      "affected_shipments": 12,
+      "review_priority_count": 2,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "B",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2714,
+      "unmet_demand_kg": 2700,
+      "affected_shipments": 12,
+      "review_priority_count": 2,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "C",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2172,
+      "unmet_demand_kg": 3900,
+      "affected_shipments": 15,
+      "review_priority_count": 0,
+      "constraint_violations": 0
+    },
+    {
+      "scenario": "D",
+      "solver_status": "OPTIMAL",
+      "total_logistics_cost": 2450,
+      "unmet_demand_kg": 2300,
+      "affected_shipments": 11,
+      "review_priority_count": 2,
+      "constraint_violations": 0
+    }
+  ],
+  "approved_assignments": 13,
+  "acknowledgment_recorded": true,
+  "incident_recorded": true,
+  "parked_confirmation_recorded": true,
+  "contextual_network_revision": 3,
+  "audit_actions": [
+    "incident",
+    "acknowledge",
+    "driver_focus",
+    "approve",
+    "event",
+    "event"
+  ],
+  "timeline": [
+    {
+      "minute": 0,
+      "action": "Source coverage, real map and simulated network"
+    },
+    {
+      "minute": 1,
+      "action": "Forecast/alerts, dated recall and historical observations"
+    },
+    {
+      "minute": 2,
+      "action": "Road delay and cargo excursion events"
+    },
+    {
+      "minute": 3,
+      "action": "Compare A-D response scenarios; inspect constraints"
+    },
+    {
+      "minute": 4,
+      "action": "Dispatcher approval, parked driver acknowledgment and audit trail"
+    }
+  ],
+  "production_database_modified": false,
+  "production_preservation_verified": true,
+  "production_database_fingerprints_before": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "production_database_fingerprints_after": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "production_preservation_method": "SHA-256 and byte length of original configured and canonical operator SQLite files plus -wal/-shm/-journal sidecars, before/after. Observed changes are not attributed to a particular process.",
+  "finished_at": "2026-11-02T04:02:31.938065+00:00"
+}

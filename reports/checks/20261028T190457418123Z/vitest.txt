@@ -1,0 +1,46 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/routingProvenance.test.ts (2 tests) 4ms
+ ✓ src/api.test.ts (3 tests) 7ms
+ ✓ src/MapViewport.test.tsx (2 tests) 52ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 146ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 167ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 216ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 301ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 281ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 307ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 216ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 254ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 260ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 524ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  415ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 577ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 725ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  593ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 653ms
+ ✓ src/RouteLab.test.tsx (2 tests) 1009ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  744ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1308ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  625ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1395ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  501ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  478ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 1521ms
+   ✓ keeps operator mode read-only and copies a real isolated-launch command  303ms
+ ✓ src/App.test.tsx (7 tests) 1631ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  812ms
+ ✓ src/RoadIntelligence.test.tsx (14 tests) 2380ms
+   ✓ shows dated, incomplete and failed sources without claiming clear roads  642ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 295ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 531ms
+
+ Test Files  24 passed (24)
+      Tests  91 passed (91)
+   Start at  14:05:54
+   Duration  22.14s (transform 6.62s, setup 25.48s, collect 49.92s, tests 14.76s, environment 66.08s, prepare 12.20s)
+

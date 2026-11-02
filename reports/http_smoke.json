@@ -6,19 +6,19 @@
       "status": 200
     },
     {
-      "path": "/assets/index-BmLaWeXW.js",
+      "path": "/assets/index-BLzJ_GDW.js",
       "status": 200
     },
     {
-      "path": "/assets/charts-CiMnwsrd.js",
+      "path": "/assets/maps-DNySFZuc.js",
       "status": 200
     },
     {
-      "path": "/assets/maps-BqhAM0pe.js",
+      "path": "/assets/charts-CM80Q5FX.js",
       "status": 200
     },
     {
-      "path": "/assets/index-StEP-Qgi.css",
+      "path": "/assets/index-kYxKCVrw.css",
       "status": 200
     },
     {
@@ -76,8 +76,48 @@
     {
       "path": "/api/operations/presets",
       "status": 200
+    },
+    {
+      "path": "/api/planning/projects",
+      "status": 200
+    },
+    {
+      "path": "/api/data/catalog",
+      "status": 200
+    },
+    {
+      "path": "/api/data/fsis_poultry?limit=2",
+      "status": 200
+    },
+    {
+      "path": "/api/project-status",
+      "status": 200
+    },
+    {
+      "path": "/api/drive/T01",
+      "status": 200
+    },
+    {
+      "path": "/api/readiness",
+      "status": 200
+    },
+    {
+      "path": "/api/food-access",
+      "status": 200
+    },
+    {
+      "path": "/api/runtime-context",
+      "status": 200
+    },
+    {
+      "path": "/api/rehearsal",
+      "status": 200
+    },
+    {
+      "path": "/api/road-intelligence",
+      "status": 200
     }
   ],
-  "passed": 19,
+  "passed": 29,
   "browser_visual_qa": false
 }

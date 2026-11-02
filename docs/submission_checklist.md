@@ -1,6 +1,10 @@
 # AEGIS submission checklist
 
-October 26, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
+Updated November 1, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
+
+The project owner confirmed Kiro was not used and will disclose this. Its use
+criterion is not met. The final five-task guide and app record this explicitly;
+the older preparation instructions below are not execution evidence.
 
 ## P0 release gates
 
@@ -10,10 +14,10 @@ October 26, 2026. This checklist records required evidence, not a claim that eve
 | Provenance and source failures | Manifest, schemas, dated fixtures, exact errors and coverage API | Rehearse stale/offline coverage in the final UI; distinguish observations, forecast, reanalysis and cargo simulation |
 | Risk estimator and baseline | Retrospective prevalence/logistic, calibration/uncertainty and frozen earlier-snapshot sensitivity | Actual publication timing remains unknown; no prospective-validation claim |
 | Three or more interventions | Four solver scenarios with hold/recall, stock, eligibility and capacity checks | Rehearse changed-event tradeoffs and capture final reproducible results |
-| Functional application | Built React/FastAPI app; documented startup, backend/UI tests, HTTP smoke and 26 passing real-browser checks (`reports/browser_qa/final/results.json`) | Fresh-environment reproduction and final timed presentation rehearsal |
-| Genuine AWS Kiro workflow | Signature-verified official IDE 1.4.26 installed and version checked | User sign-in, actual spec execution and authentic evidence. Gate remains open; see `docs/kiro_handoff.md` |
+| Functional application | Built React/FastAPI app; documented startup, dated backend/UI tests, loopback HTTP and separate actual-Chrome rehearsals; executable reviewer-package verification; 51 pinned packages and full automated HTTP workflow verified in a fresh Python environment (`reports/clean_install.json`) | Final timed team presentation rehearsal and author review |
+| Genuine AWS Kiro workflow | Owner disclosed non-use on November 1; installed files are preparation only | Criterion not met; disclose this rather than claim Kiro task history |
 | Report and code | Architecture, model card, assumptions, audit and demo script | Assemble final methods/results/limitations report and verify any additional official rubric requirements |
-| Five-minute demo | Deterministic seed, accelerated isolated workflow and desktop/mobile screenshots with browser workflow verification | Timed five-minute rehearsal and backup fixture demonstration |
+| Five-minute demo | Deterministic seed, accelerated isolated workflow, verified fresh-session launcher, offline-demo profile and separate browser workflow evidence | Actual timed team presentation, recorded presenter review and backup fixture demonstration |
 
 ## Final reviewer checks
 
@@ -28,7 +32,19 @@ October 26, 2026. This checklist records required evidence, not a claim that eve
 - Show NOAA observations with coverage limits, weather forecasts separately, and simulated cargo temperatures separately.
 - Show MoDOT source time, route proximity limitations, OSRM restrictions and any estimated fallback.
 - Demonstrate farm and multi-location planning presets with consistent simulation labels; avoid account/tenancy claims.
+- If showing the optional road workspace, distinguish Iowa and Missouri feed scope, preview truncation, raw event-clock values and ordinary-driving/estimated routes. Do not imply closure avoidance or truck certification.
+- Review local recovery evidence separately from cloud deployment. Restored state belongs in a fresh private file and needs human review; no operator overwrite or automatic server rebind.
 - Keep Drive use parked, with short advisories and explicit dispatcher authority.
+- If presenting Save the Load, distinguish point and conservative sensitivity
+  quality windows, show actual FEFO/FIFO picks and whole-plan tradeoffs, and use
+  three-part human review before changing assignments. Demonstrate the exact
+  driver handoff and a later reading's renewed-review advisory. No physical
+  hardware, calibrated molecular freshness or microbial safety claim is supported.
+- Keep the accelerated `scripts/freshness_demo.py` replay separate from a timed
+  presentation; repeat from a fresh isolated session rather than resetting a
+  reviewed lot's accumulated exposure history.
+- Start human rehearsals with `scripts/start_rehearsal.py`, then verify `/api/runtime-context` identifies the expected isolated UUID and offline profile. Never reset the operator app on port 8000 for a demo.
+- Keep accelerated `scripts/demo_run.py` results distinct from a timed human rehearsal. Confirm its measured original SQLite/sidecar preservation fields rather than relying on a hardcoded success flag.
 - Confirm the final official submission rubric, delivery format and evidence requirements from organizer materials; the public announcement is not a full rulebook.
 
 ## Genuine Kiro handoff

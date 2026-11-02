@@ -1,0 +1,424 @@
+{
+  "checked_at": "2026-10-28T19:27:52.079846+00:00",
+  "scope": "October 28 road-intelligence and local recovery increment",
+  "local_verification_artifact": "reports/session_verification.json",
+  "pytest_passed": 563,
+  "pytest_skipped": 3,
+  "vitest_passed": 95,
+  "production_build_passed": true,
+  "road_browser_checks_passed": 58,
+  "road_browser_artifact": "reports/browser_qa/roads/results.json",
+  "prior_core_browser_suites_repeated": false,
+  "road_live_provider_artifact": "reports/road_intelligence_live.json",
+  "local_backup_recovery_artifact": "reports/backup_recovery.json",
+  "operator_preservation": {
+    "database_sha256_before": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+    "database_sha256_after": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+    "table_count": 10,
+    "all_tables_unchanged": true,
+    "database_bytes_unchanged": true
+  },
+  "raw_hashes_unchanged": 42,
+  "registry_sources": 19,
+  "registry_probed_this_increment": [
+    "iowa_dot"
+  ],
+  "previous_failed_probes_retained": [
+    "fsis_recalls",
+    "fsis_sampling",
+    "fsis_directory",
+    "food_access",
+    "food_environment"
+  ],
+  "http_smoke_checks_passed": 29,
+  "application_files": [
+    {
+      "path": "backend/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "backend/adapters.py",
+      "sha256": "d7e02c3f8e3b6815c83f500fad5a39dda48b88e340fc6358feea272e108ee89a"
+    },
+    {
+      "path": "backend/cold_chain.py",
+      "sha256": "a5d672319edf7d8d00b58b1ad09b63f1712a62a520e0bb37fc53e5eb84f9a394"
+    },
+    {
+      "path": "backend/custom_operations.py",
+      "sha256": "7ea5ffb13489645161975218b431d19fd98d3476eaef94e0e618d16f2be4965a"
+    },
+    {
+      "path": "backend/data_explorer.py",
+      "sha256": "c94395a3b6ac865f0c146cf48ceb373852ad6cba9c19f0c6600d575f5999ac0c"
+    },
+    {
+      "path": "backend/dispatch.py",
+      "sha256": "93636e8aa2371437d69c16a0a83a6944e7f57f323a8117c4b4475af2dd743af4"
+    },
+    {
+      "path": "backend/drive.py",
+      "sha256": "8ca469e5eaae8f4c4c1c5043b078bdbdf07bf008c3dc87a2bfc364522bc16dac"
+    },
+    {
+      "path": "backend/food_context.py",
+      "sha256": "047ef8691c147d5a3ce92ed6ade83617a38072da8a9ee97e64e57c206c05393f"
+    },
+    {
+      "path": "backend/ingestion/__init__.py",
+      "sha256": "2b381d1f13743d8a34d817e7e266ce91dba21936d78080163a00f188dd863c9a"
+    },
+    {
+      "path": "backend/ingestion/beam.py",
+      "sha256": "229c1a3fcf5f11a5b519816f2fbcaac97e0dceaf4a1c77b49e7d03e2f228b14c"
+    },
+    {
+      "path": "backend/ingestion/common.py",
+      "sha256": "b376c61d636cc814a40163b3172baaa9bbdbe7d33371757fc799a6814a6263bc"
+    },
+    {
+      "path": "backend/ingestion/establishments.py",
+      "sha256": "352b96f2095ef0e708353e62cc51945d6af3e766f456897c28126b9d516a96db"
+    },
+    {
+      "path": "backend/ingestion/fsis.py",
+      "sha256": "466f0002884e3bf4f1b7e1b7a63d31d1c77053eee6b0eedb813ebaa880851d51"
+    },
+    {
+      "path": "backend/ingestion/nors.py",
+      "sha256": "dde1fa7ec4a923f194a2b563043ee745b08ce10c59595c20bfa03c2486cc2904"
+    },
+    {
+      "path": "backend/ingestion/usda.py",
+      "sha256": "b298025fd413ef44c4a0aad120733e6d207a7bd0138c3f791d41bc66ce80ca63"
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "ca27c7fc39db60bbfdb24a3790e5f8ea0d631e1c993e17ab9f775186e3f938ce"
+    },
+    {
+      "path": "backend/optimization.py",
+      "sha256": "9eb817e69ec250a8316ea6c784ffe2bfe7237a102f5f41bcf5a1836da1472039"
+    },
+    {
+      "path": "backend/paths.py",
+      "sha256": "f9b61c757736e16b35ed755e88f137055f2d23bc0115e96bd57604b55614c8e6"
+    },
+    {
+      "path": "backend/plan_review.py",
+      "sha256": "b083f522855e6f79ceb8c7e06c69041b5e38eeb251cca2f8046a2cd667515a2b"
+    },
+    {
+      "path": "backend/planning.py",
+      "sha256": "8fb08ec93285eb0729bcc32dd92c70cf4b2c665229feab3d9af2a1047a18f82d"
+    },
+    {
+      "path": "backend/project_status.py",
+      "sha256": "d5fce18373369c4e3f07fd4f9da9754fd31bf315959764e2f2fdfed59a6db494"
+    },
+    {
+      "path": "backend/readiness.py",
+      "sha256": "868a4d2b980c8d98b54e7c631ebb28726e506c49454d0936a7e8e0bd3dc03b9e"
+    },
+    {
+      "path": "backend/rehearsal.py",
+      "sha256": "a5d7aae021d8c7e114b7cfaadd2e8bc3120d82b1bd789257611db8736c5bd2c7"
+    },
+    {
+      "path": "backend/road_geometry.py",
+      "sha256": "803bf05f5c8e11f08116fefebf3b6b60b131ccb6cd249f1e4d68d2611cbb1be8"
+    },
+    {
+      "path": "backend/road_intelligence.py",
+      "sha256": "c4a6161325b501444161ae2103bc5ca0551a73d399ebedc2dee70d1ba26466c8"
+    },
+    {
+      "path": "backend/route_lab.py",
+      "sha256": "40e299f092f876f3d6c797c4e0049ea2eaac6ad15e21866d86b9c19fb1373e88"
+    },
+    {
+      "path": "backend/route_review.py",
+      "sha256": "11389f264bd58fda083551e8853f9c06f1f470afd9f1dcfc5cd0fd0810140740"
+    },
+    {
+      "path": "backend/runtime.py",
+      "sha256": "8c40e5c8b88b22428e068adb5abbf2b8c1392fb60f97bab4b7a0f3ceeead7bf9"
+    },
+    {
+      "path": "backend/simulation.py",
+      "sha256": "872a7668b5b93d41b2886b0cfd053117fe655c65d1c858f12049cdb6d7bfd214"
+    },
+    {
+      "path": "backend/state_dot.py",
+      "sha256": "8d17ca0f5a4480d4e6fce1a51d69a6266bdd10d1c9ef7feedf6b9e481971865d"
+    },
+    {
+      "path": "backend/weather_coverage.py",
+      "sha256": "deaf5f39b3a5d33562e8f4740de2a528f7ebf8be44ef109b449220eb44ca2e16"
+    },
+    {
+      "path": "frontend/src/api.test.ts",
+      "sha256": "22f7a4e196cf073b129f8d7ecbb018bd6ac59ceeadf6ea6ab5361a25f4df3eb7"
+    },
+    {
+      "path": "frontend/src/api.ts",
+      "sha256": "1713ee51eaba0062d2d0066bc5277f6dc5fcb34def1206aa2986835c2cd71441"
+    },
+    {
+      "path": "frontend/src/App.test.tsx",
+      "sha256": "7e0aa718feb0ec30be7f2c7a60e7dec8895d4932e65cf19a78be90388ba1fb02"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "sha256": "ac96a71f14adf2dafa46e7948d2eac5528df0772d04592c53358ff07c3503af9"
+    },
+    {
+      "path": "frontend/src/CustomOperationEditor.test.tsx",
+      "sha256": "2407ac15779ec03061c1d6269f5134a9af332c422dcae7ac00b454c42a253a0e"
+    },
+    {
+      "path": "frontend/src/CustomOperationEditor.tsx",
+      "sha256": "e5abd49a7b9df6fc23ec3e5e9fbf22042dd0ef7e6e2d115df0a5ca9747f3423f"
+    },
+    {
+      "path": "frontend/src/CustomRouteLab.test.tsx",
+      "sha256": "94bfd0086e5cc6a4457f3dac03f7f14f99297e60e950a7e96bd8aab9f407dd1d"
+    },
+    {
+      "path": "frontend/src/DataExplorer.test.tsx",
+      "sha256": "2195e28ef46fa7c2afa9b4668ca0f46d6f5da4530976b59ba0b89226b242548d"
+    },
+    {
+      "path": "frontend/src/DataExplorer.tsx",
+      "sha256": "10702ae2eb1abae492c7e26bf0b1209b7c882097bfd030cb0244245f33846616"
+    },
+    {
+      "path": "frontend/src/DispatcherDesk.test.tsx",
+      "sha256": "f4e4ea0e012d3350e74a835e3cb5af14edfe6462859cd6525c16e77fe40e9876"
+    },
+    {
+      "path": "frontend/src/DispatcherDesk.tsx",
+      "sha256": "55ac73c9bc389e9abc2ff349dffc3f4cf0664063082fc83d6f5cf3d692986f33"
+    },
+    {
+      "path": "frontend/src/DispatchReadiness.test.tsx",
+      "sha256": "fef09aae85a3f1220b922923fcb403b8e0e3dfef79bda1118684e56caec67169"
+    },
+    {
+      "path": "frontend/src/DispatchReadiness.tsx",
+      "sha256": "a0d0f4d4e842470253f5b82e7dcbb554ce06ce42b666cb773fd8ef655dd44c3a"
+    },
+    {
+      "path": "frontend/src/DriverExposure.test.tsx",
+      "sha256": "ad3a2da3b5675edfaa4a9efe45127ef4c87974ea2235ebc81c782b646e2bbb47"
+    },
+    {
+      "path": "frontend/src/DriverExposure.tsx",
+      "sha256": "21e8f12f42c64b80728b775fd2bc4e99f71c6fac98c4a9ef2413aa5a492723d7"
+    },
+    {
+      "path": "frontend/src/DriverInstruction.test.tsx",
+      "sha256": "1b5b52c250e53f7c94027620b0ca4057bbcc4b90287341e45c1f01956fc981ce"
+    },
+    {
+      "path": "frontend/src/DriverInstruction.tsx",
+      "sha256": "3f575e56227e1f933d41c81d4359b435592386dca6eebba07e7d96026facaba8"
+    },
+    {
+      "path": "frontend/src/DriverWorkspace.test.tsx",
+      "sha256": "6101117605419c59dc71d6a23ed93dcb590392465c1a47f191c89ee9a6a839e0"
+    },
+    {
+      "path": "frontend/src/DriverWorkspace.tsx",
+      "sha256": "a3dc73322269a69a5dae38e8962b59d84a9e26e8c02d8576f4258f92d5fa62aa"
+    },
+    {
+      "path": "frontend/src/FoodAccessContext.test.tsx",
+      "sha256": "dbb1e563c7f6cde97f08acd43fc55e7798fdb012e73b5071dafb0611e6cb1398"
+    },
+    {
+      "path": "frontend/src/FoodAccessContext.tsx",
+      "sha256": "dd58b25cbdd2ea282946ef216231b723e5372cacdefd14530318138932cce37f"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "sha256": "066428845660c90b30050b94aa6d0e8c10976878ef1c19e8c1b1579490d073c9"
+    },
+    {
+      "path": "frontend/src/MapViewport.test.tsx",
+      "sha256": "abbd54cb8f9ae1c27bae1ac7260e65729057c5efd96088d68d468629b9bb9d87"
+    },
+    {
+      "path": "frontend/src/MapViewport.tsx",
+      "sha256": "693fc17026490d1888b3ae1679945905db3e82066b072fea5a4bed1e89960402"
+    },
+    {
+      "path": "frontend/src/ModelErrorAnalysis.test.tsx",
+      "sha256": "509d92ca0a04120fa41d9d9c5f34909ab667e7ce727bef08686e3bb3140a148a"
+    },
+    {
+      "path": "frontend/src/ModelErrorAnalysis.tsx",
+      "sha256": "70d5ec4f166a40ef2ff3e08364feab1670d6344a8ae3379be55d1e643338a7cb"
+    },
+    {
+      "path": "frontend/src/NetworkMap.tsx",
+      "sha256": "24fbdb2097536c52edefeff6f47ea49b1cb00edf0d4f84461837e9bed26964e6"
+    },
+    {
+      "path": "frontend/src/PlanningLibrary.test.tsx",
+      "sha256": "277987823c74418d6742204e4e084cbd9f756e1165e3e73e6345d5b70080a0ae"
+    },
+    {
+      "path": "frontend/src/PlanningLibrary.tsx",
+      "sha256": "c7dbb541cb9e060ac4c8ac406701a684e6265669394f7a23fa2ce30bac04a547"
+    },
+    {
+      "path": "frontend/src/ProjectBrief.test.tsx",
+      "sha256": "1ef2e1d3f924d2d015a491fe8f4fc537770daed7c0129890f08a7636f110a5da"
+    },
+    {
+      "path": "frontend/src/ProjectBrief.tsx",
+      "sha256": "52ca9c683f1bc79fa55ee56cae28b14af791ac461bbffb84563c46e84ddfd24b"
+    },
+    {
+      "path": "frontend/src/RehearsalWorkspace.test.tsx",
+      "sha256": "17c7814ba09e6996f3a690d7fd902d800c4b727fc6ef2a8ee24a6edd0688aa63"
+    },
+    {
+      "path": "frontend/src/RehearsalWorkspace.tsx",
+      "sha256": "83a35db344d7a19c808a760a9254a26b81e2f6e2f7f06bb51f1a7abc8cd2c6c2"
+    },
+    {
+      "path": "frontend/src/RoadIntelligence.css",
+      "sha256": "63c1e43d91ba78c902decc2f7cac3af985d6d3e28b63bf5ce8be65c8d29b9f13"
+    },
+    {
+      "path": "frontend/src/RoadIntelligence.test.tsx",
+      "sha256": "f40dfd4fc431c57e9fc14176edfe40dbb8024751e59ffa44a77c451897258933"
+    },
+    {
+      "path": "frontend/src/RoadIntelligence.tsx",
+      "sha256": "bb43a22306ef5f455a10551a023a959bf030252ac5fb9ba2ef137bc14a8753e5"
+    },
+    {
+      "path": "frontend/src/RouteLab.test.tsx",
+      "sha256": "f0a3d8ca7d8bcf222d9f26624bca59681c8b2b52a323e2e2578ac9e456050219"
+    },
+    {
+      "path": "frontend/src/RouteLab.tsx",
+      "sha256": "47e2fe303f5dd1585867edda3a5876495dbee13b7777ce5f92a9f357f3977d7d"
+    },
+    {
+      "path": "frontend/src/RouteLabMap.tsx",
+      "sha256": "d2582072dad477beb8318422a67a78d1fe237173f3f7027cb8bb0047dbc721ce"
+    },
+    {
+      "path": "frontend/src/RouteLabRace.test.tsx",
+      "sha256": "214e644e5958d3e7a18f0b05be14815b2694e7b97622e9aea975f28ca5493eff"
+    },
+    {
+      "path": "frontend/src/routingProvenance.test.ts",
+      "sha256": "cc9d040e0e2441f9d6704cd034bdf34b5df20080485a1d222533cb1174a87a7c"
+    },
+    {
+      "path": "frontend/src/routingProvenance.ts",
+      "sha256": "492aeb2953f2623d754c246731ab2215c6ec3a334176576f550dcfa0e4387165"
+    },
+    {
+      "path": "frontend/src/RuntimeBanner.test.tsx",
+      "sha256": "9827f4cd761aa22ebca88a22492ae416444d0a260d787956f4812b8bea48faec"
+    },
+    {
+      "path": "frontend/src/RuntimeBanner.tsx",
+      "sha256": "88ac4575d14b7a81e531a14b1742677406fe7c70575ca9c31517e75f13a97709"
+    },
+    {
+      "path": "frontend/src/ScenarioDetails.test.tsx",
+      "sha256": "963df74f7aece41f07b12a3c2e664c5044e9072749523b47f0f655fc00fe12a8"
+    },
+    {
+      "path": "frontend/src/ScenarioDetails.tsx",
+      "sha256": "a14ce7606ebdacc8d29e2f7c6a852dd2636a8ff86582617ba3a7fcf9ca81261e"
+    },
+    {
+      "path": "frontend/src/ScientificCoverage.test.tsx",
+      "sha256": "03ba18f11298044a008ff9e87d92e4a0b2363914909fd7a30c90f05d707a5280"
+    },
+    {
+      "path": "frontend/src/ScientificCoverage.tsx",
+      "sha256": "92bd308c93735ce30c339be991701d69110989eb1c2d99f3c139351a607d6e76"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "sha256": "4ae2c44fa3e732c5a8ac2aa5a88e193fba0169573cec4cbcefeb17749a9467e8"
+    },
+    {
+      "path": "frontend/src/test-setup.ts",
+      "sha256": "ae4b6b92c8c0f06526032b2dedeb4fb0e93b85af2a138a423386f2e36894a685"
+    },
+    {
+      "path": "frontend/src/types.ts",
+      "sha256": "12150dc02a72c8ba038ea3e27c84fd16d5a3609798914224a3b930620e8d7b20"
+    },
+    {
+      "path": "frontend/src/VerificationReview.test.tsx",
+      "sha256": "d502d8130ba4c5fc933ccc195e8dab413f57be799de1e741f1148c4aa97a1f08"
+    },
+    {
+      "path": "frontend/src/VerificationReview.tsx",
+      "sha256": "568dedfd24f84c8f51ffa801a2f8938f28c01c753fc1d2b05f812fde04315196"
+    },
+    {
+      "path": "frontend/dist/assets/charts-CM80Q5FX.js",
+      "sha256": "70e626537edf6b1b0074aa17bf83dc62d331e746a9f395104cd308337d8420a6"
+    },
+    {
+      "path": "frontend/dist/assets/index-BLzJ_GDW.js",
+      "sha256": "472b355428144be33422e552fb2c1108052bd359baad2826f44324557e5714e2"
+    },
+    {
+      "path": "frontend/dist/assets/index-kYxKCVrw.css",
+      "sha256": "edd9712d6642ee5d1b96a2b1502ec7fa0f9bf927260ec8812681e712c726ad80"
+    },
+    {
+      "path": "frontend/dist/assets/maps-DNySFZuc.js",
+      "sha256": "bb2eaf6fcac9da9faacea316b305e130fb17fa7ee969e5d1e3ded752c645fdfd"
+    },
+    {
+      "path": "frontend/dist/favicon.svg",
+      "sha256": "33881ec9def32504370efea7f2b21e13e7724023ec8e93039caa80f2db95ad28"
+    },
+    {
+      "path": "frontend/dist/index.html",
+      "sha256": "2128936aff04eb4e1d940a3a4c3a1848d820e770b4a37b3ff6deacf90c88675c"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "sha256": "2f9e94a847821c2b18f10923867eee973baffefe533c937c9475268d49e6c5de"
+    },
+    {
+      "path": "scripts/backup_state.py",
+      "sha256": "808bf8e85ff10f91d53868190b0a3d88d39d55fce58e7a3ce59586a38c6da784"
+    },
+    {
+      "path": "scripts/start_rehearsal.py",
+      "sha256": "bb7882278b18018d9b90d0f68996e443ff6713c43f485adaa9ece4924022b645"
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "sha256": "d009d6da2681e9c6932a1c690eb821441895a0df167186f75ec9a7b85c030886"
+    }
+  ],
+  "application_code_sha256": "6310f58e37bd7b554fd4ba2b706e5907f26bb62e82a586c33d6b0e1970b8cf15",
+  "fresh_dependency_install_repeated": false,
+  "dependencies_changed": false,
+  "clean_install_scope": "Earlier core install is separately dated; updated package verification reuses its environment.",
+  "genuine_kiro_execution_claimed": false,
+  "cloud_deployed": false,
+  "human_presentation_verified": false,
+  "next_three_actions": [
+    "Execute the genuine Kiro task and retain authentic evidence",
+    "Complete author/rubric review and the timed team presentation",
+    "Choose the next bounded stretch with inputs and validation; add access controls before any hosting"
+  ]
+}

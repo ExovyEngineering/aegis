@@ -1,0 +1,797 @@
+........................................................................ [  5%]
+........................................................................ [ 10%]
+........................................................................ [ 16%]
+..................s..................................................... [ 21%]
+........................................................................ [ 27%]
+........................................................................ [ 32%]
+........................................................................ [ 38%]
+........................................................................ [ 43%]
+........................................................................ [ 49%]
+........................................................................ [ 54%]
+........................................................................ [ 59%]
+..........................................FFFFFFFFFFFFFF.....s.......... [ 65%]
+.............................s.......................................... [ 70%]
+.......FFFF............................................................. [ 76%]
+.........................................................s.............. [ 81%]
+.....................................s.................................. [ 87%]
+........................................................................ [ 92%]
+........................................................................ [ 98%]
+.........................                                                [100%]
+================================== FAILURES ===================================
+______ test_handoff_has_working_numbered_layout_and_exact_evidence_bytes ______
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_h...-0/test_handoff_has_working_numbe0/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None
+
+    def test_handoff_has_working_numbered_layout_and_exact_evidence_bytes(supplied, no_external_access):
+        root, archive, entries, protected = supplied
+>       result = handoff.build(root, archive)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ha...dge-build-0f87995b-7e91-47a3-b10b-378dd4a2abb4/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_handoff_has_working_numbe0\\artifacts\\.judge-build-0f87995b-7e91-47a3-b10b-378dd4a2abb4\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+____________ test_repeat_build_preserves_the_previous_judge_folder ____________
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_r...-0/test_repeat_build_preserves_th0/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None
+
+    def test_repeat_build_preserves_the_previous_judge_folder(supplied, no_external_access):
+        root, archive, _, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_re...dge-build-0691e61b-3e55-4330-87c0-505c97b9ef34/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_repeat_build_preserves_th0\\artifacts\\.judge-build-0691e61b-3e55-4330-87c0-505c97b9ef34\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[stale_source_code] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be0/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'stale_source_code'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-2e3c78bc-1951-403d-8125-97512eba0147/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be0\\artifacts\\.judge-build-2e3c78bc-1951-403d-8125-97512eba0147\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[tampered_html] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be1/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'tampered_html'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-f5e6324d-b03a-4701-9e5b-0527a3e3d15d/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be1\\artifacts\\.judge-build-f5e6324d-b03a-4701-9e5b-0527a3e3d15d\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[tampered_executed_notebook] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be2/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'tampered_executed_notebook'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-b71d6a48-6501-4583-abc0-01ff04888de7/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be2\\artifacts\\.judge-build-b71d6a48-6501-4583-abc0-01ff04888de7\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[failed_report] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be3/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'failed_report'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-97640e62-3706-4404-9f41-6653b0c43f10/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be3\\artifacts\\.judge-build-97640e62-3706-4404-9f41-6653b0c43f10\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[operator_changed] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be4/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'operator_changed'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-743a7563-ffc1-483b-ae10-57d136c01954/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be4\\artifacts\\.judge-build-743a7563-ffc1-483b-ae10-57d136c01954\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[missing_notebook_record] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be5/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'missing_notebook_record'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-45ba2ff3-619b-4b0f-954f-84dba7949ccc/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be5\\artifacts\\.judge-build-45ba2ff3-619b-4b0f-954f-84dba7949ccc\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[failed_notebook] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be6/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'failed_notebook'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-c10bdd65-6aa1-455b-a5b8-1580fbd29aa5/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be6\\artifacts\\.judge-build-c10bdd65-6aa1-455b-a5b8-1580fbd29aa5\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[partial_execution] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be7/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'partial_execution'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-8386230a-b368-4a8d-8187-c096981a9feb/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be7\\artifacts\\.judge-build-8386230a-b368-4a8d-8187-c096981a9feb\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_ test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[zero_code_cells] _
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_n...-0/test_notebook_evidence_must_be8/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+no_external_access = None, damage = 'zero_code_cells'
+
+    @pytest.mark.parametrize("damage", [
+        "stale_source_code", "tampered_html", "tampered_executed_notebook",
+        "failed_report", "operator_changed", "missing_notebook_record",
+        "failed_notebook", "partial_execution", "zero_code_cells",
+    ])
+    def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+        supplied, no_external_access, damage,
+    ):
+        root, archive, entries, protected = supplied
+>       first = handoff.build(root, archive)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_no...dge-build-85c385ef-a08b-4f45-b086-2aca7ce8d667/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_notebook_evidence_must_be8\\artifacts\\.judge-build-85c385ef-a08b-4f45-b086-2aca7ce8d667\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_______ test_judge_archive_rejects_changed_bytes_or_membership[payload] _______
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_j...-0/test_judge_archive_rejects_cha0/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+tamper = 'payload'
+
+    @pytest.mark.parametrize("tamper", ["payload", "missing_member", "unlisted_member"])
+    def test_judge_archive_rejects_changed_bytes_or_membership(supplied, tamper):
+        root, archive, _, _ = supplied
+>       result = handoff.build(root, archive)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ju...dge-build-09a7245b-d047-47ef-b1a4-291d9bff0f88/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_judge_archive_rejects_cha0\\artifacts\\.judge-build-09a7245b-d047-47ef-b1a4-291d9bff0f88\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+___ test_judge_archive_rejects_changed_bytes_or_membership[missing_member] ____
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_j...-0/test_judge_archive_rejects_cha1/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+tamper = 'missing_member'
+
+    @pytest.mark.parametrize("tamper", ["payload", "missing_member", "unlisted_member"])
+    def test_judge_archive_rejects_changed_bytes_or_membership(supplied, tamper):
+        root, archive, _, _ = supplied
+>       result = handoff.build(root, archive)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ju...dge-build-81f7dc2f-3ba2-41a1-86bc-29f5aea6419a/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_judge_archive_rejects_cha1\\artifacts\\.judge-build-81f7dc2f-3ba2-41a1-86bc-29f5aea6419a\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+___ test_judge_archive_rejects_changed_bytes_or_membership[unlisted_member] ___
+
+supplied = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_j...-0/test_judge_archive_rejects_cha2/data/aegis.sqlite-wal'): b'private unmodified sentinel data/aegis.sqlite-wal', ...})
+tamper = 'unlisted_member'
+
+    @pytest.mark.parametrize("tamper", ["payload", "missing_member", "unlisted_member"])
+    def test_judge_archive_rejects_changed_bytes_or_membership(supplied, tamper):
+        root, archive, _, _ = supplied
+>       result = handoff.build(root, archive)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_judge_handoff.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\build_judge_handoff.py:198: in build
+    validate_and_extract(archive, app)
+scripts\verify_package.py:102: in validate_and_extract
+    with destination.open('xb') as stream:stream.write(body)
+         ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ju...dge-build-7949ea1a-e0f7-4310-b51b-6a4d7d915df2/02_Application/reports/notebooks/01_Preprocessing_and_Integration.html')
+mode = 'xb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_judge_archive_rejects_cha2\\artifacts\\.judge-build-7949ea1a-e0f7-4310-b51b-6a4d7d915df2\\02_Application\\reports\\notebooks\\01_Preprocessing_and_Integration.html'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:537: FileNotFoundError
+_______ test_success_uses_exact_local_python_and_keeps_outputs_separate _______
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_su...paces/reports/notebook_executions/20261102T204028386733Z-bundled/kernels/aegis-repro-47385c1b7d5b4f2eb767b234e7053c15')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_success_uses_exact_local_0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028386733Z-bundled\\kernels\\aegis-repro-47385c1b7d5b4f2eb767b234e7053c15'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+project = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_s...ytest-0/test_success_uses_exact_local_0/AEGIS notebook runner with spaces/notebooks/00_Start_Here_and_Coverage.ipynb'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002062AFFC050>
+
+    def test_success_uses_exact_local_python_and_keeps_outputs_separate(project, monkeypatch):
+        root, name, source = project
+        original = source.read_bytes()
+        captured = clients(monkeypatch)
+>       result = runner.execute(names=(name,), root=root, timeout=30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_notebook_runner.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\execute_notebooks.py:109: in execute
+    spec.mkdir(parents=True)
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:727: in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_su...paces/reports/notebook_executions/20261102T204028386733Z-bundled/kernels/aegis-repro-47385c1b7d5b4f2eb767b234e7053c15')
+mode = 511, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_success_uses_exact_local_0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028386733Z-bundled\\kernels\\aegis-repro-47385c1b7d5b4f2eb767b234e7053c15'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+_ test_cell_failure_and_export_failure_preserve_the_original_error_and_outputs _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ce...paces/reports/notebook_executions/20261102T204028436517Z-bundled/kernels/aegis-repro-0058fa72d7bc402aaf6ad1ae2467ee98')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_cell_failure_and_export_f0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028436517Z-bundled\\kernels\\aegis-repro-0058fa72d7bc402aaf6ad1ae2467ee98'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+project = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_c...ytest-0/test_cell_failure_and_export_f0/AEGIS notebook runner with spaces/notebooks/00_Start_Here_and_Coverage.ipynb'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002062D716270>
+
+    def test_cell_failure_and_export_failure_preserve_the_original_error_and_outputs(project, monkeypatch):
+        root, name, source = project
+        original = source.read_bytes()
+        captured = clients(monkeypatch, mode="cell_failure", export_error=True)
+>       result = runner.execute(names=(name,), root=root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_notebook_runner.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\execute_notebooks.py:109: in execute
+    spec.mkdir(parents=True)
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:727: in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ce...paces/reports/notebook_executions/20261102T204028436517Z-bundled/kernels/aegis-repro-0058fa72d7bc402aaf6ad1ae2467ee98')
+mode = 511, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_cell_failure_and_export_f0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028436517Z-bundled\\kernels\\aegis-repro-0058fa72d7bc402aaf6ad1ae2467ee98'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+_ test_html_failure_after_successful_cells_is_reported_as_incomplete_publication _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ht...paces/reports/notebook_executions/20261102T204028478304Z-bundled/kernels/aegis-repro-8a0880b83c6d4a40aac4324bb6d0a772')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_html_failure_after_succes0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028478304Z-bundled\\kernels\\aegis-repro-8a0880b83c6d4a40aac4324bb6d0a772'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+project = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_h...ytest-0/test_html_failure_after_succes0/AEGIS notebook runner with spaces/notebooks/00_Start_Here_and_Coverage.ipynb'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002062D715D30>
+
+    def test_html_failure_after_successful_cells_is_reported_as_incomplete_publication(project, monkeypatch):
+        root, name, source = project
+        captured = clients(monkeypatch, export_error=True)
+>       result = runner.execute(names=(name,), root=root, update_notebooks=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_notebook_runner.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\execute_notebooks.py:109: in execute
+    spec.mkdir(parents=True)
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:727: in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_ht...paces/reports/notebook_executions/20261102T204028478304Z-bundled/kernels/aegis-repro-8a0880b83c6d4a40aac4324bb6d0a772')
+mode = 511, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_html_failure_after_succes0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028478304Z-bundled\\kernels\\aegis-repro-8a0880b83c6d4a40aac4324bb6d0a772'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+___ test_returned_error_output_cannot_be_counted_as_a_successful_execution ____
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_re...paces/reports/notebook_executions/20261102T204028515546Z-bundled/kernels/aegis-repro-451562fac71844a8a26e5e9f3f9cad57')
+mode = 511, parents = True, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_returned_error_output_can0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028515546Z-bundled\\kernels\\aegis-repro-451562fac71844a8a26e5e9f3f9cad57'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+project = (WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_r...ytest-0/test_returned_error_output_can0/AEGIS notebook runner with spaces/notebooks/00_Start_Here_and_Coverage.ipynb'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002062C6C1240>
+
+    def test_returned_error_output_cannot_be_counted_as_a_successful_execution(project, monkeypatch):
+        root, name, _ = project
+        captured = clients(monkeypatch, mode="error_output")
+>       result = runner.execute(names=(name,), root=root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_notebook_runner.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\execute_notebooks.py:109: in execute
+    spec.mkdir(parents=True)
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:727: in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ericp/Downloads/NAFSI/.tools/pytest-temp-20261102T203859682785Z/pytest-of-ericp/pytest-0/test_re...paces/reports/notebook_executions/20261102T204028515546Z-bundled/kernels/aegis-repro-451562fac71844a8a26e5e9f3f9cad57')
+mode = 511, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pytest-temp-20261102T203859682785Z\\pytest-of-ericp\\pytest-0\\test_returned_error_output_can0\\AEGIS notebook runner with spaces\\reports\\notebook_executions\\20261102T204028515546Z-bundled\\kernels\\aegis-repro-451562fac71844a8a26e5e9f3f9cad57'
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py:722: FileNotFoundError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\ericp\Downloads\NAFSI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_judge_handoff.py::test_handoff_has_working_numbered_layout_and_exact_evidence_bytes
+FAILED tests/test_judge_handoff.py::test_repeat_build_preserves_the_previous_judge_folder
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[stale_source_code]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[tampered_html]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[tampered_executed_notebook]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[failed_report]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[operator_changed]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[missing_notebook_record]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[failed_notebook]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[partial_execution]
+FAILED tests/test_judge_handoff.py::test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff[zero_code_cells]
+FAILED tests/test_judge_handoff.py::test_judge_archive_rejects_changed_bytes_or_membership[payload]
+FAILED tests/test_judge_handoff.py::test_judge_archive_rejects_changed_bytes_or_membership[missing_member]
+FAILED tests/test_judge_handoff.py::test_judge_archive_rejects_changed_bytes_or_membership[unlisted_member]
+FAILED tests/test_notebook_runner.py::test_success_uses_exact_local_python_and_keeps_outputs_separate
+FAILED tests/test_notebook_runner.py::test_cell_failure_and_export_failure_preserve_the_original_error_and_outputs
+FAILED tests/test_notebook_runner.py::test_html_failure_after_successful_cells_is_reported_as_incomplete_publication
+FAILED tests/test_notebook_runner.py::test_returned_error_output_cannot_be_counted_as_a_successful_execution
+18 failed, 1298 passed, 5 skipped, 4 warnings in 123.51s (0:02:03)

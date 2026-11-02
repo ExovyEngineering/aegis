@@ -2,7 +2,8 @@
 import copy,json,math,random
 from ortools.constraint_solver import pywrapcp,routing_enums_pb2
 from backend.adapters import distance,OSRMRoutingAdapter
-from backend.paths import ROOT
+from backend.paths import ROOT,read_json
+from backend.runtime import runtime_context
 from backend.cold_chain import project_temperature
 from backend.simulation import seed_network,SEED
 from backend.route_review import review_routes
@@ -66,9 +67,10 @@ def plan_routes(preset='farm',routing='estimated',truck_count=None,truck_capacit
     search.local_search_metaheuristic=routing_enums_pb2.LocalSearchMetaheuristic.GREEDY_DESCENT;search.time_limit.seconds=3
     solution=model.SolveWithParameters(search)
     status={0:'NOT_SOLVED',1:'FEASIBLE',2:'PARTIAL_SUCCESS',3:'INFEASIBLE',4:'TIME_LIMIT',5:'INVALID',6:'INFEASIBLE',7:'OPTIMAL'}.get(model.status(),str(model.status()))
-    routes=[];served=set();violations=[];modot_path=ROOT/'data/cache/probe_modot.json'
+    runtime=runtime_context(root=ROOT)
+    routes=[];served=set();violations=[];modot_path=ROOT/('data/fixtures/modot.json' if runtime['isolated'] and runtime['offline'] else 'data/cache/probe_modot.json')
     if not modot_path.exists():modot_path=ROOT/'data/fixtures/modot.json'
-    modot=json.loads(modot_path.read_text(encoding='utf-8')) if modot_path.exists() else None
+    modot=read_json(modot_path) if modot_path.exists() else None
     for v,t in enumerate(trucks):
         if not solution:break
         index=model.Start(v);order=[manager.IndexToNode(index)];arrivals=[]

@@ -1,0 +1,1076 @@
+
+=================================== ERRORS ====================================
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_activity.py _
+import file mismatch:
+imported module 'test_activity' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_activity.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_activity.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_adapters_audit.py _
+import file mismatch:
+imported module 'test_adapters_audit' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_adapters_audit.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_adapters_audit.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_assistant_friendliness.py _
+import file mismatch:
+imported module 'test_assistant_friendliness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_assistant_friendliness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_assistant_friendliness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_assistant_intent.py _
+import file mismatch:
+imported module 'test_assistant_intent' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_assistant_intent.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_assistant_intent.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_assistant_interpret.py _
+import file mismatch:
+imported module 'test_assistant_interpret' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_assistant_interpret.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_assistant_interpret.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_atomic_reports.py _
+import file mismatch:
+imported module 'test_atomic_reports' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_atomic_reports.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_atomic_reports.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_backup_state.py _
+import file mismatch:
+imported module 'test_backup_state' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_backup_state.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_backup_state.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_challenge_api.py _
+import file mismatch:
+imported module 'test_challenge_api' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_challenge_api.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_challenge_api.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_custom_operations.py _
+import file mismatch:
+imported module 'test_custom_operations' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_custom_operations.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_custom_operations.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_data_dictionary_export.py _
+import file mismatch:
+imported module 'test_data_dictionary_export' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_data_dictionary_export.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_data_dictionary_export.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_data_explorer.py _
+import file mismatch:
+imported module 'test_data_explorer' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_data_explorer.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_data_explorer.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_decision_study.py _
+import file mismatch:
+imported module 'test_decision_study' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_decision_study.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_decision_study.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_delivery_outlook.py _
+import file mismatch:
+imported module 'test_delivery_outlook' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_delivery_outlook.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_delivery_outlook.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_demo_run.py _
+import file mismatch:
+imported module 'test_demo_run' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_demo_run.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_demo_run.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_dispatch.py _
+import file mismatch:
+imported module 'test_dispatch' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_dispatch.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_drive.py _
+import file mismatch:
+imported module 'test_drive' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_drive.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_drive.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_drive_integration.py _
+import file mismatch:
+imported module 'test_drive_integration' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_drive_integration.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_drive_integration.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_driver_action_context.py _
+import file mismatch:
+imported module 'test_driver_action_context' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_driver_action_context.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_driver_action_context.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_event_apply_preview.py _
+import file mismatch:
+imported module 'test_event_apply_preview' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_event_apply_preview.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_event_apply_preview.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_event_impact.py _
+import file mismatch:
+imported module 'test_event_impact' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_event_impact.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_event_impact.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_evidence_assistant.py _
+import file mismatch:
+imported module 'test_evidence_assistant' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_evidence_assistant.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_evidence_assistant.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_evidence_freshness.py _
+import file mismatch:
+imported module 'test_evidence_freshness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_evidence_freshness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_evidence_freshness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_evidence_limits.py _
+import file mismatch:
+imported module 'test_evidence_limits' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_evidence_limits.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_evidence_limits.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_final_handoff.py _
+import file mismatch:
+imported module 'test_final_handoff' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_final_handoff.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_final_handoff.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_food_context.py _
+import file mismatch:
+imported module 'test_food_context' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_food_context.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_food_context.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_api.py _
+import file mismatch:
+imported module 'test_freshness_api' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_api.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_freshness_api.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_kinetics.py _
+import file mismatch:
+imported module 'test_freshness_kinetics' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_kinetics.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_freshness_kinetics.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_planning.py _
+import file mismatch:
+imported module 'test_freshness_planning' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_planning.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_freshness_planning.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_readiness.py _
+import file mismatch:
+imported module 'test_freshness_readiness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_readiness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_freshness_readiness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_ingestion_identity.py _
+import file mismatch:
+imported module 'test_ingestion_identity' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_ingestion_identity.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_ingestion_identity.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_integrated_study.py _
+import file mismatch:
+imported module 'test_integrated_study' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_integrated_study.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_integrated_study.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_judge_demo.py _
+import file mismatch:
+imported module 'test_judge_demo' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_judge_demo.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_judge_demo.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_judge_handoff.py _
+import file mismatch:
+imported module 'test_judge_handoff' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_judge_handoff.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_judge_handoff.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_legacy_audit.py _
+import file mismatch:
+imported module 'test_legacy_audit' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_legacy_audit.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_legacy_audit.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_local_launcher.py _
+import file mismatch:
+imported module 'test_local_launcher' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_local_launcher.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_local_launcher.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_master_guide.py _
+import file mismatch:
+imported module 'test_master_guide' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_master_guide.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_master_guide.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_model_timing.py _
+import file mismatch:
+imported module 'test_model_timing' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_model_timing.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_model_timing.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_model_validation.py _
+import file mismatch:
+imported module 'test_model_validation' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_model_validation.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_model_validation.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_operations_integration.py _
+import file mismatch:
+imported module 'test_operations_integration' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_operations_integration.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_operations_integration.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_package_submission.py _
+import file mismatch:
+imported module 'test_package_submission' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_package_submission.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_package_submission.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_package_verification.py _
+import file mismatch:
+imported module 'test_package_verification' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_package_verification.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_package_verification.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_plan_review.py _
+import file mismatch:
+imported module 'test_plan_review' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_plan_review.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_plan_review.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_planning_library.py _
+import file mismatch:
+imported module 'test_planning_library' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_planning_library.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_planning_library.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_project_brief.py _
+import file mismatch:
+imported module 'test_project_brief' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_project_brief.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_project_brief.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_readiness.py _
+import file mismatch:
+imported module 'test_readiness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_readiness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_readiness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_rehearsal.py _
+import file mismatch:
+imported module 'test_rehearsal' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_rehearsal.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_rehearsal.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_rehearsal_integration.py _
+import file mismatch:
+imported module 'test_rehearsal_integration' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_rehearsal_integration.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_rehearsal_integration.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_rehearsal_launcher.py _
+import file mismatch:
+imported module 'test_rehearsal_launcher' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_rehearsal_launcher.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_rehearsal_launcher.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_release_regressions.py _
+import file mismatch:
+imported module 'test_release_regressions' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_release_regressions.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_release_regressions.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_road_intelligence.py _
+import file mismatch:
+imported module 'test_road_intelligence' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_road_intelligence.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_road_intelligence.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_route_lab.py _
+import file mismatch:
+imported module 'test_route_lab' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_route_lab.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_route_lab.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_route_review.py _
+import file mismatch:
+imported module 'test_route_review' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_route_review.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_route_review.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_simulation_optimization.py _
+import file mismatch:
+imported module 'test_simulation_optimization' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_simulation_optimization.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_simulation_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_state_dot.py _
+import file mismatch:
+imported module 'test_state_dot' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_state_dot.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_state_dot.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_submission_report.py _
+import file mismatch:
+imported module 'test_submission_report' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_submission_report.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_submission_report.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_usda_audit.py _
+import file mismatch:
+imported module 'test_usda_audit' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_usda_audit.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_usda_audit.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_usda_ingestion.py _
+import file mismatch:
+imported module 'test_usda_ingestion' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_usda_ingestion.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_usda_ingestion.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_verification_review.py _
+import file mismatch:
+imported module 'test_verification_review' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_verification_review.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_verification_review.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_weather_coverage.py _
+import file mismatch:
+imported module 'test_weather_coverage' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_weather_coverage.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_weather_coverage.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_workflow.py _
+import file mismatch:
+imported module 'test_workflow' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_workflow.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\judge-history\AEGIS-Judges-20261102T173853523420Z\02_Application\tests\test_workflow.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/00_coverage-4901b943-fd69-46eb-b014-5b897fad97fd/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\00_coverage-4901b943-fd69-46eb-b014-5b897fad97fd\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/00_coverage-8f791e98-f991-4a56-8b1e-b990cc3896a6/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\00_coverage-8f791e98-f991-4a56-8b1e-b990cc3896a6\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/01_data-a8c82660-1eb9-45de-96cb-a7a060557af2/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\01_data-a8c82660-1eb9-45de-96cb-a7a060557af2\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/01_data-d8be9a00-eb86-4430-9e71-4703bed6ec0f/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\01_data-d8be9a00-eb86-4430-9e71-4703bed6ec0f\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/01_data-dedf41f6-f4e4-4ae3-a0c8-00925d0f1887/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\01_data-dedf41f6-f4e4-4ae3-a0c8-00925d0f1887\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/02_modeling-c6e03953-d16d-4f83-bbcd-3c38b12552cc/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\02_modeling-c6e03953-d16d-4f83-bbcd-3c38b12552cc\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/02_modeling-cf3e417c-630d-439a-b4e7-f50a2d1d0b53/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\02_modeling-cf3e417c-630d-439a-b4e7-f50a2d1d0b53\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/03_scenarios-70c91a1b-61d8-42c5-a26d-b48afef4a448/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\03_scenarios-70c91a1b-61d8-42c5-a26d-b48afef4a448\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/03_scenarios-75b37a68-b160-489e-b0b6-d0d28c56a58c/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\03_scenarios-75b37a68-b160-489e-b0b6-d0d28c56a58c\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting reports/notebook_runs/03_scenarios-c0331203-61b3-4d49-9514-d6997266953f/project/scripts/test_apis.py _
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\reports\notebook_runs\03_scenarios-c0331203-61b3-4d49-9514-d6997266953f\project\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________________ ERROR collecting scripts/test_apis.py ____________________
+import file mismatch:
+imported module 'test_apis' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\scripts\test_apis.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\scripts\test_apis.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___________________ ERROR collecting tests/test_activity.py ___________________
+import file mismatch:
+imported module 'test_activity' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_activity.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_activity.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_adapters_audit.py ________________
+import file mismatch:
+imported module 'test_adapters_audit' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_adapters_audit.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_adapters_audit.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________ ERROR collecting tests/test_assistant_friendliness.py ____________
+import file mismatch:
+imported module 'test_assistant_friendliness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_assistant_friendliness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_assistant_friendliness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_assistant_intent.py _______________
+import file mismatch:
+imported module 'test_assistant_intent' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_assistant_intent.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_assistant_intent.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________ ERROR collecting tests/test_assistant_interpret.py ______________
+import file mismatch:
+imported module 'test_assistant_interpret' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_assistant_interpret.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_assistant_interpret.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_atomic_reports.py ________________
+import file mismatch:
+imported module 'test_atomic_reports' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_atomic_reports.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_atomic_reports.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_backup_state.py _________________
+import file mismatch:
+imported module 'test_backup_state' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_backup_state.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_backup_state.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_challenge_api.py _________________
+import file mismatch:
+imported module 'test_challenge_api' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_challenge_api.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_challenge_api.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_custom_operations.py _______________
+import file mismatch:
+imported module 'test_custom_operations' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_custom_operations.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_custom_operations.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________ ERROR collecting tests/test_data_dictionary_export.py ____________
+import file mismatch:
+imported module 'test_data_dictionary_export' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_data_dictionary_export.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_data_dictionary_export.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_data_explorer.py _________________
+import file mismatch:
+imported module 'test_data_explorer' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_data_explorer.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_data_explorer.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_decision_study.py ________________
+import file mismatch:
+imported module 'test_decision_study' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_decision_study.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_decision_study.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_delivery_outlook.py _______________
+import file mismatch:
+imported module 'test_delivery_outlook' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_delivery_outlook.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_delivery_outlook.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___________________ ERROR collecting tests/test_demo_run.py ___________________
+import file mismatch:
+imported module 'test_demo_run' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_demo_run.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_demo_run.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___________________ ERROR collecting tests/test_dispatch.py ___________________
+import file mismatch:
+imported module 'test_dispatch' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_dispatch.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_dispatch.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________________ ERROR collecting tests/test_drive.py _____________________
+import file mismatch:
+imported module 'test_drive' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_drive.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_drive.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_drive_integration.py _______________
+import file mismatch:
+imported module 'test_drive_integration' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_drive_integration.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_drive_integration.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________ ERROR collecting tests/test_driver_action_context.py _____________
+import file mismatch:
+imported module 'test_driver_action_context' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_driver_action_context.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_driver_action_context.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________ ERROR collecting tests/test_event_apply_preview.py ______________
+import file mismatch:
+imported module 'test_event_apply_preview' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_event_apply_preview.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_event_apply_preview.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_event_impact.py _________________
+import file mismatch:
+imported module 'test_event_impact' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_event_impact.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_event_impact.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_evidence_assistant.py ______________
+import file mismatch:
+imported module 'test_evidence_assistant' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_evidence_assistant.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_evidence_assistant.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_evidence_freshness.py ______________
+import file mismatch:
+imported module 'test_evidence_freshness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_evidence_freshness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_evidence_freshness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_evidence_limits.py ________________
+import file mismatch:
+imported module 'test_evidence_limits' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_evidence_limits.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_evidence_limits.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_final_handoff.py _________________
+import file mismatch:
+imported module 'test_final_handoff' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_final_handoff.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_final_handoff.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_food_context.py _________________
+import file mismatch:
+imported module 'test_food_context' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_food_context.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_food_context.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_freshness_api.py _________________
+import file mismatch:
+imported module 'test_freshness_api' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_api.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_freshness_api.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_freshness_kinetics.py ______________
+import file mismatch:
+imported module 'test_freshness_kinetics' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_kinetics.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_freshness_kinetics.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_freshness_planning.py ______________
+import file mismatch:
+imported module 'test_freshness_planning' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_planning.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_freshness_planning.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________ ERROR collecting tests/test_freshness_readiness.py ______________
+import file mismatch:
+imported module 'test_freshness_readiness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_freshness_readiness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_freshness_readiness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_ingestion_identity.py ______________
+import file mismatch:
+imported module 'test_ingestion_identity' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_ingestion_identity.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_ingestion_identity.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_integrated_study.py _______________
+import file mismatch:
+imported module 'test_integrated_study' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_integrated_study.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_integrated_study.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_judge_demo.py __________________
+import file mismatch:
+imported module 'test_judge_demo' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_judge_demo.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_judge_demo.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_judge_handoff.py _________________
+import file mismatch:
+imported module 'test_judge_handoff' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_judge_handoff.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_judge_handoff.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_legacy_audit.py _________________
+import file mismatch:
+imported module 'test_legacy_audit' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_legacy_audit.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_legacy_audit.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_local_launcher.py ________________
+import file mismatch:
+imported module 'test_local_launcher' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_local_launcher.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_local_launcher.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_master_guide.py _________________
+import file mismatch:
+imported module 'test_master_guide' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_master_guide.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_master_guide.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_model_timing.py _________________
+import file mismatch:
+imported module 'test_model_timing' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_model_timing.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_model_timing.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_model_validation.py _______________
+import file mismatch:
+imported module 'test_model_validation' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_model_validation.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_model_validation.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________ ERROR collecting tests/test_operations_integration.py ____________
+import file mismatch:
+imported module 'test_operations_integration' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_operations_integration.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_operations_integration.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_package_submission.py ______________
+import file mismatch:
+imported module 'test_package_submission' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_package_submission.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_package_submission.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________ ERROR collecting tests/test_package_verification.py _____________
+import file mismatch:
+imported module 'test_package_verification' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_package_verification.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_package_verification.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_plan_review.py __________________
+import file mismatch:
+imported module 'test_plan_review' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_plan_review.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_plan_review.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_planning_library.py _______________
+import file mismatch:
+imported module 'test_planning_library' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_planning_library.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_planning_library.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_project_brief.py _________________
+import file mismatch:
+imported module 'test_project_brief' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_project_brief.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_project_brief.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_readiness.py ___________________
+import file mismatch:
+imported module 'test_readiness' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_readiness.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_readiness.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_rehearsal.py ___________________
+import file mismatch:
+imported module 'test_rehearsal' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_rehearsal.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_rehearsal.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____________ ERROR collecting tests/test_rehearsal_integration.py _____________
+import file mismatch:
+imported module 'test_rehearsal_integration' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_rehearsal_integration.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_rehearsal_integration.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_rehearsal_launcher.py ______________
+import file mismatch:
+imported module 'test_rehearsal_launcher' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_rehearsal_launcher.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_rehearsal_launcher.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________ ERROR collecting tests/test_release_regressions.py ______________
+import file mismatch:
+imported module 'test_release_regressions' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_release_regressions.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_release_regressions.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_road_intelligence.py _______________
+import file mismatch:
+imported module 'test_road_intelligence' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_road_intelligence.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_road_intelligence.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_route_lab.py ___________________
+import file mismatch:
+imported module 'test_route_lab' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_route_lab.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_route_lab.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_________________ ERROR collecting tests/test_route_review.py _________________
+import file mismatch:
+imported module 'test_route_review' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_route_review.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_route_review.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___________ ERROR collecting tests/test_simulation_optimization.py ____________
+import file mismatch:
+imported module 'test_simulation_optimization' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_simulation_optimization.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_simulation_optimization.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_state_dot.py ___________________
+import file mismatch:
+imported module 'test_state_dot' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_state_dot.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_state_dot.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______________ ERROR collecting tests/test_submission_report.py _______________
+import file mismatch:
+imported module 'test_submission_report' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_submission_report.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_submission_report.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________________ ERROR collecting tests/test_usda_audit.py __________________
+import file mismatch:
+imported module 'test_usda_audit' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_usda_audit.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_usda_audit.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________________ ERROR collecting tests/test_usda_ingestion.py ________________
+import file mismatch:
+imported module 'test_usda_ingestion' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_usda_ingestion.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_usda_ingestion.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________ ERROR collecting tests/test_verification_review.py ______________
+import file mismatch:
+imported module 'test_verification_review' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_verification_review.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_verification_review.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______________ ERROR collecting tests/test_weather_coverage.py _______________
+import file mismatch:
+imported module 'test_weather_coverage' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_weather_coverage.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_weather_coverage.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___________________ ERROR collecting tests/test_workflow.py ___________________
+import file mismatch:
+imported module 'test_workflow' has this __file__ attribute:
+  C:\Users\ericp\Downloads\NAFSI\artifacts\AEGIS-Judges\02_Application\tests\test_workflow.py
+which is not the same as the test file we want to collect:
+  C:\Users\ericp\Downloads\NAFSI\tests\test_workflow.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\ericp\Downloads\NAFSI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/scripts/test_apis.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_activity.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_adapters_audit.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_assistant_friendliness.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_assistant_intent.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_assistant_interpret.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_atomic_reports.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_backup_state.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_challenge_api.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_custom_operations.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_data_dictionary_export.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_data_explorer.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_decision_study.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_delivery_outlook.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_demo_run.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_dispatch.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_drive.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_drive_integration.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_driver_action_context.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_event_apply_preview.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_event_impact.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_evidence_assistant.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_evidence_freshness.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_evidence_limits.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_final_handoff.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_food_context.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_api.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_kinetics.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_planning.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_freshness_readiness.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_ingestion_identity.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_integrated_study.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_judge_demo.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_judge_handoff.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_legacy_audit.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_local_launcher.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_master_guide.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_model_timing.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_model_validation.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_operations_integration.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_package_submission.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_package_verification.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_plan_review.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_planning_library.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_project_brief.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_readiness.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_rehearsal.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_rehearsal_integration.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_rehearsal_launcher.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_release_regressions.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_road_intelligence.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_route_lab.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_route_review.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_simulation_optimization.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_state_dot.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_submission_report.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_usda_audit.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_usda_ingestion.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_verification_review.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_weather_coverage.py
+ERROR artifacts/judge-history/AEGIS-Judges-20261102T173853523420Z/02_Application/tests/test_workflow.py
+ERROR reports/notebook_runs/00_coverage-4901b943-fd69-46eb-b014-5b897fad97fd/project/scripts/test_apis.py
+ERROR reports/notebook_runs/00_coverage-8f791e98-f991-4a56-8b1e-b990cc3896a6/project/scripts/test_apis.py
+ERROR reports/notebook_runs/01_data-a8c82660-1eb9-45de-96cb-a7a060557af2/project/scripts/test_apis.py
+ERROR reports/notebook_runs/01_data-d8be9a00-eb86-4430-9e71-4703bed6ec0f/project/scripts/test_apis.py
+ERROR reports/notebook_runs/01_data-dedf41f6-f4e4-4ae3-a0c8-00925d0f1887/project/scripts/test_apis.py
+ERROR reports/notebook_runs/02_modeling-c6e03953-d16d-4f83-bbcd-3c38b12552cc/project/scripts/test_apis.py
+ERROR reports/notebook_runs/02_modeling-cf3e417c-630d-439a-b4e7-f50a2d1d0b53/project/scripts/test_apis.py
+ERROR reports/notebook_runs/03_scenarios-70c91a1b-61d8-42c5-a26d-b48afef4a448/project/scripts/test_apis.py
+ERROR reports/notebook_runs/03_scenarios-75b37a68-b160-489e-b0b6-d0d28c56a58c/project/scripts/test_apis.py
+ERROR reports/notebook_runs/03_scenarios-c0331203-61b3-4d49-9514-d6997266953f/project/scripts/test_apis.py
+ERROR scripts/test_apis.py
+ERROR tests/test_activity.py
+ERROR tests/test_adapters_audit.py
+ERROR tests/test_assistant_friendliness.py
+ERROR tests/test_assistant_intent.py
+ERROR tests/test_assistant_interpret.py
+ERROR tests/test_atomic_reports.py
+ERROR tests/test_backup_state.py
+ERROR tests/test_challenge_api.py
+ERROR tests/test_custom_operations.py
+ERROR tests/test_data_dictionary_export.py
+ERROR tests/test_data_explorer.py
+ERROR tests/test_decision_study.py
+ERROR tests/test_delivery_outlook.py
+ERROR tests/test_demo_run.py
+ERROR tests/test_dispatch.py
+ERROR tests/test_drive.py
+ERROR tests/test_drive_integration.py
+ERROR tests/test_driver_action_context.py
+ERROR tests/test_event_apply_preview.py
+ERROR tests/test_event_impact.py
+ERROR tests/test_evidence_assistant.py
+ERROR tests/test_evidence_freshness.py
+ERROR tests/test_evidence_limits.py
+ERROR tests/test_final_handoff.py
+ERROR tests/test_food_context.py
+ERROR tests/test_freshness_api.py
+ERROR tests/test_freshness_kinetics.py
+ERROR tests/test_freshness_planning.py
+ERROR tests/test_freshness_readiness.py
+ERROR tests/test_ingestion_identity.py
+ERROR tests/test_integrated_study.py
+ERROR tests/test_judge_demo.py
+ERROR tests/test_judge_handoff.py
+ERROR tests/test_legacy_audit.py
+ERROR tests/test_local_launcher.py
+ERROR tests/test_master_guide.py
+ERROR tests/test_model_timing.py
+ERROR tests/test_model_validation.py
+ERROR tests/test_operations_integration.py
+ERROR tests/test_package_submission.py
+ERROR tests/test_package_verification.py
+ERROR tests/test_plan_review.py
+ERROR tests/test_planning_library.py
+ERROR tests/test_project_brief.py
+ERROR tests/test_readiness.py
+ERROR tests/test_rehearsal.py
+ERROR tests/test_rehearsal_integration.py
+ERROR tests/test_rehearsal_launcher.py
+ERROR tests/test_release_regressions.py
+ERROR tests/test_road_intelligence.py
+ERROR tests/test_route_lab.py
+ERROR tests/test_route_review.py
+ERROR tests/test_simulation_optimization.py
+ERROR tests/test_state_dot.py
+ERROR tests/test_submission_report.py
+ERROR tests/test_usda_audit.py
+ERROR tests/test_usda_ingestion.py
+ERROR tests/test_verification_review.py
+ERROR tests/test_weather_coverage.py
+ERROR tests/test_workflow.py
+!!!!!!!!!!!!!!!!!! Interrupted: 132 errors during collection !!!!!!!!!!!!!!!!!!
+4 warnings, 132 errors in 10.74s

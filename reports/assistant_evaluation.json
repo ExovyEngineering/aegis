@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-29T07:43:36.471968+00:00",
+  "passed": true,
+  "scope": "Read-only deterministic evidence assistant and optional topic-selection contract",
+  "guided_topics_checked": 6,
+  "returned_fact_objects_checked": 39,
+  "all_returned_facts_equal_captured_objects": true,
+  "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+  "network_revision": 5,
+  "captured_fact_count": 131,
+  "browser_checks_passed": 81,
+  "browser_artifact": "reports/browser_qa/assistant/results.json",
+  "actual_llm_queried": false,
+  "actual_model_quality_evaluated": false,
+  "optional_connector_status": "Disabled/unconfigured in actual browser run; protocol, failure and output validation use explicitly mocked transports",
+  "provider_source_refresh_requested": false,
+  "operator_database_and_sidecars_unchanged": true,
+  "raw_hashes_unchanged": 42,
+  "pytest_passed": 660,
+  "vitest_passed": 121,
+  "production_build_passed": true,
+  "unit_artifact": "reports/session_verification.json",
+  "read_only_guard": "SQLite mode=ro, query_only transaction; no seeding or action tools",
+  "grounding_limit": "Object equality is a software grounding check, not independent scientific truth, model accuracy or prospective validation",
+  "limitations": [
+    "Model credentials/service not configured; no real model-quality claim",
+    "P0 Kiro/author/timed presentation gates remain open",
+    "Current source/API and NOAA/publication/genomic gaps remain documented"
+  ]
+}

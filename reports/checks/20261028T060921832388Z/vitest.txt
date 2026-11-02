@@ -1,0 +1,83 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/routingProvenance.test.ts (2 tests) 5ms
+ ✓ src/api.test.ts (3 tests) 9ms
+ ✓ src/MapViewport.test.tsx (2 tests) 29ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 109ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 168ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 197ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 274ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 273ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 312ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 246ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 267ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 289ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 530ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  431ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 572ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 615ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 710ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  583ms
+ ✓ src/RouteLab.test.tsx (2 tests) 1015ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  737ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1251ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  649ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1328ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  499ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  475ms
+ ❯ src/RehearsalWorkspace.test.tsx (13 tests | 1 failed) 1429ms
+   ✓ keeps operator mode read-only and copies a real isolated-launch command  325ms
+   ✓ does not offer recording controls for a misconfigured runtime 30ms
+   ✓ rejects an incomplete context and can retry without inventing isolation 108ms
+   ✓ requires identity and purpose and submits the explicitly chosen record type 156ms
+   ✓ uses the server elapsed value rather than inferring duration from a browser date 51ms
+   ✓ requires a skip reason, keeps completion disabled before all stages, and navigates only on request 190ms
+   × reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note 103ms
+     → expect(element).toHaveValue()
+
+Expected the element to have value:
+
+Received:
+  Explained the current stage evidence
+   ✓ clears a typed stage draft when polling discovers another client advanced the run 51ms
+   ✓ prevents duplicate writes and locks the submitted note while a checkpoint is pending 65ms
+   ✓ shows the completed export immediately, and reloads the saved immutable record from history 172ms
+   ✓ can abort an incomplete run only with a reason and preserves its export 75ms
+   ✓ rejects a wrong-record history response instead of presenting its download link 53ms
+   ✓ clears actionable state after a polling failure rather than keeping an old active run 46ms
+ ✓ src/App.test.tsx (6 tests) 1608ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  807ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 311ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  311ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 520ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/RehearsalWorkspace.test.tsx > reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note
+Error: expect(element).toHaveValue()
+
+Expected the element to have value:
+
+Received:
+  Explained the current stage evidence
+ ❯ src/RehearsalWorkspace.test.tsx:117:56
+    115|   expect(await screen.findByRole('alert')).toHaveTextContent('Rehearsa…
+    116|   expect(screen.queryByText('Stage recorded with its evidence.')).not.…
+    117|   expect(screen.getByLabelText('Current stage notes')).toHaveValue('');
+       |                                                        ^
+    118|   expect(screen.getByRole('button',{name:'Record stage covered'})).toB…
+    119|   enterStageNotes('Reviewed the current evidence and measured model');…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 22 passed (23)
+      Tests  1 failed | 75 passed (76)
+   Start at  01:09:59
+   Duration  22.71s (transform 5.89s, setup 25.95s, collect 48.03s, tests 12.07s, environment 75.73s, prepare 12.68s)
+

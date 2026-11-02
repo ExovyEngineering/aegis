@@ -1,6 +1,596 @@
 # Progress and acceptance evidence
 
-Session date: October 26, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Latest session date: November 2, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+
+## Final report and GitHub handoff (November 2)
+
+- Rebuilt the **AEGIS Final Challenge Report** with the research question,
+  all five challenge tasks, actual model figures/metrics, nine simulated policy
+  outcomes, scientific limitations, reproducibility commands and dashboard tour.
+  The one-page team statement now credits **Isaac Jenkins**, Micky's code review
+  and GitHub work, and the lead's logistics, data gathering and application design.
+- The final report includes the standalone one-page team science statement as
+  its final appendix, preserving its layout and adding a PDF bookmark. The
+  separate statement file remains available for submission forms that request it.
+- Final local verification passed **1,316 pytest tests**, five platform skips,
+  **406 frontend tests**, and the production build. Another **34 document and
+  packaging tests** passed after the report renderer changes; `pip check` passed.
+  Records remain in `reports/session_verification.json` and dated check logs.
+- Actual Chrome checked all five notebook HTML previews and the running app;
+  embedded figures loaded and no page errors were found. Original notebook runs
+  retain their separate actual execution records and input-preservation checks.
+- Corrected test discovery to use `tests/`, excluding copied judge packages.
+  The release checker uses short unique temporary paths for Windows. Earlier
+  discovery/path failures remain in dated logs rather than being erased.
+- Kiro was not used. Prospective model validity, calibrated physical sensors,
+  real logistics results and final human authorship/submission approval remain
+  outside the software verification claims.
+
+## Executed reproducible analysis notebooks (November 2)
+
+- Added four maintained Jupyter notebooks for source coverage, preprocessing/
+  integration, national/integrated modeling and evaluation, and scenario/FEFO
+  analysis. All **34 code cells** executed successfully with actual data,
+  figures and assertions against the reported scientific metrics.
+- The optional original-source profile also executed all **11 cells** of the
+  preprocessing notebook against the owner's relocated `Databases-and-etc/`
+  downloads. It verified the original hashes, staged independent copies, ran
+  source adapters, and reproduced national/timing/integrated model results and
+  all nine policy outcomes in that same regenerated-input workspace.
+- Notebook execution uses its exact Python interpreter, copied inputs, private
+  runtime paths, an offline script guard, bounded timeouts and cleanup on failure.
+  Windows asyncio socket-pair behavior and external-network denial have actual
+  regression tests. Scientific reports, source bytes and owner SQLite/sidecars
+  were preserved. No global kernelspec installation is needed.
+- Pinned optional Jupyter tools are separate from basic app setup. Executed
+  notebooks, embedded-figure HTML previews and version/hash/cell-count records
+  are published under `reports/notebooks/`; isolated workspaces/raw staging and
+  ephemeral kernel credentials are excluded from Git and packages.
+- The judge handoff now exposes `04_Reproducible_Analysis`. Packaging requires
+  all four notebooks to have successful, current execution records and matching
+  source/output hashes; stale or partial evidence cannot replace the handoff.
+  Focused helper/runner/handoff checks passed **46 tests**, with one Windows
+  symlink-permission skip. Full-suite results retain their own dated report.
+- The original bulk downloads are still excluded from the ZIP. Raw replay needs
+  those files separately; bundled-snapshot reproduction does not claim otherwise.
+  Reproducibility does not remove publication-lag, prospective-validation,
+  simulation or Kiro-use limitations.
+
+## Organized judge handoff (November 2)
+
+- Added `JUDGES_START_HERE.md`, a folder map, judge setup/troubleshooting notes
+  and a five-minute walkthrough using actual approval and parked-driver controls.
+  The generated `artifacts/AEGIS-Judges.zip` separates `01_Guides`,
+  `02_Application` and `03_Verification`, with standalone HTML/text entry pages.
+- Added explicit one-time setup and repeat-use Windows launchers. Setup creates
+  a local Python 3.13 environment and installs the pinned dependencies. Startup
+  uses the prebuilt frontend, a fresh isolated offline UUID and a browser guard
+  that waits for that exact runtime. Node.js and API keys are not required for
+  this demo. Setup and map tiles require internet; public evidence remains dated.
+- Packaging validates the already verified application archive, copies guides
+  and measured evidence, checks local entry-page links and hashes every bundled
+  file. Prior judge folders are retained under `artifacts/judge-history/`.
+  Original downloads stay in place and the owner's active database is excluded.
+- Current consolidated verification passed **1,283 pytest tests**, five platform
+  skips/four upstream warnings, **406 frontend tests**, and the production build.
+  Targeted package tests also passed after adding the new verification files.
+- Actual first-time setup in a separate extracted Windows copy returned exit
+  code zero. Its brand-new Python environment passed `pip check`; **15 actual
+  Chrome startup checks** verified the prebuilt UI, isolated UUID, map, desktop/
+  mobile layout and exact packaged PDF download. The owner database was unchanged.
+  Scope and source hashes are recorded in `reports/judge_launcher_smoke.json`.
+  Default OS browser auto-opening is guarded/unit-tested; the smoke run used
+  explicit headless Chrome. No physical macOS setup is claimed.
+- Package verification and the organized archive's hashes/link counts are
+  recorded separately in `reports/package_verification.json` and
+  `reports/judge_handoff.json`. Kiro non-use and scientific limitations remain
+  explicit. Creating these artifacts does not upload or submit the project.
+
+## Final portability correction (November 2)
+
+- The initial final-build GitHub run failed one data-dictionary export test on
+  Linux while 1,249 backend tests, all 406 frontend tests and the production
+  build passed. The original failed run remains inspectable at
+  https://github.com/ExovyEngineering/aegis/actions/runs/41387684634.
+- NOAA metadata recorded relative paths with Windows backslashes. The exporter
+  now interprets those components on either platform and rejects absolute,
+  drive-relative, traversal and resolved outside-project paths. Original metadata
+  and observation bytes are unchanged; checksum validation remains mandatory.
+- Ten added regression cases exercise both separator styles, POSIX semantics,
+  exact input bytes/hashes and project boundaries. All twelve focused dictionary
+  tests passed. Refreshed full-suite, release, browser and extracted-package
+  results retain their own timestamps in the existing reports. The current
+  commit's remote status must be checked on the pull request; an older green run
+  never substitutes for it.
+- After the correction, the complete fourteen-step release passed with **1,256
+  pytest tests**, four platform skips/four upstream warnings, **406 frontend
+  tests**, a successful production build and **33 offline extracted-package
+  checks**. A fresh isolated Chrome run passed **140 checks** with six desktop/
+  mobile screenshots. Operator state, source observations and caches were
+  preserved. The final PDF and team statement retain the explicit Kiro non-use
+  disclosure; no hardware, provider freshness or competition submission is inferred.
+
+## Final five-task research and software handoff (November 1)
+
+- Mapped the user-supplied five tasks, preserving the exact requirement text.
+  Added One Health diagram, shared-grain/lag documentation, a 150-field dictionary
+  and source/derived provenance exports. Original raw observations remain unchanged.
+- Added a separate seven-day Missouri FSIS/BEAM/NOAA research study with NORS
+  ablation, time-aware embargo, calibration, weekly uncertainty, paired added-data
+  comparison and error consequences. Of 1,534 Missouri samples, 490 meet complete
+  source coverage; primary holdout has 171 samples/22 positives. Core Brier
+  0.112456 versus baseline 0.114307; added BEAM/NOAA value is not established.
+  Adding NORS worsens this cohort to 0.124489. These results are not activated
+  prospectively and do not imply consumer illness, lot risk or outbreak causation.
+- Added three actual constrained policies across three simulated scenarios:
+  feasible order, volume/quality preservation and balanced destination service.
+  Under fleet scarcity, optimized volume is 3,200 kg versus rule 2,800 kg;
+  balanced service reaches eight destinations versus seven, with a quality/travel
+  tradeoff. All nine plans exclude held/recalled stock and pass independent checks.
+  No fabricated county need weights or causal pathogen-risk reduction are claimed.
+- Project brief now exposes five task cards, final guide/exports and policy
+  comparisons; Model evaluation exposes the integrated study separately from
+  the original national model. Missing/malformed metrics abstain visibly.
+- Generated the **17-page final task/menu/presentation PDF** and a separate
+  **one-page team science PDF**. Owner reports Isaac's disease-side contribution
+  shaped CDC/BEAM/historical analysis; Micky provided code help. Last names and
+  final authorship review remain for the team. **Owner disclosed Kiro was not used;
+  that criterion is not met.** No prepared spec or installation is claimed as use.
+- Consolidated verification passed **1,246 pytest**, four platform skips/four
+  upstream warnings, **406 Vitest**, and production build. The final fourteen-step
+  reproduction pipeline passed, preserving operator SQLite/sidecars. Reports:
+  `reports/session_verification.json` and `reports/final_release.json`.
+- **140 actual-Chrome final submission checks passed**, including all task
+  cards, 13 allowlisted artifacts, exact downloads/model values, nine policy
+  outcomes, coverage gaps and mobile layout. Operator, isolated database, raw
+  observations, caches and fixtures were unchanged. An initial audit exposed
+  empty-table creation on rehearsal inspection; enforced read-only GETs and
+  byte-preservation regressions corrected it. Earlier failed runs remain dated.
+- **33 extracted offline package checks passed**, with zero application network
+  attempts and existing installed dependencies reused. Final archive:
+  `artifacts/AEGIS-Final-Build.zip`. PDF metadata, 17 page numbers, nine bookmarks/
+  contents links, input hashes and the one-page team statement were verified in
+  `reports/final_submission_verification.json`; no physical printer test.
+- Git preserves exact analytic/report/document bytes across platform checkouts so
+  line-ending conversion cannot invalidate the published lineage checksums.
+- No new live-provider success is inferred. Existing dated source results and
+  fallbacks remain visible. Next: add final names/author review, rehearse/watch
+  the actual timed video, and submit with explicit Kiro non-use and scientific
+  limits. No upload, deployment, merge or competition submission was performed.
+
+## Latest: recording preparation and workspace order (October 31)
+
+- Reordered desktop/mobile navigation around operations, with Drive after
+  Dispatcher and Sources & evidence last. Corrected the Save the Load page title,
+  description and exposure-time caption. Project brief links directly to the new
+  recording chapter, timed outline and full hands-on click-through checklist.
+- Connected the rehearsal tracker to actual stored heat/road-delay frames and
+  same-experiment, current rescue receipts/assignments. Normal/recovery frames,
+  unapproved proposals, mismatched sessions, new readings and unrelated Command
+  approvals cannot replace that evidence. Reassignment invalidates older driver
+  acknowledgments. Exported stage evidence retains immutable session/frame/profile
+  hashes while human video, Kiro and authorship gates remain explicitly open.
+- Final full local checks: **1,198 pytest passed**, four platform skips and four
+  upstream warnings; **385 Vitest passed**; production build passed. Logs:
+  `reports/checks/20261031T071250192098Z/`. Focused report/compiler checks also
+  exercised absent, malformed, failed and nonfinite optional freshness evidence.
+- Six actual public HTTP probes succeeded: FSIS recall JSON, NWS alerts,
+  Open-Meteo forecast, MoDOT service discovery and OSRM route/table. Exact times,
+  schemas and latency are in `reports/recording_connectivity.json`; prior results
+  remain under `reports/checks/connectivity/`. Discovery success does not refresh
+  every incident layer or validate truck restrictions. Other provider test dates
+  remain separate; no complete coverage claim is inferred.
+- Added an optional scientific-report appendix from saved freshness replay
+  results. Existing model/figure values remain separate from simulated quality,
+  FEFO/FIFO and rescue outputs. Missing/failed optional evidence is disclosed.
+- **116 recording-preparation Chrome checks passed**, with six desktop/mobile
+  screenshots in `reports/browser_qa/recording/results.json`. All ten workspace
+  headings/orders, the guide anchor, actual rescue/driver UI and an automated
+  six-stage tracker/export were exercised. Tracker housekeeping used guarded APIs;
+  manual narrative coverage was explicitly synthetic. This is not a human video.
+  Operator SQLite/sidecars, raw originals, fixtures and provider caches matched
+  their before/after fingerprints during this QA.
+- A follow-up App handoff regression and Chrome check verify that the rehearsal
+  shortcut clears an older explicitly modeled candidate and reopens the documented
+  SH05 demo. Generic navigation cannot silently inherit that prior selection.
+- The updated **83-page, 23-chapter master guide** passed **37 read-only Chrome
+  checks**. PDF page numbers, bookmarks, contents targets and chapter hashes were
+  verified; native navigation/runbook previews were inspected. A separate 18-page
+  presentation brief is maintained. No physical-printer test is claimed.
+
+## Latest: Save the Load and predictive FEFO (October 31)
+
+- Implemented simulated sensor replay and bounded authenticated gateway ingestion;
+  Q10 equivalent-age budgets with explicit assumptions, genuine observation-time
+  plots, point/conservative sensitivity cases, contextual channels, coverage
+  abstention and independent decreasing use-by caps. No physical hardware or
+  measured molecular freshness/spoilage prediction is claimed.
+- Implemented actual OR-Tools FEFO/FIFO allocations and eligible rescue ranking.
+  Concrete whole-plan proposals receive independent checks and three-part human
+  approval. Held/recalled/ineligible/unknown-quality stock remains unavailable.
+  DC contingencies cannot dispatch using invented receiving capacity.
+- Approval publishes the checked simulated assignment set and opens the exact
+  rescued truck in Drive. New frames persist review advisories without rerouting.
+  Network/assignment/frame digests reject stale decisions; reviewed exposure
+  history cannot be reset by starting a new or older counterfactual experiment.
+- Final full application checks: **1,169 pytest passed**, four platform skips,
+  **384 Vitest passed**, production build passed. Four upstream Python warnings
+  remain. Logs: `reports/checks/20261031T062820174887Z/`.
+  **94 actual-Chrome workflow checks**, nine desktop/mobile screenshots:
+  `reports/browser_qa/freshness/results.json`. Deliberate writes were confined
+  to a fresh verified UUID rehearsal; operator DB/sidecars, original raw hashes,
+  caches and fixtures were preserved. Browser map tiles used QA placeholders.
+- `scripts/freshness_demo.py` passed **15 isolated deterministic checks** over
+  actual API/solver/approval/driver/readiness operations. It is accelerated replay,
+  not a timed human presentation. Science, gateway, UI and maintained print chapter
+  now document the assumptions and all consequential actions.
+- Public providers were not refreshed during this feature. Latest API failures
+  and historical cache provenance remain visible. Missing genuine Kiro execution,
+  calibrated hardware data, FSIS publication timing, broader NOAA validation,
+  isolate-level genomic linkage and production deployment remain open.
+- Rebuilt the **77-page, 22-chapter handbook** and separate **18-page brief**.
+  All **37 read-only Chrome handbook checks** passed; every page number,
+  bookmark, contents destination and source-chapter hash was checked. Native
+  print previews were visually inspected; no physical-printer test is claimed.
+- The updated reviewer ZIP passed **30 offline extracted checks**, including
+  replay, FEFO/FIFO, human rescue approval, exact Drive assignment and subsequent
+  review advisory. Socket/DNS guards observed zero application network attempts.
+  The installed dependency environment was reused; no fresh-install claim.
+
+## Latest: guided delivery planning and clearer workspaces (October 30)
+
+- Command now starts with a read-only delivery outlook: current-input and chosen
+  delay/fault/ambient comparisons, actual baseline-plus-four allocation runs,
+  independently checked constraints, destination shortages, candidate deadlines
+  and capped six-hour cargo projections. Captured exports do not change with
+  draft inputs. Cargo flags explain peak temperature and time above the review
+  level even if arrival temperature is lower. No prospective skill is claimed.
+- Broad assistant queries such as **chicken** now return useful canonical choices.
+  Common questions answer in one click, selected shipments carry into the helper,
+  short questions work, recoverable action errors retain context and technical
+  provenance stays available under expandable details. Answers remain exact
+  server-authored facts; the optional model does not write evidence or act.
+- Map presets explain each task/layer, count actual features and distinguish an
+  empty source from hidden features. Road intelligence starts with a named
+  journey and three steps; Dispatcher desk provides actionable next steps,
+  including the empty-assignment path back to plan review.
+- Follow-up handoffs carry an exact candidate's endpoints, names and revision
+  into Road intelligence. Source loading cannot overwrite them; manual choices
+  detach candidate attribution. Comparison/export retain their original captured
+  trip if inputs change. Generic Road navigation starts a separate named example.
+  Outlook, Road and Dispatcher shortcuts focus the current response-plan table.
+  The assistant's new scope fact cites bounded, hashed documentation/code and
+  reports unavailable guidance without inventing projection results.
+- Final full local checks: **930 pytest passed** (four platform skips),
+  **337 Vitest passed**, production build passed. Four upstream Python warnings
+  remain. Executed logs: `reports/checks/20261030T193821929669Z/`.
+  **76 actual-Chrome workflow checks** and 14 desktop/mobile screenshots are in
+  `reports/friendliness_workflow_evaluation.json`; public tiles used explicitly
+  labeled browser-only placeholders. No public provider or model was queried.
+  Earlier morning checks (922/316 and 61 browser checks) remain separately dated.
+- Five real operator HTTP checks passed on the latest foreground launcher:
+  current outlook, chicken clarification and unchanged
+  network/SQLite/sidecars. The previously saved farm experiment is preserved.
+  All **42 original SHA256 hashes matched** (1,017,948,267 bytes streamed) in
+  `reports/friendliness_raw_integrity.json`. No raw/cache/fixture refresh occurred.
+- Updated maintained user chapters, model/architecture scope, morning review,
+  feature register and printable-guide generators. Reviewer checks now exercise
+  chicken guidance and both current/delayed outlooks with networking disabled.
+  Genuine Kiro execution, author/rubric review, timed team presentation and the
+  existing scientific/data-access gaps remain separate open requirements.
+- The final reviewer bundle passed **27 offline extracted checks**, including
+  both outlooks and broad-question guidance with socket/DNS guards. The updated
+  **73-page handbook** passed **37 actual-Chrome download/print checks**;
+  page numbers, bookmarks, contents destinations and source hashes were verified.
+  Original data, active databases and credentials stay excluded from the ZIP.
+
+## Previous: local launcher and recorded activity (October 29)
+
+- Added a Windows entry point and foreground Python launcher with separate
+  source-build, explicitly prebuilt and non-mutating diagnostic modes. Effective
+  dotenv/environment rehearsal settings are guarded, local assets are validated
+  and occupied listeners are inspected before any build. No other service is
+  stopped, no dependencies downloaded and no original data reset.
+- Added bounded, read-only internal activity inspection across the existing
+  nine workspaces. Filter known recorded actions or an explicit shipment ID,
+  inspect raw payload/citation/error details, page within a captured snapshot,
+  export loaded pages and navigate to the appropriate workspace. History does
+  not replay actions, infer missing before/after effects or authenticate actors.
+- Full local release checks: **824 pytest passed**, **240 Vitest passed** and
+  production build passed, with a later full frontend/build follow-up for focus
+  polish. **109 actual-Chrome history checks**, six screenshots and **11 actual
+  owned-process lifecycle checks** passed. The corrupt-history browser failure
+  prompted a bounded per-row fix in the legacy audit reader; initial harness/QA
+  failures remain separately preserved. A 35-test package follow-up passed.
+- The operator app was started through the new launcher. A user-owned terminal
+  must remain open; an interrupted agent session does not guarantee persistence.
+  Isolated QA uses port 8016 and a fresh UUID database, never the operator store.
+- The session-wide operator hash changed because one new preset farm-planning
+  run was saved. A read-only comparison to the previously verified backup found
+  all other tables unchanged, including dispatch state, holds/recalls, assignments
+  and audit. The run stores no actor, so attribution is not invented. It is
+  preserved; request/result payloads remain private. Phase-specific browser and
+  lifecycle fingerprints stayed unchanged. See `reports/operator_activity_change_review.json`.
+- Genuine Kiro execution, final author/rubric review, timed team presentation,
+  source/NOAA/publication gaps, genomic linkage and production access controls
+  remain open. This increment refreshes no provider or scientific model.
+
+## Previous: visible Command results and disruption impact (October 29)
+
+- Audited the Command controls and fixed concrete feedback failures: approval
+  errors now appear inside the dialog; recompute records completion even when
+  results match; road results appear near the trip detail and receive focus.
+  Rejected/empty route responses are visible rather than blank success states.
+- Added a read-only six-event impact experiment using the existing simulator
+  and all four real allocation computations. It reports exact field/resource
+  changes, candidate/lot differences, constraints and all-assignment invalidation.
+  Applying requires explicit consent and a transaction-checked revision/hash;
+  stale context is rejected without mutation. Confirmed receipts survive a
+  subsequent incomplete refresh. These are modeled effects, not live impacts.
+- Added candidate/scenario/approved allocation overlays, selected road geometry
+  and focus, route/impact JSON exports, working review-queue navigation and reset
+  confirmation. No reference route is silently shown for an unrelated candidate.
+  A map choice does not change optimizer geometry or publish a driver instruction.
+- Added compact purpose/scope/connection guidance to all workspaces, preserving
+  the simplified dedicated parked-use Drive. Candidate trucks, approved lots,
+  seeded telemetry history and injected current readings are distinguished.
+- Executed full local checks: **711 pytest passed** (three Windows symlink
+  skips), **192 Vitest passed**, production build passed. The preview/apply suite
+  includes 51 focused cases. **214 actual-Chrome workflow checks** and a
+  **35-test package follow-up** passed. All six UI previews matched independent
+  simulator/solver results; the real stale-proposal HTTP 409 was visible inside
+  its dialog. A browser-injected network failure after an actual event application
+  confirmed that its receipt/export survived the loss of the simulator panel
+  without duplicate application. The updated handbook has 71 pages and 35 browser download/print
+  checks. Artifacts remain separately dated; no provider/model evaluation is
+  inferred. A shared Windows pytest temporary-directory setup failure is retained
+  in the follow-up record; the retry used a fresh workspace-owned temp directory.
+- The operator process on port 8000 was no longer listening and was started with
+  the updated backend. Its original database and all 42 raw hashes stayed intact.
+  Browser mutations run only in a fresh offline QA database on port 8014.
+- Existing scientific/data coverage limits, prior FSIS/ERS failures, genuine
+  Kiro execution, final rubric/author review and a timed human demo remain open.
+
+## Previous: read-only cited evidence assistant (October 29)
+
+- Added six bounded summaries of scenarios, selected shipments, measured model
+  results, source coverage, driver workflow and available review views. Network
+  and assignments are read in a separate SQLite read-only transaction; source
+  reports are bounded, independently hashed byte snapshots. Missing evidence
+  remains explicit, and context changes reject an old request.
+- Added a ninth workspace with cited facts, source details, captured briefing
+  exports and strict client validation against the original fact objects.
+  User wording can select a topic through deterministic rules. An explicitly
+  configured/opted-in Ollama service can select a topic only; it receives no
+  captured operational data or tools and cannot author a factual claim.
+- The working default requires no model. No real configured model inference or
+  quality evaluation has been recorded; connector protocol/error tests use
+  clearly identified mocks. Offline rehearsal blocks model requests.
+- Full local checks: 660 pytest and 121 Vitest tests passed; production build
+  passed. Current browser/package evidence belongs in the associated dated
+  artifacts. Source and operational fingerprints remain separately measured.
+- The master handbook now covers the assistant and mobile navigation retains
+  readable labels through horizontal scrolling. The existing source failures,
+  NOAA gaps, availability/genomic limits and human Kiro/review/rehearsal gates
+  have not been closed by this stretch feature.
+
+## Latest: complete master user guide (October 28)
+
+- Added a detailed, print-oriented product handbook with all eight workspaces,
+  controls and use cases, plus a glossary, walkthroughs, troubleshooting, evidence
+  meanings and explicit implemented/deferred boundaries. Content was reviewed
+  against the current code and saved scientific artifacts.
+- Project brief now links a page-numbered/bookmarked US Letter PDF, standalone
+  print HTML and editable Markdown, separately from the shorter status brief.
+- Source chapters live under `docs/manual_parts/`; `scripts/build_master_guide.py`
+  assembles the master, measures print margins, adds internal contents links and
+  reads dated verification evidence without provider or operational DB access.
+- Tests/build and actual download/browser/print evidence are recorded separately
+  in `reports/session_verification.json` and `reports/master_guide_verification.json`.
+  No new predictive validity, genuine Kiro evidence or production deployment is
+  inferred from documentation.
+
+## Previous: road intelligence and local recovery (October 28)
+
+- Added a separate official Iowa DOT 511 adapter and dated fixture: 599 point
+  records acquired in six bounded pages. Repeated CARS event IDs and raw event
+  clocks are preserved. A first oversized request returned HTTP 404; the working
+  100-record page size and exact initial failure are documented.
+- Added a read-only road workspace with source cards, bounded event previews,
+  raw fields/time semantics, Iowa attribution, corridor/custom coordinates,
+  route alternatives, source-specific proximity review and JSON export. Changed
+  inputs/evidence mark prior results. Neither feed implies complete route
+  coverage or commercial-truck eligibility; estimates remain labeled.
+- Real operator-server refresh captured 848 MoDOT records and reused a valid
+  Iowa TTL cache, explicitly distinct from a new provider response. Real OSRM
+  returned two Columbia–Des Moines alternatives (394.2692 / 464.7026 km), with
+  independently counted road events. No dispatch state changed. This is dated
+  evidence in `reports/road_intelligence_live.json`, not guaranteed uptime.
+- Added local WAL-consistent SQLite backup, verification and restore to a fresh
+  private file. The actual CLI recovery exercise preserved operator bytes and
+  all ten tables, including hold/recall flags. Backups and receipts are ignored
+  by Git and excluded from reviewer packages. This is not cloud deployment.
+- Hardened existing route review against malformed/nonfinite point/line
+  geometry and missing, naive or implausibly future retrieval timestamps.
+- Retained an actual failed duplicate push CI run and fixed rehearsal test
+  initialization timing. Tests now wait for React effects before entering notes
+  and assert the intended request, preserving the original failure/approval
+  checks. Product behavior and test timeouts were not relaxed. See
+  `reports/ci_followup.json` and its focused/full follow-up evidence.
+- Current full local results: **563 pytest passed, 95 Vitest passed, production
+  build passed**. Further focused checks and any later full run are recorded in
+  `reports/session_verification.json`. The new actual-Chrome suite passed
+  **58 checks**, desktop and mobile, with no uncaught JS or unexpected HTTP
+  failures; fixtures and initialized isolated state stayed unchanged. Prior
+  core browser suites retain their own timestamps and were not all repeated.
+- The registry now has 19 sources: the new Iowa probe succeeded; five previously
+  recorded FSIS/ERS DNS failures remain. All 42 original hashes are unchanged.
+  No scientific model retraining, NOAA trace-task changes, genuine Kiro usage,
+  production access controls, cloud publication or final submission is claimed.
+
+Next three actions: complete genuine Kiro spec execution; perform team
+report/rubric review and the timed presentation; then choose one further stretch
+with concrete inputs, such as hosted access controls before any cloud publish.
+
+## Previous: core software handoff and isolated rehearsal (October 28)
+
+- Added a fresh-session launcher and verified runtime profile. The operator app
+  rejects rehearsal recording; partial/mismatched configuration is rejected
+  before directory creation or SQLite initialization. No HTTP handler rebinds
+  the global database. Rehearsal state stays in its separate UUID database.
+- Project brief now guides six stages with a 300-second planned budget,
+  server-clock timing, notes, explicit skips, version guards, history and
+  immutable JSON snapshots. Operational stages require actual recorded actions;
+  driver evidence must refer to a coherent parked trip sequence. Automated runs
+  do not establish a genuine human presentation, Kiro usage or author approval.
+- Offline rehearsal uses dated source fixtures only, disables provider/cache
+  access and source refresh, and returns labeled routing estimates. Base-map
+  tiles and external links remain separate browser network requests.
+- Corrected the published manual walkthrough to use isolated state, parked
+  confirmation and displayed network revision. The accelerated script now
+  measures original/configured operator SQLite and sidecar hashes rather than
+  hardcoding preservation; errors and inherited rehearsal profiles are handled.
+- Fixed stale notes after a rejected action, a route-selection effect race,
+  misleading acceptance text on unrecognized/duplicate imports and compressed
+  mobile readiness cells. The current test/build outcomes are recorded in
+  `reports/session_verification.json`; earlier failures remain dated in history.
+- New actual-Chrome guided rehearsal: 76 checks passed with immutable export,
+  reset/history/abort, expected conflict rejection, offline behavior and unchanged
+  operator fingerprints. The four existing core suites were re-run: Drive65,
+  depth36, operations50 and controls65 passed. Additional final mobile captures
+  are tracked in their separate artifacts.
+- Current public probe: 13/18 HTTP successes. Three FSIS and two USDA ERS URLs
+  failed DNS resolution. Source refresh returned three new provider responses,
+  one usable NOAA TTL cache and an explicitly stale FSIS fallback. MoDOT layers,
+  forecast and NWS refreshes succeeded; a documentation probe is still distinct
+  from a feed. No missing observations or source successes were invented.
+- Clean dependency installation succeeded in a separate Python environment;
+  package/HTTP reproduction outcomes are recorded in `reports/clean_install.json`
+  when available. Raw hashes and the ten pre-existing operator tables remain
+  preserved. The maintained PDF and reviewer bundle are regenerated for handoff.
+- Software scope and startup: `docs/core_release.md`. Genuine Kiro execution,
+  final report/rubric and author review, and a timed human presentation remain
+  team submission gates; no cloud release or submission is claimed.
+
+Final release evidence: **443 pytest tests passed, two Windows symlink checks
+skipped, 77 Vitest tests passed, and the production build passed**. Six current
+Chrome suites record **353 checks**: rehearsal76, readiness61, Drive65,
+operations50, depth36 and controls65. There are zero uncaught JavaScript or
+unexpected application HTTP failures in those runs. The clean Python install
+verified all 51 pins, passed dependency checks, and completed 31 real HTTP checks
+including the full automated rehearsal. That short automated run does not prove
+a five-minute human presentation. All raw hashes and pre-existing operator
+tables remain unchanged.
+
+## Previous: source integrity, county context and readiness (October 27)
+
+- Recursive content-based ingestion now preserves source identities regardless
+  of filename, folder or download order. Exact duplicates are recorded without
+  pooling; different exports for the same semantic table produce an explicit
+  conflict. Failed/unavailable latest imports do not silently expose old output
+  as newly verified evidence. Per-file FSIS errors remain separate and complete
+  primary counts/cancellation fields are required.
+- Actual re-import preserved all eight prior tables' values/dtypes, both model
+  artifacts and frozen training/validation cohorts. FSIS remains 78,607 rows.
+  `reports/ingestion_verification.json` records the comparison. Displayed source
+  rows and hashes now use the same immutable request snapshot.
+- USDA county context covers 115 Missouri counties/county-equivalents and ten
+  historical access/store measures. Grocery count/rate each retain 39 missing
+  values with exact original codes and source-cell identities. County comparison
+  and CSV export retain years/units/denominators; no route join, safety score,
+  current demand estimate or allocation weighting is inferred.
+- Dispatcher readiness inspects sixteen checks in one consistent read-only
+  database snapshot. It distinguishes hard constraints from outstanding driver
+  acknowledgments, versioned instructions and scenario-B review. It neither
+  dispatches nor certifies safety. Failed dispatcher refreshes clear stale data.
+- New actual-Chrome evidence: 58 passing checks, eight inspected screenshots,
+  no uncaught JavaScript or application HTTP failures. It exercises county/source
+  provenance, scenario B, parked acknowledgment, verification, instruction
+  revision rejection, explicit hold/removal and release without republishing.
+  Evidence: `reports/browser_qa/readiness/results.json`.
+- The full verification report and dated logs remain authoritative for current
+  test/build counts: **370 pytest, 60 Vitest and the production build passed**;
+  **26 read-only HTTP checks passed**. Five Python warnings include four upstream
+  deprecations and a local pytest cache-directory permission warning; test results
+  were unaffected. All 18 registered endpoints returned HTTP success in this
+  session's new probe; this is distinct from fresh MoDOT incident-layer queries
+  and complete historical NOAA coverage. Genuine Kiro execution, author/rubric
+  review and timed team rehearsal remain pending.
+- Reviewer verification is now a committed command, `scripts/verify_package.py`,
+  rather than a workstation-only helper. It validates archive contents before
+  extraction and runs extracted app workflows with external networking blocked,
+  a separate demo database and original-operator-state checks. The final archive
+  outcome is recorded in `reports/package_verification.json`.
+
+## Previous: visual Drive and click-path reliability (October 27)
+
+- Dedicated `/?mode=drive`: approved destination, planned journey, simulated fuel,
+  range, cargo and dispatch-origin position. At390x844 the main trip and both
+  gauges fit in the first view. No GPS progress, physical sensor or live ETA is
+  invented. Driving focus hides typing and acknowledgment controls.
+- Server-side parked declarations expire after 600 seconds. Legacy report,
+  trip-acknowledgment and instruction-ack paths reject missing/expired confirmation
+  transactionally; quick reports use the same dispatcher inbox and original trip
+  context. The declaration does not prove actual vehicle motion or parking.
+- Fixed stale partial reloads, route overwrite, stale-source success wording,
+  out-of-order advisory/run results, frontend/backend lot-ID drift and nested
+  MoDOT freshness. Core evidence-cache JSON is published as complete files with coordinated
+  reads and Windows sharing-lock retries.
+- Bulk transport is bounded explicitly. A 20-record recall preview measured 108,031
+  HTTP-body bytes vs 11,336,974 for the full response (99.05% reduction); provider
+  ordering/counts and complete cache remain preserved. Dedicated Drive no longer
+  polls recall, inventory, model or road-layer payloads. See `reports/transport_check.json`.
+- Latest executed verification: **244 pytest, 51 Vitest and production build pass**.
+  **65 Drive checks and 65 broader control checks pass** in actual Chrome, plus
+  separate 36-depth/50-operations rehearsals. All five Refresh controls, six events,
+  map toggles/zoom, scenario dialogs, source pagination and parked-use actions were
+  exercised. Evidence map: `docs/button_audit.md`; logs retain timestamps.
+- Registry probes: 18/18 HTTP successes. Actual refresh actions: 5/5 new nonstale
+  provider responses, including 18 MoDOT layers with 0 failures. NCEI refresh remains
+  a single station/week probe; it does not fill the broader historical gaps.
+- All 42 original raw hashes and pre-existing operator tables were preserved.
+  No production reset, assignment change or driver-focus mutation was performed
+  by the browser rehearsals. Source refreshes update only public evidence caches.
+- Updated ongoing PDF/Markdown brief, source/transport evidence and reviewer bundle.
+  Authentic Kiro execution, final rubric/author review and timed rehearsal remain
+  outstanding. Additional DOT feeds, genomic analysis, LLM explanations, cloud
+  release and streaming remain subject to `docs/stretch_feature_gates.md`.
+
+## Previous: decision depth and team planning brief
+
+October 26 feature-depth release:
+
+- Persistent route projects: immutable server-side runs and checksums, saved
+  versions, historical reopening, two-project comparison and JSON/CSV exports.
+  Unsaved edits remain temporary; saved plans cannot dispatch or change stock.
+- Independent scenario checks expose actual resource sums, selected shipments and
+  exclusion reasons. Approval rejects altered candidate quantities and invalid
+  eligibility even if a faulty solver returns the same result twice.
+- Source explorer: recognized FSIS, NORS, BEAM and establishment tables remain
+  separate, with bounded pagination, literal filters, schema, derived-file hashes,
+  page null counts and explicit errors for missing/corrupt sources.
+- Scenario-B verification checklist: identified review, rationale, context and
+  version guards. Driver acknowledgment is separate; completion neither certifies
+  safety nor changes stock disposition automatically.
+- Measured state-level holdout error analysis is now inspectable in Model evaluation.
+- Project brief: maintained feature register, change history, dated verification
+  logs and a regenerated 10-page PDF/Markdown with presentation narrative and limits.
+  The CI workflow regenerates a downloadable brief and verification artifact.
+- Latest local checks: **189 pytest tests, 31 Vitest tests and production build
+  passed**. **36 isolated Chrome checks** and **23 loopback HTTP checks** passed.
+  Four upstream Python deprecation warnings remain. Browser screenshots and results
+  are in `reports/browser_qa/depth/`; no uncaught JavaScript or app HTTP failures.
+- All 42 original raw hashes remain unchanged. Scripted demos use isolated state.
+  Public providers were not re-probed in this feature session; dated source
+  coverage must not be interpreted as new live connectivity evidence.
+- Development verification encountered a Windows shared pytest-temp permission
+  failure; the runner now uses workspace-local temporary storage. Failed and
+  successful local verification records/logs are retained separately. Chrome QA
+  also prompted explicit dropdown names and proper waits for asynchronously loaded
+  status. The final recorded browser run passed.
+- Remaining P0 gates: real Kiro sign-in/task execution, final rubric/report author
+  review and timed presentation. Publication timing, NOAA gaps, commercial truck
+  restrictions, authentication and physical sensing remain explicit limitations.
 
 ## Implemented and measured
 
@@ -18,7 +608,7 @@ October 26 operational feature extension:
 - Four deterministic OR-Tools allocation scenarios; persistent proposals, approval, assignments, events, acknowledgments, incidents, and audit trail.
 - Initial seed solver results were OPTIMAL for all four scenarios: A cost 3,018 / unmet 2,300 kg; B cost 3,093 / unmet 2,300 kg; C cost 2,838 / unmet 2,700 kg; D cost 2,904 / unmet 1,900 kg. Costs are simulated dollars.
 - Geometry intersection/proximity review compares OSRM alternatives against queried MoDOT point/line features using a 250-meter buffer. It produces dispatcher-review signals without truck-safe claims.
-- Current full backend suite: 114 passing tests, with four upstream deprecation warnings. Frontend TypeScript/Vite build passes and twelve Vitest checks include map teardown regressions. `reports/validation.json` records the latest final counts.
+- Earlier foundation-stage verification: 114 passing tests, with four upstream deprecation warnings. Frontend TypeScript/Vite build passes and twelve Vitest checks include map teardown regressions. `reports/validation.json` records the latest final counts.
 - Uvicorn served the built UI, four assets and twelve JSON endpoints (17 real HTTP checks). Actual Chrome desktop/mobile QA passed 26 checks: map tiles, farm/fleet routes, capacity shortages, refrigeration fault projection, approval and driver acknowledgment/reporting. Nine inspected screenshots and results are in `reports/browser_qa/final/`. No uncaught JavaScript errors or application resource failures remain; a cosmetic default favicon 404 was observed.
 - Accelerated isolated demo completed event injection, changed scenario results, approval of 13 simulated assignments, acknowledgment, incident reporting and audit history (`reports/demo_results.json`). The operator database was not modified by this script.
 - Measured retrospective model holdout: 23,472 samples, August 29, 2025–June 30, 2026. Baseline Brier 0.0885558; logistic Brier 0.0885944; logistic ROC-AUC 0.4980. The logistic model shows no useful improvement over prevalence in this evaluation. Operational choice remains the transparent historical estimator.

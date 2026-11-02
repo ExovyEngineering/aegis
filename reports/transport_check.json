@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-27T07:41:42.171114+00:00",
+  "source": "fsis_recalls",
+  "full_http_body_bytes": 11336974,
+  "preview_http_body_bytes": 108031,
+  "refresh_summary_http_body_bytes": 298,
+  "total_records": 2032,
+  "returned_records": 20,
+  "truncated": true,
+  "provider_order_preserved": true,
+  "preview_byte_reduction_fraction": 0.9904709140199139,
+  "note": "Measured local HTTP response bodies, not upstream bandwidth, latency or model accuracy. Full cache remains complete."
+}

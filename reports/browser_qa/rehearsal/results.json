@@ -1,0 +1,520 @@
+{
+  "checked_at": "2026-10-28T06:07:06.190Z",
+  "base_url": "http://127.0.0.1:8001",
+  "operator_url": "http://127.0.0.1:8000",
+  "run_kind": "automated_check",
+  "human_rehearsal_verified": false,
+  "checks": [
+    {
+      "name": "server_is_verified_isolated_and_offline",
+      "passed": true,
+      "detail": "{\"mode\":\"isolated_rehearsal\",\"isolated\":true,\"offline\":true,\"rehearsal_id\":\"2705f633-0af4-4124-936b-319cbc317ebb\",\"database_relative_path\":\"data/rehearsals/2705f633-0af4-4124-936b-319cbc317ebb.sqlite\",\"warning\":\"Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution.\"}"
+    },
+    {
+      "name": "operator_server_remains_operator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "operator_rehearsal_write_is_rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "isolated_server_has_no_unfinished_run",
+      "passed": true,
+      "detail": "Only an earlier owned automated Chrome attempt may be aborted automatically; use a fresh launcher-owned database for any other active run."
+    },
+    {
+      "name": "only_isolated_state_reset_for_setup",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rehearsal_runtime_banner_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "timer_start_requires_presenter_and_purpose",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/start returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "record_type_is_explicitly_automated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "timer_budget_is_five_minutes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "presentation_verification_limit_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop_timer_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":1440,\"document\":1440}"
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "overview recorded in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "obsolete_checkpoint_version_rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "stale_checkpoint_does_not_change_run",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all_five_refresh_controls_locked_offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_source_refresh_button_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_source_refresh_button_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_source_refresh_button_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_source_refresh_button_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_source_refresh_button_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_is_dated_fixture_not_new_live_response",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rehearsal_source_keeps_original_fixture_time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "measured_science_is_accessible_during_timer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "evidence_science recorded in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 409",
+      "passed": true,
+      "detail": "HTTP 409"
+    },
+    {
+      "name": "missing_operational_evidence_is_explained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_fake_disruption_milestone_recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/events returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "simulated_disruption_recorded_in_rehearsal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/route returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "offline_route_is_visibly_estimated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline_road_review_retains_dated_fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "route_fallback_notice_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "disruption recorded in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/proposals/D returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "approval_still_requires_dispatcher_identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/proposals/e224e1f8-8067-418d-be93-2f8729d46959/approve returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "reviewed_plan_publishes_only_isolated_assignments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "held_recalled_lots_stay_excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "approval recorded in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "active_rehearsal_survives_reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "recorded_milestones_survive_navigation_reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/driver/SH01/acknowledge returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "UI /api/driver/incident returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "parked_driver_workflow_has_actual_audit_records",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "driver recorded in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_timer_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "closing recorded in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "six_stages_covered_with_evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/finish returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "finished_record_retains_measured_duration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "finished_record_exports_successfully",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "export_checksum_matches_actual_bytes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "automated_export_never_closes_human_acceptance_gates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "operational_milestones_record_audit_evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "export_hashes_actual_frozen_source_not_mutable_cache",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI_download_preserves_frozen_snapshot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_saved_record_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "UI /api/demo/reset returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "scenario_reset_cannot_rewrite_completed_export",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UI /api/rehearsal/start returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "UI /api/rehearsal/ae5a9b82-87ec-4fb5-9605-088e30742568/finish returns 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "aborted_rehearsal_retains_partial_state",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aborted_export_does_not_invent_covered_stages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_provider_refresh_POST_sent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all_UI_mutations_remained_on_isolated_origin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_uncaught_javascript",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no_unexpected_application_HTTP_failures",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "operator_database_and_sidecars_unchanged",
+      "passed": true,
+      "detail": "Compared actual file hashes before and after; no operator mutation was authorized."
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "expected_http_rejections": [
+    {
+      "url": "http://127.0.0.1:8000/api/rehearsal/start",
+      "status": 403
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "status": 409,
+      "reason": "stale version"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "status": 409
+    }
+  ],
+  "post_requests": [
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/start",
+      "path": "/api/rehearsal/start"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/events",
+      "path": "/api/events"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/route",
+      "path": "/api/route"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/proposals/D",
+      "path": "/api/proposals/D"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/proposals/e224e1f8-8067-418d-be93-2f8729d46959/approve",
+      "path": "/api/proposals/e224e1f8-8067-418d-be93-2f8729d46959/approve"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/drive/T01/focus",
+      "path": "/api/drive/T01/focus"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/driver/SH01/acknowledge",
+      "path": "/api/driver/SH01/acknowledge"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/driver/incident",
+      "path": "/api/driver/incident"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/checkpoint"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/finish",
+      "path": "/api/rehearsal/f07e9d3f-e6bd-453c-9a12-dda11ff85c33/finish"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/demo/reset",
+      "path": "/api/demo/reset"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/start",
+      "path": "/api/rehearsal/start"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/rehearsal/ae5a9b82-87ec-4fb5-9605-088e30742568/finish",
+      "path": "/api/rehearsal/ae5a9b82-87ec-4fb5-9605-088e30742568/finish"
+    }
+  ],
+  "screenshots": [
+    "desktop-guided-timer.png",
+    "mobile-guided-rehearsal.png",
+    "desktop-completed-evidence.png",
+    "mobile-saved-evidence.png"
+  ],
+  "browser_version": "156.0.8078.48",
+  "runtime": {
+    "mode": "isolated_rehearsal",
+    "isolated": true,
+    "offline": true,
+    "rehearsal_id": "2705f633-0af4-4124-936b-319cbc317ebb",
+    "database_relative_path": "data/rehearsals/2705f633-0af4-4124-936b-319cbc317ebb.sqlite",
+    "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
+  },
+  "run_id": "f07e9d3f-e6bd-453c-9a12-dda11ff85c33",
+  "target": {
+    "shipment_id": "SH01",
+    "truck_id": "T01",
+    "lot_id": "L03"
+  },
+  "recorded_elapsed_seconds": 5.37,
+  "passed": true,
+  "operator_fingerprints_before": {
+    "": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+    "-wal": null,
+    "-shm": null,
+    "-journal": null
+  },
+  "operator_fingerprints_after": {
+    "": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+    "-wal": null,
+    "-shm": null,
+    "-journal": null
+  },
+  "finished_at": "2026-10-28T06:07:15.148Z"
+}

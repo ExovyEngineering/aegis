@@ -1,0 +1,20 @@
+
+> aegis-command@0.1.0 build
+> tsc -b && vite build --configLoader runner
+
+vite v6.4.5 building for production...
+transforming...
+✓ 2255 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.71 kB │ gzip:   0.41 kB
+dist/assets/index-DVCpv8-l.css  127.18 kB │ gzip:  29.20 kB
+dist/assets/maps-DNySFZuc.js    167.65 kB │ gzip:  49.44 kB
+dist/assets/charts-B6tfgglp.js  394.86 kB │ gzip: 114.13 kB
+dist/assets/index-tuv_CFs6.js   582.87 kB │ gzip: 167.05 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 27.94s

@@ -1,0 +1,888 @@
+{
+  "proposal": {
+    "review": {
+      "passed": true,
+      "violations": [],
+      "resources": [
+        {
+          "kind": "lot",
+          "id": "L01",
+          "used_kg": 0,
+          "limit_kg": 1500,
+          "remaining_kg": 1500
+        },
+        {
+          "kind": "lot",
+          "id": "L02",
+          "used_kg": 400,
+          "limit_kg": 1500,
+          "remaining_kg": 1100
+        },
+        {
+          "kind": "lot",
+          "id": "L03",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "lot",
+          "id": "L04",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "lot",
+          "id": "L05",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "lot",
+          "id": "L06",
+          "used_kg": 0,
+          "limit_kg": 1500,
+          "remaining_kg": 1500
+        },
+        {
+          "kind": "lot",
+          "id": "L07",
+          "used_kg": 400,
+          "limit_kg": 1500,
+          "remaining_kg": 1100
+        },
+        {
+          "kind": "lot",
+          "id": "L08",
+          "used_kg": 0,
+          "limit_kg": 1500,
+          "remaining_kg": 1500
+        },
+        {
+          "kind": "lot",
+          "id": "L09",
+          "used_kg": 400,
+          "limit_kg": 1500,
+          "remaining_kg": 1100
+        },
+        {
+          "kind": "lot",
+          "id": "L10",
+          "used_kg": 0,
+          "limit_kg": 1500,
+          "remaining_kg": 1500
+        },
+        {
+          "kind": "lot",
+          "id": "L11",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "lot",
+          "id": "L12",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "truck",
+          "id": "T01",
+          "used_kg": 400,
+          "limit_kg": 1500,
+          "remaining_kg": 1100
+        },
+        {
+          "kind": "truck",
+          "id": "T02",
+          "used_kg": 0,
+          "limit_kg": 1500,
+          "remaining_kg": 1500
+        },
+        {
+          "kind": "truck",
+          "id": "T03",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "truck",
+          "id": "T04",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "truck",
+          "id": "T05",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "truck",
+          "id": "T06",
+          "used_kg": 400,
+          "limit_kg": 1500,
+          "remaining_kg": 1100
+        },
+        {
+          "kind": "truck",
+          "id": "T07",
+          "used_kg": 1200,
+          "limit_kg": 1500,
+          "remaining_kg": 300
+        },
+        {
+          "kind": "truck",
+          "id": "T08",
+          "used_kg": 800,
+          "limit_kg": 1500,
+          "remaining_kg": 700
+        },
+        {
+          "kind": "destination",
+          "id": "D01",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D02",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D03",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D04",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D05",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D06",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D07",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D08",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D09",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D10",
+          "used_kg": 0,
+          "limit_kg": 500,
+          "remaining_kg": 500
+        },
+        {
+          "kind": "destination",
+          "id": "D11",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D12",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D13",
+          "used_kg": 0,
+          "limit_kg": 500,
+          "remaining_kg": 500
+        },
+        {
+          "kind": "destination",
+          "id": "D14",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "destination",
+          "id": "D15",
+          "used_kg": 400,
+          "limit_kg": 500,
+          "remaining_kg": 100
+        },
+        {
+          "kind": "origin",
+          "id": "DC1",
+          "used_kg": 3200,
+          "limit_kg": 12000,
+          "remaining_kg": 8800
+        },
+        {
+          "kind": "origin",
+          "id": "DC2",
+          "used_kg": 2000,
+          "limit_kg": 10000,
+          "remaining_kg": 8000
+        },
+        {
+          "kind": "supplier",
+          "id": "SUP1",
+          "used_kg": 1200,
+          "limit_kg": 6000,
+          "remaining_kg": 4800
+        },
+        {
+          "kind": "supplier",
+          "id": "SUP2",
+          "used_kg": 2000,
+          "limit_kg": 6000,
+          "remaining_kg": 4000
+        },
+        {
+          "kind": "supplier",
+          "id": "SUP3",
+          "used_kg": 2000,
+          "limit_kg": 6000,
+          "remaining_kg": 4000
+        }
+      ],
+      "excluded_shipments": [
+        {
+          "shipment_id": "SH01",
+          "quantity_kg": 400,
+          "destination": "D01",
+          "reasons": [
+            "lot held"
+          ]
+        },
+        {
+          "shipment_id": "SH02",
+          "quantity_kg": 400,
+          "destination": "D02",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        },
+        {
+          "shipment_id": "SH06",
+          "quantity_kg": 400,
+          "destination": "D06",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        },
+        {
+          "shipment_id": "SH08",
+          "quantity_kg": 400,
+          "destination": "D08",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        },
+        {
+          "shipment_id": "SH09",
+          "quantity_kg": 400,
+          "destination": "D09",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        },
+        {
+          "shipment_id": "SH10",
+          "quantity_kg": 400,
+          "destination": "D10",
+          "reasons": [
+            "delivery deadline exceeded"
+          ]
+        },
+        {
+          "shipment_id": "SH13",
+          "quantity_kg": 400,
+          "destination": "D13",
+          "reasons": [
+            "lot held"
+          ]
+        },
+        {
+          "shipment_id": "SH18",
+          "quantity_kg": 400,
+          "destination": "D03",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        },
+        {
+          "shipment_id": "SH19",
+          "quantity_kg": 400,
+          "destination": "D04",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        },
+        {
+          "shipment_id": "SH20",
+          "quantity_kg": 400,
+          "destination": "D05",
+          "reasons": [
+            "delivery deadline exceeded"
+          ]
+        },
+        {
+          "shipment_id": "SH22",
+          "quantity_kg": 400,
+          "destination": "D07",
+          "reasons": [
+            "not selected under joint demand, stock, capacity and cost constraints"
+          ]
+        }
+      ],
+      "method": "Independent arithmetic and eligibility checks against the current canonical network; not a solver optimality proof.",
+      "exclusion_note": "Reasons describe direct eligibility blocks or joint allocation nonselection, not a counterfactual explanation of the solver."
+    },
+    "scenario": "A",
+    "name": "Baseline distribution",
+    "solver_status": "OPTIMAL",
+    "feasible": true,
+    "shipments": [
+      {
+        "id": "SH03",
+        "origin": "DC1",
+        "destination": "D03",
+        "lot_id": "L03",
+        "truck_id": "T03",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 1.031,
+        "estimated_distance_km": 67.02,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 8.5,
+        "review_priority": "high",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 144,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH04",
+        "origin": "DC2",
+        "destination": "D04",
+        "lot_id": "L04",
+        "truck_id": "T04",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.069,
+        "estimated_distance_km": 4.49,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.6,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 56,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH05",
+        "origin": "DC1",
+        "destination": "D05",
+        "lot_id": "L05",
+        "truck_id": "T05",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.552,
+        "estimated_distance_km": 230.86,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 373,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH07",
+        "origin": "DC1",
+        "destination": "D07",
+        "lot_id": "L07",
+        "truck_id": "T07",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.818,
+        "estimated_distance_km": 248.18,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.3,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 397,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH11",
+        "origin": "DC1",
+        "destination": "D11",
+        "lot_id": "L11",
+        "truck_id": "T03",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.154,
+        "estimated_distance_km": 10.03,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.6,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 64,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH12",
+        "origin": "DC2",
+        "destination": "D12",
+        "lot_id": "L12",
+        "truck_id": "T04",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.445,
+        "estimated_distance_km": 288.91,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 454,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH14",
+        "origin": "DC2",
+        "destination": "D14",
+        "lot_id": "L02",
+        "truck_id": "T06",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.181,
+        "estimated_distance_km": 11.75,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 66,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH15",
+        "origin": "DC1",
+        "destination": "D15",
+        "lot_id": "L03",
+        "truck_id": "T07",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.724,
+        "estimated_distance_km": 242.03,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.3,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 389,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH16",
+        "origin": "DC2",
+        "destination": "D01",
+        "lot_id": "L04",
+        "truck_id": "T08",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.904,
+        "estimated_distance_km": 253.75,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.7,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 405,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH17",
+        "origin": "DC1",
+        "destination": "D02",
+        "lot_id": "L05",
+        "truck_id": "T01",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.887,
+        "estimated_distance_km": 252.68,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.2,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 404,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH21",
+        "origin": "DC1",
+        "destination": "D06",
+        "lot_id": "L09",
+        "truck_id": "T05",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.091,
+        "estimated_distance_km": 5.94,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.7,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 58,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH23",
+        "origin": "DC1",
+        "destination": "D08",
+        "lot_id": "L11",
+        "truck_id": "T07",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 1.072,
+        "estimated_distance_km": 69.7,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.9,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 148,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      },
+      {
+        "id": "SH24",
+        "origin": "DC2",
+        "destination": "D09",
+        "lot_id": "L12",
+        "truck_id": "T08",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.115,
+        "estimated_distance_km": 7.47,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval",
+        "logistics_cost": 60,
+        "instruction": "Proposed assignment; requires dispatcher approval",
+        "verification_required": false
+      }
+    ],
+    "total_logistics_cost": 3018,
+    "unmet_demand_kg": 2300,
+    "delayed_shipments": 0,
+    "affected_shipments": 11,
+    "review_priority_count": 1,
+    "food_waste_kg": 0,
+    "food_waste_note": "No expiry in one-wave six-hour horizon; unsent stock remains inventory, not waste.",
+    "constraint_violations": 0,
+    "proposed_hold_lots": [],
+    "requires_human_approval": true,
+    "limitations": "One-wave allocation with fixed truck/OD estimates. D allows interchangeable simulated lots; rerouting alternatives require separate route review. Costs are simulated dollars.",
+    "id": "b0f61be9-ddd0-43a8-b0a1-cc3a6c987ebf",
+    "network_revision": 12
+  },
+  "assignments": [
+    {
+      "id": "SH03",
+      "origin": "DC1",
+      "destination": "D03",
+      "lot_id": "L03",
+      "truck_id": "T03",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 1.031,
+      "estimated_distance_km": 67.02,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 8.5,
+      "review_priority": "high",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 144,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH04",
+      "origin": "DC2",
+      "destination": "D04",
+      "lot_id": "L04",
+      "truck_id": "T04",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 0.069,
+      "estimated_distance_km": 4.49,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 2.6,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 56,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH05",
+      "origin": "DC1",
+      "destination": "D05",
+      "lot_id": "L05",
+      "truck_id": "T05",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 3.552,
+      "estimated_distance_km": 230.86,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 3,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 373,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH07",
+      "origin": "DC1",
+      "destination": "D07",
+      "lot_id": "L07",
+      "truck_id": "T07",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 3.818,
+      "estimated_distance_km": 248.18,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 2.3,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 397,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH11",
+      "origin": "DC1",
+      "destination": "D11",
+      "lot_id": "L11",
+      "truck_id": "T03",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 0.154,
+      "estimated_distance_km": 10.03,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 3.6,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 64,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH12",
+      "origin": "DC2",
+      "destination": "D12",
+      "lot_id": "L12",
+      "truck_id": "T04",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 4.445,
+      "estimated_distance_km": 288.91,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 1.4,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 454,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH14",
+      "origin": "DC2",
+      "destination": "D14",
+      "lot_id": "L02",
+      "truck_id": "T06",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 0.181,
+      "estimated_distance_km": 11.75,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 1.4,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 66,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH15",
+      "origin": "DC1",
+      "destination": "D15",
+      "lot_id": "L03",
+      "truck_id": "T07",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 3.724,
+      "estimated_distance_km": 242.03,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 2.3,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 389,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH16",
+      "origin": "DC2",
+      "destination": "D01",
+      "lot_id": "L04",
+      "truck_id": "T08",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 3.904,
+      "estimated_distance_km": 253.75,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 1.7,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 405,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH17",
+      "origin": "DC1",
+      "destination": "D02",
+      "lot_id": "L05",
+      "truck_id": "T01",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 3.887,
+      "estimated_distance_km": 252.68,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 1.2,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 404,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH21",
+      "origin": "DC1",
+      "destination": "D06",
+      "lot_id": "L09",
+      "truck_id": "T05",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 0.091,
+      "estimated_distance_km": 5.94,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 3.7,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 58,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH23",
+      "origin": "DC1",
+      "destination": "D08",
+      "lot_id": "L11",
+      "truck_id": "T07",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 1.072,
+      "estimated_distance_km": 69.7,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 2.9,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 148,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    },
+    {
+      "id": "SH24",
+      "origin": "DC2",
+      "destination": "D09",
+      "lot_id": "L12",
+      "truck_id": "T08",
+      "quantity_kg": 400,
+      "deadline_hours": 6,
+      "estimated_hours": 0.115,
+      "estimated_distance_km": 7.47,
+      "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+      "temperature_c": 3.4,
+      "review_priority": "routine",
+      "status": "pending dispatcher approval",
+      "logistics_cost": 60,
+      "instruction": "Dispatcher approved simulated assignment; park before interacting",
+      "verification_required": false,
+      "acknowledged": false
+    }
+  ],
+  "receipt": {
+    "status": "approved",
+    "assignments": 13
+  }
+}

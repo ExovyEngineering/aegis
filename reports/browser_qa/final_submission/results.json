@@ -1,0 +1,2566 @@
+{
+  "checked_at": "2026-11-02T17:09:58.330Z",
+  "base_url": "http://127.0.0.1:8072",
+  "expected_rehearsal_id": "8a801a9b-7dd3-4788-8f92-de2e87b5c77f",
+  "scope": "Actual Chrome five-task cards, measured integrated study, simulated policy comparisons and final artifacts. Read-only new-feature scope; earlier operational QA remains separate.",
+  "human_submission_verified": false,
+  "genuine_kiro_execution_verified": false,
+  "team_attestations_verified": false,
+  "public_provider_refresh_requested": false,
+  "checks": [
+    {
+      "name": "present inventoried originals match recorded raw hashes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/runtime-context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "runtime verifies exact reserved isolated offline UUID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "runtime database is exactly the reserved UUID path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/network",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/audit",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/driver",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "fresh UUID has no approved driver assignments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/challenge/integrated-model",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/challenge/decision-study",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "all five task cards match the recorded requirement evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 1 status and summary match retained evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 1 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 1 system-map.png link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 1 analytic-data.csv link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 1 dictionary.csv link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 1 provenance.json link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 2 status and summary match retained evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 2 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 2 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 2 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 2 integrated-model.json link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 2 analytic-data.csv link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 3 status and summary match retained evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 3 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 3 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 3 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 3 decision-study.json link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 3 decision-study.csv link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 4 status and summary match retained evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 4 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 4 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 4 guide.pdf link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 5 status and summary match retained evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 5 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 5 displays remaining evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 5 team-science.pdf link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 5 team-science.md link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task 5 integrated-model.json link uses bounded artifact API",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task4 accurately discloses Kiro was not used and requirement unmet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Task5 actual roles provided with final team review pending",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop five-task cards have no document overflow",
+      "passed": true,
+      "detail": "{\"viewport\":1440,\"document\":1440}"
+    },
+    {
+      "name": "maximum six screenshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/guide.pdf",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guide.pdf served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/guide.html",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guide.html served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/guide.md",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "guide.md served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/readiness.json",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "readiness.json served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/integrated-model.json",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "integrated-model.json served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/analytic-data.csv",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "analytic-data.csv served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/decision-study.json",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "decision-study.json served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/decision-study.csv",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "decision-study.csv served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/system-map.png",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "system-map.png served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/team-science.md",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "team-science.md served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/team-science.pdf",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "team-science.pdf served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/dictionary.csv",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "dictionary.csv served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/challenge/artifacts/provenance.json",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "provenance.json served bytes match the retained artifact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "final PDF signature bytes and manifest checksum match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JSON exports match the same API payloads",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "analytic export retains source dates labels and coverage exclusions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "dictionary includes integrated inputs with units and definitions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "provenance retains source identities hashes and integrity evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "One Health diagram has a valid PNG signature",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison CSV contains exactly three scenarios by three policies",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON baseline status_quo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON baseline model_volume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON baseline model_balanced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON fleet_scarcity status_quo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON fleet_scarcity model_volume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON fleet_scarcity model_balanced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON delay_supply_stress status_quo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON delay_supply_stress model_volume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV metrics match retained JSON delay_supply_stress model_balanced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual Chrome download guide.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Chrome download bytes match guide.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual Chrome download readiness.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Chrome download bytes match readiness.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual Chrome download dictionary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Chrome download bytes match dictionary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual HTML guide popup is local and has the final title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTML guide has all five task anchors and linked contents",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "five integrated model rows use the same held-out cohort",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual displayed metrics match baseline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual displayed metrics match fsis",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual displayed metrics match fsis_cdc",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual displayed metrics match core_integrated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual displayed metrics match with_nors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research scores cannot activate operational actions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "monthly source gaps remain null rather than zero scores",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rendered time series preserves all month labels including gap months",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rendered model curves break at unavailable source months",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "calibration and false-positive/negative consequences are inspectable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop model comparison has no document overflow",
+      "passed": true,
+      "detail": "{\"viewport\":1440,\"document\":1440}"
+    },
+    {
+      "name": "maximum six screenshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "study labels simulation and requires human approval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "three policy rows for baseline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline status_quo shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline model_volume shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline model_balanced shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "three policy rows for fleet_scarcity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fleet_scarcity status_quo shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fleet_scarcity model_volume shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fleet_scarcity model_balanced shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "three policy rows for delay_supply_stress",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "delay_supply_stress status_quo shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "delay_supply_stress model_volume shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "delay_supply_stress model_balanced shows actual study metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "policy comparison offers no approval dispatch or apply action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop policy comparison has no document overflow",
+      "passed": true,
+      "detail": "{\"viewport\":1440,\"document\":1440}"
+    },
+    {
+      "name": "maximum six screenshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile five-task and policy document fits viewport",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "maximum six screenshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "maximum six screenshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile integrated study fits viewport",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "maximum six screenshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile research metrics retain the five measured models",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all browser POSTs are exactly the read-only delivery outlook allowlist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no unauthorized or external non-tile requests were attempted",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Chrome has no unexpected JavaScript console HTTP or request errors",
+      "passed": true,
+      "detail": "{\"page\":[],\"console\":[],\"http\":[],\"request\":[]}"
+    },
+    {
+      "name": "GET /api/network",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/audit",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/driver",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "network audit and driver assignments are semantically unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "operator database and sidecars untouched",
+      "passed": true,
+      "detail": "Actual before/after SHA-256 file fingerprints. No reset, approval, dispatch or operator write authorized."
+    },
+    {
+      "name": "raw manifest and original downloads untouched",
+      "passed": true,
+      "detail": "Actual before/after SHA-256 file fingerprints. No reset, approval, dispatch or operator write authorized."
+    },
+    {
+      "name": "provider caches and dated fixtures untouched",
+      "passed": true,
+      "detail": "Actual before/after SHA-256 file fingerprints. No reset, approval, dispatch or operator write authorized."
+    },
+    {
+      "name": "isolated UUID database and sidecars untouched",
+      "passed": true,
+      "detail": "Actual before/after SHA-256 file fingerprints. No reset, approval, dispatch or operator write authorized."
+    }
+  ],
+  "screenshots": [
+    "desktop-five-task-readiness.png",
+    "desktop-integrated-study.png",
+    "desktop-policy-comparison.png",
+    "mobile-five-task-readiness.png",
+    "mobile-policy-comparison.png",
+    "mobile-integrated-study.png"
+  ],
+  "downloads": [
+    {
+      "name": "guide.pdf",
+      "url": "http://127.0.0.1:8072/api/challenge/artifacts/guide.pdf",
+      "filename": "final_submission_guide.pdf",
+      "bytes": 237543,
+      "sha256": "795bf4a42d26fb71d39060c442a8b5e0d173734c83e10431f1927bbc82f1b1f7"
+    },
+    {
+      "name": "readiness.json",
+      "url": "http://127.0.0.1:8072/api/challenge/artifacts/readiness.json",
+      "filename": "challenge_readiness.json",
+      "bytes": 7200,
+      "sha256": "c8a3f2ab5b0e526e73e6877486bbc3ba9abf3316c80816e0b8708f45f0552144"
+    },
+    {
+      "name": "dictionary.csv",
+      "url": "http://127.0.0.1:8072/api/challenge/artifacts/dictionary.csv",
+      "filename": "data_dictionary.csv",
+      "bytes": 37401,
+      "sha256": "8fce5278b28c996026874708512357ddc870271541a16c18f950026b24e73e59"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "guide.pdf",
+      "path": "reports/final_submission_guide.pdf",
+      "bytes": 237543,
+      "sha256": "795bf4a42d26fb71d39060c442a8b5e0d173734c83e10431f1927bbc82f1b1f7",
+      "content_type": "application/pdf"
+    },
+    {
+      "name": "guide.html",
+      "path": "reports/final_submission_guide.html",
+      "bytes": 626604,
+      "sha256": "848bfb14204afdf859f4097630632757d41a58d0932c165f9d7202b1f29f6ade",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "name": "guide.md",
+      "path": "reports/final_submission_guide.md",
+      "bytes": 21711,
+      "sha256": "bf3e05eee9fd496251ae8f4179f5b5551f028cd889f8fa6e0deb4f682cff6875",
+      "content_type": "text/markdown; charset=utf-8"
+    },
+    {
+      "name": "readiness.json",
+      "path": "reports/challenge_readiness.json",
+      "bytes": 7200,
+      "sha256": "c8a3f2ab5b0e526e73e6877486bbc3ba9abf3316c80816e0b8708f45f0552144",
+      "content_type": "application/json"
+    },
+    {
+      "name": "integrated-model.json",
+      "path": "reports/integrated_model_evaluation.json",
+      "bytes": 48286,
+      "sha256": "be715521e5b82fddd7fae63162c990ff1d1858d7737aa8c818594b087fa5e575",
+      "content_type": "application/json"
+    },
+    {
+      "name": "analytic-data.csv",
+      "path": "data/processed/integrated_mo_analytic.csv",
+      "bytes": 600005,
+      "sha256": "ecfd751025d06444049534210a24d38927035af1ec623861ac0d5f2e313db448",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    {
+      "name": "decision-study.json",
+      "path": "reports/decision_study.json",
+      "bytes": 478092,
+      "sha256": "11441fb16f9b6b3a218ad9b367ebff3cdd0239546b112d18e9e995a8750062ca",
+      "content_type": "application/json"
+    },
+    {
+      "name": "decision-study.csv",
+      "path": "reports/decision_study.csv",
+      "bytes": 1946,
+      "sha256": "a1d5186903a90eedd40380ce4013aa43638507115cd4ed1cbbf565ccf9f20f55",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    {
+      "name": "system-map.png",
+      "path": "reports/figures/one_health_system.png",
+      "bytes": 447702,
+      "sha256": "25af8f2c58c5fd5b6674a7bc218730dbafbe7007d94d83daceac8246641d663e",
+      "content_type": "image/png"
+    },
+    {
+      "name": "team-science.md",
+      "path": "docs/team_science_statement.md",
+      "bytes": 4198,
+      "sha256": "1ac72784b09a0d60848f216d361a9019bf70cec86cb80f4f44d924b418c82aeb",
+      "content_type": "text/markdown; charset=utf-8"
+    },
+    {
+      "name": "team-science.pdf",
+      "path": "reports/team_science_statement.pdf",
+      "bytes": 32931,
+      "sha256": "56f8b92c4dd4cba18341f29d50ca8517286f9846ad12b35fda3288f232a7a07b",
+      "content_type": "application/pdf"
+    },
+    {
+      "name": "dictionary.csv",
+      "path": "reports/data_dictionary.csv",
+      "bytes": 37401,
+      "sha256": "8fce5278b28c996026874708512357ddc870271541a16c18f950026b24e73e59",
+      "content_type": "text/csv; charset=utf-8"
+    },
+    {
+      "name": "provenance.json",
+      "path": "reports/source_provenance.json",
+      "bytes": 20517,
+      "sha256": "1ee2593b9b60d661a13b4eeae24c223bbf081c27eb417385e11b1b1f7eb2756c",
+      "content_type": "application/json"
+    }
+  ],
+  "post_requests": [
+    {
+      "phase": "desktop_task_cards",
+      "path": "/api/delivery-outlook",
+      "body": {
+        "added_delay_minutes": 0,
+        "ambient_temperature_c": 30,
+        "fault_truck_id": null,
+        "expected_network_revision": 0
+      },
+      "allowed": true
+    }
+  ],
+  "blocked_requests": [],
+  "external_qa_placeholders": [
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://a.tile.openstreetmap.org/10/248/391.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://b.tile.openstreetmap.org/10/249/391.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://c.tile.openstreetmap.org/10/248/390.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://a.tile.openstreetmap.org/10/249/390.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://b.tile.openstreetmap.org/10/248/392.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://c.tile.openstreetmap.org/10/249/392.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://c.tile.openstreetmap.org/10/247/391.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://c.tile.openstreetmap.org/10/250/391.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://b.tile.openstreetmap.org/10/247/390.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://b.tile.openstreetmap.org/10/250/390.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://a.tile.openstreetmap.org/10/247/392.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    },
+    {
+      "phase": "desktop_task_cards",
+      "url": "https://a.tile.openstreetmap.org/10/250/392.png",
+      "kind": "Browser-only QA tile placeholder; public map tiles not contacted"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "http_failures": [],
+  "request_failures": [],
+  "control_requests": [
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/runtime-context",
+      "status": 200
+    },
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/network",
+      "status": 200
+    },
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/audit",
+      "status": 200
+    },
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/driver",
+      "status": 200
+    },
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/challenge",
+      "status": 200
+    },
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/challenge/integrated-model",
+      "status": 200
+    },
+    {
+      "phase": "runtime_guard",
+      "method": "GET",
+      "endpoint": "/api/challenge/decision-study",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/guide.pdf",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/guide.html",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/guide.md",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/readiness.json",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/integrated-model.json",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/analytic-data.csv",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/decision-study.json",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/decision-study.csv",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/system-map.png",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/team-science.md",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/team-science.pdf",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/dictionary.csv",
+      "status": 200
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "method": "GET",
+      "endpoint": "/api/challenge/artifacts/provenance.json",
+      "status": 200
+    },
+    {
+      "phase": "final_read_only_guards",
+      "method": "GET",
+      "endpoint": "/api/network",
+      "status": 200
+    },
+    {
+      "phase": "final_read_only_guards",
+      "method": "GET",
+      "endpoint": "/api/audit",
+      "status": 200
+    },
+    {
+      "phase": "final_read_only_guards",
+      "method": "GET",
+      "endpoint": "/api/driver",
+      "status": 200
+    }
+  ],
+  "operator_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "raw_before": {
+    "manifest": {
+      "exists": true,
+      "bytes": 1556454,
+      "sha256": "346a242b531178d992eb01600d1dcea2344198cb0730800851677c2e6bbc513a"
+    },
+    "files": [
+      {
+        "filename": "2025-food-environment-atlas-data.xlsx",
+        "expected_sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0",
+        "exists": true,
+        "bytes": 9104656,
+        "sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0"
+      },
+      {
+        "filename": "2025-sram-fara-data.xlsx",
+        "expected_sha256": "fd0eff35de6664e27bb5ecbffbe1e8e5ea044979d4237b09b18010e8a4449858",
+        "exists": true,
+        "bytes": 112608645,
+        "sha256": "fd0eff35de6664e27bb5ecbffbe1e8e5ea044979d4237b09b18010e8a4449858"
+      },
+      {
+        "filename": "AEGIS API & Dataset Registry.xlsx",
+        "expected_sha256": "93a700c02f0a47d7b7ce4659b75ab28fe00e1398ee1e9ee54aec6c1cbf1bde82",
+        "exists": true,
+        "bytes": 8266,
+        "sha256": "93a700c02f0a47d7b7ce4659b75ab28fe00e1398ee1e9ee54aec6c1cbf1bde82"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+        "expected_sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6",
+        "exists": true,
+        "bytes": 100469,
+        "sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+        "expected_sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274",
+        "exists": true,
+        "bytes": 17585042,
+        "sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+        "expected_sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321",
+        "exists": true,
+        "bytes": 61808,
+        "sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+        "expected_sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060",
+        "exists": true,
+        "bytes": 245837,
+        "sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060"
+      },
+      {
+        "filename": "BEAM_Dashboard_–_Top_30_Most_Common_Serotypes_20261026.csv",
+        "expected_sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63",
+        "exists": true,
+        "bytes": 270714,
+        "sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63"
+      },
+      {
+        "filename": "Dataset_Establishment_Demographic_Data.csv",
+        "expected_sha256": "151e6efc89061ad9c13207b3198e193757967ecdfb711163e1bd0de73b0f782e",
+        "exists": true,
+        "bytes": 2879549,
+        "sha256": "151e6efc89061ad9c13207b3198e193757967ecdfb711163e1bd0de73b0f782e"
+      },
+      {
+        "filename": "Dataset_EstablishmentCategoriesAggregate_202609_0.xlsx",
+        "expected_sha256": "1c74e0f45888e7f8dca31db351860d21972b8d875487c9fee4f77b465c52386e",
+        "exists": true,
+        "bytes": 24232,
+        "sha256": "1c74e0f45888e7f8dca31db351860d21972b8d875487c9fee4f77b465c52386e"
+      },
+      {
+        "filename": "FoodAccessResearchAtlasData2019.xlsx",
+        "expected_sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8",
+        "exists": true,
+        "bytes": 85803176,
+        "sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8"
+      },
+      {
+        "filename": "fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+        "expected_sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe",
+        "exists": true,
+        "bytes": 93855008,
+        "sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe"
+      },
+      {
+        "filename": "fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+        "expected_sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c",
+        "exists": true,
+        "bytes": 94108613,
+        "sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c"
+      },
+      {
+        "filename": "fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+        "expected_sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d",
+        "exists": true,
+        "bytes": 69582390,
+        "sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d"
+      },
+      {
+        "filename": "FY2025-FSIS-Outbreak-Investigations-Annual-Report.pdf",
+        "expected_sha256": "7e6a43fe5d107c8dfffed9fe82b2d27f4628b61321d1d169f9c8dfd5b38f4b42",
+        "exists": true,
+        "bytes": 225888,
+        "sha256": "7e6a43fe5d107c8dfffed9fe82b2d27f4628b61321d1d169f9c8dfd5b38f4b42"
+      },
+      {
+        "filename": "fy23-fsis-outbreak-investigations-annual-report.pdf",
+        "expected_sha256": "645ccb7958f381795aa108f168b2a3ecdae2e6e041bb13de6a60e0036f97843e",
+        "exists": true,
+        "bytes": 152996,
+        "sha256": "645ccb7958f381795aa108f168b2a3ecdae2e6e041bb13de6a60e0036f97843e"
+      },
+      {
+        "filename": "fy24-fsis-outbreak-investigations-annual-report.pdf",
+        "expected_sha256": "b66eb8c88b5e94339f4c27dae80ec2b445639df710e7bdcc39adf78a1f3c3ec7",
+        "exists": true,
+        "bytes": 241044,
+        "sha256": "b66eb8c88b5e94339f4c27dae80ec2b445639df710e7bdcc39adf78a1f3c3ec7"
+      },
+      {
+        "filename": "missouri-cis.xlsx",
+        "expected_sha256": "9e86274c5d123fd4cf39226042f21c30edbcf6b5d034c14aafaec8a0214db4ea",
+        "exists": true,
+        "bytes": 19332,
+        "sha256": "9e86274c5d123fd4cf39226042f21c30edbcf6b5d034c14aafaec8a0214db4ea"
+      },
+      {
+        "filename": "MPI_Directory_by_Establishment_Name.csv",
+        "expected_sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e",
+        "exists": true,
+        "bytes": 1779074,
+        "sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e"
+      },
+      {
+        "filename": "NORS Data Documentation_2023.09.08.pdf",
+        "expected_sha256": "05db69a7892f0452b460052835aaa4e9b0ea2f2aeec8419a08e2331a916abff1",
+        "exists": true,
+        "bytes": 417190,
+        "sha256": "05db69a7892f0452b460052835aaa4e9b0ea2f2aeec8419a08e2331a916abff1"
+      },
+      {
+        "filename": "NORS-Flat-DataDictionary-508_JAN2025_CLEAN.xlsx",
+        "expected_sha256": "7e2b0842113e25b18b287af90a654104eaf340076d4072ae4a0b889c07fc96d3",
+        "exists": true,
+        "bytes": 94548,
+        "sha256": "7e2b0842113e25b18b287af90a654104eaf340076d4072ae4a0b889c07fc96d3"
+      },
+      {
+        "filename": "NORS.xlsx",
+        "expected_sha256": "3fd6fe5efaa2317a6e2f876ae211ee614a14294788becbf422f38953771638c8",
+        "exists": true,
+        "bytes": 3803216,
+        "sha256": "3fd6fe5efaa2317a6e2f876ae211ee614a14294788becbf422f38953771638c8"
+      },
+      {
+        "filename": "NORS_20261026.csv",
+        "expected_sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987",
+        "exists": true,
+        "bytes": 8967215,
+        "sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987"
+      },
+      {
+        "filename": "primary_table_data_0.csv",
+        "expected_sha256": "e26332822923d627ca33eedcec84fc9cc3765f15cd9d692ab905a30b96d9681b",
+        "exists": true,
+        "bytes": 8497,
+        "sha256": "e26332822923d627ca33eedcec84fc9cc3765f15cd9d692ab905a30b96d9681b"
+      },
+      {
+        "filename": "siluriformes-i-houses.pdf",
+        "expected_sha256": "78b6d65c9692ac8c80de4fc4851db5c588802945f91e0c96873116429479927c",
+        "exists": true,
+        "bytes": 137476,
+        "sha256": "78b6d65c9692ac8c80de4fc4851db5c588802945f91e0c96873116429479927c"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+        "expected_sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07",
+        "exists": true,
+        "bytes": 1738881,
+        "sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+        "expected_sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e",
+        "exists": true,
+        "bytes": 1721176,
+        "sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+        "expected_sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8",
+        "exists": true,
+        "bytes": 1398367,
+        "sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+        "expected_sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad",
+        "exists": true,
+        "bytes": 36465951,
+        "sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+        "expected_sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038",
+        "exists": true,
+        "bytes": 36748204,
+        "sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+        "expected_sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e",
+        "exists": true,
+        "bytes": 29808273,
+        "sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+        "expected_sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3",
+        "exists": true,
+        "bytes": 4962440,
+        "sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+        "expected_sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38",
+        "exists": true,
+        "bytes": 5086168,
+        "sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+        "expected_sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf",
+        "exists": true,
+        "bytes": 4063370,
+        "sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+        "expected_sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+        "exists": true,
+        "bytes": 101258611,
+        "sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+        "expected_sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+        "exists": true,
+        "bytes": 106469741,
+        "sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+        "expected_sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+        "exists": true,
+        "bytes": 79369857,
+        "sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+        "expected_sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab",
+        "exists": true,
+        "bytes": 29958187,
+        "sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+        "expected_sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f",
+        "exists": true,
+        "bytes": 48762882,
+        "sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+        "expected_sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95",
+        "exists": true,
+        "bytes": 26007277,
+        "sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+        "expected_sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e",
+        "exists": true,
+        "bytes": 215619,
+        "sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+        "expected_sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e",
+        "exists": true,
+        "bytes": 1828382,
+        "sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e"
+      }
+    ]
+  },
+  "fixtures_before": {
+    "data/fixtures/fsis_recalls.json": {
+      "exists": true,
+      "bytes": 26493,
+      "sha256": "f7cea9d9d9d5dfee146cff55e4e9c6f1412f3b5bc4869cb8435f16547243f525"
+    },
+    "data/fixtures/iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108723,
+      "sha256": "a4c3b69e32b0bf3755684e21b24e8264de9efb8fca63e6dccde129722e89a445"
+    },
+    "data/fixtures/modot.json": {
+      "exists": true,
+      "bytes": 3424614,
+      "sha256": "234f68d635c4cac0d3dbdddcfedbe4912e9cc96a6505f5d5063f868a9c7713f6"
+    },
+    "data/fixtures/ncei_historical.json": {
+      "exists": true,
+      "bytes": 2271,
+      "sha256": "f8bb321f60bba3197f9e958bc73dbd035fcf0a82372b985c3e047382e5ea677d"
+    },
+    "data/fixtures/nws_alerts.json": {
+      "exists": true,
+      "bytes": 577,
+      "sha256": "33dffebf6a2b363bec624487e3b966bb5246464b15e88a9249ed1b5fb6a5d60d"
+    },
+    "data/fixtures/openmeteo.json": {
+      "exists": true,
+      "bytes": 6239,
+      "sha256": "92c54d9e2b9d51b5a4673a90c6a685ea75d28411715cf20d2753a58984df3eee"
+    },
+    "data/fixtures/openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1282,
+      "sha256": "a8262eb9ac8a21393083d53e86cc7c0e6e671a4e7e2a18cb9fde5adac005012b"
+    },
+    "data/fixtures/osrm_route.json": {
+      "exists": true,
+      "bytes": 625979,
+      "sha256": "d028566a6538f40eaa31e4963a8128566ee7b20ad3a4e6ef07837751bf96f1c4"
+    }
+  },
+  "cache_before": {
+    "data/cache/0364f17aa89dc909e0deec6e4c7ea2815b08268cab17cee837dc5de5114ad193.json": {
+      "exists": true,
+      "bytes": 90278,
+      "sha256": "c01645581598ef8edc88db23bb9470834587b4b718d24749ba17b355d4b300eb"
+    },
+    "data/cache/03709b81730cc269c3f8caf3294682daa2815161710ab21b99c624b7f02b6a9d.json": {
+      "exists": true,
+      "bytes": 2017,
+      "sha256": "36237d61cf1afe6e7cddde1ac1f45b7aabc0e4f3691f1f176ce6fefd201a2bb8"
+    },
+    "data/cache/0398d3635646b5cfb5a07c7197721f936df737c3647b2f970faa8892f32c654d.json": {
+      "exists": true,
+      "bytes": 44083,
+      "sha256": "2466bc3469ad60c65b516e87c936f5c9b65d687c56aa5545fa1ac24b20e093f0"
+    },
+    "data/cache/04b5d887fbaecf91051807cc35d79407cdc7100635bd88b246888b693fa260d7.json": {
+      "exists": true,
+      "bytes": 144019,
+      "sha256": "346290aaa610011265bea6be9c66156b35f0e54976dac99c01b8130927aea8ed"
+    },
+    "data/cache/0f00eb6573de23dfc423d17115cfd0f1e565a8adf75e36a8daf0d6173aa73f5a.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "f0fc9a046325c70a684a06cdc986ab4eb2239e5fa1f0285821ce948335363fd9"
+    },
+    "data/cache/10b525c6250e89befe3169ea5cdd301750871e9a3df649e375e4b7273ed8a52e.json": {
+      "exists": true,
+      "bytes": 411045,
+      "sha256": "3ef154a63ccf111c47d2a34305e1e2747ae721138247b7a6af6d5d0802a8f5ca"
+    },
+    "data/cache/132ec4feeaa1dcb9d1667aaa39191b6b3067bc2a27da18967f13ba7ead2a658f.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "4413200f1f59077f9bfc54ac3f98f04ab855fb14f8b9ec28c9748aea2c6daf75"
+    },
+    "data/cache/135b7df331206c8e1d2f660a20728c43a0cb953af30b408c6341f934ccb126d1.json": {
+      "exists": true,
+      "bytes": 90185,
+      "sha256": "2e174965ca6591a603b61d9fcc357341ef0f24ccf1e8d9dfbaa0aea119522aba"
+    },
+    "data/cache/2818a35ed295495bc724fbbdadd60f6ec8b8e6b8f486a80c95556dbc800b30e7.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "1a8a253bfa6b1aca3c4350df3d4eea365fd293d4c5b167d1ef0b678fa3667038"
+    },
+    "data/cache/2a6ca4c2bfd6209fbe6b56e2f2346d79a63c4dce746b8e5ef4babd9d2e68b478.json": {
+      "exists": true,
+      "bytes": 34945,
+      "sha256": "3bea1ffba383f951c5e8154a0b66e7526bfa7d68fe9823a26260c17ae4f77ad7"
+    },
+    "data/cache/2aeecba5d2858f5da34ebb26e8823341efa7cab7c685140d1024968af8ff238c.json": {
+      "exists": true,
+      "bytes": 141594,
+      "sha256": "fbdc5720b34d22ae376b944c60d23e7053268664368a7e4e0bdee47a23fd863c"
+    },
+    "data/cache/2e8f9e4ee6797bb7789da5b816cc4af313f38edc4c63a34f97b6bc0d24b5ca4c.json": {
+      "exists": true,
+      "bytes": 144720,
+      "sha256": "d41759c896828878029cc20fc89a88f64d2f51940a4b5499902b006b5286cb0a"
+    },
+    "data/cache/2e9911ce316ac4c6e6bfe3034ed862e8b4312702fb4dded3fbb77eba36ea3d5d.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "43e1bb8613d76b0531fbd8ab7c4522b5ddbb696dbeed4b2449623f43793d350c"
+    },
+    "data/cache/32f752a0fdc38569a12b95a9e790691d70182474612c16a3c66b16ad245fe9ac.json": {
+      "exists": true,
+      "bytes": 349,
+      "sha256": "be4866ce70b8f9895a266b698b58884feb86d125a6d00be8f8eaf590a7a77657"
+    },
+    "data/cache/336e646bc32b20441de2790e5c5fa1f37908124671fca826fd3a85f7de130cfc.json": {
+      "exists": true,
+      "bytes": 417888,
+      "sha256": "5264bfccbdc6b8621c2e21095b9097e3716dd743067561887206661c6fa56a2b"
+    },
+    "data/cache/338f9e31a8150ed3f63c2a37a131a18290e0b1bba9afe0f6161f11e4f3156bbd.json": {
+      "exists": true,
+      "bytes": 1189574,
+      "sha256": "2f08a554c0390b7572325343d7a623425b5384ec80e01964ca901c02e0d7ba72"
+    },
+    "data/cache/339c733ed4ee7d291bf0a90daed133022621edcaddefd38b5d84c5901597d8a7.json": {
+      "exists": true,
+      "bytes": 17379,
+      "sha256": "950a1e8dae99d9f332963b4ec4c27da734ebe556a872227de51a401f9e1576c4"
+    },
+    "data/cache/33ce48f7be755b3cef5ddf1b81ed43bf91e1ae429dbc0d333718beca6d4d1e40.json": {
+      "exists": true,
+      "bytes": 369217,
+      "sha256": "59a74e3d68ba99b6f4bd840c2821f2cb10ad0cac136bf47e4af3beda9d6be337"
+    },
+    "data/cache/398ec7a1fc516369e21bc37d397b74ea614fbc3c842f6f0336d4cbad231d6a1a.json": {
+      "exists": true,
+      "bytes": 44382,
+      "sha256": "38ce51106430529db65cd5a2c33eaaedf3a16e59b1cbcd6610fd23f803deea1a"
+    },
+    "data/cache/3d68a1a695ce8d1031df225453f83f925b99338f570a5d9daa65158dc5d294f1.json": {
+      "exists": true,
+      "bytes": 142381,
+      "sha256": "4c0974861e06c0226afda794f2e5cee08fe7c79a4ededcfa67057f0389fdc360"
+    },
+    "data/cache/489d3afbffa67c196b3a562dcf7dfd0a5a0afd7b012d5057d763a5ca89105630.json": {
+      "exists": true,
+      "bytes": 10742,
+      "sha256": "8104c8c947812d67da4100746b0b652a27e9f861deb53c58793c48661456387a"
+    },
+    "data/cache/4b3d08bffa1cadae58e056cf99419358960f786492bc73594772b0ed69bc5cf1.json": {
+      "exists": true,
+      "bytes": 270069,
+      "sha256": "887901f263db689d20d045b2ad3a4766470b6f1eb1187c4913c9d309ea4adf90"
+    },
+    "data/cache/6ed8626280219ac86bd81f9e6efeee6abf0a2bfa8293df0979f3145c5da469a1.json": {
+      "exists": true,
+      "bytes": 508362,
+      "sha256": "54f58cfa86971ccdf8d99cc566ad8f6175181809e6bdc9176c918d18bb67f8f9"
+    },
+    "data/cache/782d4a36191292b0e87bc76e6dbb4931891b43bc05679569b36f292e95d16e0c.json": {
+      "exists": true,
+      "bytes": 12373827,
+      "sha256": "11128d77d8852c404d69ec3f67491bb711c84ea264d9a3e0e8eb76478054c4c9"
+    },
+    "data/cache/7cb3b29022160e624a27c70e93d3e3f6c84d48ae3f6114b6fb541708eda7eb62.json": {
+      "exists": true,
+      "bytes": 8870,
+      "sha256": "8f74d6b935551b7c0396a59c3b1ad4982d8c28578e98005fee0c8ad8d3b854b9"
+    },
+    "data/cache/7cd90c127147fb11dfbfca9d9ff3d50225569670be7ecd4bedc6601a6ede874d.json": {
+      "exists": true,
+      "bytes": 58403,
+      "sha256": "69ef0643f368b11ff99e24fbf8c33eadd82b9aee8fc778f06a0db7ec703e63d4"
+    },
+    "data/cache/839052bc2b5dc6a65c2541f3c622d8c0187afd9446bebea3fb27a13bc8084a77.json": {
+      "exists": true,
+      "bytes": 156274,
+      "sha256": "d9077f0e44de09e2b2d2173e412e3fae0f928c6262e6f3218a81d344c352f288"
+    },
+    "data/cache/9cafce6e34dfded8b35bfa57834829fe3748575d8dca3596b5393a7c5a3e1389.json": {
+      "exists": true,
+      "bytes": 21754,
+      "sha256": "782b23d47e329744b32c63e0e9d5072b43f36e398ca484f5fef8e2fbb41f633d"
+    },
+    "data/cache/a27bf9d04f6b7622fbcc8fff08f84027f291f523a3493c11816193ec0f4b8f85.json": {
+      "exists": true,
+      "bytes": 6092,
+      "sha256": "ffaa39cfa8fefcb7ec0ad37747dd5ba230d62909340b2935ee1082548144ac80"
+    },
+    "data/cache/a83a65087c743f54e48d52449a1568ce24fd7191b3b55076f155601962cffcd1.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "75318155d9fbcbb8121b577b2c61ec084403fb9c6461036abf1cbb0ed88e8198"
+    },
+    "data/cache/a9cdf9f1322e80559484dd4f2449820aeacac6c842cce1db90980df4af4fb712.json": {
+      "exists": true,
+      "bytes": 190987,
+      "sha256": "a034f12a0ebfb2177b8eb7ff0b15217e61220317a0deb4d8b6a59dfdc91ec1bf"
+    },
+    "data/cache/b9faacfa3f2c7b8426522c4fe8ca66581b67cd88757af5b7e96b6b078871767c.json": {
+      "exists": true,
+      "bytes": 12840,
+      "sha256": "2f620f25e87a85de94af2d19ca3e3013a0c420e9a772b99526e152bab033c721"
+    },
+    "data/cache/ba11441fa38559492c3b7fd9539740eaa4e4c324037aa88bd5c1ad65c91df805.json": {
+      "exists": true,
+      "bytes": 407,
+      "sha256": "270ef24ee26c6ac24a7d3eee7e00d32cb07ce8d31f6e5aeac3716a45a8590954"
+    },
+    "data/cache/bebd20ba1d793133341ceb78b9188414fe4643921c5c806394b3033b20f33b08.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "650cdc4c58f42e9d012f772e7f91587eabd3f8c2edabf1c28620e4864c2d8c70"
+    },
+    "data/cache/bfa095ebfab32bcfae28a7de3b5993d6948e34cd7c83b80f558d8839d95f868b.json": {
+      "exists": true,
+      "bytes": 145035,
+      "sha256": "82398d4ee6f4fd703048892151501f4b760ba6dd197ff4dc8f47765ff2d5f2d4"
+    },
+    "data/cache/c82df6b6923461f1d5bf4ca9f983c1915f717dca2a556c29d7b5c964ad951539.json": {
+      "exists": true,
+      "bytes": 221183,
+      "sha256": "f381f714959782c78fd0e42dd95c0fb1a7f3a4868069b6aed7a7730fdca9ea43"
+    },
+    "data/cache/ca89b20a7b2b51e7b8e33c8291acfd5631fe9aea41f9366d04eafe2ee7284d67.json": {
+      "exists": true,
+      "bytes": 14402,
+      "sha256": "3942ef2757957c9bc4d23ee8ea9de1bb72905c0ca6ee1f1edd332d13ed1cb4a9"
+    },
+    "data/cache/connectivity_iowa_dot.json": {
+      "exists": true,
+      "bytes": 1882,
+      "sha256": "aea86742b3aee6a18464d24e1bda3dfa773e11763038a06bb24c7b2a75b77297"
+    },
+    "data/cache/connectivity_modot.json": {
+      "exists": true,
+      "bytes": 10704,
+      "sha256": "f672cc45384f72fa258dd72f974a1b4b4bfd14c7ab9974471c8ef4f6949ad549"
+    },
+    "data/cache/connectivity_osrm_route.json": {
+      "exists": true,
+      "bytes": 207946,
+      "sha256": "77b0e6473ca7fda7b79c82ceb74d388e22cc52cf5fb39424ddc005b509a05b27"
+    },
+    "data/cache/d038ad5799eea94f366c0203b2ba0c6690c23a7df939cdbfa940b8e4443720fb.json": {
+      "exists": true,
+      "bytes": 933025,
+      "sha256": "5e8c806088a855a27f43bf2f640d30d1c546fac15d5e8fac2b571ad736bb5040"
+    },
+    "data/cache/d3dfacfc232d82391d42faab88de211e717fc64a06f65fe053b45e47c24aba8c.json": {
+      "exists": true,
+      "bytes": 7426,
+      "sha256": "8bb8d1352f62259d84a35978521e61d0766a211f880ef176c68fdc1c297f8d88"
+    },
+    "data/cache/e5c7272654494a423757867891321e25682bbf66de9be6b632110f9774432624.json": {
+      "exists": true,
+      "bytes": 122780,
+      "sha256": "2b73adc45f0c322bdc4623615e3031a9d72a8a41a2ee12c4a675cf4d1f11e1d8"
+    },
+    "data/cache/e8063084e84a95fd4a7c06bf7e1a746a595fef3516c5eaa19ee26d6240a2b960.json": {
+      "exists": true,
+      "bytes": 12741,
+      "sha256": "3914c8d9fea7630f4e55cf3316ccc3138ae8441ecdbc5ac0122bba4192eb6c9f"
+    },
+    "data/cache/e9f469800e09f16d8477ab2ce15b2d021935068756651e6c32e1713a3cc7a626.json": {
+      "exists": true,
+      "bytes": 143888,
+      "sha256": "54aaf18680cdc5f9ba74a74be73663fe7298ba0ec2274a7c51de5f30340d546a"
+    },
+    "data/cache/eebc0c7ee7082e911194264801d92b2b4c6c989a1b1d00d2b408d27a83e749f4.json": {
+      "exists": true,
+      "bytes": 398006,
+      "sha256": "8ad3b286b12273ef25d19d392580d9135499ad08103751c0af6a7dc434c8fb7b"
+    },
+    "data/cache/f2dea27d65488ef70a4990878320542a5614fe57054e1d0cce466efe969e8ad3.json": {
+      "exists": true,
+      "bytes": 19820,
+      "sha256": "e8904d70f3bc4478e29c5aa591bb9f2bb660289253ca85ab1a5df5831ac2f430"
+    },
+    "data/cache/ffb18d544710bae9f36891a5936b540729731a4b24c9a5f85a421bd2fdb56394.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "d400544314e322fc355bc466c33f24f7c009cb9f54f244334c019f706ba5e31b"
+    },
+    "data/cache/matplotlib/fontlist-v3.11.0.json": {
+      "exists": true,
+      "bytes": 193310,
+      "sha256": "4eeac64713757392f4f38708dfe2bdb0d42c44e26f491bdfd62255a853a4c2ec"
+    },
+    "data/cache/probe_fsis_recalls.json": {
+      "exists": true,
+      "bytes": 12373837,
+      "sha256": "988eed160b8564796b33043a682e267310fce804553c974e3f37a3109f6def34"
+    },
+    "data/cache/probe_iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108498,
+      "sha256": "94e84daf9ee3d3da29eb2c2e8a5277f3390b6d0e230eb3907334b1acf36dc9bb"
+    },
+    "data/cache/probe_modot.json": {
+      "exists": true,
+      "bytes": 3759802,
+      "sha256": "368def5948845ab8e1d6486e7f4b08c4d7fd747a447b99be9861934906599c9f"
+    },
+    "data/cache/probe_ncei_historical.json": {
+      "exists": true,
+      "bytes": 2144,
+      "sha256": "89158efb8761659cae228d3d45913f4b27e9e0668411a4b93642b1ad82fb5c03"
+    },
+    "data/cache/probe_nws_alerts.json": {
+      "exists": true,
+      "bytes": 369,
+      "sha256": "674ada66d6544ffa4ebe136ae309ba8d4ce2ea16efc3ccfd33d12473cb74aa09"
+    },
+    "data/cache/probe_nws_points.json": {
+      "exists": true,
+      "bytes": 3755,
+      "sha256": "7ee0d4e8376d182ab91f9df5637b6a53e08aba8bcac6be52e46ddb3efdf92e85"
+    },
+    "data/cache/probe_openmeteo.json": {
+      "exists": true,
+      "bytes": 6038,
+      "sha256": "0fbd0cf5b09b9378b1b9a9f318bb770c793dcde1d020dc1473264d17634c84e1"
+    },
+    "data/cache/probe_openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1157,
+      "sha256": "ccd191b61ec17f0c5fc8b7441d6c7322e4cfa32c1b99c3b9e6c649f7cd6db060"
+    },
+    "data/cache/probe_osrm_route.json": {
+      "exists": true,
+      "bytes": 625854,
+      "sha256": "e9c11c43133bf78ffb58dc356191cb4b1b4b42cc6e972ca32e8fc2838dc6d3c6"
+    },
+    "data/cache/probe_osrm_table.json": {
+      "exists": true,
+      "bytes": 1555,
+      "sha256": "77b7c33199cfeb92869de1798535a445bc0abd99c3e9017060eb415b3f077f65"
+    },
+    "data/cache/road_refresh_status.json": {
+      "exists": true,
+      "bytes": 354,
+      "sha256": "ee6a20e4aa3b7f9392d54280205f856bc63cf6a8b73c6b87fdc15b1520ac2f0c"
+    }
+  },
+  "external_before": {
+    "data/external/noaa/USW00003945_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "a13add2dc43715d4c40a541efdb81a04054e314dc742304b216ae4809b600bc5"
+    },
+    "data/external/noaa/USW00003945_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 148977,
+      "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac"
+    },
+    "data/external/noaa/USW00003947_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "44d6a63cbd5f6d92feedfaabf6af600385fcacdb61074e91530fb48c3c9376a3"
+    },
+    "data/external/noaa/USW00003947_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 153315,
+      "sha256": "9ecfb639b8d4b43acc7a90d76861ba137de0451c06e59b58affae42e8862c14f"
+    },
+    "data/external/noaa/USW00003960_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "a8aabfd86d4f4b49a39583e701647b9eb1a84e56d22ccf3dbc70f8b5442eb550"
+    },
+    "data/external/noaa/USW00003960_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 147780,
+      "sha256": "c88fe36bf3df4e89849feea3c023a57ebe9631b85f2f7d54b397e534f608409e"
+    },
+    "data/external/noaa/USW00003963_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "5bdd127f5e8de8a634e071b4fca106be86284b57dfc3d2ccb9069bd13318ec92"
+    },
+    "data/external/noaa/USW00003963_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 149249,
+      "sha256": "cd0cec6d4c636d9e5ea3454bdcd75d2645bd3fe6b086939dd02102fe7843b378"
+    },
+    "data/external/noaa/USW00013994_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "9df0dacdb71055383730be0c0617d27db3f6888667d7546d88064842ca9a0eed"
+    },
+    "data/external/noaa/USW00013994_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 156115,
+      "sha256": "3477c320482a7d92d096b45b0d87e234503d8809fc03184e73def860c1a97cdc"
+    },
+    "data/external/noaa/USW00013995_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "1f43fd30d71f9a37562c24750f1568703ac37b79e07a9e31c128b5f9336df19c"
+    },
+    "data/external/noaa/USW00013995_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 158237,
+      "sha256": "26ca1fac107c2ccb1c9651fe103e1412f94f6670de8103d59c1f54a055f556fe"
+    }
+  },
+  "browser_version": "156.0.8078.74",
+  "runtime": {
+    "mode": "isolated_rehearsal",
+    "isolated": true,
+    "offline": true,
+    "rehearsal_id": "8a801a9b-7dd3-4788-8f92-de2e87b5c77f",
+    "database_relative_path": "data/rehearsals/8a801a9b-7dd3-4788-8f92-de2e87b5c77f.sqlite",
+    "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
+  },
+  "isolated_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 126976,
+      "sha256": "1741fb58b8c79e975006a751306d06386ca98617a013e9d582851969c5100a77"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "expected_download_navigation_aborts": [
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "url": "http://127.0.0.1:8072/api/challenge/artifacts/guide.pdf",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "url": "http://127.0.0.1:8072/api/challenge/artifacts/readiness.json",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "phase": "artifact_bytes_and_schemas",
+      "url": "http://127.0.0.1:8072/api/challenge/artifacts/dictionary.csv",
+      "reason": "net::ERR_ABORTED"
+    }
+  ],
+  "passed": true,
+  "operator_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "raw_after": {
+    "manifest": {
+      "exists": true,
+      "bytes": 1556454,
+      "sha256": "346a242b531178d992eb01600d1dcea2344198cb0730800851677c2e6bbc513a"
+    },
+    "files": [
+      {
+        "filename": "2025-food-environment-atlas-data.xlsx",
+        "expected_sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0",
+        "exists": true,
+        "bytes": 9104656,
+        "sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0"
+      },
+      {
+        "filename": "2025-sram-fara-data.xlsx",
+        "expected_sha256": "fd0eff35de6664e27bb5ecbffbe1e8e5ea044979d4237b09b18010e8a4449858",
+        "exists": true,
+        "bytes": 112608645,
+        "sha256": "fd0eff35de6664e27bb5ecbffbe1e8e5ea044979d4237b09b18010e8a4449858"
+      },
+      {
+        "filename": "AEGIS API & Dataset Registry.xlsx",
+        "expected_sha256": "93a700c02f0a47d7b7ce4659b75ab28fe00e1398ee1e9ee54aec6c1cbf1bde82",
+        "exists": true,
+        "bytes": 8266,
+        "sha256": "93a700c02f0a47d7b7ce4659b75ab28fe00e1398ee1e9ee54aec6c1cbf1bde82"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Isolates_by_HHS_Region_20261026.csv",
+        "expected_sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6",
+        "exists": true,
+        "bytes": 100469,
+        "sha256": "c6c4581451f87a4b34b19b38d205cc33a4b8a156149263995222971aaf369cf6"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+        "expected_sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274",
+        "exists": true,
+        "bytes": 17585042,
+        "sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Burden_and_Trajectory_20261026.csv",
+        "expected_sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321",
+        "exists": true,
+        "bytes": 61808,
+        "sha256": "c21d0a7cd5c462fbaf47fc4abc3b103bf36de860b0eaea506cb227026ab55321"
+      },
+      {
+        "filename": "BEAM_Dashboard_-_Serotypes_of_concern__Illnesses_and_Outbreaks_20261026.csv",
+        "expected_sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060",
+        "exists": true,
+        "bytes": 245837,
+        "sha256": "72fc2545dd7eafeb4971ed3d6645d1914aaae7215a4e370d3ff4ea9559428060"
+      },
+      {
+        "filename": "BEAM_Dashboard_–_Top_30_Most_Common_Serotypes_20261026.csv",
+        "expected_sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63",
+        "exists": true,
+        "bytes": 270714,
+        "sha256": "d35bcb68f699ffeaf4d94ff22d27ad1070675be29faf866b3b6252ec7f797f63"
+      },
+      {
+        "filename": "Dataset_Establishment_Demographic_Data.csv",
+        "expected_sha256": "151e6efc89061ad9c13207b3198e193757967ecdfb711163e1bd0de73b0f782e",
+        "exists": true,
+        "bytes": 2879549,
+        "sha256": "151e6efc89061ad9c13207b3198e193757967ecdfb711163e1bd0de73b0f782e"
+      },
+      {
+        "filename": "Dataset_EstablishmentCategoriesAggregate_202609_0.xlsx",
+        "expected_sha256": "1c74e0f45888e7f8dca31db351860d21972b8d875487c9fee4f77b465c52386e",
+        "exists": true,
+        "bytes": 24232,
+        "sha256": "1c74e0f45888e7f8dca31db351860d21972b8d875487c9fee4f77b465c52386e"
+      },
+      {
+        "filename": "FoodAccessResearchAtlasData2019.xlsx",
+        "expected_sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8",
+        "exists": true,
+        "bytes": 85803176,
+        "sha256": "4faf369a75c0cd45e8707bd23c95f48ad055df3a643f59c3223a52490792daa8"
+      },
+      {
+        "filename": "fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+        "expected_sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe",
+        "exists": true,
+        "bytes": 93855008,
+        "sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe"
+      },
+      {
+        "filename": "fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+        "expected_sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c",
+        "exists": true,
+        "bytes": 94108613,
+        "sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c"
+      },
+      {
+        "filename": "fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+        "expected_sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d",
+        "exists": true,
+        "bytes": 69582390,
+        "sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d"
+      },
+      {
+        "filename": "FY2025-FSIS-Outbreak-Investigations-Annual-Report.pdf",
+        "expected_sha256": "7e6a43fe5d107c8dfffed9fe82b2d27f4628b61321d1d169f9c8dfd5b38f4b42",
+        "exists": true,
+        "bytes": 225888,
+        "sha256": "7e6a43fe5d107c8dfffed9fe82b2d27f4628b61321d1d169f9c8dfd5b38f4b42"
+      },
+      {
+        "filename": "fy23-fsis-outbreak-investigations-annual-report.pdf",
+        "expected_sha256": "645ccb7958f381795aa108f168b2a3ecdae2e6e041bb13de6a60e0036f97843e",
+        "exists": true,
+        "bytes": 152996,
+        "sha256": "645ccb7958f381795aa108f168b2a3ecdae2e6e041bb13de6a60e0036f97843e"
+      },
+      {
+        "filename": "fy24-fsis-outbreak-investigations-annual-report.pdf",
+        "expected_sha256": "b66eb8c88b5e94339f4c27dae80ec2b445639df710e7bdcc39adf78a1f3c3ec7",
+        "exists": true,
+        "bytes": 241044,
+        "sha256": "b66eb8c88b5e94339f4c27dae80ec2b445639df710e7bdcc39adf78a1f3c3ec7"
+      },
+      {
+        "filename": "missouri-cis.xlsx",
+        "expected_sha256": "9e86274c5d123fd4cf39226042f21c30edbcf6b5d034c14aafaec8a0214db4ea",
+        "exists": true,
+        "bytes": 19332,
+        "sha256": "9e86274c5d123fd4cf39226042f21c30edbcf6b5d034c14aafaec8a0214db4ea"
+      },
+      {
+        "filename": "MPI_Directory_by_Establishment_Name.csv",
+        "expected_sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e",
+        "exists": true,
+        "bytes": 1779074,
+        "sha256": "ddad6097105c1655a98b8b6871f2311ca69f3a54be7a3fb545fad32fbe54032e"
+      },
+      {
+        "filename": "NORS Data Documentation_2023.09.08.pdf",
+        "expected_sha256": "05db69a7892f0452b460052835aaa4e9b0ea2f2aeec8419a08e2331a916abff1",
+        "exists": true,
+        "bytes": 417190,
+        "sha256": "05db69a7892f0452b460052835aaa4e9b0ea2f2aeec8419a08e2331a916abff1"
+      },
+      {
+        "filename": "NORS-Flat-DataDictionary-508_JAN2025_CLEAN.xlsx",
+        "expected_sha256": "7e2b0842113e25b18b287af90a654104eaf340076d4072ae4a0b889c07fc96d3",
+        "exists": true,
+        "bytes": 94548,
+        "sha256": "7e2b0842113e25b18b287af90a654104eaf340076d4072ae4a0b889c07fc96d3"
+      },
+      {
+        "filename": "NORS.xlsx",
+        "expected_sha256": "3fd6fe5efaa2317a6e2f876ae211ee614a14294788becbf422f38953771638c8",
+        "exists": true,
+        "bytes": 3803216,
+        "sha256": "3fd6fe5efaa2317a6e2f876ae211ee614a14294788becbf422f38953771638c8"
+      },
+      {
+        "filename": "NORS_20261026.csv",
+        "expected_sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987",
+        "exists": true,
+        "bytes": 8967215,
+        "sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987"
+      },
+      {
+        "filename": "primary_table_data_0.csv",
+        "expected_sha256": "e26332822923d627ca33eedcec84fc9cc3765f15cd9d692ab905a30b96d9681b",
+        "exists": true,
+        "bytes": 8497,
+        "sha256": "e26332822923d627ca33eedcec84fc9cc3765f15cd9d692ab905a30b96d9681b"
+      },
+      {
+        "filename": "siluriformes-i-houses.pdf",
+        "expected_sha256": "78b6d65c9692ac8c80de4fc4851db5c588802945f91e0c96873116429479927c",
+        "exists": true,
+        "bytes": 137476,
+        "sha256": "78b6d65c9692ac8c80de4fc4851db5c588802945f91e0c96873116429479927c"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+        "expected_sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07",
+        "exists": true,
+        "bytes": 1738881,
+        "sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+        "expected_sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e",
+        "exists": true,
+        "bytes": 1721176,
+        "sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+        "expected_sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8",
+        "exists": true,
+        "bytes": 1398367,
+        "sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+        "expected_sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad",
+        "exists": true,
+        "bytes": 36465951,
+        "sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+        "expected_sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038",
+        "exists": true,
+        "bytes": 36748204,
+        "sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+        "expected_sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e",
+        "exists": true,
+        "bytes": 29808273,
+        "sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+        "expected_sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3",
+        "exists": true,
+        "bytes": 4962440,
+        "sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+        "expected_sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38",
+        "exists": true,
+        "bytes": 5086168,
+        "sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+        "expected_sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf",
+        "exists": true,
+        "bytes": 4063370,
+        "sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+        "expected_sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+        "exists": true,
+        "bytes": 101258611,
+        "sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+        "expected_sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+        "exists": true,
+        "bytes": 106469741,
+        "sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+        "expected_sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+        "exists": true,
+        "bytes": 79369857,
+        "sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+        "expected_sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab",
+        "exists": true,
+        "bytes": 29958187,
+        "sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+        "expected_sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f",
+        "exists": true,
+        "bytes": 48762882,
+        "sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+        "expected_sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95",
+        "exists": true,
+        "bytes": 26007277,
+        "sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+        "expected_sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e",
+        "exists": true,
+        "bytes": 215619,
+        "sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e"
+      },
+      {
+        "filename": "usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+        "expected_sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e",
+        "exists": true,
+        "bytes": 1828382,
+        "sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e"
+      }
+    ]
+  },
+  "fixtures_after": {
+    "data/fixtures/fsis_recalls.json": {
+      "exists": true,
+      "bytes": 26493,
+      "sha256": "f7cea9d9d9d5dfee146cff55e4e9c6f1412f3b5bc4869cb8435f16547243f525"
+    },
+    "data/fixtures/iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108723,
+      "sha256": "a4c3b69e32b0bf3755684e21b24e8264de9efb8fca63e6dccde129722e89a445"
+    },
+    "data/fixtures/modot.json": {
+      "exists": true,
+      "bytes": 3424614,
+      "sha256": "234f68d635c4cac0d3dbdddcfedbe4912e9cc96a6505f5d5063f868a9c7713f6"
+    },
+    "data/fixtures/ncei_historical.json": {
+      "exists": true,
+      "bytes": 2271,
+      "sha256": "f8bb321f60bba3197f9e958bc73dbd035fcf0a82372b985c3e047382e5ea677d"
+    },
+    "data/fixtures/nws_alerts.json": {
+      "exists": true,
+      "bytes": 577,
+      "sha256": "33dffebf6a2b363bec624487e3b966bb5246464b15e88a9249ed1b5fb6a5d60d"
+    },
+    "data/fixtures/openmeteo.json": {
+      "exists": true,
+      "bytes": 6239,
+      "sha256": "92c54d9e2b9d51b5a4673a90c6a685ea75d28411715cf20d2753a58984df3eee"
+    },
+    "data/fixtures/openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1282,
+      "sha256": "a8262eb9ac8a21393083d53e86cc7c0e6e671a4e7e2a18cb9fde5adac005012b"
+    },
+    "data/fixtures/osrm_route.json": {
+      "exists": true,
+      "bytes": 625979,
+      "sha256": "d028566a6538f40eaa31e4963a8128566ee7b20ad3a4e6ef07837751bf96f1c4"
+    }
+  },
+  "cache_after": {
+    "data/cache/0364f17aa89dc909e0deec6e4c7ea2815b08268cab17cee837dc5de5114ad193.json": {
+      "exists": true,
+      "bytes": 90278,
+      "sha256": "c01645581598ef8edc88db23bb9470834587b4b718d24749ba17b355d4b300eb"
+    },
+    "data/cache/03709b81730cc269c3f8caf3294682daa2815161710ab21b99c624b7f02b6a9d.json": {
+      "exists": true,
+      "bytes": 2017,
+      "sha256": "36237d61cf1afe6e7cddde1ac1f45b7aabc0e4f3691f1f176ce6fefd201a2bb8"
+    },
+    "data/cache/0398d3635646b5cfb5a07c7197721f936df737c3647b2f970faa8892f32c654d.json": {
+      "exists": true,
+      "bytes": 44083,
+      "sha256": "2466bc3469ad60c65b516e87c936f5c9b65d687c56aa5545fa1ac24b20e093f0"
+    },
+    "data/cache/04b5d887fbaecf91051807cc35d79407cdc7100635bd88b246888b693fa260d7.json": {
+      "exists": true,
+      "bytes": 144019,
+      "sha256": "346290aaa610011265bea6be9c66156b35f0e54976dac99c01b8130927aea8ed"
+    },
+    "data/cache/0f00eb6573de23dfc423d17115cfd0f1e565a8adf75e36a8daf0d6173aa73f5a.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "f0fc9a046325c70a684a06cdc986ab4eb2239e5fa1f0285821ce948335363fd9"
+    },
+    "data/cache/10b525c6250e89befe3169ea5cdd301750871e9a3df649e375e4b7273ed8a52e.json": {
+      "exists": true,
+      "bytes": 411045,
+      "sha256": "3ef154a63ccf111c47d2a34305e1e2747ae721138247b7a6af6d5d0802a8f5ca"
+    },
+    "data/cache/132ec4feeaa1dcb9d1667aaa39191b6b3067bc2a27da18967f13ba7ead2a658f.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "4413200f1f59077f9bfc54ac3f98f04ab855fb14f8b9ec28c9748aea2c6daf75"
+    },
+    "data/cache/135b7df331206c8e1d2f660a20728c43a0cb953af30b408c6341f934ccb126d1.json": {
+      "exists": true,
+      "bytes": 90185,
+      "sha256": "2e174965ca6591a603b61d9fcc357341ef0f24ccf1e8d9dfbaa0aea119522aba"
+    },
+    "data/cache/2818a35ed295495bc724fbbdadd60f6ec8b8e6b8f486a80c95556dbc800b30e7.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "1a8a253bfa6b1aca3c4350df3d4eea365fd293d4c5b167d1ef0b678fa3667038"
+    },
+    "data/cache/2a6ca4c2bfd6209fbe6b56e2f2346d79a63c4dce746b8e5ef4babd9d2e68b478.json": {
+      "exists": true,
+      "bytes": 34945,
+      "sha256": "3bea1ffba383f951c5e8154a0b66e7526bfa7d68fe9823a26260c17ae4f77ad7"
+    },
+    "data/cache/2aeecba5d2858f5da34ebb26e8823341efa7cab7c685140d1024968af8ff238c.json": {
+      "exists": true,
+      "bytes": 141594,
+      "sha256": "fbdc5720b34d22ae376b944c60d23e7053268664368a7e4e0bdee47a23fd863c"
+    },
+    "data/cache/2e8f9e4ee6797bb7789da5b816cc4af313f38edc4c63a34f97b6bc0d24b5ca4c.json": {
+      "exists": true,
+      "bytes": 144720,
+      "sha256": "d41759c896828878029cc20fc89a88f64d2f51940a4b5499902b006b5286cb0a"
+    },
+    "data/cache/2e9911ce316ac4c6e6bfe3034ed862e8b4312702fb4dded3fbb77eba36ea3d5d.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "43e1bb8613d76b0531fbd8ab7c4522b5ddbb696dbeed4b2449623f43793d350c"
+    },
+    "data/cache/32f752a0fdc38569a12b95a9e790691d70182474612c16a3c66b16ad245fe9ac.json": {
+      "exists": true,
+      "bytes": 349,
+      "sha256": "be4866ce70b8f9895a266b698b58884feb86d125a6d00be8f8eaf590a7a77657"
+    },
+    "data/cache/336e646bc32b20441de2790e5c5fa1f37908124671fca826fd3a85f7de130cfc.json": {
+      "exists": true,
+      "bytes": 417888,
+      "sha256": "5264bfccbdc6b8621c2e21095b9097e3716dd743067561887206661c6fa56a2b"
+    },
+    "data/cache/338f9e31a8150ed3f63c2a37a131a18290e0b1bba9afe0f6161f11e4f3156bbd.json": {
+      "exists": true,
+      "bytes": 1189574,
+      "sha256": "2f08a554c0390b7572325343d7a623425b5384ec80e01964ca901c02e0d7ba72"
+    },
+    "data/cache/339c733ed4ee7d291bf0a90daed133022621edcaddefd38b5d84c5901597d8a7.json": {
+      "exists": true,
+      "bytes": 17379,
+      "sha256": "950a1e8dae99d9f332963b4ec4c27da734ebe556a872227de51a401f9e1576c4"
+    },
+    "data/cache/33ce48f7be755b3cef5ddf1b81ed43bf91e1ae429dbc0d333718beca6d4d1e40.json": {
+      "exists": true,
+      "bytes": 369217,
+      "sha256": "59a74e3d68ba99b6f4bd840c2821f2cb10ad0cac136bf47e4af3beda9d6be337"
+    },
+    "data/cache/398ec7a1fc516369e21bc37d397b74ea614fbc3c842f6f0336d4cbad231d6a1a.json": {
+      "exists": true,
+      "bytes": 44382,
+      "sha256": "38ce51106430529db65cd5a2c33eaaedf3a16e59b1cbcd6610fd23f803deea1a"
+    },
+    "data/cache/3d68a1a695ce8d1031df225453f83f925b99338f570a5d9daa65158dc5d294f1.json": {
+      "exists": true,
+      "bytes": 142381,
+      "sha256": "4c0974861e06c0226afda794f2e5cee08fe7c79a4ededcfa67057f0389fdc360"
+    },
+    "data/cache/489d3afbffa67c196b3a562dcf7dfd0a5a0afd7b012d5057d763a5ca89105630.json": {
+      "exists": true,
+      "bytes": 10742,
+      "sha256": "8104c8c947812d67da4100746b0b652a27e9f861deb53c58793c48661456387a"
+    },
+    "data/cache/4b3d08bffa1cadae58e056cf99419358960f786492bc73594772b0ed69bc5cf1.json": {
+      "exists": true,
+      "bytes": 270069,
+      "sha256": "887901f263db689d20d045b2ad3a4766470b6f1eb1187c4913c9d309ea4adf90"
+    },
+    "data/cache/6ed8626280219ac86bd81f9e6efeee6abf0a2bfa8293df0979f3145c5da469a1.json": {
+      "exists": true,
+      "bytes": 508362,
+      "sha256": "54f58cfa86971ccdf8d99cc566ad8f6175181809e6bdc9176c918d18bb67f8f9"
+    },
+    "data/cache/782d4a36191292b0e87bc76e6dbb4931891b43bc05679569b36f292e95d16e0c.json": {
+      "exists": true,
+      "bytes": 12373827,
+      "sha256": "11128d77d8852c404d69ec3f67491bb711c84ea264d9a3e0e8eb76478054c4c9"
+    },
+    "data/cache/7cb3b29022160e624a27c70e93d3e3f6c84d48ae3f6114b6fb541708eda7eb62.json": {
+      "exists": true,
+      "bytes": 8870,
+      "sha256": "8f74d6b935551b7c0396a59c3b1ad4982d8c28578e98005fee0c8ad8d3b854b9"
+    },
+    "data/cache/7cd90c127147fb11dfbfca9d9ff3d50225569670be7ecd4bedc6601a6ede874d.json": {
+      "exists": true,
+      "bytes": 58403,
+      "sha256": "69ef0643f368b11ff99e24fbf8c33eadd82b9aee8fc778f06a0db7ec703e63d4"
+    },
+    "data/cache/839052bc2b5dc6a65c2541f3c622d8c0187afd9446bebea3fb27a13bc8084a77.json": {
+      "exists": true,
+      "bytes": 156274,
+      "sha256": "d9077f0e44de09e2b2d2173e412e3fae0f928c6262e6f3218a81d344c352f288"
+    },
+    "data/cache/9cafce6e34dfded8b35bfa57834829fe3748575d8dca3596b5393a7c5a3e1389.json": {
+      "exists": true,
+      "bytes": 21754,
+      "sha256": "782b23d47e329744b32c63e0e9d5072b43f36e398ca484f5fef8e2fbb41f633d"
+    },
+    "data/cache/a27bf9d04f6b7622fbcc8fff08f84027f291f523a3493c11816193ec0f4b8f85.json": {
+      "exists": true,
+      "bytes": 6092,
+      "sha256": "ffaa39cfa8fefcb7ec0ad37747dd5ba230d62909340b2935ee1082548144ac80"
+    },
+    "data/cache/a83a65087c743f54e48d52449a1568ce24fd7191b3b55076f155601962cffcd1.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "75318155d9fbcbb8121b577b2c61ec084403fb9c6461036abf1cbb0ed88e8198"
+    },
+    "data/cache/a9cdf9f1322e80559484dd4f2449820aeacac6c842cce1db90980df4af4fb712.json": {
+      "exists": true,
+      "bytes": 190987,
+      "sha256": "a034f12a0ebfb2177b8eb7ff0b15217e61220317a0deb4d8b6a59dfdc91ec1bf"
+    },
+    "data/cache/b9faacfa3f2c7b8426522c4fe8ca66581b67cd88757af5b7e96b6b078871767c.json": {
+      "exists": true,
+      "bytes": 12840,
+      "sha256": "2f620f25e87a85de94af2d19ca3e3013a0c420e9a772b99526e152bab033c721"
+    },
+    "data/cache/ba11441fa38559492c3b7fd9539740eaa4e4c324037aa88bd5c1ad65c91df805.json": {
+      "exists": true,
+      "bytes": 407,
+      "sha256": "270ef24ee26c6ac24a7d3eee7e00d32cb07ce8d31f6e5aeac3716a45a8590954"
+    },
+    "data/cache/bebd20ba1d793133341ceb78b9188414fe4643921c5c806394b3033b20f33b08.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "650cdc4c58f42e9d012f772e7f91587eabd3f8c2edabf1c28620e4864c2d8c70"
+    },
+    "data/cache/bfa095ebfab32bcfae28a7de3b5993d6948e34cd7c83b80f558d8839d95f868b.json": {
+      "exists": true,
+      "bytes": 145035,
+      "sha256": "82398d4ee6f4fd703048892151501f4b760ba6dd197ff4dc8f47765ff2d5f2d4"
+    },
+    "data/cache/c82df6b6923461f1d5bf4ca9f983c1915f717dca2a556c29d7b5c964ad951539.json": {
+      "exists": true,
+      "bytes": 221183,
+      "sha256": "f381f714959782c78fd0e42dd95c0fb1a7f3a4868069b6aed7a7730fdca9ea43"
+    },
+    "data/cache/ca89b20a7b2b51e7b8e33c8291acfd5631fe9aea41f9366d04eafe2ee7284d67.json": {
+      "exists": true,
+      "bytes": 14402,
+      "sha256": "3942ef2757957c9bc4d23ee8ea9de1bb72905c0ca6ee1f1edd332d13ed1cb4a9"
+    },
+    "data/cache/connectivity_iowa_dot.json": {
+      "exists": true,
+      "bytes": 1882,
+      "sha256": "aea86742b3aee6a18464d24e1bda3dfa773e11763038a06bb24c7b2a75b77297"
+    },
+    "data/cache/connectivity_modot.json": {
+      "exists": true,
+      "bytes": 10704,
+      "sha256": "f672cc45384f72fa258dd72f974a1b4b4bfd14c7ab9974471c8ef4f6949ad549"
+    },
+    "data/cache/connectivity_osrm_route.json": {
+      "exists": true,
+      "bytes": 207946,
+      "sha256": "77b0e6473ca7fda7b79c82ceb74d388e22cc52cf5fb39424ddc005b509a05b27"
+    },
+    "data/cache/d038ad5799eea94f366c0203b2ba0c6690c23a7df939cdbfa940b8e4443720fb.json": {
+      "exists": true,
+      "bytes": 933025,
+      "sha256": "5e8c806088a855a27f43bf2f640d30d1c546fac15d5e8fac2b571ad736bb5040"
+    },
+    "data/cache/d3dfacfc232d82391d42faab88de211e717fc64a06f65fe053b45e47c24aba8c.json": {
+      "exists": true,
+      "bytes": 7426,
+      "sha256": "8bb8d1352f62259d84a35978521e61d0766a211f880ef176c68fdc1c297f8d88"
+    },
+    "data/cache/e5c7272654494a423757867891321e25682bbf66de9be6b632110f9774432624.json": {
+      "exists": true,
+      "bytes": 122780,
+      "sha256": "2b73adc45f0c322bdc4623615e3031a9d72a8a41a2ee12c4a675cf4d1f11e1d8"
+    },
+    "data/cache/e8063084e84a95fd4a7c06bf7e1a746a595fef3516c5eaa19ee26d6240a2b960.json": {
+      "exists": true,
+      "bytes": 12741,
+      "sha256": "3914c8d9fea7630f4e55cf3316ccc3138ae8441ecdbc5ac0122bba4192eb6c9f"
+    },
+    "data/cache/e9f469800e09f16d8477ab2ce15b2d021935068756651e6c32e1713a3cc7a626.json": {
+      "exists": true,
+      "bytes": 143888,
+      "sha256": "54aaf18680cdc5f9ba74a74be73663fe7298ba0ec2274a7c51de5f30340d546a"
+    },
+    "data/cache/eebc0c7ee7082e911194264801d92b2b4c6c989a1b1d00d2b408d27a83e749f4.json": {
+      "exists": true,
+      "bytes": 398006,
+      "sha256": "8ad3b286b12273ef25d19d392580d9135499ad08103751c0af6a7dc434c8fb7b"
+    },
+    "data/cache/f2dea27d65488ef70a4990878320542a5614fe57054e1d0cce466efe969e8ad3.json": {
+      "exists": true,
+      "bytes": 19820,
+      "sha256": "e8904d70f3bc4478e29c5aa591bb9f2bb660289253ca85ab1a5df5831ac2f430"
+    },
+    "data/cache/ffb18d544710bae9f36891a5936b540729731a4b24c9a5f85a421bd2fdb56394.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "d400544314e322fc355bc466c33f24f7c009cb9f54f244334c019f706ba5e31b"
+    },
+    "data/cache/matplotlib/fontlist-v3.11.0.json": {
+      "exists": true,
+      "bytes": 193310,
+      "sha256": "4eeac64713757392f4f38708dfe2bdb0d42c44e26f491bdfd62255a853a4c2ec"
+    },
+    "data/cache/probe_fsis_recalls.json": {
+      "exists": true,
+      "bytes": 12373837,
+      "sha256": "988eed160b8564796b33043a682e267310fce804553c974e3f37a3109f6def34"
+    },
+    "data/cache/probe_iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108498,
+      "sha256": "94e84daf9ee3d3da29eb2c2e8a5277f3390b6d0e230eb3907334b1acf36dc9bb"
+    },
+    "data/cache/probe_modot.json": {
+      "exists": true,
+      "bytes": 3759802,
+      "sha256": "368def5948845ab8e1d6486e7f4b08c4d7fd747a447b99be9861934906599c9f"
+    },
+    "data/cache/probe_ncei_historical.json": {
+      "exists": true,
+      "bytes": 2144,
+      "sha256": "89158efb8761659cae228d3d45913f4b27e9e0668411a4b93642b1ad82fb5c03"
+    },
+    "data/cache/probe_nws_alerts.json": {
+      "exists": true,
+      "bytes": 369,
+      "sha256": "674ada66d6544ffa4ebe136ae309ba8d4ce2ea16efc3ccfd33d12473cb74aa09"
+    },
+    "data/cache/probe_nws_points.json": {
+      "exists": true,
+      "bytes": 3755,
+      "sha256": "7ee0d4e8376d182ab91f9df5637b6a53e08aba8bcac6be52e46ddb3efdf92e85"
+    },
+    "data/cache/probe_openmeteo.json": {
+      "exists": true,
+      "bytes": 6038,
+      "sha256": "0fbd0cf5b09b9378b1b9a9f318bb770c793dcde1d020dc1473264d17634c84e1"
+    },
+    "data/cache/probe_openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1157,
+      "sha256": "ccd191b61ec17f0c5fc8b7441d6c7322e4cfa32c1b99c3b9e6c649f7cd6db060"
+    },
+    "data/cache/probe_osrm_route.json": {
+      "exists": true,
+      "bytes": 625854,
+      "sha256": "e9c11c43133bf78ffb58dc356191cb4b1b4b42cc6e972ca32e8fc2838dc6d3c6"
+    },
+    "data/cache/probe_osrm_table.json": {
+      "exists": true,
+      "bytes": 1555,
+      "sha256": "77b7c33199cfeb92869de1798535a445bc0abd99c3e9017060eb415b3f077f65"
+    },
+    "data/cache/road_refresh_status.json": {
+      "exists": true,
+      "bytes": 354,
+      "sha256": "ee6a20e4aa3b7f9392d54280205f856bc63cf6a8b73c6b87fdc15b1520ac2f0c"
+    }
+  },
+  "external_after": {
+    "data/external/noaa/USW00003945_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "a13add2dc43715d4c40a541efdb81a04054e314dc742304b216ae4809b600bc5"
+    },
+    "data/external/noaa/USW00003945_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 148977,
+      "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac"
+    },
+    "data/external/noaa/USW00003947_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "44d6a63cbd5f6d92feedfaabf6af600385fcacdb61074e91530fb48c3c9376a3"
+    },
+    "data/external/noaa/USW00003947_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 153315,
+      "sha256": "9ecfb639b8d4b43acc7a90d76861ba137de0451c06e59b58affae42e8862c14f"
+    },
+    "data/external/noaa/USW00003960_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "a8aabfd86d4f4b49a39583e701647b9eb1a84e56d22ccf3dbc70f8b5442eb550"
+    },
+    "data/external/noaa/USW00003960_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 147780,
+      "sha256": "c88fe36bf3df4e89849feea3c023a57ebe9631b85f2f7d54b397e534f608409e"
+    },
+    "data/external/noaa/USW00003963_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "5bdd127f5e8de8a634e071b4fca106be86284b57dfc3d2ccb9069bd13318ec92"
+    },
+    "data/external/noaa/USW00003963_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 149249,
+      "sha256": "cd0cec6d4c636d9e5ea3454bdcd75d2645bd3fe6b086939dd02102fe7843b378"
+    },
+    "data/external/noaa/USW00013994_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "9df0dacdb71055383730be0c0617d27db3f6888667d7546d88064842ca9a0eed"
+    },
+    "data/external/noaa/USW00013994_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 156115,
+      "sha256": "3477c320482a7d92d096b45b0d87e234503d8809fc03184e73def860c1a97cdc"
+    },
+    "data/external/noaa/USW00013995_2025-01-01_2026-06-30.metadata.json": {
+      "exists": true,
+      "bytes": 919,
+      "sha256": "1f43fd30d71f9a37562c24750f1568703ac37b79e07a9e31c128b5f9336df19c"
+    },
+    "data/external/noaa/USW00013995_2025-01-01_2026-06-30.response.json": {
+      "exists": true,
+      "bytes": 158237,
+      "sha256": "26ca1fac107c2ccb1c9651fe103e1412f94f6670de8103d59c1f54a055f556fe"
+    }
+  },
+  "isolated_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 126976,
+      "sha256": "1741fb58b8c79e975006a751306d06386ca98617a013e9d582851969c5100a77"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "finished_at": "2026-11-02T17:10:13.148Z"
+}

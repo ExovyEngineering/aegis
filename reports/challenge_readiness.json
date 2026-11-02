@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-11-02T14:53:28.820399-06:00",
+  "release_status": "Working research build; scientific and human evidence gates remain open",
+  "requirement_reference": "docs/challenge_tasks_source.md",
+  "tasks": [
+    {
+      "id": "Task 1",
+      "title": "Define the One Health system and integrated data layer",
+      "status": "Evidence compiled",
+      "menu": "evidence",
+      "summary": "A Missouri poultry distributor decides which eligible shipments to review, allocate and reroute over the next six hours; a separate seven-day research target concerns selected FSIS samples.",
+      "implemented": [
+        "One Health system diagram distinguishes human, food/animal, environment, logistics and food-security pathways.",
+        "Common Missouri/state and daily/monthly units, forecast origins, lags and coverage gates are documented.",
+        "Field dictionary, missingness, source provenance and harmonized retrospective analytic CSV are exported."
+      ],
+      "remaining": [
+        "No patient-to-lot, genomic, supplier-contract or outbreak-causation linkage is inferred."
+      ],
+      "artifacts": [
+        {
+          "label": "System diagram",
+          "name": "system-map.png"
+        },
+        {
+          "label": "Analytic CSV",
+          "name": "analytic-data.csv"
+        },
+        {
+          "label": "Data dictionary",
+          "name": "dictionary.csv"
+        },
+        {
+          "label": "Source provenance",
+          "name": "provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "Task 2",
+      "title": "Develop and validate the proactive risk model",
+      "status": "Research implemented; prospective activation closed",
+      "menu": "science",
+      "summary": "Chronological Missouri study combines lagged FSIS history, PulseNet-derived BEAM aggregates and NOAA observations, with NORS ablation. Small samples and assumed historical availability prevent prospective deployment claims.",
+      "implemented": [
+        "Prevalence and FSIS-only baselines, core integration, added-domain ablation and rolling validation.",
+        "Brier, PR-AUC, ROC-AUC, calibration, uncertainty and review-threshold false-positive/negative consequences.",
+        "Held-out monthly time series preserves missing source-coverage periods as gaps."
+      ],
+      "remaining": [
+        "Actual historical publication times are unknown; lags are explicit assumptions.",
+        "Selected FSIS sampling positivity is not consumer illness or individual-lot risk.",
+        "Added data may worsen results; no automatic model activation or guaranteed gain."
+      ],
+      "artifacts": [
+        {
+          "label": "Integrated model results",
+          "name": "integrated-model.json"
+        },
+        {
+          "label": "Aligned data",
+          "name": "analytic-data.csv"
+        }
+      ]
+    },
+    {
+      "id": "Task 3",
+      "title": "Food safety and food security decision support",
+      "status": "Policy study implemented; pathogen-risk action link limited",
+      "menu": "command",
+      "summary": "Compare a feasible input-order rule, volume/quality-guided optimization and balanced destination service across three simulated scenarios. Preserving eligible food volume is the explicit food-security objective.",
+      "implemented": [
+        "All policies share stock, perishability, capacity, eligibility, hold/recall and delivery constraints.",
+        "Quantified distributed/unmet kilograms, quality-budget exposure, service, distance and time.",
+        "Existing Command and freshness workflows require separate human approval before assigning Drive work."
+      ],
+      "remaining": [
+        "National/regional surveillance cannot supply valid individualized risk for fictional lots.",
+        "Quality forecasts are illustrative; no causal risk reduction or observed food waste is claimed.",
+        "No verified destination-to-county/population linkage exists, so USDA need weights are not invented."
+      ],
+      "artifacts": [
+        {
+          "label": "Policy study JSON",
+          "name": "decision-study.json"
+        },
+        {
+          "label": "Policy comparison CSV",
+          "name": "decision-study.csv"
+        }
+      ]
+    },
+    {
+      "id": "Task 4",
+      "title": "Operationalize with AWS Kiro",
+      "status": "App operational; Kiro not used; requirement not met",
+      "menu": "command",
+      "summary": "The project owner confirmed that Kiro was not used and will disclose this. React/FastAPI workflows operate, but prepared specifications do not satisfy genuine Kiro use.",
+      "implemented": [
+        "Documented local launch and reproducible frontend/backend build.",
+        "Explicit uncertainty/source labels, immutable captured exports and hard operational constraints.",
+        "Specifications/steering and a concrete genuine-Kiro handoff task."
+      ],
+      "remaining": [
+        "Kiro was not used. The owner will disclose this unmet challenge criterion; no Kiro history or authorship is claimed.",
+        "Local reviewer identities are self-declared, without production authentication or tenancy."
+      ],
+      "artifacts": [
+        {
+          "label": "Final guide",
+          "name": "guide.pdf"
+        }
+      ]
+    },
+    {
+      "id": "Task 5",
+      "title": "Team science and value of new data",
+      "status": "Statement and comparison prepared; final team review pending",
+      "menu": "evidence",
+      "summary": "Isaac Jenkins led disease-side evidence and databases; Micky fact-checked code and helped establish GitHub collaboration; the project lead handled supply-chain logistics, gathered remaining data and designed application requirements and extensions. Disease-side input shaped CDC/BEAM integration and historical analysis. NORS and USDA add domains beyond the three core sources.",
+      "implemented": [
+        "One-page team science draft documents known stakeholder feedback and resulting workflow changes.",
+        "Added-data evaluation reports measured benefit or harm rather than assuming integration improves accuracy.",
+        "Next priorities are timestamped data releases, calibrated poultry telemetry and verified logistics/health partners."
+      ],
+      "remaining": [
+        "Isaac Jenkins is named as provided. Review role wording and authorship with the team; Micky's surname and the lead's preferred author name remain for completion.",
+        "No professional credential, external interview or genuine Kiro participation is inferred from these contributions."
+      ],
+      "artifacts": [
+        {
+          "label": "One-page team statement",
+          "name": "team-science.pdf"
+        },
+        {
+          "label": "Editable team statement",
+          "name": "team-science.md"
+        },
+        {
+          "label": "Ablation results",
+          "name": "integrated-model.json"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No physical sensors or validated poultry spoilage model are demonstrated.",
+    "No regulatory authority, consumer-illness probability, genomic causation or truck-safe routing is asserted.",
+    "Kiro was not used, as disclosed by the owner. Team review and a timed human presentation are not inferred from software tests."
+  ]
+}

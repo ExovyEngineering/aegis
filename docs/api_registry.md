@@ -2,6 +2,14 @@
 
 Canonical registry: `config/api_registry.yaml` (YAML-compatible JSON). Google Sheets import: `config/api_registry.csv`. Probe evidence: `reports/api_status.json`. Documentation/catalog HTTP success does not establish a working data integration.
 
+October 31 recording preparation rechecked six core public endpoints: FSIS recall
+JSON, NWS alerts, Open-Meteo forecast, MoDOT service discovery, OSRM route and OSRM
+table all returned HTTP 200 and the expected payload type. Exact results are in
+`reports/recording_connectivity.json`; prior results are retained under
+`reports/checks/connectivity/`. Other providers keep their separate test dates.
+These probes do not refresh every MoDOT incident layer, validate complete sampling
+or weather coverage, prove truck restrictions, or establish a recall-to-lot match.
+
 - **fsis_recalls** — USDA FSIS: https://www.fsis.usda.gov/fsis/api/recall/v/1
   Type: official recall JSON. Fallback: Local dated response cache; unavailable banner.
 - **fsis_sampling** — USDA FSIS: https://www.fsis.usda.gov/science-data/data-sets-visualizations/laboratory-sampling-data
@@ -26,6 +34,8 @@ Canonical registry: `config/api_registry.yaml` (YAML-compatible JSON). Google Sh
   Type: historical reanalysis JSON. Fallback: Unavailable; not NOAA observations.
 - **modot** — MoDOT: https://mapping.modot.mo.gov/arcgis/rest/services/TravelerInformation/TravelerInformationData/MapServer?f=pjson
   Type: ArcGIS layer discovery JSON. Fallback: Report failure; no assertion roads are clear.
+- **iowa_dot** — Iowa DOT: https://services.arcgis.com/8lRhdTsQyJpO52F1/arcgis/rest/services/CARS511_Iowa_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultRecordCount=1
+  Type: official 511 point-event GeoJSON. Fallback: Dated official fixture with stale label; unavailable coverage is not a clear road.
 - **osrm_route** — OSRM: https://router.project-osrm.org/route/v1/driving/-92.3341,38.9517;-90.1994,38.6270?overview=full&geometries=geojson
   Type: route GeoJSON. Fallback: Straight-line estimated geometry; road factor 1.25 at 65 km/h.
 - **osrm_table** — OSRM: https://router.project-osrm.org/table/v1/driving/-92.3341,38.9517;-90.1994,38.6270

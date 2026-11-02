@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-11-02T11:09:29.146469-06:00",
+  "title": "AEGIS Master User Guide",
+  "pdf": "reports/aegis_master_guide.pdf",
+  "markdown": "docs/aegis_master_guide.md",
+  "html": "reports/aegis_master_guide.html",
+  "sha256": "82e2a898ea5d96a7bdb681ac1a886f979abaabc8599e94b8ca390eefd2db7288",
+  "bytes": 503778,
+  "pages": 83,
+  "chapters": [
+    {
+      "id": "start-here-what-aegis-does",
+      "title": "Start here: what AEGIS does",
+      "body_page_index": 0,
+      "page": 3
+    },
+    {
+      "id": "find-your-way-around-the-application",
+      "title": "Find your way around the application",
+      "body_page_index": 3,
+      "page": 6
+    },
+    {
+      "id": "open-the-site-and-choose-a-safe-practice-workspace",
+      "title": "Open the site and choose a safe practice workspace",
+      "body_page_index": 7,
+      "page": 10
+    },
+    {
+      "id": "command-center-understand-the-current-operation",
+      "title": "Command center: understand the current operation",
+      "body_page_index": 8,
+      "page": 11
+    },
+    {
+      "id": "route-laboratory-test-a-farm-or-a-multi-location-fleet",
+      "title": "Route laboratory: test a farm or a multi-location fleet",
+      "body_page_index": 17,
+      "page": 20
+    },
+    {
+      "id": "road-intelligence-inspect-independent-road-evidence",
+      "title": "Road intelligence: inspect independent road evidence",
+      "body_page_index": 21,
+      "page": 24
+    },
+    {
+      "id": "save-the-load-exposure-remaining-quality-and-reviewed-rescue",
+      "title": "Save the Load: exposure, remaining quality and reviewed rescue",
+      "body_page_index": 24,
+      "page": 27
+    },
+    {
+      "id": "dispatcher-desk-turn-reports-into-recorded-decisions",
+      "title": "Dispatcher desk: turn reports into recorded decisions",
+      "body_page_index": 27,
+      "page": 30
+    },
+    {
+      "id": "aegis-drive-a-simplified-view-for-a-parked-driver",
+      "title": "AEGIS Drive: a simplified view for a parked driver",
+      "body_page_index": 33,
+      "page": 36
+    },
+    {
+      "id": "guided-practice-a-driver-concern-through-dispatcher-response",
+      "title": "Guided practice: a driver concern through dispatcher response",
+      "body_page_index": 37,
+      "page": 40
+    },
+    {
+      "id": "sources-evidence-understand-where-each-claim-comes-from",
+      "title": "Sources & evidence: understand where each claim comes from",
+      "body_page_index": 41,
+      "page": 44
+    },
+    {
+      "id": "model-evaluation-understand-the-measured-result",
+      "title": "Model evaluation: understand the measured result",
+      "body_page_index": 50,
+      "page": 53
+    },
+    {
+      "id": "evidence-assistant-explain-a-captured-decision-context",
+      "title": "Evidence assistant: explain a captured decision context",
+      "body_page_index": 56,
+      "page": 59
+    },
+    {
+      "id": "project-brief-the-learning-and-presentation-hub",
+      "title": "Project brief: the learning and presentation hub",
+      "body_page_index": 59,
+      "page": 62
+    },
+    {
+      "id": "guided-rehearsal-practice-a-complete-story",
+      "title": "Guided rehearsal: practice a complete story",
+      "body_page_index": 60,
+      "page": 63
+    },
+    {
+      "id": "record-the-final-video",
+      "title": "Record the final video",
+      "body_page_index": 63,
+      "page": 66
+    },
+    {
+      "id": "storage-exports-and-sharing",
+      "title": "Storage, exports and sharing",
+      "body_page_index": 68,
+      "page": 71
+    },
+    {
+      "id": "local-backup-and-recovery",
+      "title": "Local backup and recovery",
+      "body_page_index": 70,
+      "page": 73
+    },
+    {
+      "id": "troubleshooting-by-what-you-see",
+      "title": "Troubleshooting by what you see",
+      "body_page_index": 71,
+      "page": 74
+    },
+    {
+      "id": "glossary-for-reading-the-site",
+      "title": "Glossary for reading the site",
+      "body_page_index": 73,
+      "page": 76
+    },
+    {
+      "id": "present-the-project-accurately",
+      "title": "Present the project accurately",
+      "body_page_index": 76,
+      "page": 79
+    },
+    {
+      "id": "keep-this-master-guide-current",
+      "title": "Keep this master guide current",
+      "body_page_index": 77,
+      "page": 80
+    },
+    {
+      "id": "recorded-verification-and-what-remains-open",
+      "title": "Recorded verification and what remains open",
+      "body_page_index": 78,
+      "page": 81
+    }
+  ],
+  "overflow_count": 0,
+  "paper": "US Letter",
+  "body_font_points": 10.7,
+  "table_font_points": 9.7,
+  "bookmarks": 23,
+  "contents_links": 23,
+  "source_files": [
+    {
+      "path": "docs/manual_parts/start.md",
+      "sha256": "516c041f49b5224698945281c37b05d9f7a4c9a5368ffb19ad357cb6aae80cce"
+    },
+    {
+      "path": "docs/manual_parts/operations.md",
+      "sha256": "992058cfe07ecafadcbe7c9718cbc1d18d777c23117e5b1db1da4930f3949bbf"
+    },
+    {
+      "path": "docs/manual_parts/freshness.md",
+      "sha256": "ebc599b75ee072bee0fec3fd5b8a13f367b9e34fc94474e0ccf4111d1e604f69"
+    },
+    {
+      "path": "docs/manual_parts/dispatch_drive.md",
+      "sha256": "8157e812089c52de616e2bdde14c604dc1f8007997e393879641eb4da89a8796"
+    },
+    {
+      "path": "docs/manual_parts/evidence_science.md",
+      "sha256": "8a5906e4c3e7d96427383b44c186d9073463bb7fefbebb4c4bdbd95f76655f22"
+    },
+    {
+      "path": "docs/manual_parts/assistant.md",
+      "sha256": "1d55d8b46206135b84bc649010cdca5b4371d6ee107a4daf50cc7e80a42c1165"
+    },
+    {
+      "path": "docs/manual_parts/rehearsal.md",
+      "sha256": "240f42a2928cf59465a010c36453f3ea66a119af7f2bbc43fef6116dddaaf9d8"
+    },
+    {
+      "path": "docs/recording_guide.md",
+      "sha256": "a369718a15d48b6ea64113adf19b8bf7584a55c2a705218c65ce18721b149228"
+    },
+    {
+      "path": "docs/manual_parts/reference.md",
+      "sha256": "7c793b22bea8d8a03650f3d5b49500998c79981d75946f38ded661c684de80e2"
+    }
+  ],
+  "verification_snapshot": "reports/session_verification.json",
+  "live_api_requests_performed": false,
+  "operational_database_accessed": false
+}

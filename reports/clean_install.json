@@ -1,0 +1,193 @@
+{
+  "started_at": "2026-10-28T06:27:36.876079+00:00",
+  "passed": true,
+  "fresh_dependency_environment": true,
+  "operator_database_modified": false,
+  "environment_path": ".tools/clean-room-20261028/.venv/Scripts/python.exe",
+  "checks": [
+    {
+      "name": "pip-check",
+      "exit_code": 0,
+      "passed": true,
+      "log": ".tools/clean-room-20261028/pip-check.txt",
+      "log_sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "name": "pip-freeze",
+      "exit_code": 0,
+      "passed": true,
+      "log": ".tools/clean-room-20261028/pip-freeze.txt",
+      "log_sha256": "2f9e94a847821c2b18f10923867eee973baffefe533c937c9475268d49e6c5de"
+    },
+    {
+      "name": "fresh-python-package-workflow",
+      "exit_code": 0,
+      "passed": true,
+      "log": ".tools/clean-room-20261028/fresh-python-package-workflow.txt",
+      "log_sha256": "f104b03a90daf892fb55aca7fa96c2447594ce828bed7b7b0005b9038e883cd1"
+    }
+  ],
+  "dependency_install": {
+    "index": "https://pypi.org/simple",
+    "lock_sha256": "2f9e94a847821c2b18f10923867eee973baffefe533c937c9475268d49e6c5de",
+    "install_log_sha256": "d36a7e9eef8bb469145b8b6e08e7c6220430d261f9fbc441979c983a85f4742d",
+    "system_site_packages": false,
+    "wheel_download_cache_may_be_reused": true
+  },
+  "pinned_dependencies_verified": 51,
+  "archive_sha256": "ef112cf926ed82a9fb58324a4927a6c2d8043bd5df6e13733d7becfad21b515b",
+  "package_workflow_checks": 18,
+  "application_code_sha256": "32f49375c1037b1dfba68268987abe8cc8e4f00cc034532d90239dcabf5f29f0",
+  "application_files_verified": 86,
+  "http_base_url": "http://127.0.0.1:50641",
+  "isolated_rehearsal_completed": true,
+  "rehearsal_run_kind": "automated_check",
+  "recorded_rehearsal_seconds": 0.28,
+  "export_sha256": "b20ec5d9d726fb350a8201347bbc908fa0844fcdcd849e909cde953038bab506",
+  "http_checks": [
+    {
+      "path": "/",
+      "http_status": 200
+    },
+    {
+      "path": "/assets/index-CrQME9Lm.js",
+      "http_status": 200
+    },
+    {
+      "path": "/assets/maps-DNySFZuc.js",
+      "http_status": 200
+    },
+    {
+      "path": "/assets/charts-CM80Q5FX.js",
+      "http_status": 200
+    },
+    {
+      "path": "/assets/index-BPXtTJDm.css",
+      "http_status": 200
+    },
+    {
+      "path": "/api/network",
+      "http_status": 200
+    },
+    {
+      "path": "/api/model",
+      "http_status": 200
+    },
+    {
+      "path": "/api/scenarios",
+      "http_status": 200
+    },
+    {
+      "path": "/api/drive/T01",
+      "http_status": 200
+    },
+    {
+      "path": "/api/readiness",
+      "http_status": 200
+    },
+    {
+      "path": "/api/food-access",
+      "http_status": 200
+    },
+    {
+      "path": "/api/data/catalog",
+      "http_status": 200
+    },
+    {
+      "path": "/api/rehearsal",
+      "http_status": 200
+    },
+    {
+      "path": "/api/runtime-context",
+      "http_status": 200
+    },
+    {
+      "path": "/api/evidence/fsis_recalls?limit=2",
+      "http_status": 200
+    },
+    {
+      "path": "/api/evidence/openmeteo",
+      "http_status": 200
+    },
+    {
+      "path": "/api/project-brief.pdf",
+      "http_status": 200
+    },
+    {
+      "path": "/api/rehearsal/start",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/checkpoint",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/checkpoint",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/events",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/checkpoint",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/proposals/D",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/proposals/08b01a55-61e5-4278-9249-246e00f14b88/approve",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/checkpoint",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/drive/T01/focus",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/driver/SH01/acknowledge",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/driver/incident",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/checkpoint",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/checkpoint",
+      "http_status": 200,
+      "method": "POST"
+    },
+    {
+      "path": "/api/rehearsal/d7bd0b12-ae2c-4201-9081-979c8ad62238/finish",
+      "http_status": 200,
+      "method": "POST"
+    }
+  ],
+  "http_checks_passed": 31,
+  "local_http": true,
+  "application_provider_requests_performed": false,
+  "prebuilt_frontend_tested": true,
+  "fresh_node_install_tested": false,
+  "finished_at": "2026-10-28T06:28:05.680753+00:00"
+}

@@ -1,7 +1,7 @@
 {
   "base_url": "http://127.0.0.1:8001",
   "isolated_database": true,
-  "checked_at": "2026-10-26T16:31:53.317Z",
+  "checked_at": "2026-10-28T06:27:54.619Z",
   "checks": [
     {
       "name": "isolated_reset_succeeded",
@@ -124,7 +124,7 @@
       "details": "No unidentified review action"
     },
     {
-      "name": "action_/api/dispatch/incidents/7c17d526-4fbc-4508-9053-865243449e4e/review",
+      "name": "action_/api/dispatch/incidents/deeacb28-0c9c-4e6c-865c-36971495d5f5/review",
       "passed": true,
       "details": "HTTP 200"
     },
@@ -214,7 +214,7 @@
       "details": "Release requires a newly reviewed scenario before dispatch"
     },
     {
-      "name": "action_/api/dispatch/incidents/7c17d526-4fbc-4508-9053-865243449e4e/review",
+      "name": "action_/api/dispatch/incidents/deeacb28-0c9c-4e6c-865c-36971495d5f5/review",
       "passed": true,
       "details": "HTTP 200"
     },
@@ -255,11 +255,66 @@
     }
   ],
   "page_errors": [],
-  "console_errors": [
-    "Failed to load resource: the server responded with a status of 404 (Not Found)"
-  ],
+  "console_errors": [],
   "http_failures": [],
-  "request_failures": [],
+  "request_failures": [
+    {
+      "url": "https://a.tile.openstreetmap.org/7/30/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://b.tile.openstreetmap.org/7/31/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://b.tile.openstreetmap.org/7/30/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/31/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/29/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/7/32/48.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/7/29/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/7/32/49.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/10/248/391.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/10/249/390.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/10/249/392.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://c.tile.openstreetmap.org/10/250/391.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/10/247/392.png",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://a.tile.openstreetmap.org/10/250/392.png",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
   "screenshots": [
     "custom-operation-editor.png",
     "custom-operation-routes.png",
@@ -270,6 +325,6 @@
     "dispatcher-resolved.png",
     "mobile-dispatcher.png"
   ],
-  "browser_version": "156.0.8078.47",
+  "browser_version": "156.0.8078.48",
   "passed": true
 }

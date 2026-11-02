@@ -1,0 +1,372 @@
+{
+  "checked_at": "2026-10-27T07:58:39.813Z",
+  "base_url": "http://127.0.0.1:8001",
+  "isolated_database": true,
+  "checks": [
+    {
+      "name": "layer_off_Simulated logistics",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_on_Simulated logistics",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_off_FSIS establishments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_on_FSIS establishments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_off_NWS alert geometry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_on_NWS alert geometry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_off_MoDOT incident geometry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_on_MoDOT incident geometry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_off_Route geometry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "layer_on_Route geometry",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "map_zoom_controls_usable",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/proposals/A",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "proposal_A_requires_identity",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "proposal_A_closed",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/proposals/B",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "proposal_B_requires_identity",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "proposal_B_closed",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/proposals/D",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "proposal_D_requires_identity",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "proposal_D_closed",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/proposals/C",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/proposals/7d1083cb-3bec-4ccd-b671-81125fb30371/approve",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "scenario_C_holds_are_explicitly_approved",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "scenario_C_never_assigns_held_lots",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/events",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "event_road_closure_changes_actual_simulation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "event_road_closure_invalidates_assignments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/events",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "event_severe_weather_changes_actual_simulation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "event_severe_weather_invalidates_assignments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/events",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "event_delivery_delay_changes_actual_simulation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "event_delivery_delay_invalidates_assignments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/events",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "event_refrigeration_fault_changes_actual_simulation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "event_refrigeration_fault_invalidates_assignments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/events",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "event_temperature_excursion_changes_actual_simulation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "event_temperature_excursion_invalidates_assignments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "/api/events",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "event_inventory_shortage_changes_actual_simulation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "event_inventory_shortage_invalidates_assignments",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/demo/reset",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "source_next_page_works",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "source_filter_can_be_cleared",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "/api/refresh/openmeteo?summary=true",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "source_refresh_openmeteo_reports_actual_outcome",
+      "passed": true,
+      "details": "Usable dated response; cache status retained"
+    },
+    {
+      "name": "/api/refresh/nws_alerts?summary=true",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "source_refresh_nws_alerts_reports_actual_outcome",
+      "passed": true,
+      "details": "Usable dated response; cache status retained"
+    },
+    {
+      "name": "/api/refresh/ncei_historical?summary=true",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "source_refresh_ncei_historical_reports_actual_outcome",
+      "passed": true,
+      "details": "Usable dated response; cache status retained"
+    },
+    {
+      "name": "/api/refresh/fsis_recalls?summary=true",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "source_refresh_fsis_recalls_reports_actual_outcome",
+      "passed": true,
+      "details": "Usable dated response; cache status retained"
+    },
+    {
+      "name": "/api/refresh/modot?summary=true",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "source_refresh_modot_reports_actual_outcome",
+      "passed": true,
+      "details": "Usable dated response; cache status retained"
+    },
+    {
+      "name": "favicon_is_served",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "no_uncaught_javascript",
+      "passed": true,
+      "details": "[]"
+    },
+    {
+      "name": "no_app_http_failures",
+      "passed": true,
+      "details": "[]"
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "source_actions": [
+    {
+      "source": "openmeteo",
+      "retrieved_at": "2026-10-27T07:20:24.054695+00:00",
+      "cache": true,
+      "stale": false
+    },
+    {
+      "source": "nws_alerts",
+      "retrieved_at": "2026-10-27T07:58:57.625293+00:00",
+      "cache": false,
+      "stale": false
+    },
+    {
+      "source": "ncei_historical",
+      "retrieved_at": "2026-10-27T07:20:25.891853+00:00",
+      "cache": true,
+      "stale": false
+    },
+    {
+      "source": "fsis_recalls",
+      "retrieved_at": "2026-10-27T07:20:27.326810+00:00",
+      "cache": true,
+      "stale": false
+    },
+    {
+      "source": "modot",
+      "retrieved_at": "2026-10-27T07:59:00.895054+00:00",
+      "cache": false,
+      "stale": false,
+      "refresh_error": null
+    }
+  ],
+  "screenshots": [
+    "source-refresh-controls.png"
+  ],
+  "passed": true,
+  "finished_at": "2026-10-27T07:59:11.563Z"
+}

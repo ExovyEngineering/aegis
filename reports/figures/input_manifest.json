@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-26T16:33:53.044198+00:00",
+  "generated_at": "2026-11-02T17:08:51.405377+00:00",
   "inputs": [
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\manifests\\inventory.json",
-      "sha256": "636794dcc9c01942a02b28044690bc366080c40fff65cbcf3ab90dd92d5b0408"
+      "sha256": "346a242b531178d992eb01600d1dcea2344198cb0730800851677c2e6bbc513a"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\api_status.json",
-      "sha256": "e00516f6a5a1b2637b8924bfdc4295cc81b3e614a5f63031c6ea0d92f2966a17"
+      "sha256": "4afd5e024ba1a2a78990af5c4457e396a47971e3db830c22450e746dab7846e4"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_evaluation.json",
@@ -15,7 +15,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\demo_results.json",
-      "sha256": "b8ea1c8d7e482c1c9df8263707251ef88152a836aec43f715cd32cda7bf6a6a9"
+      "sha256": "5cb9653442b48c4c41a7defe6486eeeee379c8d7730df13e5f603e435528882c"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_timing.json",
@@ -31,15 +31,31 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\validation.json",
-      "sha256": "34ce7fb5cacc3492b262a69085b28a36989b71d8d4ecf56d66b570c32ac0e210"
+      "sha256": "d8a5cd4b1b80870e1aae2b618c6c923c01a4672e8de5729f64510d2a5b08fbb5"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\evidence_ingestion.json",
-      "sha256": "c0c049774d39dd662faba32f665f3c75c8f0b148433c5a0079f64a2ee8e9ed8e"
+      "sha256": "43b031161975c908d07d66c96eea0866947fad87901570a5d08b8f2f72a41b51"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\operations_demo.json",
-      "sha256": "b210596add9c72a9cb0e4d0e4209e25668e95d5b7ba1e7449f749801d4c273ab"
+      "sha256": "4d2c5cff3f7f4c10ac5059f48d502e1507b9992d7ba052ededbaed87b2695938"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\usda_food_environment.json",
+      "sha256": "1519620538d580b3e8d3669c9f09ee9dd218159a99fe5484d57f39129e1960d0"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\ingestion_verification.json",
+      "sha256": "cff8befd2ae1b32bf0e2f9bc8f8ec0addcaf61e3cc56e2b23638c13a07b09b0b"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\clean_install.json",
+      "sha256": "4649ca162c3554bd1f679aff97ecff29e84f827dcaecde8fe4e01b98145708d6"
+    },
+    {
+      "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\freshness_demo.json",
+      "sha256": "5ea0664004b3129ced27fa9cbab29a8ea42b0f09ca63771caffeda0e3b98ce90"
     }
   ],
   "draft": true

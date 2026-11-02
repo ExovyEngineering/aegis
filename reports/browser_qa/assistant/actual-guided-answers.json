@@ -1,0 +1,1055 @@
+{
+  "scenario_compare": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "generated_at": "2026-10-29T07:35:45.376561+00:00",
+    "engine": {
+      "mode": "deterministic",
+      "label": "Deterministic evidence summary",
+      "llm_used": false,
+      "version": "aegis-evidence-summary-v1"
+    },
+    "question_id": "scenario_compare",
+    "shipment_id": null,
+    "answer": {
+      "title": "Current response tradeoffs",
+      "summary": "Review all feasible allocations and their limitations before a human chooses a response.",
+      "items": [
+        {
+          "id": "scenario.A",
+          "title": "Baseline distribution",
+          "text": "Scenario A, Baseline distribution: solver OPTIMAL; 12 selected simulated shipments, cost $2,954, unmet demand 2,700 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg.",
+          "category": "scenario_compare",
+          "provenance": "computed one-wave optimization over the captured simulation",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "solver",
+              "label": "Scenario objectives and constraints",
+              "path": "backend/optimization.py",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+          ]
+        },
+        {
+          "id": "scenario.B",
+          "title": "Targeted verification",
+          "text": "Scenario B, Targeted verification: solver OPTIMAL; 12 selected simulated shipments, cost $3,029, unmet demand 2,700 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg. Approval can publish assignments that still require targeted human verification; driver acknowledgment is separate.",
+          "category": "scenario_compare",
+          "provenance": "computed one-wave optimization over the captured simulation",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "solver",
+              "label": "Scenario objectives and constraints",
+              "path": "backend/optimization.py",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+          ]
+        },
+        {
+          "id": "scenario.C",
+          "title": "Precautionary hold pending review",
+          "text": "Scenario C, Precautionary hold pending review: solver OPTIMAL; 11 selected simulated shipments, cost $2,774, unmet demand 3,100 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg. Candidate precautionary lot holds are L03, L08; this summary places no hold.",
+          "category": "scenario_compare",
+          "provenance": "computed one-wave optimization over the captured simulation",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "solver",
+              "label": "Scenario objectives and constraints",
+              "path": "backend/optimization.py",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+          ]
+        },
+        {
+          "id": "scenario.D",
+          "title": "Alternative eligible supply",
+          "text": "Scenario D, Alternative eligible supply: solver OPTIMAL; 13 selected simulated shipments, cost $2,840, unmet demand 2,300 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg. Eligible simulated lots may be substituted on fixed trips; this does not automatically reroute trucks.",
+          "category": "scenario_compare",
+          "provenance": "computed one-wave optimization over the captured simulation",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "solver",
+              "label": "Scenario objectives and constraints",
+              "path": "backend/optimization.py",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+          ]
+        },
+        {
+          "id": "scenario.boundaries",
+          "title": "How to compare the responses",
+          "text": "Compare feasible scenarios using cost, unmet demand, exclusions and constraints together. Held, recalled and ineligible lots cannot dispatch. A predictive score alone does not impose a mandatory hold. Approval must be recorded in Command against the current revision.",
+          "category": "scenario_compare",
+          "provenance": "implemented workflow rules",
+          "citations": [
+            {
+              "id": "workflow.rules",
+              "label": "Approval and driver workflow",
+              "path": "docs/operations_workflow.md",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "The objective selects a single allocation wave with fixed candidate trip estimates; it is not a continuous inventory ledger."
+          ]
+        }
+      ]
+    },
+    "suggested_views": [
+      {
+        "view": "command",
+        "label": "Review scenarios and constraints"
+      },
+      {
+        "view": "dispatch",
+        "label": "Open dispatcher review"
+      }
+    ],
+    "limitations": [
+      "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+      "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+      "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+      "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+      "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+      "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+      "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+    ],
+    "operational_state_modified": false
+  },
+  "shipment_review": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "generated_at": "2026-10-29T07:35:45.746235+00:00",
+    "engine": {
+      "mode": "deterministic",
+      "label": "Deterministic evidence summary",
+      "llm_used": false,
+      "version": "aegis-evidence-summary-v1"
+    },
+    "question_id": "shipment_review",
+    "shipment_id": "SH01",
+    "answer": {
+      "title": "Selected shipment review",
+      "summary": "Inspect the candidate, current assignment context and separate evidence. No disposition is made here.",
+      "items": [
+        {
+          "id": "shipment.SH01.context",
+          "title": "Selected simulated shipment SH01",
+          "text": "SH01 is a candidate trip from DC1 to D01, truck T01, candidate lot L01, quantity 400 kg. Its current simulated cargo value is 1.4°C. An approved assignment with this trip ID is not present in the captured state.",
+          "category": "shipment_review",
+          "provenance": "deterministic simulated logistics",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "assignments.snapshot",
+              "label": "Captured approved assignments",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          ],
+          "uncertainty": [
+            "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+          ],
+          "shipment_id": "SH01"
+        },
+        {
+          "id": "shipment.SH01.assignment",
+          "title": "Current approved assignment context",
+          "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+          "category": "shipment_review",
+          "provenance": "captured simulated assignment and eligibility fields",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "assignments.snapshot",
+              "label": "Captured approved assignments",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          ],
+          "uncertainty": [
+            "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+          ],
+          "shipment_id": "SH01"
+        },
+        {
+          "id": "shipment.SH01.constraints",
+          "title": "Candidate constraints to inspect",
+          "text": "Direct candidate flags: candidate lot is held.",
+          "category": "shipment_review",
+          "provenance": "captured candidate fields and modeled constraint checks",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            }
+          ],
+          "uncertainty": [
+            "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+          ],
+          "shipment_id": "SH01"
+        },
+        {
+          "id": "shipment.SH01.exposure",
+          "title": "Temperature and route meaning",
+          "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.187 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+          "category": "shipment_review",
+          "provenance": "simulated cargo and estimated travel",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "thermal",
+              "label": "Illustrative physical projection",
+              "path": "backend/cold_chain.py",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+          ],
+          "shipment_id": "SH01"
+        }
+      ]
+    },
+    "suggested_views": [
+      {
+        "view": "command",
+        "label": "Inspect the shipment and scenarios"
+      },
+      {
+        "view": "dispatch",
+        "label": "Inspect current lot and assignment state"
+      },
+      {
+        "view": "roads",
+        "label": "Inspect independent road evidence"
+      }
+    ],
+    "limitations": [
+      "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+      "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+      "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+      "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+      "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+      "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+      "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+    ],
+    "operational_state_modified": false
+  },
+  "model_limits": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "generated_at": "2026-10-29T07:35:45.898735+00:00",
+    "engine": {
+      "mode": "deterministic",
+      "label": "Deterministic evidence summary",
+      "llm_used": false,
+      "version": "aegis-evidence-summary-v1"
+    },
+    "question_id": "model_limits",
+    "shipment_id": null,
+    "answer": {
+      "title": "Measured model performance and limits",
+      "summary": "Read the actual retrospective result together with feature-availability and target limitations.",
+      "items": [
+        {
+          "id": "model.metrics",
+          "title": "Measured primary holdout result",
+          "text": "The saved national raw-poultry primary-sample evaluation has 48,361 training rows and 23,472 holdout rows. Historical baseline Brier is 0.08855575; logistic Brier is 0.08859440; logistic ROC-AUC is 0.498029. Lower Brier means lower squared probability error for this defined sampling task.",
+          "category": "model_limits",
+          "provenance": "measured retrospective FSIS sampling evaluation",
+          "citations": [
+            {
+              "id": "model_evaluation.json",
+              "label": "Measured historical FSIS evaluation",
+              "path": "reports/model_evaluation.json",
+              "retrieved_at": null,
+              "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+            }
+          ],
+          "uncertainty": [
+            "This measures selected-sample positivity, not consumer illness probability, farm safety or an individualized shipment forecast."
+          ]
+        },
+        {
+          "id": "model.comparison",
+          "title": "Complexity is not evidence of useful skill",
+          "text": "The baseline has lower or equal Brier error than logistic regression in this saved primary holdout. Inspect calibration, uncertainty, target definition and actual feature-availability dates before claiming an operational forecast.",
+          "category": "model_limits",
+          "provenance": "comparison of the recorded evaluation metrics",
+          "citations": [
+            {
+              "id": "model_evaluation.json",
+              "label": "Measured historical FSIS evaluation",
+              "path": "reports/model_evaluation.json",
+              "retrieved_at": null,
+              "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+            }
+          ],
+          "uncertainty": [
+            "No new accuracy figure, training run or prospective validation is created by this summary."
+          ]
+        },
+        {
+          "id": "model.availability",
+          "title": "Feature availability remains a separate question",
+          "text": "A collection-date reporting lag or snapshot-creation date is not proof of first public availability. The current application does not establish a validated prospective illness forecast. Keep FSIS outcomes, CDC BEAM surveillance and NORS outbreaks distinct unless a defensible linkage is demonstrated.",
+          "category": "model_limits",
+          "provenance": "scientific interpretation and implementation boundaries",
+          "citations": [
+            {
+              "id": "timing",
+              "label": "Recorded availability audit",
+              "path": "reports/model_timing.json",
+              "retrieved_at": null,
+              "sha256": "32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7"
+            },
+            {
+              "id": "model_evaluation.json",
+              "label": "Measured historical FSIS evaluation",
+              "path": "reports/model_evaluation.json",
+              "retrieved_at": null,
+              "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not infer missing publication dates or genomic relationships from shared labels."
+          ]
+        }
+      ]
+    },
+    "suggested_views": [
+      {
+        "view": "science",
+        "label": "Open measured model evaluation"
+      },
+      {
+        "view": "evidence",
+        "label": "Inspect source provenance"
+      }
+    ],
+    "limitations": [
+      "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+      "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+      "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+      "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+      "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+      "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+      "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+    ],
+    "operational_state_modified": false
+  },
+  "source_coverage": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "generated_at": "2026-10-29T07:35:46.014092+00:00",
+    "engine": {
+      "mode": "deterministic",
+      "label": "Deterministic evidence summary",
+      "llm_used": false,
+      "version": "aegis-evidence-summary-v1"
+    },
+    "question_id": "source_coverage",
+    "shipment_id": null,
+    "answer": {
+      "title": "Saved source coverage and failures",
+      "summary": "These are captured records and coverage reports, not a new live provider check.",
+      "items": [
+        {
+          "id": "sources.probes",
+          "title": "Saved connectivity is not complete data coverage",
+          "text": "Saved registry probes record 14 successful HTTP checks out of 19 endpoints. Recorded failures: fsis_recalls, fsis_sampling, fsis_directory, food_access, food_environment. These checks have separate timestamps and include catalogs/documentation; no live request was made here.",
+          "category": "source_coverage",
+          "provenance": "dated HTTP probe metadata",
+          "citations": [
+            {
+              "id": "api_status.json",
+              "label": "Saved public endpoint checks",
+              "path": "reports/api_status.json",
+              "retrieved_at": null,
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "A past HTTP success is not current uptime, complete observations or a working scientific join."
+          ]
+        },
+        {
+          "id": "source.fsis_recalls",
+          "title": "Saved source check: fsis_recalls",
+          "text": "fsis_recalls: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:21.270824+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.fsis_recalls",
+              "label": "Probe record fsis_recalls",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:21.270824+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.fsis_sampling",
+          "title": "Saved source check: fsis_sampling",
+          "text": "fsis_sampling: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:23.318096+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.fsis_sampling",
+              "label": "Probe record fsis_sampling",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:23.318096+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.fsis_directory",
+          "title": "Saved source check: fsis_directory",
+          "text": "fsis_directory: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:23.949178+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.fsis_directory",
+              "label": "Probe record fsis_directory",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:23.949178+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.cdc_beam",
+          "title": "Saved source check: cdc_beam",
+          "text": "cdc_beam: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:24.565158+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.cdc_beam",
+              "label": "Probe record cdc_beam",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:24.565158+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.cdc_nors",
+          "title": "Saved source check: cdc_nors",
+          "text": "cdc_nors: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:26.243185+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.cdc_nors",
+              "label": "Probe record cdc_nors",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:26.243185+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.ncei_docs",
+          "title": "Saved source check: ncei_docs",
+          "text": "ncei_docs: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:27.797453+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.ncei_docs",
+              "label": "Probe record ncei_docs",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:27.797453+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.ncei_historical",
+          "title": "Saved source check: ncei_historical",
+          "text": "ncei_historical: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:28.825020+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.ncei_historical",
+              "label": "Probe record ncei_historical",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:28.825020+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.nws_alerts",
+          "title": "Saved source check: nws_alerts",
+          "text": "nws_alerts: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:29.802362+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.nws_alerts",
+              "label": "Probe record nws_alerts",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:29.802362+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.nws_points",
+          "title": "Saved source check: nws_points",
+          "text": "nws_points: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:30.816909+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.nws_points",
+              "label": "Probe record nws_points",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:30.816909+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.openmeteo",
+          "title": "Saved source check: openmeteo",
+          "text": "openmeteo: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:31.638122+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.openmeteo",
+              "label": "Probe record openmeteo",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:31.638122+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.openmeteo_archive",
+          "title": "Saved source check: openmeteo_archive",
+          "text": "openmeteo_archive: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:33.044113+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.openmeteo_archive",
+              "label": "Probe record openmeteo_archive",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:33.044113+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.modot",
+          "title": "Saved source check: modot",
+          "text": "modot: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:34.324627+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.modot",
+              "label": "Probe record modot",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:34.324627+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.osrm_route",
+          "title": "Saved source check: osrm_route",
+          "text": "osrm_route: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:35.079354+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.osrm_route",
+              "label": "Probe record osrm_route",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:35.079354+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.osrm_table",
+          "title": "Saved source check: osrm_table",
+          "text": "osrm_table: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:36.428215+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.osrm_table",
+              "label": "Probe record osrm_table",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:36.428215+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.osrm_docs",
+          "title": "Saved source check: osrm_docs",
+          "text": "osrm_docs: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:37.540385+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.osrm_docs",
+              "label": "Probe record osrm_docs",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:37.540385+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.osm_missouri",
+          "title": "Saved source check: osm_missouri",
+          "text": "osm_missouri: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:38.474262+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.osm_missouri",
+              "label": "Probe record osm_missouri",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:38.474262+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.food_access",
+          "title": "Saved source check: food_access",
+          "text": "food_access: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:39.821210+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.food_access",
+              "label": "Probe record food_access",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:39.821210+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.food_environment",
+          "title": "Saved source check: food_environment",
+          "text": "food_environment: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:42.954113+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.food_environment",
+              "label": "Probe record food_environment",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T06:09:42.954113+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "source.iowa_dot",
+          "title": "Saved source check: iowa_dot",
+          "text": "iowa_dot: saved check succeeded; HTTP 200. Check time: 2026-10-28T19:04:18.887645+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+          "category": "source_coverage",
+          "provenance": "dated registry probe; no refresh",
+          "citations": [
+            {
+              "id": "probe.iowa_dot",
+              "label": "Probe record iowa_dot",
+              "path": "reports/api_status.json",
+              "retrieved_at": "2026-10-28T19:04:18.887645+00:00",
+              "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+            }
+          ],
+          "uncertainty": [
+            "The assistant does not turn saved connectivity metadata into a current source-success claim."
+          ]
+        },
+        {
+          "id": "sources.noaa",
+          "title": "Bounded observed historical weather",
+          "text": "The saved NOAA extract covers 5 stations and returns 2,730 of 2,730 requested station-day rows; 9 metric values are missing. Date-row coverage is separate from numeric/quality coverage. Historical observations, forecasts, reanalysis and simulated cargo are not interchangeable.",
+          "category": "source_coverage",
+          "provenance": "observed historical weather coverage report",
+          "citations": [
+            {
+              "id": "noaa.coverage",
+              "label": "NOAA coverage report",
+              "path": "reports/noaa_coverage.json",
+              "retrieved_at": "2026-10-26T06:39:34.423710+00:00",
+              "sha256": "b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e"
+            }
+          ],
+          "uncertainty": [
+            "Coverage is bounded to the requested stations/window. No validated FSIS-weather join or invented missing observation is supplied."
+          ]
+        },
+        {
+          "id": "sources.traceability",
+          "title": "Separate evidence is not a verified recall or genomic match",
+          "text": "Official recall notices are evidence. Fictional lots lack genuine traceability supporting a verified real recall match. CDC BEAM and NORS are separate layers, and shared serotype labels alone do not establish genomic relatedness or a common source.",
+          "category": "source_coverage",
+          "provenance": "scientific and traceability boundaries",
+          "citations": [
+            {
+              "id": "model.card",
+              "label": "Model scope and limitations",
+              "path": "docs/model_card.md",
+              "retrieved_at": null
+            },
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            }
+          ],
+          "uncertainty": []
+        }
+      ]
+    },
+    "suggested_views": [
+      {
+        "view": "evidence",
+        "label": "Inspect source times and failures"
+      },
+      {
+        "view": "roads",
+        "label": "Inspect Missouri and Iowa road evidence"
+      }
+    ],
+    "limitations": [
+      "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+      "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+      "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+      "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+      "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+      "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+      "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+    ],
+    "operational_state_modified": false
+  },
+  "driver_workflow": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "generated_at": "2026-10-29T07:35:46.157570+00:00",
+    "engine": {
+      "mode": "deterministic",
+      "label": "Deterministic evidence summary",
+      "llm_used": false,
+      "version": "aegis-evidence-summary-v1"
+    },
+    "question_id": "driver_workflow",
+    "shipment_id": null,
+    "answer": {
+      "title": "Human-approved driver handoff",
+      "summary": "Approval, verification, acknowledgment and incident review remain distinct actions.",
+      "items": [
+        {
+          "id": "driver.assignments",
+          "title": "Current approved handoff records",
+          "text": "The captured state has 0 approved assignments, 0 acknowledged, and 0 assignments still requiring scenario-B verification. These are distinct workflow records.",
+          "category": "driver_workflow",
+          "provenance": "captured simulated assignment records",
+          "citations": [
+            {
+              "id": "assignments.snapshot",
+              "label": "Captured approved assignments",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          ],
+          "uncertainty": [
+            "A driver acknowledgment is not targeted verification, physical departure authorization or a product-safety finding."
+          ]
+        },
+        {
+          "id": "driver.parked",
+          "title": "Use Drive while safely parked",
+          "text": "Drive starts locked. Its server-checked parked attestation is self-declared and expires after ten minutes. Reporting and acknowledgments require the current truck/trip context. No actual motion, GPS or physical fuel/cargo sensor is detected.",
+          "category": "driver_workflow",
+          "provenance": "implemented driver interaction rules",
+          "citations": [
+            {
+              "id": "workflow.rules",
+              "label": "Approval and driver workflow",
+              "path": "docs/operations_workflow.md",
+              "retrieved_at": null
+            },
+            {
+              "id": "drive.design",
+              "label": "Driver mode design and limits",
+              "path": "docs/drive_design.md",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": []
+        },
+        {
+          "id": "driver.decisions",
+          "title": "Keep reports and dispatcher authority separate",
+          "text": "A driver report reaches the local dispatcher inbox without automatically rerouting or holding cargo. A human may review, hold/release a lot or issue a versioned instruction. A hold removes affected assignments; release does not recreate them. Events, resets and new approvals can invalidate an earlier assignment context.",
+          "category": "driver_workflow",
+          "provenance": "implemented approval, incident and hold workflow",
+          "citations": [
+            {
+              "id": "workflow.rules",
+              "label": "Approval and driver workflow",
+              "path": "docs/operations_workflow.md",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": []
+        }
+      ]
+    },
+    "suggested_views": [
+      {
+        "view": "dispatch",
+        "label": "Open dispatcher desk"
+      },
+      {
+        "view": "drive",
+        "label": "Open parked-use Drive"
+      }
+    ],
+    "limitations": [
+      "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+      "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+      "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+      "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+      "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+      "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+      "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+    ],
+    "operational_state_modified": false
+  },
+  "next_actions": {
+    "snapshot_id": "8ff7c7f917e237889dc95272f9ce480ebc753202e8c976b4c1a7f0dc2f7254c8",
+    "network_revision": 5,
+    "generated_at": "2026-10-29T07:35:46.234328+00:00",
+    "engine": {
+      "mode": "deterministic",
+      "label": "Deterministic evidence summary",
+      "llm_used": false,
+      "version": "aegis-evidence-summary-v1"
+    },
+    "question_id": "next_actions",
+    "shipment_id": null,
+    "answer": {
+      "title": "Review steps available now",
+      "summary": "Use the linked workspaces to inspect evidence before any separate human-approved action.",
+      "items": [
+        {
+          "id": "network.overview",
+          "title": "Current simulated operation",
+          "text": "Network revision 5, seed 20261026: 24 candidate shipments, 8 trucks, 12 lots and 0 approved assignments. Held lots: L01. Recalled lots: none.",
+          "category": "next_actions",
+          "provenance": "deterministic simulated logistics",
+          "citations": [
+            {
+              "id": "network.snapshot",
+              "label": "Captured simulated network",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "076a04bc80aa6e7cf2836c8471564d27e05fd0f4787abfbb803ca6a292141b40"
+            },
+            {
+              "id": "assignments.snapshot",
+              "label": "Captured approved assignments",
+              "path": "data/aegis.sqlite",
+              "retrieved_at": null,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            }
+          ],
+          "uncertainty": [
+            "Candidate shipments are not necessarily approved assignments. Contracts, stock, demand and telemetry are fictional."
+          ]
+        },
+        {
+          "id": "next.review",
+          "title": "A review path through existing workspaces",
+          "text": "Inspect current scenario constraints and exclusions in Command, read dated source/model limits, then use the existing explicit approval and dispatcher workflow when a human chooses an action. Route laboratory and Road intelligence are separate planning tools; saved experiments cannot dispatch.",
+          "category": "next_actions",
+          "provenance": "read-only navigation guidance",
+          "citations": [
+            {
+              "id": "workflow.rules",
+              "label": "Approval and driver workflow",
+              "path": "docs/operations_workflow.md",
+              "retrieved_at": null
+            },
+            {
+              "id": "manual",
+              "label": "Complete master user handbook",
+              "path": "docs/aegis_master_guide.md",
+              "retrieved_at": null
+            }
+          ],
+          "uncertainty": [
+            "This answer navigates to review; it cannot execute a recommendation or override a hold, recall or eligibility constraint."
+          ]
+        }
+      ]
+    },
+    "suggested_views": [
+      {
+        "view": "command",
+        "label": "Compare current responses"
+      },
+      {
+        "view": "evidence",
+        "label": "Inspect source gaps"
+      },
+      {
+        "view": "brief",
+        "label": "Read the handbook and rehearsal guide"
+      }
+    ],
+    "limitations": [
+      "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+      "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+      "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+      "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+      "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+      "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+      "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+    ],
+    "operational_state_modified": false
+  }
+}

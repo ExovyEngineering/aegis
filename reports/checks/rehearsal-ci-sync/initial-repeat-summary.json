@@ -1,0 +1,27 @@
+{
+  "note": "Summary retained from actual captured tool output for initial three focused runs. Full console output for these initial runs was not redirected; this is not a reconstructed complete failure log. The separate original remote CI failure is preserved under reports/checks/ci-push-40753353618/.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "passed": 13,
+      "failed": 0
+    },
+    {
+      "attempt": 2,
+      "exit_code": 0,
+      "passed": 13,
+      "failed": 0
+    },
+    {
+      "attempt": 3,
+      "exit_code": 1,
+      "passed": 12,
+      "failed": 1,
+      "failure": "shows the completed export immediately, and reloads the saved immutable record from history",
+      "assertion": "Unable to find role=\"link\" and name \"Download rehearsal evidence JSON\"",
+      "location": "frontend/src/RehearsalWorkspace.test.tsx:164:31",
+      "observed_dom": "Run still active with all milestones; closing-notes textarea empty and finish button disabled. The original stale-checkpoint test passed."
+    }
+  ]
+}

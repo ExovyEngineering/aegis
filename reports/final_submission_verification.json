@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-02T20:54:05.465899+00:00",
+  "passed": true,
+  "pdf_pages": 20,
+  "bookmarks": 10,
+  "contents_links": 9,
+  "main_report_pages": 19,
+  "embedded_team_statement_page": 20,
+  "team_statement_page_text_content_and_dimensions_preserved": true,
+  "pagination_scope": "Main report printed page numbers and contents refer to its own pages. Appendix A is the final PDF page and retains its standalone one-page pagination.",
+  "page_numbers_verified": true,
+  "input_hashes_verified": true,
+  "one_page_team_statement_verified": true,
+  "owner_kiro_non_use_disclosed": true,
+  "browser_checks_passed": 140,
+  "browser_artifact": "reports/browser_qa/final_submission/results.json",
+  "browser_scope": "Separately dated existing 140-check browser workflow, not rerun as part of this PDF inspection",
+  "notebook_preview_checks": "reports/notebook_preview_qa.json",
+  "release_pipeline_passed": true,
+  "verification": "reports/session_verification.json",
+  "original_operator_preserved": true,
+  "isolated_inspection_preserved": true,
+  "visual_review": {
+    "method": "Native Matplotlib print layout previews, not independent PDF rasterization",
+    "pages_inspected": [
+      1,
+      6,
+      14
+    ],
+    "physical_printer_tested": false
+  },
+  "human_video_or_submission_verified": false
+}

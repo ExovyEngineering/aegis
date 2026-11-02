@@ -1,0 +1,1311 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-02T17:04:08.501793+00:00",
+  "status": "conditional retrospective multi-source feasibility; prospective skill unestablished",
+  "operational_activation_allowed": false,
+  "target": "Salmonella positivity in a selected Missouri FSIS raw-poultry primary sample collected 7 days after forecast origin",
+  "geography": "Missouri",
+  "horizon_days": 7,
+  "coverage": {
+    "input_fsis_rows": 78607,
+    "valid_fsis_samples": 78553,
+    "national_states": 46,
+    "mo_samples": 1534,
+    "mo_establishments": 16,
+    "mo_positives": 136,
+    "eligible_samples": 490,
+    "excluded_incomplete_coverage": 1044,
+    "weather_station_count": 5,
+    "weather_station_days": 2730,
+    "weather_observation_start": "2025-01-01",
+    "weather_observation_end": "2026-06-30",
+    "beam_source_rows": 262616,
+    "beam_mo_human_salmonella_rows": 3403,
+    "nors_source_rows": 66713,
+    "nors_mo_food_salmonella_records": 30,
+    "geography_gate": "MO only; no national weather extrapolation",
+    "availability_gate": "Conditional retrospective pass only; prospective publication availability unverified"
+  },
+  "availability_assumptions": {
+    "fsis": {
+      "assumed_lag_days": 90,
+      "basis": "collection_date + lag",
+      "actual_publication_timestamps_present": false
+    },
+    "beam": {
+      "assumed_lag_days": 90,
+      "basis": "month-end + lag",
+      "actual_publication_timestamps_present": false
+    },
+    "noaa": {
+      "assumed_lag_days": 7,
+      "basis": "daily reporting-period end + lag; 28 trailing complete days",
+      "actual_publication_timestamps_present": false
+    },
+    "nors": {
+      "assumed_lag_days": 730,
+      "basis": "month-end + lag; latest available trailing12 exported-record count",
+      "actual_publication_timestamps_present": false,
+      "source_observation_end": "2023-12-31"
+    }
+  },
+  "primary_split": {
+    "training_rows": 255,
+    "training_positives": 20,
+    "validation_rows": 171,
+    "validation_positives": 22,
+    "training_origin_start": "2025-02-10",
+    "training_origin_end": "2025-09-25",
+    "training_end": "2025-10-02",
+    "validation_start": "2026-01-05",
+    "validation_end": "2026-06-23",
+    "last_training_label_available_assumed": "2025-12-31",
+    "label_embargo_days": 90,
+    "horizon_days": 7
+  },
+  "models": {
+    "baseline": {
+      "features": [],
+      "description": "Smoothed training-cohort prevalence, fixed at validation start",
+      "metrics": {
+        "n": 171,
+        "positives": 22,
+        "prevalence": 0.1286549707602339,
+        "brier": 0.11430650591767817,
+        "brier_week_block_bootstrap_95_ci": [
+          0.0747566518232417,
+          0.155548413602761
+        ],
+        "pr_auc_average_precision": 0.1286549707602339,
+        "roc_auc": 0.5,
+        "mean_predicted": 0.08171206225680934,
+        "calibration": [
+          {
+            "n": 171,
+            "mean_predicted": 0.08171206225680934,
+            "observed": 0.1286549707602339,
+            "wilson_95_ci": [
+              0.08651879833556422,
+              0.1871088592199425
+            ]
+          }
+        ],
+        "expected_calibration_error_fixed_bins": 0.04694290850342457,
+        "confusion_at_0_1": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 149,
+          "fn": 22
+        },
+        "review_fraction_at_0_1": 0.0,
+        "precision_at_0_1": 0.0,
+        "recall_at_0_1": 0.0
+      }
+    },
+    "fsis": {
+      "features": [
+        "fsis_mo_lag90_prevalence",
+        "month_sin",
+        "month_cos"
+      ],
+      "metrics": {
+        "n": 171,
+        "positives": 22,
+        "prevalence": 0.1286549707602339,
+        "brier": 0.1125569762718985,
+        "brier_week_block_bootstrap_95_ci": [
+          0.07322398248282551,
+          0.15296572714223305
+        ],
+        "pr_auc_average_precision": 0.17222000820747946,
+        "roc_auc": 0.6067724222086639,
+        "mean_predicted": 0.08943797264338203,
+        "calibration": [
+          {
+            "n": 110,
+            "mean_predicted": 0.07965689852637349,
+            "observed": 0.1,
+            "wilson_95_ci": [
+              0.056760120140964467,
+              0.17023502809756688
+            ]
+          },
+          {
+            "n": 61,
+            "mean_predicted": 0.10707597514946296,
+            "observed": 0.18032786885245902,
+            "wilson_95_ci": [
+              0.10379140124053363,
+              0.2947415634812107
+            ]
+          }
+        ],
+        "expected_calibration_error_fixed_bins": 0.039216998116851906,
+        "confusion_at_0_1": {
+          "tp": 11,
+          "fp": 50,
+          "tn": 99,
+          "fn": 11
+        },
+        "review_fraction_at_0_1": 0.3567251461988304,
+        "precision_at_0_1": 0.18032786885245902,
+        "recall_at_0_1": 0.5
+      },
+      "coefficients_standardized": {
+        "fsis_mo_lag90_prevalence": -0.19400656298162083,
+        "month_sin": -0.09549521395899686,
+        "month_cos": -0.0635199379451062
+      },
+      "constant_training_features": [],
+      "constant_validation_features": [],
+      "training_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08111239860950174,
+          "max": 0.08990536277602523,
+          "distinct": 76
+        },
+        "month_sin": {
+          "min": -1.0,
+          "max": 1.0,
+          "distinct": 8
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.5000000000000001,
+          "distinct": 8
+        }
+      },
+      "validation_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08021390374331551,
+          "max": 0.08544027898866609,
+          "distinct": 54
+        },
+        "month_sin": {
+          "min": 1.2246467991473532e-16,
+          "max": 1.0,
+          "distinct": 4
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.8660254037844387,
+          "distinct": 5
+        }
+      }
+    },
+    "fsis_cdc": {
+      "features": [
+        "fsis_mo_lag90_prevalence",
+        "month_sin",
+        "month_cos",
+        "beam_mo_human_log_isolates"
+      ],
+      "metrics": {
+        "n": 171,
+        "positives": 22,
+        "prevalence": 0.1286549707602339,
+        "brier": 0.11265149512335015,
+        "brier_week_block_bootstrap_95_ci": [
+          0.07295430765284937,
+          0.1535248492332814
+        ],
+        "pr_auc_average_precision": 0.16635404029065987,
+        "roc_auc": 0.599450884685784,
+        "mean_predicted": 0.08847845172444908,
+        "calibration": [
+          {
+            "n": 99,
+            "mean_predicted": 0.06869773505518004,
+            "observed": 0.10101010101010101,
+            "wilson_95_ci": [
+              0.055796675028805004,
+              0.1760306356111785
+            ]
+          },
+          {
+            "n": 72,
+            "mean_predicted": 0.11567693714469403,
+            "observed": 0.16666666666666666,
+            "wilson_95_ci": [
+              0.09799371242561683,
+              0.269107069305355
+            ]
+          }
+        ],
+        "expected_calibration_error_fixed_bins": 0.04017651903578483,
+        "confusion_at_0_1": {
+          "tp": 12,
+          "fp": 60,
+          "tn": 89,
+          "fn": 10
+        },
+        "review_fraction_at_0_1": 0.42105263157894735,
+        "precision_at_0_1": 0.16666666666666666,
+        "recall_at_0_1": 0.5454545454545454
+      },
+      "coefficients_standardized": {
+        "fsis_mo_lag90_prevalence": -0.27007847820159575,
+        "month_sin": -0.10734185094775547,
+        "month_cos": -0.2149472005316726,
+        "beam_mo_human_log_isolates": 0.2384874275999673
+      },
+      "constant_training_features": [],
+      "constant_validation_features": [],
+      "training_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08111239860950174,
+          "max": 0.08990536277602523,
+          "distinct": 76
+        },
+        "month_sin": {
+          "min": -1.0,
+          "max": 1.0,
+          "distinct": 8
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.5000000000000001,
+          "distinct": 8
+        },
+        "beam_mo_human_log_isolates": {
+          "min": 3.6375861597263857,
+          "max": 4.553876891600541,
+          "distinct": 8
+        }
+      },
+      "validation_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08021390374331551,
+          "max": 0.08544027898866609,
+          "distinct": 54
+        },
+        "month_sin": {
+          "min": 1.2246467991473532e-16,
+          "max": 1.0,
+          "distinct": 4
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.8660254037844387,
+          "distinct": 5
+        },
+        "beam_mo_human_log_isolates": {
+          "min": 3.5263605246161616,
+          "max": 4.653960350157523,
+          "distinct": 6
+        }
+      }
+    },
+    "core_integrated": {
+      "features": [
+        "fsis_mo_lag90_prevalence",
+        "month_sin",
+        "month_cos",
+        "beam_mo_human_log_isolates",
+        "noaa_mean_tmax_c_trailing28",
+        "noaa_mean_tmin_c_trailing28",
+        "noaa_mean_daily_prcp_mm_trailing28"
+      ],
+      "metrics": {
+        "n": 171,
+        "positives": 22,
+        "prevalence": 0.1286549707602339,
+        "brier": 0.11245647631220959,
+        "brier_week_block_bootstrap_95_ci": [
+          0.07258884719745254,
+          0.15244177971173703
+        ],
+        "pr_auc_average_precision": 0.15293089464479476,
+        "roc_auc": 0.5852654057352045,
+        "mean_predicted": 0.08903040418143535,
+        "calibration": [
+          {
+            "n": 11,
+            "mean_predicted": 0.04813966905085352,
+            "observed": 0.09090909090909091,
+            "wilson_95_ci": [
+              0.016232172885884855,
+              0.37735843645159567
+            ]
+          },
+          {
+            "n": 85,
+            "mean_predicted": 0.06768198050171166,
+            "observed": 0.09411764705882353,
+            "wilson_95_ci": [
+              0.04846506129221763,
+              0.17487051968624767
+            ]
+          },
+          {
+            "n": 75,
+            "mean_predicted": 0.11922259217094087,
+            "observed": 0.17333333333333334,
+            "wilson_95_ci": [
+              0.1041914626835726,
+              0.2743081144051939
+            ]
+          }
+        ],
+        "expected_calibration_error_fixed_bins": 0.039624566578798565,
+        "confusion_at_0_1": {
+          "tp": 13,
+          "fp": 62,
+          "tn": 87,
+          "fn": 9
+        },
+        "review_fraction_at_0_1": 0.43859649122807015,
+        "precision_at_0_1": 0.17333333333333334,
+        "recall_at_0_1": 0.5909090909090909
+      },
+      "coefficients_standardized": {
+        "fsis_mo_lag90_prevalence": -0.24656819520873724,
+        "month_sin": -0.06825882924584072,
+        "month_cos": -0.2600331171776666,
+        "beam_mo_human_log_isolates": 0.15317449250253815,
+        "noaa_mean_tmax_c_trailing28": 0.4050687738249388,
+        "noaa_mean_tmin_c_trailing28": -0.3722237090164223,
+        "noaa_mean_daily_prcp_mm_trailing28": -0.10975886003828728
+      },
+      "constant_training_features": [],
+      "constant_validation_features": [],
+      "training_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08111239860950174,
+          "max": 0.08990536277602523,
+          "distinct": 76
+        },
+        "month_sin": {
+          "min": -1.0,
+          "max": 1.0,
+          "distinct": 8
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.5000000000000001,
+          "distinct": 8
+        },
+        "beam_mo_human_log_isolates": {
+          "min": 3.6375861597263857,
+          "max": 4.553876891600541,
+          "distinct": 8
+        },
+        "noaa_mean_tmax_c_trailing28": {
+          "min": 4.492142857142857,
+          "max": 32.39071428571429,
+          "distinct": 100
+        },
+        "noaa_mean_tmin_c_trailing28": {
+          "min": -6.869999999999999,
+          "max": 22.419285714285714,
+          "distinct": 102
+        },
+        "noaa_mean_daily_prcp_mm_trailing28": {
+          "min": 0.3578571428571428,
+          "max": 6.902142857142857,
+          "distinct": 83
+        }
+      },
+      "validation_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08021390374331551,
+          "max": 0.08544027898866609,
+          "distinct": 54
+        },
+        "month_sin": {
+          "min": 1.2246467991473532e-16,
+          "max": 1.0,
+          "distinct": 4
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.8660254037844387,
+          "distinct": 5
+        },
+        "beam_mo_human_log_isolates": {
+          "min": 3.5263605246161616,
+          "max": 4.653960350157523,
+          "distinct": 6
+        },
+        "noaa_mean_tmax_c_trailing28": {
+          "min": 8.665714285714285,
+          "max": 27.255714285714284,
+          "distinct": 66
+        },
+        "noaa_mean_tmin_c_trailing28": {
+          "min": -3.7235714285714283,
+          "max": 17.812142857142856,
+          "distinct": 66
+        },
+        "noaa_mean_daily_prcp_mm_trailing28": {
+          "min": 0.3178571428571429,
+          "max": 7.625,
+          "distinct": 50
+        }
+      }
+    },
+    "with_nors": {
+      "features": [
+        "fsis_mo_lag90_prevalence",
+        "month_sin",
+        "month_cos",
+        "beam_mo_human_log_isolates",
+        "noaa_mean_tmax_c_trailing28",
+        "noaa_mean_tmin_c_trailing28",
+        "noaa_mean_daily_prcp_mm_trailing28",
+        "nors_mo_food_salmonella_log_records_trailing12months"
+      ],
+      "metrics": {
+        "n": 171,
+        "positives": 22,
+        "prevalence": 0.1286549707602339,
+        "brier": 0.12448900601343771,
+        "brier_week_block_bootstrap_95_ci": [
+          0.07829724081553704,
+          0.17243900081670782
+        ],
+        "pr_auc_average_precision": 0.16760711373340126,
+        "roc_auc": 0.5739780353874313,
+        "mean_predicted": 0.01560134620380913,
+        "calibration": [
+          {
+            "n": 171,
+            "mean_predicted": 0.01560134620380913,
+            "observed": 0.1286549707602339,
+            "wilson_95_ci": [
+              0.08651879833556422,
+              0.1871088592199425
+            ]
+          }
+        ],
+        "expected_calibration_error_fixed_bins": 0.11305362455642479,
+        "confusion_at_0_1": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 149,
+          "fn": 22
+        },
+        "review_fraction_at_0_1": 0.0,
+        "precision_at_0_1": 0.0,
+        "recall_at_0_1": 0.0
+      },
+      "coefficients_standardized": {
+        "fsis_mo_lag90_prevalence": -0.13324361700324058,
+        "month_sin": -0.4896313621004271,
+        "month_cos": -0.33230076313369694,
+        "beam_mo_human_log_isolates": 0.3526384628545536,
+        "noaa_mean_tmax_c_trailing28": 0.5740682220717896,
+        "noaa_mean_tmin_c_trailing28": 0.03592708794153038,
+        "noaa_mean_daily_prcp_mm_trailing28": -0.18546172907371436,
+        "nors_mo_food_salmonella_log_records_trailing12months": -0.8840335295953147
+      },
+      "constant_training_features": [],
+      "constant_validation_features": [
+        "nors_mo_food_salmonella_log_records_trailing12months"
+      ],
+      "training_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08111239860950174,
+          "max": 0.08990536277602523,
+          "distinct": 76
+        },
+        "month_sin": {
+          "min": -1.0,
+          "max": 1.0,
+          "distinct": 8
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.5000000000000001,
+          "distinct": 8
+        },
+        "beam_mo_human_log_isolates": {
+          "min": 3.6375861597263857,
+          "max": 4.553876891600541,
+          "distinct": 8
+        },
+        "noaa_mean_tmax_c_trailing28": {
+          "min": 4.492142857142857,
+          "max": 32.39071428571429,
+          "distinct": 100
+        },
+        "noaa_mean_tmin_c_trailing28": {
+          "min": -6.869999999999999,
+          "max": 22.419285714285714,
+          "distinct": 102
+        },
+        "noaa_mean_daily_prcp_mm_trailing28": {
+          "min": 0.3578571428571428,
+          "max": 6.902142857142857,
+          "distinct": 83
+        },
+        "nors_mo_food_salmonella_log_records_trailing12months": {
+          "min": 0.0,
+          "max": 0.6931471805599453,
+          "distinct": 2
+        }
+      },
+      "validation_feature_ranges": {
+        "fsis_mo_lag90_prevalence": {
+          "min": 0.08021390374331551,
+          "max": 0.08544027898866609,
+          "distinct": 54
+        },
+        "month_sin": {
+          "min": 1.2246467991473532e-16,
+          "max": 1.0,
+          "distinct": 4
+        },
+        "month_cos": {
+          "min": -1.0,
+          "max": 0.8660254037844387,
+          "distinct": 5
+        },
+        "beam_mo_human_log_isolates": {
+          "min": 3.5263605246161616,
+          "max": 4.653960350157523,
+          "distinct": 6
+        },
+        "noaa_mean_tmax_c_trailing28": {
+          "min": 8.665714285714285,
+          "max": 27.255714285714284,
+          "distinct": 66
+        },
+        "noaa_mean_tmin_c_trailing28": {
+          "min": -3.7235714285714283,
+          "max": 17.812142857142856,
+          "distinct": 66
+        },
+        "noaa_mean_daily_prcp_mm_trailing28": {
+          "min": 0.3178571428571429,
+          "max": 7.625,
+          "distinct": 50
+        },
+        "nors_mo_food_salmonella_log_records_trailing12months": {
+          "min": 0.6931471805599453,
+          "max": 0.6931471805599453,
+          "distinct": 1
+        }
+      }
+    }
+  },
+  "ablations": [
+    {
+      "added_domain": "PulseNet-derived BEAM aggregate",
+      "reference_model": "fsis",
+      "augmented_model": "fsis_cdc",
+      "brier_change": 9.451885145163479e-05,
+      "paired_week_block_bootstrap_95_ci": [
+        -0.0009708136184819029,
+        0.0015867312416508747
+      ],
+      "interpretation": "Paired interval includes zero; added value not established"
+    },
+    {
+      "added_domain": "NOAA ambient context",
+      "reference_model": "fsis_cdc",
+      "augmented_model": "core_integrated",
+      "brier_change": -0.00019501881114056767,
+      "paired_week_block_bootstrap_95_ci": [
+        -0.0013106120628280959,
+        0.0006436948274718998
+      ],
+      "interpretation": "Paired interval includes zero; added value not established"
+    },
+    {
+      "added_domain": "NORS exported outbreak-record context",
+      "reference_model": "core_integrated",
+      "augmented_model": "with_nors",
+      "brier_change": 0.01203252970122811,
+      "paired_week_block_bootstrap_95_ci": [
+        0.005490880864540872,
+        0.01896301523990977
+      ],
+      "interpretation": "Higher Brier in this conditional holdout; added source did not improve calibration/error"
+    },
+    {
+      "added_domain": "All integrated domains",
+      "reference_model": "baseline",
+      "augmented_model": "with_nors",
+      "brier_change": 0.01018250009575954,
+      "paired_week_block_bootstrap_95_ci": [
+        0.0037869376311707257,
+        0.016888015101574682
+      ],
+      "interpretation": "Higher Brier in this conditional holdout; added source did not improve calibration/error"
+    }
+  ],
+  "rolling_validation": [
+    {
+      "validation_requested_start": "2025-10-01",
+      "status": "insufficient_coverage",
+      "reason": "Insufficient chronological complete-case rows/classes for conditional study",
+      "training_rows": 130,
+      "validation_rows": 60
+    },
+    {
+      "validation_requested_start": "2026-01-01",
+      "status": "evaluated",
+      "split": {
+        "training_rows": 255,
+        "training_positives": 20,
+        "validation_rows": 67,
+        "validation_positives": 6,
+        "training_origin_start": "2025-02-10",
+        "training_origin_end": "2025-09-25",
+        "training_end": "2025-10-02",
+        "validation_start": "2026-01-05",
+        "validation_end": "2026-03-13",
+        "last_training_label_available_assumed": "2025-12-31",
+        "label_embargo_days": 90,
+        "horizon_days": 7
+      },
+      "metrics": {
+        "baseline": {
+          "n": 67,
+          "positives": 6,
+          "prevalence": 0.08955223880597014,
+          "brier": 0.08159410369913066,
+          "brier_week_block_bootstrap_95_ci": [
+            0.030242378737595374,
+            0.1551016132206831
+          ],
+          "pr_auc_average_precision": 0.08955223880597014,
+          "roc_auc": 0.5,
+          "mean_predicted": 0.08171206225680933,
+          "calibration": [
+            {
+              "n": 67,
+              "mean_predicted": 0.08171206225680933,
+              "observed": 0.08955223880597014,
+              "wilson_95_ci": [
+                0.04169095063798864,
+                0.18192752199666207
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.007840176549160818,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 61,
+            "fn": 6
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        },
+        "fsis": {
+          "n": 67,
+          "positives": 6,
+          "prevalence": 0.08955223880597014,
+          "brier": 0.08168237829860898,
+          "brier_week_block_bootstrap_95_ci": [
+            0.03014988352950703,
+            0.15481629604801495
+          ],
+          "pr_auc_average_precision": 0.1100173578434448,
+          "roc_auc": 0.5095628415300546,
+          "mean_predicted": 0.07115126128486493,
+          "calibration": [
+            {
+              "n": 67,
+              "mean_predicted": 0.07115126128486493,
+              "observed": 0.08955223880597014,
+              "wilson_95_ci": [
+                0.04169095063798864,
+                0.18192752199666207
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.018400977521105213,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 61,
+            "fn": 6
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        },
+        "fsis_cdc": {
+          "n": 67,
+          "positives": 6,
+          "prevalence": 0.08955223880597014,
+          "brier": 0.08200973534036261,
+          "brier_week_block_bootstrap_95_ci": [
+            0.029906063347313053,
+            0.15622354354475967
+          ],
+          "pr_auc_average_precision": 0.11082251082251082,
+          "roc_auc": 0.5150273224043715,
+          "mean_predicted": 0.06899085527261797,
+          "calibration": [
+            {
+              "n": 67,
+              "mean_predicted": 0.06899085527261797,
+              "observed": 0.08955223880597014,
+              "wilson_95_ci": [
+                0.04169095063798864,
+                0.18192752199666207
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.02056138353335217,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 61,
+            "fn": 6
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        },
+        "core_integrated": {
+          "n": 67,
+          "positives": 6,
+          "prevalence": 0.08955223880597014,
+          "brier": 0.08196405080110544,
+          "brier_week_block_bootstrap_95_ci": [
+            0.029728349070994902,
+            0.1558178367104285
+          ],
+          "pr_auc_average_precision": 0.1147162778741726,
+          "roc_auc": 0.4986338797814207,
+          "mean_predicted": 0.06339077313184834,
+          "calibration": [
+            {
+              "n": 11,
+              "mean_predicted": 0.04813966905085352,
+              "observed": 0.09090909090909091,
+              "wilson_95_ci": [
+                0.016232172885884855,
+                0.37735843645159567
+              ]
+            },
+            {
+              "n": 56,
+              "mean_predicted": 0.06638652571918661,
+              "observed": 0.08928571428571429,
+              "wilson_95_ci": [
+                0.03874214844958693,
+                0.19256001385511162
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.026161465674121805,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 61,
+            "fn": 6
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        },
+        "with_nors": {
+          "n": 67,
+          "positives": 6,
+          "prevalence": 0.08955223880597014,
+          "brier": 0.08841043259359534,
+          "brier_week_block_bootstrap_95_ci": [
+            0.02777824713593577,
+            0.17533746657920546
+          ],
+          "pr_auc_average_precision": 0.09341063885363662,
+          "roc_auc": 0.3292349726775956,
+          "mean_predicted": 0.007497286042877072,
+          "calibration": [
+            {
+              "n": 67,
+              "mean_predicted": 0.007497286042877072,
+              "observed": 0.08955223880597014,
+              "wilson_95_ci": [
+                0.04169095063798864,
+                0.18192752199666207
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.08205495276309308,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 61,
+            "fn": 6
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        }
+      }
+    },
+    {
+      "validation_requested_start": "2026-04-01",
+      "status": "evaluated",
+      "split": {
+        "training_rows": 319,
+        "training_positives": 22,
+        "validation_rows": 104,
+        "validation_positives": 16,
+        "training_origin_start": "2025-02-10",
+        "training_origin_end": "2025-12-05",
+        "training_end": "2025-12-12",
+        "validation_start": "2026-04-13",
+        "validation_end": "2026-06-23",
+        "last_training_label_available_assumed": "2026-03-12",
+        "label_embargo_days": 90,
+        "horizon_days": 7
+      },
+      "metrics": {
+        "baseline": {
+          "n": 104,
+          "positives": 16,
+          "prevalence": 0.15384615384615385,
+          "brier": 0.13693354325723966,
+          "brier_week_block_bootstrap_95_ci": [
+            0.10003486733987213,
+            0.173925513660425
+          ],
+          "pr_auc_average_precision": 0.15384615384615385,
+          "roc_auc": 0.5,
+          "mean_predicted": 0.07165109034267912,
+          "calibration": [
+            {
+              "n": 104,
+              "mean_predicted": 0.07165109034267912,
+              "observed": 0.15384615384615385,
+              "wilson_95_ci": [
+                0.09697301114953089,
+                0.23538023418524356
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.08219506350347473,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 88,
+            "fn": 16
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        },
+        "fsis": {
+          "n": 104,
+          "positives": 16,
+          "prevalence": 0.15384615384615385,
+          "brier": 0.1370969051973103,
+          "brier_week_block_bootstrap_95_ci": [
+            0.10148149342175429,
+            0.1705192005833256
+          ],
+          "pr_auc_average_precision": 0.14362705452938865,
+          "roc_auc": 0.46981534090909094,
+          "mean_predicted": 0.07605479658625548,
+          "calibration": [
+            {
+              "n": 21,
+              "mean_predicted": 0.04912178382463555,
+              "observed": 0.14285714285714285,
+              "wilson_95_ci": [
+                0.04981012499725268,
+                0.34636060280620945
+              ]
+            },
+            {
+              "n": 59,
+              "mean_predicted": 0.0738557461682796,
+              "observed": 0.2033898305084746,
+              "wilson_95_ci": [
+                0.120362724202172,
+                0.32268012272049906
+              ]
+            },
+            {
+              "n": 24,
+              "mean_predicted": 0.10502718169686366,
+              "observed": 0.041666666666666664,
+              "wilson_95_ci": [
+                0.0073934561655057685,
+                0.20241806478655938
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.10703467188922004,
+          "confusion_at_0_1": {
+            "tp": 1,
+            "fp": 23,
+            "tn": 65,
+            "fn": 15
+          },
+          "review_fraction_at_0_1": 0.23076923076923078,
+          "precision_at_0_1": 0.041666666666666664,
+          "recall_at_0_1": 0.0625
+        },
+        "fsis_cdc": {
+          "n": 104,
+          "positives": 16,
+          "prevalence": 0.15384615384615385,
+          "brier": 0.136987226840773,
+          "brier_week_block_bootstrap_95_ci": [
+            0.1003803332333938,
+            0.17287522972742358
+          ],
+          "pr_auc_average_precision": 0.139729164874844,
+          "roc_auc": 0.4506392045454546,
+          "mean_predicted": 0.0711327050249431,
+          "calibration": [
+            {
+              "n": 8,
+              "mean_predicted": 0.049592360567723384,
+              "observed": 0.0,
+              "wilson_95_ci": [
+                0.0,
+                0.32440756488388023
+              ]
+            },
+            {
+              "n": 96,
+              "mean_predicted": 0.07292773372971141,
+              "observed": 0.16666666666666666,
+              "wilson_95_ci": [
+                0.10527382371950136,
+                0.2537099015189491
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.09034304275470664,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 88,
+            "fn": 16
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        },
+        "core_integrated": {
+          "n": 104,
+          "positives": 16,
+          "prevalence": 0.15384615384615385,
+          "brier": 0.13451863557330707,
+          "brier_week_block_bootstrap_95_ci": [
+            0.09871054721347025,
+            0.16706692206764798
+          ],
+          "pr_auc_average_precision": 0.22398180269910875,
+          "roc_auc": 0.5703125,
+          "mean_predicted": 0.08081449632189715,
+          "calibration": [
+            {
+              "n": 94,
+              "mean_predicted": 0.07729963339732665,
+              "observed": 0.13829787234042554,
+              "wilson_95_ci": [
+                0.08263778119593643,
+                0.22236031654688312
+              ]
+            },
+            {
+              "n": 10,
+              "mean_predicted": 0.11385420781285968,
+              "observed": 0.3,
+              "wilson_95_ci": [
+                0.10779126740630099,
+                0.6032218525388546
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.07303165752425672,
+          "confusion_at_0_1": {
+            "tp": 3,
+            "fp": 7,
+            "tn": 81,
+            "fn": 13
+          },
+          "review_fraction_at_0_1": 0.09615384615384616,
+          "precision_at_0_1": 0.3,
+          "recall_at_0_1": 0.1875
+        },
+        "with_nors": {
+          "n": 104,
+          "positives": 16,
+          "prevalence": 0.15384615384615385,
+          "brier": 0.14935615012611184,
+          "brier_week_block_bootstrap_95_ci": [
+            0.10762780945945395,
+            0.1897498770528228
+          ],
+          "pr_auc_average_precision": 0.1896608739499336,
+          "roc_auc": 0.5184659090909091,
+          "mean_predicted": 0.01505294903273743,
+          "calibration": [
+            {
+              "n": 104,
+              "mean_predicted": 0.01505294903273743,
+              "observed": 0.15384615384615385,
+              "wilson_95_ci": [
+                0.09697301114953089,
+                0.23538023418524356
+              ]
+            }
+          ],
+          "expected_calibration_error_fixed_bins": 0.13879320481341642,
+          "confusion_at_0_1": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 88,
+            "fn": 16
+          },
+          "review_fraction_at_0_1": 0.0,
+          "precision_at_0_1": 0.0,
+          "recall_at_0_1": 0.0
+        }
+      }
+    }
+  ],
+  "timeseries": [
+    {
+      "month": "2026-01",
+      "n": 45,
+      "positives": 3,
+      "positive_fraction": 0.0666666667,
+      "baseline_mean": 0.0817120623,
+      "fsis_mean": 0.0642075858,
+      "fsis_cdc_mean": 0.0637398398,
+      "core_integrated_mean": 0.0543992147,
+      "with_nors_mean": 0.0079473494,
+      "coverage_reason": "Held-out selected samples with complete source coverage"
+    },
+    {
+      "month": "2026-02",
+      "n": 0,
+      "positives": 0,
+      "positive_fraction": null,
+      "baseline_mean": null,
+      "fsis_mean": null,
+      "fsis_cdc_mean": null,
+      "core_integrated_mean": null,
+      "with_nors_mean": null,
+      "coverage_reason": "No held-out sample meets complete source-coverage gate; no estimate"
+    },
+    {
+      "month": "2026-03",
+      "n": 22,
+      "positives": 3,
+      "positive_fraction": 0.1363636364,
+      "baseline_mean": 0.0817120623,
+      "fsis_mean": 0.0853542338,
+      "fsis_cdc_mean": 0.0797315687,
+      "core_integrated_mean": 0.0817825972,
+      "with_nors_mean": 0.006576702,
+      "coverage_reason": "Held-out selected samples with complete source coverage"
+    },
+    {
+      "month": "2026-04",
+      "n": 30,
+      "positives": 4,
+      "positive_fraction": 0.1333333333,
+      "baseline_mean": 0.0817120623,
+      "fsis_mean": 0.1034353834,
+      "fsis_cdc_mean": 0.1131667954,
+      "core_integrated_mean": 0.1260290708,
+      "with_nors_mean": 0.0197238143,
+      "coverage_reason": "Held-out selected samples with complete source coverage"
+    },
+    {
+      "month": "2026-05",
+      "n": 42,
+      "positives": 8,
+      "positive_fraction": 0.1904761905,
+      "baseline_mean": 0.0817120623,
+      "fsis_mean": 0.106382173,
+      "fsis_cdc_mean": 0.1174698956,
+      "core_integrated_mean": 0.1156772759,
+      "with_nors_mean": 0.0230139901,
+      "coverage_reason": "Held-out selected samples with complete source coverage"
+    },
+    {
+      "month": "2026-06",
+      "n": 32,
+      "positives": 4,
+      "positive_fraction": 0.125,
+      "baseline_mean": 0.0817120623,
+      "fsis_mean": 0.092363939,
+      "fsis_cdc_mean": 0.0680840146,
+      "core_integrated_mean": 0.0730531126,
+      "with_nors_mean": 0.0189753131,
+      "coverage_reason": "Held-out selected samples with complete source coverage"
+    }
+  ],
+  "input_provenance": [
+    {
+      "source": "fsis",
+      "processed_path": "data/processed/fsis_poultry.parquet",
+      "processed_sha256": "12304d0fb04e62c593fa7149eff43874bc2acc724aea49cec201fe36ca3c1d04",
+      "matches_ingestion_manifest": true,
+      "raw_source_provenance": [
+        {
+          "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+          "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+          "sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+          "metadata_creation_date": "March 19, 2026",
+          "declared_records": {
+            "primary": 28941,
+            "secondary": 5206
+          },
+          "parsed_primary_rows": 28941
+        },
+        {
+          "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+          "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+          "sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+          "metadata_creation_date": "March 19, 2026",
+          "declared_records": {
+            "primary": 28564,
+            "secondary": 5839
+          },
+          "parsed_primary_rows": 28564
+        },
+        {
+          "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+          "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+          "sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+          "metadata_creation_date": "October 09, 2026",
+          "declared_records": {
+            "primary": 21102,
+            "secondary": 4219
+          },
+          "parsed_primary_rows": 21102
+        }
+      ],
+      "actual_retrieved_at": null,
+      "actual_retrieval_note": "Exact original source retrieval timestamp not recorded; file names and local processing times are not publication timestamps",
+      "local_manifest_generated_at": null,
+      "historical_snapshot_vintage_verified": false
+    },
+    {
+      "source": "beam_1",
+      "processed_path": "data/processed/beam_1.parquet",
+      "processed_sha256": "f9f997aa85c29152f647f370eff3fe88b757e8bf08810fc2b5f8f8876f06e7d7",
+      "matches_ingestion_manifest": true,
+      "raw_source_provenance": [
+        {
+          "file": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+          "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\BEAM_Dashboard_-_Report_Data_20261026.csv",
+          "relative_path": "BEAM_Dashboard_-_Report_Data_20261026.csv",
+          "sha256": "c785791a096985c19c3b2a20c46112e629ae0dc73361b95333ecd6e5109f0274",
+          "bytes": 17585042
+        }
+      ],
+      "actual_retrieved_at": null,
+      "actual_retrieval_note": "Exact original source retrieval timestamp not recorded; file names and local processing times are not publication timestamps",
+      "local_manifest_generated_at": "2026-10-27T20:57:33.677506+00:00",
+      "historical_snapshot_vintage_verified": false
+    },
+    {
+      "source": "nors_0",
+      "processed_path": "data/processed/nors_0.parquet",
+      "processed_sha256": "b924774bd85127bb97e4304d6661d3457eba499c99f9edf8aa4e013c02ce00bc",
+      "matches_ingestion_manifest": true,
+      "raw_source_provenance": [
+        {
+          "file": "NORS_20261026.csv",
+          "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\NORS_20261026.csv",
+          "relative_path": "NORS_20261026.csv",
+          "sha256": "277d2c69ebcd499794a4cd4ad293e45968c144b3f4fb2950f02f8efad8eff987",
+          "bytes": 8967215
+        }
+      ],
+      "actual_retrieved_at": null,
+      "actual_retrieval_note": "Exact original source retrieval timestamp not recorded; file names and local processing times are not publication timestamps",
+      "local_manifest_generated_at": "2026-10-27T20:57:33.677506+00:00",
+      "historical_snapshot_vintage_verified": false
+    }
+  ],
+  "noaa_station_provenance": [
+    {
+      "station_id": "USW00003945",
+      "sha256": "9992c1be1348244526e9cf6a01a9063899ec491df7bfc45c941ae97f1b1bb5ac",
+      "retrieved_at": "2026-10-26T06:38:45.301598+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003945&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "rows": 546,
+      "latitude": 38.81704,
+      "longitude": -92.21475
+    },
+    {
+      "station_id": "USW00003947",
+      "sha256": "9ecfb639b8d4b43acc7a90d76861ba137de0451c06e59b58affae42e8862c14f",
+      "retrieved_at": "2026-10-26T06:38:46.306466+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003947&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "rows": 546,
+      "latitude": 39.29747,
+      "longitude": -94.73087
+    },
+    {
+      "station_id": "USW00003963",
+      "sha256": "cd0cec6d4c636d9e5ea3454bdcd75d2645bd3fe6b086939dd02102fe7843b378",
+      "retrieved_at": "2026-10-26T06:38:47.273257+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00003963&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "rows": 546,
+      "latitude": 38.59454,
+      "longitude": -92.15672
+    },
+    {
+      "station_id": "USW00013995",
+      "sha256": "26ca1fac107c2ccb1c9651fe103e1412f94f6670de8103d59c1f54a055f556fe",
+      "retrieved_at": "2026-10-26T06:38:48.334177+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013995&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "rows": 546,
+      "latitude": 37.23983,
+      "longitude": -93.38995
+    },
+    {
+      "station_id": "USW00013994",
+      "sha256": "3477c320482a7d92d096b45b0d87e234503d8809fc03184e73def860c1a97cdc",
+      "retrieved_at": "2026-10-26T06:39:10.817202+00:00",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00013994&startDate=2025-01-01&endDate=2026-06-30&dataTypes=TMAX%2CTMIN%2CPRCP&units=metric&format=json&includeStationLocation=true&includeStationName=true&includeAttributes=true",
+      "rows": 546,
+      "latitude": 38.75246,
+      "longitude": -90.37342
+    }
+  ],
+  "source_definitions": {
+    "beam": "https://www.cdc.gov/beam/about/index.html",
+    "beam_report": "https://data.cdc.gov/Foodborne-Waterborne-and-Related-Diseases/BEAM-Dashboard-Report-Data/jbhn-e8xn",
+    "noaa": "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation"
+  },
+  "artifacts": {
+    "analytic": "data/processed/integrated_mo_analytic.csv",
+    "predictions": "reports/integrated_model_predictions.csv",
+    "timeseries": "reports/integrated_model_timeseries.csv",
+    "report": "reports/integrated_model_evaluation.json",
+    "narrative": "reports/integrated_model_study.md",
+    "figure": "reports/figures/integrated_model_validation.png"
+  },
+  "limitations": [
+    "This is a conditional retrospective feasibility study. NOAA cache retrieval and FSIS snapshot-creation metadata postdate the modeled origins. Exact original BEAM/NORS retrieval timestamps were not recorded. Assumed lags are not evidence that these exact revised snapshots were available then; no prospective forecast validation or operational activation is claimed.",
+    "Target is positivity in selected FSIS raw-poultry surveillance samples in Missouri, conditional on being sampled. Backdating the forecast origin does not validate forecasting whether a future sample will be selected. It is not lot contamination, probability of illness, representative state prevalence, or a linkage from a human isolate to a food sample.",
+    "BEAM human Salmonella counts are PulseNet-derived aggregate surveillance context. State, pathogen, and time alignment provide no genomic linkage, epidemiological attribution, or outbreak causation; CDC records remain separate predictors and never become FSIS outcome labels.",
+    "NOAA is an equal-weight five-airport Missouri ambient index. Requiring all five quality-pass station values for each of 28 days can exclude many samples. This index is not establishment exposure, route weather, cargo telemetry, or statewide representative sampling.",
+    "NORS counts exported Missouri foodborne Salmonella outbreak records, not illnesses. Absent qualifying rows mean no matching record in this snapshot, not no outbreak. Its observation window ends in 2023; the latest period is capped at this source end, never extrapolated with future zeros. NORS and the broader BEAM system are not independent surveillance systems; the BEAM predictor here uses human isolate counts only.",
+    "All models and ablations use the identical complete-case cohort; coverage exclusion can bias the cohort. No station, state, or source missingness is imputed. Two additional datasets overall are NORS here and USDA county food-access context in separate UI/evidence artifacts; food-access deprivation is not treated as a contamination predictor and does not weight simulated destinations without a verified county crosswalk.",
+    "Regularization, feature sets, January 2026 primary split, 90-day fitting embargo, and 0.10 diagnostic review threshold are configured without holdout hyperparameter tuning; this is not a preregistered study. Source lags lack external validation; a different plausible lag could change or eliminate the study cohort.",
+    "Week-block bootstrap intervals describe sampling variation within the held-out weeks, with 400 resamples. They do not capture publication/revision uncertainty, all spatial dependence, model-selection uncertainty, or individual prediction intervals. Sparse positive results make discrimination unstable.",
+    "Calibration and time-series Wilson intervals assume independent Bernoulli observations. Repeated establishments and temporal dependence violate that approximation; these descriptive bands are not cluster-adjusted inferential intervals.",
+    "Diagnostic false positives mean negative selected samples prioritized for review; false negatives mean positive selected samples not prioritized. Counts are not estimates of prevented illness, regulatory violations, or avoidable waste. Any hold requires human approval; held or recalled lots cannot dispatch.",
+    "Standardized coefficients describe conditional associations among correlated features, not causal mechanisms. Constant training features and uncertainty spanning zero must not be presented as demonstrated added value.",
+    "The primary holdout NORS feature is constant while training spans two values. Its worse Brier score reflects this sparse, old exported-record context and temporal distribution shift; it does not establish that NORS generally lacks value."
+  ],
+  "artifact_sha256": {
+    "analytic": "ecfd751025d06444049534210a24d38927035af1ec623861ac0d5f2e313db448",
+    "predictions": "d8723e4b6a41e7f91bc1a3ea354450907f77db4b7c59015b4a2045f237972f3e",
+    "timeseries": "1ab26bc92715082beed31cb779055a1254fa8924ab52b541a06cc16375f70292",
+    "figure": "7f4fdf121494e3f0ba6b37b06b98eb46ac5f5ca21c1996dfe08d7ae7dbe6274d"
+  }
+}

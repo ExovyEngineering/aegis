@@ -1,0 +1,59 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/routingProvenance.test.ts (2 tests) 3ms
+ ✓ src/api.test.ts (3 tests) 8ms
+ ✓ src/networkMapModel.test.ts (11 tests) 12ms
+ ✓ src/MapViewport.test.tsx (2 tests) 53ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 136ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 357ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 171ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 276ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 301ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 345ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 259ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 266ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 268ms
+ ✓ src/ProjectBrief.test.tsx (2 tests) 510ms
+   ✓ shows recorded failures and pending gates beside downloadable evidence  343ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 551ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  429ms
+ ✓ src/WorkspaceGuide.test.tsx (13 tests) 715ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 661ms
+ ✓ src/NetworkMap.test.tsx (6 tests) 558ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 834ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  680ms
+ ✓ src/RouteLab.test.tsx (2 tests) 1089ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  826ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1462ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  746ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1475ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  552ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  505ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 1720ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 482ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  480ms
+ ✓ src/ActivityTimeline.test.tsx (47 tests) 2389ms
+   ✓ loads actual captured records and explains the limits of absence, identity and history  496ms
+ ✓ src/EventImpactPanel.test.tsx (32 tests) 2587ms
+   ✓ produces a read-only result and four comparisons without applying an event  511ms
+   ✓ requires consent and submits the exact preview identity and network revision  308ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 782ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  450ms
+ ✓ src/EvidenceAssistant.test.tsx (25 tests) 3084ms
+   ✓ offers six bounded topics and clearly identifies deterministic read-only facts  719ms
+ ✓ src/RoadIntelligence.test.tsx (18 tests) 3403ms
+   ✓ shows dated, incomplete and failed sources without claiming clear roads  693ms
+ ✓ src/App.test.tsx (17 tests) 3957ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  860ms
+   ✓ AEGIS workflow > preserves a requested shipment route across application reloads  321ms
+
+ Test Files  30 passed (30)
+      Tests  240 passed (240)
+   Start at  22:42:59
+   Duration  18.63s (transform 10.38s, setup 73.52s, collect 28.83s, tests 28.71s, environment 266.11s, prepare 29.56s)
+

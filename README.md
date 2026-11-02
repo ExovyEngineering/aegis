@@ -4,7 +4,104 @@ Adaptive Early-warning & Guidance for Integrated Supply Chains: a local research
 
 AEGIS combines separately labeled official food-safety and weather evidence with deterministic simulated shipments, constrained allocation, dispatcher review, and a driver workflow. Suppliers, contracts, lots, trucks, telemetry, shipments, demand, and costs are simulated. Real establishment-directory markers do not establish supplier relationships.
 
+## Judges: start here
+
+Read the [final challenge report](reports/final_submission_guide.pdf) and
+[one-page team science statement](reports/team_science_statement.pdf).
+The final source is on
+[`feature/decision-depth-and-team-brief`](https://github.com/ExovyEngineering/aegis/tree/feature/decision-depth-and-team-brief);
+download the portable judge archive from the repository's
+[releases](https://github.com/ExovyEngineering/aegis/releases).
+
+Share **artifacts/AEGIS-Judges.zip**. Extract the whole ZIP, open the
+**AEGIS-Judges** folder and double-click **00_START_HERE.html**. The numbered
+folders contain guides, the runnable application and verification records.
+PDFs open without installation. Windows judges with Python 3.13 installed run
+**02_Application/Setup-Judges-Windows.cmd** once, then
+**Start-Judges-Windows.cmd**. The setup installs pinned dependencies; the start
+command opens a fresh isolated demo at <http://127.0.0.1:8001/?mode=rehearsal>.
+No Node.js or API keys are required for the prebuilt demo. Setup and background
+map tiles require internet. Keep the application terminal open.
+
+See [judge setup](docs/judge_quick_start.md),
+[the five-minute tour](docs/judge_walkthrough.md), and
+[the folder map](docs/folder_map.md). To regenerate the organized handoff, verify
+the application archive and run `python scripts/build_judge_handoff.py`; complete
+commands are in [JUDGES_START_HERE.md](JUDGES_START_HERE.md).
+
 ## Run locally
+
+Reproducible analysis is available in [four executed Jupyter notebooks](notebooks/README.md).
+Read their HTML previews in `reports/notebooks/index.html` without installing
+Jupyter, or install `requirements-notebooks.txt` and run
+`.venv/Scripts/python scripts/execute_notebooks.py`. Notebook runs copy their
+inputs into isolated workspaces, refit the models and recompute the scenarios.
+An explicit raw-source profile rebuilds preprocessing when the original files
+are supplied; it is never silently inferred from bundled processed snapshots.
+
+The final five-task handoff is in **Project brief → Five tasks. One inspectable
+submission.** Download the final PDF there; it covers the required tasks, all ten
+menus and a five-minute presentation. **Model evaluation** includes the separate
+Missouri FSIS/BEAM/NOAA study and NORS ablations; Project brief compares food-volume
+and service policies. These are explicitly retrospective/simulated studies.
+The owner has disclosed that Kiro was not used, so that challenge criterion is not met. Final team/author review remains required.
+
+To reproduce and package the complete local build after installing the pinned
+dependencies, run `.venv/Scripts/python scripts/build_final_release.py`.
+It creates `artifacts/AEGIS-Final-Build.zip`, runs the scientific studies, full
+tests/build, safe isolated demos and offline extracted-package verification.
+It does not deploy, submit, or reset your operator database. The prebuilt archive
+starts with `Start-AEGIS.cmd --no-build` after Python dependency installation.
+
+Open **Save the Load** for the new temperature-history-to-rescue workflow:
+**Start rescue experiment → Replay heat excursion → Review → approve → Drive**.
+The same workspace compares warehouse FEFO and FIFO picks using actual constrained
+allocations. Use an [isolated rehearsal](#isolated-presentation-rehearsal) for practice.
+The replay is simulated; Q10 parameters are illustrative quality assumptions,
+not measured molecular freshness or microbial safety. Hardware can later use
+the [authenticated ingestion endpoint](docs/freshness_gateway.md).
+Reproduce the isolated workflow with
+`.venv/Scripts/python scripts/freshness_demo.py`.
+
+In **Command center**, start with the delivery outlook: test a one-hour delay,
+inspect the trips under pressure, then compare a response. These are clearly
+labeled planning estimates over simulated inputs. In **Evidence assistant**,
+type “chicken” or click a question to get guided, cited help. Map presets and the
+Road/Dispatcher steps explain what to do next. See
+[the outlook's scope](docs/delivery_outlook.md).
+
+Use **Compare roads for SH…** to carry that candidate's endpoints into Road
+intelligence. **Review current response plans** opens Command's comparison table;
+the preview itself does not apply its what-if assumptions or approve a plan.
+
+After installing the dependencies below, Windows users can double-click
+**Start-AEGIS.cmd**, or run `.venv/Scripts/python scripts/start_local.py`.
+The launcher builds the current frontend and starts the operator server in that
+terminal. **Keep the terminal open**; Ctrl+C stops its owned server. It never
+downloads dependencies or stops an existing listener automatically.
+
+Use `Start-AEGIS.cmd --no-build` with the prebuilt reviewer package when Node is
+unavailable. This checks existing assets without claiming they match current
+source. `scripts/start_local.py --check-only` diagnoses configuration, local
+assets and the listener without opening SQLite, building or starting a server.
+An already responding app is reported with backend freshness unverified; stop
+its known terminal and relaunch to load backend changes.
+
+For a complete explanation of every workspace and its use cases, read the
+[master user guide](docs/aegis_master_guide.md). The print-ready PDF is
+`reports/aegis_master_guide.pdf`; standalone HTML is
+`reports/aegis_master_guide.html`. Both, plus Markdown, are linked from
+**Project brief** in the app. Rebuild after reviewing chapter changes with
+`.venv/Scripts/python scripts/build_master_guide.py`. The existing shorter
+project/status brief remains available separately.
+
+For the finished core walkthrough and verification commands, start with
+[the core software handoff](docs/core_release.md).
+
+Before filming, use the [recording runbook and click-through checklist](docs/recording_guide.md).
+It is also linked directly from **Project brief** and included in the printable
+master guide. Launch fresh isolated rehearsals for practice; preserve operator
+state. Operations appear first in navigation and **Sources & evidence** is last.
 
 Teammates cloning the repository can follow [CONTRIBUTING.md](CONTRIBUTING.md)
 to run with the included derived datasets and dated fixtures, create feature
@@ -19,6 +116,7 @@ python -m venv .venv
 .venv/Scripts/python scripts/audit_data.py
 .venv/Scripts/python scripts/ingest_fsis.py
 .venv/Scripts/python scripts/ingest_evidence.py
+.venv/Scripts/python scripts/ingest_usda.py
 .venv/Scripts/python scripts/train_model.py
 .venv/Scripts/python scripts/acquire_noaa.py
 .venv/Scripts/python scripts/validate_model_timing.py
@@ -53,6 +151,153 @@ node .tools/package/bin/npm-cli.js --prefix frontend run build
 ```
 
 Do not commit the local runtime. A fresh checkout requires standard Node/npm installation unless `.tools/` is separately provisioned.
+
+## AEGIS Drive
+
+Open <http://127.0.0.1:8000/?mode=drive> for the dedicated mobile-responsive driver
+surface. It shows approved trip/destination, planned travel, simulated fuel/range,
+cargo and assignment status. Typing, reports and acknowledgments require an
+explicit parked confirmation, which expires after ten minutes. Lock controls
+before moving. The server also rejects these actions when confirmation expires.
+This is a self-declared interaction safeguard, not actual motion detection.
+
+Fuel and dispatch-origin position are deterministic scenario values, not live GPS
+or sensor readings. Quick reports reach the local dispatcher inbox. No route
+change or lot hold happens automatically. See [Drive design](docs/drive_design.md)
+and [stretch entry criteria](docs/stretch_feature_gates.md). This is the shared
+web application; no native mobile package or cloud deployment is claimed.
+
+## Isolated presentation rehearsal
+
+Keep the operator app on port 8000. In a separate terminal from the project folder:
+
+```powershell
+.venv/Scripts/python scripts/start_rehearsal.py --port 8001
+```
+
+Open the printed URL, normally <http://127.0.0.1:8001/?mode=rehearsal>. The launcher
+reserves a fresh UUID database, and the app verifies that path before accepting
+rehearsal actions. Every view displays the isolated-runtime banner. A URL
+parameter alone does not isolate the operator app.
+
+Project brief contains six guided stages, a server-based timer, notes, saved
+history and immutable JSON evidence exports. Operational stages require recorded
+events, approval and a coherent parked driver workflow. Default rehearsal mode
+uses dated source fixtures and labeled routing estimates; provider refresh is
+disabled. Map tiles may need internet. Nothing resets the operator database.
+
+The measured timer and self-reported coverage do not prove a human presentation,
+Kiro execution or final approval. See [the rehearsal guide](docs/rehearsal_guide.md).
+
+## Understand and exercise Command
+
+**Recent activity** in the header opens an internal action history without
+adding another workspace. Filter recorded events, approvals, reports and driver
+actions, inspect raw payloads/citations, load older rows from the same captured
+snapshot and export the captured pages. Browsing changes no operational state.
+Unapplied previews, map highlights and route calculations are not inferred to be
+recorded decisions. See [the activity contract](docs/activity_history.md).
+
+Command includes **Preview event impact**. Choose a candidate shipment and a
+simulated disruption to calculate direct before/after changes and all four
+allocation comparisons. Preview changes nothing; applying requires explicit
+consent and matching revision/checksum guards, and clears all approved
+assignments. Fresh assignments still need human approval.
+
+Every workspace has a compact purpose/scope guide. **Show on map** inspects a
+proposed allocation; **Request road route** produces a separate road comparison,
+alternative highlighting and JSON export. Neither action dispatches or silently
+replaces the fixed allocation inputs. Recompute reports completion even when
+deterministic results match. See [the Command walkthrough](docs/command_workflow.md).
+
+## Read-only evidence assistant
+
+Open **Evidence assistant** for six cited explanations: response scenarios,
+selected simulated shipments, measured model limits, source coverage, driver
+handoff and next review views. It reads a consistent operational snapshot and
+independently captured report files, identifies sources and rejects stale
+contexts. It cannot approve, dispatch, hold/release stock, refresh sources or
+train a model. Captured briefings export as JSON.
+
+The default works without a language model. An optional explicitly configured
+Ollama connector can select a topic from your wording; it cannot author factual
+claims or execute tools. Configuration is not a successful model evaluation.
+See [the assistant contract and setup](docs/evidence_assistant.md). The master
+handbook now covers this ninth workspace; mobile navigation scrolls horizontally
+to preserve readable labels. Dedicated Drive remains simplified.
+
+## Road intelligence and local recovery
+
+Open **Road intelligence** for separately attributed MoDOT and Iowa DOT 511
+events, a Columbia–Des Moines planning example, custom coordinates, route
+alternatives, event-proximity review and JSON export. Source ages, failures,
+preview limits and estimated travel stay visible. The official Iowa fixture has
+599 captured point records; it is dated evidence, not live road clearance.
+No comparison dispatches a truck or validates commercial restrictions.
+See [the workspace guide](docs/road_intelligence.md) and
+[Iowa source verification](docs/state_dot.md).
+
+Create a local state backup with
+`.venv/Scripts/python scripts/backup_state.py create`. Verify it before restoring
+to a new file under `data/recovered/`; the tool refuses operator replacement.
+Private backups and receipts are excluded from Git and packages. Follow
+[the recovery guide](docs/backup_restore.md). This is local recovery; cloud
+deployment and production access controls remain deferred.
+
+## Team status and presentation planning
+
+Open **Project brief** in the application to download the maintained PDF and see
+recorded checks and priority gates. The same files are available directly:
+[PDF](reports/aegis_project_brief.pdf), [editable brief](reports/project_brief.md),
+[change history](docs/changelog.md), and [feature register](config/feature_register.yaml).
+
+After code changes, refresh the measured checks and presentation artifact:
+
+```powershell
+.venv/Scripts/python scripts/verify_project.py
+.venv/Scripts/python scripts/build_project_brief.py
+```
+
+The verifier executes pytest, Vitest and the production build, preserving dated
+logs and JSON history. It does not refresh public sources or imply browser/CI
+success. Update the feature register and changelog as capabilities change.
+
+To rebuild and independently check the local reviewer archive:
+
+```powershell
+.venv/Scripts/python scripts/package_submission.py
+.venv/Scripts/python scripts/verify_package.py
+```
+
+The package verifier checks file membership, sizes and hashes before extraction,
+then runs an isolated copy with a fresh demo database and blocked external network
+access. It checks USDA, source browsing, readiness, planning, approval and Drive.
+It reuses the installed Python dependencies; it does not claim a fresh dependency
+installation, cloud deployment or competition submission.
+
+Route laboratory now saves completed experiments as versioned local projects,
+compares two saved projects, reopens historical versions, and exports inputs and
+results. Saving never dispatches. Unsaved editor changes still remain temporary.
+Command's decision details expose independent constraint checks and exclusions.
+Dispatcher desk records scenario-B verification reviews; completing a simulated
+checklist does not certify product safety or automatically impose a hold.
+Sources includes a bounded read-only browser of separately ingested tables.
+
+Sources also compares historical USDA Food Environment Atlas measures for all
+115 Missouri counties/county-equivalents. Each measure retains its year, unit and
+denominator; missing/suppressed values stay null. This context does not change
+shipment eligibility or allocation. See [the county-context guide](docs/food_access_context.md).
+
+Evidence imports now discover supported schemas recursively and assign stable
+source identities. Exact duplicate downloads do not inflate observations;
+different exports for the same semantic table require explicit snapshot selection.
+The browser checks the same bytes it displays against the import manifest. See
+[ingestion provenance](docs/ingestion_provenance.md).
+
+Dispatcher desk includes a read-only readiness checklist for approved trips.
+It separates hard constraints from outstanding acknowledgments and scenario-B
+verification. Passing these checks is not a departure authorization or safety
+certification. Review the source evidence and explicit human decisions.
 
 ## Refresh evidence and run checks
 
@@ -90,7 +335,7 @@ Copy `.env.example` to `.env` for local configuration. The loader reads literal 
 - Custom farm/fleet planning: editable origins, delivery stops and trucks with explicit stock, deadline, shelf-life and safety assumptions.
 - Dispatcher desk: incident inbox, audited human holds/releases, versioned approved-trip instructions and separate driver acknowledgment. See `docs/operations_workflow.md`.
 
-The Command/Drive interface is implemented in `frontend/`. Latest verification is recorded in `reports/validation.json`: backend tests, frontend tests, production build, loopback HTTP checks, isolated demo and 26 real Chrome desktop/mobile checks. Screenshots are in `reports/browser_qa/final/`. A timed presentation rehearsal remains pending. See [the five-minute demo](reports/demo_script.md), [priorities](docs/priority_matrix.md), and [acceptance matrix](docs/progress.md).
+The Command/Drive interface is implemented in `frontend/`. Latest verification is recorded in `reports/validation.json` and `reports/session_verification.json`. Separate dated Chrome rehearsals and screenshots live under `reports/browser_qa/`; they do not imply present provider freshness. A timed team presentation remains pending. See [the five-minute demo](reports/demo_script.md), [priorities](docs/priority_matrix.md), and [acceptance matrix](docs/progress.md).
 
 ## Scientific and operational limits
 

@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-11-02T20:55:12.194729+00:00",
+  "passed": true,
+  "folder": "artifacts\\AEGIS-Judges",
+  "archive": "artifacts\\AEGIS-Judges.zip",
+  "bytes": 40005833,
+  "sha256": "4e8a1ed85a219dbbe4a802d50d4924f73db5933eb9f8465a9ac27cc55f60a795",
+  "application_archive_sha256": "5a7e6527da7535f13e8a5c74533f350cd9d483da381f8d69ca3ba17661d104bf",
+  "files_verified": 1148,
+  "start_page_local_links_checked": 8,
+  "executed_notebooks_included": 4,
+  "raw_files_moved": false,
+  "operator_database_opened": false,
+  "uploaded_or_submitted": false
+}

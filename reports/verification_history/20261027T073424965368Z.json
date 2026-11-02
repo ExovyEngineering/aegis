@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-10-27T07:34:24.961111+00:00",
+  "finished_at": "2026-10-27T07:35:01.466957+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "pytest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "checked_at": "2026-10-27T07:34:24.965633+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 17.087,
+      "tests_passed": 234,
+      "log": "reports/checks/20261027T073424965368Z/pytest.txt",
+      "log_sha256": "26a9d6379c88f486dc316b3b7d678ccaf474d256c68b42efe0c8b5549aefe27f"
+    },
+    {
+      "name": "vitest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test"
+      ],
+      "checked_at": "2026-10-27T07:34:42.073438+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 8.296,
+      "tests_passed": 50,
+      "log": "reports/checks/20261027T073424965368Z/vitest.txt",
+      "log_sha256": "1ec86fbe88f517ed10e11f17269adcfd1ddd13612e3604b392598b1bdb23f969"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "checked_at": "2026-10-27T07:34:50.387562+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 11.062,
+      "tests_passed": null,
+      "log": "reports/checks/20261027T073424965368Z/frontend_build.txt",
+      "log_sha256": "2f5e881a4997eb33473c39338c497d7e26dc8b33d7dc8d782f66d4dc834e0979"
+    }
+  ],
+  "live_api_requests_included": false,
+  "browser_checks_included": false,
+  "note": "Local executed commands, not a claim of GitHub CI or browser completion. Previous reports remain separately dated."
+}

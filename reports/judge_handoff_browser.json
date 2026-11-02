@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-11-02T17:38:54.416Z",
+  "scope": "Actual Chrome opening of generated standalone judge entry page from a local file, desktop/mobile layout and bundled link targets. This does not execute setup or Windows launchers.",
+  "checks": [
+    {
+      "name": "standalone page loads from extracted folder",
+      "passed": true
+    },
+    {
+      "name": "Windows setup instructions visible",
+      "passed": true
+    },
+    {
+      "name": "verification placeholder replaced",
+      "passed": true
+    },
+    {
+      "name": "measured backend count displayed",
+      "passed": true
+    },
+    {
+      "name": "Kiro disclosure visible",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: Final_Submission_Guide.pdf",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: TEST_RESULTS.txt",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: judge_walkthrough.md",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: Final_Submission_Guide.pdf",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: Team_Science_Statement.pdf",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: Full_User_Handbook.pdf",
+      "passed": true
+    },
+    {
+      "name": "bundled link exists: folder_map.md",
+      "passed": true
+    },
+    {
+      "name": "desktop page has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile page has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "page has no JavaScript errors",
+      "passed": true
+    }
+  ],
+  "local_links_checked": 7,
+  "passed": true,
+  "finished_at": "2026-11-02T17:38:55.109Z",
+  "errors": []
+}

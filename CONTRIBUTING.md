@@ -64,3 +64,14 @@ Share the repository URL; do not share account passwords or access tokens.
 
 Branch protection and required reviews depend on the repository's GitHub plan.
 An Actions workflow in the repository does not itself enforce merge protection.
+
+
+## Keep the shared brief current
+
+Update `config/feature_register.yaml` and `docs/changelog.md` with capability and
+limitation changes. Run `python scripts/verify_project.py`, then
+`python scripts/build_project_brief.py`. The app's Project brief tab serves the
+PDF and Markdown. On GitHub, each workflow run generates a downloadable
+`aegis-team-brief-<commit>` artifact with the brief and captured test evidence.
+Recorded browser/source checks retain their own timestamps; CI does not infer
+that those integrations were retested.

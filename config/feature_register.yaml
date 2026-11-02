@@ -1,0 +1,265 @@
+project: AEGIS
+updated: '2026-11-01'
+features:
+- id: provenance
+  priority: P0
+  name: Source inventory and provenance
+  status: implemented; bounded coverage
+  evidence: reports/data_audit.md
+  detail: 42 original downloads audited; official evidence and simulated logistics
+    remain distinct. Recursive content-based imports preserve semantic identities,
+    record exact failures, skip duplicate bytes and block conflicting snapshots.
+- id: food-access
+  priority: P0
+  name: USDA historical county context
+  status: implemented as a separate historical evidence layer
+  evidence: reports/usda_food_environment.json
+  detail: 115 Missouri counties/county-equivalents and ten 2019/2020/2023 measures,
+    with denominators, source hashes and missing codes. No safety score, current
+    demand estimate or allocation weight is inferred.
+- id: weather
+  priority: P0
+  name: Independent public weather integrations
+  status: implemented; historical gaps remain
+  evidence: reports/noaa_coverage.json
+  detail: Open-Meteo forecasts, NWS alerts and bounded NOAA observations have separate
+    provenance. No validated FSIS-weather join.
+- id: estimator
+  priority: P0
+  name: Measured historical estimator and validation
+  status: retrospective baseline implemented; prospective validity unproven
+  evidence: reports/model_evaluation.json
+  detail: Chronological evaluation, baseline, calibration and uncertainty. Logistic
+    model did not establish useful improvement.
+- id: interventions
+  priority: P0
+  name: Four constrained intervention scenarios
+  status: implemented
+  evidence: backend/optimization.py
+  detail: Baseline, targeted verification, proposed hold and eligible supply substitution,
+    with independent resource checks.
+- id: approval
+  priority: P0
+  name: Dispatcher approval and audit
+  status: implemented for local simulation
+  evidence: tests/test_dispatch.py
+  detail: Revision guards, explicit holds/releases, targeted verification checklists,
+    incident review and exact-version driver instruction acknowledgment. Identities
+    are self-declared.
+- id: data-browser
+  priority: P0
+  name: Inspectable ingested evidence
+  status: implemented
+  evidence: tests/test_data_explorer.py
+  detail: Bounded read-only rows, schema, literal filters, page null counts and file
+    checksums; CDC layers never merged with FSIS outcomes.
+- id: kiro
+  priority: P0
+  name: Authentic Kiro spec execution
+  status: not used; owner will disclose unmet Kiro criterion
+  evidence: docs/kiro_handoff.md
+  detail: Owner confirmed non-use on November 1. Installation and Codex-prepared
+    specifications do not satisfy the challenge's Kiro-use criterion. The app runs
+    independently; no Kiro authorship or execution is claimed.
+- id: submission
+  priority: P0
+  name: Report, reproducible package and presentation
+  status: draft artifacts implemented; author review and timed rehearsal pending
+  evidence: reports/aegis_report.md
+  detail: Local reviewer bundle, measured results, demonstration scripts and this
+    regenerated planning brief. Not submitted.
+- id: rehearsal
+  priority: P0
+  name: Isolated guided rehearsal and saved evidence
+  status: implemented; genuine team presentation remains pending
+  evidence: docs/rehearsal_guide.md
+  detail: Fresh verified database, six planned stages, server-clock timer, version
+    guards and immutable evidence exports. Command and stored freshness-rescue
+    workflows retain distinct operational provenance; reassignment requires a new
+    contextual driver acknowledgment. A linked recording runbook covers the timed
+    narrative and full hands-on review. Offline mode uses dated fixtures and
+    labeled route estimates. Automated checks do not establish a human rehearsal,
+    Kiro execution or author approval.
+- id: master-guide
+  priority: P0
+  name: Complete printable product handbook
+  status: implemented; dated edition requires review when capabilities change
+  evidence: docs/aegis_master_guide.md
+  detail: Every workspace, visible controls, farm/fleet and dispatcher/driver use
+    cases, source meanings, measured-model interpretation, rehearsal, storage,
+    recovery and troubleshooting. PDF contents/bookmarks, print-friendly HTML
+    and editable Markdown are available through Project brief.
+- id: digital-twin
+  priority: P1
+  name: Interactive Missouri digital twin
+  status: implemented for deterministic simulation
+  evidence: backend/simulation.py
+  detail: Map, official evidence layers, simulated cargo and operational events. Real
+    contracts and physical sensors are absent.
+- id: route-planning
+  priority: P1
+  name: Single-farm and multi-origin route planning
+  status: implemented as planning sandbox
+  evidence: tests/test_route_lab.py
+  detail: Custom coordinates, inventory, trucks, demand, deadlines and shelf life.
+    Public OSRM lacks commercial-truck validation.
+- id: experiments
+  priority: P1
+  name: Saved route experiments and comparisons
+  status: implemented locally
+  evidence: tests/test_planning_library.py
+  detail: Immutable runs, checksums, versioned projects, history and exports. No dispatch
+    from the route laboratory.
+- id: drive
+  priority: P1
+  name: Mobile AEGIS Drive
+  status: implemented locally with server-enforced parked-use interactions
+  evidence: tests/test_drive_integration.py
+  detail: Dedicated visual trip view, simulated fuel/origin position/cargo, ten-minute
+    parked attestation, quick reports, instructions and acknowledgment. No actual
+    motion detection or physical sensing.
+- id: readiness
+  priority: P1
+  name: Inspectable dispatch readiness
+  status: implemented as read-only diagnostics
+  evidence: tests/test_readiness.py
+  detail: Sixteen checks distinguish hard eligibility/resource constraints from
+    outstanding assignment acknowledgment, instruction acknowledgment and targeted
+    verification. Passing the listed checks does not dispatch or certify safety.
+- id: assistant
+  priority: P2
+  name: Cited evidence assistant and optional model topic selection
+  status: deterministic assistant implemented; actual LLM evaluation remains pending
+  evidence: docs/evidence_assistant.md
+  detail: Six bounded explanations use a read-only network/report snapshot,
+    source citations and measured values. Optional explicitly configured Ollama
+    can select a topic only; it cannot author claims or execute actions. Default
+    requires no model. Configuration and mocked tests are not model evaluation.
+- id: accounts
+  priority: P2
+  name: Farm and enterprise accounts
+  status: deferred
+  evidence: docs/priority_matrix.md
+  detail: Planning scales exist; production authentication, tenant isolation and billing
+    do not.
+- id: sensors
+  priority: P2
+  name: Live sensor integrations
+  status: deferred
+  evidence: docs/simulation_assumptions.md
+  detail: All cargo-temperature telemetry is simulated.
+- id: state-dot
+  priority: P2
+  name: Additional state DOT feeds
+  status: Iowa DOT adapter and read-only road workspace implemented; bounded coverage
+  evidence: docs/state_dot.md
+  detail: Official Iowa 511 point records remain separate from MoDOT. A verified
+    dated fixture contains 599 records; Columbia to Des Moines is a planning
+    example. Route alternatives, buffer screening and exports do not dispatch,
+    avoid closures automatically or validate truck restrictions.
+- id: local-recovery
+  priority: P2
+  name: Verified local operational-state recovery
+  status: implemented; cloud deployment remains deferred
+  evidence: reports/backup_recovery.json
+  detail: Read-only SQLite online backup includes committed WAL records; checksums,
+    integrity, schema and row counts are verified before restoration to a fresh
+    private file. Operator bytes and ten tables were preserved in an actual CLI
+    exercise. No automatic server rebind or deployment.
+- id: genomics
+  priority: P2
+  name: Molecular epidemiology
+  status: blocked by missing isolate-level genomic linkage
+  evidence: docs/stretch_feature_gates.md
+  detail: Current aggregate serotype tables do not contain linked genome sequences/accessions.
+    No relatedness or common-source inference is claimed.
+- id: cloud
+  priority: P2
+  name: Real cloud deployment
+  status: deferred pending production access controls
+  evidence: docs/stretch_feature_gates.md
+  detail: Local self-declared identities are not production authentication or tenant
+    isolation. No cloud release is claimed.
+- id: event-impact
+  priority: P2
+  name: Inspectable disruption impact and Command workflow
+  status: implemented with read-only previews and explicit guarded application
+  evidence: docs/command_workflow.md
+  detail: Six simulated events compute exact direct/resource changes and four
+    before/after allocations. Preview changes nothing; applying requires matching
+    revision/hash in Command and clears all approved assignments. Map overlays,
+    road-alternative selection, exports and page guides explain what changes.
+    No automatic road reroute, official incident or prospective risk is invented.
+- id: activity-history
+  priority: P1
+  name: Inspectable internal activity history
+  status: implemented read-only with captured pagination and export
+  evidence: docs/activity_history.md
+  detail: Header panel explains actual saved audit rows across existing workspaces,
+    with explicit action/shipment filters, payload errors and bounded snapshots.
+    It never replays decisions or invents missing historical effects. Self-declared
+    actors and incomplete audit coverage are explicit; no production identity claim.
+- id: local-launcher
+  priority: P0
+  name: Reliable local foreground startup
+  status: implemented with configuration, asset and listener checks
+  evidence: scripts/start_local.py
+  detail: Windows Start-AEGIS.cmd keeps a visible user-owned terminal. Source-build,
+    explicit prebuilt and check-only modes remain distinct. Existing listeners are
+    never killed/rebuilt; inherited rehearsal settings are rejected. No installation,
+    original-data reset or background-service persistence is implied.
+- id: delivery-outlook
+  priority: P1
+  name: Guided delivery planning outlook
+  status: implemented as a read-only deterministic planning projection
+  evidence: docs/delivery_outlook.md
+  detail: Current-input and what-if allocations show unmet demand, candidate deadline
+    pressure and illustrative six-hour cargo checks. Four actual solver responses
+    retain independent constraint review. Inputs and exports remain captured;
+    exact candidate road handoffs and current-plan review shortcuts preserve
+    captured inputs. No prospective delay skill, automatic hold, road reroute or
+    approval is claimed.
+- id: streaming
+  priority: P2
+  name: Physical sensor streaming infrastructure
+  status: bounded authenticated HTTP ingestion and replay implemented; physical hardware unverified
+  evidence: docs/freshness_gateway.md
+  detail: Append-only gateway packets retain source/observation/retrieval metadata.
+    A five-second browser poll reads stored experiments. No physical device,
+    production broker, calibrated sensor or cloud telemetry deployment is claimed.
+- id: save-the-load
+  priority: P1
+  name: Kinetic quality windows, rescue planning and FEFO
+  status: implemented with explicit review and uncalibrated model assumptions
+  evidence: docs/freshness_science.md
+  detail: Declared product-temperature exposure consumes an irreversible equivalent-age
+    budget. Conservative chosen-case clocks rank closer recipients and constrained
+    OR-Tools FEFO versus FIFO. Only identified, versioned human approval replaces
+    the checked simulated plan and updates Drive; new readings flag renewed review.
+
+- id: integrated-one-health-study
+  priority: P0
+  name: Integrated Missouri One Health research evaluation
+  status: implemented; no prospective activation
+  evidence: reports/integrated_model_evaluation.json
+  detail: Seven-day selected-FSIS-sample target with PulseNet-derived BEAM aggregates,
+    five-station NOAA context, chronological embargo, calibration, uncertainty and
+    same-cohort NORS ablations. Only 490 of 1534 Missouri rows meet coverage;
+    171 held-out samples. Added value remains uncertain and NORS worsens this cohort.
+- id: food-volume-policy-study
+  priority: P0
+  name: Food safety and food security policy comparison
+  status: implemented read-only on declared simulation
+  evidence: reports/decision_study.json
+  detail: Feasible order, quality/volume preservation and balanced destination service
+    compare three scenarios under identical hard constraints. Food volume and service
+    are measured; no invented county need or causal pathogen-risk reduction.
+- id: final-five-task-handoff
+  priority: P0
+  name: Final five-task guide and reproducible local build
+  status: implemented; Kiro non-use and final human review disclosed
+  evidence: reports/final_handoff_manifest.json
+  detail: One Health diagram, dictionary/provenance, integrated analytic CSV, measured
+    research results, nine policy outcomes, ten-menu guide and presentation outline.
+    Owner reports Isaac disease-side input and Micky coding help; last names and
+    final author review remain. Kiro was not used; criterion not met.

@@ -20,7 +20,7 @@ def split_by_snapshot(df,sources):
     boundary. All held-out collection dates must be strictly after that date.
     No row-level availability date is inferred or filled.
     """
-    snapshots={Path(s['path']).name:pd.Timestamp(s['metadata_creation_date']).normalize() for s in sources}
+    snapshots={s.get('source_file',Path(s['path']).name):pd.Timestamp(s['metadata_creation_date']).normalize() for s in sources}
     if len(set(snapshots.values()))<2:raise ValueError('Need at least two distinct source snapshot creation dates')
     latest=max(snapshots.values());prior={name:d for name,d in snapshots.items() if d<latest}
     cutoff=max(prior.values())

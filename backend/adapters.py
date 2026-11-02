@@ -2,13 +2,19 @@
 import hashlib, json, math, os
 from datetime import datetime, timezone
 import httpx
-from backend.paths import ROOT, write_json
+from backend.paths import ROOT, write_json, read_json
+from backend.runtime import runtime_context
 
 def now(): return datetime.now(timezone.utc).isoformat()
 class CachedHTTP:
     def get(self,url,ttl=3600):
+        runtime=runtime_context(root=ROOT)
+        if runtime['mode']=='misconfigured':
+            raise RuntimeError('Rehearsal configuration is invalid; provider requests are disabled until corrected')
+        if runtime['isolated'] and runtime['offline']:
+            raise RuntimeError('Offline rehearsal disables provider requests and mutable HTTP caches; use the labeled routing estimate or dated evidence fixtures')
         p=ROOT/'data/cache'/(hashlib.sha256(url.encode()).hexdigest()+'.json')
-        previous=json.loads(p.read_text()) if p.exists() else None
+        previous=read_json(p) if p.exists() else None
         if previous and (datetime.now(timezone.utc)-datetime.fromisoformat(previous['retrieved_at'])).total_seconds()<ttl:
             return dict(previous,cache=True,stale=False)
         try:
@@ -47,7 +53,9 @@ class MoDOTAdapter(CachedHTTP):
                 results.append(dict(item,layer_id=layer['id'],layer_name=layer['name']))
             except Exception as e: failures.append({'layer_id':layer['id'],'error':f'{type(e).__name__}: {e}'})
         incomplete=bool(failures) or any(r['payload'].get('exceededTransferLimit',False) for r in results)
-        return dict(discovery,incident_layers=results,layer_failures=failures,provenance='official road incidents',coverage_complete=bool(results) and not incomplete,coverage_warning='Partial coverage: failed or truncated layers; absence does not imply a clear road' if incomplete else 'Queried current incident, work-zone, flood and winter layers; future work zones excluded. Point/line duplicates may describe the same event.')
+        stale=bool(discovery.get('stale')) or any(item.get('stale',False) for item in results)
+        refresh_error=discovery.get('refresh_error') or '; '.join(f"Layer {item['layer_id']}: {item['refresh_error']}" for item in results if item.get('refresh_error')) or None
+        return dict(discovery,stale=stale,refresh_error=refresh_error,incident_layers=results,layer_failures=failures,provenance='official road incidents',coverage_complete=bool(results) and not incomplete,coverage_warning='Partial coverage: failed or truncated layers; absence does not imply a clear road' if incomplete else 'Queried current incident, work-zone, flood and winter layers; future work zones excluded. Point/line duplicates may describe the same event.')
 
 def distance(a,b):
     lon1,lat1,lon2,lat2=map(math.radians,[*a,*b]); d=math.sin((lat2-lat1)/2)**2+math.cos(lat1)*math.cos(lat2)*math.sin((lon2-lon1)/2)**2

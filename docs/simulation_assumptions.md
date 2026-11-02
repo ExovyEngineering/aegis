@@ -44,3 +44,44 @@ Temperature projection uses `T(t) = T_equilibrium + (T_initial - T_equilibrium) 
 Road closure, severe weather, and delivery delay add a simulated two-hour delay. Refrigeration fault marks the assigned truck ineligible and sets cargo temperature to 9°C. Temperature excursion sets the shipment to 9°C and high review priority. Inventory shortage removes the candidate lot's available stock. These events are labeled simulated and invalidate existing assignments. They do not establish that a real MoDOT event or weather alert caused a real shipment delay.
 
 No verified recall event is synthesized as an official match. Real recall data may be displayed, while recall-to-lot matching remains unavailable without genuine traceability fields.
+
+
+## Driver vehicle snapshot
+
+Drive derives a stable simulated fuel fraction for each truck from the scenario
+seed and truck ID. Tank size is assumed 180 L and consumption 28 L/100 km; range
+is arithmetic under those assumptions. Values do not advance as a trip proceeds.
+Position is the first approved trip's dispatch-origin reference (or DC1 when no
+trip exists), stamped October 26 at 08:00 America/Chicago. It is not live GPS,
+measured speed, distance remaining, actual fuel use or a sensor timestamp.
+
+Parked status is a human declaration valid for at most ten minutes by server time.
+The interaction gate blocks local reporting/acknowledgment when locked or expired;
+it cannot prove a vehicle is parked or prevent other device use. Simulation
+planning dates remain distinct from current source-retrieval and interaction times.
+
+## Freshness replay and warehouse picking
+
+Save the Load uses a separately labeled October 30, 2026 replay clock. Its seeded
+SH05 lot starts with a 240-hour reference budget and 230 equivalent hours of
+assumed prior age; this is a demonstration condition, not a recommended poultry
+shelf life. One normal 4°C hour leaves nine hours. An immediately replayed heat
+event adds one normal minute and two 16°C hours before restored 4°C control:
+point remaining quality is about 4.39 hours and the minimum forward quality across
+Q10 sensitivity cases is about 1.51 hours. Automatic playback includes an extra
+normal frame and therefore yields different clocks. Cooling cannot reverse age.
+
+Reference temperature, Q10 (2; sensitivity 1.5–3), domain and interpolation caps
+are explicit uncalibrated assumptions. Humidity/vibration/ethylene readings are
+synthetic context only. Existing label deadlines decrease independently. Simulated
+warehouse placement, receipt times, order capacity and receiving buffers are
+declared inputs; FEFO/FIFO solve actual allocations under identical constraints.
+Projected expiry exposure is a planning metric, not observed food waste.
+
+Automatic rescue calculation compares the conservative window against transit
+plus receiving buffer. Ordinary-driving OSRM geometry or a labeled estimated
+connection does not establish truck eligibility or closure avoidance. Recipient
+acceptance requires explicit review. The entire feasible replacement assignment
+set is shown before approval, including lost supply at the original destination.
+The accelerated replay is reproducible with scripts/freshness_demo.py; it does
+not prove physical sensor integration or a timed team presentation.

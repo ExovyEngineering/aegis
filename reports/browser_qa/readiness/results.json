@@ -1,0 +1,353 @@
+{
+  "checked_at": "2026-10-28T06:27:38.973Z",
+  "base_url": "http://127.0.0.1:8001",
+  "isolated_database": true,
+  "public_refresh_requested": false,
+  "checks": [
+    {
+      "name": "isolated_demo_reset",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "isolated_assignments_initially_empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "readiness_does_not_invent_assignments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "empty_readiness_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unrecognized_imports_never_claim_schema_acceptance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "accepted_import_notes_match_actual_ingested_status",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "usda_checked_extract_has_115_distinct_missouri_counties",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "usda_ten_variables_keep_documented_vintages_and_units",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "usda_original_workbook_hash_matches_served_provenance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "county_selection_renders_real_numeric_observation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "county_comparison_retains_fips_identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "usda_year_2019_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "usda_year_2020_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "usda_year_2023_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "metric_definition_and_denominator_available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual_suppressed_county_available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "suppressed_measure_is_missing_not_zero",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original_hash_and_source_limits_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "county_csv_download_has_all_checked_rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "county_csv_preserves_suppression_as_blank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "county_csv_not_a_dispatch_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_contains_eight_separate_semantic_sources",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "catalog_input_hashes_and_output_hashes_recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "semantic_source_identity_and_original_hash_are_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_identity_does_not_follow_download_order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_county_context_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "viewing_sources_does_not_change_network",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "viewing_sources_does_not_dispatch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/proposals/B",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "scenario_B_requires_identified_human_approval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/proposals/2b136630-124a-4e09-b8f9-84ce937b68cd/approve",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "targeted_trip_was_actually_approved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unacknowledged_verification_trip_requires_review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "readiness_has_inspectable_constraint_and_workflow_rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/driver/SH03/acknowledge",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "driver_acknowledgment_clears_only_its_own_check",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "verification_complete_is_disabled_before_checklist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/dispatch/assignments/SH03/verification",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "verification_records_exact_assignment_context",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "completed_human_checks_improve_readiness",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "checklist_pass_does_not_consume_inventory",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/dispatch/assignments/SH03/instruction",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "ui_/api/dispatch/assignments/SH03/instruction",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "new_instruction_gets_its_own_revision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "new_instruction_reopens_only_instruction_review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "obsolete_instruction_cannot_be_acknowledged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rejected_old_ack_preserves_current_instruction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/driver/SH03/instruction-ack",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "driver_acknowledges_the_displayed_current_version",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_readiness_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"viewport\":390,\"document\":390}"
+    },
+    {
+      "name": "mobile_readiness_evidence_has_readable_stacked_width",
+      "passed": true,
+      "detail": "{\"width\":316,\"height\":49.375,\"wordBreak\":\"normal\",\"text\":\"EvidenceApproved record matches a known shipment identifier.\"}"
+    },
+    {
+      "name": "ui_/api/dispatch/lots/L03/hold",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "explicit_hold_invalidates_all_affected_assignments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "held_lot_cannot_remain_ready_or_assigned",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ui_/api/dispatch/lots/L03/release",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "release_does_not_automatically_republish_trip",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "readiness_summary_matches_current_approved_manifest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "readiness_remains_diagnostic_not_dispatch_authority",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_public_refresh_actions_requested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_uncaught_javascript",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no_application_http_failures",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "screenshots": [
+    "desktop-empty-readiness.png",
+    "desktop-ingestion-status-notes.png",
+    "desktop-historical-county-context.png",
+    "desktop-source-import-provenance.png",
+    "mobile-historical-county-context.png",
+    "mobile-suppressed-grocery-observation.png",
+    "desktop-readiness-before-review.png",
+    "desktop-readiness-checks-complete.png",
+    "mobile-readiness-review.png",
+    "mobile-readiness-check-detail.png"
+  ],
+  "post_requests": [
+    "/api/proposals/B",
+    "/api/proposals/2b136630-124a-4e09-b8f9-84ce937b68cd/approve",
+    "/api/driver/SH03/acknowledge",
+    "/api/dispatch/assignments/SH03/verification",
+    "/api/dispatch/assignments/SH03/instruction",
+    "/api/dispatch/assignments/SH03/instruction",
+    "/api/driver/SH03/instruction-ack",
+    "/api/dispatch/lots/L03/hold",
+    "/api/dispatch/lots/L03/release"
+  ],
+  "browser_version": "156.0.8078.48",
+  "usda_source": {
+    "source_id": "usda_food_environment",
+    "source_sha256": "cd40db3986b1efca46b8d06cb0c5fdec2bb6e9f1ae697a9e13edcd4f9fb326a0",
+    "processed_sha256": "627e1c413685dd3f69eba64555864ee25a6fa580ebf9c69cda6bf0a02921297c",
+    "ingested_at": "2026-10-27T20:53:56.046799+00:00",
+    "counties": 115
+  },
+  "target": {
+    "shipment_id": "SH03",
+    "truck_id": "T03",
+    "lot_id": "L03"
+  },
+  "passed": true,
+  "finished_at": "2026-10-28T06:27:46.054Z"
+}

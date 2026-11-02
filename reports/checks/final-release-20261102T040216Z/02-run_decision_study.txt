@@ -1,0 +1,1 @@
+{"status": "computed simulation; not operational validation", "scenarios": 3, "policy_comparisons": 9, "operator_state_modified": false}

@@ -12,8 +12,42 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:05.020344+00:00",
-      "response_schema": "array[2032]",
+      "last_successful_request": "2026-10-31T07:00:26.559932+00:00",
+      "response_schema": {
+        "type": "array",
+        "rows": 2032,
+        "item_fields": [
+          "field_title",
+          "field_recall_number_export",
+          "field_recall_url",
+          "field_active_notice",
+          "field_states",
+          "field_archive_recall",
+          "field_closed_year",
+          "field_company_media_contact",
+          "field_distro_list",
+          "field_en_press_release",
+          "field_establishment",
+          "field_labels",
+          "field_media_contact",
+          "field_risk_level",
+          "field_last_modified_date",
+          "field_press_release",
+          "field_processing",
+          "field_product_items",
+          "field_qty_recovered",
+          "field_recall_classification",
+          "field_recall_date",
+          "field_recall_number",
+          "field_recall_reason",
+          "field_recall_type",
+          "field_related_to_outbreak",
+          "field_summary",
+          "field_year",
+          "langcode",
+          "field_has_spanish"
+        ]
+      },
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Local dated response cache; unavailable banner"
     },
@@ -28,8 +62,8 @@
       "geographic_scope": "national",
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "quarterly",
-      "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:06.244216+00:00",
+      "test_status": "failed",
+      "last_successful_request": "2026-10-27T21:03:20.288067+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied validated JSON files"
@@ -45,8 +79,8 @@
       "geographic_scope": "national",
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "monthly",
-      "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:06.986717+00:00",
+      "test_status": "failed",
+      "last_successful_request": "2026-10-27T21:03:21.036800+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied directory CSV"
@@ -63,7 +97,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "provider dependent",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:07.704292+00:00",
+      "last_successful_request": "2026-10-28T06:09:24.565158+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied BEAM exports; separate evidence"
@@ -80,7 +114,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "annual",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:08.411544+00:00",
+      "last_successful_request": "2026-10-28T06:09:26.243185+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied NORS; separate evidence"
@@ -97,7 +131,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:09.094640+00:00",
+      "last_successful_request": "2026-10-28T06:09:27.797453+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Coverage warning; no substitution with forecasts"
@@ -114,8 +148,18 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:09.903122+00:00",
-      "response_schema": "array[7]",
+      "last_successful_request": "2026-10-28T06:09:28.825020+00:00",
+      "response_schema": {
+        "type": "array",
+        "rows": 7,
+        "item_fields": [
+          "DATE",
+          "STATION",
+          "TMAX",
+          "TMIN",
+          "PRCP"
+        ]
+      },
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Coverage warning; forecast remains distinct"
     },
@@ -131,7 +175,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "5 minutes",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:10.805916+00:00",
+      "last_successful_request": "2026-10-31T07:00:27.755420+00:00",
       "response_schema": [
         "@context",
         "type",
@@ -154,7 +198,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:11.823245+00:00",
+      "last_successful_request": "2026-10-28T06:09:30.816909+00:00",
       "response_schema": [
         "@context",
         "id",
@@ -177,7 +221,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "hourly",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:12.653243+00:00",
+      "last_successful_request": "2026-10-31T07:00:29.304790+00:00",
       "response_schema": [
         "latitude",
         "longitude",
@@ -204,7 +248,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:13.461459+00:00",
+      "last_successful_request": "2026-10-28T06:09:33.044113+00:00",
       "response_schema": [
         "latitude",
         "longitude",
@@ -231,7 +275,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "5 minutes",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:14.565252+00:00",
+      "last_successful_request": "2026-10-31T07:00:30.413695+00:00",
       "response_schema": [
         "documentInfo",
         "maxImageWidth",
@@ -268,6 +312,28 @@
       "operational_fallback": "Report failure; no assertion roads are clear"
     },
     {
+      "id": "iowa_dot",
+      "provider": "Iowa DOT",
+      "endpoint": "https://services.arcgis.com/8lRhdTsQyJpO52F1/arcgis/rest/services/CARS511_Iowa_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultRecordCount=1",
+      "documentation": "https://iowadot.gov/travel-tools/iowa-511/511-data-feeds",
+      "authentication": "Official public ArcGIS feed; no credentials required",
+      "request_parameters": "outSR=4326; bounded objectIds groups of 100; outFields=*; f=geojson; maximum 2000 records",
+      "data_type": "official 511 point-event GeoJSON",
+      "geographic_scope": "Iowa; Columbia MO to Des Moines IA planning comparison",
+      "rate_limits": "Provider limit not verified; cache data 600s, metadata 86400s; 0.2s between bounded pages; honor 429",
+      "expected_refresh": "10 minutes",
+      "test_status": "HTTP success",
+      "last_successful_request": "2026-10-28T19:04:18.887645+00:00",
+      "response_schema": [
+        "type",
+        "crs",
+        "properties",
+        "features"
+      ],
+      "known_limitations": "Point events only, not winter road conditions or complete local-road coverage. Raw event-clock timezone unverified; record EditDate UTC. Repeated CARS IDs preserved. Non-atomic queries; no truck restrictions/closure avoidance. Iowa DOT attribution and CC BY 4.0 retained.",
+      "operational_fallback": "Dated official fixture with stale label; unavailable coverage is not a clear road"
+    },
+    {
       "id": "osrm_route",
       "provider": "OSRM",
       "endpoint": "https://router.project-osrm.org/route/v1/driving/-92.3341,38.9517;-90.1994,38.6270?overview=full&geometries=geojson",
@@ -279,7 +345,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:15.277041+00:00",
+      "last_successful_request": "2026-10-31T07:00:31.101151+00:00",
       "response_schema": [
         "code",
         "routes",
@@ -300,7 +366,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:16.405206+00:00",
+      "last_successful_request": "2026-10-31T07:00:32.306992+00:00",
       "response_schema": [
         "code",
         "destinations",
@@ -322,7 +388,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "on demand",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:17.375309+00:00",
+      "last_successful_request": "2026-10-28T06:09:37.540385+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Bundled request contract"
@@ -339,7 +405,7 @@
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "daily",
       "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:18.060374+00:00",
+      "last_successful_request": "2026-10-28T06:09:38.474262+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "OSM online tiles require internet"
@@ -355,8 +421,8 @@
       "geographic_scope": "US census tracts",
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "release dependent",
-      "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:19.220895+00:00",
+      "test_status": "failed",
+      "last_successful_request": "2026-10-27T21:03:35.744896+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied workbook"
@@ -372,8 +438,8 @@
       "geographic_scope": "US counties",
       "rate_limits": "Not verified; sequential probes, 0.3 second spacing; honor 429",
       "expected_refresh": "release dependent",
-      "test_status": "HTTP success",
-      "last_successful_request": "2026-10-26T06:10:20.180502+00:00",
+      "test_status": "failed",
+      "last_successful_request": "2026-10-27T21:03:36.589419+00:00",
       "response_schema": "Inspect successful response; HTML catalogs are not data feeds",
       "known_limitations": "Coverage and freshness must be validated; public services provide no availability guarantee",
       "operational_fallback": "Supplied workbook"

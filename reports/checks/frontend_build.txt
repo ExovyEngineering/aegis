@@ -1,0 +1,15 @@
+
+> aegis-command@0.1.0 build
+> tsc -b && vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 2228 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.65 kB │ gzip:   0.37 kB
+dist/assets/index-DB1dq1EE.css   59.45 kB │ gzip:  16.64 kB
+dist/assets/maps-BqhAM0pe.js    154.61 kB │ gzip:  45.16 kB
+dist/assets/index-krxH9dc1.js   338.83 kB │ gzip:  99.60 kB
+dist/assets/charts-CiMnwsrd.js  393.04 kB │ gzip: 114.77 kB
+✓ built in 6.59s

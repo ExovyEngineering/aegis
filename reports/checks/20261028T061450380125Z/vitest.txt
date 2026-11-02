@@ -1,0 +1,45 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/routingProvenance.test.ts (2 tests) 4ms
+ ✓ src/api.test.ts (3 tests) 10ms
+ ✓ src/MapViewport.test.tsx (2 tests) 31ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 127ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 171ms
+ ✓ src/ProjectBrief.test.tsx (1 test) 194ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 256ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 295ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 329ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 225ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 249ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 254ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 524ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  402ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 535ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 599ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 652ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  559ms
+ ✓ src/RouteLab.test.tsx (2 tests) 866ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  651ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1149ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  574ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1238ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  456ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  426ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 1311ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 415ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  413ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 670ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  395ms
+ ✓ src/App.test.tsx (6 tests) 1422ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  628ms
+
+ Test Files  23 passed (23)
+      Tests  76 passed (76)
+   Start at  01:15:23
+   Duration  7.26s (transform 4.74s, setup 22.47s, collect 16.35s, tests 11.52s, environment 60.95s, prepare 10.44s)
+

@@ -1,0 +1,3927 @@
+{
+  "checked_at": "2026-10-30T14:03:46.887Z",
+  "base_url": "http://127.0.0.1:8021",
+  "expected_rehearsal_id": "5e130eb9-644e-487e-b25e-585a0a485e0b",
+  "run_kind": "automated_check",
+  "human_rehearsal_verified": false,
+  "read_only": true,
+  "public_provider_refresh_requested": false,
+  "actual_osrm_queried": false,
+  "actual_llm_queried": false,
+  "external_map_tiles_replaced_with_qa_placeholders": true,
+  "checks": [
+    {
+      "name": "GET /api/runtime-context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "expected isolated offline UUID verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "database is exactly the UUID rehearsal path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/network",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/driver",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/dispatch",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "fresh rehearsal has no approved driver assignments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /api/assistant/context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/assistant/engine",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/road-intelligence",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "assistant uses deterministic evidence without configured model",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "road workspace uses offline captured evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual delivery estimate HTTP success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "current plan receives a real automatic baseline estimate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "current input metrics match the captured backend result",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual delivery estimate HTTP success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "one-click delay calls real estimator with same network revision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "one-hour metrics match actual estimator result",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all four real constrained response previews are visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "editing delay is a draft and leaves captured result visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "dirty-input export contains actual captured result rather than draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "priority candidate has an inspect action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "candidate Inspect focuses actual trip and updates selected shipment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "map guide has five meaningful layer switches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "map preset Plan deliveries selects its documented layer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "map preset Check weather selects its documented layer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "map preset Review roads selects its documented layer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "map preset View facilities selects its documented layer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "route layer explains that a switch does not generate routes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "map layer counts distinguish fictional connections and missing road results",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "short chicken question is accepted",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "chicken yields useful choices rather than a silent empty answer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "one clarification click produces an actual answer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "chicken choice answer uses real captured facts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "useful answer has inspectable exact source citations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "common question answers on one click without Get answer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "common driver workflow answer is cited and captured",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "common question explains approval rather than pretending to dispatch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "roads start with a named human-readable journey",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "raw coordinates are optional rather than the initial task",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "journey guide focuses the actual selector",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guide button computes the real saved-evidence comparison",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "route result interprets actual distance and duration with explicit estimate bounds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "offline provider refresh is disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "notice action focuses the exact captured record",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "empty dispatcher desk points to human-reviewed plan selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "missing reviewer details visibly explain disabled lot decisions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "actual delivery estimate HTTP success",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "empty desk CTA returns to actual Command without creating an approval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile delivery outlook has no horizontal page overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile example gives actual useful choices",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile short-question guidance has no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile road guidance has no horizontal page overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all browser POSTs were allowed read-only computations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no actual JavaScript or local HTTP errors",
+      "passed": true,
+      "detail": "{\"page\":[],\"console\":[],\"http\":[],\"requests\":[]}"
+    },
+    {
+      "name": "GET /api/network",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "GET /api/driver",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "all guided planning leaves network and assignments unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "isolated database and sidecars unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "operator database and sidecars untouched",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source fixtures and caches unchanged",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "desktop-current-delivery-outlook.png",
+    "desktop-one-hour-draft-and-response-preview.png",
+    "desktop-candidate-inspect-focus.png",
+    "desktop-map-presets-and-layer-explanation.png",
+    "desktop-chicken-useful-choices.png",
+    "desktop-chicken-cited-answer.png",
+    "desktop-one-click-common-question.png",
+    "desktop-guided-road-comparison.png",
+    "desktop-empty-dispatcher-direction.png",
+    "mobile-delivery-outlook.png",
+    "mobile-chicken-choices.png",
+    "mobile-road-steps.png"
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "http_failures": [],
+  "request_failures": [],
+  "blocked_requests": [],
+  "external_qa_placeholders": [
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/10/248/391.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/10/249/391.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/10/248/390.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/10/249/390.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/10/248/392.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/10/249/392.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/10/247/391.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/10/250/391.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/10/247/390.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/10/250/390.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/10/247/392.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/10/250/392.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/7/30/49.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/7/31/49.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/7/30/48.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/7/31/48.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/7/30/50.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/7/31/50.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/7/29/49.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://a.tile.openstreetmap.org/7/32/49.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/7/29/48.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://c.tile.openstreetmap.org/7/32/48.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/7/29/50.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "delivery_outlook",
+      "url": "https://b.tile.openstreetmap.org/7/32/50.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "road_guidance",
+      "url": "https://c.tile.openstreetmap.org/7/30/47.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "road_guidance",
+      "url": "https://a.tile.openstreetmap.org/7/31/47.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "road_guidance",
+      "url": "https://b.tile.openstreetmap.org/7/29/47.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "road_guidance",
+      "url": "https://b.tile.openstreetmap.org/7/32/47.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "immutability",
+      "url": "https://c.tile.openstreetmap.org/6/15/23.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "immutability",
+      "url": "https://a.tile.openstreetmap.org/6/15/24.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "immutability",
+      "url": "https://b.tile.openstreetmap.org/6/14/23.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "immutability",
+      "url": "https://a.tile.openstreetmap.org/6/16/23.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "immutability",
+      "url": "https://c.tile.openstreetmap.org/6/14/24.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    },
+    {
+      "phase": "immutability",
+      "url": "https://b.tile.openstreetmap.org/6/16/24.png",
+      "method": "GET",
+      "kind": "browser-only blank image placeholder; provider not contacted"
+    }
+  ],
+  "post_requests": [
+    {
+      "phase": "delivery_outlook",
+      "path": "/api/delivery-outlook",
+      "body": {
+        "added_delay_minutes": 0,
+        "ambient_temperature_c": 30,
+        "fault_truck_id": null,
+        "expected_network_revision": 0
+      },
+      "allowed": true
+    },
+    {
+      "phase": "delivery_outlook",
+      "path": "/api/delivery-outlook",
+      "body": {
+        "added_delay_minutes": 60,
+        "ambient_temperature_c": 30,
+        "fault_truck_id": null,
+        "expected_network_revision": 0
+      },
+      "allowed": true
+    },
+    {
+      "phase": "assistant_chicken",
+      "path": "/api/assistant/interpret",
+      "body": {
+        "prompt": "chicken",
+        "expected_snapshot_id": "53ab47111786ba8c03042319749a2c0b9381ca1bcceec72bc7f2a6777e67d0ee",
+        "allow_model": false,
+        "shipment_id": "SH10"
+      },
+      "allowed": true
+    },
+    {
+      "phase": "assistant_chicken",
+      "path": "/api/assistant/ask",
+      "body": {
+        "question_id": "shipment_review",
+        "expected_snapshot_id": "53ab47111786ba8c03042319749a2c0b9381ca1bcceec72bc7f2a6777e67d0ee",
+        "shipment_id": "SH10"
+      },
+      "allowed": true
+    },
+    {
+      "phase": "assistant_chicken",
+      "path": "/api/assistant/ask",
+      "body": {
+        "question_id": "driver_workflow",
+        "expected_snapshot_id": "53ab47111786ba8c03042319749a2c0b9381ca1bcceec72bc7f2a6777e67d0ee"
+      },
+      "allowed": true
+    },
+    {
+      "phase": "road_guidance",
+      "path": "/api/road-intelligence/compare",
+      "body": {
+        "origin": [
+          -92.3341,
+          38.9517
+        ],
+        "destination": [
+          -93.625,
+          41.5868
+        ],
+        "routing": "estimated",
+        "buffer_m": 250
+      },
+      "allowed": true
+    },
+    {
+      "phase": "dispatch_empty_state",
+      "path": "/api/delivery-outlook",
+      "body": {
+        "added_delay_minutes": 0,
+        "ambient_temperature_c": 30,
+        "fault_truck_id": null,
+        "expected_network_revision": 0
+      },
+      "allowed": true
+    },
+    {
+      "phase": "mobile_guidance",
+      "path": "/api/assistant/interpret",
+      "body": {
+        "prompt": "Chicken",
+        "expected_snapshot_id": "53ab47111786ba8c03042319749a2c0b9381ca1bcceec72bc7f2a6777e67d0ee",
+        "allow_model": false,
+        "shipment_id": "SH10"
+      },
+      "allowed": true
+    }
+  ],
+  "control_requests": [
+    {
+      "phase": "guard",
+      "endpoint": "/api/runtime-context",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "guard",
+      "endpoint": "/api/network",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "guard",
+      "endpoint": "/api/driver",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "guard",
+      "endpoint": "/api/dispatch",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "guard",
+      "endpoint": "/api/assistant/context",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "guard",
+      "endpoint": "/api/assistant/engine",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "guard",
+      "endpoint": "/api/road-intelligence",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "immutability",
+      "endpoint": "/api/network",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "immutability",
+      "endpoint": "/api/driver",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "operator_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "browser_version": "156.0.8078.74",
+  "runtime": {
+    "mode": "isolated_rehearsal",
+    "isolated": true,
+    "offline": true,
+    "rehearsal_id": "5e130eb9-644e-487e-b25e-585a0a485e0b",
+    "database_relative_path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+    "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
+  },
+  "isolated_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 126976,
+      "sha256": "1741fb58b8c79e975006a751306d06386ca98617a013e9d582851969c5100a77"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "fixtures_before": {
+    "data/fixtures/fsis_recalls.json": {
+      "exists": true,
+      "bytes": 26493,
+      "sha256": "f7cea9d9d9d5dfee146cff55e4e9c6f1412f3b5bc4869cb8435f16547243f525"
+    },
+    "data/fixtures/iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108723,
+      "sha256": "a4c3b69e32b0bf3755684e21b24e8264de9efb8fca63e6dccde129722e89a445"
+    },
+    "data/fixtures/modot.json": {
+      "exists": true,
+      "bytes": 3424614,
+      "sha256": "234f68d635c4cac0d3dbdddcfedbe4912e9cc96a6505f5d5063f868a9c7713f6"
+    },
+    "data/fixtures/ncei_historical.json": {
+      "exists": true,
+      "bytes": 2271,
+      "sha256": "f8bb321f60bba3197f9e958bc73dbd035fcf0a82372b985c3e047382e5ea677d"
+    },
+    "data/fixtures/nws_alerts.json": {
+      "exists": true,
+      "bytes": 577,
+      "sha256": "33dffebf6a2b363bec624487e3b966bb5246464b15e88a9249ed1b5fb6a5d60d"
+    },
+    "data/fixtures/openmeteo.json": {
+      "exists": true,
+      "bytes": 6239,
+      "sha256": "92c54d9e2b9d51b5a4673a90c6a685ea75d28411715cf20d2753a58984df3eee"
+    },
+    "data/fixtures/openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1282,
+      "sha256": "a8262eb9ac8a21393083d53e86cc7c0e6e671a4e7e2a18cb9fde5adac005012b"
+    },
+    "data/fixtures/osrm_route.json": {
+      "exists": true,
+      "bytes": 625979,
+      "sha256": "d028566a6538f40eaa31e4963a8128566ee7b20ad3a4e6ef07837751bf96f1c4"
+    }
+  },
+  "cache_before": {
+    "data/cache/0364f17aa89dc909e0deec6e4c7ea2815b08268cab17cee837dc5de5114ad193.json": {
+      "exists": true,
+      "bytes": 90278,
+      "sha256": "c01645581598ef8edc88db23bb9470834587b4b718d24749ba17b355d4b300eb"
+    },
+    "data/cache/03709b81730cc269c3f8caf3294682daa2815161710ab21b99c624b7f02b6a9d.json": {
+      "exists": true,
+      "bytes": 2017,
+      "sha256": "36237d61cf1afe6e7cddde1ac1f45b7aabc0e4f3691f1f176ce6fefd201a2bb8"
+    },
+    "data/cache/0398d3635646b5cfb5a07c7197721f936df737c3647b2f970faa8892f32c654d.json": {
+      "exists": true,
+      "bytes": 44083,
+      "sha256": "2466bc3469ad60c65b516e87c936f5c9b65d687c56aa5545fa1ac24b20e093f0"
+    },
+    "data/cache/04b5d887fbaecf91051807cc35d79407cdc7100635bd88b246888b693fa260d7.json": {
+      "exists": true,
+      "bytes": 144019,
+      "sha256": "346290aaa610011265bea6be9c66156b35f0e54976dac99c01b8130927aea8ed"
+    },
+    "data/cache/0f00eb6573de23dfc423d17115cfd0f1e565a8adf75e36a8daf0d6173aa73f5a.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "f0fc9a046325c70a684a06cdc986ab4eb2239e5fa1f0285821ce948335363fd9"
+    },
+    "data/cache/10b525c6250e89befe3169ea5cdd301750871e9a3df649e375e4b7273ed8a52e.json": {
+      "exists": true,
+      "bytes": 411045,
+      "sha256": "3ef154a63ccf111c47d2a34305e1e2747ae721138247b7a6af6d5d0802a8f5ca"
+    },
+    "data/cache/132ec4feeaa1dcb9d1667aaa39191b6b3067bc2a27da18967f13ba7ead2a658f.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "4413200f1f59077f9bfc54ac3f98f04ab855fb14f8b9ec28c9748aea2c6daf75"
+    },
+    "data/cache/135b7df331206c8e1d2f660a20728c43a0cb953af30b408c6341f934ccb126d1.json": {
+      "exists": true,
+      "bytes": 90185,
+      "sha256": "2e174965ca6591a603b61d9fcc357341ef0f24ccf1e8d9dfbaa0aea119522aba"
+    },
+    "data/cache/2818a35ed295495bc724fbbdadd60f6ec8b8e6b8f486a80c95556dbc800b30e7.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "1a8a253bfa6b1aca3c4350df3d4eea365fd293d4c5b167d1ef0b678fa3667038"
+    },
+    "data/cache/2a6ca4c2bfd6209fbe6b56e2f2346d79a63c4dce746b8e5ef4babd9d2e68b478.json": {
+      "exists": true,
+      "bytes": 34945,
+      "sha256": "3bea1ffba383f951c5e8154a0b66e7526bfa7d68fe9823a26260c17ae4f77ad7"
+    },
+    "data/cache/2aeecba5d2858f5da34ebb26e8823341efa7cab7c685140d1024968af8ff238c.json": {
+      "exists": true,
+      "bytes": 141594,
+      "sha256": "fbdc5720b34d22ae376b944c60d23e7053268664368a7e4e0bdee47a23fd863c"
+    },
+    "data/cache/2e8f9e4ee6797bb7789da5b816cc4af313f38edc4c63a34f97b6bc0d24b5ca4c.json": {
+      "exists": true,
+      "bytes": 144720,
+      "sha256": "d41759c896828878029cc20fc89a88f64d2f51940a4b5499902b006b5286cb0a"
+    },
+    "data/cache/2e9911ce316ac4c6e6bfe3034ed862e8b4312702fb4dded3fbb77eba36ea3d5d.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "43e1bb8613d76b0531fbd8ab7c4522b5ddbb696dbeed4b2449623f43793d350c"
+    },
+    "data/cache/32f752a0fdc38569a12b95a9e790691d70182474612c16a3c66b16ad245fe9ac.json": {
+      "exists": true,
+      "bytes": 349,
+      "sha256": "be4866ce70b8f9895a266b698b58884feb86d125a6d00be8f8eaf590a7a77657"
+    },
+    "data/cache/336e646bc32b20441de2790e5c5fa1f37908124671fca826fd3a85f7de130cfc.json": {
+      "exists": true,
+      "bytes": 417888,
+      "sha256": "5264bfccbdc6b8621c2e21095b9097e3716dd743067561887206661c6fa56a2b"
+    },
+    "data/cache/338f9e31a8150ed3f63c2a37a131a18290e0b1bba9afe0f6161f11e4f3156bbd.json": {
+      "exists": true,
+      "bytes": 1189574,
+      "sha256": "2f08a554c0390b7572325343d7a623425b5384ec80e01964ca901c02e0d7ba72"
+    },
+    "data/cache/339c733ed4ee7d291bf0a90daed133022621edcaddefd38b5d84c5901597d8a7.json": {
+      "exists": true,
+      "bytes": 17379,
+      "sha256": "950a1e8dae99d9f332963b4ec4c27da734ebe556a872227de51a401f9e1576c4"
+    },
+    "data/cache/33ce48f7be755b3cef5ddf1b81ed43bf91e1ae429dbc0d333718beca6d4d1e40.json": {
+      "exists": true,
+      "bytes": 369217,
+      "sha256": "59a74e3d68ba99b6f4bd840c2821f2cb10ad0cac136bf47e4af3beda9d6be337"
+    },
+    "data/cache/398ec7a1fc516369e21bc37d397b74ea614fbc3c842f6f0336d4cbad231d6a1a.json": {
+      "exists": true,
+      "bytes": 44382,
+      "sha256": "38ce51106430529db65cd5a2c33eaaedf3a16e59b1cbcd6610fd23f803deea1a"
+    },
+    "data/cache/3d68a1a695ce8d1031df225453f83f925b99338f570a5d9daa65158dc5d294f1.json": {
+      "exists": true,
+      "bytes": 142381,
+      "sha256": "4c0974861e06c0226afda794f2e5cee08fe7c79a4ededcfa67057f0389fdc360"
+    },
+    "data/cache/489d3afbffa67c196b3a562dcf7dfd0a5a0afd7b012d5057d763a5ca89105630.json": {
+      "exists": true,
+      "bytes": 10742,
+      "sha256": "8104c8c947812d67da4100746b0b652a27e9f861deb53c58793c48661456387a"
+    },
+    "data/cache/4b3d08bffa1cadae58e056cf99419358960f786492bc73594772b0ed69bc5cf1.json": {
+      "exists": true,
+      "bytes": 270069,
+      "sha256": "887901f263db689d20d045b2ad3a4766470b6f1eb1187c4913c9d309ea4adf90"
+    },
+    "data/cache/6ed8626280219ac86bd81f9e6efeee6abf0a2bfa8293df0979f3145c5da469a1.json": {
+      "exists": true,
+      "bytes": 508362,
+      "sha256": "54f58cfa86971ccdf8d99cc566ad8f6175181809e6bdc9176c918d18bb67f8f9"
+    },
+    "data/cache/782d4a36191292b0e87bc76e6dbb4931891b43bc05679569b36f292e95d16e0c.json": {
+      "exists": true,
+      "bytes": 12373827,
+      "sha256": "11128d77d8852c404d69ec3f67491bb711c84ea264d9a3e0e8eb76478054c4c9"
+    },
+    "data/cache/7cb3b29022160e624a27c70e93d3e3f6c84d48ae3f6114b6fb541708eda7eb62.json": {
+      "exists": true,
+      "bytes": 8870,
+      "sha256": "8f74d6b935551b7c0396a59c3b1ad4982d8c28578e98005fee0c8ad8d3b854b9"
+    },
+    "data/cache/7cd90c127147fb11dfbfca9d9ff3d50225569670be7ecd4bedc6601a6ede874d.json": {
+      "exists": true,
+      "bytes": 58403,
+      "sha256": "69ef0643f368b11ff99e24fbf8c33eadd82b9aee8fc778f06a0db7ec703e63d4"
+    },
+    "data/cache/839052bc2b5dc6a65c2541f3c622d8c0187afd9446bebea3fb27a13bc8084a77.json": {
+      "exists": true,
+      "bytes": 156274,
+      "sha256": "d9077f0e44de09e2b2d2173e412e3fae0f928c6262e6f3218a81d344c352f288"
+    },
+    "data/cache/9cafce6e34dfded8b35bfa57834829fe3748575d8dca3596b5393a7c5a3e1389.json": {
+      "exists": true,
+      "bytes": 21754,
+      "sha256": "782b23d47e329744b32c63e0e9d5072b43f36e398ca484f5fef8e2fbb41f633d"
+    },
+    "data/cache/a27bf9d04f6b7622fbcc8fff08f84027f291f523a3493c11816193ec0f4b8f85.json": {
+      "exists": true,
+      "bytes": 6092,
+      "sha256": "ffaa39cfa8fefcb7ec0ad37747dd5ba230d62909340b2935ee1082548144ac80"
+    },
+    "data/cache/a83a65087c743f54e48d52449a1568ce24fd7191b3b55076f155601962cffcd1.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "75318155d9fbcbb8121b577b2c61ec084403fb9c6461036abf1cbb0ed88e8198"
+    },
+    "data/cache/a9cdf9f1322e80559484dd4f2449820aeacac6c842cce1db90980df4af4fb712.json": {
+      "exists": true,
+      "bytes": 190987,
+      "sha256": "a034f12a0ebfb2177b8eb7ff0b15217e61220317a0deb4d8b6a59dfdc91ec1bf"
+    },
+    "data/cache/b9faacfa3f2c7b8426522c4fe8ca66581b67cd88757af5b7e96b6b078871767c.json": {
+      "exists": true,
+      "bytes": 12840,
+      "sha256": "2f620f25e87a85de94af2d19ca3e3013a0c420e9a772b99526e152bab033c721"
+    },
+    "data/cache/ba11441fa38559492c3b7fd9539740eaa4e4c324037aa88bd5c1ad65c91df805.json": {
+      "exists": true,
+      "bytes": 407,
+      "sha256": "270ef24ee26c6ac24a7d3eee7e00d32cb07ce8d31f6e5aeac3716a45a8590954"
+    },
+    "data/cache/bebd20ba1d793133341ceb78b9188414fe4643921c5c806394b3033b20f33b08.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "650cdc4c58f42e9d012f772e7f91587eabd3f8c2edabf1c28620e4864c2d8c70"
+    },
+    "data/cache/bfa095ebfab32bcfae28a7de3b5993d6948e34cd7c83b80f558d8839d95f868b.json": {
+      "exists": true,
+      "bytes": 145035,
+      "sha256": "82398d4ee6f4fd703048892151501f4b760ba6dd197ff4dc8f47765ff2d5f2d4"
+    },
+    "data/cache/c82df6b6923461f1d5bf4ca9f983c1915f717dca2a556c29d7b5c964ad951539.json": {
+      "exists": true,
+      "bytes": 221183,
+      "sha256": "f381f714959782c78fd0e42dd95c0fb1a7f3a4868069b6aed7a7730fdca9ea43"
+    },
+    "data/cache/ca89b20a7b2b51e7b8e33c8291acfd5631fe9aea41f9366d04eafe2ee7284d67.json": {
+      "exists": true,
+      "bytes": 14402,
+      "sha256": "3942ef2757957c9bc4d23ee8ea9de1bb72905c0ca6ee1f1edd332d13ed1cb4a9"
+    },
+    "data/cache/connectivity_iowa_dot.json": {
+      "exists": true,
+      "bytes": 1882,
+      "sha256": "aea86742b3aee6a18464d24e1bda3dfa773e11763038a06bb24c7b2a75b77297"
+    },
+    "data/cache/connectivity_modot.json": {
+      "exists": true,
+      "bytes": 10704,
+      "sha256": "152c14df50a5efb96fa801c9b46378c4efb3c61479dfc8c56e76e146341fc766"
+    },
+    "data/cache/connectivity_osrm_route.json": {
+      "exists": true,
+      "bytes": 207946,
+      "sha256": "4c9c91d7cca819b5ed9bcca022320a620ac218066820ff802abb222496f7aaac"
+    },
+    "data/cache/d038ad5799eea94f366c0203b2ba0c6690c23a7df939cdbfa940b8e4443720fb.json": {
+      "exists": true,
+      "bytes": 933025,
+      "sha256": "5e8c806088a855a27f43bf2f640d30d1c546fac15d5e8fac2b571ad736bb5040"
+    },
+    "data/cache/d3dfacfc232d82391d42faab88de211e717fc64a06f65fe053b45e47c24aba8c.json": {
+      "exists": true,
+      "bytes": 7426,
+      "sha256": "8bb8d1352f62259d84a35978521e61d0766a211f880ef176c68fdc1c297f8d88"
+    },
+    "data/cache/e5c7272654494a423757867891321e25682bbf66de9be6b632110f9774432624.json": {
+      "exists": true,
+      "bytes": 122780,
+      "sha256": "2b73adc45f0c322bdc4623615e3031a9d72a8a41a2ee12c4a675cf4d1f11e1d8"
+    },
+    "data/cache/e8063084e84a95fd4a7c06bf7e1a746a595fef3516c5eaa19ee26d6240a2b960.json": {
+      "exists": true,
+      "bytes": 12741,
+      "sha256": "3914c8d9fea7630f4e55cf3316ccc3138ae8441ecdbc5ac0122bba4192eb6c9f"
+    },
+    "data/cache/e9f469800e09f16d8477ab2ce15b2d021935068756651e6c32e1713a3cc7a626.json": {
+      "exists": true,
+      "bytes": 143888,
+      "sha256": "54aaf18680cdc5f9ba74a74be73663fe7298ba0ec2274a7c51de5f30340d546a"
+    },
+    "data/cache/eebc0c7ee7082e911194264801d92b2b4c6c989a1b1d00d2b408d27a83e749f4.json": {
+      "exists": true,
+      "bytes": 398006,
+      "sha256": "8ad3b286b12273ef25d19d392580d9135499ad08103751c0af6a7dc434c8fb7b"
+    },
+    "data/cache/f2dea27d65488ef70a4990878320542a5614fe57054e1d0cce466efe969e8ad3.json": {
+      "exists": true,
+      "bytes": 19820,
+      "sha256": "e8904d70f3bc4478e29c5aa591bb9f2bb660289253ca85ab1a5df5831ac2f430"
+    },
+    "data/cache/ffb18d544710bae9f36891a5936b540729731a4b24c9a5f85a421bd2fdb56394.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "d400544314e322fc355bc466c33f24f7c009cb9f54f244334c019f706ba5e31b"
+    },
+    "data/cache/matplotlib/fontlist-v3.11.0.json": {
+      "exists": true,
+      "bytes": 193310,
+      "sha256": "4eeac64713757392f4f38708dfe2bdb0d42c44e26f491bdfd62255a853a4c2ec"
+    },
+    "data/cache/probe_fsis_recalls.json": {
+      "exists": true,
+      "bytes": 12373971,
+      "sha256": "538146c3556b773972091a0cce0ebfabb2672989588ead2f5d60a21ab89a3341"
+    },
+    "data/cache/probe_iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108498,
+      "sha256": "94e84daf9ee3d3da29eb2c2e8a5277f3390b6d0e230eb3907334b1acf36dc9bb"
+    },
+    "data/cache/probe_modot.json": {
+      "exists": true,
+      "bytes": 3759802,
+      "sha256": "368def5948845ab8e1d6486e7f4b08c4d7fd747a447b99be9861934906599c9f"
+    },
+    "data/cache/probe_ncei_historical.json": {
+      "exists": true,
+      "bytes": 2144,
+      "sha256": "89158efb8761659cae228d3d45913f4b27e9e0668411a4b93642b1ad82fb5c03"
+    },
+    "data/cache/probe_nws_alerts.json": {
+      "exists": true,
+      "bytes": 451,
+      "sha256": "34a481febab941c8274264f32c852a3244c70bf6ca5d78c1409c21de1c4b2939"
+    },
+    "data/cache/probe_nws_points.json": {
+      "exists": true,
+      "bytes": 3755,
+      "sha256": "7ee0d4e8376d182ab91f9df5637b6a53e08aba8bcac6be52e46ddb3efdf92e85"
+    },
+    "data/cache/probe_openmeteo.json": {
+      "exists": true,
+      "bytes": 6128,
+      "sha256": "a87ea9a9df2d2683a11aa37b89f74c0f4d6df1f7b77d9db17dec5d32d9fba2fa"
+    },
+    "data/cache/probe_openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1157,
+      "sha256": "ccd191b61ec17f0c5fc8b7441d6c7322e4cfa32c1b99c3b9e6c649f7cd6db060"
+    },
+    "data/cache/probe_osrm_route.json": {
+      "exists": true,
+      "bytes": 625854,
+      "sha256": "e9c11c43133bf78ffb58dc356191cb4b1b4b42cc6e972ca32e8fc2838dc6d3c6"
+    },
+    "data/cache/probe_osrm_table.json": {
+      "exists": true,
+      "bytes": 1555,
+      "sha256": "13f1ac54b71d6fdf72ae17bcc0bf8a82f9814d01eaccef6809baa0af786dd049"
+    },
+    "data/cache/road_refresh_status.json": {
+      "exists": true,
+      "bytes": 354,
+      "sha256": "ee6a20e4aa3b7f9392d54280205f856bc63cf6a8b73c6b87fdc15b1520ac2f0c"
+    }
+  },
+  "served_assets": [
+    "/assets/index-CM0XVnus.js"
+  ],
+  "network_after": {
+    "seed": 20261026,
+    "provenance": "DETERMINISTIC SIMULATION — entities, contracts, shipments and telemetry are fictional",
+    "nodes": [
+      {
+        "id": "DC1",
+        "name": "Columbia DC (simulated)",
+        "kind": "dc",
+        "coordinates": [
+          -92.3341,
+          38.9517
+        ],
+        "capacity_kg": 12000
+      },
+      {
+        "id": "DC2",
+        "name": "Springfield DC (simulated)",
+        "kind": "dc",
+        "coordinates": [
+          -93.2923,
+          37.209
+        ],
+        "capacity_kg": 10000
+      },
+      {
+        "id": "SUP1",
+        "name": "Columbia supplier (simulated)",
+        "kind": "supplier",
+        "coordinates": [
+          -92.4141,
+          39.011700000000005
+        ],
+        "capacity_kg": 6000
+      },
+      {
+        "id": "SUP2",
+        "name": "Kansas City supplier (simulated)",
+        "kind": "supplier",
+        "coordinates": [
+          -94.65859999999999,
+          39.1597
+        ],
+        "capacity_kg": 6000
+      },
+      {
+        "id": "SUP3",
+        "name": "Jefferson City supplier (simulated)",
+        "kind": "supplier",
+        "coordinates": [
+          -92.2535,
+          38.636700000000005
+        ],
+        "capacity_kg": 6000
+      },
+      {
+        "id": "D01",
+        "name": "Columbia destination 1 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -92.42686574587837,
+          38.90267193182352
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D02",
+        "name": "Kansas City destination 2 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -94.66668154137945,
+          39.09718904789093
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D03",
+        "name": "Jefferson City destination 3 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -92.16343117674066,
+          38.488262137080646
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D04",
+        "name": "Springfield destination 4 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -93.31616801496607,
+          37.18283988350218
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D05",
+        "name": "St. Louis destination 5 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -90.23742422131505,
+          38.653449031901474
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D06",
+        "name": "Columbia destination 6 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -92.38904895518336,
+          38.95136030760434
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D07",
+        "name": "Kansas City destination 7 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -94.61661228995621,
+          39.16906599628995
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D08",
+        "name": "Jefferson City destination 8 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -92.0653270730273,
+          38.49622220403864
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D09",
+        "name": "Springfield destination 9 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -93.35980347726326,
+          37.208341126062955
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D10",
+        "name": "St. Louis destination 10 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -90.17073364580835,
+          38.70875453878441
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D11",
+        "name": "Columbia destination 11 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -92.42311998024472,
+          38.93146933444767
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D12",
+        "name": "Kansas City destination 12 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -94.48193223265045,
+          39.065121983593606
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D13",
+        "name": "Jefferson City destination 13 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -92.1123725861464,
+          38.557236985380534
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D14",
+        "name": "Springfield destination 14 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -93.33488174845307,
+          37.13160149852107
+        ],
+        "demand_kg": 500
+      },
+      {
+        "id": "D15",
+        "name": "St. Louis destination 15 (simulated)",
+        "kind": "destination",
+        "coordinates": [
+          -90.12823591139964,
+          38.67234711187459
+        ],
+        "demand_kg": 500
+      }
+    ],
+    "trucks": [
+      {
+        "id": "T01",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T02",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T03",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T04",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T05",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T06",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T07",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      },
+      {
+        "id": "T08",
+        "capacity_kg": 1500,
+        "refrigerated": true,
+        "eligible": true
+      }
+    ],
+    "lots": [
+      {
+        "id": "L01",
+        "supplier_id": "SUP1",
+        "inventory_kg": 1500,
+        "held": true,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L02",
+        "supplier_id": "SUP2",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L03",
+        "supplier_id": "SUP3",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L04",
+        "supplier_id": "SUP1",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L05",
+        "supplier_id": "SUP2",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L06",
+        "supplier_id": "SUP3",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L07",
+        "supplier_id": "SUP1",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L08",
+        "supplier_id": "SUP2",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L09",
+        "supplier_id": "SUP3",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L10",
+        "supplier_id": "SUP1",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L11",
+        "supplier_id": "SUP2",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      },
+      {
+        "id": "L12",
+        "supplier_id": "SUP3",
+        "inventory_kg": 1500,
+        "held": false,
+        "recalled": false,
+        "eligible": true,
+        "shelf_life_hours": 72
+      }
+    ],
+    "shipments": [
+      {
+        "id": "SH01",
+        "origin": "DC1",
+        "destination": "D01",
+        "lot_id": "L01",
+        "truck_id": "T01",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.187,
+        "estimated_distance_km": 12.13,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH02",
+        "origin": "DC2",
+        "destination": "D02",
+        "lot_id": "L02",
+        "truck_id": "T02",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.652,
+        "estimated_distance_km": 302.39,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.9,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH03",
+        "origin": "DC1",
+        "destination": "D03",
+        "lot_id": "L03",
+        "truck_id": "T03",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 1.031,
+        "estimated_distance_km": 67.02,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 8.5,
+        "review_priority": "high",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH04",
+        "origin": "DC2",
+        "destination": "D04",
+        "lot_id": "L04",
+        "truck_id": "T04",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.069,
+        "estimated_distance_km": 4.49,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.6,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH05",
+        "origin": "DC1",
+        "destination": "D05",
+        "lot_id": "L05",
+        "truck_id": "T05",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.552,
+        "estimated_distance_km": 230.86,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH06",
+        "origin": "DC2",
+        "destination": "D06",
+        "lot_id": "L06",
+        "truck_id": "T06",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.024,
+        "estimated_distance_km": 261.56,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.6,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH07",
+        "origin": "DC1",
+        "destination": "D07",
+        "lot_id": "L07",
+        "truck_id": "T07",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.818,
+        "estimated_distance_km": 248.18,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.3,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH08",
+        "origin": "DC2",
+        "destination": "D08",
+        "lot_id": "L08",
+        "truck_id": "T08",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.445,
+        "estimated_distance_km": 223.92,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 8.5,
+        "review_priority": "high",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH09",
+        "origin": "DC1",
+        "destination": "D09",
+        "lot_id": "L09",
+        "truck_id": "T01",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.108,
+        "estimated_distance_km": 267.03,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH10",
+        "origin": "DC2",
+        "destination": "D10",
+        "lot_id": "L10",
+        "truck_id": "T02",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 6.163,
+        "estimated_distance_km": 400.56,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.9,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH11",
+        "origin": "DC1",
+        "destination": "D11",
+        "lot_id": "L11",
+        "truck_id": "T03",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.154,
+        "estimated_distance_km": 10.03,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.6,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH12",
+        "origin": "DC2",
+        "destination": "D12",
+        "lot_id": "L12",
+        "truck_id": "T04",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.445,
+        "estimated_distance_km": 288.91,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH13",
+        "origin": "DC1",
+        "destination": "D13",
+        "lot_id": "L01",
+        "truck_id": "T05",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.921,
+        "estimated_distance_km": 59.86,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.6,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH14",
+        "origin": "DC2",
+        "destination": "D14",
+        "lot_id": "L02",
+        "truck_id": "T06",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.181,
+        "estimated_distance_km": 11.75,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH15",
+        "origin": "DC1",
+        "destination": "D15",
+        "lot_id": "L03",
+        "truck_id": "T07",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.724,
+        "estimated_distance_km": 242.03,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.3,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH16",
+        "origin": "DC2",
+        "destination": "D01",
+        "lot_id": "L04",
+        "truck_id": "T08",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.904,
+        "estimated_distance_km": 253.75,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.7,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH17",
+        "origin": "DC1",
+        "destination": "D02",
+        "lot_id": "L05",
+        "truck_id": "T01",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.887,
+        "estimated_distance_km": 252.68,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 1.2,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH18",
+        "origin": "DC2",
+        "destination": "D03",
+        "lot_id": "L06",
+        "truck_id": "T02",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 3.334,
+        "estimated_distance_km": 216.71,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.2,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH19",
+        "origin": "DC1",
+        "destination": "D04",
+        "lot_id": "L07",
+        "truck_id": "T03",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.128,
+        "estimated_distance_km": 268.32,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.1,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH20",
+        "origin": "DC2",
+        "destination": "D05",
+        "lot_id": "L08",
+        "truck_id": "T04",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 6.007,
+        "estimated_distance_km": 390.44,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.1,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH21",
+        "origin": "DC1",
+        "destination": "D06",
+        "lot_id": "L09",
+        "truck_id": "T05",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.091,
+        "estimated_distance_km": 5.94,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.7,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH22",
+        "origin": "DC2",
+        "destination": "D07",
+        "lot_id": "L10",
+        "truck_id": "T06",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 4.746,
+        "estimated_distance_km": 308.46,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.5,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH23",
+        "origin": "DC1",
+        "destination": "D08",
+        "lot_id": "L11",
+        "truck_id": "T07",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 1.072,
+        "estimated_distance_km": 69.7,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 2.9,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      },
+      {
+        "id": "SH24",
+        "origin": "DC2",
+        "destination": "D09",
+        "lot_id": "L12",
+        "truck_id": "T08",
+        "quantity_kg": 400,
+        "deadline_hours": 6,
+        "estimated_hours": 0.115,
+        "estimated_distance_km": 7.47,
+        "routing_provenance": "haversine x 1.25 at 65 km/h; not road geometry",
+        "temperature_c": 3.4,
+        "review_priority": "routine",
+        "status": "pending dispatcher approval"
+      }
+    ],
+    "telemetry": [
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH01",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH02",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH03",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH04",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH05",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH06",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH07",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH08",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 8.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH09",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH10",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH11",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 3.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH12",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH13",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.6,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH14",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH15",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.3,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH16",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 1.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 1.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 1.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 1.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH17",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 1.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH18",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.2,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH19",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH20",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.1,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 3.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 3.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 3.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 3.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH21",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 3.7,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH22",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 2.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 2.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 2.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 2.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH23",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 2.9,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T08:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T08:10:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T08:20:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T08:30:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T08:40:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T08:50:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T09:00:00-05:00",
+        "temperature_c": 2.5,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T09:10:00-05:00",
+        "temperature_c": 3.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T09:20:00-05:00",
+        "temperature_c": 3.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T09:30:00-05:00",
+        "temperature_c": 3.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T09:40:00-05:00",
+        "temperature_c": 3.4,
+        "provenance": "simulated cargo temperature"
+      },
+      {
+        "shipment_id": "SH24",
+        "timestamp": "2026-10-26T09:50:00-05:00",
+        "temperature_c": 3.4,
+        "provenance": "simulated cargo temperature"
+      }
+    ],
+    "events": [],
+    "revision": 0,
+    "runtime": {
+      "mode": "isolated_rehearsal",
+      "isolated": true,
+      "offline": true,
+      "rehearsal_id": "5e130eb9-644e-487e-b25e-585a0a485e0b",
+      "database_relative_path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+      "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
+    }
+  },
+  "assignments_after": [],
+  "isolated_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 126976,
+      "sha256": "1741fb58b8c79e975006a751306d06386ca98617a013e9d582851969c5100a77"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "operator_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 196608,
+      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "fixtures_after": {
+    "data/fixtures/fsis_recalls.json": {
+      "exists": true,
+      "bytes": 26493,
+      "sha256": "f7cea9d9d9d5dfee146cff55e4e9c6f1412f3b5bc4869cb8435f16547243f525"
+    },
+    "data/fixtures/iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108723,
+      "sha256": "a4c3b69e32b0bf3755684e21b24e8264de9efb8fca63e6dccde129722e89a445"
+    },
+    "data/fixtures/modot.json": {
+      "exists": true,
+      "bytes": 3424614,
+      "sha256": "234f68d635c4cac0d3dbdddcfedbe4912e9cc96a6505f5d5063f868a9c7713f6"
+    },
+    "data/fixtures/ncei_historical.json": {
+      "exists": true,
+      "bytes": 2271,
+      "sha256": "f8bb321f60bba3197f9e958bc73dbd035fcf0a82372b985c3e047382e5ea677d"
+    },
+    "data/fixtures/nws_alerts.json": {
+      "exists": true,
+      "bytes": 577,
+      "sha256": "33dffebf6a2b363bec624487e3b966bb5246464b15e88a9249ed1b5fb6a5d60d"
+    },
+    "data/fixtures/openmeteo.json": {
+      "exists": true,
+      "bytes": 6239,
+      "sha256": "92c54d9e2b9d51b5a4673a90c6a685ea75d28411715cf20d2753a58984df3eee"
+    },
+    "data/fixtures/openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1282,
+      "sha256": "a8262eb9ac8a21393083d53e86cc7c0e6e671a4e7e2a18cb9fde5adac005012b"
+    },
+    "data/fixtures/osrm_route.json": {
+      "exists": true,
+      "bytes": 625979,
+      "sha256": "d028566a6538f40eaa31e4963a8128566ee7b20ad3a4e6ef07837751bf96f1c4"
+    }
+  },
+  "cache_after": {
+    "data/cache/0364f17aa89dc909e0deec6e4c7ea2815b08268cab17cee837dc5de5114ad193.json": {
+      "exists": true,
+      "bytes": 90278,
+      "sha256": "c01645581598ef8edc88db23bb9470834587b4b718d24749ba17b355d4b300eb"
+    },
+    "data/cache/03709b81730cc269c3f8caf3294682daa2815161710ab21b99c624b7f02b6a9d.json": {
+      "exists": true,
+      "bytes": 2017,
+      "sha256": "36237d61cf1afe6e7cddde1ac1f45b7aabc0e4f3691f1f176ce6fefd201a2bb8"
+    },
+    "data/cache/0398d3635646b5cfb5a07c7197721f936df737c3647b2f970faa8892f32c654d.json": {
+      "exists": true,
+      "bytes": 44083,
+      "sha256": "2466bc3469ad60c65b516e87c936f5c9b65d687c56aa5545fa1ac24b20e093f0"
+    },
+    "data/cache/04b5d887fbaecf91051807cc35d79407cdc7100635bd88b246888b693fa260d7.json": {
+      "exists": true,
+      "bytes": 144019,
+      "sha256": "346290aaa610011265bea6be9c66156b35f0e54976dac99c01b8130927aea8ed"
+    },
+    "data/cache/0f00eb6573de23dfc423d17115cfd0f1e565a8adf75e36a8daf0d6173aa73f5a.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "f0fc9a046325c70a684a06cdc986ab4eb2239e5fa1f0285821ce948335363fd9"
+    },
+    "data/cache/10b525c6250e89befe3169ea5cdd301750871e9a3df649e375e4b7273ed8a52e.json": {
+      "exists": true,
+      "bytes": 411045,
+      "sha256": "3ef154a63ccf111c47d2a34305e1e2747ae721138247b7a6af6d5d0802a8f5ca"
+    },
+    "data/cache/132ec4feeaa1dcb9d1667aaa39191b6b3067bc2a27da18967f13ba7ead2a658f.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "4413200f1f59077f9bfc54ac3f98f04ab855fb14f8b9ec28c9748aea2c6daf75"
+    },
+    "data/cache/135b7df331206c8e1d2f660a20728c43a0cb953af30b408c6341f934ccb126d1.json": {
+      "exists": true,
+      "bytes": 90185,
+      "sha256": "2e174965ca6591a603b61d9fcc357341ef0f24ccf1e8d9dfbaa0aea119522aba"
+    },
+    "data/cache/2818a35ed295495bc724fbbdadd60f6ec8b8e6b8f486a80c95556dbc800b30e7.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "1a8a253bfa6b1aca3c4350df3d4eea365fd293d4c5b167d1ef0b678fa3667038"
+    },
+    "data/cache/2a6ca4c2bfd6209fbe6b56e2f2346d79a63c4dce746b8e5ef4babd9d2e68b478.json": {
+      "exists": true,
+      "bytes": 34945,
+      "sha256": "3bea1ffba383f951c5e8154a0b66e7526bfa7d68fe9823a26260c17ae4f77ad7"
+    },
+    "data/cache/2aeecba5d2858f5da34ebb26e8823341efa7cab7c685140d1024968af8ff238c.json": {
+      "exists": true,
+      "bytes": 141594,
+      "sha256": "fbdc5720b34d22ae376b944c60d23e7053268664368a7e4e0bdee47a23fd863c"
+    },
+    "data/cache/2e8f9e4ee6797bb7789da5b816cc4af313f38edc4c63a34f97b6bc0d24b5ca4c.json": {
+      "exists": true,
+      "bytes": 144720,
+      "sha256": "d41759c896828878029cc20fc89a88f64d2f51940a4b5499902b006b5286cb0a"
+    },
+    "data/cache/2e9911ce316ac4c6e6bfe3034ed862e8b4312702fb4dded3fbb77eba36ea3d5d.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "43e1bb8613d76b0531fbd8ab7c4522b5ddbb696dbeed4b2449623f43793d350c"
+    },
+    "data/cache/32f752a0fdc38569a12b95a9e790691d70182474612c16a3c66b16ad245fe9ac.json": {
+      "exists": true,
+      "bytes": 349,
+      "sha256": "be4866ce70b8f9895a266b698b58884feb86d125a6d00be8f8eaf590a7a77657"
+    },
+    "data/cache/336e646bc32b20441de2790e5c5fa1f37908124671fca826fd3a85f7de130cfc.json": {
+      "exists": true,
+      "bytes": 417888,
+      "sha256": "5264bfccbdc6b8621c2e21095b9097e3716dd743067561887206661c6fa56a2b"
+    },
+    "data/cache/338f9e31a8150ed3f63c2a37a131a18290e0b1bba9afe0f6161f11e4f3156bbd.json": {
+      "exists": true,
+      "bytes": 1189574,
+      "sha256": "2f08a554c0390b7572325343d7a623425b5384ec80e01964ca901c02e0d7ba72"
+    },
+    "data/cache/339c733ed4ee7d291bf0a90daed133022621edcaddefd38b5d84c5901597d8a7.json": {
+      "exists": true,
+      "bytes": 17379,
+      "sha256": "950a1e8dae99d9f332963b4ec4c27da734ebe556a872227de51a401f9e1576c4"
+    },
+    "data/cache/33ce48f7be755b3cef5ddf1b81ed43bf91e1ae429dbc0d333718beca6d4d1e40.json": {
+      "exists": true,
+      "bytes": 369217,
+      "sha256": "59a74e3d68ba99b6f4bd840c2821f2cb10ad0cac136bf47e4af3beda9d6be337"
+    },
+    "data/cache/398ec7a1fc516369e21bc37d397b74ea614fbc3c842f6f0336d4cbad231d6a1a.json": {
+      "exists": true,
+      "bytes": 44382,
+      "sha256": "38ce51106430529db65cd5a2c33eaaedf3a16e59b1cbcd6610fd23f803deea1a"
+    },
+    "data/cache/3d68a1a695ce8d1031df225453f83f925b99338f570a5d9daa65158dc5d294f1.json": {
+      "exists": true,
+      "bytes": 142381,
+      "sha256": "4c0974861e06c0226afda794f2e5cee08fe7c79a4ededcfa67057f0389fdc360"
+    },
+    "data/cache/489d3afbffa67c196b3a562dcf7dfd0a5a0afd7b012d5057d763a5ca89105630.json": {
+      "exists": true,
+      "bytes": 10742,
+      "sha256": "8104c8c947812d67da4100746b0b652a27e9f861deb53c58793c48661456387a"
+    },
+    "data/cache/4b3d08bffa1cadae58e056cf99419358960f786492bc73594772b0ed69bc5cf1.json": {
+      "exists": true,
+      "bytes": 270069,
+      "sha256": "887901f263db689d20d045b2ad3a4766470b6f1eb1187c4913c9d309ea4adf90"
+    },
+    "data/cache/6ed8626280219ac86bd81f9e6efeee6abf0a2bfa8293df0979f3145c5da469a1.json": {
+      "exists": true,
+      "bytes": 508362,
+      "sha256": "54f58cfa86971ccdf8d99cc566ad8f6175181809e6bdc9176c918d18bb67f8f9"
+    },
+    "data/cache/782d4a36191292b0e87bc76e6dbb4931891b43bc05679569b36f292e95d16e0c.json": {
+      "exists": true,
+      "bytes": 12373827,
+      "sha256": "11128d77d8852c404d69ec3f67491bb711c84ea264d9a3e0e8eb76478054c4c9"
+    },
+    "data/cache/7cb3b29022160e624a27c70e93d3e3f6c84d48ae3f6114b6fb541708eda7eb62.json": {
+      "exists": true,
+      "bytes": 8870,
+      "sha256": "8f74d6b935551b7c0396a59c3b1ad4982d8c28578e98005fee0c8ad8d3b854b9"
+    },
+    "data/cache/7cd90c127147fb11dfbfca9d9ff3d50225569670be7ecd4bedc6601a6ede874d.json": {
+      "exists": true,
+      "bytes": 58403,
+      "sha256": "69ef0643f368b11ff99e24fbf8c33eadd82b9aee8fc778f06a0db7ec703e63d4"
+    },
+    "data/cache/839052bc2b5dc6a65c2541f3c622d8c0187afd9446bebea3fb27a13bc8084a77.json": {
+      "exists": true,
+      "bytes": 156274,
+      "sha256": "d9077f0e44de09e2b2d2173e412e3fae0f928c6262e6f3218a81d344c352f288"
+    },
+    "data/cache/9cafce6e34dfded8b35bfa57834829fe3748575d8dca3596b5393a7c5a3e1389.json": {
+      "exists": true,
+      "bytes": 21754,
+      "sha256": "782b23d47e329744b32c63e0e9d5072b43f36e398ca484f5fef8e2fbb41f633d"
+    },
+    "data/cache/a27bf9d04f6b7622fbcc8fff08f84027f291f523a3493c11816193ec0f4b8f85.json": {
+      "exists": true,
+      "bytes": 6092,
+      "sha256": "ffaa39cfa8fefcb7ec0ad37747dd5ba230d62909340b2935ee1082548144ac80"
+    },
+    "data/cache/a83a65087c743f54e48d52449a1568ce24fd7191b3b55076f155601962cffcd1.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "75318155d9fbcbb8121b577b2c61ec084403fb9c6461036abf1cbb0ed88e8198"
+    },
+    "data/cache/a9cdf9f1322e80559484dd4f2449820aeacac6c842cce1db90980df4af4fb712.json": {
+      "exists": true,
+      "bytes": 190987,
+      "sha256": "a034f12a0ebfb2177b8eb7ff0b15217e61220317a0deb4d8b6a59dfdc91ec1bf"
+    },
+    "data/cache/b9faacfa3f2c7b8426522c4fe8ca66581b67cd88757af5b7e96b6b078871767c.json": {
+      "exists": true,
+      "bytes": 12840,
+      "sha256": "2f620f25e87a85de94af2d19ca3e3013a0c420e9a772b99526e152bab033c721"
+    },
+    "data/cache/ba11441fa38559492c3b7fd9539740eaa4e4c324037aa88bd5c1ad65c91df805.json": {
+      "exists": true,
+      "bytes": 407,
+      "sha256": "270ef24ee26c6ac24a7d3eee7e00d32cb07ce8d31f6e5aeac3716a45a8590954"
+    },
+    "data/cache/bebd20ba1d793133341ceb78b9188414fe4643921c5c806394b3033b20f33b08.json": {
+      "exists": true,
+      "bytes": 350,
+      "sha256": "650cdc4c58f42e9d012f772e7f91587eabd3f8c2edabf1c28620e4864c2d8c70"
+    },
+    "data/cache/bfa095ebfab32bcfae28a7de3b5993d6948e34cd7c83b80f558d8839d95f868b.json": {
+      "exists": true,
+      "bytes": 145035,
+      "sha256": "82398d4ee6f4fd703048892151501f4b760ba6dd197ff4dc8f47765ff2d5f2d4"
+    },
+    "data/cache/c82df6b6923461f1d5bf4ca9f983c1915f717dca2a556c29d7b5c964ad951539.json": {
+      "exists": true,
+      "bytes": 221183,
+      "sha256": "f381f714959782c78fd0e42dd95c0fb1a7f3a4868069b6aed7a7730fdca9ea43"
+    },
+    "data/cache/ca89b20a7b2b51e7b8e33c8291acfd5631fe9aea41f9366d04eafe2ee7284d67.json": {
+      "exists": true,
+      "bytes": 14402,
+      "sha256": "3942ef2757957c9bc4d23ee8ea9de1bb72905c0ca6ee1f1edd332d13ed1cb4a9"
+    },
+    "data/cache/connectivity_iowa_dot.json": {
+      "exists": true,
+      "bytes": 1882,
+      "sha256": "aea86742b3aee6a18464d24e1bda3dfa773e11763038a06bb24c7b2a75b77297"
+    },
+    "data/cache/connectivity_modot.json": {
+      "exists": true,
+      "bytes": 10704,
+      "sha256": "152c14df50a5efb96fa801c9b46378c4efb3c61479dfc8c56e76e146341fc766"
+    },
+    "data/cache/connectivity_osrm_route.json": {
+      "exists": true,
+      "bytes": 207946,
+      "sha256": "4c9c91d7cca819b5ed9bcca022320a620ac218066820ff802abb222496f7aaac"
+    },
+    "data/cache/d038ad5799eea94f366c0203b2ba0c6690c23a7df939cdbfa940b8e4443720fb.json": {
+      "exists": true,
+      "bytes": 933025,
+      "sha256": "5e8c806088a855a27f43bf2f640d30d1c546fac15d5e8fac2b571ad736bb5040"
+    },
+    "data/cache/d3dfacfc232d82391d42faab88de211e717fc64a06f65fe053b45e47c24aba8c.json": {
+      "exists": true,
+      "bytes": 7426,
+      "sha256": "8bb8d1352f62259d84a35978521e61d0766a211f880ef176c68fdc1c297f8d88"
+    },
+    "data/cache/e5c7272654494a423757867891321e25682bbf66de9be6b632110f9774432624.json": {
+      "exists": true,
+      "bytes": 122780,
+      "sha256": "2b73adc45f0c322bdc4623615e3031a9d72a8a41a2ee12c4a675cf4d1f11e1d8"
+    },
+    "data/cache/e8063084e84a95fd4a7c06bf7e1a746a595fef3516c5eaa19ee26d6240a2b960.json": {
+      "exists": true,
+      "bytes": 12741,
+      "sha256": "3914c8d9fea7630f4e55cf3316ccc3138ae8441ecdbc5ac0122bba4192eb6c9f"
+    },
+    "data/cache/e9f469800e09f16d8477ab2ce15b2d021935068756651e6c32e1713a3cc7a626.json": {
+      "exists": true,
+      "bytes": 143888,
+      "sha256": "54aaf18680cdc5f9ba74a74be73663fe7298ba0ec2274a7c51de5f30340d546a"
+    },
+    "data/cache/eebc0c7ee7082e911194264801d92b2b4c6c989a1b1d00d2b408d27a83e749f4.json": {
+      "exists": true,
+      "bytes": 398006,
+      "sha256": "8ad3b286b12273ef25d19d392580d9135499ad08103751c0af6a7dc434c8fb7b"
+    },
+    "data/cache/f2dea27d65488ef70a4990878320542a5614fe57054e1d0cce466efe969e8ad3.json": {
+      "exists": true,
+      "bytes": 19820,
+      "sha256": "e8904d70f3bc4478e29c5aa591bb9f2bb660289253ca85ab1a5df5831ac2f430"
+    },
+    "data/cache/ffb18d544710bae9f36891a5936b540729731a4b24c9a5f85a421bd2fdb56394.json": {
+      "exists": true,
+      "bytes": 140131,
+      "sha256": "d400544314e322fc355bc466c33f24f7c009cb9f54f244334c019f706ba5e31b"
+    },
+    "data/cache/matplotlib/fontlist-v3.11.0.json": {
+      "exists": true,
+      "bytes": 193310,
+      "sha256": "4eeac64713757392f4f38708dfe2bdb0d42c44e26f491bdfd62255a853a4c2ec"
+    },
+    "data/cache/probe_fsis_recalls.json": {
+      "exists": true,
+      "bytes": 12373971,
+      "sha256": "538146c3556b773972091a0cce0ebfabb2672989588ead2f5d60a21ab89a3341"
+    },
+    "data/cache/probe_iowa_dot.json": {
+      "exists": true,
+      "bytes": 2108498,
+      "sha256": "94e84daf9ee3d3da29eb2c2e8a5277f3390b6d0e230eb3907334b1acf36dc9bb"
+    },
+    "data/cache/probe_modot.json": {
+      "exists": true,
+      "bytes": 3759802,
+      "sha256": "368def5948845ab8e1d6486e7f4b08c4d7fd747a447b99be9861934906599c9f"
+    },
+    "data/cache/probe_ncei_historical.json": {
+      "exists": true,
+      "bytes": 2144,
+      "sha256": "89158efb8761659cae228d3d45913f4b27e9e0668411a4b93642b1ad82fb5c03"
+    },
+    "data/cache/probe_nws_alerts.json": {
+      "exists": true,
+      "bytes": 451,
+      "sha256": "34a481febab941c8274264f32c852a3244c70bf6ca5d78c1409c21de1c4b2939"
+    },
+    "data/cache/probe_nws_points.json": {
+      "exists": true,
+      "bytes": 3755,
+      "sha256": "7ee0d4e8376d182ab91f9df5637b6a53e08aba8bcac6be52e46ddb3efdf92e85"
+    },
+    "data/cache/probe_openmeteo.json": {
+      "exists": true,
+      "bytes": 6128,
+      "sha256": "a87ea9a9df2d2683a11aa37b89f74c0f4d6df1f7b77d9db17dec5d32d9fba2fa"
+    },
+    "data/cache/probe_openmeteo_archive.json": {
+      "exists": true,
+      "bytes": 1157,
+      "sha256": "ccd191b61ec17f0c5fc8b7441d6c7322e4cfa32c1b99c3b9e6c649f7cd6db060"
+    },
+    "data/cache/probe_osrm_route.json": {
+      "exists": true,
+      "bytes": 625854,
+      "sha256": "e9c11c43133bf78ffb58dc356191cb4b1b4b42cc6e972ca32e8fc2838dc6d3c6"
+    },
+    "data/cache/probe_osrm_table.json": {
+      "exists": true,
+      "bytes": 1555,
+      "sha256": "13f1ac54b71d6fdf72ae17bcc0bf8a82f9814d01eaccef6809baa0af786dd049"
+    },
+    "data/cache/road_refresh_status.json": {
+      "exists": true,
+      "bytes": 354,
+      "sha256": "ee6a20e4aa3b7f9392d54280205f856bc63cf6a8b73c6b87fdc15b1520ac2f0c"
+    }
+  },
+  "passed": true
+}

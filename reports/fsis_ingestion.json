@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-27T20:59:25.805053+00:00",
+  "data_dir": "C:\\Users\\ericp\\Downloads\\NAFSI",
+  "files": [
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+      "source_file": "fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+      "file": "fsis_narms_cecal_sampling_fy2024_extracted_2026-03-24.json",
+      "sha256": "57010b10205d0a4b1f9752298b30df57e59d3c55561c11f7646eb692222dd7fe",
+      "bytes": 93855008,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+      "source_file": "fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+      "file": "fsis_narms_cecal_sampling_fy2025_extracted_2026-03-24.json",
+      "sha256": "3c96734fec0d99f33b2ef0d6f5972fce5c40049c60a9d8c4fe358fa76c85231c",
+      "bytes": 94108613,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+      "source_file": "fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+      "file": "fsis_narms_cecal_sampling_fy2026_extracted_2026-09-24.json",
+      "sha256": "96104b548911925be9f9050920587c9f28a7707dc020334d6c909b1a3a4e813d",
+      "bytes": 69582390,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2024.json",
+      "sha256": "db2356907c4b5eae43e38fbdbadd6163d1abdcdd07f5321aa8d393cf7367dc07",
+      "bytes": 1738881,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2025.json",
+      "sha256": "f0a0b8d7d621578a19f3be44bdc53ca85a8072917e3d3c6db5f380efe53c071e",
+      "bytes": 1721176,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_egg_product_fy2026.json",
+      "sha256": "5ff3ba227293c537ac738111b721ac4550b65c1cdc9bb7a6c87589905e714dd8",
+      "bytes": 1398367,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2024.json",
+      "sha256": "03502b111af12b04c413e64be891520279bc8536c6e79e38b60d4608f12a00ad",
+      "bytes": 36465951,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2025.json",
+      "sha256": "dd1d106243cfd3dd7f407569f1d69cc15a26c49bc5a7a0344d4dd2ef69e47038",
+      "bytes": 36748204,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_beef_product_fy2026.json",
+      "sha256": "817a153fd6fb4163d3fedfdf7b523329e9742e32c14348afdbf6c84d597c2f4e",
+      "bytes": 29808273,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2024.json",
+      "sha256": "b5b08b0ccdb4755d3cc2d906d4c9bbf6bf9dc39e6bff1f774dcafbb64d2c5ba3",
+      "bytes": 4962440,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2025.json",
+      "sha256": "639deab674b04aa93b017e533211f417a3f8d7faaae7991e7d4fccc95d7f9f38",
+      "bytes": 5086168,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_pork_product_fy2026.json",
+      "sha256": "b1a3b30096837579f875d423cba898edf1e0d0f97ab34da7272dd74f95d87eaf",
+      "bytes": 4063370,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2024.json",
+      "sha256": "17524cc6df12a244e1aa8fbd6c345c5c303186b3dbdf4f030e10168afbce9026",
+      "bytes": 101258611,
+      "status": "ingested",
+      "rows": 28941
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2025.json",
+      "sha256": "d4a584ced091bd3c193f6a9642ec70c04cdca4587c33acfb399b4355c0c05383",
+      "bytes": 106469741,
+      "status": "ingested",
+      "rows": 28564
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_raw_poultry_product_fy2026.json",
+      "sha256": "6c920b8d539ac8964df2b1c9a320fe4e690d5deefd0b8b0edeff60b6f5ba4109",
+      "bytes": 79369857,
+      "status": "ingested",
+      "rows": 21102
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2024.json",
+      "sha256": "26003bb2122fa0833628c933c03466e1ff5155db8a52757cb5a03700a066eeab",
+      "bytes": 29958187,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2025.json",
+      "sha256": "2359eb9c4d79f8c05b20ac6d84dce835058de1a657d3c661fff0a5c764a5d80f",
+      "bytes": 48762882,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_fy2026.json",
+      "sha256": "ba221f5db110c987993c25160aa2889dde7b08b54bc4c5b5b13bb43a645def95",
+      "bytes": 26007277,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_rte_product_sample.json",
+      "sha256": "6fd7036ae2d90cac9ca9183c5b9aadc4550489e2b2dbe4d971c6902a8a9a4a7e",
+      "bytes": 215619,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    },
+    {
+      "path": "C:\\Users\\ericp\\Downloads\\NAFSI\\usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+      "source_file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+      "file": "usda_fsis_data_product_establishment_specific_laboratory_sampling_siluriformes_product_fy2022.json",
+      "sha256": "4eeebf8508511faa9cb9dea29bea3a12b8829931200214dbeacd8ee128379e2e",
+      "bytes": 1828382,
+      "status": "unrecognized",
+      "note": "Not one metadata-confirmed raw-poultry primary product; not merged."
+    }
+  ],
+  "errors": [],
+  "accepted_sources": 3,
+  "status": "complete",
+  "rows": 78607,
+  "duplicates_removed": 0,
+  "output": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\processed\\fsis_poultry.parquet",
+  "output_sha256": "12304d0fb04e62c593fa7149eff43874bc2acc724aea49cec201fe36ca3c1d04"
+}

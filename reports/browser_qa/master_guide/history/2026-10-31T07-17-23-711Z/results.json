@@ -1,0 +1,260 @@
+{
+  "checked_at": "2026-10-31T07:07:10.655Z",
+  "base_url": "http://127.0.0.1:8000",
+  "read_only": true,
+  "physical_printer_tested": false,
+  "public_provider_refresh_requested": false,
+  "read_only_post_allowlist": [
+    "POST /api/delivery-outlook with validated planning inputs and current expected network revision"
+  ],
+  "checks": [
+    {
+      "name": "HTTP /api/runtime-context",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "operator_runtime_identified_without_mutation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP /api/network",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "current_network_revision_available_for_read_only_request_guard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP /api/project-status",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "served_metadata_matches_current_edition",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "print_layout_records_no_margin_overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP /api/master-guide.pdf",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "PDF_response_matches_exact_recorded_hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "PDF_response_is_downloadable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP /api/master-guide.md",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "editable_master_has_all_workspace_chapters",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "master_includes_use_cases_glossary_and_limits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "master_card_is_in_real_Project_brief",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "new_master_and_short_status_brief_are_separate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "edition_page_count_and_paper_are_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop_app_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "Download master guide PDF browser_download_exact_bytes",
+      "passed": true,
+      "detail": "AEGIS-Master-User-Guide.pdf"
+    },
+    {
+      "name": "Download master guide Markdown browser_download_exact_bytes",
+      "passed": true,
+      "detail": "AEGIS-Master-User-Guide.md"
+    },
+    {
+      "name": "HTML_reading_link_opens_inline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTML_title_identifies_master_guide",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTML_contents_has_every_chapter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "every_HTML_contents_target_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HTML_requires_no_external_assets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "print_control_invokes_browser_print",
+      "passed": true,
+      "detail": "Browser print stub; no physical printer or native dialog was used."
+    },
+    {
+      "name": "desktop_HTML_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "contents_navigates_to_Drive",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Drive_chapter_is_readable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "print_styles_hide_the_screen_print_button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_download_control_is_reachable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_app_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "mobile_HTML_has_no_horizontal_overflow",
+      "passed": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "no_uncaught_JavaScript_errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no_failed_application_requests",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no_write_requests_were_sent",
+      "passed": true,
+      "detail": "{\"allowed_read_only_computations\":[],\"blocked_mutations\":[]}"
+    },
+    {
+      "name": "operator_SQLite_and_sidecars_unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "guide_bytes_stayed_fixed_during_checks",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "post_requests": [],
+  "blocked_mutation_requests": [],
+  "screenshots": [
+    "desktop-master-downloads.png",
+    "desktop-html-contents.png",
+    "desktop-driver-chapter.png",
+    "mobile-master-downloads.png",
+    "mobile-html-reading.png",
+    "mobile-driver-chapter.png"
+  ],
+  "database_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 286720,
+      "sha256": "a64de3f894ec840a4c842d41e17461862d3769f574d4c32e8b73076390a9f6e5"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "guide": {
+    "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567",
+    "pages": 83,
+    "chapters": 23,
+    "generated_at": "2026-10-31T02:06:30.490612-05:00"
+  },
+  "document_before": {
+    "exists": true,
+    "bytes": 498426,
+    "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567"
+  },
+  "browser_version": "156.0.8078.74",
+  "database_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 286720,
+      "sha256": "a64de3f894ec840a4c842d41e17461862d3769f574d4c32e8b73076390a9f6e5"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "document_after": {
+    "exists": true,
+    "bytes": 498426,
+    "sha256": "9def72359ab02b6b13e0e7b3413b7b8174e30d3eeb6d49b623bad5d38a005567"
+  },
+  "passed": true,
+  "finished_at": "2026-10-31T07:07:18.948Z"
+}

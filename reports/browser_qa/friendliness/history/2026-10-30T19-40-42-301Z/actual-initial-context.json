@@ -1,0 +1,3461 @@
+{
+  "network_revision": 0,
+  "generated_at": "2026-10-30T14:10:28.477599+00:00",
+  "engine": {
+    "mode": "deterministic",
+    "label": "Deterministic evidence summary",
+    "llm_used": false,
+    "version": "aegis-evidence-summary-v1"
+  },
+  "questions": [
+    {
+      "id": "scenario_compare",
+      "label": "What if deliveries are disrupted?",
+      "prompt": "What are the measured tradeoffs across the four current response scenarios?"
+    },
+    {
+      "id": "shipment_review",
+      "label": "What needs attention on this shipment?",
+      "prompt": "What should a dispatcher inspect for the selected simulated shipment?"
+    },
+    {
+      "id": "model_limits",
+      "label": "What can AEGIS actually predict?",
+      "prompt": "What did the historical baseline and model actually achieve, and what remains unvalidated?"
+    },
+    {
+      "id": "source_coverage",
+      "label": "Which sources can I use for this plan?",
+      "prompt": "Which saved source checks succeeded or failed, and what coverage is missing?"
+    },
+    {
+      "id": "driver_workflow",
+      "label": "How does a plan reach the driver?",
+      "prompt": "How do approval, parked acknowledgment, verification and driver reporting connect?"
+    },
+    {
+      "id": "next_actions",
+      "label": "Where should I go next?",
+      "prompt": "Which existing workspaces should a human review next without changing state here?"
+    }
+  ],
+  "shipments": [
+    {
+      "id": "SH01",
+      "origin": "DC1",
+      "destination": "D01",
+      "lot_id": "L01",
+      "truck_id": "T01",
+      "label": "SH01: DC1 to D01 (T01)"
+    },
+    {
+      "id": "SH02",
+      "origin": "DC2",
+      "destination": "D02",
+      "lot_id": "L02",
+      "truck_id": "T02",
+      "label": "SH02: DC2 to D02 (T02)"
+    },
+    {
+      "id": "SH03",
+      "origin": "DC1",
+      "destination": "D03",
+      "lot_id": "L03",
+      "truck_id": "T03",
+      "label": "SH03: DC1 to D03 (T03)"
+    },
+    {
+      "id": "SH04",
+      "origin": "DC2",
+      "destination": "D04",
+      "lot_id": "L04",
+      "truck_id": "T04",
+      "label": "SH04: DC2 to D04 (T04)"
+    },
+    {
+      "id": "SH05",
+      "origin": "DC1",
+      "destination": "D05",
+      "lot_id": "L05",
+      "truck_id": "T05",
+      "label": "SH05: DC1 to D05 (T05)"
+    },
+    {
+      "id": "SH06",
+      "origin": "DC2",
+      "destination": "D06",
+      "lot_id": "L06",
+      "truck_id": "T06",
+      "label": "SH06: DC2 to D06 (T06)"
+    },
+    {
+      "id": "SH07",
+      "origin": "DC1",
+      "destination": "D07",
+      "lot_id": "L07",
+      "truck_id": "T07",
+      "label": "SH07: DC1 to D07 (T07)"
+    },
+    {
+      "id": "SH08",
+      "origin": "DC2",
+      "destination": "D08",
+      "lot_id": "L08",
+      "truck_id": "T08",
+      "label": "SH08: DC2 to D08 (T08)"
+    },
+    {
+      "id": "SH09",
+      "origin": "DC1",
+      "destination": "D09",
+      "lot_id": "L09",
+      "truck_id": "T01",
+      "label": "SH09: DC1 to D09 (T01)"
+    },
+    {
+      "id": "SH10",
+      "origin": "DC2",
+      "destination": "D10",
+      "lot_id": "L10",
+      "truck_id": "T02",
+      "label": "SH10: DC2 to D10 (T02)"
+    },
+    {
+      "id": "SH11",
+      "origin": "DC1",
+      "destination": "D11",
+      "lot_id": "L11",
+      "truck_id": "T03",
+      "label": "SH11: DC1 to D11 (T03)"
+    },
+    {
+      "id": "SH12",
+      "origin": "DC2",
+      "destination": "D12",
+      "lot_id": "L12",
+      "truck_id": "T04",
+      "label": "SH12: DC2 to D12 (T04)"
+    },
+    {
+      "id": "SH13",
+      "origin": "DC1",
+      "destination": "D13",
+      "lot_id": "L01",
+      "truck_id": "T05",
+      "label": "SH13: DC1 to D13 (T05)"
+    },
+    {
+      "id": "SH14",
+      "origin": "DC2",
+      "destination": "D14",
+      "lot_id": "L02",
+      "truck_id": "T06",
+      "label": "SH14: DC2 to D14 (T06)"
+    },
+    {
+      "id": "SH15",
+      "origin": "DC1",
+      "destination": "D15",
+      "lot_id": "L03",
+      "truck_id": "T07",
+      "label": "SH15: DC1 to D15 (T07)"
+    },
+    {
+      "id": "SH16",
+      "origin": "DC2",
+      "destination": "D01",
+      "lot_id": "L04",
+      "truck_id": "T08",
+      "label": "SH16: DC2 to D01 (T08)"
+    },
+    {
+      "id": "SH17",
+      "origin": "DC1",
+      "destination": "D02",
+      "lot_id": "L05",
+      "truck_id": "T01",
+      "label": "SH17: DC1 to D02 (T01)"
+    },
+    {
+      "id": "SH18",
+      "origin": "DC2",
+      "destination": "D03",
+      "lot_id": "L06",
+      "truck_id": "T02",
+      "label": "SH18: DC2 to D03 (T02)"
+    },
+    {
+      "id": "SH19",
+      "origin": "DC1",
+      "destination": "D04",
+      "lot_id": "L07",
+      "truck_id": "T03",
+      "label": "SH19: DC1 to D04 (T03)"
+    },
+    {
+      "id": "SH20",
+      "origin": "DC2",
+      "destination": "D05",
+      "lot_id": "L08",
+      "truck_id": "T04",
+      "label": "SH20: DC2 to D05 (T04)"
+    },
+    {
+      "id": "SH21",
+      "origin": "DC1",
+      "destination": "D06",
+      "lot_id": "L09",
+      "truck_id": "T05",
+      "label": "SH21: DC1 to D06 (T05)"
+    },
+    {
+      "id": "SH22",
+      "origin": "DC2",
+      "destination": "D07",
+      "lot_id": "L10",
+      "truck_id": "T06",
+      "label": "SH22: DC2 to D07 (T06)"
+    },
+    {
+      "id": "SH23",
+      "origin": "DC1",
+      "destination": "D08",
+      "lot_id": "L11",
+      "truck_id": "T07",
+      "label": "SH23: DC1 to D08 (T07)"
+    },
+    {
+      "id": "SH24",
+      "origin": "DC2",
+      "destination": "D09",
+      "lot_id": "L12",
+      "truck_id": "T08",
+      "label": "SH24: DC2 to D09 (T08)"
+    }
+  ],
+  "facts": [
+    {
+      "id": "network.overview",
+      "title": "Current simulated operation",
+      "text": "Network revision 0, seed 20261026: 24 candidate shipments, 8 trucks, 12 lots and 0 approved assignments. Held lots: L01. Recalled lots: none.",
+      "category": "next_actions",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "Candidate shipments are not necessarily approved assignments. Contracts, stock, demand and telemetry are fictional."
+      ]
+    },
+    {
+      "id": "scenario.A",
+      "title": "Baseline distribution",
+      "text": "Scenario A, Baseline distribution: solver OPTIMAL; 13 selected simulated shipments, cost $3,018, unmet demand 2,300 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg.",
+      "category": "scenario_compare",
+      "provenance": "computed one-wave optimization over the captured simulation",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "solver",
+          "label": "Scenario objectives and constraints",
+          "path": "backend/optimization.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+      ]
+    },
+    {
+      "id": "scenario.B",
+      "title": "Targeted verification",
+      "text": "Scenario B, Targeted verification: solver OPTIMAL; 13 selected simulated shipments, cost $3,093, unmet demand 2,300 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg. Approval can publish assignments that still require targeted human verification; driver acknowledgment is separate.",
+      "category": "scenario_compare",
+      "provenance": "computed one-wave optimization over the captured simulation",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "solver",
+          "label": "Scenario objectives and constraints",
+          "path": "backend/optimization.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+      ]
+    },
+    {
+      "id": "scenario.C",
+      "title": "Precautionary hold pending review",
+      "text": "Scenario C, Precautionary hold pending review: solver OPTIMAL; 12 selected simulated shipments, cost $2,838, unmet demand 2,700 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg. Candidate precautionary lot holds are L03, L08; this summary places no hold.",
+      "category": "scenario_compare",
+      "provenance": "computed one-wave optimization over the captured simulation",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "solver",
+          "label": "Scenario objectives and constraints",
+          "path": "backend/optimization.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+      ]
+    },
+    {
+      "id": "scenario.D",
+      "title": "Alternative eligible supply",
+      "text": "Scenario D, Alternative eligible supply: solver OPTIMAL; 14 selected simulated shipments, cost $2,904, unmet demand 1,900 kg, recorded constraint violations 0. Modeled one-wave food waste is 0 kg. Eligible simulated lots may be substituted on fixed trips; this does not automatically reroute trucks.",
+      "category": "scenario_compare",
+      "provenance": "computed one-wave optimization over the captured simulation",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "solver",
+          "label": "Scenario objectives and constraints",
+          "path": "backend/optimization.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "Costs and demand are simulated. Unsent stock is not automatically waste. A solver result is not human approval or safety certification."
+      ]
+    },
+    {
+      "id": "scenario.boundaries",
+      "title": "How to compare the responses",
+      "text": "Compare feasible scenarios using cost, unmet demand, exclusions and constraints together. Held, recalled and ineligible lots cannot dispatch. A predictive score alone does not impose a mandatory hold. Approval must be recorded in Command against the current revision.",
+      "category": "scenario_compare",
+      "provenance": "implemented workflow rules",
+      "citations": [
+        {
+          "id": "workflow.rules",
+          "label": "Approval and driver workflow",
+          "path": "docs/operations_workflow.md",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The objective selects a single allocation wave with fixed candidate trip estimates; it is not a continuous inventory ledger."
+      ]
+    },
+    {
+      "id": "shipment.SH01.context",
+      "title": "Selected simulated shipment SH01",
+      "text": "SH01 is a candidate trip from DC1 to D01, truck T01, candidate lot L01, quantity 400 kg. Its current simulated cargo value is 1.4°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH01"
+    },
+    {
+      "id": "shipment.SH01.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH01"
+    },
+    {
+      "id": "shipment.SH01.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "Direct candidate flags: candidate lot is held.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH01"
+    },
+    {
+      "id": "shipment.SH01.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.187 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH01"
+    },
+    {
+      "id": "shipment.SH02.context",
+      "title": "Selected simulated shipment SH02",
+      "text": "SH02 is a candidate trip from DC2 to D02, truck T02, candidate lot L02, quantity 400 kg. Its current simulated cargo value is 1.9°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH02"
+    },
+    {
+      "id": "shipment.SH02.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH02"
+    },
+    {
+      "id": "shipment.SH02.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH02"
+    },
+    {
+      "id": "shipment.SH02.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 4.652 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH02"
+    },
+    {
+      "id": "shipment.SH03.context",
+      "title": "Selected simulated shipment SH03",
+      "text": "SH03 is a candidate trip from DC1 to D03, truck T03, candidate lot L03, quantity 400 kg. Its current simulated cargo value is 8.5°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH03"
+    },
+    {
+      "id": "shipment.SH03.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH03"
+    },
+    {
+      "id": "shipment.SH03.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH03"
+    },
+    {
+      "id": "shipment.SH03.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The simulated cargo value exceeds the application’s 4°C review level. The fixed trip estimate is 1.031 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH03"
+    },
+    {
+      "id": "shipment.SH04.context",
+      "title": "Selected simulated shipment SH04",
+      "text": "SH04 is a candidate trip from DC2 to D04, truck T04, candidate lot L04, quantity 400 kg. Its current simulated cargo value is 2.6°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH04"
+    },
+    {
+      "id": "shipment.SH04.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH04"
+    },
+    {
+      "id": "shipment.SH04.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH04"
+    },
+    {
+      "id": "shipment.SH04.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.069 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH04"
+    },
+    {
+      "id": "shipment.SH05.context",
+      "title": "Selected simulated shipment SH05",
+      "text": "SH05 is a candidate trip from DC1 to D05, truck T05, candidate lot L05, quantity 400 kg. Its current simulated cargo value is 3°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH05"
+    },
+    {
+      "id": "shipment.SH05.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH05"
+    },
+    {
+      "id": "shipment.SH05.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH05"
+    },
+    {
+      "id": "shipment.SH05.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 3.552 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH05"
+    },
+    {
+      "id": "shipment.SH06.context",
+      "title": "Selected simulated shipment SH06",
+      "text": "SH06 is a candidate trip from DC2 to D06, truck T06, candidate lot L06, quantity 400 kg. Its current simulated cargo value is 3.6°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH06"
+    },
+    {
+      "id": "shipment.SH06.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH06"
+    },
+    {
+      "id": "shipment.SH06.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH06"
+    },
+    {
+      "id": "shipment.SH06.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 4.024 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH06"
+    },
+    {
+      "id": "shipment.SH07.context",
+      "title": "Selected simulated shipment SH07",
+      "text": "SH07 is a candidate trip from DC1 to D07, truck T07, candidate lot L07, quantity 400 kg. Its current simulated cargo value is 2.3°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH07"
+    },
+    {
+      "id": "shipment.SH07.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH07"
+    },
+    {
+      "id": "shipment.SH07.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH07"
+    },
+    {
+      "id": "shipment.SH07.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 3.818 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH07"
+    },
+    {
+      "id": "shipment.SH08.context",
+      "title": "Selected simulated shipment SH08",
+      "text": "SH08 is a candidate trip from DC2 to D08, truck T08, candidate lot L08, quantity 400 kg. Its current simulated cargo value is 8.5°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH08"
+    },
+    {
+      "id": "shipment.SH08.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH08"
+    },
+    {
+      "id": "shipment.SH08.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH08"
+    },
+    {
+      "id": "shipment.SH08.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The simulated cargo value exceeds the application’s 4°C review level. The fixed trip estimate is 3.445 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH08"
+    },
+    {
+      "id": "shipment.SH09.context",
+      "title": "Selected simulated shipment SH09",
+      "text": "SH09 is a candidate trip from DC1 to D09, truck T01, candidate lot L09, quantity 400 kg. Its current simulated cargo value is 2°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH09"
+    },
+    {
+      "id": "shipment.SH09.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH09"
+    },
+    {
+      "id": "shipment.SH09.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH09"
+    },
+    {
+      "id": "shipment.SH09.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 4.108 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH09"
+    },
+    {
+      "id": "shipment.SH10.context",
+      "title": "Selected simulated shipment SH10",
+      "text": "SH10 is a candidate trip from DC2 to D10, truck T02, candidate lot L10, quantity 400 kg. Its current simulated cargo value is 1.9°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH10"
+    },
+    {
+      "id": "shipment.SH10.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH10"
+    },
+    {
+      "id": "shipment.SH10.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "Direct candidate flags: estimated trip exceeds its deadline or candidate lot shelf life.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH10"
+    },
+    {
+      "id": "shipment.SH10.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 6.163 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH10"
+    },
+    {
+      "id": "shipment.SH11.context",
+      "title": "Selected simulated shipment SH11",
+      "text": "SH11 is a candidate trip from DC1 to D11, truck T03, candidate lot L11, quantity 400 kg. Its current simulated cargo value is 3.6°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH11"
+    },
+    {
+      "id": "shipment.SH11.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH11"
+    },
+    {
+      "id": "shipment.SH11.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH11"
+    },
+    {
+      "id": "shipment.SH11.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.154 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH11"
+    },
+    {
+      "id": "shipment.SH12.context",
+      "title": "Selected simulated shipment SH12",
+      "text": "SH12 is a candidate trip from DC2 to D12, truck T04, candidate lot L12, quantity 400 kg. Its current simulated cargo value is 1.4°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH12"
+    },
+    {
+      "id": "shipment.SH12.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH12"
+    },
+    {
+      "id": "shipment.SH12.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH12"
+    },
+    {
+      "id": "shipment.SH12.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 4.445 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH12"
+    },
+    {
+      "id": "shipment.SH13.context",
+      "title": "Selected simulated shipment SH13",
+      "text": "SH13 is a candidate trip from DC1 to D13, truck T05, candidate lot L01, quantity 400 kg. Its current simulated cargo value is 1.6°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH13"
+    },
+    {
+      "id": "shipment.SH13.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH13"
+    },
+    {
+      "id": "shipment.SH13.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "Direct candidate flags: candidate lot is held.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH13"
+    },
+    {
+      "id": "shipment.SH13.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.921 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH13"
+    },
+    {
+      "id": "shipment.SH14.context",
+      "title": "Selected simulated shipment SH14",
+      "text": "SH14 is a candidate trip from DC2 to D14, truck T06, candidate lot L02, quantity 400 kg. Its current simulated cargo value is 1.4°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH14"
+    },
+    {
+      "id": "shipment.SH14.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH14"
+    },
+    {
+      "id": "shipment.SH14.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH14"
+    },
+    {
+      "id": "shipment.SH14.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.181 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH14"
+    },
+    {
+      "id": "shipment.SH15.context",
+      "title": "Selected simulated shipment SH15",
+      "text": "SH15 is a candidate trip from DC1 to D15, truck T07, candidate lot L03, quantity 400 kg. Its current simulated cargo value is 2.3°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH15"
+    },
+    {
+      "id": "shipment.SH15.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH15"
+    },
+    {
+      "id": "shipment.SH15.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH15"
+    },
+    {
+      "id": "shipment.SH15.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 3.724 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH15"
+    },
+    {
+      "id": "shipment.SH16.context",
+      "title": "Selected simulated shipment SH16",
+      "text": "SH16 is a candidate trip from DC2 to D01, truck T08, candidate lot L04, quantity 400 kg. Its current simulated cargo value is 1.7°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH16"
+    },
+    {
+      "id": "shipment.SH16.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH16"
+    },
+    {
+      "id": "shipment.SH16.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH16"
+    },
+    {
+      "id": "shipment.SH16.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 3.904 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH16"
+    },
+    {
+      "id": "shipment.SH17.context",
+      "title": "Selected simulated shipment SH17",
+      "text": "SH17 is a candidate trip from DC1 to D02, truck T01, candidate lot L05, quantity 400 kg. Its current simulated cargo value is 1.2°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH17"
+    },
+    {
+      "id": "shipment.SH17.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH17"
+    },
+    {
+      "id": "shipment.SH17.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH17"
+    },
+    {
+      "id": "shipment.SH17.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 3.887 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH17"
+    },
+    {
+      "id": "shipment.SH18.context",
+      "title": "Selected simulated shipment SH18",
+      "text": "SH18 is a candidate trip from DC2 to D03, truck T02, candidate lot L06, quantity 400 kg. Its current simulated cargo value is 2.2°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH18"
+    },
+    {
+      "id": "shipment.SH18.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH18"
+    },
+    {
+      "id": "shipment.SH18.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH18"
+    },
+    {
+      "id": "shipment.SH18.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 3.334 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH18"
+    },
+    {
+      "id": "shipment.SH19.context",
+      "title": "Selected simulated shipment SH19",
+      "text": "SH19 is a candidate trip from DC1 to D04, truck T03, candidate lot L07, quantity 400 kg. Its current simulated cargo value is 2.1°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH19"
+    },
+    {
+      "id": "shipment.SH19.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH19"
+    },
+    {
+      "id": "shipment.SH19.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH19"
+    },
+    {
+      "id": "shipment.SH19.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 4.128 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH19"
+    },
+    {
+      "id": "shipment.SH20.context",
+      "title": "Selected simulated shipment SH20",
+      "text": "SH20 is a candidate trip from DC2 to D05, truck T04, candidate lot L08, quantity 400 kg. Its current simulated cargo value is 2.1°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH20"
+    },
+    {
+      "id": "shipment.SH20.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH20"
+    },
+    {
+      "id": "shipment.SH20.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "Direct candidate flags: estimated trip exceeds its deadline or candidate lot shelf life.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH20"
+    },
+    {
+      "id": "shipment.SH20.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 6.007 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH20"
+    },
+    {
+      "id": "shipment.SH21.context",
+      "title": "Selected simulated shipment SH21",
+      "text": "SH21 is a candidate trip from DC1 to D06, truck T05, candidate lot L09, quantity 400 kg. Its current simulated cargo value is 3.7°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH21"
+    },
+    {
+      "id": "shipment.SH21.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH21"
+    },
+    {
+      "id": "shipment.SH21.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH21"
+    },
+    {
+      "id": "shipment.SH21.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.091 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH21"
+    },
+    {
+      "id": "shipment.SH22.context",
+      "title": "Selected simulated shipment SH22",
+      "text": "SH22 is a candidate trip from DC2 to D07, truck T06, candidate lot L10, quantity 400 kg. Its current simulated cargo value is 2.5°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH22"
+    },
+    {
+      "id": "shipment.SH22.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH22"
+    },
+    {
+      "id": "shipment.SH22.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH22"
+    },
+    {
+      "id": "shipment.SH22.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 4.746 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH22"
+    },
+    {
+      "id": "shipment.SH23.context",
+      "title": "Selected simulated shipment SH23",
+      "text": "SH23 is a candidate trip from DC1 to D08, truck T07, candidate lot L11, quantity 400 kg. Its current simulated cargo value is 2.9°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH23"
+    },
+    {
+      "id": "shipment.SH23.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH23"
+    },
+    {
+      "id": "shipment.SH23.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH23"
+    },
+    {
+      "id": "shipment.SH23.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 1.072 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH23"
+    },
+    {
+      "id": "shipment.SH24.context",
+      "title": "Selected simulated shipment SH24",
+      "text": "SH24 is a candidate trip from DC2 to D09, truck T08, candidate lot L12, quantity 400 kg. Its current simulated cargo value is 3.4°C. An approved assignment with this trip ID is not present in the captured state.",
+      "category": "shipment_review",
+      "provenance": "deterministic simulated logistics",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+      ],
+      "shipment_id": "SH24"
+    },
+    {
+      "id": "shipment.SH24.assignment",
+      "title": "Current approved assignment context",
+      "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+      "category": "shipment_review",
+      "provenance": "captured simulated assignment and eligibility fields",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+      ],
+      "shipment_id": "SH24"
+    },
+    {
+      "id": "shipment.SH24.constraints",
+      "title": "Candidate constraints to inspect",
+      "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+      "category": "shipment_review",
+      "provenance": "captured candidate fields and modeled constraint checks",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": [
+        "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+      ],
+      "shipment_id": "SH24"
+    },
+    {
+      "id": "shipment.SH24.exposure",
+      "title": "Temperature and route meaning",
+      "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.115 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+      "category": "shipment_review",
+      "provenance": "simulated cargo and estimated travel",
+      "citations": [
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        },
+        {
+          "id": "thermal",
+          "label": "Illustrative physical projection",
+          "path": "backend/cold_chain.py",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+      ],
+      "shipment_id": "SH24"
+    },
+    {
+      "id": "model.metrics",
+      "title": "Measured primary holdout result",
+      "text": "The saved national raw-poultry primary-sample evaluation has 48,361 training rows and 23,472 holdout rows. Historical baseline Brier is 0.08855575; logistic Brier is 0.08859440; logistic ROC-AUC is 0.498029. Lower Brier means lower squared probability error for this defined sampling task.",
+      "category": "model_limits",
+      "provenance": "measured retrospective FSIS sampling evaluation",
+      "citations": [
+        {
+          "id": "model_evaluation.json",
+          "label": "Measured historical FSIS evaluation",
+          "path": "reports/model_evaluation.json",
+          "retrieved_at": null,
+          "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+        }
+      ],
+      "uncertainty": [
+        "This measures selected-sample positivity, not consumer illness probability, farm safety or an individualized shipment forecast."
+      ]
+    },
+    {
+      "id": "model.comparison",
+      "title": "Complexity is not evidence of useful skill",
+      "text": "The baseline has lower or equal Brier error than logistic regression in this saved primary holdout. Inspect calibration, uncertainty, target definition and actual feature-availability dates before claiming an operational forecast.",
+      "category": "model_limits",
+      "provenance": "comparison of the recorded evaluation metrics",
+      "citations": [
+        {
+          "id": "model_evaluation.json",
+          "label": "Measured historical FSIS evaluation",
+          "path": "reports/model_evaluation.json",
+          "retrieved_at": null,
+          "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+        }
+      ],
+      "uncertainty": [
+        "No new accuracy figure, training run or prospective validation is created by this summary."
+      ]
+    },
+    {
+      "id": "model.availability",
+      "title": "Feature availability remains a separate question",
+      "text": "A collection-date reporting lag or snapshot-creation date is not proof of first public availability. The current application does not establish a validated prospective illness forecast. Keep FSIS outcomes, CDC BEAM surveillance and NORS outbreaks distinct unless a defensible linkage is demonstrated.",
+      "category": "model_limits",
+      "provenance": "scientific interpretation and implementation boundaries",
+      "citations": [
+        {
+          "id": "timing",
+          "label": "Recorded availability audit",
+          "path": "reports/model_timing.json",
+          "retrieved_at": null,
+          "sha256": "32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7"
+        },
+        {
+          "id": "model_evaluation.json",
+          "label": "Measured historical FSIS evaluation",
+          "path": "reports/model_evaluation.json",
+          "retrieved_at": null,
+          "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not infer missing publication dates or genomic relationships from shared labels."
+      ]
+    },
+    {
+      "id": "sources.probes",
+      "title": "Saved connectivity is not complete data coverage",
+      "text": "Saved registry probes record 14 successful HTTP checks out of 19 endpoints. Recorded failures: fsis_recalls, fsis_sampling, fsis_directory, food_access, food_environment. These checks have separate timestamps and include catalogs/documentation; no live request was made here.",
+      "category": "source_coverage",
+      "provenance": "dated HTTP probe metadata",
+      "citations": [
+        {
+          "id": "api_status.json",
+          "label": "Saved public endpoint checks",
+          "path": "reports/api_status.json",
+          "retrieved_at": null,
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "A past HTTP success is not current uptime, complete observations or a working scientific join."
+      ]
+    },
+    {
+      "id": "source.fsis_recalls",
+      "title": "Saved source check: fsis_recalls",
+      "text": "fsis_recalls: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:21.270824+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.fsis_recalls",
+          "label": "Probe record fsis_recalls",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:21.270824+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.fsis_sampling",
+      "title": "Saved source check: fsis_sampling",
+      "text": "fsis_sampling: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:23.318096+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.fsis_sampling",
+          "label": "Probe record fsis_sampling",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:23.318096+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.fsis_directory",
+      "title": "Saved source check: fsis_directory",
+      "text": "fsis_directory: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:23.949178+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.fsis_directory",
+          "label": "Probe record fsis_directory",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:23.949178+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.cdc_beam",
+      "title": "Saved source check: cdc_beam",
+      "text": "cdc_beam: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:24.565158+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.cdc_beam",
+          "label": "Probe record cdc_beam",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:24.565158+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.cdc_nors",
+      "title": "Saved source check: cdc_nors",
+      "text": "cdc_nors: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:26.243185+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.cdc_nors",
+          "label": "Probe record cdc_nors",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:26.243185+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.ncei_docs",
+      "title": "Saved source check: ncei_docs",
+      "text": "ncei_docs: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:27.797453+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.ncei_docs",
+          "label": "Probe record ncei_docs",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:27.797453+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.ncei_historical",
+      "title": "Saved source check: ncei_historical",
+      "text": "ncei_historical: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:28.825020+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.ncei_historical",
+          "label": "Probe record ncei_historical",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:28.825020+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.nws_alerts",
+      "title": "Saved source check: nws_alerts",
+      "text": "nws_alerts: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:29.802362+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.nws_alerts",
+          "label": "Probe record nws_alerts",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:29.802362+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.nws_points",
+      "title": "Saved source check: nws_points",
+      "text": "nws_points: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:30.816909+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.nws_points",
+          "label": "Probe record nws_points",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:30.816909+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.openmeteo",
+      "title": "Saved source check: openmeteo",
+      "text": "openmeteo: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:31.638122+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.openmeteo",
+          "label": "Probe record openmeteo",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:31.638122+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.openmeteo_archive",
+      "title": "Saved source check: openmeteo_archive",
+      "text": "openmeteo_archive: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:33.044113+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.openmeteo_archive",
+          "label": "Probe record openmeteo_archive",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:33.044113+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.modot",
+      "title": "Saved source check: modot",
+      "text": "modot: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:34.324627+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.modot",
+          "label": "Probe record modot",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:34.324627+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.osrm_route",
+      "title": "Saved source check: osrm_route",
+      "text": "osrm_route: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:35.079354+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.osrm_route",
+          "label": "Probe record osrm_route",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:35.079354+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.osrm_table",
+      "title": "Saved source check: osrm_table",
+      "text": "osrm_table: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:36.428215+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.osrm_table",
+          "label": "Probe record osrm_table",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:36.428215+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.osrm_docs",
+      "title": "Saved source check: osrm_docs",
+      "text": "osrm_docs: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:37.540385+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.osrm_docs",
+          "label": "Probe record osrm_docs",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:37.540385+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.osm_missouri",
+      "title": "Saved source check: osm_missouri",
+      "text": "osm_missouri: saved check succeeded; HTTP 200. Check time: 2026-10-28T06:09:38.474262+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.osm_missouri",
+          "label": "Probe record osm_missouri",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:38.474262+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.food_access",
+      "title": "Saved source check: food_access",
+      "text": "food_access: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:39.821210+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.food_access",
+          "label": "Probe record food_access",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:39.821210+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.food_environment",
+      "title": "Saved source check: food_environment",
+      "text": "food_environment: saved check failed; HTTP not recorded. Check time: 2026-10-28T06:09:42.954113+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.food_environment",
+          "label": "Probe record food_environment",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T06:09:42.954113+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "source.iowa_dot",
+      "title": "Saved source check: iowa_dot",
+      "text": "iowa_dot: saved check succeeded; HTTP 200. Check time: 2026-10-28T19:04:18.887645+00:00. Inspect the Sources workspace for the actual payload, fallback and coverage.",
+      "category": "source_coverage",
+      "provenance": "dated registry probe; no refresh",
+      "citations": [
+        {
+          "id": "probe.iowa_dot",
+          "label": "Probe record iowa_dot",
+          "path": "reports/api_status.json",
+          "retrieved_at": "2026-10-28T19:04:18.887645+00:00",
+          "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5"
+        }
+      ],
+      "uncertainty": [
+        "The assistant does not turn saved connectivity metadata into a current source-success claim."
+      ]
+    },
+    {
+      "id": "sources.noaa",
+      "title": "Bounded observed historical weather",
+      "text": "The saved NOAA extract covers 5 stations and returns 2,730 of 2,730 requested station-day rows; 9 metric values are missing. Date-row coverage is separate from numeric/quality coverage. Historical observations, forecasts, reanalysis and simulated cargo are not interchangeable.",
+      "category": "source_coverage",
+      "provenance": "observed historical weather coverage report",
+      "citations": [
+        {
+          "id": "noaa.coverage",
+          "label": "NOAA coverage report",
+          "path": "reports/noaa_coverage.json",
+          "retrieved_at": "2026-10-26T06:39:34.423710+00:00",
+          "sha256": "b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e"
+        }
+      ],
+      "uncertainty": [
+        "Coverage is bounded to the requested stations/window. No validated FSIS-weather join or invented missing observation is supplied."
+      ]
+    },
+    {
+      "id": "sources.traceability",
+      "title": "Separate evidence is not a verified recall or genomic match",
+      "text": "Official recall notices are evidence. Fictional lots lack genuine traceability supporting a verified real recall match. CDC BEAM and NORS are separate layers, and shared serotype labels alone do not establish genomic relatedness or a common source.",
+      "category": "source_coverage",
+      "provenance": "scientific and traceability boundaries",
+      "citations": [
+        {
+          "id": "model.card",
+          "label": "Model scope and limitations",
+          "path": "docs/model_card.md",
+          "retrieved_at": null
+        },
+        {
+          "id": "network.snapshot",
+          "label": "Captured simulated network",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+        }
+      ],
+      "uncertainty": []
+    },
+    {
+      "id": "driver.assignments",
+      "title": "Current approved handoff records",
+      "text": "The captured state has 0 approved assignments, 0 acknowledged, and 0 assignments still requiring scenario-B verification. These are distinct workflow records.",
+      "category": "driver_workflow",
+      "provenance": "captured simulated assignment records",
+      "citations": [
+        {
+          "id": "assignments.snapshot",
+          "label": "Captured approved assignments",
+          "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+          "retrieved_at": null,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "uncertainty": [
+        "A driver acknowledgment is not targeted verification, physical departure authorization or a product-safety finding."
+      ]
+    },
+    {
+      "id": "driver.parked",
+      "title": "Use Drive while safely parked",
+      "text": "Drive starts locked. Its server-checked parked attestation is self-declared and expires after ten minutes. Reporting and acknowledgments require the current truck/trip context. No actual motion, GPS or physical fuel/cargo sensor is detected.",
+      "category": "driver_workflow",
+      "provenance": "implemented driver interaction rules",
+      "citations": [
+        {
+          "id": "workflow.rules",
+          "label": "Approval and driver workflow",
+          "path": "docs/operations_workflow.md",
+          "retrieved_at": null
+        },
+        {
+          "id": "drive.design",
+          "label": "Driver mode design and limits",
+          "path": "docs/drive_design.md",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": []
+    },
+    {
+      "id": "driver.decisions",
+      "title": "Keep reports and dispatcher authority separate",
+      "text": "A driver report reaches the local dispatcher inbox without automatically rerouting or holding cargo. A human may review, hold/release a lot or issue a versioned instruction. A hold removes affected assignments; release does not recreate them. Events, resets and new approvals can invalidate an earlier assignment context.",
+      "category": "driver_workflow",
+      "provenance": "implemented approval, incident and hold workflow",
+      "citations": [
+        {
+          "id": "workflow.rules",
+          "label": "Approval and driver workflow",
+          "path": "docs/operations_workflow.md",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": []
+    },
+    {
+      "id": "next.review",
+      "title": "A review path through existing workspaces",
+      "text": "Inspect current scenario constraints and exclusions in Command, read dated source/model limits, then use the existing explicit approval and dispatcher workflow when a human chooses an action. Route laboratory and Road intelligence are separate planning tools; saved experiments cannot dispatch.",
+      "category": "next_actions",
+      "provenance": "read-only navigation guidance",
+      "citations": [
+        {
+          "id": "workflow.rules",
+          "label": "Approval and driver workflow",
+          "path": "docs/operations_workflow.md",
+          "retrieved_at": null
+        },
+        {
+          "id": "manual",
+          "label": "Complete master user handbook",
+          "path": "docs/aegis_master_guide.md",
+          "retrieved_at": null
+        }
+      ],
+      "uncertainty": [
+        "This answer navigates to review; it cannot execute a recommendation or override a hold, recall or eligibility constraint."
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "A",
+      "name": "Baseline distribution",
+      "solver_status": "OPTIMAL",
+      "feasible": true,
+      "total_logistics_cost": 3018,
+      "unmet_demand_kg": 2300,
+      "delayed_shipments": 0,
+      "affected_shipments": 11,
+      "review_priority_count": 1,
+      "food_waste_kg": 0,
+      "constraint_violations": 0,
+      "proposed_hold_lots": [],
+      "selected_shipments": 13
+    },
+    {
+      "scenario": "B",
+      "name": "Targeted verification",
+      "solver_status": "OPTIMAL",
+      "feasible": true,
+      "total_logistics_cost": 3093,
+      "unmet_demand_kg": 2300,
+      "delayed_shipments": 0,
+      "affected_shipments": 11,
+      "review_priority_count": 1,
+      "food_waste_kg": 0,
+      "constraint_violations": 0,
+      "proposed_hold_lots": [],
+      "selected_shipments": 13
+    },
+    {
+      "scenario": "C",
+      "name": "Precautionary hold pending review",
+      "solver_status": "OPTIMAL",
+      "feasible": true,
+      "total_logistics_cost": 2838,
+      "unmet_demand_kg": 2700,
+      "delayed_shipments": 0,
+      "affected_shipments": 12,
+      "review_priority_count": 0,
+      "food_waste_kg": 0,
+      "constraint_violations": 0,
+      "proposed_hold_lots": [
+        "L03",
+        "L08"
+      ],
+      "selected_shipments": 12
+    },
+    {
+      "scenario": "D",
+      "name": "Alternative eligible supply",
+      "solver_status": "OPTIMAL",
+      "feasible": true,
+      "total_logistics_cost": 2904,
+      "unmet_demand_kg": 1900,
+      "delayed_shipments": 0,
+      "affected_shipments": 10,
+      "review_priority_count": 1,
+      "food_waste_kg": 0,
+      "constraint_violations": 0,
+      "proposed_hold_lots": [],
+      "selected_shipments": 14
+    }
+  ],
+  "limitations": [
+    "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+    "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+    "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+    "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+    "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+    "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+    "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+  ],
+  "snapshot_sources": [
+    {
+      "path": "data/rehearsals/5e130eb9-644e-487e-b25e-585a0a485e0b.sqlite",
+      "state_sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f",
+      "assignments_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "read_only": true
+    },
+    {
+      "path": "reports/model_evaluation.json",
+      "status": "captured",
+      "sha256": "e4f7fca35226f64fced65e45716d7ae36be5be2be326ab71ba04e953aa6bead8",
+      "bytes": 8380,
+      "error": null
+    },
+    {
+      "path": "reports/model_timing.json",
+      "status": "captured",
+      "sha256": "32b31d9ccc0c4149a9ec2187d10353469ddf2c25946bcf0061b49a2753e260f7",
+      "bytes": 4444,
+      "error": null
+    },
+    {
+      "path": "reports/noaa_coverage.json",
+      "status": "captured",
+      "sha256": "b4d6954c9e2b036c5e0b6cb36c2b3e3e8948e7b32bba33bda6b8ad37c5815b3e",
+      "bytes": 13161,
+      "error": null
+    },
+    {
+      "path": "reports/api_status.json",
+      "status": "captured",
+      "sha256": "7189bc81b80de5e4121015427a9f3792db1ff487c4f8eb7becf55cd4267c74f5",
+      "bytes": 6543,
+      "error": null
+    }
+  ],
+  "operational_state_modified": false,
+  "snapshot_id": "53ab47111786ba8c03042319749a2c0b9381ca1bcceec72bc7f2a6777e67d0ee"
+}

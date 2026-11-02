@@ -11,7 +11,7 @@ from datetime import datetime,timezone
 from backend.paths import ROOT,write_json
 
 REQUIRED=('api_status.json','model_evaluation.json','demo_results.json')
-OPTIONAL=('model_timing.json','noaa_coverage.json','route_lab_osrm.json','validation.json','evidence_ingestion.json','operations_demo.json')
+OPTIONAL=('model_timing.json','noaa_coverage.json','route_lab_osrm.json','validation.json','evidence_ingestion.json','operations_demo.json','usda_food_environment.json','ingestion_verification.json','clean_install.json')
 NAMES={'A':'Baseline distribution','B':'Targeted verification','C':'Precautionary hold pending review','D':'Alternative eligible supply'}
 
 def load_evidence(reports_dir,inventory_path):
@@ -25,6 +25,16 @@ def load_evidence(reports_dir,inventory_path):
         if not path.is_file():raise FileNotFoundError(f'Required report evidence not found: {path}')
         data[key]=json.loads(path.read_text(encoding='utf-8'))
     manifest=[{'input':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in paths.values()]
+    # This extension cannot prevent the existing scientific report from building.
+    # Hash readable optional bytes even when they are not valid JSON.
+    freshness=reports_dir/'freshness_demo.json'
+    if freshness.exists():
+        try:
+            payload=freshness.read_bytes()
+            manifest.append({'input':str(freshness),'sha256':hashlib.sha256(payload).hexdigest()})
+            data['freshness_demo']=json.loads(payload.decode('utf-8'))
+        except (OSError,UnicodeError,json.JSONDecodeError) as error:
+            data['freshness_demo_error']=f'{type(error).__name__}: {error}'
     return data,manifest
 
 def number(value,digits=4):
@@ -52,7 +62,73 @@ def operations_appendix(data):
           '',
           'The dispatcher desk links newly submitted driver incidents to identified review, manual lot holds/releases and versioned instructions. Original reporting context is retained. Holds remove affected assignments; release does not restore them automatically. Driver acknowledgment checks the current instruction version separately from the original assignment acknowledgment. Dispatcher identities remain self-declared in the local prototype.',
           '',f"The recorded isolated workflow reports passed={operations.get('passed')}, stale-instruction acknowledgment rejected={operations.get('stale_instruction_ack_rejected')}, held-lot assignments removed={operations.get('held_lot_assignments_removed')}, and release-without-redispatch verified={operations.get('release_did_not_redispatch')}. Operator database modified={operations.get('operator_database_modified')}. Evidence: `reports/operations_demo.json`; methods: `docs/operations_workflow.md`.",
+          '', 'The dedicated mobile-responsive Drive view presents approved destination, planned travel, simulated fuel/range and dispatch-origin position, cargo temperature and workflow status. Driver reports and acknowledgments require an expiring parked declaration checked transactionally by the server; this is not actual motion detection. Quick reports retain trip context in the dispatcher inbox. Bulk recall evidence is explicitly bounded in the UI while complete source caches remain unchanged.',
           '', 'These workflow improvements do not resolve missing publication timestamps, validate cargo thermal coefficients, establish production authorization, or supply genuine Kiro execution evidence.']
+    usda=data.get('usda_food_environment')
+    if usda:
+        lines+=['','## Appendix: historical county context and source integrity','',
+          f"The USDA Food Environment Atlas extract records status={usda.get('status','not recorded')}. It contains {usda.get('geography',{}).get('county_count','not recorded')} Missouri counties/county-equivalents and {len(usda.get('variables',[]))} supported variables. Release note: {usda.get('release_note','not recorded')}. Exact source bytes, metadata, missing-cell codes and derived-file checksum are described in `reports/usda_food_environment.json`.",
+          '', 'The inspected measures use 2019 access, 2020 grocery-store and 2023 SNAP-authorized-store vintages. Their population/housing-unit denominators remain distinct. Missing and suppressed values stay null. Counties are identified by FIPS; repeated names do not imply the same geography. No route-coordinate linkage, current demand estimate, food-safety score or allocation weight is inferred.',
+          '',f"Saved null counts: {usda.get('coverage',{}).get('null_counts','not recorded')}. This county context is displayed separately from FSIS outcomes and CDC evidence."]
+    ingestion=data.get('ingestion_verification')
+    if ingestion:
+        comparisons=ingestion.get('comparison',[])
+        lines+=['',f"The content-based re-import checked {len(comparisons)} previous derived tables. All checked frame values/dtypes were unchanged: {all(row.get('frame_values_and_dtypes_equal') for row in comparisons) if comparisons else 'not recorded'}. Model artifact hashes unchanged: {ingestion.get('model_artifact_hashes_unchanged','not recorded')}. Exact-byte duplicate downloads are not pooled; differing exports for one supported semantic table are explicit conflicts. Source-browser checksums and displayed values use the same immutable request snapshot. Schema recognition establishes supported structure, not provider authenticity or publication availability. See `reports/ingestion_verification.json`.",
+          '', 'Dispatch readiness is read-only: thirteen constraint diagnostics and three workflow checks expose current resource use, eligibility, acknowledgments and targeted verification. Passing listed checks does not dispatch, consume inventory, certify food safety or validate commercial-truck restrictions. No model score creates a mandatory hold.']
+    return '\n'.join(lines)
+
+def freshness_appendix(data):
+    lines=['','## Appendix: Save the Load methods and simulated results','',
+      'Save the Load is a deterministic, uncalibrated quality-planning experiment, separate from the FSIS selected-sample estimator. Equivalent reference age is declared initial age plus the sum of interval hours multiplied by Q10 ** ((product temperature - reference temperature) / 10). Each preceding reading is held constant over supported intervals. Remaining reference budget is divided by the rate at the assumed future product temperature to obtain a forward quality window. Cooling cannot reverse consumed age; missing or unsupported history is unscored, and independent use-by limits still cap eligibility.',
+      '', 'Ambient temperature, humidity, vibration and ethylene remain contextual channels; they receive no arbitrary poultry degradation coefficients. The minimum forward result among chosen Q10 cases is conservative only among those cases. The range is parameter sensitivity, not a statistical confidence interval or a guaranteed bound. Scientific assumptions and primary references are documented in [the freshness science contract](../docs/freshness_science.md), including Taoukis, Yimenu et al. (2019), USDA FSIS and the commodity-specific UC Davis example. No reference coefficients or accuracy are transferred to these lots.',
+      '', 'Rescue proposals are complete replacement assignment plans, checked against stock, hold/recall, eligibility, capacity, deadlines and quality/use-by constraints. An identified human review separately confirms food-safety disposition, receiving capacity/acceptance and route/vehicle limitations before publishing simulated assignments. A later reading requires renewed review without automatic rerouting. This workflow does not measure molecular freshness, establish pathogen growth or safety clearance, validate physical sensors, or demonstrate prospective poultry-spoilage accuracy.',
+      '', 'Evidence source: `reports/freshness_demo.json`. This accelerated deterministic replay is software evidence, not a timed human presentation, physical hardware experiment, measured food waste or guaranteed commercial savings.']
+    def finish(message):return '\n'.join(lines+['',message])
+    if data.get('freshness_demo_error'):
+        return finish('Optional freshness evidence is unreadable or malformed; no numerical or successful workflow result is inferred. Recorded error: '+str(data['freshness_demo_error']).replace('\n',' ')[:500])
+    if 'freshness_demo' not in data:
+        return finish('Optional freshness evidence was not supplied; no freshness results or successful workflow checks are inferred.')
+    saved=data['freshness_demo']
+    if not isinstance(saved,dict):return finish('Optional freshness evidence is malformed (expected an object); no results are inferred.')
+    if saved.get('passed') is False:
+        return finish('The saved freshness replay reports passed=False; numerical outcomes and successful workflow claims are withheld. Recorded failure: '+str(saved.get('error','failure detail not supplied')).replace('\n',' ')[:500])
+    def numeric(value):
+        try:return type(value) in (int,float) and math.isfinite(value)
+        except OverflowError:return False
+    def values(row,keys,nonnegative=True):
+        return isinstance(row,dict) and all(numeric(row.get(key)) and (not nonnegative or row[key]>=0) for key in keys)
+    checks=saved.get('checks')
+    if saved.get('passed') is not True or saved.get('simulation') is not True or saved.get('physical_hardware_connected') is not False or not isinstance(checks,list) or not checks or any(not isinstance(row,dict) or not isinstance(row.get('name'),str) or row.get('passed') is not True for row in checks):
+        return finish('Optional freshness evidence has incomplete or inconsistent simulation/check status; no numerical or successful workflow result is inferred.')
+    quality=saved.get('quality');profile=quality.get('profile') if isinstance(quality,dict) else None
+    sensitivity=quality.get('sensitivity') if isinstance(quality,dict) else None
+    cases=sensitivity.get('cases') if isinstance(sensitivity,dict) else None
+    if not values(quality,('baseline_reference_hours','point_forward_hours','conservative_case_hours')) or not values(profile,('reference_life_hours','initial_equivalent_age_hours','q10','max_gap_minutes')) or profile['q10']<=0 or not values(profile,('reference_temperature_c','forecast_temperature_c'),False) or not isinstance(cases,list) or not cases or any(not values(row,('q10','equivalent_age_hours','remaining_reference_hours','remaining_hours_at_forecast_temperature')) or row['q10']<=0 for row in cases):
+        return finish('Optional freshness quality evidence is missing or malformed; no numerical freshness or workflow results are inferred.')
+    if not math.isclose(quality['conservative_case_hours'],min(row['remaining_hours_at_forecast_temperature'] for row in cases),rel_tol=1e-8,abs_tol=1e-8) or not any(math.isclose(row['q10'],profile['q10']) and math.isclose(row['remaining_hours_at_forecast_temperature'],quality['point_forward_hours']) for row in cases):
+        return finish('Optional freshness quality evidence has inconsistent point/conservative cases; no numerical freshness or workflow results are inferred.')
+    lines+=['',f"The saved replay reports {len(checks)}/{len(checks)} automated checks passed. Finished at {saved.get('finished_at','timestamp not supplied')}; physical hardware connected=False. These checks do not measure predictive accuracy.",
+      '',f"Declared profile: reference life {number(profile['reference_life_hours'])} h at {number(profile['reference_temperature_c'])} °C; initial equivalent age {number(profile['initial_equivalent_age_hours'])} h; point Q10 {number(profile['q10'])}; future product temperature {number(profile['forecast_temperature_c'])} °C; maximum supported gap {number(profile['max_gap_minutes'])} minutes. These are illustrative assumptions, not a recommended storage life.",
+      '',f"Saved starting reference budget: {number(quality['baseline_reference_hours'])} h. After the heat replay, point forward window: {number(quality['point_forward_hours'])} h; conservative chosen-case window: {number(quality['conservative_case_hours'])} h.",
+      '', '| Chosen Q10 | Equivalent age (h) | Remaining reference budget (h) | Forward quality window (h) |','|---:|---:|---:|---:|']
+    for row in cases:lines.append('| '+' | '.join(number(row[key]) for key in ('q10','equivalent_age_hours','remaining_reference_hours','remaining_hours_at_forecast_temperature'))+' |')
+    warehouse=saved.get('warehouse')
+    if isinstance(warehouse,dict) and all(values(warehouse.get(policy),('supplied_kg','unmet_demand_kg','projected_expiry_exposure_kg')) for policy in ('fefo','fifo')):
+        lines+=['','| Picking policy | Supplied (kg) | Unmet demand (kg) | Modeled expiry exposure (kg) |','|---|---:|---:|---:|']
+        for policy in ('fefo','fifo'):
+            lines.append('| '+policy.upper()+' | '+' | '.join(number(warehouse[policy][key]) for key in ('supplied_kg','unmet_demand_kg','projected_expiry_exposure_kg'))+' |')
+        lines+=['','These are actual saved allocation outputs under simulated quality assumptions. Expiry exposure is modeled stock exposure, not observed waste or a guaranteed quantity saved.']
+    else:lines+=['','FEFO/FIFO quantity or exposure evidence is missing or malformed; no warehouse quantities are inferred.']
+    rescue=saved.get('rescue_before_approval');approval=saved.get('approval');driver=saved.get('driver')
+    plan=rescue.get('plan_summary') if isinstance(rescue,dict) else None
+    if values(rescue,('required_hours',)) and values(plan,('assignments_count','total_logistics_cost','unmet_demand_kg','constraint_violations')) and isinstance(plan.get('solver_status'),str) and isinstance(approval,dict) and approval.get('selected_destination_id')==rescue.get('selected_destination_id') and isinstance(rescue.get('selected_destination_id'),str) and approval.get('assignments_count')==plan['assignments_count']:
+        lines+=['',f"Saved whole-plan proposal for {rescue.get('shipment_id','shipment not supplied')}: original trip plus receiving required {number(rescue['required_hours'])} h; selected destination {rescue['selected_destination_id']}. Solver {plan['solver_status']}; {number(plan['assignments_count'],0)} assignments; simulated logistics cost ${number(plan['total_logistics_cost'])}; unmet demand {number(plan['unmet_demand_kg'])} kg; {number(plan['constraint_violations'],0)} checked violations. The saved synthetic-dispatcher receipt records that destination and assignment count; it is not authentic human presentation evidence."]
+        reviews=driver.get('freshness_reviews') if isinstance(driver,dict) else None
+        if isinstance(driver,dict) and driver.get('shipment_id')==rescue.get('shipment_id') and driver.get('destination_id')==approval['selected_destination_id'] and isinstance(driver.get('truck_id'),str) and isinstance(reviews,list) and reviews and all(isinstance(row,dict) and row.get('quality_only') is True for row in reviews):
+            lines+=['',f"Saved exact driver handoff: trip {driver['shipment_id']}, truck {driver['truck_id']}, destination {driver['destination_id']}. After a new frame, {len(reviews)} quality-review advisory record(s) and readiness status {driver.get('readiness_status_after_new_frame','not supplied')} were saved. The automated check reports review without redispatch only when listed below; this is not live navigation or a safety release."]
+        else:lines+=['','Exact driver/new-frame evidence is missing or malformed; no successful handoff or renewed-review outcome is inferred.']
+    else:lines+=['','Rescue proposal/approval evidence is missing or malformed; no approved-plan quantities or driver outcome are inferred.']
+    lines+=['','Saved automated assertions (not human signoff):']+[f"- {row['name']}: passed=True" for row in checks]
     return '\n'.join(lines)
 
 def build_text(data,figures=True):
@@ -90,7 +166,7 @@ def build_text(data,figures=True):
     lines+=['','## 6. Human approval and AEGIS Drive','', 'Command and Drive are responsive modes in one application with a shared FastAPI/SQLite backend. Drive provides approved shipment information, disruption advisories, cargo-temperature status, and incident reporting. It is intended for use while parked. Dispatcher approval requires an identity and reason, rejects stale network revisions, revalidates safety constraints, publishes assignments transactionally, and retains an audit trail. Local identities remain self-declared; production access control is outside this prototype.','',f"The accelerated isolated workflow recorded {demo['approved_assignments']} approved simulated assignments. Acknowledgment recorded: {demo['acknowledgment_recorded']}; incident recorded: {demo['incident_recorded']}; operator database modified by that rehearsal: {demo['production_database_modified']}. This validates the scripted sequence without claiming a completed five-minute live presentation.",'', '## 7. Reproducibility and verification','', 'Required inputs, retrieval records, seeds, commands, and test artifacts remain inspectable. This report compiler performs no new HTTP requests. Its input-file hashes are recorded in `reports/figures/input_manifest.json`; regenerating after evidence changes updates the draft transparently.']
     if validation:lines+=['',f"The saved validation artifact records {validation.get('pytest_passed','not recorded')} passing pytest tests, {validation.get('vitest_passed','not recorded')} passing Vitest tests, frontend build status `{validation.get('frontend_production_build','not recorded')}`, and {validation.get('real_http_checks_passed','not recorded')} real HTTP checks. Browser visual QA: `{validation.get('browser_visual_qa','not recorded')}`. These are the artifact's recorded results; final session verification and author signoff must be refreshed before submission."]
     lines+=['','```powershell','.venv/Scripts/python scripts/audit_data.py','.venv/Scripts/python scripts/ingest_fsis.py','.venv/Scripts/python scripts/ingest_evidence.py','.venv/Scripts/python scripts/train_model.py','.venv/Scripts/python scripts/acquire_noaa.py','.venv/Scripts/python scripts/validate_model_timing.py','.venv/Scripts/python scripts/demo_run.py','.venv/Scripts/python scripts/build_submission_report.py','.venv/Scripts/python -m pytest -q','```','', 'Frontend build/test and local startup commands are in `README.md`. Source refresh and route-laboratory runs require internet; dated evidence and labeled estimates support a limited offline demonstration.','', '## 8. Limitations and submission readiness','', '- No validated prospective contamination or consumer-illness prediction is claimed. Source selection, missing publication dates, retrospective revisions, and transportability constrain interpretation.','- NOAA coverage is a bounded five-station extract. Weather is not scientifically linked to national FSIS outcomes, farm production, or cargo safety.','- Thermal projections are scenario calculations with declared assumptions; live sensors and calibrated cargo models are absent.','- Allocation and route-laboratory outputs describe different synthetic decision problems. Neither establishes commercial savings or complete upstream replenishment.','- Verified recall matching requires genuine establishment/product/lot/date traceability, which fictional lots cannot supply.','- Truck-safe routing, production authorization, live sensing, farm/enterprise account systems, and an LLM operations assistant remain outside the validated submission core.','- Genuine AWS Kiro application use remains pending. Codex-prepared `.kiro/` files do not demonstrate using Kiro.','- Official challenge rubric, submission rules, required Kiro evidence, final author review, and the timed presentation must be confirmed before this draft becomes a final submission.','', '## References and primary-source documentation','', '1. USDA FSIS. [Laboratory Sampling Data](https://www.fsis.usda.gov/science-data/data-sets-visualizations/laboratory-sampling-data). Embedded metadata in the supplied FY2024–FY2026 raw-poultry files defines primary/secondary tests and warns against inferring outbreak causality.','2. USDA FSIS. [Official recall API](https://www.fsis.usda.gov/fsis/api/recall/v/1). Dated response artifacts retain source and retrieval timestamps.','3. NOAA NCEI. [Access Data Service API documentation](https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation). Explicit dataset, station, date, units, attributes, and station-location parameters.','4. NOAA NCEI. [GHCN-Daily format and quality flags](https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt).','5. CDC. [NORS data](https://www.cdc.gov/nors/data/) and [BEAM dashboard](https://www.cdc.gov/beam/dashboard/).','6. MoDOT. [Traveler Information ArcGIS service](https://mapping.modot.mo.gov/arcgis/rest/services/TravelerInformation/TravelerInformationData/MapServer).','7. Project OSRM. [HTTP API](https://project-osrm.org/docs/v26.6.1/http/).','8. NAFSI Hub. [Public challenge announcement](https://nafsihub.org/). Public announcement review does not replace the full official rubric.','']
-    return '\n'.join(lines)+operations_appendix(data)
+    return '\n'.join(lines)+operations_appendix(data)+freshness_appendix(data)
 
 def generate_figures(data,folder):
     import os

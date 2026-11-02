@@ -1,7 +1,10 @@
-import pandas as pd
+from backend.ingestion.common import read_table
+
+NORS_COLUMNS={'Year','State','Primary Mode','Etiology'}
+
+
 class NORSAdapter:
     def read(self,path):
-        df=pd.read_csv(path,low_memory=False)
-        required={'Year','State','Primary Mode','Etiology'}
-        if not required<=set(df): raise ValueError(f'NORS missing {required-set(df)}')
+        df=read_table(path,low_memory=False)
+        if not NORS_COLUMNS<=set(df):raise ValueError(f'NORS missing {NORS_COLUMNS-set(df)}')
         return df  # Historical outbreak evidence; never join to sampling labels.

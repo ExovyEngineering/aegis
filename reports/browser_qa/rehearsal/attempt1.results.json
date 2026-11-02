@@ -1,0 +1,78 @@
+{
+  "checked_at": "2026-10-28T06:06:46.857Z",
+  "base_url": "http://127.0.0.1:8001",
+  "operator_url": "http://127.0.0.1:8000",
+  "run_kind": "automated_check",
+  "human_rehearsal_verified": false,
+  "checks": [
+    {
+      "name": "server_is_verified_isolated_and_offline",
+      "passed": true,
+      "detail": "{\"mode\":\"isolated_rehearsal\",\"isolated\":true,\"offline\":true,\"rehearsal_id\":\"2705f633-0af4-4124-936b-319cbc317ebb\",\"database_relative_path\":\"data/rehearsals/2705f633-0af4-4124-936b-319cbc317ebb.sqlite\",\"warning\":\"Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution.\"}"
+    },
+    {
+      "name": "operator_server_remains_operator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "operator_rehearsal_write_is_rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "isolated_server_has_no_unfinished_run",
+      "passed": true,
+      "detail": "Only an earlier owned automated Chrome attempt may be aborted automatically; use a fresh launcher-owned database for any other active run."
+    },
+    {
+      "name": "only_isolated_state_reset_for_setup",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rehearsal_runtime_banner_visible",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "operator_database_and_sidecars_unchanged",
+      "passed": true,
+      "detail": "Compared actual file hashes before and after; no operator mutation was authorized."
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "expected_http_rejections": [
+    {
+      "url": "http://127.0.0.1:8000/api/rehearsal/start",
+      "status": 403
+    }
+  ],
+  "post_requests": [],
+  "screenshots": [],
+  "browser_version": "156.0.8078.48",
+  "runtime": {
+    "mode": "isolated_rehearsal",
+    "isolated": true,
+    "offline": true,
+    "rehearsal_id": "2705f633-0af4-4124-936b-319cbc317ebb",
+    "database_relative_path": "data/rehearsals/2705f633-0af4-4124-936b-319cbc317ebb.sqlite",
+    "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
+  },
+  "passed": false,
+  "error": "Error: rehearsal_runtime_banner_visible: ",
+  "operator_fingerprints_before": {
+    "": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+    "-wal": null,
+    "-shm": null,
+    "-journal": null
+  },
+  "operator_fingerprints_after": {
+    "": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560",
+    "-wal": null,
+    "-shm": null,
+    "-journal": null
+  },
+  "finished_at": "2026-10-28T06:06:47.960Z"
+}

@@ -1,3 +1,4 @@
+import { parkDriver } from './qa_drive_helpers.mjs';
 /** Custom planning and dispatcher-to-driver rehearsal, isolated QA database only. */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -69,8 +70,9 @@ try{
   const trip=group.at(-1);
   await page.setViewportSize({width:390,height:844});
   await page.getByRole('button',{name:'AEGIS Drive',exact:true}).click();
-  await page.getByLabel('Simulated driver truck').selectOption(trip.truck_id);
+  await parkDriver(page,trip.truck_id);
   if(group.length>1)await page.getByLabel('Trip for advisories and incident reporting').selectOption(trip.id);
+  await page.getByRole('button',{name:/Report an issue/}).click();
   const description=`Isolated operations browser QA ${Date.now()}: parked at stop; requesting dispatcher instructions`;
   await page.getByLabel('Report a driver incident',{exact:true}).fill(description);
   const incidentCreated=await actionResponse(()=>page.getByRole('button',{name:'Send to dispatcher',exact:true}).click(),'/api/driver/incident');
@@ -99,8 +101,11 @@ try{
   await page.getByRole('heading',{name:'Driver incident inbox',exact:true}).scrollIntoViewIfNeeded();await capture('dispatcher-inbox');
   await page.setViewportSize({width:390,height:844});
   await page.getByRole('button',{name:'AEGIS Drive',exact:true}).click();
-  await page.getByLabel('Simulated driver truck').selectOption(trip.truck_id);
-  const instructedCard=page.locator('.driver-assignment').filter({hasText:instruction});
+  await parkDriver(page,trip.truck_id);
+  const tripSelector=page.getByLabel('Trip for advisories and incident reporting',{exact:true});
+  if(await tripSelector.count())await tripSelector.selectOption(trip.id);
+  await page.getByRole('button',{name:/Dispatch instructions/}).click();
+  const instructedCard=page.locator('.drive-detail-panel').filter({hasText:instruction});
   await instructedCard.getByRole('button',{name:'Acknowledge new instruction',exact:true}).waitFor();
   check('driver_receives_dispatcher_text',await instructedCard.getByText(instruction,{exact:true}).isVisible(),'Approved text visible in selected driver assignment');
   await instructedCard.locator('.driver-new-instruction').scrollIntoViewIfNeeded();await capture('mobile-instruction-pending');

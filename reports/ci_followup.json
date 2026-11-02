@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-10-28T19:24:09.419492+00:00",
+  "commit": "17592f42730e2d4b45a23ed4c010567fb5b05eda",
+  "pull_request_run": {
+    "id": 40753362874,
+    "conclusion": "success",
+    "url": "https://github.com/ExovyEngineering/aegis/actions/runs/40753362874"
+  },
+  "push_run": {
+    "id": 40753353618,
+    "conclusion": "failure",
+    "url": "https://github.com/ExovyEngineering/aegis/actions/runs/40753353618",
+    "pytest_passed": 566,
+    "vitest_passed": 94,
+    "vitest_failed": 1,
+    "production_build_passed": true
+  },
+  "failed_test": "RehearsalWorkspace: reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note",
+  "failure_log": "reports/checks/ci-push-40753353618/vitest.txt",
+  "failure_log_sha256": "18a1ddec8330f25e382544b60360e5ca5cd29e7fcb7efeabad03491c2183cf16",
+  "diagnosis": "The test typed before React finished the initial run-version draft reset. The checkpoint was never sent; its stale-response assertions did not execute. Synchronize React effects and assert the intended request before inspecting rejection recovery.",
+  "application_behavior_changed": false,
+  "resolution_scope": "Test synchronization only; retained original assertions and timeout.",
+  "focused_followup_artifact": "reports/checks/rehearsal-ci-sync/results.json",
+  "initial_followup_attempts_artifact": "reports/checks/rehearsal-ci-sync/initial-repeat-summary.json",
+  "focused_followup_passed": true,
+  "production_component_changes": false,
+  "full_followup_artifact": "reports/session_verification.json",
+  "full_followup_finished_at": "2026-10-28T19:27:34.084133+00:00",
+  "full_followup_all_passed": true
+}

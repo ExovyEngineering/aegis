@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-11-02T20:47:01.855794+00:00",
+  "passed": true,
+  "scope": "Current regenerated PDF structure, source integrity, scientific numbers and generator layout measurements only",
+  "guide_pdf": "reports/aegis_master_guide.pdf",
+  "guide_markdown": "docs/aegis_master_guide.md",
+  "guide_html": "reports/aegis_master_guide.html",
+  "manifest": "reports/master_guide_manifest.json",
+  "manifest_generated_at": "2026-11-02T14:46:51.369148-06:00",
+  "pdf_sha256": "e55bb343455c7de403e86645b706a16f10b8ac752d419e556a6788a2a693a832",
+  "pages": 83,
+  "chapters": 23,
+  "bookmarks_verified": 23,
+  "contents_link_targets_verified": 23,
+  "paper": "US Letter",
+  "all_pages_have_correct_numbers": true,
+  "all_source_chapter_hashes_match": true,
+  "source_chapter_hashes_verified": 9,
+  "body_font_points": 10.7,
+  "table_font_points": 9.7,
+  "measured_text_margin_overflows": 0,
+  "layout_measurement_scope": "Zero text-margin overflows reported by the PDF generator's measured text layout; no independent PDF rasterizer or physical printer used",
+  "scientific_numbers_checked_against": [
+    "reports/model_evaluation.json",
+    "reports/integrated_model_evaluation.json"
+  ],
+  "scientific_numbers_verified_in_markdown_and_pdf": {
+    "national_validation_rows": "23,472",
+    "national_baseline_brier": "0.08855575",
+    "national_logistic_brier": "0.08859440",
+    "integrated_core_brier_rounded": "0.11246",
+    "integrated_baseline_brier_rounded": "0.11431"
+  },
+  "current_browser_checks_performed": false,
+  "historical_browser_evidence": {
+    "artifact": "reports/browser_qa/master_guide/results.json",
+    "checked_at": "2026-10-31T07:17:23.725Z",
+    "checks_passed_at_that_time": 37,
+    "guide_pdf_sha256_at_that_time": "5ac2085f277eafefd5ac318358a56bf63193888d171a12022f91abaa9a81fb3c",
+    "applies_to_current_pdf": false,
+    "note": "Separately dated historical Chrome evidence, not rerun or asserted as current by this verification"
+  },
+  "saved_local_test_evidence": {
+    "artifact": "reports/session_verification.json",
+    "finished_at": "2026-11-02T20:44:57.978534+00:00",
+    "checks": [
+      {
+        "name": "pytest",
+        "passed": true,
+        "tests_passed": 1316
+      },
+      {
+        "name": "vitest",
+        "passed": true,
+        "tests_passed": 406
+      },
+      {
+        "name": "frontend_build",
+        "passed": true,
+        "tests_passed": null
+      }
+    ],
+    "note": "Read saved actual test results; this PDF inspection did not rerun the application suites"
+  },
+  "physical_printer_tested": false,
+  "public_provider_requests_performed": false,
+  "operational_database_accessed": false,
+  "raw_data_files_accessed": false,
+  "preservation_claim": "No fresh database or original-raw fingerprint comparison performed in this document-only inspection"
+}

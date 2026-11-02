@@ -1,0 +1,42 @@
+{
+  "kind": "clarification",
+  "snapshot_id": "53ab47111786ba8c03042319749a2c0b9381ca1bcceec72bc7f2a6777e67d0ee",
+  "network_revision": 0,
+  "generated_at": "2026-10-30T14:10:37.666419+00:00",
+  "engine": {
+    "mode": "deterministic",
+    "label": "Deterministic evidence summary",
+    "llm_used": false,
+    "version": "aegis-evidence-summary-v1"
+  },
+  "question_id": null,
+  "shipment_id": null,
+  "interpretation": {
+    "mode": "rules",
+    "question_id": null,
+    "llm_routing_used": false,
+    "prompt_version": "aegis-topic-router-v2",
+    "clarification_reason": "broad_topic"
+  },
+  "clarification": {
+    "reason": "broad_topic",
+    "title": "What would you like to know about chicken shipments?",
+    "message": "Choose a starting point below: check a simulated shipment, compare delivery responses, inspect food-safety sources or understand what the model can predict.",
+    "question_ids": [
+      "shipment_review",
+      "scenario_compare",
+      "source_coverage",
+      "model_limits"
+    ]
+  },
+  "limitations": [
+    "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+    "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+    "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+    "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+    "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+    "Network/assignment fields share one read-only SQLite transaction. Report files are captured independently; their provider and retrieval times are not globally atomic.",
+    "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+  ],
+  "operational_state_modified": false
+}

@@ -1,0 +1,143 @@
+{
+  "snapshot_id": "1f7d6896ed25d5dbd04a6951d4289b49700da9d288210ddee844aed612c9d7cc",
+  "network_revision": 0,
+  "generated_at": "2026-10-30T19:40:52.514188+00:00",
+  "engine": {
+    "mode": "deterministic",
+    "label": "Deterministic evidence summary",
+    "llm_used": false,
+    "version": "aegis-evidence-summary-v1"
+  },
+  "question_id": "shipment_review",
+  "shipment_id": "SH24",
+  "answer": {
+    "title": "Selected shipment review",
+    "summary": "Inspect the candidate, current assignment context and separate evidence. No disposition is made here.",
+    "items": [
+      {
+        "id": "shipment.SH24.context",
+        "title": "Selected simulated shipment SH24",
+        "text": "SH24 is a candidate trip from DC2 to D09, truck T08, candidate lot L12, quantity 400 kg. Its current simulated cargo value is 3.4°C. An approved assignment with this trip ID is not present in the captured state.",
+        "category": "shipment_review",
+        "provenance": "deterministic simulated logistics",
+        "citations": [
+          {
+            "id": "network.snapshot",
+            "label": "Captured simulated network",
+            "path": "data/rehearsals/879a3507-e207-4224-9a31-64e71e051ea0.sqlite",
+            "retrieved_at": null,
+            "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+          },
+          {
+            "id": "assignments.snapshot",
+            "label": "Captured approved assignments",
+            "path": "data/rehearsals/879a3507-e207-4224-9a31-64e71e051ea0.sqlite",
+            "retrieved_at": null,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          }
+        ],
+        "uncertainty": [
+          "An approved alternative-supply assignment can carry a different lot from this candidate. Inspect the actual current assignment before deciding."
+        ],
+        "shipment_id": "SH24"
+      },
+      {
+        "id": "shipment.SH24.assignment",
+        "title": "Current approved assignment context",
+        "text": "No approved assignment with this trip ID is present. A candidate on the Command map is not a published driver trip.",
+        "category": "shipment_review",
+        "provenance": "captured simulated assignment and eligibility fields",
+        "citations": [
+          {
+            "id": "network.snapshot",
+            "label": "Captured simulated network",
+            "path": "data/rehearsals/879a3507-e207-4224-9a31-64e71e051ea0.sqlite",
+            "retrieved_at": null,
+            "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+          },
+          {
+            "id": "assignments.snapshot",
+            "label": "Captured approved assignments",
+            "path": "data/rehearsals/879a3507-e207-4224-9a31-64e71e051ea0.sqlite",
+            "retrieved_at": null,
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          }
+        ],
+        "uncertainty": [
+          "An assignment record does not override a current hold, recall, eligibility failure or pending human verification."
+        ],
+        "shipment_id": "SH24"
+      },
+      {
+        "id": "shipment.SH24.constraints",
+        "title": "Candidate constraints to inspect",
+        "text": "No direct single-candidate exclusion was found in the listed lot, truck and timing fields. Aggregate stock, demand, supplier/DC and shared-truck limits still need the full scenario review.",
+        "category": "shipment_review",
+        "provenance": "captured candidate fields and modeled constraint checks",
+        "citations": [
+          {
+            "id": "network.snapshot",
+            "label": "Captured simulated network",
+            "path": "data/rehearsals/879a3507-e207-4224-9a31-64e71e051ea0.sqlite",
+            "retrieved_at": null,
+            "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+          }
+        ],
+        "uncertainty": [
+          "Passing these individual checks does not establish plan-level feasibility, product safety or departure authority."
+        ],
+        "shipment_id": "SH24"
+      },
+      {
+        "id": "shipment.SH24.exposure",
+        "title": "Temperature and route meaning",
+        "text": "The current simulated cargo value does not exceed the application’s 4°C review level. The fixed trip estimate is 0.115 hours against a 6-hour deadline. Inspect telemetry context and route evidence separately. A reading or illustrative thermal projection cannot determine illness probability or automatically create a hold.",
+        "category": "shipment_review",
+        "provenance": "simulated cargo and estimated travel",
+        "citations": [
+          {
+            "id": "network.snapshot",
+            "label": "Captured simulated network",
+            "path": "data/rehearsals/879a3507-e207-4224-9a31-64e71e051ea0.sqlite",
+            "retrieved_at": null,
+            "sha256": "363347519aa9f08a45295c8b42dff0838cd917856f2dcfb97fc3493d68f69f0f"
+          },
+          {
+            "id": "thermal",
+            "label": "Illustrative physical projection",
+            "path": "backend/cold_chain.py",
+            "retrieved_at": null
+          }
+        ],
+        "uncertainty": [
+          "The 4°C level is an app review assumption, not a product disposition. OSRM driving and DOT proximity do not certify a commercial route."
+        ],
+        "shipment_id": "SH24"
+      }
+    ]
+  },
+  "suggested_views": [
+    {
+      "view": "command",
+      "label": "Inspect the shipment and scenarios"
+    },
+    {
+      "view": "dispatch",
+      "label": "Inspect current lot and assignment state"
+    },
+    {
+      "view": "roads",
+      "label": "Inspect independent road evidence"
+    }
+  ],
+  "limitations": [
+    "Read-only explanation for simulated operations. No approval, dispatch, hold, release, source refresh, model training or driver write is performed.",
+    "These are server-authored deterministic summaries, not LLM-generated advice or an evaluated AI model.",
+    "Historical FSIS sampling positivity is not a consumer illness probability. CDC surveillance and outbreaks remain separate evidence layers.",
+    "Routes, road-event proximity and illustrative cargo projections do not certify truck eligibility, road clearance or product safety.",
+    "A saved source response or HTTP probe does not establish current provider availability or complete observations. Read its recorded time and scope.",
+    "Network/assignment fields share one read-only SQLite transaction. Report and local guidance files are captured independently; provider, retrieval and filesystem reads are not globally atomic.",
+    "Names and operational entities are local simulation records; the application does not supply production authentication or tenant isolation."
+  ],
+  "operational_state_modified": false
+}

@@ -1,0 +1,55 @@
+
+> aegis-command@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/routingProvenance.test.ts (2 tests) 5ms
+ ✓ src/api.test.ts (3 tests) 9ms
+ ✓ src/networkMapModel.test.ts (11 tests) 11ms
+ ✓ src/MapViewport.test.tsx (2 tests) 59ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 125ms
+ ✓ src/ScenarioDetails.test.tsx (1 test) 163ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 244ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 254ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 276ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 208ms
+ ✓ src/ProjectBrief.test.tsx (2 tests) 412ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 263ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 243ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 534ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  402ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 582ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 660ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  546ms
+ ✓ src/NetworkMap.test.tsx (6 tests) 503ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 639ms
+ ✓ src/WorkspaceGuide.test.tsx (13 tests) 698ms
+ ✓ src/RouteLab.test.tsx (2 tests) 1031ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  717ms
+   ✓ Route laboratory > normalizes full API preset inventories and enables multi-location fleet testing  311ms
+ ✓ src/DispatcherDesk.test.tsx (6 tests) 1261ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  602ms
+ ✓ src/DriverWorkspace.test.tsx (5 tests) 1425ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  447ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  560ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 1568ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 415ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  413ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 708ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  401ms
+ ✓ src/EventImpactPanel.test.tsx (32 tests) 2267ms
+   ✓ produces a read-only result and four comparisons without applying an event  487ms
+ ✓ src/EvidenceAssistant.test.tsx (25 tests) 2702ms
+   ✓ offers six bounded topics and clearly identifies deterministic read-only facts  675ms
+ ✓ src/RoadIntelligence.test.tsx (18 tests) 3009ms
+   ✓ shows dated, incomplete and failed sources without claiming clear roads  639ms
+ ✓ src/App.test.tsx (16 tests) 3205ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  808ms
+
+ Test Files  29 passed (29)
+      Tests  192 passed (192)
+   Start at  15:41:40
+   Duration  17.15s (transform 7.77s, setup 68.00s, collect 25.65s, tests 23.48s, environment 247.70s, prepare 25.52s)
+

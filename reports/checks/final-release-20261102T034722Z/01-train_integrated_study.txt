@@ -1,0 +1,89 @@
+{
+  "coverage": {
+    "input_fsis_rows": 78607,
+    "valid_fsis_samples": 78553,
+    "national_states": 46,
+    "mo_samples": 1534,
+    "mo_establishments": 16,
+    "mo_positives": 136,
+    "eligible_samples": 490,
+    "excluded_incomplete_coverage": 1044,
+    "weather_station_count": 5,
+    "weather_station_days": 2730,
+    "weather_observation_start": "2025-01-01",
+    "weather_observation_end": "2026-06-30",
+    "beam_source_rows": 262616,
+    "beam_mo_human_salmonella_rows": 3403,
+    "nors_source_rows": 66713,
+    "nors_mo_food_salmonella_records": 30,
+    "geography_gate": "MO only; no national weather extrapolation",
+    "availability_gate": "Conditional retrospective pass only; prospective publication availability unverified"
+  },
+  "primary_split": {
+    "training_rows": 255,
+    "training_positives": 20,
+    "validation_rows": 171,
+    "validation_positives": 22,
+    "training_origin_start": "2025-02-10",
+    "training_origin_end": "2025-09-25",
+    "training_end": "2025-10-02",
+    "validation_start": "2026-01-05",
+    "validation_end": "2026-06-23",
+    "last_training_label_available_assumed": "2025-12-31",
+    "label_embargo_days": 90,
+    "horizon_days": 7
+  },
+  "brier": {
+    "baseline": 0.11430650591767817,
+    "fsis": 0.1125569762718985,
+    "fsis_cdc": 0.11265149512335015,
+    "core_integrated": 0.11245647631220959,
+    "with_nors": 0.12448900601343771
+  },
+  "ablations": [
+    {
+      "added_domain": "PulseNet-derived BEAM aggregate",
+      "reference_model": "fsis",
+      "augmented_model": "fsis_cdc",
+      "brier_change": 9.451885145163479e-05,
+      "paired_week_block_bootstrap_95_ci": [
+        -0.0009708136184819029,
+        0.0015867312416508747
+      ],
+      "interpretation": "Paired interval includes zero; added value not established"
+    },
+    {
+      "added_domain": "NOAA ambient context",
+      "reference_model": "fsis_cdc",
+      "augmented_model": "core_integrated",
+      "brier_change": -0.00019501881114056767,
+      "paired_week_block_bootstrap_95_ci": [
+        -0.0013106120628280959,
+        0.0006436948274718998
+      ],
+      "interpretation": "Paired interval includes zero; added value not established"
+    },
+    {
+      "added_domain": "NORS exported outbreak-record context",
+      "reference_model": "core_integrated",
+      "augmented_model": "with_nors",
+      "brier_change": 0.01203252970122811,
+      "paired_week_block_bootstrap_95_ci": [
+        0.005490880864540872,
+        0.01896301523990977
+      ],
+      "interpretation": "Higher Brier in this conditional holdout; added source did not improve calibration/error"
+    },
+    {
+      "added_domain": "All integrated domains",
+      "reference_model": "baseline",
+      "augmented_model": "with_nors",
+      "brier_change": 0.01018250009575954,
+      "paired_week_block_bootstrap_95_ci": [
+        0.0037869376311707257,
+        0.016888015101574682
+      ],
+      "interpretation": "Higher Brier in this conditional holdout; added source did not improve calibration/error"
+    }
+  ]
+}

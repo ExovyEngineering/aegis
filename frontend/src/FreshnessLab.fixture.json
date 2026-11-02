@@ -1,0 +1,4376 @@
+{
+  "initial": {
+    "id": "da840837-3539-4fba-ad2b-f3f64a6aef29",
+    "version": 1,
+    "network_revision": 0,
+    "current_network_revision": 0,
+    "simulation": true,
+    "status": "active",
+    "created_at": "2026-10-30T13:00:00+00:00",
+    "updated_at": "2026-10-30T13:00:00+00:00",
+    "approval": null,
+    "provenance": {
+      "model_kind": "deterministic Q10 equivalent-age quality projection",
+      "telemetry": "simulated_replay",
+      "logistics": "Simulated network; assumed warehouse placements and receiving acceptance. No actual contracts or physical vehicle location."
+    },
+    "limitations": [
+      "All logistics, receiving agreements, warehouse placement and replay sensors in this application are simulated.",
+      "Q10 coefficients and starting quality ages are illustrative assumptions, not a trained AI model, calibrated poultry shelf life or molecular freshness measurement.",
+      "A temperature-driven quality estimate cannot establish pathogen safety, extend a supplied use-by limit, or replace a food-safety disposition review.",
+      "Humidity, vibration and ethylene are contextual readings; no unsupported poultry decay coefficients are applied to them.",
+      "Routes begin at the assumed simulated origin. No physical truck position, verified buyer contract, commercial-vehicle clearance or automatic closure avoidance is established.",
+      "Replay and gateway ingestion update this experiment only. Human approval separately replaces the checked simulated distribution plan; picks do not consume an inventory ledger."
+    ],
+    "shipment": {
+      "id": "SH05",
+      "lot_id": "L05",
+      "truck_id": "T05",
+      "origin_name": "Columbia DC (simulated)",
+      "destination_name": "St. Louis destination 5 (simulated)",
+      "origin": [
+        -92.3341,
+        38.9517
+      ],
+      "destination": [
+        -90.23742422131505,
+        38.653449031901474
+      ],
+      "quantity_kg": 400,
+      "original_duration_hours": 3.552,
+      "original_distance_km": 230.86
+    },
+    "sensor": {
+      "device_id": "demo-L05",
+      "source": "simulated_replay",
+      "observed_at": "2026-10-30T14:00:00+00:00",
+      "retrieved_at": "2026-10-30T13:00:00+00:00",
+      "temperature_c": 4.0,
+      "ambient_temperature_c": 30.0,
+      "humidity_percent": 78.0,
+      "vibration_g": 0.03,
+      "ethylene_ppm": 0.02,
+      "temperature_basis": "product",
+      "calibration_status": "not independently verified"
+    },
+    "readings": [
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T13:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      }
+    ],
+    "freshness": {
+      "status": "estimated",
+      "remaining_reference_hours": 9.0,
+      "remaining_quality_hours": 9.0,
+      "remaining_hours_at_forecast_temperature": 9.0,
+      "initial_remaining_reference_hours": 10.0,
+      "equivalent_age_hours": 231.0,
+      "consumed_fraction": 0.9625,
+      "limitations": [
+        "This is an illustrative quality-budget calculation, not a measured molecular freshness, spoilage rate, pathogen-growth or consumer-illness model.",
+        "Q10, initial equivalent age, reference life and temperature domain are chosen assumptions; AEGIS has no calibrated production poultry quality profile.",
+        "A 240-hour demonstration budget is not a recommended poultry storage life or a validated label date.",
+        "The future clock assumes the selected future product temperature persists. It is not an observed future temperature or weather forecast.",
+        "Product/packaging, initial microbial load and other quality mechanisms need product-specific validation before operational use.",
+        "Each interval uses its preceding temperature observation as an explicit piecewise-constant assumption; unobserved spikes remain possible.",
+        "Missing coverage, duplicate/out-of-order times, missing product temperature or temperatures outside the chosen model domain abstain from a remaining-life estimate.",
+        "Humidity, vibration, ambient temperature and ethylene are retained contextual channels. No unsupported poultry decay coefficients or ambient-to-core conversion are applied.",
+        "Sensitivity limits compare chosen Q10 parameters; they are not confidence intervals, guaranteed bounds or validation evidence.",
+        "Cooling does not restore consumed reference-equivalent budget. A changed future temperature assumption can change the forward clock.",
+        "This quality estimate cannot extend a manufacturer use-by date, override a hold/recall or replace a qualified food-safety/disposition review."
+      ],
+      "coverage": {
+        "complete_under_hold_assumption": true,
+        "readings_count": 2,
+        "window_hours": 1.0,
+        "covered_hours": 1.0,
+        "uncovered_hours": 0.0,
+        "largest_hold_minutes": 60.0,
+        "max_gap_minutes": 120.0,
+        "issues": [],
+        "complete": true,
+        "warnings": []
+      },
+      "profile": {
+        "reference_life_hours": 240.0,
+        "reference_temperature_c": 4.0,
+        "q10": 2.0,
+        "forecast_temperature_c": 4.0
+      },
+      "timeline": [
+        {
+          "observed_at": "2026-10-30T14:00:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.0,
+          "remaining_reference_hours": 9.0
+        },
+        {
+          "observed_at": "2026-10-30T14:00:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.0,
+          "remaining_reference_hours": 9.0
+        }
+      ],
+      "sensitivity": {
+        "lower_hours": 9.0,
+        "upper_hours": 9.0
+      }
+    },
+    "rescue": {
+      "triggered": false,
+      "reason": "within_modeled_window",
+      "original_required_hours": 4.052,
+      "receiving_buffer_hours": 0.5,
+      "proposal_id": null,
+      "proposal_hash": null,
+      "proposed_destination_id": null,
+      "plan_summary": null,
+      "options": [
+        {
+          "destination_id": "D06",
+          "destination_name": "Columbia destination 6 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.09138073159230335,
+          "distance_km": 5.939747553499719,
+          "quality_margin_hours": 8.408619268,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.38904895518336,
+                38.95136030760434
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D11",
+          "destination_name": "Columbia destination 11 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.15424798985777685,
+          "distance_km": 10.026119340755496,
+          "quality_margin_hours": 8.34575201,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42311998024472,
+                38.93146933444767
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D01",
+          "destination_name": "Columbia destination 1 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.18656262534375553,
+          "distance_km": 12.12657064734411,
+          "quality_margin_hours": 8.313437375,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42686574587837,
+                38.90267193182352
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D13",
+          "destination_name": "Jefferson City destination 13 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.9209844612536237,
+          "distance_km": 59.863989981485545,
+          "quality_margin_hours": 7.579015539,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.1123725861464,
+                38.557236985380534
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D03",
+          "destination_name": "Jefferson City destination 3 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 1.0310937323689016,
+          "distance_km": 67.02109260397862,
+          "quality_margin_hours": 7.468906268,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.16343117674066,
+                38.488262137080646
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D08",
+          "destination_name": "Jefferson City destination 8 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 1.072232252308398,
+          "distance_km": 69.69509640004588,
+          "quality_margin_hours": 7.427767748,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.0653270730273,
+                38.49622220403864
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D05",
+          "destination_name": "St. Louis destination 5 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 3.551644379813058,
+          "distance_km": 230.85688468784878,
+          "quality_margin_hours": 4.94835562,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.23742422131505,
+                38.653449031901474
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D12",
+          "destination_name": "Kansas City destination 12 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.5770356641347125,
+          "distance_km": 232.5073181687563,
+          "quality_margin_hours": 4.922964336,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.48193223265045,
+                39.065121983593606
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D10",
+          "destination_name": "St. Louis destination 10 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.640899676773429,
+          "distance_km": 236.65847899027287,
+          "quality_margin_hours": 4.859100323,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.17073364580835,
+                38.70875453878441
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D15",
+          "destination_name": "St. Louis destination 15 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.7235983449278045,
+          "distance_km": 242.03389242030732,
+          "quality_margin_hours": 4.776401655,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.12823591139964,
+                38.67234711187459
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D07",
+          "destination_name": "Kansas City destination 7 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.8181785608502814,
+          "distance_km": 248.1816064552683,
+          "quality_margin_hours": 4.681821439,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.61661228995621,
+                39.16906599628995
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D02",
+          "destination_name": "Kansas City destination 2 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.8873532104988016,
+          "distance_km": 252.67795868242212,
+          "quality_margin_hours": 4.61264679,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.66668154137945,
+                39.09718904789093
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "DC2",
+          "destination_name": "Springfield DC (simulated)",
+          "kind": "dc",
+          "eligible": false,
+          "dispatchable": false,
+          "duration_hours": 4.060503428083064,
+          "distance_km": 263.93272282539914,
+          "quality_margin_hours": 4.439496572,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.2923,
+                37.209
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Recipient acceptance is not confirmed in the planning inputs",
+            "Net receiving capacity is insufficient for the full load",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D09",
+          "destination_name": "Springfield destination 9 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.1082292574003665,
+          "distance_km": 267.03490173102387,
+          "quality_margin_hours": 4.391770743,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.35980347726326,
+                37.208341126062955
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D04",
+          "destination_name": "Springfield destination 4 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.127938242414477,
+          "distance_km": 268.3159857569411,
+          "quality_margin_hours": 4.372061758,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.31616801496607,
+                37.18283988350218
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D14",
+          "destination_name": "Springfield destination 14 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.241206530946009,
+          "distance_km": 275.6784245114906,
+          "quality_margin_hours": 4.258793469,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.33488174845307,
+                37.13160149852107
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Route does not shorten the original remaining planning duration"
+          ]
+        }
+      ],
+      "proposed_assignments": []
+    },
+    "fefo": {
+      "status": "computed",
+      "feasible": true,
+      "solver_status": "OPTIMAL",
+      "changed_pick_lots": [
+        "L04",
+        "L05",
+        "L11",
+        "L12"
+      ],
+      "limitations": [
+        "FEFO and FIFO receive the same stock, demand, capacity, eligibility, quality-window and provided use-by constraints. FIFO is not permitted to ship held, recalled or unscored stock.",
+        "Remaining clocks must be projected hours at the declared FUTURE cargo-temperature assumption, not reference-temperature equivalent hours. The caller owns kinetic coverage and parameter provenance.",
+        "A modeled quality clock is not measured molecular freshness, a pathogen-growth estimate, food-safety clearance or authority to extend a manufacturer use-by limit.",
+        "The recommendation sequences one-wave picks; it does not create a warehouse labor timetable, reserve inventory, impose a hold or dispatch a truck.",
+        "Unselected inventory whose supplied quality clock ends within the chosen horizon is projected expiry exposure, not measured waste or an instruction to discard food.",
+        "A missing independent use-by clock is reported as missing; no actual manufacturer date is inferred from a simulated quality budget."
+      ],
+      "fifo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 0.0,
+        "picks": [
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 46.348,
+            "rank": 1
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 50.931,
+            "rank": 2
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 47.555,
+            "rank": 3
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 47.666,
+            "rank": 4
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 58.813,
+            "rank": 5
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 57.969,
+            "rank": 6
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 54.892,
+            "rank": 7
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 58.846,
+            "rank": 8
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 55.276,
+            "rank": 9
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 58.909,
+            "rank": 10
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 57.928,
+            "rank": 11
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 22.976,
+            "rank": 12
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 22.555,
+            "rank": 13
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 26.819,
+            "rank": 14
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 23.096,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 31.448,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 31.182,
+            "rank": 17
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 34.079,
+            "rank": 18
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.276,
+            "rank": 19
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.113,
+            "rank": 20
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 30.872,
+            "rank": 21
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 38.254,
+            "rank": 22
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 42.885,
+            "rank": 23
+          }
+        ]
+      },
+      "fefo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 0.0,
+        "picks": [
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 7.969,
+            "rank": 1
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 5.448,
+            "rank": 2
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 4.892,
+            "rank": 3
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 5.276,
+            "rank": 4
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 23.555,
+            "rank": 5
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 22.555,
+            "rank": 6
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 23.096,
+            "rank": 7
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 23.666,
+            "rank": 8
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 22.254,
+            "rank": 9
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 26.885,
+            "rank": 10
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 34.813,
+            "rank": 11
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 33.969,
+            "rank": 12
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.182,
+            "rank": 13
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 34.846,
+            "rank": 14
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 34.079,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.113,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 30.872,
+            "rank": 17
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 34.909,
+            "rank": 18
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 33.928,
+            "rank": 19
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 30.348,
+            "rank": 20
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 34.931,
+            "rank": 21
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 30.976,
+            "rank": 22
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 34.819,
+            "rank": 23
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 38.348,
+            "rank": 24
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 39.555,
+            "rank": 25
+          }
+        ]
+      }
+    }
+  },
+  "heated": {
+    "id": "da840837-3539-4fba-ad2b-f3f64a6aef29",
+    "version": 2,
+    "network_revision": 0,
+    "current_network_revision": 0,
+    "simulation": true,
+    "status": "active",
+    "created_at": "2026-10-30T13:00:00+00:00",
+    "updated_at": "2026-10-30T13:00:00+00:00",
+    "approval": null,
+    "provenance": {
+      "model_kind": "deterministic Q10 equivalent-age quality projection",
+      "telemetry": "simulated_replay",
+      "logistics": "Simulated network; assumed warehouse placements and receiving acceptance. No actual contracts or physical vehicle location."
+    },
+    "limitations": [
+      "All logistics, receiving agreements, warehouse placement and replay sensors in this application are simulated.",
+      "Q10 coefficients and starting quality ages are illustrative assumptions, not a trained AI model, calibrated poultry shelf life or molecular freshness measurement.",
+      "A temperature-driven quality estimate cannot establish pathogen safety, extend a supplied use-by limit, or replace a food-safety disposition review.",
+      "Humidity, vibration and ethylene are contextual readings; no unsupported poultry decay coefficients are applied to them.",
+      "Routes begin at the assumed simulated origin. No physical truck position, verified buyer contract, commercial-vehicle clearance or automatic closure avoidance is established.",
+      "Replay and gateway ingestion update this experiment only. Human approval separately replaces the checked simulated distribution plan; picks do not consume an inventory ledger."
+    ],
+    "shipment": {
+      "id": "SH05",
+      "lot_id": "L05",
+      "truck_id": "T05",
+      "origin_name": "Columbia DC (simulated)",
+      "destination_name": "St. Louis destination 5 (simulated)",
+      "origin": [
+        -92.3341,
+        38.9517
+      ],
+      "destination": [
+        -90.23742422131505,
+        38.653449031901474
+      ],
+      "quantity_kg": 400,
+      "original_duration_hours": 3.552,
+      "original_distance_km": 230.86
+    },
+    "sensor": {
+      "device_id": "demo-L05",
+      "source": "simulated_replay",
+      "observed_at": "2026-10-30T16:01:00+00:00",
+      "retrieved_at": "2026-10-30T13:00:00+00:00",
+      "temperature_c": 4.0,
+      "ambient_temperature_c": 30.0,
+      "humidity_percent": 78.0,
+      "vibration_g": 0.03,
+      "ethylene_ppm": 0.02,
+      "temperature_basis": "product",
+      "calibration_status": "not independently verified"
+    },
+    "readings": [
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T13:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:01:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 16.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T16:01:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      }
+    ],
+    "freshness": {
+      "status": "estimated",
+      "remaining_reference_hours": 4.388539913345198,
+      "remaining_quality_hours": 1.5089476956402166,
+      "remaining_hours_at_forecast_temperature": 4.388539913345198,
+      "initial_remaining_reference_hours": 10.0,
+      "equivalent_age_hours": 235.6114600866548,
+      "consumed_fraction": 0.9817144170277283,
+      "limitations": [
+        "This is an illustrative quality-budget calculation, not a measured molecular freshness, spoilage rate, pathogen-growth or consumer-illness model.",
+        "Q10, initial equivalent age, reference life and temperature domain are chosen assumptions; AEGIS has no calibrated production poultry quality profile.",
+        "A 240-hour demonstration budget is not a recommended poultry storage life or a validated label date.",
+        "The future clock assumes the selected future product temperature persists. It is not an observed future temperature or weather forecast.",
+        "Product/packaging, initial microbial load and other quality mechanisms need product-specific validation before operational use.",
+        "Each interval uses its preceding temperature observation as an explicit piecewise-constant assumption; unobserved spikes remain possible.",
+        "Missing coverage, duplicate/out-of-order times, missing product temperature or temperatures outside the chosen model domain abstain from a remaining-life estimate.",
+        "Humidity, vibration, ambient temperature and ethylene are retained contextual channels. No unsupported poultry decay coefficients or ambient-to-core conversion are applied.",
+        "Sensitivity limits compare chosen Q10 parameters; they are not confidence intervals, guaranteed bounds or validation evidence.",
+        "Cooling does not restore consumed reference-equivalent budget. A changed future temperature assumption can change the forward clock.",
+        "This quality estimate cannot extend a manufacturer use-by date, override a hold/recall or replace a qualified food-safety/disposition review."
+      ],
+      "coverage": {
+        "complete_under_hold_assumption": true,
+        "readings_count": 4,
+        "window_hours": 3.0166666666666666,
+        "covered_hours": 3.0166666666666666,
+        "uncovered_hours": 0.0,
+        "largest_hold_minutes": 120.0,
+        "max_gap_minutes": 120.0,
+        "issues": [],
+        "complete": true,
+        "warnings": []
+      },
+      "profile": {
+        "reference_life_hours": 240.0,
+        "reference_temperature_c": 4.0,
+        "q10": 2.0,
+        "forecast_temperature_c": 4.0
+      },
+      "timeline": [
+        {
+          "observed_at": "2026-10-30T14:00:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.0,
+          "remaining_reference_hours": 9.0
+        },
+        {
+          "observed_at": "2026-10-30T14:01:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.01666666666668,
+          "remaining_reference_hours": 8.98333333333332
+        },
+        {
+          "observed_at": "2026-10-30T16:01:00+00:00",
+          "temperature_c": 16.0,
+          "equivalent_age_hours": 235.61146008665483,
+          "remaining_reference_hours": 4.38853991334517
+        },
+        {
+          "observed_at": "2026-10-30T16:01:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 235.61146008665483,
+          "remaining_reference_hours": 4.38853991334517
+        }
+      ],
+      "sensitivity": {
+        "lower_hours": 1.5089476956402166,
+        "upper_hours": 5.729918019740239
+      }
+    },
+    "rescue": {
+      "triggered": true,
+      "reason": "rescue_recommended",
+      "original_required_hours": 4.052,
+      "receiving_buffer_hours": 0.5,
+      "proposal_id": "rescue-b2c3a3191c9fa81c",
+      "proposal_hash": "b2c3a3191c9fa81cc15fd2d3ba57447d8c4011e4fa59c32ba238c81c4ffe48f5",
+      "proposed_destination_id": "D06",
+      "plan_summary": {
+        "assignments_count": 12,
+        "total_logistics_cost": 2714,
+        "unmet_demand_kg": 2700,
+        "constraint_violations": 0,
+        "solver_status": "OPTIMAL"
+      },
+      "options": [
+        {
+          "destination_id": "D06",
+          "destination_name": "Columbia destination 6 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.09138073159230335,
+          "distance_km": 5.939747553499719,
+          "quality_margin_hours": 0.917566964,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.38904895518336,
+                38.95136030760434
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D11",
+          "destination_name": "Columbia destination 11 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.15424798985777685,
+          "distance_km": 10.026119340755496,
+          "quality_margin_hours": 0.854699706,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42311998024472,
+                38.93146933444767
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D01",
+          "destination_name": "Columbia destination 1 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.18656262534375553,
+          "distance_km": 12.12657064734411,
+          "quality_margin_hours": 0.82238507,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42686574587837,
+                38.90267193182352
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D13",
+          "destination_name": "Jefferson City destination 13 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.9209844612536237,
+          "distance_km": 59.863989981485545,
+          "quality_margin_hours": 0.087963234,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.1123725861464,
+                38.557236985380534
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D03",
+          "destination_name": "Jefferson City destination 3 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.0310937323689016,
+          "distance_km": 67.02109260397862,
+          "quality_margin_hours": -0.022146037,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.16343117674066,
+                38.488262137080646
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D08",
+          "destination_name": "Jefferson City destination 8 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.072232252308398,
+          "distance_km": 69.69509640004588,
+          "quality_margin_hours": -0.063284557,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.0653270730273,
+                38.49622220403864
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D05",
+          "destination_name": "St. Louis destination 5 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.551644379813058,
+          "distance_km": 230.85688468784878,
+          "quality_margin_hours": -2.542696684,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.23742422131505,
+                38.653449031901474
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D12",
+          "destination_name": "Kansas City destination 12 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.5770356641347125,
+          "distance_km": 232.5073181687563,
+          "quality_margin_hours": -2.568087968,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.48193223265045,
+                39.065121983593606
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D10",
+          "destination_name": "St. Louis destination 10 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.640899676773429,
+          "distance_km": 236.65847899027287,
+          "quality_margin_hours": -2.631951981,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.17073364580835,
+                38.70875453878441
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D15",
+          "destination_name": "St. Louis destination 15 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.7235983449278045,
+          "distance_km": 242.03389242030732,
+          "quality_margin_hours": -2.714650649,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.12823591139964,
+                38.67234711187459
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D07",
+          "destination_name": "Kansas City destination 7 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.8181785608502814,
+          "distance_km": 248.1816064552683,
+          "quality_margin_hours": -2.809230865,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.61661228995621,
+                39.16906599628995
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D02",
+          "destination_name": "Kansas City destination 2 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.8873532104988016,
+          "distance_km": 252.67795868242212,
+          "quality_margin_hours": -2.878405515,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.66668154137945,
+                39.09718904789093
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "DC2",
+          "destination_name": "Springfield DC (simulated)",
+          "kind": "dc",
+          "eligible": false,
+          "dispatchable": false,
+          "duration_hours": 4.060503428083064,
+          "distance_km": 263.93272282539914,
+          "quality_margin_hours": -3.051555732,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.2923,
+                37.209
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Recipient acceptance is not confirmed in the planning inputs",
+            "Net receiving capacity is insufficient for the full load",
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D09",
+          "destination_name": "Springfield destination 9 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.1082292574003665,
+          "distance_km": 267.03490173102387,
+          "quality_margin_hours": -3.099281562,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.35980347726326,
+                37.208341126062955
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D04",
+          "destination_name": "Springfield destination 4 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.127938242414477,
+          "distance_km": 268.3159857569411,
+          "quality_margin_hours": -3.118990547,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.31616801496607,
+                37.18283988350218
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D14",
+          "destination_name": "Springfield destination 14 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.241206530946009,
+          "distance_km": 275.6784245114906,
+          "quality_margin_hours": -3.232258835,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.33488174845307,
+                37.13160149852107
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        }
+      ],
+      "proposed_assignments": [
+        {
+          "id": "SH02",
+          "truck_id": "T02",
+          "lot_id": "L02",
+          "destination": "D02",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH03",
+          "truck_id": "T03",
+          "lot_id": "L03",
+          "destination": "D03",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH04",
+          "truck_id": "T04",
+          "lot_id": "L04",
+          "destination": "D04",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH05",
+          "truck_id": "T05",
+          "lot_id": "L05",
+          "destination": "D06",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH07",
+          "truck_id": "T07",
+          "lot_id": "L07",
+          "destination": "D07",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH11",
+          "truck_id": "T03",
+          "lot_id": "L11",
+          "destination": "D11",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH12",
+          "truck_id": "T04",
+          "lot_id": "L12",
+          "destination": "D12",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH14",
+          "truck_id": "T06",
+          "lot_id": "L02",
+          "destination": "D14",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH15",
+          "truck_id": "T07",
+          "lot_id": "L03",
+          "destination": "D15",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH16",
+          "truck_id": "T08",
+          "lot_id": "L04",
+          "destination": "D01",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH23",
+          "truck_id": "T07",
+          "lot_id": "L11",
+          "destination": "D08",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH24",
+          "truck_id": "T08",
+          "lot_id": "L12",
+          "destination": "D09",
+          "quantity_kg": 400
+        }
+      ]
+    },
+    "fefo": {
+      "status": "computed",
+      "feasible": true,
+      "solver_status": "OPTIMAL",
+      "changed_pick_lots": [
+        "L04",
+        "L05",
+        "L11",
+        "L12"
+      ],
+      "limitations": [
+        "FEFO and FIFO receive the same stock, demand, capacity, eligibility, quality-window and provided use-by constraints. FIFO is not permitted to ship held, recalled or unscored stock.",
+        "Remaining clocks must be projected hours at the declared FUTURE cargo-temperature assumption, not reference-temperature equivalent hours. The caller owns kinetic coverage and parameter provenance.",
+        "A modeled quality clock is not measured molecular freshness, a pathogen-growth estimate, food-safety clearance or authority to extend a manufacturer use-by limit.",
+        "The recommendation sequences one-wave picks; it does not create a warehouse labor timetable, reserve inventory, impose a hold or dispatch a truck.",
+        "Unselected inventory whose supplied quality clock ends within the chosen horizon is projected expiry exposure, not measured waste or an instruction to discard food.",
+        "A missing independent use-by clock is reported as missing; no actual manufacturer date is inferred from a simulated quality budget."
+      ],
+      "fifo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 1500.0,
+        "picks": [
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 44.331333333,
+            "rank": 1
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 48.914333333,
+            "rank": 2
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 45.538333333,
+            "rank": 3
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 45.649333333,
+            "rank": 4
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 56.796333333,
+            "rank": 5
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 55.952333333,
+            "rank": 6
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 52.875333333,
+            "rank": 7
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 56.829333333,
+            "rank": 8
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 53.259333333,
+            "rank": 9
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 56.892333333,
+            "rank": 10
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 55.911333333,
+            "rank": 11
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 20.959333333,
+            "rank": 12
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 20.538333333,
+            "rank": 13
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 24.802333333,
+            "rank": 14
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 21.079333333,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.431333333,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.165333333,
+            "rank": 17
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 32.062333333,
+            "rank": 18
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.259333333,
+            "rank": 19
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.096333333,
+            "rank": 20
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.855333333,
+            "rank": 21
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 36.237333333,
+            "rank": 22
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 40.868333333,
+            "rank": 23
+          }
+        ]
+      },
+      "fefo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 0.0,
+        "picks": [
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 1.321947696,
+            "rank": 1
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 1.354947696,
+            "rank": 2
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 0.587947696,
+            "rank": 3
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 1.417947696,
+            "rank": 4
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 24.914333333,
+            "rank": 5
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 20.959333333,
+            "rank": 6
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 24.802333333,
+            "rank": 7
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 21.649333333,
+            "rank": 8
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 24.868333333,
+            "rank": 9
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 31.952333333,
+            "rank": 10
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.431333333,
+            "rank": 11
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.165333333,
+            "rank": 12
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.875333333,
+            "rank": 13
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.259333333,
+            "rank": 14
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.096333333,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.855333333,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.911333333,
+            "rank": 17
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.331333333,
+            "rank": 18
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.538333333,
+            "rank": 19
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.538333333,
+            "rank": 20
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.079333333,
+            "rank": 21
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 28.237333333,
+            "rank": 22
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 40.914333333,
+            "rank": 23
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 36.237333333,
+            "rank": 24
+          }
+        ]
+      }
+    }
+  },
+  "delayed": {
+    "id": "da840837-3539-4fba-ad2b-f3f64a6aef29",
+    "version": 3,
+    "network_revision": 0,
+    "current_network_revision": 0,
+    "simulation": true,
+    "status": "active",
+    "created_at": "2026-10-30T13:00:00+00:00",
+    "updated_at": "2026-10-30T13:00:00+00:00",
+    "approval": null,
+    "provenance": {
+      "model_kind": "deterministic Q10 equivalent-age quality projection",
+      "telemetry": "simulated_replay",
+      "logistics": "Simulated network; assumed warehouse placements and receiving acceptance. No actual contracts or physical vehicle location."
+    },
+    "limitations": [
+      "All logistics, receiving agreements, warehouse placement and replay sensors in this application are simulated.",
+      "Q10 coefficients and starting quality ages are illustrative assumptions, not a trained AI model, calibrated poultry shelf life or molecular freshness measurement.",
+      "A temperature-driven quality estimate cannot establish pathogen safety, extend a supplied use-by limit, or replace a food-safety disposition review.",
+      "Humidity, vibration and ethylene are contextual readings; no unsupported poultry decay coefficients are applied to them.",
+      "Routes begin at the assumed simulated origin. No physical truck position, verified buyer contract, commercial-vehicle clearance or automatic closure avoidance is established.",
+      "Replay and gateway ingestion update this experiment only. Human approval separately replaces the checked simulated distribution plan; picks do not consume an inventory ledger."
+    ],
+    "shipment": {
+      "id": "SH05",
+      "lot_id": "L05",
+      "truck_id": "T05",
+      "origin_name": "Columbia DC (simulated)",
+      "destination_name": "St. Louis destination 5 (simulated)",
+      "origin": [
+        -92.3341,
+        38.9517
+      ],
+      "destination": [
+        -90.23742422131505,
+        38.653449031901474
+      ],
+      "quantity_kg": 400,
+      "original_duration_hours": 4.552,
+      "original_distance_km": 230.86
+    },
+    "sensor": {
+      "device_id": "demo-L05",
+      "source": "simulated_replay",
+      "observed_at": "2026-10-30T16:16:00+00:00",
+      "retrieved_at": "2026-10-30T13:00:00+00:00",
+      "temperature_c": 4.0,
+      "ambient_temperature_c": 30.0,
+      "humidity_percent": 78.0,
+      "vibration_g": 0.03,
+      "ethylene_ppm": 0.02,
+      "temperature_basis": "product",
+      "calibration_status": "not independently verified"
+    },
+    "readings": [
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T13:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:01:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 16.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T16:01:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T16:16:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      }
+    ],
+    "freshness": {
+      "status": "estimated",
+      "remaining_reference_hours": 4.138539913345198,
+      "remaining_quality_hours": 1.2589476956402166,
+      "remaining_hours_at_forecast_temperature": 4.138539913345198,
+      "initial_remaining_reference_hours": 10.0,
+      "equivalent_age_hours": 235.8614600866548,
+      "consumed_fraction": 0.982756083694395,
+      "limitations": [
+        "This is an illustrative quality-budget calculation, not a measured molecular freshness, spoilage rate, pathogen-growth or consumer-illness model.",
+        "Q10, initial equivalent age, reference life and temperature domain are chosen assumptions; AEGIS has no calibrated production poultry quality profile.",
+        "A 240-hour demonstration budget is not a recommended poultry storage life or a validated label date.",
+        "The future clock assumes the selected future product temperature persists. It is not an observed future temperature or weather forecast.",
+        "Product/packaging, initial microbial load and other quality mechanisms need product-specific validation before operational use.",
+        "Each interval uses its preceding temperature observation as an explicit piecewise-constant assumption; unobserved spikes remain possible.",
+        "Missing coverage, duplicate/out-of-order times, missing product temperature or temperatures outside the chosen model domain abstain from a remaining-life estimate.",
+        "Humidity, vibration, ambient temperature and ethylene are retained contextual channels. No unsupported poultry decay coefficients or ambient-to-core conversion are applied.",
+        "Sensitivity limits compare chosen Q10 parameters; they are not confidence intervals, guaranteed bounds or validation evidence.",
+        "Cooling does not restore consumed reference-equivalent budget. A changed future temperature assumption can change the forward clock.",
+        "This quality estimate cannot extend a manufacturer use-by date, override a hold/recall or replace a qualified food-safety/disposition review."
+      ],
+      "coverage": {
+        "complete_under_hold_assumption": true,
+        "readings_count": 5,
+        "window_hours": 3.2666666666666666,
+        "covered_hours": 3.2666666666666666,
+        "uncovered_hours": 0.0,
+        "largest_hold_minutes": 120.0,
+        "max_gap_minutes": 120.0,
+        "issues": [],
+        "complete": true,
+        "warnings": []
+      },
+      "profile": {
+        "reference_life_hours": 240.0,
+        "reference_temperature_c": 4.0,
+        "q10": 2.0,
+        "forecast_temperature_c": 4.0
+      },
+      "timeline": [
+        {
+          "observed_at": "2026-10-30T14:00:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.0,
+          "remaining_reference_hours": 9.0
+        },
+        {
+          "observed_at": "2026-10-30T14:01:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.01666666666668,
+          "remaining_reference_hours": 8.98333333333332
+        },
+        {
+          "observed_at": "2026-10-30T16:01:00+00:00",
+          "temperature_c": 16.0,
+          "equivalent_age_hours": 235.61146008665483,
+          "remaining_reference_hours": 4.38853991334517
+        },
+        {
+          "observed_at": "2026-10-30T16:16:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 235.86146008665483,
+          "remaining_reference_hours": 4.13853991334517
+        },
+        {
+          "observed_at": "2026-10-30T16:16:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 235.86146008665483,
+          "remaining_reference_hours": 4.13853991334517
+        }
+      ],
+      "sensitivity": {
+        "lower_hours": 1.2589476956402166,
+        "upper_hours": 5.479918019740239
+      }
+    },
+    "rescue": {
+      "triggered": true,
+      "reason": "no_eligible_rescue",
+      "original_required_hours": 5.052,
+      "receiving_buffer_hours": 0.5,
+      "proposal_id": null,
+      "proposal_hash": null,
+      "proposed_destination_id": null,
+      "plan_summary": null,
+      "options": [
+        {
+          "destination_id": "D06",
+          "destination_name": "Columbia destination 6 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.0913807315923034,
+          "distance_km": 5.939747553499719,
+          "quality_margin_hours": -0.332433036,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.38904895518336,
+                38.95136030760434
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D11",
+          "destination_name": "Columbia destination 11 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.1542479898577769,
+          "distance_km": 10.026119340755496,
+          "quality_margin_hours": -0.395300294,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42311998024472,
+                38.93146933444767
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D01",
+          "destination_name": "Columbia destination 1 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.1865626253437556,
+          "distance_km": 12.12657064734411,
+          "quality_margin_hours": -0.42761493,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42686574587837,
+                38.90267193182352
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D13",
+          "destination_name": "Jefferson City destination 13 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.9209844612536238,
+          "distance_km": 59.863989981485545,
+          "quality_margin_hours": -1.162036766,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.1123725861464,
+                38.557236985380534
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D03",
+          "destination_name": "Jefferson City destination 3 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 2.0310937323689013,
+          "distance_km": 67.02109260397862,
+          "quality_margin_hours": -1.272146037,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.16343117674066,
+                38.488262137080646
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D08",
+          "destination_name": "Jefferson City destination 8 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 2.072232252308398,
+          "distance_km": 69.69509640004588,
+          "quality_margin_hours": -1.313284557,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.0653270730273,
+                38.49622220403864
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D05",
+          "destination_name": "St. Louis destination 5 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.551644379813058,
+          "distance_km": 230.85688468784878,
+          "quality_margin_hours": -3.792696684,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.23742422131505,
+                38.653449031901474
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D12",
+          "destination_name": "Kansas City destination 12 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.577035664134712,
+          "distance_km": 232.5073181687563,
+          "quality_margin_hours": -3.818087968,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.48193223265045,
+                39.065121983593606
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D10",
+          "destination_name": "St. Louis destination 10 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.6408996767734285,
+          "distance_km": 236.65847899027287,
+          "quality_margin_hours": -3.881951981,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.17073364580835,
+                38.70875453878441
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D15",
+          "destination_name": "St. Louis destination 15 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.7235983449278045,
+          "distance_km": 242.03389242030732,
+          "quality_margin_hours": -3.964650649,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.12823591139964,
+                38.67234711187459
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D07",
+          "destination_name": "Kansas City destination 7 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.818178560850281,
+          "distance_km": 248.1816064552683,
+          "quality_margin_hours": -4.059230865,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.61661228995621,
+                39.16906599628995
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D02",
+          "destination_name": "Kansas City destination 2 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.887353210498802,
+          "distance_km": 252.67795868242212,
+          "quality_margin_hours": -4.128405515,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.66668154137945,
+                39.09718904789093
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "DC2",
+          "destination_name": "Springfield DC (simulated)",
+          "kind": "dc",
+          "eligible": false,
+          "dispatchable": false,
+          "duration_hours": 5.060503428083064,
+          "distance_km": 263.93272282539914,
+          "quality_margin_hours": -4.301555732,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.2923,
+                37.209
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Recipient acceptance is not confirmed in the planning inputs",
+            "Net receiving capacity is insufficient for the full load",
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D09",
+          "destination_name": "Springfield destination 9 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 5.1082292574003665,
+          "distance_km": 267.03490173102387,
+          "quality_margin_hours": -4.349281562,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.35980347726326,
+                37.208341126062955
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D04",
+          "destination_name": "Springfield destination 4 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 5.127938242414477,
+          "distance_km": 268.3159857569411,
+          "quality_margin_hours": -4.368990547,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.31616801496607,
+                37.18283988350218
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D14",
+          "destination_name": "Springfield destination 14 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 5.241206530946009,
+          "distance_km": 275.6784245114906,
+          "quality_margin_hours": -4.482258835,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.33488174845307,
+                37.13160149852107
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        }
+      ],
+      "proposed_assignments": []
+    },
+    "fefo": {
+      "status": "computed",
+      "feasible": true,
+      "solver_status": "OPTIMAL",
+      "changed_pick_lots": [
+        "L03",
+        "L04",
+        "L11",
+        "L12"
+      ],
+      "limitations": [
+        "FEFO and FIFO receive the same stock, demand, capacity, eligibility, quality-window and provided use-by constraints. FIFO is not permitted to ship held, recalled or unscored stock.",
+        "Remaining clocks must be projected hours at the declared FUTURE cargo-temperature assumption, not reference-temperature equivalent hours. The caller owns kinetic coverage and parameter provenance.",
+        "A modeled quality clock is not measured molecular freshness, a pathogen-growth estimate, food-safety clearance or authority to extend a manufacturer use-by limit.",
+        "The recommendation sequences one-wave picks; it does not create a warehouse labor timetable, reserve inventory, impose a hold or dispatch a truck.",
+        "Unselected inventory whose supplied quality clock ends within the chosen horizon is projected expiry exposure, not measured waste or an instruction to discard food.",
+        "A missing independent use-by clock is reported as missing; no actual manufacturer date is inferred from a simulated quality budget."
+      ],
+      "fifo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 1500.0,
+        "picks": [
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 43.081333333,
+            "rank": 1
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 47.664333333,
+            "rank": 2
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 44.288333333,
+            "rank": 3
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 44.399333333,
+            "rank": 4
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 55.546333333,
+            "rank": 5
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 54.702333333,
+            "rank": 6
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 51.625333333,
+            "rank": 7
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 55.579333333,
+            "rank": 8
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 52.009333333,
+            "rank": 9
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 55.642333333,
+            "rank": 10
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 54.661333333,
+            "rank": 11
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 19.709333333,
+            "rank": 12
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 19.288333333,
+            "rank": 13
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 23.552333333,
+            "rank": 14
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 19.829333333,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.181333333,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 27.915333333,
+            "rank": 17
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 30.812333333,
+            "rank": 18
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.009333333,
+            "rank": 19
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 27.846333333,
+            "rank": 20
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 27.605333333,
+            "rank": 21
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 34.987333333,
+            "rank": 22
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 39.618333333,
+            "rank": 23
+          }
+        ]
+      },
+      "fefo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 1500.0,
+        "picks": [
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 23.664333333,
+            "rank": 1
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 19.709333333,
+            "rank": 2
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 20.288333333,
+            "rank": 3
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 19.829333333,
+            "rank": 4
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.546333333,
+            "rank": 5
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 30.702333333,
+            "rank": 6
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.181333333,
+            "rank": 7
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 27.625333333,
+            "rank": 8
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 30.812333333,
+            "rank": 9
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 27.846333333,
+            "rank": 10
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 27.605333333,
+            "rank": 11
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.642333333,
+            "rank": 12
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 30.661333333,
+            "rank": 13
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 27.288333333,
+            "rank": 14
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 31.552333333,
+            "rank": 15
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.399333333,
+            "rank": 16
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 31.618333333,
+            "rank": 17
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 35.081333333,
+            "rank": 18
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 36.288333333,
+            "rank": 19
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 34.987333333,
+            "rank": 20
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 39.618333333,
+            "rank": 21
+          },
+          {
+            "lot_id": "L03",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 35.915333333,
+            "rank": 22
+          },
+          {
+            "lot_id": "L03",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 39.579333333,
+            "rank": 23
+          },
+          {
+            "lot_id": "L03",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 36.009333333,
+            "rank": 24
+          }
+        ]
+      }
+    }
+  },
+  "prepared": {
+    "id": "da840837-3539-4fba-ad2b-f3f64a6aef29",
+    "version": 3,
+    "network_revision": 0,
+    "current_network_revision": 0,
+    "simulation": true,
+    "status": "active",
+    "created_at": "2026-10-30T13:00:00+00:00",
+    "updated_at": "2026-10-30T13:00:00+00:00",
+    "approval": null,
+    "provenance": {
+      "model_kind": "deterministic Q10 equivalent-age quality projection",
+      "telemetry": "simulated_replay",
+      "logistics": "Simulated network; assumed warehouse placements and receiving acceptance. No actual contracts or physical vehicle location."
+    },
+    "limitations": [
+      "All logistics, receiving agreements, warehouse placement and replay sensors in this application are simulated.",
+      "Q10 coefficients and starting quality ages are illustrative assumptions, not a trained AI model, calibrated poultry shelf life or molecular freshness measurement.",
+      "A temperature-driven quality estimate cannot establish pathogen safety, extend a supplied use-by limit, or replace a food-safety disposition review.",
+      "Humidity, vibration and ethylene are contextual readings; no unsupported poultry decay coefficients are applied to them.",
+      "Routes begin at the assumed simulated origin. No physical truck position, verified buyer contract, commercial-vehicle clearance or automatic closure avoidance is established.",
+      "Replay and gateway ingestion update this experiment only. Human approval separately replaces the checked simulated distribution plan; picks do not consume an inventory ledger."
+    ],
+    "shipment": {
+      "id": "SH05",
+      "lot_id": "L05",
+      "truck_id": "T05",
+      "origin_name": "Columbia DC (simulated)",
+      "destination_name": "St. Louis destination 5 (simulated)",
+      "origin": [
+        -92.3341,
+        38.9517
+      ],
+      "destination": [
+        -90.23742422131505,
+        38.653449031901474
+      ],
+      "quantity_kg": 400,
+      "original_duration_hours": 3.552,
+      "original_distance_km": 230.86
+    },
+    "sensor": {
+      "device_id": "demo-L05",
+      "source": "simulated_replay",
+      "observed_at": "2026-10-30T16:01:00+00:00",
+      "retrieved_at": "2026-10-30T13:00:00+00:00",
+      "temperature_c": 4.0,
+      "ambient_temperature_c": 30.0,
+      "humidity_percent": 78.0,
+      "vibration_g": 0.03,
+      "ethylene_ppm": 0.02,
+      "temperature_basis": "product",
+      "calibration_status": "not independently verified"
+    },
+    "readings": [
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T13:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:00:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T14:01:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 16.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      },
+      {
+        "device_id": "demo-L05",
+        "source": "simulated_replay",
+        "observed_at": "2026-10-30T16:01:00+00:00",
+        "retrieved_at": "2026-10-30T13:00:00+00:00",
+        "temperature_c": 4.0,
+        "ambient_temperature_c": 30.0,
+        "humidity_percent": 78.0,
+        "vibration_g": 0.03,
+        "ethylene_ppm": 0.02,
+        "temperature_basis": "product",
+        "calibration_status": "not independently verified"
+      }
+    ],
+    "freshness": {
+      "status": "estimated",
+      "remaining_reference_hours": 4.388539913345198,
+      "remaining_quality_hours": 1.5089476956402166,
+      "remaining_hours_at_forecast_temperature": 4.388539913345198,
+      "initial_remaining_reference_hours": 10.0,
+      "equivalent_age_hours": 235.6114600866548,
+      "consumed_fraction": 0.9817144170277283,
+      "limitations": [
+        "This is an illustrative quality-budget calculation, not a measured molecular freshness, spoilage rate, pathogen-growth or consumer-illness model.",
+        "Q10, initial equivalent age, reference life and temperature domain are chosen assumptions; AEGIS has no calibrated production poultry quality profile.",
+        "A 240-hour demonstration budget is not a recommended poultry storage life or a validated label date.",
+        "The future clock assumes the selected future product temperature persists. It is not an observed future temperature or weather forecast.",
+        "Product/packaging, initial microbial load and other quality mechanisms need product-specific validation before operational use.",
+        "Each interval uses its preceding temperature observation as an explicit piecewise-constant assumption; unobserved spikes remain possible.",
+        "Missing coverage, duplicate/out-of-order times, missing product temperature or temperatures outside the chosen model domain abstain from a remaining-life estimate.",
+        "Humidity, vibration, ambient temperature and ethylene are retained contextual channels. No unsupported poultry decay coefficients or ambient-to-core conversion are applied.",
+        "Sensitivity limits compare chosen Q10 parameters; they are not confidence intervals, guaranteed bounds or validation evidence.",
+        "Cooling does not restore consumed reference-equivalent budget. A changed future temperature assumption can change the forward clock.",
+        "This quality estimate cannot extend a manufacturer use-by date, override a hold/recall or replace a qualified food-safety/disposition review."
+      ],
+      "coverage": {
+        "complete_under_hold_assumption": true,
+        "readings_count": 4,
+        "window_hours": 3.0166666666666666,
+        "covered_hours": 3.0166666666666666,
+        "uncovered_hours": 0.0,
+        "largest_hold_minutes": 120.0,
+        "max_gap_minutes": 120.0,
+        "issues": [],
+        "complete": true,
+        "warnings": []
+      },
+      "profile": {
+        "reference_life_hours": 240.0,
+        "reference_temperature_c": 4.0,
+        "q10": 2.0,
+        "forecast_temperature_c": 4.0
+      },
+      "timeline": [
+        {
+          "observed_at": "2026-10-30T14:00:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.0,
+          "remaining_reference_hours": 9.0
+        },
+        {
+          "observed_at": "2026-10-30T14:01:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 231.01666666666668,
+          "remaining_reference_hours": 8.98333333333332
+        },
+        {
+          "observed_at": "2026-10-30T16:01:00+00:00",
+          "temperature_c": 16.0,
+          "equivalent_age_hours": 235.61146008665483,
+          "remaining_reference_hours": 4.38853991334517
+        },
+        {
+          "observed_at": "2026-10-30T16:01:00+00:00",
+          "temperature_c": 4.0,
+          "equivalent_age_hours": 235.61146008665483,
+          "remaining_reference_hours": 4.38853991334517
+        }
+      ],
+      "sensitivity": {
+        "lower_hours": 1.5089476956402166,
+        "upper_hours": 5.729918019740239
+      }
+    },
+    "rescue": {
+      "triggered": true,
+      "reason": "rescue_recommended",
+      "original_required_hours": 4.052,
+      "receiving_buffer_hours": 0.5,
+      "proposal_id": "rescue-fa842f41410d71d4",
+      "proposal_hash": "fa842f41410d71d4edbde3a583ff00418f337243a78ee4a90aef85e2a4832c2b",
+      "proposed_destination_id": "D11",
+      "plan_summary": {
+        "assignments_count": 12,
+        "total_logistics_cost": 2714,
+        "unmet_demand_kg": 2700,
+        "constraint_violations": 0,
+        "solver_status": "OPTIMAL"
+      },
+      "options": [
+        {
+          "destination_id": "D06",
+          "destination_name": "Columbia destination 6 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.09138073159230335,
+          "distance_km": 5.939747553499719,
+          "quality_margin_hours": 0.917566964,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.38904895518336,
+                38.95136030760434
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D11",
+          "destination_name": "Columbia destination 11 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.15424798985777685,
+          "distance_km": 10.026119340755496,
+          "quality_margin_hours": 0.854699706,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42311998024472,
+                38.93146933444767
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D01",
+          "destination_name": "Columbia destination 1 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.18656262534375553,
+          "distance_km": 12.12657064734411,
+          "quality_margin_hours": 0.82238507,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.42686574587837,
+                38.90267193182352
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D13",
+          "destination_name": "Jefferson City destination 13 (simulated)",
+          "kind": "destination",
+          "eligible": true,
+          "dispatchable": true,
+          "duration_hours": 0.9209844612536237,
+          "distance_km": 59.863989981485545,
+          "quality_margin_hours": 0.087963234,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.1123725861464,
+                38.557236985380534
+              ]
+            ]
+          },
+          "exclusion_reasons": []
+        },
+        {
+          "destination_id": "D03",
+          "destination_name": "Jefferson City destination 3 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.0310937323689016,
+          "distance_km": 67.02109260397862,
+          "quality_margin_hours": -0.022146037,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.16343117674066,
+                38.488262137080646
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D08",
+          "destination_name": "Jefferson City destination 8 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 1.072232252308398,
+          "distance_km": 69.69509640004588,
+          "quality_margin_hours": -0.063284557,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -92.0653270730273,
+                38.49622220403864
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D05",
+          "destination_name": "St. Louis destination 5 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.551644379813058,
+          "distance_km": 230.85688468784878,
+          "quality_margin_hours": -2.542696684,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.23742422131505,
+                38.653449031901474
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer"
+          ]
+        },
+        {
+          "destination_id": "D12",
+          "destination_name": "Kansas City destination 12 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.5770356641347125,
+          "distance_km": 232.5073181687563,
+          "quality_margin_hours": -2.568087968,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.48193223265045,
+                39.065121983593606
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D10",
+          "destination_name": "St. Louis destination 10 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.640899676773429,
+          "distance_km": 236.65847899027287,
+          "quality_margin_hours": -2.631951981,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.17073364580835,
+                38.70875453878441
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D15",
+          "destination_name": "St. Louis destination 15 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.7235983449278045,
+          "distance_km": 242.03389242030732,
+          "quality_margin_hours": -2.714650649,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -90.12823591139964,
+                38.67234711187459
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D07",
+          "destination_name": "Kansas City destination 7 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.8181785608502814,
+          "distance_km": 248.1816064552683,
+          "quality_margin_hours": -2.809230865,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.61661228995621,
+                39.16906599628995
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D02",
+          "destination_name": "Kansas City destination 2 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 3.8873532104988016,
+          "distance_km": 252.67795868242212,
+          "quality_margin_hours": -2.878405515,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -94.66668154137945,
+                39.09718904789093
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "DC2",
+          "destination_name": "Springfield DC (simulated)",
+          "kind": "dc",
+          "eligible": false,
+          "dispatchable": false,
+          "duration_hours": 4.060503428083064,
+          "distance_km": 263.93272282539914,
+          "quality_margin_hours": -3.051555732,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.2923,
+                37.209
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "Recipient acceptance is not confirmed in the planning inputs",
+            "Net receiving capacity is insufficient for the full load",
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D09",
+          "destination_name": "Springfield destination 9 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.1082292574003665,
+          "distance_km": 267.03490173102387,
+          "quality_margin_hours": -3.099281562,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.35980347726326,
+                37.208341126062955
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D04",
+          "destination_name": "Springfield destination 4 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.127938242414477,
+          "distance_km": 268.3159857569411,
+          "quality_margin_hours": -3.118990547,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.31616801496607,
+                37.18283988350218
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        },
+        {
+          "destination_id": "D14",
+          "destination_name": "Springfield destination 14 (simulated)",
+          "kind": "destination",
+          "eligible": false,
+          "dispatchable": true,
+          "duration_hours": 4.241206530946009,
+          "distance_km": 275.6784245114906,
+          "quality_margin_hours": -3.232258835,
+          "fallback": true,
+          "provenance": "Estimated haversine \u00d71.25 at 65 km/h plus chosen road delay; not road geometry or live traffic",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -92.3341,
+                38.9517
+              ],
+              [
+                -93.33488174845307,
+                37.13160149852107
+              ]
+            ]
+          },
+          "exclusion_reasons": [
+            "No positive quality/use-by margin after arrival, service and receiving buffer",
+            "Route does not shorten the original remaining planning duration"
+          ]
+        }
+      ],
+      "proposed_assignments": [
+        {
+          "id": "SH02",
+          "truck_id": "T02",
+          "lot_id": "L02",
+          "destination": "D02",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH03",
+          "truck_id": "T03",
+          "lot_id": "L03",
+          "destination": "D03",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH04",
+          "truck_id": "T04",
+          "lot_id": "L04",
+          "destination": "D04",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH05",
+          "truck_id": "T05",
+          "lot_id": "L05",
+          "destination": "D11",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH07",
+          "truck_id": "T07",
+          "lot_id": "L07",
+          "destination": "D07",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH12",
+          "truck_id": "T04",
+          "lot_id": "L12",
+          "destination": "D12",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH14",
+          "truck_id": "T06",
+          "lot_id": "L02",
+          "destination": "D14",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH15",
+          "truck_id": "T07",
+          "lot_id": "L03",
+          "destination": "D15",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH16",
+          "truck_id": "T08",
+          "lot_id": "L04",
+          "destination": "D01",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH21",
+          "truck_id": "T05",
+          "lot_id": "L09",
+          "destination": "D06",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH23",
+          "truck_id": "T07",
+          "lot_id": "L11",
+          "destination": "D08",
+          "quantity_kg": 400
+        },
+        {
+          "id": "SH24",
+          "truck_id": "T08",
+          "lot_id": "L12",
+          "destination": "D09",
+          "quantity_kg": 400
+        }
+      ]
+    },
+    "fefo": {
+      "status": "computed",
+      "feasible": true,
+      "solver_status": "OPTIMAL",
+      "changed_pick_lots": [
+        "L04",
+        "L05",
+        "L11",
+        "L12"
+      ],
+      "limitations": [
+        "FEFO and FIFO receive the same stock, demand, capacity, eligibility, quality-window and provided use-by constraints. FIFO is not permitted to ship held, recalled or unscored stock.",
+        "Remaining clocks must be projected hours at the declared FUTURE cargo-temperature assumption, not reference-temperature equivalent hours. The caller owns kinetic coverage and parameter provenance.",
+        "A modeled quality clock is not measured molecular freshness, a pathogen-growth estimate, food-safety clearance or authority to extend a manufacturer use-by limit.",
+        "The recommendation sequences one-wave picks; it does not create a warehouse labor timetable, reserve inventory, impose a hold or dispatch a truck.",
+        "Unselected inventory whose supplied quality clock ends within the chosen horizon is projected expiry exposure, not measured waste or an instruction to discard food.",
+        "A missing independent use-by clock is reported as missing; no actual manufacturer date is inferred from a simulated quality budget."
+      ],
+      "fifo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 1500.0,
+        "picks": [
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 44.331333333,
+            "rank": 1
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 48.914333333,
+            "rank": 2
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 45.538333333,
+            "rank": 3
+          },
+          {
+            "lot_id": "L12",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 45.649333333,
+            "rank": 4
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 56.796333333,
+            "rank": 5
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 55.952333333,
+            "rank": 6
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 52.875333333,
+            "rank": 7
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 56.829333333,
+            "rank": 8
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 53.259333333,
+            "rank": 9
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 56.892333333,
+            "rank": 10
+          },
+          {
+            "lot_id": "L11",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 55.911333333,
+            "rank": 11
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 20.959333333,
+            "rank": 12
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 20.538333333,
+            "rank": 13
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 24.802333333,
+            "rank": 14
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 21.079333333,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.431333333,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.165333333,
+            "rank": 17
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 32.062333333,
+            "rank": 18
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.259333333,
+            "rank": 19
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.096333333,
+            "rank": 20
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.855333333,
+            "rank": 21
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 36.237333333,
+            "rank": 22
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 40.868333333,
+            "rank": 23
+          }
+        ]
+      },
+      "fefo": {
+        "supplied_kg": 6400.0,
+        "unmet_demand_kg": 1100.0,
+        "estimated_expiry_waste_kg": 0.0,
+        "picks": [
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D01",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 1.321947696,
+            "rank": 1
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D11",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 1.354947696,
+            "rank": 2
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D13",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 0.587947696,
+            "rank": 3
+          },
+          {
+            "lot_id": "L05",
+            "warehouse_id": "DC1",
+            "destination_id": "D06",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 1.417947696,
+            "rank": 4
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 24.914333333,
+            "rank": 5
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D06",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 20.959333333,
+            "rank": 6
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D14",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 24.802333333,
+            "rank": 7
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D03",
+            "quantity_kg": 300.0,
+            "remaining_at_arrival_hours": 21.649333333,
+            "rank": 8
+          },
+          {
+            "lot_id": "L10",
+            "warehouse_id": "DC2",
+            "destination_id": "D09",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 24.868333333,
+            "rank": 9
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D03",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 31.952333333,
+            "rank": 10
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D05",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.431333333,
+            "rank": 11
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D07",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.165333333,
+            "rank": 12
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D09",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.875333333,
+            "rank": 13
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D15",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.259333333,
+            "rank": 14
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D02",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.096333333,
+            "rank": 15
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D04",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 28.855333333,
+            "rank": 16
+          },
+          {
+            "lot_id": "L09",
+            "warehouse_id": "DC1",
+            "destination_id": "D08",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 31.911333333,
+            "rank": 17
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D02",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.331333333,
+            "rank": 18
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D08",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 29.538333333,
+            "rank": 19
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D12",
+            "quantity_kg": 400.0,
+            "remaining_at_arrival_hours": 28.538333333,
+            "rank": 20
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D01",
+            "quantity_kg": 100.0,
+            "remaining_at_arrival_hours": 29.079333333,
+            "rank": 21
+          },
+          {
+            "lot_id": "L04",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 28.237333333,
+            "rank": 22
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D04",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 40.914333333,
+            "rank": 23
+          },
+          {
+            "lot_id": "L08",
+            "warehouse_id": "DC2",
+            "destination_id": "D07",
+            "quantity_kg": 200.0,
+            "remaining_at_arrival_hours": 36.237333333,
+            "rank": 24
+          }
+        ]
+      }
+    }
+  },
+  "fixture_provenance": "Explicit deterministic UI unit-test simulation. Snapshots produced by actual build_snapshot, kinetic helpers and OR-Tools; not operator observations or a validation of prospective skill. Frames manually use the replay contract; no database or provider calls. Only fields used by the UI transport contract are retained; numerical values are unchanged.",
+  "source_sha256": "f1944b69cf6be5ec818bfb23a56ae6517c862b7c9db24aa5b302b37b9e1581ab"
+}

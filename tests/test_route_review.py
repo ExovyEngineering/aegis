@@ -80,3 +80,28 @@ def test_partial_road_feed_requires_review_even_for_alternative_without_known_hi
 def test_estimated_fallback_requires_review_despite_complete_road_feed():
     result = review_routes(routing(fallback=True), incidents())
     assert all(r['review_required'] for r in result['alternatives'])
+
+
+@pytest.mark.parametrize('timestamp', [None, 'broken', '2026-10-28T12:00:00', '2099-01-01T00:00:00Z'])
+def test_unsupported_or_future_retrieval_does_not_count_as_fresh(timestamp):
+    feed = incidents()
+    feed['retrieved_at'] = timestamp
+    result = review_routes(routing(), feed)
+    assert result['stale']
+    assert all(row['review_required'] for row in result['alternatives'])
+
+
+def test_bad_event_geometry_is_counted_and_does_not_abort_other_events():
+    feed = incidents()
+    feed['incident_layers'][0]['payload']['features'].append({
+        'geometry': {'type': 'LineString', 'coordinates': [[-92, 39], 'broken']}, 'properties': {}})
+    result = review_routes(routing(), feed)
+    assert result['unusable_geometry_count'] == 1 and not result['coverage_complete']
+    assert len(result['alternatives'][0]['nearby_events']) == 1
+
+
+def test_bad_route_geometry_requires_review_without_inventing_a_route():
+    routes = routing()
+    routes['payload']['routes'][0]['geometry'] = {'type': 'LineString', 'coordinates': [[-92, 39], [float('nan'), 39]]}
+    result = review_routes(routes, incidents())
+    assert result['alternatives'][0]['review_required'] and not result['alternatives'][0]['nearby_events']

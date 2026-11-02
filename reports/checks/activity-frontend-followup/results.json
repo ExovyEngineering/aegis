@@ -1,0 +1,42 @@
+{
+  "scope": "Frontend after activity reopen/keyboard focus polish; prior full backend run retained separately",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "vitest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test"
+      ],
+      "checked_at": "2026-10-30T03:56:07.712713+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 28.774,
+      "tests_passed": 240,
+      "log": "reports/checks/activity-frontend-followup/vitest.txt",
+      "log_sha256": "a41390a16ff65c6a4b631a482254687fa2d0917b28867769b76c1d7e0bdb71fb"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "checked_at": "2026-10-30T03:56:36.508058+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 14.62,
+      "tests_passed": null,
+      "log": "reports/checks/activity-frontend-followup/frontend_build.txt",
+      "log_sha256": "2cd4d56c0f49c903d1e98c2c61b1628f5afeb7a3d5895e6cfa28748b32940789"
+    }
+  ],
+  "live_api_requests_included": false
+}

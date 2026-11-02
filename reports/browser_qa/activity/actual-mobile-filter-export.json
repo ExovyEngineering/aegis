@@ -1,0 +1,174 @@
+{
+  "scope": "Captured internal simulated-operations audit history",
+  "filters": {
+    "action": "dispatcher_instruction",
+    "shipment": ""
+  },
+  "pages": [
+    {
+      "available": true,
+      "generated_at": "2026-10-30T03:58:00.629542+00:00",
+      "read_only": true,
+      "operational_state_modified": false,
+      "records": [
+        {
+          "id": 66,
+          "timestamp": "2026-10-30T03:57:56.670838+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.670838+00:00",
+          "actor": "Activity QA dispatcher",
+          "action": "dispatcher_instruction",
+          "action_label": "Dispatcher instruction",
+          "summary": "A versioned dispatcher instruction was recorded. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "actor": "Activity QA dispatcher",
+            "reason": "Exercise recorded instruction and acknowledgment in isolated parked use",
+            "instruction": "Remain safely parked for the isolated QA review; no automatic reroute.",
+            "expected_instruction_revision": 0,
+            "expected_network_revision": 53,
+            "shipment_id": "SH03",
+            "instruction_revision": 2
+          },
+          "payload_error": null,
+          "payload_sha256": "64b25b68583d22d04bb30b1f47a28e209a26d4cf3fc521bb32f1685a96bb85d6",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 328,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "dispatch",
+          "citation": {
+            "label": "Internal audit row 66",
+            "path": "audit/66"
+          }
+        },
+        {
+          "id": 31,
+          "timestamp": "2026-10-30T03:29:08.207715+00:00",
+          "timestamp_raw": "2026-10-30T03:29:08.207715+00:00",
+          "actor": "Activity QA dispatcher",
+          "action": "dispatcher_instruction",
+          "action_label": "Dispatcher instruction",
+          "summary": "A versioned dispatcher instruction was recorded. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "actor": "Activity QA dispatcher",
+            "reason": "Exercise recorded instruction and acknowledgment in isolated parked use",
+            "instruction": "Remain safely parked for the isolated QA review; no automatic reroute.",
+            "expected_instruction_revision": 0,
+            "expected_network_revision": 26,
+            "shipment_id": "SH03",
+            "instruction_revision": 1
+          },
+          "payload_error": null,
+          "payload_sha256": "7e1f185c248d4a92873d5d4e1148c1a86aedfbc4d671450ef0e7948e334b3805",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 328,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "dispatch",
+          "citation": {
+            "label": "Internal audit row 31",
+            "path": "audit/31"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "event",
+          "label": "Simulated event"
+        },
+        {
+          "id": "reset",
+          "label": "Simulation reset"
+        },
+        {
+          "id": "approve",
+          "label": "Plan approval"
+        },
+        {
+          "id": "acknowledge",
+          "label": "Trip acknowledgment"
+        },
+        {
+          "id": "incident",
+          "label": "Driver incident report"
+        },
+        {
+          "id": "incident_review",
+          "label": "Incident review"
+        },
+        {
+          "id": "lot_hold",
+          "label": "Lot hold"
+        },
+        {
+          "id": "lot_release",
+          "label": "Lot release"
+        },
+        {
+          "id": "dispatcher_instruction",
+          "label": "Dispatcher instruction"
+        },
+        {
+          "id": "instruction_acknowledge",
+          "label": "Instruction acknowledgment"
+        },
+        {
+          "id": "targeted_verification_review",
+          "label": "Targeted verification review"
+        },
+        {
+          "id": "driver_focus",
+          "label": "Parked-use status"
+        },
+        {
+          "id": "driver_quick_report",
+          "label": "Driver quick-report link"
+        },
+        {
+          "id": "save_planning_project",
+          "label": "Planning project saved"
+        },
+        {
+          "id": "update_planning_project",
+          "label": "Planning project updated"
+        },
+        {
+          "id": "archive_planning_project",
+          "label": "Planning project archived"
+        },
+        {
+          "id": "rehearsal_start",
+          "label": "Rehearsal started"
+        },
+        {
+          "id": "rehearsal_checkpoint",
+          "label": "Rehearsal checkpoint"
+        },
+        {
+          "id": "rehearsal_finish",
+          "label": "Rehearsal finished"
+        }
+      ],
+      "snapshot_id": "4cd2688cdc8a108f5fe984ddf74f3dcae3f8a44cc91e29e10bca7c76c4cd30fb",
+      "snapshot_latest_id": 70,
+      "total_matching": 2,
+      "returned_records": 2,
+      "next_cursor": null,
+      "filters": {
+        "action": "dispatcher_instruction",
+        "shipment_id": null
+      },
+      "limitations": [
+        "Internal local audit records for simulated operations. Actor names are self-declared, not authenticated identities; this is not an immutable or tamper-proof ledger.",
+        "The history is incomplete: route requests, scenario recomputation, source refresh, proposal creation and unsaved route calculations do not currently create audit entries. Absence is not proof that a button was unused.",
+        "Summaries describe recorded actions only. Historical assignment counts, before/after values, resulting revisions or safety findings are not invented when absent from the saved payload.",
+        "Shipment filtering matches only a valid explicit top-level shipment_id in a readable payload. It does not infer nested or lot/truck/global approval relationships, so related activity may be excluded.",
+        "A driver quick report can create both an incident row and a quick-report link. Audit row counts are not counts of independent incidents or completed deliveries.",
+        "A captured page is not a live update. Newer audit IDs stay outside paged snapshots; editing or deleting captured rows requires reloading. Oversized payloads are represented only by their bounded prefix, size and explicit error."
+      ]
+    }
+  ],
+  "read_only": true,
+  "operational_state_modified": false
+}

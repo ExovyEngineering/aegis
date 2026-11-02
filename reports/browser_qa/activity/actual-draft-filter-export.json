@@ -1,0 +1,782 @@
+{
+  "scope": "Captured internal simulated-operations audit history",
+  "filters": {
+    "action": "",
+    "shipment": ""
+  },
+  "pages": [
+    {
+      "available": true,
+      "generated_at": "2026-10-30T03:57:57.676096+00:00",
+      "read_only": true,
+      "operational_state_modified": false,
+      "records": [
+        {
+          "id": 69,
+          "timestamp": null,
+          "timestamp_raw": "2026-10-29 20:00:00",
+          "actor": "Injected QA fixture; not a human action",
+          "action": "qa_fixture_oversized_payload",
+          "action_label": "Unrecognized recorded action",
+          "summary": "An unrecognized local audit action was recorded; inspect its raw metadata and payload. Detailed payload is unavailable; historical effects are not reconstructed.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": null,
+          "payload_error": "Payload exceeds the 32768-byte inspection bound; full bytes were not read",
+          "payload_sha256": null,
+          "payload_prefix_sha256": "76614ff5d2a688bf59f0f2615cd32c6a4183791c1d69ef5bfa702ecae55a92a0",
+          "payload_bytes": 33015,
+          "metadata_errors": [
+            "Timestamp is invalid or lacks an explicit time zone; original text is preserved separately"
+          ],
+          "explicit_shipment_id": null,
+          "suggested_view": null,
+          "citation": {
+            "label": "Internal audit row 69",
+            "path": "audit/69"
+          }
+        },
+        {
+          "id": 68,
+          "timestamp": null,
+          "timestamp_raw": "2026-10-29 20:00:00",
+          "actor": "Injected QA fixture; not a human action",
+          "action": "qa_fixture_corrupt_payload",
+          "action_label": "Unrecognized recorded action",
+          "summary": "An unrecognized local audit action was recorded; inspect its raw metadata and payload. Detailed payload is unavailable; historical effects are not reconstructed.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": null,
+          "payload_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+          "payload_sha256": "f1dec6e9ee608550bd1c39ff2b90134059bac5d02e4e78f6410aed2fbd870bd0",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 9,
+          "metadata_errors": [
+            "Timestamp is invalid or lacks an explicit time zone; original text is preserved separately"
+          ],
+          "explicit_shipment_id": null,
+          "suggested_view": null,
+          "citation": {
+            "label": "Internal audit row 68",
+            "path": "audit/68"
+          }
+        },
+        {
+          "id": 67,
+          "timestamp": "2026-10-30T03:57:56.681459+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.681459+00:00",
+          "actor": "simulated driver",
+          "action": "instruction_acknowledge",
+          "action_label": "Instruction acknowledgment",
+          "summary": "A simulated driver instruction acknowledgment was recorded. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "shipment_id": "SH03",
+            "instruction_revision": 2
+          },
+          "payload_error": null,
+          "payload_sha256": "eea0f69290945b1b26d82cdcb10db4aac8b21db5f0e27bd71e5298fa5d637bd1",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 50,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "drive",
+          "citation": {
+            "label": "Internal audit row 67",
+            "path": "audit/67"
+          }
+        },
+        {
+          "id": 66,
+          "timestamp": "2026-10-30T03:57:56.670838+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.670838+00:00",
+          "actor": "Activity QA dispatcher",
+          "action": "dispatcher_instruction",
+          "action_label": "Dispatcher instruction",
+          "summary": "A versioned dispatcher instruction was recorded. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "actor": "Activity QA dispatcher",
+            "reason": "Exercise recorded instruction and acknowledgment in isolated parked use",
+            "instruction": "Remain safely parked for the isolated QA review; no automatic reroute.",
+            "expected_instruction_revision": 0,
+            "expected_network_revision": 53,
+            "shipment_id": "SH03",
+            "instruction_revision": 2
+          },
+          "payload_error": null,
+          "payload_sha256": "64b25b68583d22d04bb30b1f47a28e209a26d4cf3fc521bb32f1685a96bb85d6",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 328,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "dispatch",
+          "citation": {
+            "label": "Internal audit row 66",
+            "path": "audit/66"
+          }
+        },
+        {
+          "id": 65,
+          "timestamp": "2026-10-30T03:57:56.660772+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.660772+00:00",
+          "actor": "simulated driver",
+          "action": "driver_quick_report",
+          "action_label": "Driver quick-report link",
+          "summary": "A quick-report link to an incident record was recorded; it is not an additional independent incident. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "truck_id": "T03",
+            "shipment_id": "SH03",
+            "kind": "road_delay",
+            "incident_id": "d3ea455c-2506-4f97-bb99-4768d78c379f"
+          },
+          "payload_error": null,
+          "payload_sha256": "daf4df1cdad5610369ae2e0d8a8d3d5191b5734e975107355604196616020a1d",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 119,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "dispatch",
+          "citation": {
+            "label": "Internal audit row 65",
+            "path": "audit/65"
+          }
+        },
+        {
+          "id": 64,
+          "timestamp": "2026-10-30T03:57:56.660667+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.660667+00:00",
+          "actor": "simulated driver",
+          "action": "incident",
+          "action_label": "Driver incident report",
+          "summary": "A simulated driver incident report was recorded for review. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "incident_id": "d3ea455c-2506-4f97-bb99-4768d78c379f",
+            "shipment_id": "SH03",
+            "description": "Road or delivery delay reported while parked. Simulated operational quick report; dispatcher review required."
+          },
+          "payload_error": null,
+          "payload_sha256": "35ad45335f0902454d65eb8e0d42b935bc45ee3cac9c6ff446d3dadc161bbaf0",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 206,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "dispatch",
+          "citation": {
+            "label": "Internal audit row 64",
+            "path": "audit/64"
+          }
+        },
+        {
+          "id": 63,
+          "timestamp": "2026-10-30T03:57:56.651758+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.651758+00:00",
+          "actor": "simulated driver",
+          "action": "acknowledge",
+          "action_label": "Trip acknowledgment",
+          "summary": "A simulated driver trip acknowledgment was recorded. Explicit shipment: SH03.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "shipment_id": "SH03"
+          },
+          "payload_error": null,
+          "payload_sha256": "45c970ca8cd8e651696c796efd99a3dc93bd28571b50a1615ce27fe7b5fb9c15",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 23,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH03",
+          "suggested_view": "drive",
+          "citation": {
+            "label": "Internal audit row 63",
+            "path": "audit/63"
+          }
+        },
+        {
+          "id": 62,
+          "timestamp": "2026-10-30T03:57:56.643447+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.643447+00:00",
+          "actor": "simulated driver",
+          "action": "driver_focus",
+          "action_label": "Parked-use status",
+          "summary": "A self-declared driver interaction-mode change was recorded.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "truck_id": "T03",
+            "mode": "parked",
+            "version": 2,
+            "parked_until": "2026-10-30T04:07:56.642900+00:00",
+            "parked_confirmation": true,
+            "provenance": "Self-declared parked confirmation in a local simulated application; no vehicle-motion sensing or operating-system distraction prevention."
+          },
+          "payload_error": null,
+          "payload_sha256": "020d9b88368797d0cb14a685760750190f5f359e363fb9517415823e2a94be60",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 287,
+          "metadata_errors": [],
+          "explicit_shipment_id": null,
+          "suggested_view": "drive",
+          "citation": {
+            "label": "Internal audit row 62",
+            "path": "audit/62"
+          }
+        },
+        {
+          "id": 61,
+          "timestamp": "2026-10-30T03:57:56.607232+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.607232+00:00",
+          "actor": "Activity QA dispatcher",
+          "action": "approve",
+          "action_label": "Plan approval",
+          "summary": "A simulated plan approval was recorded.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "actor": "Activity QA dispatcher",
+            "reason": "Explicit isolated activity-history verification; modeled constraints reviewed",
+            "proposal_id": "896b6a6a-ccd3-4829-8f4e-4194ef4ae0dc",
+            "scenario": "A"
+          },
+          "payload_error": null,
+          "payload_sha256": "826f458495ad9ccde5d1b55f061ffb0bd0a6af38fadb76803023daebae059521",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 198,
+          "metadata_errors": [],
+          "explicit_shipment_id": null,
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 61",
+            "path": "audit/61"
+          }
+        },
+        {
+          "id": 60,
+          "timestamp": "2026-10-30T03:57:56.573448+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.573448+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 60",
+            "path": "audit/60"
+          }
+        },
+        {
+          "id": 59,
+          "timestamp": "2026-10-30T03:57:56.564020+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.564020+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 59",
+            "path": "audit/59"
+          }
+        },
+        {
+          "id": 58,
+          "timestamp": "2026-10-30T03:57:56.554747+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.554747+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 58",
+            "path": "audit/58"
+          }
+        },
+        {
+          "id": 57,
+          "timestamp": "2026-10-30T03:57:56.544998+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.544998+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 57",
+            "path": "audit/57"
+          }
+        },
+        {
+          "id": 56,
+          "timestamp": "2026-10-30T03:57:56.534598+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.534598+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 56",
+            "path": "audit/56"
+          }
+        },
+        {
+          "id": 55,
+          "timestamp": "2026-10-30T03:57:56.524527+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.524527+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 55",
+            "path": "audit/55"
+          }
+        },
+        {
+          "id": 54,
+          "timestamp": "2026-10-30T03:57:56.512238+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.512238+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 54",
+            "path": "audit/54"
+          }
+        },
+        {
+          "id": 53,
+          "timestamp": "2026-10-30T03:57:56.500270+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.500270+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 53",
+            "path": "audit/53"
+          }
+        },
+        {
+          "id": 52,
+          "timestamp": "2026-10-30T03:57:56.489871+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.489871+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 52",
+            "path": "audit/52"
+          }
+        },
+        {
+          "id": 51,
+          "timestamp": "2026-10-30T03:57:56.478689+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.478689+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 51",
+            "path": "audit/51"
+          }
+        },
+        {
+          "id": 50,
+          "timestamp": "2026-10-30T03:57:56.467656+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.467656+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 50",
+            "path": "audit/50"
+          }
+        },
+        {
+          "id": 49,
+          "timestamp": "2026-10-30T03:57:56.456471+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.456471+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 49",
+            "path": "audit/49"
+          }
+        },
+        {
+          "id": 48,
+          "timestamp": "2026-10-30T03:57:56.443816+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.443816+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 48",
+            "path": "audit/48"
+          }
+        },
+        {
+          "id": 47,
+          "timestamp": "2026-10-30T03:57:56.431453+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.431453+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 47",
+            "path": "audit/47"
+          }
+        },
+        {
+          "id": 46,
+          "timestamp": "2026-10-30T03:57:56.418134+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.418134+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH11.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH11",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "e6c27b9dc9a8301acb5f113873eb153823ae01d889279c66d5a788aa08978885",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH11",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 46",
+            "path": "audit/46"
+          }
+        },
+        {
+          "id": 45,
+          "timestamp": "2026-10-30T03:57:56.405852+00:00",
+          "timestamp_raw": "2026-10-30T03:57:56.405852+00:00",
+          "actor": "simulator",
+          "action": "event",
+          "action_label": "Simulated event",
+          "summary": "A simulator event was recorded. Explicit shipment: SH12.",
+          "scope": "Recorded local simulated activity; current operational state may differ",
+          "payload": {
+            "event": "temperature_excursion",
+            "shipment_id": "SH12",
+            "expected_network_revision": null,
+            "preview_id": null
+          },
+          "payload_error": null,
+          "payload_sha256": "afe48977995397850eff04c04b3f4573b7c71c173a2bff42318a874b7fb4574f",
+          "payload_prefix_sha256": null,
+          "payload_bytes": 112,
+          "metadata_errors": [],
+          "explicit_shipment_id": "SH12",
+          "suggested_view": "command",
+          "citation": {
+            "label": "Internal audit row 45",
+            "path": "audit/45"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "event",
+          "label": "Simulated event"
+        },
+        {
+          "id": "reset",
+          "label": "Simulation reset"
+        },
+        {
+          "id": "approve",
+          "label": "Plan approval"
+        },
+        {
+          "id": "acknowledge",
+          "label": "Trip acknowledgment"
+        },
+        {
+          "id": "incident",
+          "label": "Driver incident report"
+        },
+        {
+          "id": "incident_review",
+          "label": "Incident review"
+        },
+        {
+          "id": "lot_hold",
+          "label": "Lot hold"
+        },
+        {
+          "id": "lot_release",
+          "label": "Lot release"
+        },
+        {
+          "id": "dispatcher_instruction",
+          "label": "Dispatcher instruction"
+        },
+        {
+          "id": "instruction_acknowledge",
+          "label": "Instruction acknowledgment"
+        },
+        {
+          "id": "targeted_verification_review",
+          "label": "Targeted verification review"
+        },
+        {
+          "id": "driver_focus",
+          "label": "Parked-use status"
+        },
+        {
+          "id": "driver_quick_report",
+          "label": "Driver quick-report link"
+        },
+        {
+          "id": "save_planning_project",
+          "label": "Planning project saved"
+        },
+        {
+          "id": "update_planning_project",
+          "label": "Planning project updated"
+        },
+        {
+          "id": "archive_planning_project",
+          "label": "Planning project archived"
+        },
+        {
+          "id": "rehearsal_start",
+          "label": "Rehearsal started"
+        },
+        {
+          "id": "rehearsal_checkpoint",
+          "label": "Rehearsal checkpoint"
+        },
+        {
+          "id": "rehearsal_finish",
+          "label": "Rehearsal finished"
+        }
+      ],
+      "snapshot_id": "6de0d075bacccecc46c06863fbc30b4a1abfea3c56009786cfa3071561fc0f83",
+      "snapshot_latest_id": 69,
+      "total_matching": 69,
+      "returned_records": 25,
+      "next_cursor": "eyJjaGVja3N1bSI6ImFlNTNiZDg4NzM5YTA4ZDNkZTRiZTAxNDE2MzczOWI3MWY5ZjEwMTgwN2EwNTBiMTQzMzk4OTQ5YTcwY2I1N2MiLCJjb250ZXh0Ijp7ImFjdGlvbiI6bnVsbCwiYmVmb3JlX2lkIjo0NSwic2hpcG1lbnRfaWQiOm51bGwsInNuYXBzaG90X2lkIjoiNmRlMGQwNzViYWNjY2VjYzQ2YzA2ODYzZmJjMzBiNGExYWJmZWEzYzU2MDA5Nzg2Y2ZhMzA3MTU2MWZjMGY4MyIsInNuYXBzaG90X2xhdGVzdF9pZCI6NjksInYiOjF9fQ",
+      "filters": {
+        "action": null,
+        "shipment_id": null
+      },
+      "limitations": [
+        "Internal local audit records for simulated operations. Actor names are self-declared, not authenticated identities; this is not an immutable or tamper-proof ledger.",
+        "The history is incomplete: route requests, scenario recomputation, source refresh, proposal creation and unsaved route calculations do not currently create audit entries. Absence is not proof that a button was unused.",
+        "Summaries describe recorded actions only. Historical assignment counts, before/after values, resulting revisions or safety findings are not invented when absent from the saved payload.",
+        "Shipment filtering matches only a valid explicit top-level shipment_id in a readable payload. It does not infer nested or lot/truck/global approval relationships, so related activity may be excluded.",
+        "A driver quick report can create both an incident row and a quick-report link. Audit row counts are not counts of independent incidents or completed deliveries.",
+        "A captured page is not a live update. Newer audit IDs stay outside paged snapshots; editing or deleting captured rows requires reloading. Oversized payloads are represented only by their bounded prefix, size and explicit error."
+      ]
+    }
+  ],
+  "read_only": true,
+  "operational_state_modified": false
+}

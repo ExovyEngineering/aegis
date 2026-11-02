@@ -1,0 +1,3 @@
+C:\Users\ericp\Downloads\NAFSI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"passed": true, "checks": 15, "error": null, "operator_database_modified": false}

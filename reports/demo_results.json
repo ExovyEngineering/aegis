@@ -1,5 +1,9 @@
 {
   "mode": "Accelerated scripted validation of five-minute demo narrative; no real shipments or five-minute wall-clock claim",
+  "simulation": true,
+  "passed": true,
+  "started_at": "2026-11-02T17:04:17.593558+00:00",
+  "human_timed_rehearsal": false,
   "seed": 20261026,
   "baseline": [
     {
@@ -80,14 +84,16 @@
   "approved_assignments": 13,
   "acknowledgment_recorded": true,
   "incident_recorded": true,
+  "parked_confirmation_recorded": true,
+  "contextual_network_revision": 3,
   "audit_actions": [
     "incident",
     "acknowledge",
+    "driver_focus",
     "approve",
     "event",
     "event"
   ],
-  "production_database_modified": false,
   "timeline": [
     {
       "minute": 0,
@@ -103,11 +109,47 @@
     },
     {
       "minute": 3,
-      "action": "Compare A\u2013D response scenarios; inspect constraints"
+      "action": "Compare A-D response scenarios; inspect constraints"
     },
     {
       "minute": 4,
-      "action": "Dispatcher approval, driver acknowledgment and audit trail"
+      "action": "Dispatcher approval, parked driver acknowledgment and audit trail"
     }
-  ]
+  ],
+  "production_database_modified": false,
+  "production_preservation_verified": true,
+  "production_database_fingerprints_before": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "production_database_fingerprints_after": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "production_preservation_method": "SHA-256 and byte length of original configured and canonical operator SQLite files plus -wal/-shm/-journal sidecars, before/after. Observed changes are not attributed to a particular process.",
+  "finished_at": "2026-11-02T17:04:17.933067+00:00"
 }

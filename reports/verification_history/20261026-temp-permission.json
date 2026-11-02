@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-10-26T22:26:56.262873+00:00",
+  "finished_at": "2026-10-26T22:27:33.143792+00:00",
+  "all_passed": false,
+  "checks": [
+    {
+      "name": "pytest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "checked_at": "2026-10-26T22:26:56.265891+00:00",
+      "exit_code": 1,
+      "passed": false,
+      "duration_seconds": 19.492,
+      "tests_passed": 124,
+      "log": "reports/checks/pytest.txt",
+      "log_sha256": "05ba78ba7f8398d6ff33452a3f0a254dc92868014bbf687947457b3822e5659d"
+    },
+    {
+      "name": "vitest",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "test"
+      ],
+      "checked_at": "2026-10-26T22:27:15.811138+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 6.223,
+      "tests_passed": 30,
+      "log": "reports/checks/vitest.txt",
+      "log_sha256": "940f73c82471818ae1a354e44de03d66b1d9e3b89c52637954901873be45f525"
+    },
+    {
+      "name": "frontend_build",
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\node.exe",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\package\\bin\\npm-cli.js",
+        "--prefix",
+        "frontend",
+        "run",
+        "build"
+      ],
+      "checked_at": "2026-10-26T22:27:22.052749+00:00",
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 11.074,
+      "tests_passed": null,
+      "log": "reports/checks/frontend_build.txt",
+      "log_sha256": "f1bb9b16a29f50778db7b01b4684cc8f4379a720813bd867992a483119dfe5bb"
+    }
+  ],
+  "live_api_requests_included": false,
+  "browser_checks_included": false,
+  "note": "Local executed commands, not a claim of GitHub CI or browser completion. Previous reports remain separately dated."
+}
