@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-01T22:05:37.216284-06:00",
+  "generated_at": "2026-11-02T11:09:29.146469-06:00",
   "title": "AEGIS Master User Guide",
   "pdf": "reports/aegis_master_guide.pdf",
   "markdown": "docs/aegis_master_guide.md",
   "html": "reports/aegis_master_guide.html",
-  "sha256": "546e1470e8a42c62ff959d0ada2622ecce59f857f192aeccf5013cc82b4230d4",
-  "bytes": 503760,
+  "sha256": "82e2a898ea5d96a7bdb681ac1a886f979abaabc8599e94b8ca390eefd2db7288",
+  "bytes": 503778,
   "pages": 83,
   "chapters": [
     {

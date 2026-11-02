@@ -1,8 +1,8 @@
 {
   "archive": "artifacts\\AEGIS-Final-Build.zip",
-  "bytes": 36891665,
-  "sha256": "2425dc08b1ac05ae74f2baf7485bc72839a3a5e5fb35d3db63f843add8afdefd",
-  "file_count": 1046,
+  "bytes": 37500848,
+  "sha256": "fd4a918dd3ed70432ed0de4ab73e739769c9927441ea42841d794cc9f6187207",
+  "file_count": 1071,
   "draft": true,
   "excluded": [
     "original supplied downloads",

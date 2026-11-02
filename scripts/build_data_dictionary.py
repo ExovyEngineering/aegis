@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 import hashlib
 from io import BytesIO
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 import pandas as pd
 
@@ -150,6 +150,26 @@ def read_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def recorded_relative_parts(value: str) -> tuple[str, ...]:
+    """Interpret saved relative paths independently of the producing OS."""
+    if not isinstance(value, str) or not value:
+        raise ValueError("Recorded input path must be a nonempty relative path")
+    # Windows-written reports use backslashes; PureWindowsPath accepts both
+    # separators without treating a backslash as a literal POSIX filename.
+    relative = PureWindowsPath(value)
+    if relative.anchor or ".." in relative.parts or not relative.parts:
+        raise ValueError("Recorded input path must stay relative to the project")
+    return relative.parts
+
+
+def recorded_input_path(root: Path, value: str) -> Path:
+    root = Path(root).resolve()
+    path = root.joinpath(*recorded_relative_parts(value)).resolve()
+    if not path.is_relative_to(root):
+        raise ValueError("Recorded input path resolves outside the project")
+    return path
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-root", type=Path, default=ROOT)
@@ -241,7 +261,7 @@ def main() -> None:
 
     station_frames, station_inputs = [], []
     for station in noaa["stations"]:
-        path = ROOT / station["raw_response_path"]
+        path = recorded_input_path(ROOT, station["raw_response_path"])
         payload, digest = snapshot(path)
         if digest != station["sha256"]:
             raise ValueError(f"NOAA {station['station_id']}: raw bytes differ from coverage report")

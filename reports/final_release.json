@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-02T04:02:16.093978+00:00",
+  "started_at": "2026-11-02T17:03:46.008509+00:00",
   "passed": true,
   "steps": [
     {
@@ -8,8 +8,8 @@
         "scripts/train_integrated_study.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 8.758,
-      "log": "reports/checks/final-release-20261102T040216Z/01-train_integrated_study.txt"
+      "duration_seconds": 24.47,
+      "log": "reports/checks/final-release-20261102T170346Z/01-train_integrated_study.txt"
     },
     {
       "command": [
@@ -17,8 +17,8 @@
         "scripts/run_decision_study.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 1.357,
-      "log": "reports/checks/final-release-20261102T040216Z/02-run_decision_study.txt"
+      "duration_seconds": 1.463,
+      "log": "reports/checks/final-release-20261102T170346Z/02-run_decision_study.txt"
     },
     {
       "command": [
@@ -26,8 +26,8 @@
         "scripts/build_data_dictionary.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 1.024,
-      "log": "reports/checks/final-release-20261102T040216Z/03-build_data_dictionary.txt"
+      "duration_seconds": 1.056,
+      "log": "reports/checks/final-release-20261102T170346Z/03-build_data_dictionary.txt"
     },
     {
       "command": [
@@ -35,8 +35,8 @@
         "scripts/render_one_health_system.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 1.787,
-      "log": "reports/checks/final-release-20261102T040216Z/04-render_one_health_system.txt"
+      "duration_seconds": 1.972,
+      "log": "reports/checks/final-release-20261102T170346Z/04-render_one_health_system.txt"
     },
     {
       "command": [
@@ -44,8 +44,8 @@
         "scripts/build_team_statement.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 1.123,
-      "log": "reports/checks/final-release-20261102T040216Z/05-build_team_statement.txt"
+      "duration_seconds": 1.216,
+      "log": "reports/checks/final-release-20261102T170346Z/05-build_team_statement.txt"
     },
     {
       "command": [
@@ -53,8 +53,8 @@
         "scripts/demo_run.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 1.909,
-      "log": "reports/checks/final-release-20261102T040216Z/06-demo_run.txt"
+      "duration_seconds": 1.849,
+      "log": "reports/checks/final-release-20261102T170346Z/06-demo_run.txt"
     },
     {
       "command": [
@@ -62,8 +62,8 @@
         "scripts/freshness_demo.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 3.043,
-      "log": "reports/checks/final-release-20261102T040216Z/07-freshness_demo.txt"
+      "duration_seconds": 3.134,
+      "log": "reports/checks/final-release-20261102T170346Z/07-freshness_demo.txt"
     },
     {
       "command": [
@@ -71,8 +71,8 @@
         "scripts/verify_project.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 146.132,
-      "log": "reports/checks/final-release-20261102T040216Z/08-verify_project.txt"
+      "duration_seconds": 266.835,
+      "log": "reports/checks/final-release-20261102T170346Z/08-verify_project.txt"
     },
     {
       "command": [
@@ -80,8 +80,8 @@
         "scripts/build_submission_report.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 2.438,
-      "log": "reports/checks/final-release-20261102T040216Z/09-build_submission_report.txt"
+      "duration_seconds": 3.486,
+      "log": "reports/checks/final-release-20261102T170346Z/09-build_submission_report.txt"
     },
     {
       "command": [
@@ -89,8 +89,8 @@
         "scripts/build_project_brief.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 3.087,
-      "log": "reports/checks/final-release-20261102T040216Z/10-build_project_brief.txt"
+      "duration_seconds": 3.566,
+      "log": "reports/checks/final-release-20261102T170346Z/10-build_project_brief.txt"
     },
     {
       "command": [
@@ -98,8 +98,8 @@
         "scripts/build_master_guide.py"
       ],
       "exit_code": 0,
-      "duration_seconds": 30.636,
-      "log": "reports/checks/final-release-20261102T040216Z/11-build_master_guide.txt"
+      "duration_seconds": 34.184,
+      "log": "reports/checks/final-release-20261102T170346Z/11-build_master_guide.txt"
     },
     {
       "command": [
@@ -109,8 +109,8 @@
         "reports/browser_qa/final_submission/print-render"
       ],
       "exit_code": 0,
-      "duration_seconds": 10.52,
-      "log": "reports/checks/final-release-20261102T040216Z/12-build_final_handoff.txt"
+      "duration_seconds": 8.761,
+      "log": "reports/checks/final-release-20261102T170346Z/12-build_final_handoff.txt"
     },
     {
       "command": [
@@ -120,8 +120,8 @@
         "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip"
       ],
       "exit_code": 0,
-      "duration_seconds": 5.146,
-      "log": "reports/checks/final-release-20261102T040216Z/13-package_submission.txt"
+      "duration_seconds": 18.671,
+      "log": "reports/checks/final-release-20261102T170346Z/13-package_submission.txt"
     },
     {
       "command": [
@@ -131,8 +131,8 @@
         "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip"
       ],
       "exit_code": 0,
-      "duration_seconds": 11.844,
-      "log": "reports/checks/final-release-20261102T040216Z/14-verify_package.txt"
+      "duration_seconds": 11.991,
+      "log": "reports/checks/final-release-20261102T170346Z/14-verify_package.txt"
     }
   ],
   "archive": "artifacts\\AEGIS-Final-Build.zip",
@@ -173,5 +173,5 @@
     }
   },
   "operator_preserved": true,
-  "finished_at": "2026-11-02T04:06:04.895953+00:00"
+  "finished_at": "2026-11-02T17:10:08.666510+00:00"
 }

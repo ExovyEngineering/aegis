@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-01T22:05:37.706455-06:00",
+  "generated_at": "2026-11-02T11:09:29.502230-06:00",
   "title": "AEGIS Final Submission Guide",
   "pdf": "reports/final_submission_guide.pdf",
   "markdown": "reports/final_submission_guide.md",
   "html": "reports/final_submission_guide.html",
-  "sha256": "4ad8bd87c6dc2a29e950e7fff3cf4dbaa46ba515c070e74f05cba1d8c142ec74",
-  "bytes": 237530,
+  "sha256": "795bf4a42d26fb71d39060c442a8b5e0d173734c83e10431f1927bbc82f1b1f7",
+  "bytes": 237543,
   "pages": 17,
   "chapters": [
     {
@@ -72,7 +72,7 @@
   "inputs": [
     {
       "path": "reports/integrated_model_evaluation.json",
-      "sha256": "1cf0d11e5171bbd2d35f0d6e7bbf7ddbe2957c988599ae07757a8f0b67a5d5e5"
+      "sha256": "be715521e5b82fddd7fae63162c990ff1d1858d7737aa8c818594b087fa5e575"
     },
     {
       "path": "reports/decision_study.json",
@@ -80,11 +80,11 @@
     },
     {
       "path": "reports/source_provenance.json",
-      "sha256": "e582ac794c219de0ca8994188e634e3139c40bcdd99b9d8f3a8c9c0d31345845"
+      "sha256": "1ee2593b9b60d661a13b4eeae24c223bbf081c27eb417385e11b1b1f7eb2756c"
     },
     {
       "path": "reports/session_verification.json",
-      "sha256": "c604cad003d67c62eb452e099d99a25658714af59771b556dea0dc6c5f4fc4f9"
+      "sha256": "2f2db0f8f09e00ce672adcdda4202a3d760e213566d325adc71c6a29bb7bd6fb"
     },
     {
       "path": "docs/team_science_statement.md",

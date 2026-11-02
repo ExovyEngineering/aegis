@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-02T04:02:27.150319+00:00",
+  "generated_at": "2026-11-02T17:04:12.895427+00:00",
   "command": "python scripts/build_data_dictionary.py",
   "datasets": [
     {
@@ -377,7 +377,7 @@
   "artifact_sha256": {
     "dictionary_csv": "8fce5278b28c996026874708512357ddc870271541a16c18f950026b24e73e59",
     "provenance_csv": "20b637b90f5588c9f70b612406d562b96a40637ec697a9ba2d2f6d3d41589309",
-    "generator_script": "da09a6fc2f1f5b1054f078e8e28f9e5d22365f150df97332d43d3e8460038308"
+    "generator_script": "3c01e24252bdb456b1ff2d6b9723d60874ce037e2e5c12e46aed0b6e1dba2edf"
   },
   "scope": "Observed-schema inventory of derived evidence plus five report-selected original NOAA responses. No operator database, original supplied table, or model is changed.",
   "interpretation": [

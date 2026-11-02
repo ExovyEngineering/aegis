@@ -1,6 +1,6 @@
 # AEGIS Master User Guide
 
-Generated November 01, 2026 at 10:05 PM CT. Complete product handbook.
+Generated November 02, 2026 at 11:08 AM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
@@ -1561,13 +1561,13 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-11-02T04:05:01.211776+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-11-02T17:08:47.996965+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 1246 tests | Executed local command; see reports/checks/20261102T040235216068Z/pytest.txt |
-| vitest | PASS; 406 tests | Executed local command; see reports/checks/20261102T040235216068Z/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/20261102T040235216068Z/frontend_build.txt |
+| pytest | PASS; 1256 tests | Executed local command; see reports/checks/20261102T170421298785Z/pytest.txt |
+| vitest | PASS; 406 tests | Executed local command; see reports/checks/20261102T170421298785Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261102T170421298785Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 

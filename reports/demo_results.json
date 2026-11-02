@@ -2,7 +2,7 @@
   "mode": "Accelerated scripted validation of five-minute demo narrative; no real shipments or five-minute wall-clock claim",
   "simulation": true,
   "passed": true,
-  "started_at": "2026-11-02T04:02:31.614709+00:00",
+  "started_at": "2026-11-02T17:04:17.593558+00:00",
   "human_timed_rehearsal": false,
   "seed": 20261026,
   "baseline": [
@@ -151,5 +151,5 @@
     }
   },
   "production_preservation_method": "SHA-256 and byte length of original configured and canonical operator SQLite files plus -wal/-shm/-journal sidecars, before/after. Observed changes are not attributed to a particular process.",
-  "finished_at": "2026-11-02T04:02:31.938065+00:00"
+  "finished_at": "2026-11-02T17:04:17.933067+00:00"
 }

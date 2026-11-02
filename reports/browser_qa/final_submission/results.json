@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-02T04:06:53.369Z",
+  "checked_at": "2026-11-02T17:09:58.330Z",
   "base_url": "http://127.0.0.1:8072",
-  "expected_rehearsal_id": "4a3bedae-435a-4fea-9606-fbe2676861c6",
+  "expected_rehearsal_id": "8a801a9b-7dd3-4788-8f92-de2e87b5c77f",
   "scope": "Actual Chrome five-task cards, measured integrated study, simulated policy comparisons and final artifacts. Read-only new-feature scope; earlier operational QA remains separate.",
   "human_submission_verified": false,
   "genuine_kiro_execution_verified": false,
@@ -722,15 +722,15 @@
       "name": "guide.pdf",
       "url": "http://127.0.0.1:8072/api/challenge/artifacts/guide.pdf",
       "filename": "final_submission_guide.pdf",
-      "bytes": 237530,
-      "sha256": "4ad8bd87c6dc2a29e950e7fff3cf4dbaa46ba515c070e74f05cba1d8c142ec74"
+      "bytes": 237543,
+      "sha256": "795bf4a42d26fb71d39060c442a8b5e0d173734c83e10431f1927bbc82f1b1f7"
     },
     {
       "name": "readiness.json",
       "url": "http://127.0.0.1:8072/api/challenge/artifacts/readiness.json",
       "filename": "challenge_readiness.json",
       "bytes": 7200,
-      "sha256": "72f1f67f55d3fbd1132f3eccac54b288082d1fbd00e66018fd5577f335115ae2"
+      "sha256": "c8a3f2ab5b0e526e73e6877486bbc3ba9abf3316c80816e0b8708f45f0552144"
     },
     {
       "name": "dictionary.csv",
@@ -744,36 +744,36 @@
     {
       "name": "guide.pdf",
       "path": "reports/final_submission_guide.pdf",
-      "bytes": 237530,
-      "sha256": "4ad8bd87c6dc2a29e950e7fff3cf4dbaa46ba515c070e74f05cba1d8c142ec74",
+      "bytes": 237543,
+      "sha256": "795bf4a42d26fb71d39060c442a8b5e0d173734c83e10431f1927bbc82f1b1f7",
       "content_type": "application/pdf"
     },
     {
       "name": "guide.html",
       "path": "reports/final_submission_guide.html",
       "bytes": 626604,
-      "sha256": "08ac7d5b0a0edf8a3ced84d1f8679b17da8f4eef3d706d4e119483143621e182",
+      "sha256": "848bfb14204afdf859f4097630632757d41a58d0932c165f9d7202b1f29f6ade",
       "content_type": "text/html; charset=utf-8"
     },
     {
       "name": "guide.md",
       "path": "reports/final_submission_guide.md",
       "bytes": 21711,
-      "sha256": "fd10f64c429f2d10f3a23e1f5dffbb33a2632c77d9aebb246e13298833c6cf3b",
+      "sha256": "bf3e05eee9fd496251ae8f4179f5b5551f028cd889f8fa6e0deb4f682cff6875",
       "content_type": "text/markdown; charset=utf-8"
     },
     {
       "name": "readiness.json",
       "path": "reports/challenge_readiness.json",
       "bytes": 7200,
-      "sha256": "72f1f67f55d3fbd1132f3eccac54b288082d1fbd00e66018fd5577f335115ae2",
+      "sha256": "c8a3f2ab5b0e526e73e6877486bbc3ba9abf3316c80816e0b8708f45f0552144",
       "content_type": "application/json"
     },
     {
       "name": "integrated-model.json",
       "path": "reports/integrated_model_evaluation.json",
       "bytes": 48286,
-      "sha256": "1cf0d11e5171bbd2d35f0d6e7bbf7ddbe2957c988599ae07757a8f0b67a5d5e5",
+      "sha256": "be715521e5b82fddd7fae63162c990ff1d1858d7737aa8c818594b087fa5e575",
       "content_type": "application/json"
     },
     {
@@ -815,7 +815,7 @@
       "name": "team-science.pdf",
       "path": "reports/team_science_statement.pdf",
       "bytes": 32931,
-      "sha256": "ee2f8dff9646085684d2759ea69d05ca80fd6f15472c5ca1e16c1202b43034ae",
+      "sha256": "56f8b92c4dd4cba18341f29d50ca8517286f9846ad12b35fda3288f232a7a07b",
       "content_type": "application/pdf"
     },
     {
@@ -829,7 +829,7 @@
       "name": "provenance.json",
       "path": "reports/source_provenance.json",
       "bytes": 20517,
-      "sha256": "e582ac794c219de0ca8994188e634e3139c40bcdd99b9d8f3a8c9c0d31345845",
+      "sha256": "1ee2593b9b60d661a13b4eeae24c223bbf081c27eb417385e11b1b1f7eb2756c",
       "content_type": "application/json"
     }
   ],
@@ -1783,8 +1783,8 @@
     "mode": "isolated_rehearsal",
     "isolated": true,
     "offline": true,
-    "rehearsal_id": "4a3bedae-435a-4fea-9606-fbe2676861c6",
-    "database_relative_path": "data/rehearsals/4a3bedae-435a-4fea-9606-fbe2676861c6.sqlite",
+    "rehearsal_id": "8a801a9b-7dd3-4788-8f92-de2e87b5c77f",
+    "database_relative_path": "data/rehearsals/8a801a9b-7dd3-4788-8f92-de2e87b5c77f.sqlite",
     "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
   },
   "isolated_before": {
@@ -2562,5 +2562,5 @@
       "exists": false
     }
   },
-  "finished_at": "2026-11-02T04:07:05.706Z"
+  "finished_at": "2026-11-02T17:10:13.148Z"
 }

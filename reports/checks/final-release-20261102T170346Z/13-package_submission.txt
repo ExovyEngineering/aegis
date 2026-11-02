@@ -1,0 +1,16 @@
+{
+  "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip",
+  "bytes": 36910070,
+  "sha256": "8951c1e48682c7fded031faae13f8e612e93c1b03df35a0d5a567ffc9ae707b5",
+  "file_count": 1062,
+  "draft": true,
+  "excluded": [
+    "original supplied downloads",
+    "credentials and .env",
+    "operational SQLite databases",
+    "runtime/Kiro installations and account data",
+    "node_modules",
+    "logs"
+  ],
+  "uploaded": false
+}

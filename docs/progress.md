@@ -1,6 +1,30 @@
 # Progress and acceptance evidence
 
-Session date: November 1, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Latest session date: November 2, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+
+## Final portability correction (November 2)
+
+- The initial final-build GitHub run failed one data-dictionary export test on
+  Linux while 1,249 backend tests, all 406 frontend tests and the production
+  build passed. The original failed run remains inspectable at
+  https://github.com/ExovyEngineering/aegis/actions/runs/41387684634.
+- NOAA metadata recorded relative paths with Windows backslashes. The exporter
+  now interprets those components on either platform and rejects absolute,
+  drive-relative, traversal and resolved outside-project paths. Original metadata
+  and observation bytes are unchanged; checksum validation remains mandatory.
+- Ten added regression cases exercise both separator styles, POSIX semantics,
+  exact input bytes/hashes and project boundaries. All twelve focused dictionary
+  tests passed. Refreshed full-suite, release, browser and extracted-package
+  results retain their own timestamps in the existing reports. The current
+  commit's remote status must be checked on the pull request; an older green run
+  never substitutes for it.
+- After the correction, the complete fourteen-step release passed with **1,256
+  pytest tests**, four platform skips/four upstream warnings, **406 frontend
+  tests**, a successful production build and **33 offline extracted-package
+  checks**. A fresh isolated Chrome run passed **140 checks** with six desktop/
+  mobile screenshots. Operator state, source observations and caches were
+  preserved. The final PDF and team statement retain the explicit Kiro non-use
+  disclosure; no hardware, provider freshness or competition submission is inferred.
 
 ## Final five-task research and software handoff (November 1)
 

@@ -215,11 +215,11 @@ Practice with a timer; this outline is not a claim of a completed human video. T
 
 ## Verification, reproducibility and submission boundary
 
-Latest saved full local checks: 2026-11-02T04:05:01.211776+00:00. These are dated evidence; later edits require their own checks.
+Latest saved full local checks: 2026-11-02T17:08:47.996965+00:00. These are dated evidence; later edits require their own checks.
 
-- pytest: passed, tests 1246, log reports/checks/20261102T040235216068Z/pytest.txt.
-- vitest: passed, tests 406, log reports/checks/20261102T040235216068Z/vitest.txt.
-- frontend_build: passed, tests build, log reports/checks/20261102T040235216068Z/frontend_build.txt.
+- pytest: passed, tests 1256, log reports/checks/20261102T170421298785Z/pytest.txt.
+- vitest: passed, tests 406, log reports/checks/20261102T170421298785Z/vitest.txt.
+- frontend_build: passed, tests build, log reports/checks/20261102T170421298785Z/frontend_build.txt.
 
 Reproduce the additions: scripts/train_integrated_study.py; scripts/run_decision_study.py; scripts/build_data_dictionary.py; scripts/render_one_health_system.py; scripts/build_final_handoff.py. Use the pinned Python and Node versions in README. Scripts preserve raw files and use separate derived outputs; never silently merge unrecognized sources.
 
