@@ -2,6 +2,36 @@
 
 Latest session date: November 2, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
+## Organized judge handoff (November 2)
+
+- Added `JUDGES_START_HERE.md`, a folder map, judge setup/troubleshooting notes
+  and a five-minute walkthrough using actual approval and parked-driver controls.
+  The generated `artifacts/AEGIS-Judges.zip` separates `01_Guides`,
+  `02_Application` and `03_Verification`, with standalone HTML/text entry pages.
+- Added explicit one-time setup and repeat-use Windows launchers. Setup creates
+  a local Python 3.13 environment and installs the pinned dependencies. Startup
+  uses the prebuilt frontend, a fresh isolated offline UUID and a browser guard
+  that waits for that exact runtime. Node.js and API keys are not required for
+  this demo. Setup and map tiles require internet; public evidence remains dated.
+- Packaging validates the already verified application archive, copies guides
+  and measured evidence, checks local entry-page links and hashes every bundled
+  file. Prior judge folders are retained under `artifacts/judge-history/`.
+  Original downloads stay in place and the owner's active database is excluded.
+- Current consolidated verification passed **1,283 pytest tests**, five platform
+  skips/four upstream warnings, **406 frontend tests**, and the production build.
+  Targeted package tests also passed after adding the new verification files.
+- Actual first-time setup in a separate extracted Windows copy returned exit
+  code zero. Its brand-new Python environment passed `pip check`; **15 actual
+  Chrome startup checks** verified the prebuilt UI, isolated UUID, map, desktop/
+  mobile layout and exact packaged PDF download. The owner database was unchanged.
+  Scope and source hashes are recorded in `reports/judge_launcher_smoke.json`.
+  Default OS browser auto-opening is guarded/unit-tested; the smoke run used
+  explicit headless Chrome. No physical macOS setup is claimed.
+- Package verification and the organized archive's hashes/link counts are
+  recorded separately in `reports/package_verification.json` and
+  `reports/judge_handoff.json`. Kiro non-use and scientific limitations remain
+  explicit. Creating these artifacts does not upload or submit the project.
+
 ## Final portability correction (November 2)
 
 - The initial final-build GitHub run failed one data-dictionary export test on

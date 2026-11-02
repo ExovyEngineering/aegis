@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated November 02, 2026 at 11:08 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated November 02, 2026 at 11:34 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -214,13 +214,13 @@ Evidence: docs/freshness_gateway.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-11-02T17:08:47.996965+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-11-02T17:34:09.500779+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 1256; 131.392 seconds. Log: reports/checks/20261102T170421298785Z/pytest.txt. Checked: 2026-11-02T17:04:21.299277+00:00.
+pytest: PASS; exit 0; tests passed 1283; 146.474 seconds. Log: reports/checks/20261102T173101620197Z/pytest.txt. Checked: 2026-11-02T17:31:01.620737+00:00.
 
-vitest: PASS; exit 0; tests passed 406; 86.539 seconds. Log: reports/checks/20261102T170421298785Z/vitest.txt. Checked: 2026-11-02T17:06:32.716585+00:00.
+vitest: PASS; exit 0; tests passed 406; 26.358 seconds. Log: reports/checks/20261102T173101620197Z/vitest.txt. Checked: 2026-11-02T17:33:28.098322+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 48.709 seconds. Log: reports/checks/20261102T170421298785Z/frontend_build.txt. Checked: 2026-11-02T17:07:59.272268+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 15.006 seconds. Log: reports/checks/20261102T173101620197Z/frontend_build.txt. Checked: 2026-11-02T17:33:54.478383+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 

@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from backend.paths import ROOT,write_json
 
-ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore','Start-AEGIS.cmd')
+ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore','Start-AEGIS.cmd','JUDGES_START_HERE.md','Setup-Judges-Windows.cmd','Start-Judges-Windows.cmd')
 SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','frontend')
 SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env'}
 REPORTS=('usda_food_environment.json','fsis_ingestion.json','ingestion_verification.json','transport_check.json','source_actions.json','operational_state_preservation.json','aegis_project_brief.pdf','project_brief.md','project_brief_manifest.json','session_verification.json','aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
@@ -18,17 +18,28 @@ REPORTS=REPORTS+('aegis_master_guide.pdf','aegis_master_guide.html','master_guid
 REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json','local_startup_verification.json','activity_workflow_evaluation.json','operator_activity_change_review.json')
 REPORTS=REPORTS+('friendliness_workflow_evaluation.json','friendliness_raw_integrity.json')
 REPORTS=REPORTS+('friendliness_operator_smoke.json',)
+REPORTS=REPORTS+('judge_launcher_smoke.json',)
 REPORTS=REPORTS+('freshness_demo.json','freshness_operator_smoke.json','recording_connectivity.json','recording_operator_smoke.json')
 REPORTS=REPORTS+('challenge_readiness.json','final_handoff_manifest.json','final_submission_guide.pdf','final_submission_guide.html','final_submission_guide.md',
                  'integrated_model_evaluation.json','integrated_model_predictions.csv','integrated_model_timeseries.csv','integrated_model_study.md',
                  'decision_study.json','decision_study.csv','decision_study.md','decision_study_demand_service.csv',
                  'data_dictionary.csv','source_provenance.json','source_provenance.csv','team_science_statement.pdf','final_submission_verification.json')
-GUIDE='''# AEGIS reviewer draft
+GUIDE='''# AEGIS application package
 
-This package is a review artifact, not a final approved competition submission.
-It includes source, a prebuilt frontend, processed source data, dated public
+Start with docs/judge_quick_start.md for the judge setup and walkthrough.
+This local research demonstrator includes source, a prebuilt frontend, processed source data, dated public
 fixtures, measured results, the scientific draft report and figures.
 All logistics and cargo telemetry are simulated. Read docs/priority_matrix.md.
+
+## Easiest Windows judge start
+
+Extract the whole ZIP. Install Python 3.13 (64-bit), then double-click
+Setup-Judges-Windows.cmd once. It installs the pinned dependencies and needs
+internet. Next, double-click Start-Judges-Windows.cmd. It starts a new isolated
+offline demonstration on http://127.0.0.1:8001/?mode=rehearsal and opens a browser
+after verifying the server. Keep the terminal open. Ctrl+C stops the demo.
+No Node.js, API key, GitHub account or AWS account is needed to run this prebuilt
+demo. Background map tiles require internet. See docs/judge_walkthrough.md.
 
 ## Run the packaged app
 
@@ -80,8 +91,9 @@ See docs/rehearsal_guide.md and docs/core_release.md.
 
 Credentials, .env, operational SQLite state, runtime installations, Kiro account
 data and node_modules are excluded. The app creates a fresh simulated database.
-Kiro must be installed separately; installation/version evidence is not genuine
-spec execution. Sign-in and authentic Kiro work remain pending. Prospective
+The owner disclosed that Kiro was not used; that challenge criterion is not met.
+Prepared specifications and installation/version evidence do not establish
+genuine Kiro execution. Kiro is not needed to run this local app. Prospective
 model validity, complete historical weather coverage, truck-safe routing and
 the final organizer rubric are not certified by this package.
 
@@ -111,6 +123,9 @@ def collect(root):
     if folder.exists():
         for path in folder.rglob('*'):add(path)
     folder=root/'reports/browser_qa/freshness'
+    if folder.exists():
+        for path in folder.rglob('*'):add(path)
+    folder=root/'reports/browser_qa/judge_launch'
     if folder.exists():
         for path in folder.rglob('*'):add(path)
     # Only include NOAA responses/metadata actually referenced by the coverage report.

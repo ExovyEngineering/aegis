@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-02T11:09:29.502230-06:00",
+  "generated_at": "2026-11-02T11:35:20.209635-06:00",
   "title": "AEGIS Final Submission Guide",
   "pdf": "reports/final_submission_guide.pdf",
   "markdown": "reports/final_submission_guide.md",
   "html": "reports/final_submission_guide.html",
-  "sha256": "795bf4a42d26fb71d39060c442a8b5e0d173734c83e10431f1927bbc82f1b1f7",
-  "bytes": 237543,
+  "sha256": "09f23e630386b051aba475618ddc1485c6682ea726342f3345711ee26e13439e",
+  "bytes": 237542,
   "pages": 17,
   "chapters": [
     {
@@ -84,7 +84,7 @@
     },
     {
       "path": "reports/session_verification.json",
-      "sha256": "2f2db0f8f09e00ce672adcdda4202a3d760e213566d325adc71c6a29bb7bd6fb"
+      "sha256": "7f29ac242b112fe6c2704e6e8f03bd8ec8531298e162d974f76dd39779b8528d"
     },
     {
       "path": "docs/team_science_statement.md",

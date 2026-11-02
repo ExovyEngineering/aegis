@@ -4,6 +4,24 @@ Adaptive Early-warning & Guidance for Integrated Supply Chains: a local research
 
 AEGIS combines separately labeled official food-safety and weather evidence with deterministic simulated shipments, constrained allocation, dispatcher review, and a driver workflow. Suppliers, contracts, lots, trucks, telemetry, shipments, demand, and costs are simulated. Real establishment-directory markers do not establish supplier relationships.
 
+## Judges: start here
+
+Share **artifacts/AEGIS-Judges.zip**. Extract the whole ZIP, open the
+**AEGIS-Judges** folder and double-click **00_START_HERE.html**. The numbered
+folders contain guides, the runnable application and verification records.
+PDFs open without installation. Windows judges with Python 3.13 installed run
+**02_Application/Setup-Judges-Windows.cmd** once, then
+**Start-Judges-Windows.cmd**. The setup installs pinned dependencies; the start
+command opens a fresh isolated demo at <http://127.0.0.1:8001/?mode=rehearsal>.
+No Node.js or API keys are required for the prebuilt demo. Setup and background
+map tiles require internet. Keep the application terminal open.
+
+See [judge setup](docs/judge_quick_start.md),
+[the five-minute tour](docs/judge_walkthrough.md), and
+[the folder map](docs/folder_map.md). To regenerate the organized handoff, verify
+the application archive and run `python scripts/build_judge_handoff.py`; complete
+commands are in [JUDGES_START_HERE.md](JUDGES_START_HERE.md).
+
 ## Run locally
 
 The final five-task handoff is in **Project brief → Five tasks. One inspectable

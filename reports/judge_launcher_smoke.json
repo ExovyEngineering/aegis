@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-11-02T17:35:18.232Z",
+  "scope": "Fresh Windows Python environment installed by judge_demo.py setup in a separate extracted copy; foreground judge_demo.py run and actual headless Chrome. Default OS browser opening remains separately unit-tested.",
+  "fresh_python_environment": true,
+  "public_provider_refresh_requested": false,
+  "checks": [
+    {
+      "name": "owned extracted app health responds",
+      "passed": true
+    },
+    {
+      "name": "isolated offline UUID runtime",
+      "passed": true
+    },
+    {
+      "name": "session path belongs to extracted application",
+      "passed": true
+    },
+    {
+      "name": "fresh reserved session file exists in extracted application",
+      "passed": true
+    },
+    {
+      "name": "no copied owner database",
+      "passed": true
+    },
+    {
+      "name": "prebuilt interface loads",
+      "passed": true
+    },
+    {
+      "name": "five-task project brief renders",
+      "passed": true
+    },
+    {
+      "name": "desktop has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "final PDF downloads",
+      "passed": true
+    },
+    {
+      "name": "downloaded PDF matches packaged bytes",
+      "passed": true
+    },
+    {
+      "name": "Command map renders",
+      "passed": true
+    },
+    {
+      "name": "simulated shipments available",
+      "passed": true
+    },
+    {
+      "name": "simulation initializes the reserved session database",
+      "passed": true
+    },
+    {
+      "name": "mobile has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "no browser errors or unexpected external requests",
+      "passed": true
+    }
+  ],
+  "runtime": {
+    "mode": "isolated_rehearsal",
+    "isolated": true,
+    "offline": true,
+    "rehearsal_id": "da0729dd-5e60-4849-bd42-b327348f2067",
+    "database_relative_path": "data/rehearsals/da0729dd-5e60-4849-bd42-b327348f2067.sqlite",
+    "warning": "Isolated simulated rehearsal. Timer and milestone records do not prove presentation quality, author approval or genuine Kiro execution."
+  },
+  "launcher_sha256": "0f016f29204f77debecec9774d70a4cb7d40f1fe66ec64288f338c3c6f9b8fe3",
+  "requirements_sha256": "2f9e94a847821c2b18f10923867eee973baffefe533c937c9475268d49e6c5de",
+  "browser_version": "156.0.8078.74",
+  "passed": true,
+  "errors": [],
+  "qa_map_tile_placeholders": 12,
+  "finished_at": "2026-11-02T17:35:27.482Z",
+  "setup_exit_code": 0,
+  "pip_check_exit_code": 0,
+  "setup_log_sha256": "17dc4c34a99e0811308b3d23432153e3fca0eeb10bc94f6fb1d6c2a808f424e9",
+  "pip_check_log_sha256": "6326999b2d47daff6338070efad9139a62dd802f33019eab621859ade33fc907",
+  "operator_before": {
+    "data/aegis.sqlite": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e",
+    "data/aegis.sqlite-wal": null,
+    "data/aegis.sqlite-shm": null,
+    "data/aegis.sqlite-journal": null
+  },
+  "operator_after": {
+    "data/aegis.sqlite": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e",
+    "data/aegis.sqlite-wal": null,
+    "data/aegis.sqlite-shm": null,
+    "data/aegis.sqlite-journal": null
+  },
+  "setup_and_launcher_source_match_current": true,
+  "default_os_browser_automatic_open_verified": false,
+  "operator_preserved": true
+}
