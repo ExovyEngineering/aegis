@@ -9,6 +9,9 @@ Latest session date: November 2, 2026, America/Chicago. This document distinguis
   outcomes, scientific limitations, reproducibility commands and dashboard tour.
   The one-page team statement now credits **Isaac Jenkins**, Micky's code review
   and GitHub work, and the lead's logistics, data gathering and application design.
+- The final report includes the standalone one-page team science statement as
+  its final appendix, preserving its layout and adding a PDF bookmark. The
+  separate statement file remains available for submission forms that request it.
 - Final local verification passed **1,316 pytest tests**, five platform skips,
   **406 frontend tests**, and the production build. Another **34 document and
   packaging tests** passed after the report renderer changes; `pip check` passed.

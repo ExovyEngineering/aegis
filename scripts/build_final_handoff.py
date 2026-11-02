@@ -2,9 +2,9 @@
 import argparse
 from datetime import datetime
 import hashlib
+from io import BytesIO
 import json
 import math
-import re
 from pathlib import Path
 import sys
 from zoneinfo import ZoneInfo
@@ -208,10 +208,8 @@ def content(root, state):
             lines += ['', 'Current-risk/evidence view: Command and Model evaluation. Prioritized attention: Command review queue and Dispatcher. Scenario builder: Command disruption preview, A/B/C/D and Route laboratory. Recommended action: reviewed plans/rescue options. Explanation: evidence assistant and source/model details. No model can declare a shipment safe or unsafe.', '',
                       'Owner disclosure: Kiro was not used. The Kiro-use criterion is therefore not met. Implementation was developed outside Kiro with Codex assistance and human direction. No Kiro-generated code or authentic Kiro task history exists to claim; prepared steering/specification files do not establish use. No extra AWS service or cloud deployment is needed to operate this local research build.']
         if task['id']=='Task 5':
-            team=root/'docs/team_science_statement.md'
-            if team.exists():
-                team_body=re.sub(r'^#\s+[^\n]+\n+', '', team.read_text(encoding='utf-8'), count=1)
-                lines += ['', '### Team science statement', '', re.sub(r'^#{1,6}\s+', '#### ', team_body, flags=re.M)]
+            lines += ['', '### Included one-page team science statement', '',
+                      'Appendix A is the final page of this PDF and includes the complete standalone one-page team science statement, preserved from reports/team_science_statement.pdf. It records the team roles, how disease-side input changed the original logistics idea, measured added-data findings and the next partner/data need. The editable author-review source remains docs/team_science_statement.md.']
     lines += ['', '## Every dashboard menu and its use case', '', '| Menu | What to find and do | What changes state |','| --- | --- | --- |']
     menus=[
         ('Command center','Missouri map/layers, attention queue, delivery outlook, route comparison, event preview, four response plans.','Only explicit event application or identified plan approval.'),
@@ -243,7 +241,7 @@ def content(root, state):
               '| Development artifacts | .kiro/specs/, .kiro/steering/ and AGENTS.md contain structured requirements and guidance. Kiro was not used; there is no authentic Kiro-generated code or task history. |',
               '| Runnable application | React/TypeScript frontend, FastAPI backend, prebuilt assets and Setup-Judges-Windows.cmd / Start-Judges-Windows.cmd; local deployment instructions in docs/local_startup.md, docs/judge_quick_start.md and README. GitHub Pages alone cannot host the Python backend; no public cloud deployment is claimed. |',
               '| Dictionary and provenance | reports/data_dictionary.csv; reports/source_provenance.json; docs/data_catalog.md; config/api_registry.yaml and original inventory manifests. |',
-              '| Report and team science | This report, editable reports/final_submission_guide.md, and reports/team_science_statement.pdf with docs/team_science_statement.md. |',
+              '| Report and team science | This report includes the complete one-page team science statement as Appendix A on its final page. The identical standalone page is reports/team_science_statement.pdf; editable sources are reports/final_submission_guide.md and docs/team_science_statement.md. |',
               '| Setup and dependencies | README.md, JUDGES_START_HERE.md, requirements-lock.txt, optional requirements-notebooks.txt and frontend/package-lock.json. |', '',
               '### Executed notebooks', '',
               'Install optional notebook dependencies using .venv/Scripts/python -m pip install -r requirements-notebooks.txt, then run .venv/Scripts/python scripts/execute_notebooks.py. The four notebooks cover coverage/provenance, preprocessing/integration, modeling/evaluation and scenario analysis. Static previews are in reports/notebooks/index.html; they do not require Jupyter to read.', '',
@@ -266,7 +264,21 @@ def content(root, state):
 
 
 def build(root=ROOT, preview_dir=None):
+    from pypdf import PdfReader, PdfWriter
     root=Path(root).resolve();reports=root/'reports';reports.mkdir(parents=True,exist_ok=True)
+    statement=reports/'team_science_statement.pdf'
+    if not statement.is_file():
+        raise FileNotFoundError('Required one-page team science PDF missing: '+str(statement))
+    statement_bytes=statement.read_bytes()
+    try:
+        statement_reader=PdfReader(BytesIO(statement_bytes))
+        if statement_reader.is_encrypted or len(statement_reader.pages)!=1:
+            raise ValueError('Team science statement must be one unencrypted PDF page')
+        statement_page=statement_reader.pages[0]
+        if not statement_page.extract_text().strip():
+            raise ValueError('Team science statement page has no readable text')
+    except Exception as error:
+        raise ValueError('Invalid one-page team science PDF: '+str(error)) from error
     state=readiness(root)
     (reports/'challenge_readiness.json').write_text(json.dumps(state,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     body=content(root,state);markdown=reports/'final_submission_guide.md'
@@ -289,8 +301,33 @@ def build(root=ROOT, preview_dir=None):
     layout=render_pdf(blocks,pdf,generated,Path(preview_dir) if preview_dir else None,title=TITLE,
                       cover_subtitle='Final Challenge Report',preview_all=True,cover_sections=cover,
                       cover_label='Final Submission Guide',subject='Five challenge tasks, reproducible methods, measured results, operational scenarios and team science')
+    main_pages=layout['pages']
+    writer=PdfWriter(clone_from=BytesIO(pdf.read_bytes()))
+    writer.append(statement_reader,import_outline=False)
+    appendix_title='Appendix A: One-page team science statement'
+    writer.add_outline_item(appendix_title,main_pages)
+    combined=BytesIO();writer.write(combined);pdf.write_bytes(combined.getvalue())
+    appendix={'id':'appendix-a-team-science-statement','title':appendix_title,'kind':'appendix',
+              'page':main_pages+1,'pages':1,'source':'reports/team_science_statement.pdf',
+              'source_sha256':hashlib.sha256(statement_bytes).hexdigest(),
+              'paper_points':[float(statement_page.mediabox.width),float(statement_page.mediabox.height)],
+              'inclusion':'Original page content and dimensions preserved; not reflowed'}
+    layout['main_report_pages']=main_pages
+    layout['main_report_paper']=layout['paper']
+    layout['paper']='US Letter main report; original appendix page dimensions preserved'
+    layout['pages']=main_pages+1
+    layout['bookmarks']+=1
+    layout['chapters'].append(appendix)
+    layout['appendices']=[appendix]
+    layout['pagination_note']='Main report printed page numbers and contents refer to its own pages. Appendix A is the final PDF page and retains its standalone one-page pagination.'
+    layout['preview_scope']='Generated print-render previews show main report pages only; the appended source PDF page is preserved without re-rendering.'
+    if preview_dir:
+        for old_preview in Path(preview_dir).glob('print-render-page-*.png'):
+            suffix=old_preview.stem.removeprefix('print-render-page-')
+            if suffix.isdigit() and int(suffix)>main_pages:
+                old_preview.unlink()
     inputs=['reports/integrated_model_evaluation.json','reports/decision_study.json','reports/source_provenance.json','reports/session_verification.json','docs/team_science_statement.md','docs/challenge_tasks_source.md','reports/figures/one_health_system.png']
-    inputs += ['reports/figures/integrated_model_validation.png','reports/notebook_execution.json','reports/notebook_raw_execution.json']
+    inputs += ['reports/figures/integrated_model_validation.png','reports/notebook_execution.json','reports/notebook_raw_execution.json','reports/team_science_statement.pdf']
     result={'generated_at':state['generated_at'],'title':TITLE,'pdf':'reports/final_submission_guide.pdf','markdown':'reports/final_submission_guide.md','html':'reports/final_submission_guide.html',
             'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),'bytes':pdf.stat().st_size,**layout,
             'inputs':[{'path':name,'sha256':hashlib.sha256((root/name).read_bytes()).hexdigest()} for name in inputs if (root/name).is_file()],

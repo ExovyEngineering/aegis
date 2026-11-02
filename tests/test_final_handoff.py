@@ -8,7 +8,8 @@ import struct
 import zlib
 
 import httpx
-from pypdf import PdfReader
+from pypdf import PdfReader, PdfWriter
+from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
 import pytest
 
 from scripts.build_final_handoff import TITLE, build, content, number, read, readiness
@@ -26,6 +27,24 @@ def small_png():
         return struct.pack(">I", len(value)) + kind + value + struct.pack(">I", zlib.crc32(kind + value) & 0xFFFFFFFF)
     return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", 4, 2, 8, 2, 0, 0, 0))
             + chunk(b"IDAT", zlib.compress((b"\x00" + b"\x23\x55\x88" * 4) * 2)) + chunk(b"IEND", b""))
+
+
+def team_pdf(path, pages=1, *, empty=False, encrypted=False):
+    """A real text-bearing PDF page with distinct A4 dimensions and content."""
+    writer=PdfWriter()
+    for _ in range(pages):
+        page=writer.add_blank_page(width=595.28,height=841.89)
+        if not empty:
+            font=DictionaryObject({NameObject('/Type'):NameObject('/Font'),
+                NameObject('/Subtype'):NameObject('/Type1'),NameObject('/BaseFont'):NameObject('/Helvetica')})
+            page[NameObject('/Resources')]=DictionaryObject({NameObject('/Font'):DictionaryObject({NameObject('/F1'):font})})
+            stream=DecodedStreamObject()
+            stream.set_data(b'BT /F1 12 Tf 45 790 Td (One-page team science statement) Tj 0 -20 Td (EXACT_TEAM_APPENDIX_SENTINEL) Tj ET')
+            page[NameObject('/Contents')]=writer._add_object(stream)
+    if encrypted:writer.encrypt('not-a-report-password')
+    path.parent.mkdir(parents=True,exist_ok=True)
+    writer.write(path)
+    return path
 
 
 @pytest.fixture
@@ -56,6 +75,7 @@ def evidence(tmp_path):
     team = tmp_path / "docs/team_science_statement.md"
     team.parent.mkdir()
     team.write_text("# Team science statement\n\nNamed contributors remain pending.\n\n## Stakeholder input\n\nGuided choices followed actual user feedback.\n", encoding="utf-8")
+    team_pdf(tmp_path/'reports/team_science_statement.pdf')
     (tmp_path / "docs/challenge_tasks_source.md").write_text("# Five required tasks\n", encoding="utf-8")
     image = tmp_path / "reports/figures/one_health_system.png"
     image.parent.mkdir()
@@ -78,7 +98,7 @@ def test_final_pdf_preserves_measured_results_images_links_and_input_bytes(evide
     protected = [*sentinels, *(root / "docs").glob("*.md"),
                  root / "reports/integrated_model_evaluation.json", root / "reports/decision_study.json",
                  root / "reports/source_provenance.json", root / "reports/session_verification.json",
-                 root / "reports/figures/one_health_system.png"]
+                 root / "reports/figures/one_health_system.png",root/'reports/team_science_statement.pdf']
     before = {path: path.read_bytes() for path in protected}
 
     def forbidden(*args, **kwargs):
@@ -99,6 +119,20 @@ def test_final_pdf_preserves_measured_results_images_links_and_input_bytes(evide
     assert reader.metadata.title == TITLE
     assert "Final Submission Guide" in reader.pages[0].extract_text()
     assert result["pages"] == len(reader.pages)
+    assert result['main_report_pages']+1==result['pages']
+    assert result['main_report_paper']=='US Letter'
+    appendix=result['appendices'][0]
+    assert appendix['page']==result['pages'] and appendix['pages']==1
+    assert appendix['source']=='reports/team_science_statement.pdf'
+    assert appendix['source_sha256']==hashlib.sha256((root/appendix['source']).read_bytes()).hexdigest()
+    source_page=PdfReader(root/appendix['source']).pages[0]
+    appended_page=reader.pages[-1]
+    assert appended_page.extract_text()==source_page.extract_text()
+    assert appended_page.get_contents().get_data()==source_page.get_contents().get_data()
+    assert list(appended_page.mediabox)==list(source_page.mediabox)
+    assert appendix['paper_points']==[float(source_page.mediabox.width),float(source_page.mediabox.height)]
+    assert sum('EXACT_TEAM_APPENDIX_SENTINEL' in page.extract_text() for page in reader.pages)==1
+    assert 'Appendix A is the final page' in text
     assert result["overflow_count"] == 0
     assert result["sha256"] == hashlib.sha256((root / result["pdf"]).read_bytes()).hexdigest()
     assert "0.250007" in text and "0.33333" in text and "0.61234" in text
@@ -113,7 +147,8 @@ def test_final_pdf_preserves_measured_results_images_links_and_input_bytes(evide
     for chapter, destination in zip(result["chapters"], reader.outline):
         assert reader.get_destination_page_number(destination) == chapter["page"] - 1
         # PDF extraction can insert kerning spaces ("T ask") and wrap headings.
-        assert "".join(chapter["title"].split()) in "".join(reader.pages[chapter["page"] - 1].extract_text().split())
+        title=chapter['title'].removeprefix('Appendix A: ')
+        assert "".join(title.split()) in "".join(reader.pages[chapter["page"] - 1].extract_text().split())
     assert sum(len(page["/Annots"]) if "/Annots" in page else 0 for page in reader.pages) == result["contents_links"]
     html = (root / result["html"]).read_text(encoding="utf-8")
     assert f"<title>{TITLE}</title>" in html
@@ -121,6 +156,23 @@ def test_final_pdf_preserves_measured_results_images_links_and_input_bytes(evide
     assert "https://fonts." not in html
     assert result["human_submission_verified"] is False
     assert result["operational_database_accessed"] is False
+
+
+@pytest.mark.parametrize('invalid',['missing','corrupt','multipage','blank','encrypted'])
+def test_invalid_team_statement_cannot_replace_existing_final_report(evidence,invalid):
+    root,_,_=evidence
+    statement=root/'reports/team_science_statement.pdf'
+    if invalid=='missing':statement.unlink()
+    elif invalid=='corrupt':statement.write_bytes(b'Not a PDF')
+    else:team_pdf(statement,pages=2 if invalid=='multipage' else 1,empty=invalid=='blank',encrypted=invalid=='encrypted')
+    protected=[]
+    for name in ['final_submission_guide.pdf','final_handoff_manifest.json','challenge_readiness.json']:
+        path=root/'reports'/name
+        path.write_bytes(('PREVIOUS_'+name).encode())
+        protected.append((path,path.read_bytes()))
+    with pytest.raises((ValueError,FileNotFoundError),match='[Tt]eam science'):
+        build(root)
+    assert all(path.read_bytes()==original for path,original in protected)
 
 
 def test_missing_and_failed_scientific_reports_do_not_claim_an_implemented_study(tmp_path):

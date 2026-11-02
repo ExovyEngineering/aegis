@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-02T14:45:07.226866-06:00",
+  "generated_at": "2026-11-02T14:53:28.820399-06:00",
   "title": "AEGIS Final Challenge Report",
   "pdf": "reports/final_submission_guide.pdf",
   "markdown": "reports/final_submission_guide.md",
   "html": "reports/final_submission_guide.html",
-  "sha256": "675389163b1d3a06acf7a4f8ea47cd312003360e2410f63c5e3db8e68acbb1a3",
-  "bytes": 316740,
+  "sha256": "67b6d1b035ba7add78ee7d28efe1b0b719454e19527edbdb98791211226e18e8",
+  "bytes": 343804,
   "pages": 20,
   "chapters": [
     {
@@ -47,28 +47,62 @@
     {
       "id": "every-dashboard-menu-and-its-use-case",
       "title": "Every dashboard menu and its use case",
-      "body_page_index": 13,
-      "page": 16
+      "body_page_index": 12,
+      "page": 15
     },
     {
       "id": "presentation-idea-from-evidence-to-a-reviewed-decision",
       "title": "Presentation idea: from evidence to a reviewed decision",
-      "body_page_index": 15,
-      "page": 18
+      "body_page_index": 14,
+      "page": 17
     },
     {
       "id": "reproducibility-and-submission-deliverables",
       "title": "Reproducibility and submission deliverables",
-      "body_page_index": 16,
-      "page": 19
+      "body_page_index": 15,
+      "page": 18
+    },
+    {
+      "id": "appendix-a-team-science-statement",
+      "title": "Appendix A: One-page team science statement",
+      "kind": "appendix",
+      "page": 20,
+      "pages": 1,
+      "source": "reports/team_science_statement.pdf",
+      "source_sha256": "c9a515746a63a781717fcd07eb484d27f7c5cdd3d429a2af41a00236e1adc3af",
+      "paper_points": [
+        595.44,
+        841.68
+      ],
+      "inclusion": "Original page content and dimensions preserved; not reflowed"
     }
   ],
   "overflow_count": 0,
-  "paper": "US Letter",
+  "paper": "US Letter main report; original appendix page dimensions preserved",
   "body_font_points": 10.7,
   "table_font_points": 9.7,
-  "bookmarks": 9,
+  "bookmarks": 10,
   "contents_links": 9,
+  "main_report_pages": 19,
+  "main_report_paper": "US Letter",
+  "appendices": [
+    {
+      "id": "appendix-a-team-science-statement",
+      "title": "Appendix A: One-page team science statement",
+      "kind": "appendix",
+      "page": 20,
+      "pages": 1,
+      "source": "reports/team_science_statement.pdf",
+      "source_sha256": "c9a515746a63a781717fcd07eb484d27f7c5cdd3d429a2af41a00236e1adc3af",
+      "paper_points": [
+        595.44,
+        841.68
+      ],
+      "inclusion": "Original page content and dimensions preserved; not reflowed"
+    }
+  ],
+  "pagination_note": "Main report printed page numbers and contents refer to its own pages. Appendix A is the final PDF page and retains its standalone one-page pagination.",
+  "preview_scope": "Generated print-render previews show main report pages only; the appended source PDF page is preserved without re-rendering.",
   "inputs": [
     {
       "path": "reports/integrated_model_evaluation.json",
@@ -109,6 +143,10 @@
     {
       "path": "reports/notebook_raw_execution.json",
       "sha256": "a373d3daf911d844530e8e2c38419cc9294a64e1bb3d7f1649901a4ad36331aa"
+    },
+    {
+      "path": "reports/team_science_statement.pdf",
+      "sha256": "c9a515746a63a781717fcd07eb484d27f7c5cdd3d429a2af41a00236e1adc3af"
     }
   ],
   "original_data_modified": false,
