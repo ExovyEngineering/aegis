@@ -1,0 +1,1 @@
+{"datasets": 11, "dictionary_rows": 150, "output_root": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports"}

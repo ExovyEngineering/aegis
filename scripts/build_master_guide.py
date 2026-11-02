@@ -138,11 +138,11 @@ def evidence_chapter(root):
     return '\n'.join(body)
 
 
-def html_document(blocks, generated):
+def html_document(blocks, generated, title=TITLE):
     toc = [block for block in blocks if block['kind'] == 'heading' and block['level'] == 2]
-    parts = [f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{TITLE}</title><style>',
+    parts = [f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>',
         'body{font:16px/1.55 Georgia,serif;color:#18251e;background:#f0f2ed;margin:0}main{max-width:900px;margin:auto;background:white;padding:44px}h1,h2,h3,h4,nav,button{font-family:Arial,sans-serif}h1{font-size:38px}h2{margin-top:48px;border-bottom:2px solid #345b46;padding-bottom:10px}h3{margin-top:28px}a{color:#25593e}table{width:100%;border-collapse:collapse;font:14px/1.5 Arial,sans-serif;margin:18px 0}th,td{text-align:left;vertical-align:top;padding:10px;border:1px solid #bcc7bc;overflow-wrap:anywhere}th{background:#eef2eb}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f5ef;padding:14px;font-size:13px}code{font-size:.9em;overflow-wrap:anywhere}li{margin:8px 0}nav{border:1px solid #ccd6ca;padding:20px}nav ol{columns:2;column-gap:30px}nav li{break-inside:avoid}button{padding:12px 18px;background:#23543c;color:white;border:0;border-radius:5px;cursor:pointer}.stamp{color:#526151}.cover-note{border-left:4px solid #426b50;padding-left:18px}.document-footer{margin-top:40px;border-top:1px solid #bbc5b9;padding-top:14px;font-size:13px}@page{size:letter;margin:.65in}@media print{body{background:white;font-size:11pt;line-height:1.45}main{padding:0;max-width:none}button,.screen-only{display:none}h2{break-before:page;margin-top:0;font-size:19pt}h3,h4{break-after:avoid}table{font-size:9.5pt}thead{display:table-header-group}tr{break-inside:avoid}pre{break-inside:avoid}a{color:inherit;text-decoration:none}nav ol{columns:1}p,li{orphans:3;widows:3}}@media(max-width:650px){main{padding:20px}nav ol{columns:1}table{font-size:12px}th,td{padding:6px}}',
-        '</style></head><body><main>', f'<h1>{TITLE}</h1><p class="stamp">Generated {html.escape(generated)}. Complete user handbook; local research demonstrator.</p>',
+        '</style></head><body><main>', f'<h1>{title}</h1><p class="stamp">Generated {html.escape(generated)}. Complete user handbook; local research demonstrator.</p>',
         '<p class="cover-note">For teammates learning the product and preparing a presentation. Real public evidence, simulated logistics, planning estimates and unfinished capabilities are identified separately.</p>',
         '<button type="button" onclick="window.print()">Print this guide</button><p class="screen-only">Print on US Letter paper. The PDF version includes page numbers, a page-numbered contents list and bookmarks. This standalone HTML uses no external fonts, images or scripts.</p>',
         '<nav aria-label="Guide contents"><strong>Contents</strong><ol>' + ''.join(f'<li><a href="#{row["id"]}">{inline(row["text"])}</a></li>' for row in toc) + '</ol></nav>']
@@ -153,6 +153,10 @@ def html_document(blocks, generated):
         elif kind == 'paragraph':parts.append('<p>' + inline(block['text']) + '</p>')
         elif kind == 'item':parts.append('<p class="list-item">' + html.escape(block['marker']) + ' ' + inline(block['text']) + '</p>')
         elif kind == 'code':parts.append('<pre><code>' + html.escape('\n'.join(block['lines'])) + '</code></pre>')
+        elif kind == 'image':
+            import base64
+            encoded=base64.b64encode(block['bytes']).decode('ascii')
+            parts.append('<figure><img style="max-width:100%;height:auto" alt="'+html.escape(block.get('caption','System diagram'))+'" src="data:image/png;base64,'+encoded+'"><figcaption>'+inline(block.get('caption',''))+'</figcaption></figure>')
         elif kind == 'table':
             rows = block['rows'];parts.append('<table><thead><tr>' + ''.join('<th>'+inline(cell)+'</th>' for cell in rows[0]) + '</tr></thead><tbody>')
             parts += ['<tr>' + ''.join('<td>'+inline(cell)+'</td>' for cell in row) + '</tr>' for row in rows[1:]]
@@ -161,7 +165,7 @@ def html_document(blocks, generated):
     return '\n'.join(parts)
 
 
-def render_pdf(blocks, output, generated, preview_dir=None):
+def render_pdf(blocks, output, generated, preview_dir=None, title=TITLE, cover_subtitle="Master User Guide", preview_all=False):
     os.environ.setdefault('MPLCONFIGDIR', str(ROOT / 'data/cache/matplotlib'))
     import matplotlib
     matplotlib.use('Agg')
@@ -230,6 +234,15 @@ def render_pdf(blocks, output, generated, preview_dir=None):
             headings.append({'title':plain(block['text']),'body_page_index':len(pages)-1,'level':level})
             paragraph(block['text'],size=17 if level==2 else 12.5 if level==3 else 11.3,weight='bold',gap=13)
         elif kind=='paragraph':paragraph(block['text'])
+        elif kind=='image':
+            import io
+            from matplotlib.image import imread
+            pixels=imread(io.BytesIO(block['bytes']),format='png')
+            image_height=(right-left)*pixels.shape[0]/pixels.shape[1]
+            if image_height>top-bottom-35:raise ValueError('Diagram too tall for the print layout')
+            if y-image_height<bottom+20:new_page()
+            page.append(('image',pixels,left,y-image_height,right-left,image_height));y-=image_height+12
+            if block.get('caption'):paragraph(block['caption'],size=9.3)
         elif kind=='item':paragraph(block['text'],indent=block['indent'],prefix=block['marker'],gap=5)
         elif kind=='code':
             for line in block['lines']:paragraph(line or ' ',size=9.2,mono=True,gap=3,indent=8)
@@ -276,20 +289,20 @@ def render_pdf(blocks, output, generated, preview_dir=None):
 
     def figure(number,chapter):
         fig=Figure(figsize=(8.5,11),facecolor='white')
-        fig.text(left/width,762/height,'AEGIS | MASTER USER GUIDE',fontsize=8.5,color='#333333',family='DejaVu Sans')
+        fig.text(left/width,762/height,title.upper(),fontsize=8.5,color='#333333',family='DejaVu Sans')
         fig.text(right/width,762/height,chapter[:74],fontsize=7.5,color='#555555',ha='right',family='DejaVu Sans')
         fig.text(left/width,27/height,'Local research demonstrator | Source and simulation labels matter',fontsize=7.5,color='#444444')
         fig.text(right/width,27/height,f'{number} / {total}',fontsize=8.5,ha='right')
         return fig
     def save_page(pdf,fig,number):
         pdf.savefig(fig)
-        if preview_dir is not None and number in preview_pages:
+        if preview_dir is not None and (preview_all or number in preview_pages):
             preview_dir.mkdir(parents=True,exist_ok=True)
             fig.savefig(preview_dir/f'print-render-page-{number:02}.png',dpi=120)
-    with PdfPages(output,metadata={'Title':TITLE,'Author':'AEGIS project team','Subject':'Complete product handbook, controls, use cases and limitations'}) as pdf:
+    with PdfPages(output,metadata={'Title':title,'Author':'AEGIS project team','Subject':'Complete product handbook, controls, use cases and limitations'}) as pdf:
         fig=figure(1,'Read, practice, present')
         fig.text(left/width,.79,'AEGIS',fontsize=44,weight='bold',color='#173c2b')
-        fig.text(left/width,.725,'Master User Guide',fontsize=27,weight='bold')
+        fig.text(left/width,.725,cover_subtitle,fontsize=27,weight='bold')
         fig.text(left/width,.667,'Command • Drive • Evidence • Science',fontsize=14)
         cover=[('What this is','A printable explanation of everything currently available in the application, with control references and practical use cases.'),
                ('Who it is for','Teammates, presenters, reviewers and anyone learning how the parts connect.'),
@@ -317,12 +330,15 @@ def render_pdf(blocks, output, generated, preview_dir=None):
                 if item[0]=='text':
                     _,value,x,baseline,size,weight,mono=item
                     fig.text(x/width,baseline/height,value,fontsize=size,weight=weight,family='DejaVu Sans Mono' if mono else 'DejaVu Sans',va='baseline',parse_math=False)
+                elif item[0]=='image':
+                    _,pixels,x,baseline,space,extent=item
+                    axes=fig.add_axes((x/width,baseline/height,space/width,extent/height));axes.imshow(pixels);axes.axis('off')
                 else:
                     _,x,baseline,space,extent,header=item
                     fig.add_artist(Rectangle((x/width,baseline/height),space/width,extent/height,transform=fig.transFigure,facecolor='#eeeeee' if header else 'white',edgecolor='#b0b0b0',linewidth=.55,zorder=-1))
             save_page(pdf,fig,offset+index+1)
     reader=PdfReader(output);writer=PdfWriter();writer.append_pages_from_reader(reader)
-    writer.add_metadata({'/Title':TITLE,'/Author':'AEGIS project team','/Subject':'Product controls, practical use cases and scientific boundaries'})
+    writer.add_metadata({'/Title':title,'/Author':'AEGIS project team','/Subject':'Product controls, practical use cases and scientific boundaries'})
     for chapter in chapter_pages:writer.add_outline_item(chapter['title'],chapter['page']-1)
     for source,rectangle,target in links:writer.add_annotation(source,Link(rect=rectangle,target_page_index=target,border=[0,0,0]))
     with tempfile.NamedTemporaryFile(dir=output.parent,suffix='.pdf',delete=False) as stream:

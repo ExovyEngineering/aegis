@@ -19,6 +19,10 @@ REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json',
 REPORTS=REPORTS+('friendliness_workflow_evaluation.json','friendliness_raw_integrity.json')
 REPORTS=REPORTS+('friendliness_operator_smoke.json',)
 REPORTS=REPORTS+('freshness_demo.json','freshness_operator_smoke.json','recording_connectivity.json','recording_operator_smoke.json')
+REPORTS=REPORTS+('challenge_readiness.json','final_handoff_manifest.json','final_submission_guide.pdf','final_submission_guide.html','final_submission_guide.md',
+                 'integrated_model_evaluation.json','integrated_model_predictions.csv','integrated_model_timeseries.csv','integrated_model_study.md',
+                 'decision_study.json','decision_study.csv','decision_study.md','decision_study_demand_service.csv',
+                 'data_dictionary.csv','source_provenance.json','source_provenance.csv','team_science_statement.pdf','final_submission_verification.json')
 GUIDE='''# AEGIS reviewer draft
 
 This package is a review artifact, not a final approved competition submission.
@@ -99,7 +103,7 @@ def collect(root):
         if folder.exists():
             for path in folder.rglob('*'):add(path)
     for name in REPORTS:add(root/'reports'/name)
-    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/browser_qa/activity','reports/browser_qa/recording','reports/checks','reports/verification_history'):
+    for directory in ('data/processed','data/fixtures','data/manifests','reports/figures','reports/browser_qa/final','reports/browser_qa/operations','reports/browser_qa/depth','reports/browser_qa/drive','reports/browser_qa/controls','reports/browser_qa/readiness','reports/browser_qa/rehearsal','reports/browser_qa/roads','reports/browser_qa/master_guide','reports/browser_qa/assistant','reports/browser_qa/command_workflow','reports/browser_qa/activity','reports/browser_qa/recording','reports/browser_qa/final_submission','reports/checks','reports/verification_history'):
         folder=root/directory
         if folder.exists():
             for path in folder.rglob('*'):add(path)

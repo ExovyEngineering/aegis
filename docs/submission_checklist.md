@@ -1,6 +1,10 @@
 # AEGIS submission checklist
 
-Updated October 31, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
+Updated November 1, 2026. This checklist records required evidence, not a claim that every gate has passed. Updated experiment outputs and `docs/progress.md` take precedence over stale counts here.
+
+The project owner confirmed Kiro was not used and will disclose this. Its use
+criterion is not met. The final five-task guide and app record this explicitly;
+the older preparation instructions below are not execution evidence.
 
 ## P0 release gates
 
@@ -11,7 +15,7 @@ Updated October 31, 2026. This checklist records required evidence, not a claim 
 | Risk estimator and baseline | Retrospective prevalence/logistic, calibration/uncertainty and frozen earlier-snapshot sensitivity | Actual publication timing remains unknown; no prospective-validation claim |
 | Three or more interventions | Four solver scenarios with hold/recall, stock, eligibility and capacity checks | Rehearse changed-event tradeoffs and capture final reproducible results |
 | Functional application | Built React/FastAPI app; documented startup, dated backend/UI tests, loopback HTTP and separate actual-Chrome rehearsals; executable reviewer-package verification; 51 pinned packages and full automated HTTP workflow verified in a fresh Python environment (`reports/clean_install.json`) | Final timed team presentation rehearsal and author review |
-| Genuine AWS Kiro workflow | Signature-verified official IDE 1.4.26 installed and version checked | User sign-in, actual spec execution and authentic evidence. Gate remains open; see `docs/kiro_handoff.md` |
+| Genuine AWS Kiro workflow | Owner disclosed non-use on November 1; installed files are preparation only | Criterion not met; disclose this rather than claim Kiro task history |
 | Report and code | Architecture, model card, assumptions, audit and demo script | Assemble final methods/results/limitations report and verify any additional official rubric requirements |
 | Five-minute demo | Deterministic seed, accelerated isolated workflow, verified fresh-session launcher, offline-demo profile and separate browser workflow evidence | Actual timed team presentation, recorded presenter review and backup fixture demonstration |
 

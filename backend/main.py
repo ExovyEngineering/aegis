@@ -23,6 +23,7 @@ from backend.event_impact import create_event_impact_router, build_event_impact
 from backend.activity import create_activity_router, read_legacy_audit
 from backend.delivery_outlook import create_delivery_outlook_router
 from backend.freshness import create_freshness_router
+from backend.challenge import create_challenge_router
 from backend.paths import ROOT, read_json
 from backend.simulation import seed_network, apply_event
 from backend.optimization import optimize,SCENARIOS
@@ -290,6 +291,7 @@ app.include_router(create_dispatch_router(db,load,record))
 app.include_router(create_planning_router(db,record))
 app.include_router(create_data_router(ROOT))
 app.include_router(create_project_router(ROOT))
+app.include_router(create_challenge_router(ROOT))
 app.include_router(create_drive_router(db,load,record))
 app.include_router(create_readiness_router(db,load))
 app.include_router(create_food_context_router(ROOT))

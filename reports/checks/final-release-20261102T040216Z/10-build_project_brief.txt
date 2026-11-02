@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-11-01T22:05:06.626003-06:00",
+  "pdf": "reports/aegis_project_brief.pdf",
+  "markdown": "reports/project_brief.md",
+  "pages": 19,
+  "sha256": "d743802a2199c095828c0d4f409a0bff5f922c2eb223aab78765c233aee8ee3d",
+  "bytes": 120659,
+  "live_api_requests_performed": false,
+  "feature_register": "config/feature_register.yaml",
+  "verification": "reports/session_verification.json"
+}

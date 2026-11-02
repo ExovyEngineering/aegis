@@ -1,5 +1,10 @@
 # Genuine Kiro workflow handoff
 
+**November 1 owner disclosure:** Kiro was not used. The owner intends to disclose
+this in the submission. The Kiro-use criterion is not met; an installed IDE and
+Codex-prepared files do not change that fact. The older handoff below is retained
+as preparation and must not be cited as execution evidence.
+
 The official Kiro IDE 1.4.26 Windows installer was downloaded from the Kiro release service, its Amazon digital signature verified, and installation into this workspace completed with exit code 0. The installation is at `.tools/kiro/`; local tooling and installers are ignored by Git.
 
 Installer SHA-256: `BE73E9E091B9359C79706F7D875256D7B41233F974FD3EE7E9663E9E3D56B243`. This is the locally measured checksum; the release metadata did not supply an independent hash. Authenticode verification returned Valid, publisher Amazon.com, Inc., AWS Kiro.

@@ -2,7 +2,7 @@
   "mode": "Accelerated scripted validation of five-minute demo narrative; no real shipments or five-minute wall-clock claim",
   "simulation": true,
   "passed": true,
-  "started_at": "2026-10-28T06:14:49.961823+00:00",
+  "started_at": "2026-11-02T04:02:31.614709+00:00",
   "human_timed_rehearsal": false,
   "seed": 20261026,
   "baseline": [
@@ -121,8 +121,8 @@
   "production_database_fingerprints_before": {
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
       "exists": true,
-      "bytes": 143360,
-      "sha256": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560"
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
     },
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
       "exists": false
@@ -137,8 +137,8 @@
   "production_database_fingerprints_after": {
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
       "exists": true,
-      "bytes": 143360,
-      "sha256": "d8d062d68a73f7923a3f7893b578fbf0b9b1fea29978c014ebb0abca58424560"
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
     },
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
       "exists": false
@@ -151,5 +151,5 @@
     }
   },
   "production_preservation_method": "SHA-256 and byte length of original configured and canonical operator SQLite files plus -wal/-shm/-journal sidecars, before/after. Observed changes are not attributed to a particular process.",
-  "finished_at": "2026-10-28T06:14:50.321713+00:00"
+  "finished_at": "2026-11-02T04:02:31.938065+00:00"
 }

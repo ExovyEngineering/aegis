@@ -69,6 +69,66 @@ def test_operator_runtime_status_and_rejected_rehearsal_are_read_only(isolated_r
         assert not (isolated_root / 'data/rehearsals').exists()
 
 
+@pytest.mark.parametrize('initial_database', ['absent', 'empty_reservation', 'seeded_without_runs'])
+def test_isolated_inspection_preserves_bytes_before_start_and_after_freezing(
+        isolated_root, monkeypatch, initial_database):
+    path = configure_rehearsal(isolated_root, monkeypatch)
+    operator = isolated_root / 'data/aegis.sqlite'
+    operator.parent.mkdir(parents=True, exist_ok=True)
+    operator.write_bytes(b'Original operator state must never be opened as SQLite')
+    original_operator = fingerprints(operator)
+    if initial_database == 'empty_reservation':
+        path.parent.mkdir(parents=True)
+        path.touch()
+    with TestClient(api.app) as client:
+        if initial_database == 'seeded_without_runs':
+            assert client.get('/api/network').status_code == 200
+            with sqlite3.connect(path) as connection:
+                assert connection.execute("SELECT 1 FROM sqlite_master WHERE name='rehearsal_runs'").fetchone() is None
+        before = fingerprints(path)
+        for _ in range(2):
+            response = client.get('/api/rehearsal')
+            assert response.status_code == 200
+            assert response.json()['active'] is None and response.json()['runs'] == []
+            assert client.get('/api/rehearsal/unknown').status_code == 404
+            assert client.get('/api/rehearsal/unknown/export').status_code == 404
+        assert fingerprints(path) == before
+        assert fingerprints(operator) == original_operator
+        if initial_database == 'absent':
+            assert not path.exists() and not path.parent.exists()
+        elif initial_database == 'empty_reservation':
+            assert path.read_bytes() == b''
+
+        # Only an explicit POST start may initialize and persist a rehearsal.
+        response = client.post('/api/rehearsal/start', json=START)
+        assert response.status_code == 200, response.text
+        run = response.json()
+        with sqlite3.connect(path) as connection:
+            assert connection.execute('SELECT COUNT(*) FROM rehearsal_runs').fetchone()[0] == 1
+        active_bytes = fingerprints(path)
+        assert client.get('/api/rehearsal').json()['active']['id'] == run['id']
+        assert client.get('/api/rehearsal/' + run['id']).json()['version'] == 1
+        assert client.get('/api/rehearsal/' + run['id'] + '/export').status_code == 409
+        assert client.get('/api/rehearsal/unknown').status_code == 404
+        assert client.get('/api/rehearsal/unknown/export').status_code == 404
+        assert fingerprints(path) == active_bytes
+
+        response = client.post('/api/rehearsal/' + run['id'] + '/finish', json={
+            'expected_version': 1, 'outcome': 'aborted',
+            'notes': 'End the automated read-only inspection regression.',
+        })
+        assert response.status_code == 200, response.text
+        frozen_bytes = fingerprints(path)
+        export = client.get('/api/rehearsal/' + run['id'] + '/export')
+        assert export.status_code == 200
+        assert export.headers['X-AEGIS-Snapshot-SHA256'] == hashlib.sha256(export.content).hexdigest()
+        assert client.get('/api/rehearsal').json()['active'] is None
+        assert client.get('/api/rehearsal/' + run['id']).json()['status'] == 'aborted'
+        assert client.get('/api/rehearsal/' + run['id'] + '/export').content == export.content
+        assert fingerprints(path) == frozen_bytes
+        assert fingerprints(operator) == original_operator
+
+
 @pytest.mark.parametrize('configuration', ['wrong_path', 'bad_uuid', 'offline_only', 'id_only'])
 def test_misconfiguration_rejects_mutations_before_creating_any_database(
         isolated_root, monkeypatch, configuration):

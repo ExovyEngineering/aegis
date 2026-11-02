@@ -1,4 +1,20 @@
-# Team review - October 31, 2026
+# Final team review - November 1, 2026
+
+Start with **Project brief → Five tasks. One inspectable submission.** Download
+the final 17-page PDF and one-page team statement. Model evaluation contains the
+new Missouri integrated study; Project brief compares three food-volume/service
+policies across three scenarios. The concise PDF explains every menu and a
+five-minute story. The longer handbook and recording checklist remain available.
+
+Kiro was not used, as the owner disclosed; the guide states the criterion is not
+met. Add Isaac's and Micky's last names and final author details, review the actual
+negative/uncertain added-data findings, and record/watch the timed video. The
+working application and tests do not substitute for those author actions.
+
+Launch with Start-AEGIS.cmd or use the verified prebuilt archive with
+Start-AEGIS.cmd --no-build after installing pinned Python dependencies.
+Reproduce the final technical build with scripts/build_final_release.py.
+No operator reset is needed for review; use fresh isolated sessions for demos.
 
 ## Prepare for the final recording
 

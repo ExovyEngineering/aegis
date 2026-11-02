@@ -6,6 +6,20 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Run locally
 
+The final five-task handoff is in **Project brief → Five tasks. One inspectable
+submission.** Download the final PDF there; it covers the required tasks, all ten
+menus and a five-minute presentation. **Model evaluation** includes the separate
+Missouri FSIS/BEAM/NOAA study and NORS ablations; Project brief compares food-volume
+and service policies. These are explicitly retrospective/simulated studies.
+The owner has disclosed that Kiro was not used, so that challenge criterion is not met. Final team/author review remains required.
+
+To reproduce and package the complete local build after installing the pinned
+dependencies, run `.venv/Scripts/python scripts/build_final_release.py`.
+It creates `artifacts/AEGIS-Final-Build.zip`, runs the scientific studies, full
+tests/build, safe isolated demos and offline extracted-package verification.
+It does not deploy, submit, or reset your operator database. The prebuilt archive
+starts with `Start-AEGIS.cmd --no-build` after Python dependency installation.
+
 Open **Save the Load** for the new temperature-history-to-rescue workflow:
 **Start rescue experiment → Replay heat excursion → Review → approve → Drive**.
 The same workspace compares warehouse FEFO and FIFO picks using actual constrained

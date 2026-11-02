@@ -1,0 +1,194 @@
+{
+  "status": "passed",
+  "passed": true,
+  "checked_at": "2026-11-02T03:51:20.747867+00:00",
+  "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip",
+  "fresh_python_environment": false,
+  "isolated_extracted_directory": true,
+  "network_requested": false,
+  "operator_database_modified": false,
+  "checks": [
+    "archive paths, exact manifest membership, hashes, sizes and exclusions verified",
+    "extracted backend imports and fresh database are isolated from checkout",
+    "prebuilt frontend and bundled assets load",
+    "packaged foreground launcher and prebuilt assets validate without building or downloading dependencies",
+    "fsis_recalls dated fixture works without network/cache",
+    "modot dated fixture works without network/cache",
+    "openmeteo dated fixture works without network/cache",
+    "network, measured model and source coverage reports are available",
+    "read-only assistant explains exact captured facts without a provider or model call",
+    "broad chicken question returns canonical read-only assistant choices without a model call",
+    "read-only delivery outlook compares current and delayed allocations with simulation provenance and independent constraints",
+    "read-only disruption preview computes four real before/after allocations without changing network or route geometry",
+    "separate dated Iowa/Missouri road fixtures and estimated comparison work without network",
+    "all eight semantic source tables browse with matching snapshot checksums",
+    "historical USDA context retains 115 Missouri county units, FIPS and export provenance",
+    "offline farm route plan is feasible with explicitly estimated routing",
+    "saved route project reopens its immutable planning run",
+    "presentation PDF is included and downloadable",
+    "complete master user handbook downloads in PDF, print HTML and Markdown with recorded checksum",
+    "five challenge tasks and final guide export disclose Kiro non-use and remaining team review",
+    "integrated FSIS BEAM NOAA research and ablation metrics retain common cohort and no operational activation",
+    "three food-volume and balanced-service scenarios compare safe eligible policies without dispatch",
+    "human approval publishes simulated assignments in the fresh extracted database",
+    "read-only activity history exposes the actual recorded approval without changing state",
+    "Drive default lock and parked confirmation gate contextual trip acknowledgment",
+    "read-only readiness distinguishes approved acknowledged work without dispatching",
+    "route review uses a supplied OSRM fixture and dated MoDOT evidence offline",
+    "local SQLite backup verifies and restores to a new private copy without rebinding the app",
+    "stored sensor replay drives conditional quality clocks, automatic rescue and independently reviewed FEFO/FIFO",
+    "identified rescue approval requires all review confirmations and updates the exact simulated driver trip",
+    "later sensor frames raise a persistent freshness review without automatic holds or redispatch",
+    "socket and DNS guard observed zero application network attempts",
+    "original operator database and SQLite sidecar fingerprints unchanged"
+  ],
+  "check_results": [
+    {
+      "name": "archive paths, exact manifest membership, hashes, sizes and exclusions verified",
+      "status": "passed"
+    },
+    {
+      "name": "extracted backend imports and fresh database are isolated from checkout",
+      "status": "passed"
+    },
+    {
+      "name": "prebuilt frontend and bundled assets load",
+      "status": "passed"
+    },
+    {
+      "name": "packaged foreground launcher and prebuilt assets validate without building or downloading dependencies",
+      "status": "passed"
+    },
+    {
+      "name": "fsis_recalls dated fixture works without network/cache",
+      "status": "passed"
+    },
+    {
+      "name": "modot dated fixture works without network/cache",
+      "status": "passed"
+    },
+    {
+      "name": "openmeteo dated fixture works without network/cache",
+      "status": "passed"
+    },
+    {
+      "name": "network, measured model and source coverage reports are available",
+      "status": "passed"
+    },
+    {
+      "name": "read-only assistant explains exact captured facts without a provider or model call",
+      "status": "passed"
+    },
+    {
+      "name": "broad chicken question returns canonical read-only assistant choices without a model call",
+      "status": "passed"
+    },
+    {
+      "name": "read-only delivery outlook compares current and delayed allocations with simulation provenance and independent constraints",
+      "status": "passed"
+    },
+    {
+      "name": "read-only disruption preview computes four real before/after allocations without changing network or route geometry",
+      "status": "passed"
+    },
+    {
+      "name": "separate dated Iowa/Missouri road fixtures and estimated comparison work without network",
+      "status": "passed"
+    },
+    {
+      "name": "all eight semantic source tables browse with matching snapshot checksums",
+      "status": "passed"
+    },
+    {
+      "name": "historical USDA context retains 115 Missouri county units, FIPS and export provenance",
+      "status": "passed"
+    },
+    {
+      "name": "offline farm route plan is feasible with explicitly estimated routing",
+      "status": "passed"
+    },
+    {
+      "name": "saved route project reopens its immutable planning run",
+      "status": "passed"
+    },
+    {
+      "name": "presentation PDF is included and downloadable",
+      "status": "passed"
+    },
+    {
+      "name": "complete master user handbook downloads in PDF, print HTML and Markdown with recorded checksum",
+      "status": "passed"
+    },
+    {
+      "name": "five challenge tasks and final guide export disclose Kiro non-use and remaining team review",
+      "status": "passed"
+    },
+    {
+      "name": "integrated FSIS BEAM NOAA research and ablation metrics retain common cohort and no operational activation",
+      "status": "passed"
+    },
+    {
+      "name": "three food-volume and balanced-service scenarios compare safe eligible policies without dispatch",
+      "status": "passed"
+    },
+    {
+      "name": "human approval publishes simulated assignments in the fresh extracted database",
+      "status": "passed"
+    },
+    {
+      "name": "read-only activity history exposes the actual recorded approval without changing state",
+      "status": "passed"
+    },
+    {
+      "name": "Drive default lock and parked confirmation gate contextual trip acknowledgment",
+      "status": "passed"
+    },
+    {
+      "name": "read-only readiness distinguishes approved acknowledged work without dispatching",
+      "status": "passed"
+    },
+    {
+      "name": "route review uses a supplied OSRM fixture and dated MoDOT evidence offline",
+      "status": "passed"
+    },
+    {
+      "name": "local SQLite backup verifies and restores to a new private copy without rebinding the app",
+      "status": "passed"
+    },
+    {
+      "name": "stored sensor replay drives conditional quality clocks, automatic rescue and independently reviewed FEFO/FIFO",
+      "status": "passed"
+    },
+    {
+      "name": "identified rescue approval requires all review confirmations and updates the exact simulated driver trip",
+      "status": "passed"
+    },
+    {
+      "name": "later sensor frames raise a persistent freshness review without automatic holds or redispatch",
+      "status": "passed"
+    },
+    {
+      "name": "socket and DNS guard observed zero application network attempts",
+      "status": "passed"
+    },
+    {
+      "name": "original operator database and SQLite sidecar fingerprints unchanged",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "The existing installed dependency environment is reused; no fresh dependency installation is claimed.",
+    "Only trusted project archives may be executed. Internal hashes are not a signature or an untrusted-code security sandbox.",
+    "Offline ASGI workflows do not prove a real browser rendering, live provider connectivity or a completed timed presentation."
+  ],
+  "archive_sha256": "9c6cdc49a0acc10af49292c8bbe2f95066a3c46e4aa9ecc7d37fcda1db362e6f",
+  "manifest_files_verified": 986,
+  "archive_files": 987,
+  "uncompressed_bytes": 67664211,
+  "network_guard_enabled": true,
+  "network_attempts": [],
+  "worker_exit_code": 0,
+  "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
+  "finished_at": "2026-11-02T03:51:32.743874+00:00",
+  "duration_seconds": 12.0
+}

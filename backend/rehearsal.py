@@ -4,6 +4,7 @@ Operational evidence proves that simulated actions were recorded during the run,
 not that the presenter showed them on screen. Completion never closes Kiro,
 scientific, authorship or final-submission approval gates.
 """
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -418,7 +419,26 @@ def create_rehearsal_router(db, load, record, db_path, root=ROOT):
             connection.execute('BEGIN IMMEDIATE')
         ensure_rehearsal_schema(connection)
 
+    @contextmanager
+    def inspection_connection(value):
+        """Inspect saved runs without bootstrapping a database or its schema."""
+        selected=workspace()/value['database_relative_path']
+        if not selected.is_file():
+            yield None
+            return
+        # The general db() initializer can create operational tables. GETs use
+        # an enforced read-only connection even for an empty launcher reservation.
+        connection=sqlite3.connect(selected.as_uri()+'?mode=ro',uri=True,timeout=20)
+        try:
+            connection.execute('BEGIN')  # One consistent read snapshot; no writer reservation.
+            exists=connection.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='rehearsal_runs'").fetchone()
+            yield connection if exists else None
+        finally:
+            connection.close()
+
     def read_run(connection, identity):
+        if connection is None:
+            raise HTTPException(404,'Unknown rehearsal run')
         row=connection.execute('SELECT version,status,payload,snapshot_json,snapshot_sha256 FROM rehearsal_runs WHERE id=?',(identity,)).fetchone()
         if not row:
             raise HTTPException(404,'Unknown rehearsal run')
@@ -460,8 +480,9 @@ def create_rehearsal_router(db, load, record, db_path, root=ROOT):
         value=context()
         if not value['isolated']:
             return {'runtime':value,'stages':STAGES,'active':None,'runs':[]}
-        with db() as connection:
-            begin(connection)
+        with inspection_connection(value) as connection:
+            if connection is None:
+                return {'runtime':value,'stages':STAGES,'active':None,'runs':[]}
             rows=connection.execute('SELECT id FROM rehearsal_runs ORDER BY rowid DESC LIMIT 100').fetchall()
             runs=[rendered(read_run(connection,row[0])[0]) for row in rows]
             active=next((run for run in runs if run['status']=='active'),None)
@@ -488,9 +509,8 @@ def create_rehearsal_router(db, load, record, db_path, root=ROOT):
 
     @router.get('/api/rehearsal/{identity}')
     def detail(identity:str):
-        isolated()
-        with db() as connection:
-            begin(connection)
+        value=isolated()
+        with inspection_connection(value) as connection:
             return rendered(read_run(connection,identity)[0])
 
     @router.post('/api/rehearsal/{identity}/checkpoint')
@@ -541,9 +561,8 @@ def create_rehearsal_router(db, load, record, db_path, root=ROOT):
 
     @router.get('/api/rehearsal/{identity}/export')
     def export(identity:str):
-        isolated()
-        with db() as connection:
-            begin(connection)
+        value=isolated()
+        with inspection_connection(value) as connection:
             run,serialized,digest=read_run(connection,identity)
             if run['status']=='active' or serialized is None:
                 raise HTTPException(409,'Finish or abort the rehearsal before exporting its immutable snapshot')

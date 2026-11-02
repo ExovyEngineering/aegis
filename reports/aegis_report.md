@@ -2,7 +2,7 @@
 
 **Draft scientific competition report — genuine Kiro application usage, author signoff, and official-rubric review pending.**
 
-Report compiled from saved artifacts on 2026-10-31. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
+Report compiled from saved artifacts on 2026-11-02. This document describes a local research prototype; it does not establish regulatory authority, operational certification, or prospective model validity.
 
 ## Abstract
 
@@ -209,7 +209,7 @@ Rescue proposals are complete replacement assignment plans, checked against stoc
 
 Evidence source: `reports/freshness_demo.json`. This accelerated deterministic replay is software evidence, not a timed human presentation, physical hardware experiment, measured food waste or guaranteed commercial savings.
 
-The saved replay reports 15/15 automated checks passed. Finished at 2026-10-31T06:22:06.121303+00:00; physical hardware connected=False. These checks do not measure predictive accuracy.
+The saved replay reports 15/15 automated checks passed. Finished at 2026-11-02T04:02:34.977886+00:00; physical hardware connected=False. These checks do not measure predictive accuracy.
 
 Declared profile: reference life 240.0000 h at 4.0000 °C; initial equivalent age 230.0000 h; point Q10 2.0000; future product temperature 4.0000 °C; maximum supported gap 120.0000 minutes. These are illustrative assumptions, not a recommended storage life.
 

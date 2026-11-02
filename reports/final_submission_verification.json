@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-02T04:10:03.100930+00:00",
+  "passed": true,
+  "pdf_pages": 17,
+  "bookmarks_and_contents": 9,
+  "page_numbers_verified": true,
+  "input_hashes_verified": true,
+  "one_page_team_statement_verified": true,
+  "owner_kiro_non_use_disclosed": true,
+  "browser_checks_passed": 140,
+  "browser_artifact": "reports/browser_qa/final_submission/results.json",
+  "release_pipeline_passed": true,
+  "verification": "reports/session_verification.json",
+  "original_operator_preserved": true,
+  "isolated_inspection_preserved": true,
+  "visual_review": {
+    "method": "Native Matplotlib print layout previews, not independent PDF rasterization",
+    "pages_inspected": [
+      4,
+      6,
+      11
+    ],
+    "physical_printer_tested": false
+  },
+  "human_video_or_submission_verified": false
+}

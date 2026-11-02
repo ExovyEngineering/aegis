@@ -14,6 +14,7 @@ import RoadIntelligence, { type RoadJourneyContext } from './RoadIntelligence';
 import EvidenceAssistant from './EvidenceAssistant';
 import DeliveryOutlook from './DeliveryOutlook';
 import FreshnessLab from './FreshnessLab';
+import { IntegratedModelStudy } from './ChallengeEvidence';
 import WorkspaceGuide from './WorkspaceGuide';
 import EventImpactPanel from './EventImpactPanel';
 import ActivityTimeline from './ActivityTimeline';
@@ -248,7 +249,7 @@ export default function App() {
         {view === 'dispatch' && <DispatcherDesk onNavigate={navigate} onChange={async () => { await load(); }} />}
         {network && view === 'command' && <ScenarioDetails scenarios={scenarios} />}
         {view === 'science' && <ModelTimingCard />}
-        {view === 'science' && <ModelErrorAnalysis model={model} />}
+        {view === 'science' && <><IntegratedModelStudy/><ModelErrorAnalysis model={model} /></>}
         {view === 'evidence' && <>
           <FoodAccessContext />
           <DataExplorer />

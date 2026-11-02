@@ -1,0 +1,25 @@
+flowchart LR
+  H["HUMAN HEALTH<br/>PulseNet-derived BEAM aggregates<br/>NORS historical outbreak reports"]
+  F["FOOD / ANIMAL<br/>FSIS selected raw-poultry primary samples<br/>Salmonella Positive / Negative"]
+  E["ENVIRONMENT<br/>NOAA: five Missouri airport stations<br/>Ambient daily TMAX / TMIN / PRCP"]
+  M["RETROSPECTIVE ANALYTIC ALIGNMENT<br/>Missouri selected sample, 7-day lead<br/>Explicit assumed reporting lags<br/>No causal or prospective claim"]
+  S["SUPPLY CHAIN — SIMULATED<br/>Suppliers → DCs → recipients<br/>Lots, trucks, stock, cargo temperatures<br/>Use-by and receiving constraints"]
+  D["DECISION SUPPORT<br/>Inspect / verify, compare, substitute<br/>Propose precautionary hold<br/>No model-issued hold"]
+  R["HUMAN REVIEW & APPROVAL<br/>Dispatcher + required receiving review<br/>Held / recalled lots cannot dispatch"]
+  O["SIMULATED OPERATIONAL OUTCOMES<br/>Delivered kg, unmet demand, cost / delay<br/>Quality-window sensitivity; not illness prevented"]
+  A["FOOD SECURITY / ACCESS<br/>USDA ERS county access / store context<br/>2019 / 2020 / 2023 indicators<br/>Actual recipient need is unverified"]
+  H -->|"Human isolates / historical outbreaks<br/>separate features and labels"| M
+  F -->|"Selected-sample outcome + prior history"| M
+  E -->|"Lagged state ambient index<br/>not establishment exposure"| M
+  M -.->|"Evidence for attention; no disposition authority"| D
+  S -->|"Explicit hypothetical inputs"| D
+  D -->|"Concrete proposed plan"| R
+  R -->|"Approved simulated assignments"| O
+  A -.->|"Historical context only;<br/>no fictional county assignment"| R
+  O -.->|"Availability trade-offs;<br/>no measured community benefit"| A
+  classDef empirical fill:#eaf2f8,stroke:#285b83,color:#172b3a;
+  classDef simulated fill:#fff0df,stroke:#b36b17,color:#3b2b15;
+  classDef contextual fill:#f1eef7,stroke:#76618d,color:#332b40;
+  class H,F,E,M empirical;
+  class S,D,R,O simulated;
+  class A contextual;

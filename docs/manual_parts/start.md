@@ -1,5 +1,12 @@
 ## Start here: what AEGIS does
 
+The November 1 five-task review adds a separate integrated Missouri research
+study in **Model evaluation**, and a five-task guide plus food-volume/service
+policy comparisons in **Project brief**. The shorter final PDF covers all ten
+menus and a presentation idea. The owner has disclosed that **Kiro was not used**;
+that challenge criterion is not met. An installed IDE or prepared specs are not
+execution evidence. The full application remains independently runnable.
+
 AEGIS means **Adaptive Early-warning & Guidance for Integrated Supply Chains**. We built it to help a regional poultry distributor examine food-safety evidence, understand disruption scenarios, compare constrained operational responses and keep a human dispatcher responsible for consequential decisions.
 
 The core demonstration is centered on Missouri: Columbia, Kansas City, Jefferson City, Springfield and St. Louis. An optional Iowa road-evidence layer supports a cross-state planning example. National historical food-safety data support the retrospective modeling study; this is not a separately validated Missouri-only predictor.

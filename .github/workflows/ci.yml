@@ -32,6 +32,9 @@ jobs:
       - name: Regenerate the complete printable user guide
         if: always()
         run: python scripts/build_master_guide.py
+      - name: Regenerate the final five-task handoff
+        if: always()
+        run: python scripts/build_final_handoff.py
       - name: Preserve team brief and test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -48,3 +51,8 @@ jobs:
             reports/aegis_master_guide.html
             reports/master_guide_manifest.json
             docs/aegis_master_guide.md
+            reports/final_submission_guide.pdf
+            reports/final_submission_guide.html
+            reports/final_submission_guide.md
+            reports/final_handoff_manifest.json
+            reports/challenge_readiness.json

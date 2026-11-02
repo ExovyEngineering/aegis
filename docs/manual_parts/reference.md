@@ -1,5 +1,20 @@
 ## Storage, exports and sharing
 
+Project brief now starts with **Five tasks. One inspectable submission.** Each
+task opens related operational/evidence workspaces and allowlisted source/result
+exports. **Download final five-task PDF** and **Read final guide and presentation**
+provide the concise handoff. Task 1 exports its diagram/dictionary/provenance and
+analytic CSV; Task 5 offers a one-page team statement with last names and final
+author review left for the team. Kiro non-use is explicitly disclosed.
+
+The **Preserve food. Compare who receives it.** panel switches three captured
+simulated scenarios across a feasible rule, volume/quality preservation and
+balanced service. Compare distributed/unmet food, service and quality exposure,
+then expand per-destination results/actions. These are fixed-seed read-only
+studies; they do not change current assignments, impose holds or certify safety.
+The displayed equity measure concerns destination service, not an invented
+population-vulnerability score. Download JSON or CSV for all nine comparisons.
+
 The current app is a local research demonstrator with saved SQLite operational state and separate evidence files. It does not run a continuous warehouse inventory ledger, synchronize companies through cloud accounts, or send physical truck instructions outside the application.
 
 | Item | Where it lives or how it is shared | Important distinction |

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T07:17:56.976193+00:00",
+  "generated_at": "2026-11-02T04:05:03.576140+00:00",
   "inputs": [
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\manifests\\inventory.json",
@@ -15,7 +15,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\demo_results.json",
-      "sha256": "a8f9062af18807e1ff601343086d447b7eba1952d40323f10ca4580266cc516c"
+      "sha256": "1b72b55f382067f2487b5899dae348763f5901854642857eb5f0c03b3ee3ada0"
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\model_timing.json",
@@ -55,7 +55,7 @@
     },
     {
       "input": "C:\\Users\\ericp\\Downloads\\NAFSI\\reports\\freshness_demo.json",
-      "sha256": "dc22836c1c5470abe115887352cc74690bcca8d2c9f512a56ff59c8b47aa417f"
+      "sha256": "3b5fbf043a568b72ef816df4d5d6d06b4d447bc40a0865f74cdc83d109364146"
     }
   ],
   "draft": true

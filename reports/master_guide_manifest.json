@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-31T02:17:07.083383-05:00",
+  "generated_at": "2026-11-01T22:05:37.216284-06:00",
   "title": "AEGIS Master User Guide",
   "pdf": "reports/aegis_master_guide.pdf",
   "markdown": "docs/aegis_master_guide.md",
   "html": "reports/aegis_master_guide.html",
-  "sha256": "5ac2085f277eafefd5ac318358a56bf63193888d171a12022f91abaa9a81fb3c",
-  "bytes": 498421,
+  "sha256": "546e1470e8a42c62ff959d0ada2622ecce59f857f192aeccf5013cc82b4230d4",
+  "bytes": 503760,
   "pages": 83,
   "chapters": [
     {
@@ -156,7 +156,7 @@
   "source_files": [
     {
       "path": "docs/manual_parts/start.md",
-      "sha256": "5d0547067a42702d29a296e58e694796289633172439b7e0051452bdcb3b516d"
+      "sha256": "516c041f49b5224698945281c37b05d9f7a4c9a5368ffb19ad357cb6aae80cce"
     },
     {
       "path": "docs/manual_parts/operations.md",
@@ -172,7 +172,7 @@
     },
     {
       "path": "docs/manual_parts/evidence_science.md",
-      "sha256": "2a31c9acddcf45c92f198f3259017cd566e6ffa1180c99b84cd21fdae620d8ea"
+      "sha256": "8a5906e4c3e7d96427383b44c186d9073463bb7fefbebb4c4bdbd95f76655f22"
     },
     {
       "path": "docs/manual_parts/assistant.md",
@@ -188,7 +188,7 @@
     },
     {
       "path": "docs/manual_parts/reference.md",
-      "sha256": "06823b4dbd0670c4fc056bc91392b932157661f795a6a7084cc607d19a47e2e6"
+      "sha256": "7c793b22bea8d8a03650f3d5b49500998c79981d75946f38ded661c684de80e2"
     }
   ],
   "verification_snapshot": "reports/session_verification.json",

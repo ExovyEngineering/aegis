@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-10-31T06:22:04.619471+00:00",
+  "started_at": "2026-11-02T04:02:33.431360+00:00",
   "simulation": true,
   "physical_hardware_connected": false,
   "mode": "accelerated deterministic replay; not a timed human presentation",
@@ -71,8 +71,8 @@
     "All logistics, warehouse placement, receiving acceptance and sensor packets are simulated.",
     "FEFO expiry exposure is not observed food waste or a guaranteed quantity saved."
   ],
-  "database_relative_path": "data/rehearsals/b9d8f3e5-f6db-434d-b300-efcb5e87d8db.sqlite",
-  "rehearsal_id": "b9d8f3e5-f6db-434d-b300-efcb5e87d8db",
+  "database_relative_path": "data/rehearsals/36afde00-1547-4fee-a66a-6dd07c89fd6f.sqlite",
+  "rehearsal_id": "36afde00-1547-4fee-a66a-6dd07c89fd6f",
   "quality": {
     "baseline_reference_hours": 9.0,
     "point_forward_hours": 4.388539913345198,
@@ -407,7 +407,7 @@
   "approval": {
     "actor": "Synthetic demo dispatcher",
     "reason": "Isolated reproducible quality-rescue exercise; eligibility, receiving and route assumptions reviewed",
-    "approved_at": "2026-10-31T06:22:05.641040+00:00",
+    "approved_at": "2026-11-02T04:02:34.484226+00:00",
     "network_revision": 1,
     "assignments_count": 12,
     "selected_destination_id": "D06",
@@ -420,7 +420,7 @@
     "destination_id": "D06",
     "freshness_reviews": [
       {
-        "session_id": "443da09c-d078-4c58-90a1-1756a371c553",
+        "session_id": "0ab4e9d8-bd12-4247-8073-332455d3765b",
         "shipment_id": "SH05",
         "lot_id": "L05",
         "reason": "Cargo freshness inputs changed after approval. Ask the dispatcher to review the latest sensor and planning context while safely parked.",
@@ -441,12 +441,12 @@
     ],
     "readiness_status_after_new_frame": "review_required"
   },
-  "finished_at": "2026-10-31T06:22:06.121303+00:00",
+  "finished_at": "2026-11-02T04:02:34.977886+00:00",
   "operator_database_before": {
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
       "exists": true,
-      "bytes": 196608,
-      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
     },
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
       "exists": false
@@ -461,8 +461,8 @@
   "operator_database_after": {
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
       "exists": true,
-      "bytes": 196608,
-      "sha256": "1a8102561f81557a566c58d26c99ed89806eaa31adb5a6efc22e75b20e32ae1f"
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
     },
     "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
       "exists": false

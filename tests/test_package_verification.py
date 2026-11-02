@@ -127,7 +127,13 @@ def test_actual_extracted_backend_runs_offline_with_installed_dependencies(tmp_p
     required_reports=('api_status.json','model_evaluation.json','model_timing.json','noaa_coverage.json','evidence_ingestion.json','usda_food_environment.json','fsis_ingestion.json','project_brief_manifest.json','project_brief.md','aegis_project_brief.pdf','aegis_report.md','master_guide_manifest.json','aegis_master_guide.pdf','aegis_master_guide.html')
     (source/'reports').mkdir()
     for name in required_reports:shutil.copy2(ROOT/'reports'/name,source/'reports'/name)
-    (source/'docs').mkdir()
+    from backend.challenge import ARTIFACTS
+    for relative in [*(value[0] for value in ARTIFACTS.values()),'reports/final_handoff_manifest.json']:
+        destination=source/relative
+        if not destination.exists():
+            destination.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(ROOT/relative,destination)
+    (source/'docs').mkdir(exist_ok=True)
     shutil.copy2(ROOT/'docs/aegis_master_guide.md',source/'docs/aegis_master_guide.md')
     shutil.copy2(ROOT/'requirements-lock.txt',source/'requirements-lock.txt')
     frontend=source/'frontend/dist';(frontend/'assets').mkdir(parents=True)

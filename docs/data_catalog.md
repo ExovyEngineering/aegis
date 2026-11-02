@@ -88,3 +88,15 @@ extract. Missing codes remain null, with exact cell codes and source locations
 retained separately. FIPS distinguishes the two source rows named St. Louis.
 County context is available in Sources & evidence and as a CSV export. See
 [definitions, commands and interpretation limits](food_access_context.md).
+
+
+## November 1 final five-task alignment
+
+The separate research study exports data/processed/integrated_mo_analytic.csv.
+It retains selected Missouri FSIS outcomes, seven-day forecast origins and
+explicitly lagged regional BEAM/NOAA/NORS context. This is an exploratory aggregate
+alignment, not case, genome, lot or causal linkage. Complete-source coverage and
+unknown historical publication times remain explicit. Field definitions and
+raw/derived lineage are in reports/data_dictionary.csv and reports/source_provenance.json.
+The national model and operational logistics remain separate. USDA county context
+is not assigned to fictional recipients or used as an invented need weight.

@@ -1,0 +1,177 @@
+{
+  "started_at": "2026-11-02T04:02:16.093978+00:00",
+  "passed": true,
+  "steps": [
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/train_integrated_study.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 8.758,
+      "log": "reports/checks/final-release-20261102T040216Z/01-train_integrated_study.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/run_decision_study.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.357,
+      "log": "reports/checks/final-release-20261102T040216Z/02-run_decision_study.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/build_data_dictionary.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.024,
+      "log": "reports/checks/final-release-20261102T040216Z/03-build_data_dictionary.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/render_one_health_system.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.787,
+      "log": "reports/checks/final-release-20261102T040216Z/04-render_one_health_system.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/build_team_statement.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.123,
+      "log": "reports/checks/final-release-20261102T040216Z/05-build_team_statement.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/demo_run.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.909,
+      "log": "reports/checks/final-release-20261102T040216Z/06-demo_run.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/freshness_demo.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 3.043,
+      "log": "reports/checks/final-release-20261102T040216Z/07-freshness_demo.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/verify_project.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 146.132,
+      "log": "reports/checks/final-release-20261102T040216Z/08-verify_project.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/build_submission_report.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 2.438,
+      "log": "reports/checks/final-release-20261102T040216Z/09-build_submission_report.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/build_project_brief.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 3.087,
+      "log": "reports/checks/final-release-20261102T040216Z/10-build_project_brief.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/build_master_guide.py"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 30.636,
+      "log": "reports/checks/final-release-20261102T040216Z/11-build_master_guide.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/build_final_handoff.py",
+        "--preview-dir",
+        "reports/browser_qa/final_submission/print-render"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 10.52,
+      "log": "reports/checks/final-release-20261102T040216Z/12-build_final_handoff.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/package_submission.py",
+        "--output",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 5.146,
+      "log": "reports/checks/final-release-20261102T040216Z/13-package_submission.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+        "scripts/verify_package.py",
+        "--archive",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 11.844,
+      "log": "reports/checks/final-release-20261102T040216Z/14-verify_package.txt"
+    }
+  ],
+  "archive": "artifacts\\AEGIS-Final-Build.zip",
+  "operator_before": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "deployed": false,
+  "competition_submission_performed": false,
+  "human_or_kiro_signoff_inferred": false,
+  "note": "Application networking is not needed by these reproduction steps. Offline package checks reuse the installed dependency environment. Browser and live-provider probes are separate dated evidence.",
+  "operator_after": {
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-wal": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-shm": {
+      "exists": false
+    },
+    "C:\\Users\\ericp\\Downloads\\NAFSI\\data\\aegis.sqlite-journal": {
+      "exists": false
+    }
+  },
+  "operator_preserved": true,
+  "finished_at": "2026-11-02T04:06:04.895953+00:00"
+}

@@ -1,6 +1,54 @@
 # Progress and acceptance evidence
 
-Session date: October 31, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+Session date: November 1, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
+
+## Final five-task research and software handoff (November 1)
+
+- Mapped the user-supplied five tasks, preserving the exact requirement text.
+  Added One Health diagram, shared-grain/lag documentation, a 150-field dictionary
+  and source/derived provenance exports. Original raw observations remain unchanged.
+- Added a separate seven-day Missouri FSIS/BEAM/NOAA research study with NORS
+  ablation, time-aware embargo, calibration, weekly uncertainty, paired added-data
+  comparison and error consequences. Of 1,534 Missouri samples, 490 meet complete
+  source coverage; primary holdout has 171 samples/22 positives. Core Brier
+  0.112456 versus baseline 0.114307; added BEAM/NOAA value is not established.
+  Adding NORS worsens this cohort to 0.124489. These results are not activated
+  prospectively and do not imply consumer illness, lot risk or outbreak causation.
+- Added three actual constrained policies across three simulated scenarios:
+  feasible order, volume/quality preservation and balanced destination service.
+  Under fleet scarcity, optimized volume is 3,200 kg versus rule 2,800 kg;
+  balanced service reaches eight destinations versus seven, with a quality/travel
+  tradeoff. All nine plans exclude held/recalled stock and pass independent checks.
+  No fabricated county need weights or causal pathogen-risk reduction are claimed.
+- Project brief now exposes five task cards, final guide/exports and policy
+  comparisons; Model evaluation exposes the integrated study separately from
+  the original national model. Missing/malformed metrics abstain visibly.
+- Generated the **17-page final task/menu/presentation PDF** and a separate
+  **one-page team science PDF**. Owner reports Isaac's disease-side contribution
+  shaped CDC/BEAM/historical analysis; Micky provided code help. Last names and
+  final authorship review remain for the team. **Owner disclosed Kiro was not used;
+  that criterion is not met.** No prepared spec or installation is claimed as use.
+- Consolidated verification passed **1,246 pytest**, four platform skips/four
+  upstream warnings, **406 Vitest**, and production build. The final fourteen-step
+  reproduction pipeline passed, preserving operator SQLite/sidecars. Reports:
+  `reports/session_verification.json` and `reports/final_release.json`.
+- **140 actual-Chrome final submission checks passed**, including all task
+  cards, 13 allowlisted artifacts, exact downloads/model values, nine policy
+  outcomes, coverage gaps and mobile layout. Operator, isolated database, raw
+  observations, caches and fixtures were unchanged. An initial audit exposed
+  empty-table creation on rehearsal inspection; enforced read-only GETs and
+  byte-preservation regressions corrected it. Earlier failed runs remain dated.
+- **33 extracted offline package checks passed**, with zero application network
+  attempts and existing installed dependencies reused. Final archive:
+  `artifacts/AEGIS-Final-Build.zip`. PDF metadata, 17 page numbers, nine bookmarks/
+  contents links, input hashes and the one-page team statement were verified in
+  `reports/final_submission_verification.json`; no physical printer test.
+- Git preserves exact analytic/report/document bytes across platform checkouts so
+  line-ending conversion cannot invalidate the published lineage checksums.
+- No new live-provider success is inferred. Existing dated source results and
+  fallbacks remain visible. Next: add final names/author review, rehearse/watch
+  the actual timed video, and submit with explicit Kiro non-use and scientific
+  limits. No upload, deployment, merge or competition submission was performed.
 
 ## Latest: recording preparation and workspace order (October 31)
 

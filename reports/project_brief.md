@@ -2,7 +2,7 @@
 
 Adaptive Early-warning & Guidance for Integrated Supply Chains
 
-Generated October 31, 2026 at 02:16 AM CT. Target submission: November 2, 2026; feature freeze target October 30.
+Generated November 01, 2026 at 10:05 PM CT. Target submission: November 2, 2026; feature freeze target October 30.
 
 Audience: project teammates, presenters and reviewers. This is an ongoing planning brief, not a certified final submission or regulatory decision.
 
@@ -58,9 +58,9 @@ Bounded read-only rows, schema, literal filters, page null counts and file check
 
 Evidence: tests/test_data_explorer.py
 
-Authentic Kiro spec execution | pending user sign-in and genuine task execution
+Authentic Kiro spec execution | not used; owner will disclose unmet Kiro criterion
 
-Kiro is installed. Existing Codex artifacts and installation evidence do not prove Kiro workflow completion.
+Owner confirmed non-use on November 1. Installation and Codex-prepared specifications do not satisfy the challenge's Kiro-use criterion. The app runs independently; no Kiro authorship or execution is claimed.
 
 Evidence: docs/kiro_handoff.md
 
@@ -87,6 +87,24 @@ Reliable local foreground startup | implemented with configuration, asset and li
 Windows Start-AEGIS.cmd keeps a visible user-owned terminal. Source-build, explicit prebuilt and check-only modes remain distinct. Existing listeners are never killed/rebuilt; inherited rehearsal settings are rejected. No installation, original-data reset or background-service persistence is implied.
 
 Evidence: scripts/start_local.py
+
+Integrated Missouri One Health research evaluation | implemented; no prospective activation
+
+Seven-day selected-FSIS-sample target with PulseNet-derived BEAM aggregates, five-station NOAA context, chronological embargo, calibration, uncertainty and same-cohort NORS ablations. Only 490 of 1534 Missouri rows meet coverage; 171 held-out samples. Added value remains uncertain and NORS worsens this cohort.
+
+Evidence: reports/integrated_model_evaluation.json
+
+Food safety and food security policy comparison | implemented read-only on declared simulation
+
+Feasible order, quality/volume preservation and balanced destination service compare three scenarios under identical hard constraints. Food volume and service are measured; no invented county need or causal pathogen-risk reduction.
+
+Evidence: reports/decision_study.json
+
+Final five-task guide and reproducible local build | implemented; Kiro non-use and final human review disclosed
+
+One Health diagram, dictionary/provenance, integrated analytic CSV, measured research results, nine policy outcomes, ten-menu guide and presentation outline. Owner reports Isaac disease-side input and Micky coding help; last names and final author review remain. Kiro was not used; criterion not met.
+
+Evidence: reports/final_handoff_manifest.json
 
 # P1 | Operational differentiators
 
@@ -196,13 +214,13 @@ Evidence: docs/freshness_gateway.md
 
 # Verification | What was actually tested
 
-Latest local verification finished: 2026-10-31T07:14:59.940348+00:00. All requested local checks passed: True.
+Latest local verification finished: 2026-11-02T04:05:01.211776+00:00. All requested local checks passed: True.
 
-pytest: PASS; exit 0; tests passed 1198; 98.127 seconds. Log: reports/checks/20261031T071250192098Z/pytest.txt. Checked: 2026-10-31T07:12:50.192664+00:00.
+pytest: PASS; exit 0; tests passed 1246; 111.72 seconds. Log: reports/checks/20261102T040235216068Z/pytest.txt. Checked: 2026-11-02T04:02:35.216607+00:00.
 
-vitest: PASS; exit 0; tests passed 385; 19.351 seconds. Log: reports/checks/20261031T071250192098Z/vitest.txt. Checked: 2026-10-31T07:14:28.334383+00:00.
+vitest: PASS; exit 0; tests passed 406; 20.829 seconds. Log: reports/checks/20261102T040235216068Z/vitest.txt. Checked: 2026-11-02T04:04:26.953203+00:00.
 
-frontend_build: PASS; exit 0; tests passed build check; 12.218 seconds. Log: reports/checks/20261031T071250192098Z/frontend_build.txt. Checked: 2026-10-31T07:14:47.708501+00:00.
+frontend_build: PASS; exit 0; tests passed build check; 13.396 seconds. Log: reports/checks/20261102T040235216068Z/frontend_build.txt. Checked: 2026-11-02T04:04:47.798751+00:00.
 
 USDA county context, source provenance and readiness browser QA: 61 / 61 recorded checks passed. Timestamp: 2026-10-28T06:27:38.973Z. Evidence: reports/browser_qa/readiness/results.json. This is a separate run from local unit/build checks.
 

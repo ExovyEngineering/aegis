@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-11-01T22:05:37.706455-06:00",
+  "title": "AEGIS Final Submission Guide",
+  "pdf": "reports/final_submission_guide.pdf",
+  "markdown": "reports/final_submission_guide.md",
+  "html": "reports/final_submission_guide.html",
+  "sha256": "4ad8bd87c6dc2a29e950e7fff3cf4dbaa46ba515c070e74f05cba1d8c142ec74",
+  "bytes": 237530,
+  "pages": 17,
+  "chapters": [
+    {
+      "id": "what-to-launch-and-what-this-build-establishes",
+      "title": "What to launch and what this build establishes",
+      "body_page_index": 0,
+      "page": 3
+    },
+    {
+      "id": "task-1-define-the-one-health-system-and-integrated-data-layer",
+      "title": "Task 1: Define the One Health system and integrated data layer",
+      "body_page_index": 1,
+      "page": 4
+    },
+    {
+      "id": "task-2-develop-and-validate-the-proactive-risk-model",
+      "title": "Task 2: Develop and validate the proactive risk model",
+      "body_page_index": 3,
+      "page": 6
+    },
+    {
+      "id": "task-3-food-safety-and-food-security-decision-support",
+      "title": "Task 3: Food safety and food security decision support",
+      "body_page_index": 5,
+      "page": 8
+    },
+    {
+      "id": "task-4-operationalize-with-aws-kiro",
+      "title": "Task 4: Operationalize with AWS Kiro",
+      "body_page_index": 8,
+      "page": 11
+    },
+    {
+      "id": "task-5-team-science-and-value-of-new-data",
+      "title": "Task 5: Team science and value of new data",
+      "body_page_index": 9,
+      "page": 12
+    },
+    {
+      "id": "every-dashboard-menu-and-its-use-case",
+      "title": "Every dashboard menu and its use case",
+      "body_page_index": 11,
+      "page": 14
+    },
+    {
+      "id": "presentation-idea-from-evidence-to-a-reviewed-decision",
+      "title": "Presentation idea: from evidence to a reviewed decision",
+      "body_page_index": 13,
+      "page": 16
+    },
+    {
+      "id": "verification-reproducibility-and-submission-boundary",
+      "title": "Verification, reproducibility and submission boundary",
+      "body_page_index": 14,
+      "page": 17
+    }
+  ],
+  "overflow_count": 0,
+  "paper": "US Letter",
+  "body_font_points": 10.7,
+  "table_font_points": 9.7,
+  "bookmarks": 9,
+  "contents_links": 9,
+  "inputs": [
+    {
+      "path": "reports/integrated_model_evaluation.json",
+      "sha256": "1cf0d11e5171bbd2d35f0d6e7bbf7ddbe2957c988599ae07757a8f0b67a5d5e5"
+    },
+    {
+      "path": "reports/decision_study.json",
+      "sha256": "11441fb16f9b6b3a218ad9b367ebff3cdd0239546b112d18e9e995a8750062ca"
+    },
+    {
+      "path": "reports/source_provenance.json",
+      "sha256": "e582ac794c219de0ca8994188e634e3139c40bcdd99b9d8f3a8c9c0d31345845"
+    },
+    {
+      "path": "reports/session_verification.json",
+      "sha256": "c604cad003d67c62eb452e099d99a25658714af59771b556dea0dc6c5f4fc4f9"
+    },
+    {
+      "path": "docs/team_science_statement.md",
+      "sha256": "1ac72784b09a0d60848f216d361a9019bf70cec86cb80f4f44d924b418c82aeb"
+    },
+    {
+      "path": "docs/challenge_tasks_source.md",
+      "sha256": "e564c0cd846863901af01cbcebf1b1f208616e903f74139d2086e18fdeaeee24"
+    },
+    {
+      "path": "reports/figures/one_health_system.png",
+      "sha256": "25af8f2c58c5fd5b6674a7bc218730dbafbe7007d94d83daceac8246641d663e"
+    }
+  ],
+  "original_data_modified": false,
+  "operational_database_accessed": false,
+  "human_submission_verified": false
+}

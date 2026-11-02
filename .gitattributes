@@ -10,3 +10,9 @@
 data/external/** -text
 data/fixtures/** -text
 data/manifests/** -text
+
+# Hashed analytic exports, report evidence and handbook inputs must survive
+# Windows/Linux checkouts byte for byte; newline conversion invalidates lineage.
+data/processed/** -text
+reports/** -text
+docs/** -text

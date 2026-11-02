@@ -1,5 +1,5 @@
 project: AEGIS
-updated: '2026-10-31'
+updated: '2026-11-01'
 features:
 - id: provenance
   priority: P0
@@ -56,10 +56,11 @@ features:
 - id: kiro
   priority: P0
   name: Authentic Kiro spec execution
-  status: pending user sign-in and genuine task execution
+  status: not used; owner will disclose unmet Kiro criterion
   evidence: docs/kiro_handoff.md
-  detail: Kiro is installed. Existing Codex artifacts and installation evidence do
-    not prove Kiro workflow completion.
+  detail: Owner confirmed non-use on November 1. Installation and Codex-prepared
+    specifications do not satisfy the challenge's Kiro-use criterion. The app runs
+    independently; no Kiro authorship or execution is claimed.
 - id: submission
   priority: P0
   name: Report, reproducible package and presentation
@@ -235,3 +236,30 @@ features:
     budget. Conservative chosen-case clocks rank closer recipients and constrained
     OR-Tools FEFO versus FIFO. Only identified, versioned human approval replaces
     the checked simulated plan and updates Drive; new readings flag renewed review.
+
+- id: integrated-one-health-study
+  priority: P0
+  name: Integrated Missouri One Health research evaluation
+  status: implemented; no prospective activation
+  evidence: reports/integrated_model_evaluation.json
+  detail: Seven-day selected-FSIS-sample target with PulseNet-derived BEAM aggregates,
+    five-station NOAA context, chronological embargo, calibration, uncertainty and
+    same-cohort NORS ablations. Only 490 of 1534 Missouri rows meet coverage;
+    171 held-out samples. Added value remains uncertain and NORS worsens this cohort.
+- id: food-volume-policy-study
+  priority: P0
+  name: Food safety and food security policy comparison
+  status: implemented read-only on declared simulation
+  evidence: reports/decision_study.json
+  detail: Feasible order, quality/volume preservation and balanced destination service
+    compare three scenarios under identical hard constraints. Food volume and service
+    are measured; no invented county need or causal pathogen-risk reduction.
+- id: final-five-task-handoff
+  priority: P0
+  name: Final five-task guide and reproducible local build
+  status: implemented; Kiro non-use and final human review disclosed
+  evidence: reports/final_handoff_manifest.json
+  detail: One Health diagram, dictionary/provenance, integrated analytic CSV, measured
+    research results, nine policy outcomes, ten-menu guide and presentation outline.
+    Owner reports Isaac disease-side input and Micky coding help; last names and
+    final author review remain. Kiro was not used; criterion not met.

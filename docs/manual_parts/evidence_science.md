@@ -267,3 +267,20 @@ A defensible presentation sentence is: "We evaluated a national retrospective sa
 The app does not currently provide isolate-level molecular attribution, a validated weather-to-FSIS prediction, live cargo sensing, or a verified real recall-to-demo-lot match. Missing per-result publication timing remains a scientific limitation. Broader NOAA historical coverage is incomplete. Genuine signed-in Kiro specification execution, author/rubric review, and the timed team presentation remain separate project gates; polished evidence screens do not complete those gates automatically.
 
 For deeper source records, consult `docs/data_catalog.md`, `docs/ingestion_provenance.md`, `docs/food_access_context.md`, `docs/model_card.md`, `reports/model_evaluation.json`, `reports/model_timing.json`, `reports/noaa_coverage.json`, and the source-specific import manifests. These files support the screen; they should not be described as additional live integrations.
+
+### Separate Missouri integrated study
+
+Model evaluation now also shows **One Health model: what did integration add?**
+It compares prevalence, FSIS history, added BEAM, core BEAM/NOAA and added NORS on
+the same supported Missouri cohort at a seven-day lead. Only 490 of 1,534 samples
+meet coverage; primary validation has 171 samples and 22 positives. Monthly gaps
+remain missing, not zero. Open the assumptions/calibration/error section and
+download the model JSON or aligned CSV. The original national study remains
+separate and unchanged.
+
+The core Brier score is about 0.11246 versus baseline 0.11431. Marginal BEAM/NOAA
+intervals include zero; NORS worsens this cohort's result. No prospective
+activation, consumer illness, genomic causation or individual-lot inference is
+allowed. This is an exploratory aggregate alignment, not a validated production
+weather-to-FSIS predictor. The final five-task PDF includes exact metrics,
+uncertainty and the resulting limits. The owner disclosed Kiro non-use.

@@ -1,10 +1,17 @@
 # AEGIS Master User Guide
 
-Generated October 31, 2026 at 02:16 AM CT. Complete product handbook.
+Generated November 01, 2026 at 10:05 PM CT. Complete product handbook.
 
 This master file is assembled from docs/manual_parts/ and dated reports. Edit those sources and rebuild to keep PDF, HTML and Markdown consistent.
 
 ## Start here: what AEGIS does
+
+The November 1 five-task review adds a separate integrated Missouri research
+study in **Model evaluation**, and a five-task guide plus food-volume/service
+policy comparisons in **Project brief**. The shorter final PDF covers all ten
+menus and a presentation idea. The owner has disclosed that **Kiro was not used**;
+that challenge criterion is not met. An installed IDE or prepared specs are not
+execution evidence. The full application remains independently runnable.
 
 AEGIS means **Adaptive Early-warning & Guidance for Integrated Supply Chains**. We built it to help a regional poultry distributor examine food-safety evidence, understand disruption scenarios, compare constrained operational responses and keep a human dispatcher responsible for consequential decisions.
 
@@ -1102,6 +1109,23 @@ The app does not currently provide isolate-level molecular attribution, a valida
 
 For deeper source records, consult `docs/data_catalog.md`, `docs/ingestion_provenance.md`, `docs/food_access_context.md`, `docs/model_card.md`, `reports/model_evaluation.json`, `reports/model_timing.json`, `reports/noaa_coverage.json`, and the source-specific import manifests. These files support the screen; they should not be described as additional live integrations.
 
+### Separate Missouri integrated study
+
+Model evaluation now also shows **One Health model: what did integration add?**
+It compares prevalence, FSIS history, added BEAM, core BEAM/NOAA and added NORS on
+the same supported Missouri cohort at a seven-day lead. Only 490 of 1,534 samples
+meet coverage; primary validation has 171 samples and 22 positives. Monthly gaps
+remain missing, not zero. Open the assumptions/calibration/error section and
+download the model JSON or aligned CSV. The original national study remains
+separate and unchanged.
+
+The core Brier score is about 0.11246 versus baseline 0.11431. Marginal BEAM/NOAA
+intervals include zero; NORS worsens this cohort's result. No prospective
+activation, consumer illness, genomic causation or individual-lot inference is
+allowed. This is an exploratory aggregate alignment, not a validated production
+weather-to-FSIS predictor. The final five-task PDF includes exact metrics,
+uncertainty and the resulting limits. The owner disclosed Kiro non-use.
+
 ## Evidence assistant: explain a captured decision context
 
 Open **Evidence assistant** when you want help understanding a delivery plan or its evidence. Start by typing **chicken** in **Your evidence question**, then click **Ask AEGIS**. The helper offers **Choose what to check** choices; click one to get a cited explanation. A broad word is a starting point, not a failed search or an illness prediction.
@@ -1396,6 +1420,21 @@ provide the supporting handoff.
 
 ## Storage, exports and sharing
 
+Project brief now starts with **Five tasks. One inspectable submission.** Each
+task opens related operational/evidence workspaces and allowlisted source/result
+exports. **Download final five-task PDF** and **Read final guide and presentation**
+provide the concise handoff. Task 1 exports its diagram/dictionary/provenance and
+analytic CSV; Task 5 offers a one-page team statement with last names and final
+author review left for the team. Kiro non-use is explicitly disclosed.
+
+The **Preserve food. Compare who receives it.** panel switches three captured
+simulated scenarios across a feasible rule, volume/quality preservation and
+balanced service. Compare distributed/unmet food, service and quality exposure,
+then expand per-destination results/actions. These are fixed-seed read-only
+studies; they do not change current assignments, impose holds or certify safety.
+The displayed equity measure concerns destination service, not an invented
+population-vulnerability score. Download JSON or CSV for all nine comparisons.
+
 The current app is a local research demonstrator with saved SQLite operational state and separate evidence files. It does not run a continuous warehouse inventory ledger, synchronize companies through cloud accounts, or send physical truck instructions outside the application.
 
 | Item | Where it lives or how it is shared | Important distinction |
@@ -1522,13 +1561,13 @@ Useful deeper references are README.md, docs/architecture.md, docs/model_card.md
 
 A saved pass describes an executed check at its recorded time. It is not a promise that every provider is online now, that a vehicle is safe, or that the submission has been approved.
 
-Latest saved local check finished: 2026-10-31T07:14:59.940348+00:00. Read the following results literally; missing evidence is not counted as a pass.
+Latest saved local check finished: 2026-11-02T04:05:01.211776+00:00. Read the following results literally; missing evidence is not counted as a pass.
 
 | Check | Saved result | Meaning |
 | --- | --- | --- |
-| pytest | PASS; 1198 tests | Executed local command; see reports/checks/20261031T071250192098Z/pytest.txt |
-| vitest | PASS; 385 tests | Executed local command; see reports/checks/20261031T071250192098Z/vitest.txt |
-| frontend_build | PASS | Executed local command; see reports/checks/20261031T071250192098Z/frontend_build.txt |
+| pytest | PASS; 1246 tests | Executed local command; see reports/checks/20261102T040235216068Z/pytest.txt |
+| vitest | PASS; 406 tests | Executed local command; see reports/checks/20261102T040235216068Z/vitest.txt |
+| frontend_build | PASS | Executed local command; see reports/checks/20261102T040235216068Z/frontend_build.txt |
 
 Backend tests exercise data handling, holds, recalls, capacities, eligibility, approvals, stale versions, driver safeguards and isolated rehearsal. Frontend tests exercise user interactions and error states. A production build checks that the app compiles. These cover different questions.
 

@@ -1,5 +1,22 @@
 # Model card
 
+## Separate integrated Missouri research study
+
+The final five-task review adds `reports/integrated_model_evaluation.json` and
+`scripts/train_integrated_study.py`. It combines Missouri selected FSIS outcomes,
+lagged PulseNet-derived BEAM human surveillance aggregates and a five-station
+NOAA ambient index, with NORS ablation. The seven-day origin conditions on later
+sample selection. Actual historical release dates remain unknown; the explicit
+assumed lags and complete-source gate do not establish prospective availability.
+Only 490 of 1,534 Missouri samples meet coverage; primary validation has 171 samples
+and 22 positives. Core Brier is about 0.11246 versus baseline 0.11431; marginal
+BEAM/NOAA evidence does not establish improvement. NORS worsens this cohort's
+Brier to about 0.12449, with a constant holdout feature. No operational activation
+or individual-lot risk/consumer-illness interpretation is allowed. Exact metrics,
+calibration, uncertainty, false-positive/negative consequences and missing-month
+gaps are in the report and Model evaluation. The national model below is retained
+unchanged as a separate study; its no-CDC/weather-linkage limit refers to that study.
+
 retrospective feasibility only — not a validated prospective forecast
 
 Salmonella positivity in a future selected FSIS raw-poultry primary sample; national
