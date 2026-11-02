@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import sys
 import time
+import uuid
 from datetime import datetime, timezone
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -25,9 +26,10 @@ def main():
     environment=dict(os.environ)
     environment['PATH']=str(Path(node).parent)+os.pathsep+environment.get('PATH','')
     session_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
-    temp_root=ROOT/'.tools'/('pytest-temp-'+session_id);temp_root.mkdir(parents=True,exist_ok=False)
-    environment['PYTEST_DEBUG_TEMPROOT']=str(temp_root)
-    jobs=[('pytest',[sys.executable,'-m','pytest','-q']),('vitest',npm+['--prefix','frontend','test']),('frontend_build',npm+['--prefix','frontend','run','build'])]
+    # Short explicit paths avoid Windows MAX_PATH in extracted-package and
+    # isolated Jupyter tests; every run still owns a unique temporary directory.
+    temp_root=ROOT/'.tools'/('pt-'+uuid.uuid4().hex[:12]);temp_root.mkdir(parents=True,exist_ok=False)
+    jobs=[('pytest',[sys.executable,'-m','pytest','-q','--basetemp',str(temp_root)]),('vitest',npm+['--prefix','frontend','test']),('frontend_build',npm+['--prefix','frontend','run','build'])]
     checks=[]
     folder=ROOT/'reports/checks'/session_id;folder.mkdir(parents=True,exist_ok=True)
     for name,command in jobs:

@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "passed": true,
-  "checked_at": "2026-11-02T17:38:18.975082+00:00",
+  "checked_at": "2026-11-02T20:48:11.974930+00:00",
   "archive": "C:\\Users\\ericp\\Downloads\\NAFSI\\artifacts\\AEGIS-Final-Build.zip",
   "fresh_python_environment": false,
   "isolated_extracted_directory": true,
@@ -181,14 +181,14 @@
     "Only trusted project archives may be executed. Internal hashes are not a signature or an untrusted-code security sandbox.",
     "Offline ASGI workflows do not prove a real browser rendering, live provider connectivity or a completed timed presentation."
   ],
-  "archive_sha256": "e74667c327f77cf69a29838029dd35a4b5ebbe05a774205d2f684e538b35dd0e",
-  "manifest_files_verified": 1089,
-  "archive_files": 1090,
-  "uncompressed_bytes": 72091607,
+  "archive_sha256": "460dd6f17dc87a003481addddaff9a60136ded20e51485a3eb78b49c3e709304",
+  "manifest_files_verified": 1126,
+  "archive_files": 1127,
+  "uncompressed_bytes": 76253679,
   "network_guard_enabled": true,
   "network_attempts": [],
   "worker_exit_code": 0,
   "worker_stdout": "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n",
-  "finished_at": "2026-11-02T17:38:30.669010+00:00",
-  "duration_seconds": 11.696
+  "finished_at": "2026-11-02T20:48:27.879646+00:00",
+  "duration_seconds": 15.906
 }

@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-02T11:35:20.209635-06:00",
-  "title": "AEGIS Final Submission Guide",
+  "generated_at": "2026-11-02T14:45:07.226866-06:00",
+  "title": "AEGIS Final Challenge Report",
   "pdf": "reports/final_submission_guide.pdf",
   "markdown": "reports/final_submission_guide.md",
   "html": "reports/final_submission_guide.html",
-  "sha256": "09f23e630386b051aba475618ddc1485c6682ea726342f3345711ee26e13439e",
-  "bytes": 237542,
-  "pages": 17,
+  "sha256": "675389163b1d3a06acf7a4f8ea47cd312003360e2410f63c5e3db8e68acbb1a3",
+  "bytes": 316740,
+  "pages": 20,
   "chapters": [
     {
-      "id": "what-to-launch-and-what-this-build-establishes",
-      "title": "What to launch and what this build establishes",
+      "id": "study-purpose-and-principal-findings",
+      "title": "Study purpose and principal findings",
       "body_page_index": 0,
       "page": 3
     },
@@ -29,38 +29,38 @@
     {
       "id": "task-3-food-safety-and-food-security-decision-support",
       "title": "Task 3: Food safety and food security decision support",
-      "body_page_index": 5,
-      "page": 8
+      "body_page_index": 6,
+      "page": 9
     },
     {
       "id": "task-4-operationalize-with-aws-kiro",
       "title": "Task 4: Operationalize with AWS Kiro",
-      "body_page_index": 8,
-      "page": 11
+      "body_page_index": 10,
+      "page": 13
     },
     {
       "id": "task-5-team-science-and-value-of-new-data",
       "title": "Task 5: Team science and value of new data",
-      "body_page_index": 9,
-      "page": 12
-    },
-    {
-      "id": "every-dashboard-menu-and-its-use-case",
-      "title": "Every dashboard menu and its use case",
       "body_page_index": 11,
       "page": 14
     },
     {
-      "id": "presentation-idea-from-evidence-to-a-reviewed-decision",
-      "title": "Presentation idea: from evidence to a reviewed decision",
+      "id": "every-dashboard-menu-and-its-use-case",
+      "title": "Every dashboard menu and its use case",
       "body_page_index": 13,
       "page": 16
     },
     {
-      "id": "verification-reproducibility-and-submission-boundary",
-      "title": "Verification, reproducibility and submission boundary",
-      "body_page_index": 14,
-      "page": 17
+      "id": "presentation-idea-from-evidence-to-a-reviewed-decision",
+      "title": "Presentation idea: from evidence to a reviewed decision",
+      "body_page_index": 15,
+      "page": 18
+    },
+    {
+      "id": "reproducibility-and-submission-deliverables",
+      "title": "Reproducibility and submission deliverables",
+      "body_page_index": 16,
+      "page": 19
     }
   ],
   "overflow_count": 0,
@@ -84,11 +84,11 @@
     },
     {
       "path": "reports/session_verification.json",
-      "sha256": "7f29ac242b112fe6c2704e6e8f03bd8ec8531298e162d974f76dd39779b8528d"
+      "sha256": "4726a0cdb0aa2ac00192266fe1f421681c7bc3a30d40fc5b6f8031c4818036ea"
     },
     {
       "path": "docs/team_science_statement.md",
-      "sha256": "1ac72784b09a0d60848f216d361a9019bf70cec86cb80f4f44d924b418c82aeb"
+      "sha256": "baf7a267a75a369bdeefaf3fe629a2d9dfab96ee002ee34cabf203c1188e9a20"
     },
     {
       "path": "docs/challenge_tasks_source.md",
@@ -97,6 +97,18 @@
     {
       "path": "reports/figures/one_health_system.png",
       "sha256": "25af8f2c58c5fd5b6674a7bc218730dbafbe7007d94d83daceac8246641d663e"
+    },
+    {
+      "path": "reports/figures/integrated_model_validation.png",
+      "sha256": "7f4fdf121494e3f0ba6b37b06b98eb46ac5f5ca21c1996dfe08d7ae7dbe6274d"
+    },
+    {
+      "path": "reports/notebook_execution.json",
+      "sha256": "6201a0cd5f45dcd87a5311dedee6bd12d3fcdad5d3b0dd66866db38f1894514b"
+    },
+    {
+      "path": "reports/notebook_raw_execution.json",
+      "sha256": "a373d3daf911d844530e8e2c38419cc9294a64e1bb3d7f1649901a4ad36331aa"
     }
   ],
   "original_data_modified": false,

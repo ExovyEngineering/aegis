@@ -32,6 +32,49 @@ def write_archive(path, entries):
         archive.writestr("PACKAGE_MANIFEST.json", encoded(manifest))
 
 
+def executed_analysis_fixture():
+    """Synthetic trusted records exercise packaging; no kernel is executed."""
+    entries = {"notebooks/README.md": b"# Re-run the maintained analysis notebooks\n"}
+    records = []
+    for number, name in enumerate(handoff.NOTEBOOKS):
+        source = {
+            "cells": [{"cell_type": "markdown", "metadata": {}, "id": "description",
+                       "source": "# Synthetic packaging fixture; never execute it\n"},
+                      {"cell_type": "code", "metadata": {}, "id": "assertion",
+                       "source": "assert True\n", "execution_count": None, "outputs": []}],
+            "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}},
+            "nbformat": 4, "nbformat_minor": 5,
+        }
+        # Real .ipynb files can store source as line arrays. Their normalized
+        # source identity must be independent of that on-disk representation.
+        if number % 2:
+            source["cells"][1]["source"] = ["assert ", "True\n"]
+        normalized = json.loads(json.dumps(source))
+        for cell in normalized["cells"]:
+            if isinstance(cell["source"], list):
+                cell["source"] = "".join(cell["source"])
+        executed = json.loads(json.dumps(source))
+        executed["cells"][1]["execution_count"] = 1
+        executed["cells"][1]["outputs"] = [{"output_type": "stream", "name": "stdout",
+                                               "text": "synthetic fixture output\n"}]
+        preview = ("<!doctype html><html><title>Fixture output</title><p>" + name + "</p></html>").encode("utf-8")
+        notebook_bytes = encoded(executed)
+        entries["notebooks/" + name] = encoded(source)
+        entries["reports/notebooks/" + name] = notebook_bytes
+        entries["reports/notebooks/" + name.replace(".ipynb", ".html")] = preview
+        records.append({
+            "notebook": name, "status": "passed", "code_cells": 1,
+            "executed_code_cells": 1, "source_code_sha256": handoff.code_digest(normalized),
+            "executed_notebook_sha256": hashlib.sha256(notebook_bytes).hexdigest(),
+            "html_sha256": hashlib.sha256(preview).hexdigest(),
+        })
+    entries["reports/notebook_execution.json"] = encoded({
+        "passed": True, "operator_preserved": True, "notebooks": records,
+        "note": "Synthetic packaging fixture; not a claim of real notebook execution.",
+    })
+    return entries
+
+
 @pytest.fixture
 def supplied(tmp_path):
     (tmp_path / "artifacts").mkdir()
@@ -59,6 +102,7 @@ def supplied(tmp_path):
             "scope": "sentinel <must stay text> & separate",
         }),
     })
+    entries.update(executed_analysis_fixture())
     archive = tmp_path / "artifacts/application.zip"
     write_archive(archive, entries)
     verification = {"passed": True, "archive_sha256": handoff.sha256(archive),
@@ -92,8 +136,14 @@ def test_handoff_has_working_numbered_layout_and_exact_evidence_bytes(supplied, 
     folder = root / result["folder"]
     assert {path.name for path in folder.iterdir()} == {
         "00_START_HERE.html", "00_START_HERE.txt", "01_Guides", "02_Application",
-        "03_Verification", "JUDGE_HANDOFF_MANIFEST.json",
+        "03_Verification", "04_Reproducible_Analysis", "JUDGE_HANDOFF_MANIFEST.json",
     }
+    assert result["executed_notebooks_included"] == len(handoff.NOTEBOOKS) == 4
+    analysis_index = folder / "04_Reproducible_Analysis/index.html"
+    for target in re.findall(r'href="([^\"]+)"|href=\'([^\']+)\'', analysis_index.read_text(encoding="utf-8")):
+        relative = next(part for part in target if part)
+        assert (analysis_index.parent / relative).is_file(), relative
+    assert (folder / "04_Reproducible_Analysis/README.md").is_file()
     for source, destination in handoff.GUIDES.items():
         assert (folder / "01_Guides" / destination).read_bytes() == entries[source]
     for source in ("docs/judge_quick_start.md", "docs/judge_walkthrough.md"):
@@ -141,6 +191,66 @@ def test_repeat_build_preserves_the_previous_judge_folder(supplied, no_external_
     assert not (root / second["folder"] / "judge-notes.txt").exists()
     assert handoff.verify_judge_archive(root / second["archive"])["passed"]
     assert all(path.read_bytes() == payload for path, payload in protected.items())
+
+
+@pytest.mark.parametrize("damage", [
+    "stale_source_code", "tampered_html", "tampered_executed_notebook",
+    "failed_report", "operator_changed", "missing_notebook_record",
+    "failed_notebook", "partial_execution", "zero_code_cells",
+])
+def test_notebook_evidence_must_be_current_and_complete_before_replacing_a_handoff(
+    supplied, no_external_access, damage,
+):
+    root, archive, entries, protected = supplied
+    first = handoff.build(root, archive)
+    folder = root / first["folder"]
+    (folder / "judge-notes.txt").write_bytes(b"preserve this existing review\r\n")
+    original_folder = {path.relative_to(folder).as_posix(): path.read_bytes()
+                       for path in folder.rglob("*") if path.is_file()}
+    published_archive = (root / first["archive"]).read_bytes()
+    published_report = (root / "reports/judge_handoff.json").read_bytes()
+    changed = dict(entries)
+    record = json.loads(changed["reports/notebook_execution.json"])
+    name = handoff.NOTEBOOKS[0]
+    if damage == "stale_source_code":
+        notebook = json.loads(changed["notebooks/" + name])
+        notebook["cells"][1]["source"] = "assert False  # changed after recorded execution\n"
+        changed["notebooks/" + name] = encoded(notebook)
+    elif damage == "tampered_html":
+        changed["reports/notebooks/" + name.replace(".ipynb", ".html")] = b"<p>invented output</p>"
+    elif damage == "tampered_executed_notebook":
+        notebook = json.loads(changed["reports/notebooks/" + name])
+        notebook["cells"][1]["execution_count"] = None
+        changed["reports/notebooks/" + name] = encoded(notebook)
+    elif damage == "failed_report":
+        record["passed"] = False
+    elif damage == "operator_changed":
+        record["operator_preserved"] = False
+    elif damage == "missing_notebook_record":
+        record["notebooks"].pop()
+    elif damage == "failed_notebook":
+        record["notebooks"][0]["status"] = "failed"
+    elif damage == "partial_execution":
+        record["notebooks"][0]["executed_code_cells"] = 0
+    elif damage == "zero_code_cells":
+        record["notebooks"][0].update(code_cells=0, executed_code_cells=0)
+    changed["reports/notebook_execution.json"] = encoded(record)
+    # The enclosing application archive has a fresh valid checksum. The judge
+    # gate must inspect the notebook evidence, not rely only on ZIP integrity.
+    write_archive(archive, changed)
+    verification_path = root / "reports/package_verification.json"
+    verification = json.loads(verification_path.read_bytes())
+    verification["archive_sha256"] = handoff.sha256(archive)
+    verification_path.write_bytes(encoded(verification))
+    with pytest.raises(ValueError, match="Re-execute all four|incomplete/stale"):
+        handoff.build(root, archive)
+    assert {path.relative_to(folder).as_posix(): path.read_bytes()
+            for path in folder.rglob("*") if path.is_file()} == original_folder
+    assert (root / first["archive"]).read_bytes() == published_archive
+    assert (root / "reports/judge_handoff.json").read_bytes() == published_report
+    assert not (root / "artifacts/judge-history").exists()
+    for path in (root / "data/aegis.sqlite", root / "data/aegis.sqlite-wal", root / "supplied-original.csv"):
+        assert path.read_bytes() == protected[path]
 
 
 @pytest.mark.parametrize("tamper", ["payload", "missing_member", "unlisted_member"])

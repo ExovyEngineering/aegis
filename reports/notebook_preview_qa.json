@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-11-02T20:40:25.052Z",
+  "passed": true,
+  "method": "Actual headless Chrome: local HTML previews, embedded images, application page",
+  "results": [
+    {
+      "name": "00_Start_Here_and_Coverage.html",
+      "passed": true,
+      "title": "Notebook",
+      "text": 72250,
+      "images": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "name": "01_Preprocessing_and_Integration.html",
+      "passed": true,
+      "title": "Notebook",
+      "text": 74480,
+      "images": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "name": "02_Modeling_and_Evaluation.html",
+      "passed": true,
+      "title": "Notebook",
+      "text": 21411,
+      "images": [
+        {
+          "loaded": true,
+          "embedded": true
+        }
+      ],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "name": "03_Scenario_Analysis.html",
+      "passed": true,
+      "title": "Notebook",
+      "text": 15449,
+      "images": [
+        {
+          "loaded": true,
+          "embedded": true
+        }
+      ],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "name": "index.html",
+      "passed": true,
+      "title": "AEGIS executed analysis notebooks",
+      "text": 773,
+      "images": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "name": "running_application",
+      "passed": true,
+      "url": "http://127.0.0.1:8000/"
+    }
+  ]
+}

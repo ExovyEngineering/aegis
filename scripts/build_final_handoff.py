@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.build_master_guide import parse_markdown, html_document, render_pdf
 
 ROOT = Path(__file__).resolve().parents[1]
-TITLE = 'AEGIS Final Submission Guide'
+TITLE = 'AEGIS Final Challenge Report'
 
 
 def read(root, name):
@@ -113,11 +113,11 @@ def readiness(root):
          'artifacts':[{'label':'Final guide','name':'guide.pdf'}]},
         {'id':'Task 5','title':'Team science and value of new data',
          'status':'Statement and comparison prepared; final team review pending' if model_ready and data_ready else 'Data comparison incomplete; final team review pending', 'menu':'evidence',
-         'summary':'Isaac handled the disease side; Micky provided coding help. The project owner reports that disease-side input shaped CDC/BEAM integration and historical analysis. NORS and USDA add domains beyond the three core sources.',
+         'summary':'Isaac Jenkins led disease-side evidence and databases; Micky fact-checked code and helped establish GitHub collaboration; the project lead handled supply-chain logistics, gathered remaining data and designed application requirements and extensions. Disease-side input shaped CDC/BEAM integration and historical analysis. NORS and USDA add domains beyond the three core sources.',
          'implemented':['One-page team science draft documents known stakeholder feedback and resulting workflow changes.',
                         'Added-data evaluation reports measured benefit or harm rather than assuming integration improves accuracy.',
                         'Next priorities are timestamped data releases, calibrated poultry telemetry and verified logistics/health partners.'],
-         'remaining':['The owner will add contributor last names; review final names, role wording and authorship with the team.',
+         'remaining':['Isaac Jenkins is named as provided. Review role wording and authorship with the team; Micky\'s surname and the lead\'s preferred author name remain for completion.',
                       'No professional credential, external interview or genuine Kiro participation is inferred from these contributions.'],
          'artifacts':[{'label':'One-page team statement','name':'team-science.pdf'},{'label':'Editable team statement','name':'team-science.md'},{'label':'Ablation results','name':'integrated-model.json'}]},
     ]
@@ -133,7 +133,14 @@ def content(root, state):
     model = read(root, 'reports/integrated_model_evaluation.json') or {}
     decision = read(root, 'reports/decision_study.json') or {}
     checks = read(root, 'reports/session_verification.json') or {}
-    lines = ['## What to launch and what this build establishes','',
+    core=model.get('models',{}).get('core_integrated',{}).get('metrics',{})
+    baseline=model.get('models',{}).get('baseline',{}).get('metrics',{})
+    coverage=model.get('coverage',{})
+    lines = ['## Study purpose and principal findings','',
+             'AEGIS asks how a regional poultry distributor can combine public food-safety, human-surveillance and environmental evidence with logistics constraints to preserve eligible food while responding to disruption. The contribution is a reproducible research pipeline connected to a working, reviewable decision-support application.', '',
+             f"The integrated research study retained {number(coverage.get('eligible_samples'),0)} of {number(coverage.get('mo_samples'),0)} selected Missouri samples after source-coverage gates. On the chronological held-out cohort, core-model Brier was {number(core.get('brier'),6)} versus {number(baseline.get('brier'),6)} for the prevalence baseline. Individual added-source gains were not established; NORS worsened the recorded holdout score. This evidence supports continued research, not prospective model activation.", '',
+             'Operational experiments independently compare three allocation policies across three simulated conditions. They demonstrate food-volume, destination-service and travel tradeoffs under binding safety exclusions. They do not establish reduced illness, real savings or population equity. Kiro was not used, and that challenge criterion is explicitly unmet.', '',
+             '### Decision statement and application access', '',
              'Primary actor: regional Missouri poultry distributor/logistics operator. Commodity: refrigerated poultry. Geography: simulated Columbia, Kansas City, Jefferson City, Springfield and St. Louis network. The dispatch horizon is six hours; the separate retrospective sampling study uses seven-day forecast origins.', '',
              'Decisions: inspect/request information, allocate eligible inventory, review a precautionary hold, compare a route, or approve alternative receiving instructions. Inventory, demand, capacity, deadlines, use-by, recall/hold and eligibility constraints stay binding. Consequential actions require an identified human review.', '',
              'Launch the existing operator application with Start-AEGIS.cmd, or .venv/Scripts/python scripts/start_local.py. Keep its terminal open. For the prebuilt reviewer ZIP, use Start-AEGIS.cmd --no-build after installing pinned Python dependencies. No Node installation is needed merely to view prebuilt assets.', '',
@@ -146,10 +153,16 @@ def content(root, state):
         if task['id']=='Task 1':
             lines += ['', '### Alignment and provenance', '',
                       'The integrated study aligns Missouri human surveillance aggregates and a five-station ambient index with a selected Missouri FSIS sample at a forecast origin seven days before collection. These are aggregate context features, not person-to-food, genome-to-genome or establishment exposure matches. A complete-source gate drops unsupported rows; missing observations are not invented.', '',
-                      'Full definitions: docs/analytic_alignment.md; reports/data_dictionary.csv; reports/source_provenance.json; data/processed/integrated_mo_analytic.csv. Original inventory and raw bytes remain preserved. The diagram uses separate pathways and labeled simulation boundaries.']
+                      'Full definitions: docs/analytic_alignment.md; reports/data_dictionary.csv; reports/source_provenance.json; data/processed/integrated_mo_analytic.csv. Original inventory and raw bytes remain preserved. The diagram uses separate pathways and labeled simulation boundaries.', '',
+                      'The required provenance fields are documented in reports/source_provenance.csv and JSON, docs/data_catalog.md and config/api_registry.yaml: source and endpoint, recorded access/retrieval or unknown date, license/terms and geographic/time scope, update cadence, transformations and limitations. Missing publication/access timestamps remain unknown. This distinction is material to prospective validity.', '',
+                      'Historical NOAA observations, Open-Meteo forecasts, NWS official alerts and simulated cargo temperature retain separate labels. Ambient weather is not the temperature inside a load. The required historical stream here covers the inspected five-station window; it is not claimed complete for all historical FSIS samples.']
         if task['id']=='Task 2':
             split=model.get('primary_split',{})
-            lines += ['', f"Measured primary split: {number(split.get('training_rows'),0)} training samples; {number(split.get('validation_rows'),0)} held-out samples, including {number(split.get('validation_positives'),0)} positives. Validation origins {split.get('validation_start','not recorded')} to {split.get('validation_end','not recorded')}. Outcomes occur seven days later; fitting uses the declared label embargo.", '',
+            lines += ['', '### Target, features and validation design', '',
+                      'The outcome is Salmonella positivity in a selected Missouri FSIS primary raw-poultry sample collected seven days after its declared forecast origin. It is conditional on being sampled; neither representative regional prevalence nor an illness probability is estimated. Logistic regression with training-only scaling is compared with fixed smoothed training prevalence. Small samples and uncertain source availability do not justify a more complex boosted model.', '',
+                      'Predictors are lagged Missouri FSIS prevalence, seasonal sine/cosine, log human Salmonella isolate counts from the BEAM export, and trailing 28-day five-station NOAA temperature/precipitation summaries. NORS adds lagged historical outbreak-record counts in a separate ablation. Standardized coefficients describe conditional associations, not causal effects.', '',
+                      'Declared availability assumptions: FSIS collection plus 90 days; BEAM month-end plus 90 days; NORS month-end plus 730 days; NOAA reporting label plus seven days. Training labels must become assumed-available before validation starts. The same complete-case cohort is used in all comparisons, with no random split, future labels or missing-weather imputation. Actual historical publication vintages are unavailable; these assumptions cannot prove the snapshots existed at forecast time.', '',
+                      f"Measured primary split: {number(split.get('training_rows'),0)} training samples; {number(split.get('validation_rows'),0)} held-out samples, including {number(split.get('validation_positives'),0)} positives. Validation origins {split.get('validation_start','not recorded')} to {split.get('validation_end','not recorded')}. Outcomes occur seven days later; fitting uses the declared label embargo.", '',
                       '| Model | Brier score | Brier 95% interval | PR-AUC | ROC-AUC |','| --- | --- | --- | --- | --- |']
             for key, row in model.get('models',{}).items():
                 metric=row.get('metrics',{})
@@ -171,22 +184,34 @@ def content(root, state):
                     band_text=' to '.join(number(value,4) for value in band) if isinstance(band,list) and len(band)==2 else 'not recorded'
                     lines.append(f"| {number(row.get('n'),0)} | {number(row.get('mean_predicted'),4)} | {number(row.get('observed'),4)} | {band_text} |")
             lines += ['', 'Review false positives as consumed inspection capacity and false negatives as missed positive selected samples, never illnesses caused or a safe/unsafe classification. The NORS holdout feature can be constant; a harmful result here is not a general verdict against outbreak surveillance. The original national FSIS evaluation is a separate target/cohort and is retained in reports/model_evaluation.json.', '',
+                      f"Core precision at the diagnostic 0.10 threshold is {number(core.get('precision_at_0_1'),4)} and recall is {number(core.get('recall_at_0_1'),4)}; fraction prioritized is {number(core.get('review_fraction_at_0_1'),4)}. The threshold is a research diagnostic, not an instruction to hold cargo. Rolling-origin evaluations and unavailable folds are retained in the full JSON; uncertainty is based on 400 weekly block resamples, not individual shipment intervals.", '',
                       'CDC confirms the BEAM dashboard uses PulseNet and NORS data: https://www.cdc.gov/beam/about/index.html. The supplied BEAM report data are aggregate SEDRIC surveillance, not genomes or linked patients. The three core sources and additions retain their own observation and retrieval dates.']
         if task['id']=='Task 3':
-            lines += ['', '### Quantified policy comparisons', '', '| Scenario / policy | Distributed kg | Unmet kg | Destinations | Quality exposure kg |','| --- | --- | --- | --- | --- |']
+            lines += ['', '### Decision formulation', '',
+                      'Candidate-shipment binary decisions share stock, origin/supplier throughput, refrigerated-truck capacity, destination demand, eligibility, hold/recall, use-by, receiving buffer and delivery-deadline constraints. The rule policy takes the first feasible candidates in declared input order. The volume policy lexicographically maximizes eligible delivered kilograms, then short-clock kilograms preserved through delivery, then minimizes estimated distance. The balanced policy first maximizes destination service fractions capped at 50%, then applies those volume/quality/distance priorities. This is equal destination service, not a verified population-vulnerability weight.', '',
+                      'Quality budgets integrate simulated product-temperature history with an illustrative Q10 rate relative to 4 C; remaining reference life is divided by the forecast rate for a forward window. Chosen Q10 sensitivity cases are not confidence intervals. Unknown coverage, held/recalled stock and exceeded modeled clocks remain exclusions. This freshness calculation is not a calibrated poultry spoilage, pathogen-growth or molecular measurement model.', '',
+                      'A proposed rescue compares the quality window with journey and receiving time, screens eligible closer recipients and presents alternatives for dispatcher review. A separate approval updates the exact simulated driver assignment. No predictive score alone can impose a mandatory hold, and no route is certified for commercial-truck restrictions.', '',
+                      '### Quantified policy comparisons', '', '| Scenario / policy | Distributed kg | Unmet kg | Destinations | Quality exposure kg |','| --- | --- | --- | --- | --- |']
             for scenario in decision.get('scenarios',[]):
                 for policy in scenario.get('policies',[]):
                     metric=policy.get('metrics',{})
                     lines.append(f"| {scenario['name']} / {policy['policy_name']} | {number(metric.get('distributed_kg'),0)} | {number(metric.get('unmet_demand_kg'),0)} | {number(metric.get('destinations_served'),0)} | {number(metric.get('projected_quality_budget_exposure_kg'),0)} |")
             lines += ['', 'Food security is operationalized as preserved eligible food volume and destination service. Modeled quality-budget exposure is neither observed waste nor predicted pathogen risk. Balancing service can trade travel or short-clock preservation for more destinations served. Inspect independent constraints and the full per-destination service export.', '',
+                      '| Scenario / policy | Estimated distance km | Solver status | Constraint violations |','| --- | --- | --- | --- |']
+            for scenario in decision.get('scenarios',[]):
+                for policy in scenario.get('policies',[]):
+                    metric=policy.get('metrics',{})
+                    lines.append(f"| {scenario['name']} / {policy['policy_name']} | {number(metric.get('total_estimated_distance_km'),2)} | {policy.get('solver_status','not recorded')} | {number(metric.get('constraint_violations'),0)} |")
+            lines += ['', 'All comparisons retain per-policy independent arithmetic and eligibility checks. An OPTIMAL solver status applies to the declared mathematical instance, not to real-world logistics or true food safety. Under scarcity, extra destination service can require more travel or retain less short-clock inventory; unchanged outcomes under the delay scenario are also reported rather than presented as improvement.', '',
                       'These comparisons are fixed-seed studies; they do not change current assignments. Operational actions remain in Command, Dispatcher and Save the Load. Unknown quality, held/recalled stock, ineligible supply and capacity violations cannot become an eligible dispatch through an objective weight.']
         if task['id']=='Task 4':
             lines += ['', 'Current-risk/evidence view: Command and Model evaluation. Prioritized attention: Command review queue and Dispatcher. Scenario builder: Command disruption preview, A/B/C/D and Route laboratory. Recommended action: reviewed plans/rescue options. Explanation: evidence assistant and source/model details. No model can declare a shipment safe or unsafe.', '',
-                      'Owner disclosure: Kiro was not used. The Kiro-use criterion is therefore not met. Codex-written steering/specification files and an installed IDE are preparation, not authentic Kiro task history. This document does not claim otherwise. No extra AWS service or cloud deployment is needed to operate this local research build.']
+                      'Owner disclosure: Kiro was not used. The Kiro-use criterion is therefore not met. Implementation was developed outside Kiro with Codex assistance and human direction. No Kiro-generated code or authentic Kiro task history exists to claim; prepared steering/specification files do not establish use. No extra AWS service or cloud deployment is needed to operate this local research build.']
         if task['id']=='Task 5':
             team=root/'docs/team_science_statement.md'
             if team.exists():
-                lines += ['', '### Team science statement', '', re.sub(r'^#{1,6}\s+', '#### ', team.read_text(encoding='utf-8'), flags=re.M)]
+                team_body=re.sub(r'^#\s+[^\n]+\n+', '', team.read_text(encoding='utf-8'), count=1)
+                lines += ['', '### Team science statement', '', re.sub(r'^#{1,6}\s+', '#### ', team_body, flags=re.M)]
     lines += ['', '## Every dashboard menu and its use case', '', '| Menu | What to find and do | What changes state |','| --- | --- | --- |']
     menus=[
         ('Command center','Missouri map/layers, attention queue, delivery outlook, route comparison, event preview, four response plans.','Only explicit event application or identified plan approval.'),
@@ -212,7 +237,25 @@ def content(root, state):
               '| 3:25–4:20 | Human rescue review to Drive | Three confirmations, exact truck/trip update, parked acknowledgment and short incident report. |',
               '| 4:20–5:00 | Five task checklist and conclusion | State real team roles and genuine Kiro evidence only if completed; name limits and the next dataset/partner. |', '',
               'Practice with a timer; this outline is not a claim of a completed human video. The longer button-by-button runbook is in docs/recording_guide.md and the full master guide. Disclose that Kiro was not used. Final team/author review and a watched/listened-to take remain required.', '',
-              '## Verification, reproducibility and submission boundary', '',
+              '## Reproducibility and submission deliverables', '',
+              '| Deliverable | Included files and how to use them |','| --- | --- |',
+              '| Analysis notebooks and scripts | notebooks/00 through 03; scripts/audit_data.py, source-specific ingest scripts, train_model.py, train_integrated_study.py, run_decision_study.py and execute_notebooks.py. |',
+              '| Development artifacts | .kiro/specs/, .kiro/steering/ and AGENTS.md contain structured requirements and guidance. Kiro was not used; there is no authentic Kiro-generated code or task history. |',
+              '| Runnable application | React/TypeScript frontend, FastAPI backend, prebuilt assets and Setup-Judges-Windows.cmd / Start-Judges-Windows.cmd; local deployment instructions in docs/local_startup.md, docs/judge_quick_start.md and README. GitHub Pages alone cannot host the Python backend; no public cloud deployment is claimed. |',
+              '| Dictionary and provenance | reports/data_dictionary.csv; reports/source_provenance.json; docs/data_catalog.md; config/api_registry.yaml and original inventory manifests. |',
+              '| Report and team science | This report, editable reports/final_submission_guide.md, and reports/team_science_statement.pdf with docs/team_science_statement.md. |',
+              '| Setup and dependencies | README.md, JUDGES_START_HERE.md, requirements-lock.txt, optional requirements-notebooks.txt and frontend/package-lock.json. |', '',
+              '### Executed notebooks', '',
+              'Install optional notebook dependencies using .venv/Scripts/python -m pip install -r requirements-notebooks.txt, then run .venv/Scripts/python scripts/execute_notebooks.py. The four notebooks cover coverage/provenance, preprocessing/integration, modeling/evaluation and scenario analysis. Static previews are in reports/notebooks/index.html; they do not require Jupyter to read.', '',
+              'The default profile reruns maintained analysis functions and scripts from included processed snapshots and selected original NOAA responses. Numeric assertions compare recomputed cohorts, metrics and policy outcomes with the recorded study. Each run has a private copied workspace and blocks provider requests; operator records and original source bytes are preserved. Timestamps, UUIDs and timings are not fixed scientific results.', '',
+              'The raw-data profile additionally requires the separately supplied original downloads: .venv/Scripts/python scripts/execute_notebooks.py --notebook 01_Preprocessing_and_Integration.ipynb --raw-data-dir PATH. It verifies provenance-listed filenames and hashes, audits copies, runs source adapters, regenerates model and decision results and compares them. Bulk originals are excluded from the judge ZIP and GitHub repository; obtain them separately or reproduce the bundled-snapshot profile.']
+    notebook=read(root,'reports/notebook_execution.json')
+    raw_notebook=read(root,'reports/notebook_raw_execution.json')
+    for label,record in [('Bundled notebook run',notebook),('Original-data replay',raw_notebook)]:
+        if record:
+            executed=sum(row.get('executed_code_cells',0) for row in record.get('notebooks',[]))
+            lines += ['', f"{label}: saved status {'passed' if record.get('passed') is True else 'failed or incomplete'}; {executed} executed code cells; operator preserved: {record.get('operator_preserved','not recorded')}; started {record.get('started_at','not recorded')}. These are measured execution records, not assertions that every later source revision will yield identical results."]
+    lines += ['', '### Verification and submission boundary', '',
               f"Latest saved full local checks: {checks.get('finished_at','not recorded')}. These are dated evidence; later edits require their own checks.", '']
     for row in checks.get('checks',[]):
         lines.append(f"- {row['name']}: {'passed' if row['passed'] else 'failed'}, tests {row['tests_passed'] if row['tests_passed'] is not None else 'build'}, log {row['log']}.")
@@ -229,15 +272,25 @@ def build(root=ROOT, preview_dir=None):
     body=content(root,state);markdown=reports/'final_submission_guide.md'
     markdown.write_text('# '+TITLE+'\n\n'+body,encoding='utf-8')
     blocks=parse_markdown(body)
-    image=root/'reports/figures/one_health_system.png'
-    if image.is_file():
-        position=next((i+1 for i,row in enumerate(blocks) if row.get('kind')=='heading' and row.get('text','').startswith('Task 1:')),None)
-        if position is not None:blocks.insert(position,{'kind':'image','bytes':image.read_bytes(),'caption':'One Health pathways. Aggregate associations and simulated logistics do not establish transmission or causation.'})
+    figures=[('reports/figures/one_health_system.png','Task 1:', 'One Health pathways. Aggregate associations and simulated logistics do not establish transmission or causation.'),
+             ('reports/figures/integrated_model_validation.png','Task 2:', 'Held-out Missouri time series and paired added-domain comparisons. Gaps and intervals retain the study limitations; surveillance context is not individual-shipment risk.')]
+    for name,chapter,caption in figures:
+        image=root/name
+        if image.is_file():
+            position=next((i+1 for i,row in enumerate(blocks) if row.get('kind')=='heading' and row.get('text','').startswith(chapter)),None)
+            if position is not None:blocks.insert(position,{'kind':'image','bytes':image.read_bytes(),'caption':caption})
     generated=datetime.now(ZoneInfo('America/Chicago')).strftime('%B %d, %Y at %I:%M %p CT')
     (reports/'final_submission_guide.html').write_text(html_document(blocks,generated,title=TITLE),encoding='utf-8')
     pdf=reports/'final_submission_guide.pdf'
-    layout=render_pdf(blocks,pdf,generated,Path(preview_dir) if preview_dir else None,title=TITLE,cover_subtitle='Final Submission Guide',preview_all=True)
+    cover=[('Research question','How can a Missouri poultry distributor use food-safety, public-health and environmental evidence to preserve eligible food through a disruption?'),
+           ('What is reported','Five task responses; data integration and provenance; time-aware model evaluation; quantified simulated policies; limitations and team science.'),
+           ('What is delivered','A runnable React/FastAPI application, four executed analysis notebooks, maintained scripts, dependency locks and an organized judge handoff.'),
+           ('Scientific and development disclosure','Results concern selected samples and simulated logistics. Prospective validity is unestablished. Kiro was not used; the requirement is unmet.')]
+    layout=render_pdf(blocks,pdf,generated,Path(preview_dir) if preview_dir else None,title=TITLE,
+                      cover_subtitle='Final Challenge Report',preview_all=True,cover_sections=cover,
+                      cover_label='Final Submission Guide',subject='Five challenge tasks, reproducible methods, measured results, operational scenarios and team science')
     inputs=['reports/integrated_model_evaluation.json','reports/decision_study.json','reports/source_provenance.json','reports/session_verification.json','docs/team_science_statement.md','docs/challenge_tasks_source.md','reports/figures/one_health_system.png']
+    inputs += ['reports/figures/integrated_model_validation.png','reports/notebook_execution.json','reports/notebook_raw_execution.json']
     result={'generated_at':state['generated_at'],'title':TITLE,'pdf':'reports/final_submission_guide.pdf','markdown':'reports/final_submission_guide.md','html':'reports/final_submission_guide.html',
             'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),'bytes':pdf.stat().st_size,**layout,
             'inputs':[{'path':name,'sha256':hashlib.sha256((root/name).read_bytes()).hexdigest()} for name in inputs if (root/name).is_file()],

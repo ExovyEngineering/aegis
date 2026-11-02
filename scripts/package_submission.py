@@ -8,9 +8,9 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from backend.paths import ROOT,write_json
 
-ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','requirements.txt','requirements-lock.txt','.env.example','.gitignore','Start-AEGIS.cmd','JUDGES_START_HERE.md','Setup-Judges-Windows.cmd','Start-Judges-Windows.cmd')
-SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','frontend')
-SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env'}
+ROOT_FILES=('CONTRIBUTING.md','.gitattributes','AGENTS.md','README.md','pytest.ini','requirements.txt','requirements-lock.txt','requirements-notebooks.txt','.env.example','.gitignore','Start-AEGIS.cmd','JUDGES_START_HERE.md','Setup-Judges-Windows.cmd','Start-Judges-Windows.cmd')
+SOURCE_DIRS=('.github','backend','scripts','tests','config','docs','.kiro','frontend','notebooks')
+SKIP={'node_modules','__pycache__','.venv','.tools','.git','.pytest_cache','.env','.ipynb_checkpoints'}
 REPORTS=('usda_food_environment.json','fsis_ingestion.json','ingestion_verification.json','transport_check.json','source_actions.json','operational_state_preservation.json','aegis_project_brief.pdf','project_brief.md','project_brief_manifest.json','session_verification.json','aegis_report.md','data_audit.md','api_status.json','model_evaluation.json','model_timing.json','model_timing.md','noaa_coverage.json','noaa_coverage.md','demo_results.json','operations_demo.json','demo_script.md','validation.json','http_smoke.json','raw_integrity.json','evidence_ingestion.json','route_lab_osrm.json','kiro_requirement_review.md','kiro_installation.json')
 REPORTS=REPORTS+('clean_install.json',)
 REPORTS=REPORTS+('backup_recovery.json','road_intelligence_live.json','stretch_verification.json','ci_followup.json')
@@ -19,6 +19,7 @@ REPORTS=REPORTS+('assistant_evaluation.json','command_workflow_evaluation.json',
 REPORTS=REPORTS+('friendliness_workflow_evaluation.json','friendliness_raw_integrity.json')
 REPORTS=REPORTS+('friendliness_operator_smoke.json',)
 REPORTS=REPORTS+('judge_launcher_smoke.json',)
+REPORTS=REPORTS+('notebook_execution.json','notebook_raw_execution.json','notebook_preview_qa.json')
 REPORTS=REPORTS+('freshness_demo.json','freshness_operator_smoke.json','recording_connectivity.json','recording_operator_smoke.json')
 REPORTS=REPORTS+('challenge_readiness.json','final_handoff_manifest.json','final_submission_guide.pdf','final_submission_guide.html','final_submission_guide.md',
                  'integrated_model_evaluation.json','integrated_model_predictions.csv','integrated_model_timeseries.csv','integrated_model_study.md',
@@ -126,6 +127,9 @@ def collect(root):
     if folder.exists():
         for path in folder.rglob('*'):add(path)
     folder=root/'reports/browser_qa/judge_launch'
+    if folder.exists():
+        for path in folder.rglob('*'):add(path)
+    folder=root/'reports/notebooks'
     if folder.exists():
         for path in folder.rglob('*'):add(path)
     # Only include NOAA responses/metadata actually referenced by the coverage report.

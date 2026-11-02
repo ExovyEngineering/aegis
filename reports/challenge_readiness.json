@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T11:35:20.209635-06:00",
+  "generated_at": "2026-11-02T14:45:07.226866-06:00",
   "release_status": "Working research build; scientific and human evidence gates remain open",
   "requirement_reference": "docs/challenge_tasks_source.md",
   "tasks": [
@@ -117,14 +117,14 @@
       "title": "Team science and value of new data",
       "status": "Statement and comparison prepared; final team review pending",
       "menu": "evidence",
-      "summary": "Isaac handled the disease side; Micky provided coding help. The project owner reports that disease-side input shaped CDC/BEAM integration and historical analysis. NORS and USDA add domains beyond the three core sources.",
+      "summary": "Isaac Jenkins led disease-side evidence and databases; Micky fact-checked code and helped establish GitHub collaboration; the project lead handled supply-chain logistics, gathered remaining data and designed application requirements and extensions. Disease-side input shaped CDC/BEAM integration and historical analysis. NORS and USDA add domains beyond the three core sources.",
       "implemented": [
         "One-page team science draft documents known stakeholder feedback and resulting workflow changes.",
         "Added-data evaluation reports measured benefit or harm rather than assuming integration improves accuracy.",
         "Next priorities are timestamped data releases, calibrated poultry telemetry and verified logistics/health partners."
       ],
       "remaining": [
-        "The owner will add contributor last names; review final names, role wording and authorship with the team.",
+        "Isaac Jenkins is named as provided. Review role wording and authorship with the team; Micky's surname and the lead's preferred author name remain for completion.",
         "No professional credential, external interview or genuine Kiro participation is inferred from these contributions."
       ],
       "artifacts": [

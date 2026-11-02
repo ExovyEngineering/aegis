@@ -1,0 +1,185 @@
+
+> aegis-command@0.1.0 test
+> vitest run --configLoader runner
+
+
+ RUN  v3.2.7 C:/Users/ericp/Downloads/NAFSI/frontend
+
+ ✓ src/ScenarioDetails.test.tsx (1 test) 256ms
+ ✓ src/ModelErrorAnalysis.test.tsx (1 test) 341ms
+   ✓ shows only recorded subgroup results with scientific limits  339ms
+ ✓ src/VerificationReview.test.tsx (2 tests) 548ms
+   ✓ requires human identity and every checkbox for completion, with version guards  535ms
+ ✓ src/PlanningLibrary.test.tsx (2 tests) 487ms
+   ✓ loads exact saved inputs/results instead of recomputing or dispatching  442ms
+ ✓ src/RuntimeBanner.test.tsx (3 tests) 313ms
+ ✓ src/DataExplorer.test.tsx (2 tests) 519ms
+   ✓ filters one named source, shows literal source values and page missingness  472ms
+ ✓ src/DriverInstruction.test.tsx (2 tests) 349ms
+   ✓ acknowledges the exact dispatcher instruction version separately from trip acknowledgment  333ms
+ ✓ src/ScientificCoverage.test.tsx (2 tests) 358ms
+ ✓ src/FoodAccessContext.test.tsx (2 tests) 667ms
+   ✓ shows source-year context, preserves suppressed values and distinguishes a city county-equivalent  525ms
+ ✓ src/DriverExposure.test.tsx (5 tests) 1014ms
+   ✓ clears old routes on trip changes and ignores a slower earlier route response  327ms
+ ✓ src/DispatchReadiness.test.tsx (4 tests) 807ms
+   ✓ clears a failed report instead of keeping earlier passing checks visible  384ms
+ ✓ src/CustomOperationEditor.test.tsx (6 tests) 1301ms
+   ✓ keeps truck references valid when an origin ID changes or an origin is removed  927ms
+   ✓ sends a cleared optional lot as null and labels the generated key as fictional  340ms
+ ✓ src/WorkspaceGuide.test.tsx (13 tests) 1340ms
+   ✓ explains comparison, simulation and approval separately in Command  349ms
+ ✓ src/RouteLab.test.tsx (2 tests) 2216ms
+   ✓ Route laboratory > sends farm constraints and explicit exposure assumptions without creating assignments  1548ms
+   ✓ Route laboratory > normalizes full API preset inventories and enables multi-location fleet testing  661ms
+ ✓ src/ChallengeEvidence.test.tsx (21 tests) 2388ms
+   ✓ integrated research evidence > keeps CDC and weather context distinct from FSIS labels and consequential actions  870ms
+   ✓ captured food-security policies > scenario selection binds the displayed quantities to the captured policy rows  397ms
+ ✓ src/RehearsalWorkspace.test.tsx (13 tests) 3539ms
+   ✓ keeps operator mode read-only and copies a real isolated-launch command  345ms
+   ✓ requires a skip reason, keeps completion disabled before all stages, and navigates only on request  462ms
+   ✓ reloads a rejected stale checkpoint without optimistic success or retaining its obsolete note  567ms
+   ✓ shows the completed export immediately, and reloads the saved immutable record from history  558ms
+   ✓ can abort an incomplete run only with a reason and preserves its export  331ms
+ ✓ src/NetworkMap.test.tsx (13 tests) 3256ms
+   ✓ Command map presentation and read-only controls > focuses selected road geometry and highlights it after subdued alternatives  416ms
+   ✓ Command map presentation and read-only controls > keeps viewport coordinates stable when layers and overlay visibility change  499ms
+   ✓ Command map presentation and read-only controls > changes only visibility when choosing task-based views, retaining route focus and source inputs  575ms
+ ✓ src/DriverWorkspace.test.tsx (7 tests) 3732ms
+   ✓ shows visual simulated trip data with typing and acknowledgment locked by default  903ms
+   ✓ shows a new freshness review visually without unlocking driver interactions or changing the assignment  309ms
+   ✓ requires parked attestation before reporting and hides the form again when locked  1010ms
+   ✓ quick reports use the selected approved trip and cannot silently reroute it  437ms
+   ✓ a rejected stale-trip acknowledgment never creates optimistic success  603ms
+ ✓ src/DispatcherDesk.test.tsx (11 tests) 4871ms
+   ✓ requires identity/reason for hold decisions and cannot release a recalled lot  1352ms
+   ✓ reviews an incident using the version displayed to the dispatcher  484ms
+   ✓ sends approved instructions with both network and current instruction revisions  501ms
+   ✓ surfaces a rejected stale decision and reloads the current desk instead of reporting success  442ms
+   ✓ removes stale actionable data when a desk refresh fails  499ms
+   ✓ shows the actual next review and focuses name, reason and report controls without submitting a decision  385ms
+   ✓ gives an empty desk a working plan-selection path and labels missing data separately  306ms
+ ✓ src/api.test.ts (3 tests) 40ms
+ ✓ src/MapViewport.test.tsx (2 tests) 128ms
+ ✓ src/routingProvenance.test.ts (2 tests) 34ms
+ ✓ src/networkMapModel.test.ts (11 tests) 25ms
+ ✓ src/ProjectBrief.test.tsx (2 tests) 800ms
+   ✓ shows recorded failures and pending gates beside downloadable evidence  544ms
+ ✓ src/ActivityTimeline.test.tsx (47 tests) 5426ms
+   ✓ loads actual captured records and explains the limits of absence, identity and history  896ms
+   ✓ keeps draft filters separate from the captured page until explicitly applied  479ms
+ ✓ src/CustomRouteLab.test.tsx (1 test) 1245ms
+   ✓ posts editable custom locations and fleet without overriding individual truck capacities  1243ms
+ ✓ src/EventImpactPanel.test.tsx (32 tests) 6053ms
+   ✓ produces a read-only result and four comparisons without applying an event  1035ms
+   ✓ requires consent and submits the exact preview identity and network revision  560ms
+   ✓ marks an old comparison stale and resets consent after event changes  375ms
+   ✓ shows a failed apply without optimistic receipt or retained consent  324ms
+ ✓ src/RouteLabRace.test.tsx (3 tests) 1930ms
+   ✓ keeps inputs edited during a run stale until the edited plan is actually computed  1185ms
+   ✓ does not overwrite an opened saved project with a late computation or its run id  416ms
+   ✓ ignores a failed older run after opening a saved project  327ms
+ ✓ src/EvidenceAssistantFriendly.test.tsx (16 tests) 6716ms
+   ✓ turns a broad chicken query into useful choices without inventing an answer or losing context  1315ms
+   ✓ accepts the short input hi and offers a starting point  713ms
+   ✓ accepts the short input ? and offers a starting point  710ms
+   ✓ rejects an unsupported clarification choice instead of exposing it as an actionable answer  363ms
+   ✓ rejects a clarification belonging to another snapshot and requires a deliberate reload  311ms
+   ✓ answers a clarification choice with cited captured evidence in one click  508ms
+   ✓ opens a guided model explanation immediately rather than requiring a second Get answer click  342ms
+   ✓ preserves context after a rejected action request and offers a real dispatcher navigation  507ms
+   ✓ does not attach stale clarification choices to wording edited while the request is pending  335ms
+ ✓ src/AppHandoffs.test.tsx (9 tests) 6443ms
+   ✓ carries a non-first, different-origin candidate into the actual road comparison request  1937ms
+   ✓ takes the empty Dispatcher shortcut directly to the response comparison  906ms
+   ✓ takes the outlook review shortcut to the same current-plan comparison without proposing  582ms
+   ✓ opens a fresh named example when generic Road navigation follows a candidate handoff  1088ms
+   ✓ rejects an unusable candidate coordinate before navigation or a route request  451ms
+   ✓ lets generic Save the Load navigation use its documented demo rather than the Command selection  323ms
+   ✓ carries an explicitly selected candidate into freshness modeling  364ms
+   ✓ starts the documented rehearsal demo after previously modeling a different Command candidate  561ms
+ ✓ src/EvidenceAssistant.test.tsx (25 tests) 7295ms
+   ✓ offers six bounded topics and clearly identifies deterministic read-only facts  1530ms
+   ✓ captures the scenario_compare guided topic without operational writes  385ms
+   ✓ captures the model_limits guided topic without operational writes  311ms
+   ✓ captures the source_coverage guided topic without operational writes  333ms
+   ✓ captures the driver_workflow guided topic without operational writes  306ms
+   ✓ captures the next_actions guided topic without operational writes  352ms
+   ✓ submits the selected simulated shipment and explains that exact captured trip  472ms
+   ✓ exposes source path, retrieval, checksum and uncertainty with each fact  347ms
+   ✓ allows navigation only through the provided view callback  392ms
+   ✓ invalidates an outstanding explanation when context is reloaded  336ms
+   ✓ clears stale context after a rejected snapshot and requires an explicit reload  387ms
+   ✓ matches typed wording using rules by default and omits prompt text from export  314ms
+   ✓ requires explicit opt-in before requesting configured local model topic selection  404ms
+ ✓ src/DeliveryOutlook.test.tsx (49 tests) 10362ms
+   ✓ automatically computes one current-input estimate with real captured allocation and thermal results  1196ms
+   ✓ shows six priority candidates, expands all, and navigates an inspection without changing any state  978ms
+   ✓ offers current-plan review and road comparison for the exact candidate without recalculating or changing the capture  1161ms
+   ✓ lets a changed draft open the current plan while keeping the uncomputed assumptions out of the captured result  666ms
+   ✓ describes computed what-if assumptions as separate from current-plan review and preserves their captured export  994ms
+   ✓ disables navigation from an older network revision while preserving its captured export  976ms
+   ✓ blocks a missing candidate by identity without blocking other current candidate inspections  537ms
+   ✓ does not offer optional callback controls as inactive buttons when their workspaces are unavailable  367ms
+   ✓ runs the one-hour shortcut immediately and current-input check resets all planning assumptions  391ms
+ ✓ src/App.test.tsx (17 tests) 9860ms
+   ✓ AEGIS workflow > labels simulation and requires an identified reason before approval  2360ms
+   ✓ AEGIS workflow > shows no driver trip before approval  796ms
+   ✓ AEGIS workflow > clears old driver assignments and scenario rows when a partial refresh fails  883ms
+   ✓ AEGIS workflow > reports stale fallback as a failed refresh rather than new source success  683ms
+   ✓ AEGIS workflow > preserves a requested shipment route across application reloads  794ms
+   ✓ AEGIS workflow > shows actual ingestion outcomes without calling unrecognized or duplicate inputs accepted  310ms
+   ✓ AEGIS workflow > shows an approval rejection inside the still-open dialog and clears prior success  457ms
+   ✓ AEGIS workflow > shows failed recomputation near the results and removes a stale successful receipt  476ms
+   ✓ AEGIS workflow > changes only the map overlay when inspecting a scenario allocation  337ms
+   ✓ AEGIS workflow > selects a road alternative without writing a new assignment or changing planning inputs  547ms
+   ✓ AEGIS workflow > makes a malformed route response visibly fail instead of showing an empty result  320ms
+   ✓ AEGIS workflow > preserves an actual confirmed event receipt when a total network reload failure unmounts the simulator  521ms
+   ✓ AEGIS workflow > opens and closes activity inspection without creating an extra workspace or a decision  573ms
+ ✓ src/RoadIntelligence.test.tsx (33 tests) 12516ms
+   ✓ shows dated, incomplete and failed sources without claiming clear roads  1544ms
+   ✓ inspects provider text and timestamps and filters the bounded source preview  816ms
+   ✓ reports absent filtered rows without inferring a road-clear result  337ms
+   ✓ retries a failed load and rejects malformed coverage instead of rendering invented results  549ms
+   ✓ refreshes official feeds with POST and preserves an explicitly old snapshot after failure  560ms
+   ✓ disables provider refresh for a verified offline rehearsal  384ms
+   ✓ compares estimated travel by default and separates nearby events from unavailable coverage  887ms
+   ✓ selects a supplied corridor and validates coordinates, distinct locations and the buffer  746ms
+   ✓ retains original comparison inputs and warns when they change during a pending request  416ms
+   ✓ does not accept mismatched echoed coordinates or malformed map geometry  487ms
+   ✓ preserves prior comparison after a failed retry and marks changed inputs  393ms
+   ✓ exports exactly the captured comparison with a stale-input marker and read-only scope  329ms
+   ✓ explains an OSRM fallback with its exact failure rather than hiding the source error  304ms
+   ✓ shows routing-cache retrieval time and stale refresh failures separately from road-event sources  307ms
+   ✓ route review points to the next workspace without approving or dispatching  327ms
+   ✓ selecting another named journey detaches the candidate and equivalent parent props do not restore it  338ms
+   ✓ new candidate props keep a pending comparison and its export tied to the original candidate  380ms
+ ✓ src/FreshnessLab.test.tsx (42 tests) 18548ms
+   ✓ Save the Load UI transport and science boundaries > continues a reviewed lot history instead of creating a fresh quality budget  1268ms
+   ✓ Save the Load UI transport and science boundaries > uses the actual requested candidate and revision when explicitly starting  633ms
+   ✓ Save the Load UI transport and science boundaries > separates actual point and conservative helper outputs instead of displaying the same estimate twice  714ms
+   ✓ Save the Load UI transport and science boundaries > retains all channel units while identifying the auxiliary channels as contextual  490ms
+   ✓ Save the Load UI transport and science boundaries > renders real FIFO versus FEFO pick-order differences and calls expiry stock exposure rather than waste  637ms
+   ✓ Save the Load UI transport and science boundaries > shows all concrete proposed assignments before enabling the separate approval  801ms
+   ✓ Save the Load UI transport and science boundaries > requires identity, rationale and all three separate human confirmations  1742ms
+   ✓ Save the Load UI transport and science boundaries > publishes only the exact captured proposal after an identified human action  1011ms
+   ✓ Save the Load UI transport and science boundaries > preserves the confirmed receipt when the global application refresh fails  905ms
+   ✓ Save the Load UI transport and science boundaries > exports the captured server state without turning unsent form text into an approved decision  426ms
+   ✓ Save the Load UI transport and science boundaries > requires preparing a different destination before a concrete review can open  452ms
+   ✓ Save the Load UI transport and science boundaries > invalidates an opened review when the person changes the selected destination  822ms
+   ✓ Save the Load UI transport and science boundaries > requests optional road refinement with the exact selected destination and captured version  313ms
+   ✓ Save the Load UI transport and science boundaries > starts with a short priority list and expands the captured exclusions on demand  513ms
+   ✓ Save the Load UI transport and science boundaries > keeps an existing but quality-ineligible buyer inspectable without enabling preparation or review  637ms
+   ✓ Save the Load UI transport and science boundaries > pauses an explicitly started replay when an actual captured rescue proposal is ready  490ms
+   ✓ Save the Load UI transport and science boundaries > waits for an incoming poll before the next replay frame without silently skipping heat  704ms
+   ✓ Save the Load failure and stream guards > keeps failed approval outcomes uncertain until the experiment is reloaded  1350ms
+   ✓ Save the Load failure and stream guards > treats an explicit stale-approval conflict as a failed decision and preserves the form  990ms
+   ✓ Save the Load failure and stream guards > refreshes stale network context without changing the stored quality history  336ms
+   ✓ Save the Load failure and stream guards > polls newer stored readings and disables an older captured approval form  856ms
+   ✓ Save the Load failure and stream guards > preserves a newer capture when polling returns an older version  324ms
+
+ Test Files  35 passed (35)
+      Tests  406 passed (406)
+   Start at  14:44:01
+   Duration  31.44s (transform 22.80s, setup 77.78s, collect 83.57s, tests 115.72s, environment 219.53s, prepare 19.14s)
+

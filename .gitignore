@@ -38,6 +38,7 @@ data/aegis.sqlite
 /*.geojson
 /*.pdf
 data/raw/
+Databases-and-etc/
 
 # Build, editor, and test outputs
 *.pyc
@@ -48,3 +49,8 @@ coverage/
 .DS_Store
 Thumbs.db
 reports/server.*
+
+# Isolated notebook workspaces and ephemeral Jupyter kernels stay local.
+reports/notebook_runs/
+reports/notebook_executions/
+**/.ipynb_checkpoints/

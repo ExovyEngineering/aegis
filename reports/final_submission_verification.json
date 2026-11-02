@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-02T17:36:41.140447+00:00",
+  "checked_at": "2026-11-02T20:46:29.658000+00:00",
   "passed": true,
-  "pdf_pages": 17,
+  "pdf_pages": 20,
   "bookmarks_and_contents": 9,
   "page_numbers_verified": true,
   "input_hashes_verified": true,
@@ -9,6 +9,8 @@
   "owner_kiro_non_use_disclosed": true,
   "browser_checks_passed": 140,
   "browser_artifact": "reports/browser_qa/final_submission/results.json",
+  "browser_scope": "Separately dated existing 140-check browser workflow, not rerun as part of this PDF inspection",
+  "notebook_preview_checks": "reports/notebook_preview_qa.json",
   "release_pipeline_passed": true,
   "verification": "reports/session_verification.json",
   "original_operator_preserved": true,
@@ -16,9 +18,9 @@
   "visual_review": {
     "method": "Native Matplotlib print layout previews, not independent PDF rasterization",
     "pages_inspected": [
-      4,
+      1,
       6,
-      11
+      14
     ],
     "physical_printer_tested": false
   },

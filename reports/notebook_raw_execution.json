@@ -1,0 +1,69 @@
+{
+  "started_at": "2026-11-02T20:13:47.484535+00:00",
+  "profile": "raw",
+  "passed": true,
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
+  "raw_data_requested": true,
+  "original_raws_bundled": false,
+  "requirements_lock_sha256": "2f9e94a847821c2b18f10923867eee973baffefe533c937c9475268d49e6c5de",
+  "optional_requirements_sha256": "bedf83caf2a5d5ef9159f5f61d4237f64554af958f01999cd9724a10cfe4f4bc",
+  "versions": {
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "nbconvert": "7.17.2",
+    "jupyterlab": "4.6.5",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "ortools": "9.15.6755"
+  },
+  "notebooks": [
+    {
+      "notebook": "01_Preprocessing_and_Integration.ipynb",
+      "source_code_sha256": "a05680a583fb9569d911a5f383a2cbd251262b0d4550a391f8c0679336deb599",
+      "status": "passed",
+      "code_cells": 11,
+      "duration_seconds": 51.437,
+      "executed_notebook_sha256": "44bf27dc63798b05c8d430cac8bf6fac06bf20422f5323044a06c460a1d3c392",
+      "executed_code_cells": 11,
+      "html_sha256": "f646993bdc939d8516d002032dff2ab072f30352d68c40723f2e5e5fb98bbd5e"
+    }
+  ],
+  "operator_before": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "note": "Real kernel execution. Numeric reproducibility assertions run inside notebooks; timestamps, copied paths, UUIDs and execution timings are not fixed scientific results.",
+  "operator_after": {
+    "sqlite": {
+      "exists": true,
+      "bytes": 364544,
+      "sha256": "882e9cd553f679f2cff41ea90c8e130f6e8d674299e6f2dda70f4040dc8f658e"
+    },
+    "-wal": {
+      "exists": false
+    },
+    "-shm": {
+      "exists": false
+    },
+    "-journal": {
+      "exists": false
+    }
+  },
+  "operator_preserved": true,
+  "finished_at": "2026-11-02T20:14:40.203948+00:00"
+}

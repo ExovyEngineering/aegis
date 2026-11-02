@@ -16,3 +16,5 @@ data/manifests/** -text
 data/processed/** -text
 reports/** -text
 docs/** -text
+notebooks/** -text
+requirements-notebooks.txt -text

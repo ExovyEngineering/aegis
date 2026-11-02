@@ -21,6 +21,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.verify_package import safe_member, validate_and_extract
+from scripts.execute_notebooks import NOTEBOOKS, code_digest
 
 NAME = "AEGIS-Judges"
 GUIDES = {
@@ -36,6 +37,53 @@ EVIDENCE = (
     "reports/integrated_model_evaluation.json", "reports/decision_study.json",
     "reports/source_provenance.json", "reports/data_dictionary.csv",
 )
+
+
+def add_analysis(app, staging):
+    """Require executed, current notebooks and expose their in-package previews."""
+    report = read(app / "reports/notebook_execution.json")
+    records = {row["notebook"]: row for row in report.get("notebooks", [])}
+    if (report.get("passed") is not True or report.get("operator_preserved") is not True
+            or set(records) != set(NOTEBOOKS)):
+        raise ValueError("Re-execute all four bundled notebooks before building the judge handoff")
+    links = []
+    for name in NOTEBOOKS:
+        entry = records[name]
+        source, executed = app / "notebooks" / name, app / "reports/notebooks" / name
+        parsed = read(source)
+        for cell in parsed["cells"]:
+            if isinstance(cell["source"], list):
+                cell["source"] = "".join(cell["source"])
+        preview = executed.with_suffix(".html")
+        if (entry.get("status") != "passed" or entry.get("executed_code_cells", 0) != entry.get("code_cells")
+                or entry.get("code_cells", 0) < 1 or code_digest(parsed) != entry.get("source_code_sha256")
+                or sha256(executed) != entry.get("executed_notebook_sha256")
+                or sha256(preview) != entry.get("html_sha256")):
+            raise ValueError(f"Notebook execution or checksum is incomplete/stale: {name}")
+        title = name.removesuffix(".ipynb").replace("_", " ")
+        links.append(f'<li><a href="../02_Application/reports/notebooks/{html.escape(preview.name)}">Read {html.escape(title)}</a> '
+                     f'(<a href="../02_Application/notebooks/{html.escape(name)}">Jupyter notebook</a>)</li>')
+    folder = staging / "04_Reproducible_Analysis"
+    folder.mkdir()
+    (folder / "index.html").write_text(
+        "<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
+        "<title>AEGIS reproducible analysis</title><style>body{font:17px/1.6 system-ui;max-width:1000px;margin:40px auto;padding:0 24px;color:#193b2e}li{margin:18px 0}a{color:#176044}code{overflow-wrap:anywhere}</style>"
+        "<h1>Reproducible analysis notebooks</h1><p>Four notebooks were executed with numerical assertions against the reported results. "
+        "The HTML previews contain real outputs and embedded figures and open without installing Jupyter.</p><ol>" + "".join(links) +
+        "</ol><h2>Run them again</h2><p>From <code>02_Application</code>, install the optional pinned tools with "
+        "<code>.venv/Scripts/python -m pip install -r requirements-notebooks.txt</code>, then run "
+        "<code>.venv/Scripts/python scripts/execute_notebooks.py</code>. Use <code>.venv/bin/python</code> on macOS/Linux.</p>"
+        "<p><a href='../02_Application/notebooks/README.md'>Full instructions and original-source replay</a> · "
+        "<a href='../02_Application/reports/notebook_execution.json'>Actual execution record</a> · "
+        "<a href='../00_START_HERE.html'>Back to Start Here</a></p>"
+        "<p>Default execution uses bundled source snapshots; full raw preprocessing requires the original files separately. "
+        "Notebook workspaces are isolated. Model results remain retrospective and logistics/telemetry remain simulated.</p></html>", encoding="utf-8")
+    (folder / "README.md").write_text(
+        "# Reproducible analysis\n\nOpen index.html for executed previews and notebook links.\n\n"
+        "Files and reproduction commands are in ../02_Application/notebooks/README.md.\n"
+        "The optional notebook environment is separate from the basic demo setup.\n"
+        "Default replay uses bundled snapshots; original-source preprocessing needs the excluded raw files.\n", encoding="utf-8")
+    return len(records)
 
 
 def read(path):
@@ -174,6 +222,7 @@ def build(root=ROOT, archive=None):
         raise ValueError("Start Here template must contain exactly one verification placeholder")
     (staging / "00_START_HERE.html").write_text(template.replace("{{VERIFICATION}}", "<pre>" + html.escape(summary) + "</pre>"), encoding="utf-8")
     shutil.copyfile(app / "docs/judge_quick_start.md", staging / "00_START_HERE.txt")
+    notebook_count = add_analysis(app, staging)
     links = verify_links(staging)
     files = [{"path": path.relative_to(staging).as_posix(), "bytes": path.stat().st_size, "sha256": sha256(path)}
              for path in sorted(staging.rglob("*")) if path.is_file()]
@@ -207,6 +256,7 @@ def build(root=ROOT, archive=None):
               "bytes": output.stat().st_size, "sha256": verified["archive_sha256"],
               "application_archive_sha256": manifest["application_archive_sha256"],
               "files_verified": verified["files_verified"], "start_page_local_links_checked": links,
+              "executed_notebooks_included": notebook_count,
               "raw_files_moved": False, "operator_database_opened": False,
               "uploaded_or_submitted": False}
     (root / "reports/judge_handoff.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

@@ -6,6 +6,13 @@ AEGIS combines separately labeled official food-safety and weather evidence with
 
 ## Judges: start here
 
+Read the [final challenge report](reports/final_submission_guide.pdf) and
+[one-page team science statement](reports/team_science_statement.pdf).
+The final source is on
+[`feature/decision-depth-and-team-brief`](https://github.com/ExovyEngineering/aegis/tree/feature/decision-depth-and-team-brief);
+download the portable judge archive from the repository's
+[releases](https://github.com/ExovyEngineering/aegis/releases).
+
 Share **artifacts/AEGIS-Judges.zip**. Extract the whole ZIP, open the
 **AEGIS-Judges** folder and double-click **00_START_HERE.html**. The numbered
 folders contain guides, the runnable application and verification records.
@@ -23,6 +30,14 @@ the application archive and run `python scripts/build_judge_handoff.py`; complet
 commands are in [JUDGES_START_HERE.md](JUDGES_START_HERE.md).
 
 ## Run locally
+
+Reproducible analysis is available in [four executed Jupyter notebooks](notebooks/README.md).
+Read their HTML previews in `reports/notebooks/index.html` without installing
+Jupyter, or install `requirements-notebooks.txt` and run
+`.venv/Scripts/python scripts/execute_notebooks.py`. Notebook runs copy their
+inputs into isolated workspaces, refit the models and recompute the scenarios.
+An explicit raw-source profile rebuilds preprocessing when the original files
+are supplied; it is never silently inferred from bundled processed snapshots.
 
 The final five-task handoff is in **Project brief → Five tasks. One inspectable
 submission.** Download the final PDF there; it covers the required tasks, all ten

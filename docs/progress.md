@@ -2,6 +2,57 @@
 
 Latest session date: November 2, 2026, America/Chicago. This document distinguishes implementation from verification. Test and frontend-build results must be updated only from executed commands.
 
+## Final report and GitHub handoff (November 2)
+
+- Rebuilt the **AEGIS Final Challenge Report** with the research question,
+  all five challenge tasks, actual model figures/metrics, nine simulated policy
+  outcomes, scientific limitations, reproducibility commands and dashboard tour.
+  The one-page team statement now credits **Isaac Jenkins**, Micky's code review
+  and GitHub work, and the lead's logistics, data gathering and application design.
+- Final local verification passed **1,316 pytest tests**, five platform skips,
+  **406 frontend tests**, and the production build. Another **34 document and
+  packaging tests** passed after the report renderer changes; `pip check` passed.
+  Records remain in `reports/session_verification.json` and dated check logs.
+- Actual Chrome checked all five notebook HTML previews and the running app;
+  embedded figures loaded and no page errors were found. Original notebook runs
+  retain their separate actual execution records and input-preservation checks.
+- Corrected test discovery to use `tests/`, excluding copied judge packages.
+  The release checker uses short unique temporary paths for Windows. Earlier
+  discovery/path failures remain in dated logs rather than being erased.
+- Kiro was not used. Prospective model validity, calibrated physical sensors,
+  real logistics results and final human authorship/submission approval remain
+  outside the software verification claims.
+
+## Executed reproducible analysis notebooks (November 2)
+
+- Added four maintained Jupyter notebooks for source coverage, preprocessing/
+  integration, national/integrated modeling and evaluation, and scenario/FEFO
+  analysis. All **34 code cells** executed successfully with actual data,
+  figures and assertions against the reported scientific metrics.
+- The optional original-source profile also executed all **11 cells** of the
+  preprocessing notebook against the owner's relocated `Databases-and-etc/`
+  downloads. It verified the original hashes, staged independent copies, ran
+  source adapters, and reproduced national/timing/integrated model results and
+  all nine policy outcomes in that same regenerated-input workspace.
+- Notebook execution uses its exact Python interpreter, copied inputs, private
+  runtime paths, an offline script guard, bounded timeouts and cleanup on failure.
+  Windows asyncio socket-pair behavior and external-network denial have actual
+  regression tests. Scientific reports, source bytes and owner SQLite/sidecars
+  were preserved. No global kernelspec installation is needed.
+- Pinned optional Jupyter tools are separate from basic app setup. Executed
+  notebooks, embedded-figure HTML previews and version/hash/cell-count records
+  are published under `reports/notebooks/`; isolated workspaces/raw staging and
+  ephemeral kernel credentials are excluded from Git and packages.
+- The judge handoff now exposes `04_Reproducible_Analysis`. Packaging requires
+  all four notebooks to have successful, current execution records and matching
+  source/output hashes; stale or partial evidence cannot replace the handoff.
+  Focused helper/runner/handoff checks passed **46 tests**, with one Windows
+  symlink-permission skip. Full-suite results retain their own dated report.
+- The original bulk downloads are still excluded from the ZIP. Raw replay needs
+  those files separately; bundled-snapshot reproduction does not claim otherwise.
+  Reproducibility does not remove publication-lag, prospective-validation,
+  simulation or Kiro-use limitations.
+
 ## Organized judge handoff (November 2)
 
 - Added `JUDGES_START_HERE.md`, a folder map, judge setup/troubleshooting notes

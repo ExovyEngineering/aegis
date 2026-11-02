@@ -1,9 +1,18 @@
 # AEGIS — start here
 
+The submission PDF is [AEGIS Final Challenge Report](reports/final_submission_guide.pdf).
+The separate [one-page team science statement](reports/team_science_statement.pdf)
+and [editable report](reports/final_submission_guide.md) are also included.
+
 For judges, share **artifacts/AEGIS-Judges.zip**. Extract it completely, open the
 **AEGIS-Judges** folder, then double-click **00_START_HERE.html**. A text version
 is alongside it. The numbered folders separate guides, the runnable application,
 and measured verification evidence.
+
+**04_Reproducible_Analysis/index.html** links to four executed Jupyter notebooks
+and their read-only HTML previews. Optional notebook setup and raw-source replay
+are documented in `02_Application/notebooks/README.md`; Jupyter is not required
+to read the previews or run the basic application demo.
 
 The PDFs open without installation. For the interactive demo on Windows, install
 Python 3.13 (64-bit), open **02_Application**, run **Setup-Judges-Windows.cmd**
@@ -27,4 +36,7 @@ Build the organized handoff after verifying the application archive:
 Keep the original supplied data in place. Neither packaging command requires a
 raw-data download or changes the operator's assignments. The source repository
 contains the same instructions; `artifacts/` is generated locally and excluded
-from Git. Kiro non-use and scientific limitations remain explicitly disclosed.
+from Git history. Downloadable judge archives are attached separately to the
+repository's [GitHub releases](https://github.com/ExovyEngineering/aegis/releases).
+This is a private repository; sharing the ZIP does not require judge access to
+GitHub. Kiro non-use and scientific limitations remain explicitly disclosed.

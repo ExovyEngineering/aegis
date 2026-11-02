@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-02T17:31:01.611520+00:00",
-  "finished_at": "2026-11-02T17:34:09.500779+00:00",
+  "generated_at": "2026-11-02T20:41:39.620896+00:00",
+  "finished_at": "2026-11-02T20:44:57.978534+00:00",
   "all_passed": true,
   "checks": [
     {
@@ -9,15 +9,17 @@
         "C:\\Users\\ericp\\Downloads\\NAFSI\\.venv\\Scripts\\python.exe",
         "-m",
         "pytest",
-        "-q"
+        "-q",
+        "--basetemp",
+        "C:\\Users\\ericp\\Downloads\\NAFSI\\.tools\\pt-cf496ea5efd4"
       ],
-      "checked_at": "2026-11-02T17:31:01.620737+00:00",
+      "checked_at": "2026-11-02T20:41:39.628079+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 146.474,
-      "tests_passed": 1283,
-      "log": "reports/checks/20261102T173101620197Z/pytest.txt",
-      "log_sha256": "c03dcfc8bb886a15458348ba05d513e385d6f6a6ae769279d98aa58771b12a72"
+      "duration_seconds": 140.476,
+      "tests_passed": 1316,
+      "log": "reports/checks/20261102T204139627497Z/pytest.txt",
+      "log_sha256": "3573e7df6c8d0d22e1601cb959297bced118ad23c1cb9f1689c90c28c50557ae"
     },
     {
       "name": "vitest",
@@ -28,13 +30,13 @@
         "frontend",
         "test"
       ],
-      "checked_at": "2026-11-02T17:33:28.098322+00:00",
+      "checked_at": "2026-11-02T20:44:00.146040+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 26.358,
+      "duration_seconds": 33.171,
       "tests_passed": 406,
-      "log": "reports/checks/20261102T173101620197Z/vitest.txt",
-      "log_sha256": "067a476412d5ee8c59aef562548a1f3c4b5cc746f254ee7d2665a221684ae4eb"
+      "log": "reports/checks/20261102T204139627497Z/vitest.txt",
+      "log_sha256": "dd5e08bf653fc1e208b517a22ecf81287b0a9a4f05cab00a85b93029753c024d"
     },
     {
       "name": "frontend_build",
@@ -46,13 +48,13 @@
         "run",
         "build"
       ],
-      "checked_at": "2026-11-02T17:33:54.478383+00:00",
+      "checked_at": "2026-11-02T20:44:33.339803+00:00",
       "exit_code": 0,
       "passed": true,
-      "duration_seconds": 15.006,
+      "duration_seconds": 24.624,
       "tests_passed": null,
-      "log": "reports/checks/20261102T173101620197Z/frontend_build.txt",
-      "log_sha256": "f8509fdf3f31722b79e396e29e9838492d6110ed5bbbb44026f8919d6e85a5ca"
+      "log": "reports/checks/20261102T204139627497Z/frontend_build.txt",
+      "log_sha256": "b9fc89fef2116c6753cba1240cef3f51222d18556252f4a4dd816e7608e5b6fc"
     }
   ],
   "live_api_requests_included": false,

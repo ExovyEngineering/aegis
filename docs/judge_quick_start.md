@@ -16,10 +16,16 @@ or **00_START_HERE.txt** in a text editor.
 | `01_Guides` | Final submission guide, one-page team statement and full user manual. PDFs open without installing the app. |
 | `02_Application` | Working application, setup/start launchers, source code, data and detailed documentation. |
 | `03_Verification` | Recorded checks, source status and package-verification evidence. Read their timestamps and scope. |
+| `04_Reproducible_Analysis` | Four executed Jupyter notebooks, read-only HTML previews and reproduction commands. |
 
 The outer folder is the judge handoff. Work inside **02_Application** for the
 commands below. Do not open `frontend/index.html` or `frontend/dist/index.html`
 directly: the web interface needs the local Python backend.
+
+For the analysis, open **04_Reproducible_Analysis/index.html**. Reading its HTML
+previews needs no Jupyter installation. To run the notebooks, use the optional
+setup in `02_Application/notebooks/README.md`; it includes a single command to
+execute all four and a separate original-source replay command.
 
 ## 2. Windows: install once, then start
 

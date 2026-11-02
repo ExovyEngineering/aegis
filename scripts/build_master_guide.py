@@ -165,7 +165,8 @@ def html_document(blocks, generated, title=TITLE):
     return '\n'.join(parts)
 
 
-def render_pdf(blocks, output, generated, preview_dir=None, title=TITLE, cover_subtitle="Master User Guide", preview_all=False):
+def render_pdf(blocks, output, generated, preview_dir=None, title=TITLE, cover_subtitle="Master User Guide", preview_all=False,
+               cover_sections=None, cover_label='Read, practice, present', subject='Complete product handbook, controls, use cases and limitations'):
     os.environ.setdefault('MPLCONFIGDIR', str(ROOT / 'data/cache/matplotlib'))
     import matplotlib
     matplotlib.use('Agg')
@@ -299,12 +300,12 @@ def render_pdf(blocks, output, generated, preview_dir=None, title=TITLE, cover_s
         if preview_dir is not None and (preview_all or number in preview_pages):
             preview_dir.mkdir(parents=True,exist_ok=True)
             fig.savefig(preview_dir/f'print-render-page-{number:02}.png',dpi=120)
-    with PdfPages(output,metadata={'Title':title,'Author':'AEGIS project team','Subject':'Complete product handbook, controls, use cases and limitations'}) as pdf:
-        fig=figure(1,'Read, practice, present')
+    with PdfPages(output,metadata={'Title':title,'Author':'AEGIS project team','Subject':subject}) as pdf:
+        fig=figure(1,cover_label)
         fig.text(left/width,.79,'AEGIS',fontsize=44,weight='bold',color='#173c2b')
         fig.text(left/width,.725,cover_subtitle,fontsize=27,weight='bold')
         fig.text(left/width,.667,'Command • Drive • Evidence • Science',fontsize=14)
-        cover=[('What this is','A printable explanation of everything currently available in the application, with control references and practical use cases.'),
+        cover=cover_sections if cover_sections is not None else [('What this is','A printable explanation of everything currently available in the application, with control references and practical use cases.'),
                ('Who it is for','Teammates, presenters, reviewers and anyone learning how the parts connect.'),
                ('How to read it','Start with the orientation and choose a use case. Use the contents, PDF bookmarks and glossary when you return.'),
                ('Keep the boundaries clear','Public evidence is distinct from simulated operations. Forecasts, estimates, historical observations and cargo projections are labeled separately.')]
